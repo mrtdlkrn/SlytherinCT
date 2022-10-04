@@ -1,5 +1,6 @@
 ﻿@{
-    Layout = null;
+    ViewData["Title"] = "EditCar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -17,39 +18,45 @@
         <div class="mt-1 p-4" style="border:2px solid gray;">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="row align-items-center text-center">
-                        <label class="col-md-6">Bireysel/Kurumsal: </label>
-                        <select class="form-control col-md-6">
-                            <option class="form-control" value="1">Bireysel</option>
-                            <option class="form-control" value="2">Kurumsal</option>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Bireysel/Kurumsal:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Bireysel Müşteri</option>
+                            <option value="2">Kurumsal Müşteri</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="row align-items-center text-center">
-                        <label class="col-md-6">Kurumsal Şirket Adı: </label>
-                        <select class="form-control col-md-6">
-                            <option class="form-control" value="1">Ahmet LTD</option>
-                            <option class="form-control" value="2">Hede</option>
-                            <option class="form-control" value="3">Bidi</option>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Şirket Adı:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Hede</option>
+                            <option value="2">Bidi</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="row align-items-center text-center">
-                        <label class="col-md-3">Statü: </label>
-                        <select class="form-control col-md-9">
-                            <option class="form-control" value="1">Statü 1</option>
-                            <option class="form-control" value="2">Statü 2</option>
-                            <option class="form-control" value="3">Statü 3</option>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Statü:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Hede</option>
+                            <option value="2">Bidi</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-md-4">
-                    <div class="row align-items-center text-center">
-                        <label class="col-md-4">Araç Fiyat: </label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Şirket Adı:</label>
+                        </div>
                         <input type="text" value="" class="form-control col-md-8" />
                     </div>
                 </div>
@@ -60,55 +67,24 @@
         <div class="mt-1 p-4" style="border:2px solid gray;">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="row align-items-center">
-                        <label class="col-md-4">Araç Marka: </label>
-                        <select class="form-control col-md-8">
-                            <option class="form-control" value="1">Hüdü</option>
-                            <option class="form-control" value="2">Hede</option>
-                            <option class="form-control" value="3">Bidi</option>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Araç Marka:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Hede</option>
+                            <option value="2">Bidi</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="row align-items-center">
-                        <label class="col-md-4">Araç Model: </label>
-                        <select class="form-control col-md-8">
-                            <option class="form-control" value="1">Hüdü</option>
-                            <option class="form-control" value="2">Hede</option>
-                            <option class="form-control" value="3">Bidi</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <div class="row align-items-center">
-                        <label class="col-md-4">Gövde Tipi: </label>
-                        <select class="form-control col-md-8">
-                            <option class="form-control" value="1">Hüdü</option>
-                            <option class="form-control" value="2">Hede</option>
-                            <option class="form-control" value="3">Bidi</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row align-items-center">
-                        <label class="col-md-4">Yıl: </label>
-                        <select class="form-control col-md-8">
-                            <option class="form-control" value="1">Hüdü</option>
-                            <option class="form-control" value="2">Hede</option>
-                            <option class="form-control" value="3">Bidi</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row align-items-center">
-                        <label class="col-md-4">Yakıt Tipi: </label>
-                        <select class="form-control col-md-8">
-                            <option class="form-control" value="1">Hüdü</option>
-                            <option class="form-control" value="2">Hede</option>
-                            <option class="form-control" value="3">Bidi</option>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Araç Model:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Hede</option>
+                            <option value="2">Bidi</option>
                         </select>
                     </div>
                 </div>
@@ -116,28 +92,68 @@
 
             <div class="row mt-4">
                 <div class="col-md-4">
-                    <div class="row align-items-center">
-                        <label class="col-md-4">Vites Tipi: </label>
-                        <select class="form-control col-md-8">
-                            <option class="form-control" value="1">Hüdü</option>
-                            <option class="form-control" value="2">Hede</option>
-                            <option class="form-control" value="3">Bidi</option>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Gövde Tipi:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Hede</option>
+                            <option value="2">Bidi</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="row align-items-center">
-                        <label class="col-md-4">Versiyon: </label>
-                        <select class="form-control col-md-8">
-                            <option class="form-control" value="1">Hüdü</option>
-                            <option class="form-control" value="2">Hede</option>
-                            <option class="form-control" value="3">Bidi</option>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Yıl:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Hede</option>
+                            <option value="2">Bidi</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="row align-items-center">
-                        <label class="col-md-4">Km Bilgisi: </label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Yakıt Tipi:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Hede</option>
+                            <option value="2">Bidi</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Vites Tipi:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Hede</option>
+                            <option value="2">Bidi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Versiyon:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Hede</option>
+                            <option value="2">Bidi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">KM Bilgisi:</label>
+                        </div>
                         <input type="text" value="" class="form-control col-md-8" />
                     </div>
                 </div>
@@ -145,22 +161,24 @@
 
             <div class="row mt-4">
                 <div class="col-md-4">
-                    <div class="row align-items-center">
-                        <label class="col-md-4">Renk: </label>
-                        <select class="form-control col-md-8">
-                            <option class="form-control" value="1">Hüdü</option>
-                            <option class="form-control" value="2">Hede</option>
-                            <option class="form-control" value="3">Bidi</option>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Renk:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Hede</option>
+                            <option value="2">Bidi</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="row align-items-center">
-                        <label class="col-md-4">Donanım: </label>
-                        <select class="form-control col-md-8">
-                            <option class="form-control" value="1">Hüdü</option>
-                            <option class="form-control" value="2">Hede</option>
-                            <option class="form-control" value="3">Bidi</option>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Donanım:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option value="1" selected>Hede</option>
+                            <option value="2">Bidi</option>
                         </select>
                     </div>
                 </div>
