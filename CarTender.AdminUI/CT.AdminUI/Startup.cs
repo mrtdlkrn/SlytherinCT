@@ -55,7 +55,7 @@ namespace CarTender.AdminUI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Admin}/{action=ListTender}/{id?}");
+                    pattern: "{controller=Bid}/{action=ListBid}/{id?}");
             });
         }
     }

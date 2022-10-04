@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width" />
-	<title>Edit Car</title>
+	<title>İhale Listeleme</title>
 	<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -32,8 +32,8 @@
 						<label class="col-md-7" for="inputGroupSelect01">Bireysel/Kurumsal:</label>
 						<select class="form-control col-md-5 custom-select" id="inputGroupSelect01">
 							<option selected disabled>Seçiniz...</option>
-						<option value="1">Bireysel</option>
-						<option value="2">Kurumsal</option>
+							<option value="1">Bireysel</option>
+							<option value="2">Kurumsal</option>
 						</select>
 					</div>
 				</div>
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 			<div class="row mt-1 p-4" style="border:2px solid gray;">
-					@*<form asp-action="IndividualPurchase" asp-controller="Tender" method="post">*@
+				@*<form asp-action="IndividualPurchase" asp-controller="Tender" method="post">*@
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -83,7 +83,7 @@
 							<td>26/09/2020</td>
 							<td>27/09/2020</td>
 							<td>Sonlandı</td>
-							<td>AhmetK</td>
+							<td>Ahmet K</td>
 							<td>2020/05/10-11:00</td>
 							<td><button class="btn btn-dark mt-4" type="submit">Güncelle</button></td>
 							<td><button class="btn btn-dark mt-4" type="submit">Sil</button></td>
@@ -151,16 +151,16 @@
 					</tbody>
 				</table>
 
-					@*</form>*@
-				</div>
-	
-		<div class="row float-right mt-3">
-			<div class="col-md-12 ">
-				<button class="btn btn-dark mt-4" type="submit">Yeni İhale</button>
+				@*</form>*@
 			</div>
-		</div>
 
-	</div>
+			<div class="row float-right mt-3">
+				<div class="col-md-12 ">
+					<button class="btn btn-dark mt-4" type="submit">Yeni İhale</button>
+				</div>
+			</div>
+
+		</div>
 </body>
 </html>
 <script src="~/vendor/jquery/jquery.min.js"></script>
