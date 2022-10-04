@@ -48,5 +48,25 @@ namespace CT.AdminUI.Controllers
 
         #endregion
 
+        #region List Bid
+
+        //GET: List Bid Method
+
+        [HttpGet]
+        public IActionResult ListBid()
+        {
+            return View();
+        }
+
+        //POST: List Bid Method with Filter
+
+        [HttpPost]
+        public IActionResult ListBid(object filteredBidInfo)
+        {
+            return View();
+        }
+
+
+        #endregion
     }
 }
