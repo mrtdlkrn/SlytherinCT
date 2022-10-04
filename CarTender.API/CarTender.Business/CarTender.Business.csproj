@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarTender.Core\CarTender.Core.csproj" />
+    <ProjectReference Include="..\CarTender.DataAccess\CarTender.DataAccess.csproj" />
+    <ProjectReference Include="..\CarTender.Entities\CarTender.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

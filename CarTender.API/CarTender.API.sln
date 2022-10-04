@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTender.API", "CarTender.API\CarTender.API.csproj", "{E875B066-28D7-45C7-AE9F-8D3060C72EBA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTender.Business", "CarTender.Business\CarTender.Business.csproj", "{EAC46641-1289-4A30-B2B2-6674133F868B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTender.Core", "CarTender.Core\CarTender.Core.csproj", "{9A13AAF6-BD9D-4236-A2CB-445B26C7A2A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTender.DAL", "CarTender.DAL\CarTender.DAL.csproj", "{CB4CB5EC-523C-46AC-A66E-0BFB3E86F618}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTender.DataAccess", "CarTender.DataAccess\CarTender.DataAccess.csproj", "{772D97A4-DA02-447C-B9C6-167782F94480}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTender.Entities", "CarTender.Entities\CarTender.Entities.csproj", "{D3B43207-9B2E-4F7D-9CF8-BD8563262F55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTender.AdminUI", "..\CarTender.AdminUI\CarTender.AdminUI.csproj", "{7E5D9019-7CC7-4C3A-9600-602671543464}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E875B066-28D7-45C7-AE9F-8D3060C72EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E875B066-28D7-45C7-AE9F-8D3060C72EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E875B066-28D7-45C7-AE9F-8D3060C72EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E875B066-28D7-45C7-AE9F-8D3060C72EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAC46641-1289-4A30-B2B2-6674133F868B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC46641-1289-4A30-B2B2-6674133F868B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC46641-1289-4A30-B2B2-6674133F868B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC46641-1289-4A30-B2B2-6674133F868B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A13AAF6-BD9D-4236-A2CB-445B26C7A2A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A13AAF6-BD9D-4236-A2CB-445B26C7A2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A13AAF6-BD9D-4236-A2CB-445B26C7A2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A13AAF6-BD9D-4236-A2CB-445B26C7A2A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB4CB5EC-523C-46AC-A66E-0BFB3E86F618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB4CB5EC-523C-46AC-A66E-0BFB3E86F618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB4CB5EC-523C-46AC-A66E-0BFB3E86F618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB4CB5EC-523C-46AC-A66E-0BFB3E86F618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{772D97A4-DA02-447C-B9C6-167782F94480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{772D97A4-DA02-447C-B9C6-167782F94480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{772D97A4-DA02-447C-B9C6-167782F94480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{772D97A4-DA02-447C-B9C6-167782F94480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B43207-9B2E-4F7D-9CF8-BD8563262F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B43207-9B2E-4F7D-9CF8-BD8563262F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B43207-9B2E-4F7D-9CF8-BD8563262F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B43207-9B2E-4F7D-9CF8-BD8563262F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E5D9019-7CC7-4C3A-9600-602671543464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E5D9019-7CC7-4C3A-9600-602671543464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E5D9019-7CC7-4C3A-9600-602671543464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E5D9019-7CC7-4C3A-9600-602671543464}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3566DCA1-2E11-491A-A2CD-AC68A3A91D71}
+	EndGlobalSection
+EndGlobal
