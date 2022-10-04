@@ -198,16 +198,43 @@
     color: #29A35F;
     background-color: white;
     cursor: pointer;
+    text-decoration: none;
+}
+
+.LoginSignUpClick:hover{
+    position: relative;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    left: auto;
+    color: #29A35F;
+    background-color: white;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .GrpSignUp {
     position: relative;
     top: 33%;
-    display: inline;
+    display: flex;
+    align-items:center;
     height: auto;
     width: auto;
     text-align: center;
     left: 12%;
+}
+
+.GrpSignUp a{
+    margin-right: 15px;
+}
+.GrpSignUp a:hover{
+    margin-right: 15px;
 }
 
 .CarImage {

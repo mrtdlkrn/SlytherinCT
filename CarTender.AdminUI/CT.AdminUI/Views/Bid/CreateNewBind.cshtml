@@ -1,0 +1,179 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Car</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+        $(function () {
+            $("#datepicker2").datepicker();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <label class="mt-5"><b>İhale Genel Bilgiler</b></label>
+        <div class="mt-1 p-4" style="border:2px solid gray;">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">İhale Adı:</span>
+                        </div>
+                        <input type="text" class="form-control col-md-8">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Bireysel/Kurumsal:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>Müşteri Tipi Seçiniz...</option>
+                            <option value="1">Bireysel Müşteri</option>
+                            <option value="2">Kurumsal Müşteri</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Şirket Adı:</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>Şirket Adı Seçiniz...</option>
+                            <option value="1">XXX</option>
+                            <option value="2">YYY</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text form-control col-md-12" for="inputGroupSelect01">Statü:</label>
+                        </div>
+                        <select class="custom-select form-control col-md-9" id="inputGroupSelect01">
+                            <option selected>Statü Seçiniz...</option>
+                            <option value="1">Başlamadı</option>
+                            <option value="2">Başladı</option>
+                            <option value="3">Bitti</option>
+                            <option value="4">İptal</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">İhale Başlangıç Tarih:</span>
+                        </div>
+                        <input type='text' class="form-control" id='datepicker' />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">İhale Başlangıç Saat:</span>
+                        </div>
+                        <input type="text" class="form-control col-md-8">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">İhale Bitiş Tarih:</span>
+                        </div>
+                        <input type='text' class="form-control col-md-7" id='datepicker2' />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">İhale Bitiş Saat:</span>
+                        </div>
+                        <input type="text" class="form-control col-md-9">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <label class="mt-5"><b>Araç İhale Listesi</b></label>
+        <div class="mt-1 p-1" style="border:2px solid gray;">
+            <div class="mt-1 p-4" style="border:1px solid gray;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Araç ID</th>
+                            <th scope="col">Araç Marka</th>
+                            <th scope="col">Araç Model</th>
+                            <th scope="col">Bireysel / Kurumsal</th>
+                            <th scope="col">Statü</th>
+                            <th scope="col">Kayıt Eden Kullanıcı</th>
+                            <th scope="col">Kayıt Etme Zamanı</th>
+                            <th scope="col">Fiyat</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>Toyota</td>
+                            <td>Yaris</td>
+                            <td>Bireysel</td>
+                            <td>Satışta</td>
+                            <td>Ahmet123</td>
+                            <td>05.10.2022</td>
+                            <td>255.000 TL</td>
+                            <td><a href="#" class="btn btn-danger">X</a></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>Nissan</td>
+                            <td>Skyline</td>
+                            <td>Kurumsal</td>
+                            <td>Satıldı</td>
+                            <td>Sarp123</td>
+                            <td>14.10.2022</td>
+                            <td>1.255.000 TL</td>
+                            <td><a href="#" class="btn btn-danger">X</a></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>Ford</td>
+                            <td>Mustang</td>
+                            <td>Bireysel</td>
+                            <td>İhalede</td>
+                            <td>Mert123</td>
+                            <td>21.10.2022</td>
+                            <td>755.000 TL</td>
+                            <td><a href="#" class="btn btn-danger">X</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row float-right mb-5">
+            <div class="col-md-12 ">
+                <button class="btn btn-dark mt-4" type="submit">Araç Ekle</button>
+                <button class="btn btn-dark mt-4" type="submit">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
