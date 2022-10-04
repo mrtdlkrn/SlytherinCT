@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Entity.DTO;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace CarTender.AdminUI.Controllers
 {
@@ -20,8 +21,17 @@ namespace CarTender.AdminUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginDTO dto)
+        public async Task<IActionResult> Login(LoginDTO dto)
         {            
+            if(dto == null) return RedirectToAction("Register");
+
+            var user = await _apiService.POST("auth/login",dto);
+
+            if(user != null)
+            {
+
+            }
+
             return View();
         }
         public IActionResult Register()
