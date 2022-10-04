@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Arial&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Jockey+One&display=swap" rel="stylesheet" />
+    <link href="~/Content/MyCss/SignUp/CompanySignUp/CompanySignUp.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+    @RenderBody()
+    <div class="SignUp">
+        <div class="SignUpInputs">
+            <div class="Inputs">
+                <span class="SignUpTextOne">Bireysel Kullanıcı Oluştur</span>
+                <span class="SignUpTextTwo">Ikinci El Araç Ihale Sistemi Kayıt Olun.</span>
+                <input class="SignUpUsername" type="text" placeholder="Kullanıcı Adı:" />
+                <input class="SignUpName" type="text" placeholder="Ad Soyad:" />
+                <input class="SignUpPhone" type="text" placeholder="Telefon:" />
+                <input class="SignUpEmail" type="email" placeholder="Email:" />
+                <select class="City">
+                    <option>Ankara</option>
+                    <option>İstanbul</option>
+                    <option>İzmir</option>
+                </select>
+                <select class="Town">
+                    <option>Çankaya</option>
+                    <option>Kadıköy</option>
+                    <option>Karşıyaka</option>
+                </select>
+                <select class="Adress">
+                    <option>Remzi Oğuz Arık</option>
+                    <option>Göztepe</option>
+                    <option>Alsancak</option>
+                </select>
+                <input class="SignUpCompanyName" type="text" placeholder="Firma Adı:" />
+                <input class="SignUpCompanyInfo" type="text" placeholder="Firma Bilgisi:" />
+                <div class="Grp">
+                    <input class="SignUpJoinUsOne" type="button" value="Kayıt Ol" />
+                    <a href="~/Auth/Login" class="SignUpJoinUsTwo">Geri Dön</a>
+                </div>
+            </div>
+        </div>
+        <div class="ImageLayer">
+            <img src="~/Content/Images/NewCompany.png" class="CarImage" />
+        </div>
+    </div>
+</body>
+
+</html>

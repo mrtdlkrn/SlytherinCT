@@ -1,13 +1,11 @@
+using Business.Abstract;
+using Business.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarTender.AdminUI
 {
@@ -24,6 +22,13 @@ namespace CarTender.AdminUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddSingleton<IAPIService, BaseAPIService>();
+
+            services.AddHttpClient<BaseAPIService>(opt =>
+            {
+                opt.BaseAddress = new Uri(Configuration["apiAddress"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +55,7 @@ namespace CarTender.AdminUI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Auth}/{action=Login}/{id?}");
+                    pattern: "{controller=Bid}/{action=CreateNewBind}/{id?}");
             });
         }
     }

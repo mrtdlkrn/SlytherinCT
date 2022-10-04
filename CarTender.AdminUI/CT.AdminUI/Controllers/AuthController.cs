@@ -1,15 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Business.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CarTender.AdminUI.Controllers
 {
     public class AuthController : Controller
     {
-        public IActionResult Login()
+        private readonly IAPIService _apiService;
+
+        public AuthController(IAPIService apiService)
         {
+            _apiService = apiService;
+        }
+
+        public IActionResult Login()
+        {            
             return View();
         }
         public IActionResult Register()
