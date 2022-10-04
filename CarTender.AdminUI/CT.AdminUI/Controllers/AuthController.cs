@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Entity.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarTender.AdminUI.Controllers
@@ -12,7 +13,14 @@ namespace CarTender.AdminUI.Controllers
             _apiService = apiService;
         }
 
+        [HttpGet]
         public IActionResult Login()
+        {            
+            return View(new LoginDTO());
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginDTO dto)
         {            
             return View();
         }
