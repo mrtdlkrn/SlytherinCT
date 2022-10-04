@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Arial&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Jockey+One&display=swap" rel="stylesheet" />
+    <link href="~/Content/MyCss/Login/Login.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+    @RenderBody()
+    <div class="background">
+        <div class="loginCard">
+            <div class="imageBackground">
+                <img src="~/Content/Images/LoginCar.png" class="CarImage" />
+            </div>
+            <div class="Frame">
+                <div class="loginInputs">
+                    <span class="LoginTextOne">Giriş Yap</span>
+                    <span class="LoginTextTwo">Ikınci el araç ihale sistemine hoş geldiniz.</span>
+                    <input class="LoginUsername" type="text" placeholder="Kullanıcı Adı:" />
+                    <input class="LoginPassword" type="password" placeholder="Şifre:" />
+                    <input class="LoginEntry" type="button" value="GİRİŞ" />
+                    <a href="~/Auth/ForgotPassword" class="LoginForgotPassword">Şifrenizi mi unuttunuz?</a>
+                    <div class="GrpSignUp">
+                        <span class="LoginTextThree">Yeni kullanıcı mısınız?</span>
+                        <input type="button" class="LoginSignUpClick" value="Kaydol" />
+                    </div>
+                    <select class="LoginSignUp">
+                        <option>Bireysel Müşteri</option>
+                        <option>Kurumsal Müşteri</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

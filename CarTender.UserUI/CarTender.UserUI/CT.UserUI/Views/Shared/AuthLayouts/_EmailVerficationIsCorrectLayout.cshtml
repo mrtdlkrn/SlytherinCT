@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Arial&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Jockey+One&display=swap" rel="stylesheet" />
+    <link href="~/Content/MyCss/EmailVerificationIsCorrect/EmailVerificationIsCorrect.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+    @RenderBody()
+    <div class="EmailCorrectCard">
+        <div class="CorrectImage">
+            <img src="~/Content/Images/Correct.png" class="CrImage" />
+        </div>
+        <span class="TextOne">Aramıza Hoşgeldin!</span>
+        <span class="TextTwo">Hesabın başarıyla oluşturulmuştur.</span>
+        <a href="~/Auth/Login" class="InputOne">Tamam</a>
+    </div>
+</body>
+
+</html>
