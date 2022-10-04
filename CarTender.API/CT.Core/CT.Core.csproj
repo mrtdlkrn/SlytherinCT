@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Concrete\EF\" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.17" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CarTender.Entities\CarTender.Entities.csproj" />
+    <ProjectReference Include="..\CT.Entities\CT.Entities.csproj" />
   </ItemGroup>
 
 </Project>

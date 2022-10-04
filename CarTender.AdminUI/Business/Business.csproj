@@ -5,8 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Manager\**" />
+    <EmbeddedResource Remove="Manager\**" />
+    <None Remove="Manager\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Abstract\" />
-    <Folder Include="Manager\" />
+    <Folder Include="Concrete\" />
   </ItemGroup>
 
 </Project>

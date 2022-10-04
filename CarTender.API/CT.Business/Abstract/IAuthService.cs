@@ -1,6 +1,5 @@
 ﻿using CarTender.Core.Security.JWT;
 using CarTender.Entities;
-
 namespace CarTender.Business.Abstract
 {
     public interface IAuthService

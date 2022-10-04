@@ -30,6 +30,8 @@
     <ProjectReference Include="..\CarTender.Business\CarTender.Business.csproj" />
     <ProjectReference Include="..\CarTender.Core\CarTender.Core.csproj" />
     <ProjectReference Include="..\CarTender.DataAccess\CarTender.DataAccess.csproj" />
+    <ProjectReference Include="..\CT.Business\CT.Business.csproj" />
+    <ProjectReference Include="..\CT.DataAccess\CT.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

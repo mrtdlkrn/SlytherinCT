@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32901.82
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarTender.AdminUI", "CarTender.AdminUI\CarTender.AdminUI.csproj", "{33931404-97B3-4025-A8E4-EFC8AB4A97BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csproj", "{704B746E-ABB0-4006-B656-5F7068B11B71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{704B746E-ABB0-4006-B656-5F7068B11B71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{27F1D842-68B6-4E71-A3C2-331F10B42C4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{27F1D842-68B6-4E71-A3C2-331F10B42C4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CT.AdminUI", "CT.AdminUI\CT.AdminUI.csproj", "{939658BB-DD53-4925-A9E7-CC78E6791CD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{33931404-97B3-4025-A8E4-EFC8AB4A97BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33931404-97B3-4025-A8E4-EFC8AB4A97BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33931404-97B3-4025-A8E4-EFC8AB4A97BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33931404-97B3-4025-A8E4-EFC8AB4A97BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{704B746E-ABB0-4006-B656-5F7068B11B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{704B746E-ABB0-4006-B656-5F7068B11B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{704B746E-ABB0-4006-B656-5F7068B11B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{27F1D842-68B6-4E71-A3C2-331F10B42C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27F1D842-68B6-4E71-A3C2-331F10B42C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27F1D842-68B6-4E71-A3C2-331F10B42C4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939658BB-DD53-4925-A9E7-CC78E6791CD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939658BB-DD53-4925-A9E7-CC78E6791CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939658BB-DD53-4925-A9E7-CC78E6791CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939658BB-DD53-4925-A9E7-CC78E6791CD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
