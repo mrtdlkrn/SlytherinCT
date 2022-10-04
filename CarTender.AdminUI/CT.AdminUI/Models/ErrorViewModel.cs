@@ -1,5 +1,3 @@
-using System;
-
 namespace CarTender.AdminUI.Models
 {
     public class ErrorViewModel
