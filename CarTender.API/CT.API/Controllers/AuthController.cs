@@ -36,14 +36,14 @@ namespace CarTender.API.Controllers
         [HttpPost("register")]
         public IActionResult Register(RegisterDTO dto)
         {
-            var userExists = authService.IsUserExist("ahmet123");
+            var userExists = authService.IsUserExist(dto.Email);
 
             if (userExists)
             {
                 return BadRequest("Kullanici mevcut");
             }
 
-            authService.Register(new User(), "ahmet123");
+            authService.Register(new User(), dto.Password);
             var token = authService.CreateToken(new User());
             return Ok(token);
         }

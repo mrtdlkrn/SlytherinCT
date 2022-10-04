@@ -9,7 +9,7 @@ namespace CT.AdminUI.Controllers
             return View();
         }
 
-        #region Create New Bid
+        #region Create
 
         [HttpGet]
         //GET: Bid Controller for Create New Bid
