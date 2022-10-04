@@ -10,29 +10,132 @@
 </head>
 
 <body>
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Komisyon Ekle
-                    </button>
-                </h5>
-            </div>
+    <div class="container">
+        
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        @*<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Komisyon Ekle
+                        </button>*@
+                        <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button"> Komisyon Ekle</a>
+                    </h5>
+                </div>
 
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Komisyon Ücreti </span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <div style="margin-left:5%;margin-right:5%" id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <br />
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Komisyon Ücreti </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <br />
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Minimum Fiyat </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <br />
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Maximum Fiyat </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <br />
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Başlangıç Tarihi </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <br />
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Bitiş Tarihi </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <button class="btn btn-primary" style="float:right; margin-top:1%;margin-bottom:3%;" type="submit">Kaydet</button>
                 </div>
-                <br />
-                <div class='container' style='margin-top: 100px;'> 
-                    <input type='text' class="form-control" id='datepicker' placeholder='Select Date' style='width: 300px;' >
-                </div>
-                <br />
-                <br />
             </div>
-        </div>        
+        </div>
+        <br />
+        <br />
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        @*<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Komisyon Ekle
+                        </button>*@
+                        <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button"> Komisyon Listesi</a>
+                    </h5>
+                </div>
+
+                <div style="margin-left:5%;margin-right:5%" id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <br />
+                    <table class="table table-success table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Komisyon Numarası</th>
+                                <th scope="col">Komisyon Tutarı</th>
+                                <th scope="col">Komisyon Başlangıç Tarihi</th>
+                                <th scope="col">Komisyon Bitiş Tarihi</th>
+                                <th scope="col">Komisyon Minimum Tutarı</th>
+                                <th scope="col">Komisyon Maximum Tutarı</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Hede</td>
+                                <td>Bidi</td>
+                                <td>Büdü</td>
+                                <td>Hidi</td>
+                                <td>Hüdü</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Hede</td>
+                                <td>Bidi</td>
+                                <td>Büdü</td>
+                                <td>Hidi</td>
+                                <td>Hüdü</td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+
+        @*<div class="row">
+            <div class="col-md-5">
+                <label class="mt-4"><b>Foto Ekle</b></label>
+                <div class="mt-1 p-4" style="border:2px solid gray; height: 150px; vertical-align:middle; display:flex; align-items:center; justify-content:center;">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button href="#" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></button>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Foto Ekle (JPEG) - 5 Adet</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <label class="mt-4"><b>Açıklama</b></label>
+                <div class="mt-1 p-4" style="border:2px solid gray; height: 150px;">
+                    <textarea class="form-control" style="resize:none; height: 100%"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row float-right mb-5">
+            <div class="col-md-12 ">
+                <button class="btn btn-dark mt-4" type="submit">Hemen Al Satış</button>
+                <button class="btn btn-dark mt-4" type="submit">Komisyon</button>
+                <button class="btn btn-dark mt-4" type="submit">Alıcı Bilgileri</button>
+                <button class="btn btn-dark mt-4" type="submit">Araç Tarihçe</button>
+                <button class="btn btn-dark mt-4" type="submit">Hasar Tramer Bilgileri</button>
+                <button class="btn btn-dark mt-4" type="submit">İlan Bilgileri</button>
+                <button class="btn btn-dark mt-4" type="submit">Kayder</button>
+            </div>
+        </div>
     </div>
     <!-- Script -->
     <!-- Script -->
@@ -46,7 +149,7 @@
             });
 
         });
-    </script>
+        </script>*@
 </body>
 
 </html>
