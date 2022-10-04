@@ -2,4 +2,217 @@
     ViewData["Title"] = "Araç Listele";
 
 }
-<p>Araç Listele</p>
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Araç Tanımlama / Listeleme</h1>
+    <p class="mb-4">
+        Kullanıcıların eklemiş olduğu araçları buradan inceleyip ve düzenleyebilirsiniz.
+    </p>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Arama Kriterleri</h6>
+        </div>
+        <div class="card-body">
+            <form class="row">
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">Marka</label><select class="form-control" id="exampleFormControlSelect1">
+                            <option>1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">Model</label><select class="form-control" id="exampleFormControlSelect1">
+                            <option>1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">Bireysel / Kurumsal</label><select class="form-control" id="exampleFormControlSelect1">
+                            <option>Bireysel</option>
+                            <option>Kurumsal</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">Bireysadsel / Kurumsal</label><select class="form-control" id="exampleFormControlSelect1">
+                            <option>Bireysel</option>
+                            <option>Kurumsal</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-0"></div>
+                <div class="col-md-3 col-sm-12">
+                    <button class="btn btn-info btn-block" type="button">Listele</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mb-4 clearfix">
+        <div class="col-md-3 float-right">
+            <button class="btn btn-success btn-block " type="button">Arac Olustur</button>
+        </div>
+
+    </div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Araç Listesi</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Araç Id</th>
+                            <th>Marka</th>
+                            <th>Model</th>
+                            <th>Bireysel/Kurumsal</th>
+                            <th>Statü</th>
+                            <th>Kaydeden Kullanıcı</th>
+                            <th>Kaydetme Zamanı</th>
+                            <th>Güncelle</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Araç Id</th>
+                            <th>Marka</th>
+                            <th>Model</th>
+                            <th>Bireysel/Kurumsal</th>
+                            <th>Statü</th>
+                            <th>Kaydeden Kullanıcı</th>
+                            <th>Kaydetme Zamanı</th>
+                            <th>Güncelle</th>
+                            <th>Sil</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>123</td>
+                            <td>Audi</td>
+                            <td>A3</td>
+                            <td>Bireysel</td>
+                            <td>Satışta</td>
+                            <td>Burkay A.</td>
+                            <td>04.10.2022-22:14</td>
+                            <td>
+                                <button class="btn btn-warning" type="button">Güncelle</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>234</td>
+                            <td>Ford</td>
+                            <td>Fiesta</td>
+                            <td>Bireysel</td>
+                            <td>Satıldı</td>
+                            <td>Burkay A.</td>
+                            <td>04.10.2022-22:14</td>
+                            <td>
+                                <button class="btn btn-warning" type="button">Güncelle</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>804</td>
+                            <td>Opel</td>
+                            <td>Astra</td>
+                            <td>Kurumsal</td>
+                            <td>İhalede</td>
+                            <td>Burkay A.</td>
+                            <td>04.10.2022-22:14</td>
+                            <td>
+                                <button class="btn btn-warning" type="button">Güncelle</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>483</td>
+                            <td>Volkswagen</td>
+                            <td>Golf</td>
+                            <td>Kurumsal</td>
+                            <td>Satışta</td>
+                            <td>Burkay A.</td>
+                            <td>04.10.2022-22:14</td>
+                            <td>
+                                <button class="btn btn-warning" type="button">Güncelle</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>123</td>
+                            <td>Volkswagen</td>
+                            <td>Golf</td>
+                            <td>Kurumsal</td>
+                            <td>Satışta</td>
+                            <td>Burkay A.</td>
+                            <td>04.10.2022-22:14</td>
+                            <td>
+                                <button class="btn btn-warning" type="button">Güncelle</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>123</td>
+                            <td>Volkswagen</td>
+                            <td>Golf</td>
+                            <td>Kurumsal</td>
+                            <td>Satışta</td>
+                            <td>Burkay A.</td>
+                            <td>04.10.2022-22:14</td>
+                            <td>
+                                <button class="btn btn-warning" type="button">Güncelle</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                            </td>
+                        </tr>
+
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Aracı Sil</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">Aracı silmek istediğinize emin misiniz?</div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+        </div>
+    </div>
+</div>
