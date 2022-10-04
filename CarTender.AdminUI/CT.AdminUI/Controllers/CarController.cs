@@ -12,10 +12,12 @@ namespace CT.AdminUI.Controllers
             _apiService = apiService;
         }
 
+
+        //Araç listesi ekranı
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok();
+            return View();
         }
 
 

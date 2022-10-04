@@ -1,6 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Araç Listele";
-
+﻿
+@{
+    ViewData["Title"] = "Araç Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container-fluid">
 
@@ -18,14 +19,32 @@
                 <div class="col-md-3">
                     <div class="mb-3">
                         <label for="exampleFormControlSelect1">Marka</label><select class="form-control" id="exampleFormControlSelect1">
-                            <option>1</option>
+                            <option>Audi</option>
+                            <option>BMW</option>
+                            <option>Volkswagen</option>
+                            <option>Chevrolet</option>
+                            <option>Opel</option>
+                            <option>Peguot</option>
+                            <option>Renault</option>
+                            <option>Toyota</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="mb-3">
                         <label for="exampleFormControlSelect1">Model</label><select class="form-control" id="exampleFormControlSelect1">
-                            <option>1</option>
+                            <option>A7</option>
+                            <option>I5</option>
+                            <option>Clio</option>
+                            <option>Megane</option>
+                            <option>1 Serisi</option>
+                            <option>5 Serisi</option>
+                            <option>Golf</option>
+                            <option>Polo</option>
+                            <option>208</option>
+                            <option>Auris</option>
+                            <option>Corolla</option>
+                            <option>Astra</option>
                         </select>
                     </div>
                 </div>
@@ -39,9 +58,13 @@
                 </div>
                 <div class="col-md-3">
                     <div class="mb-3">
-                        <label for="exampleFormControlSelect1">Bireysadsel / Kurumsal</label><select class="form-control" id="exampleFormControlSelect1">
-                            <option>Bireysel</option>
-                            <option>Kurumsal</option>
+                        <label for="exampleFormControlSelect1">Statü</label><select class="form-control" id="exampleFormControlSelect1">
+                            <option>Giriş</option>
+                            <option>Hemen Al Satışta</option>
+                            <option>İhalede</option>
+                            <option>Ekspertiz sonucu bekleniyor</option>
+                            <option>Satıldı</option>
+                            <option>Satış İptal</option>
                         </select>
                     </div>
                 </div>
@@ -56,7 +79,7 @@
 
     <div class="row mb-4 clearfix">
         <div class="col-md-3 float-right">
-            <button class="btn btn-success btn-block " type="button">Arac Olustur</button>
+            <a class="btn btn-success btn-block " asp-controller="Car" asp-action="Edit" >Araç Oluştur</a>
         </div>
 
     </div>
@@ -105,7 +128,7 @@
                             <td>Burkay A.</td>
                             <td>04.10.2022-22:14</td>
                             <td>
-                                <button class="btn btn-warning" type="button">Güncelle</button>
+                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit" >Güncelle</a>
                             </td>
                             <td>
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
@@ -121,7 +144,7 @@
                             <td>Burkay A.</td>
                             <td>04.10.2022-22:14</td>
                             <td>
-                                <button class="btn btn-warning" type="button">Güncelle</button>
+                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit">Güncelle</a>
                             </td>
                             <td>
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
@@ -137,7 +160,7 @@
                             <td>Burkay A.</td>
                             <td>04.10.2022-22:14</td>
                             <td>
-                                <button class="btn btn-warning" type="button">Güncelle</button>
+                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit">Güncelle</a>
                             </td>
                             <td>
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
@@ -153,7 +176,7 @@
                             <td>Burkay A.</td>
                             <td>04.10.2022-22:14</td>
                             <td>
-                                <button class="btn btn-warning" type="button">Güncelle</button>
+                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit">Güncelle</a>
                             </td>
                             <td>
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
@@ -169,7 +192,7 @@
                             <td>Burkay A.</td>
                             <td>04.10.2022-22:14</td>
                             <td>
-                                <button class="btn btn-warning" type="button">Güncelle</button>
+                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit">Güncelle</a>
                             </td>
                             <td>
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
@@ -185,14 +208,14 @@
                             <td>Burkay A.</td>
                             <td>04.10.2022-22:14</td>
                             <td>
-                                <button class="btn btn-warning" type="button">Güncelle</button>
+                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit">Güncelle</a>
                             </td>
                             <td>
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
                             </td>
                         </tr>
 
-                        
+
                     </tbody>
                 </table>
             </div>
@@ -216,3 +239,4 @@
         </div>
     </div>
 </div>
+
