@@ -9,9 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CarTender.Core\CarTender.Core.csproj" />
-    <ProjectReference Include="..\CarTender.DataAccess\CarTender.DataAccess.csproj" />
-    <ProjectReference Include="..\CarTender.Entities\CarTender.Entities.csproj" />
     <ProjectReference Include="..\CT.Core\CT.Core.csproj" />
     <ProjectReference Include="..\CT.DataAccess\CT.DataAccess.csproj" />
     <ProjectReference Include="..\CT.Entities\CT.Entities.csproj" />

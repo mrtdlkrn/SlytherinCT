@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Common\**" />
+    <Content Remove="Common\**" />
+    <EmbeddedResource Remove="Common\**" />
+    <None Remove="Common\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
       <PrivateAssets>all</PrivateAssets>
@@ -22,14 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configs\" />
-    <Folder Include="Common\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CarTender.Business\CarTender.Business.csproj" />
-    <ProjectReference Include="..\CarTender.Core\CarTender.Core.csproj" />
-    <ProjectReference Include="..\CarTender.DataAccess\CarTender.DataAccess.csproj" />
     <ProjectReference Include="..\CT.Business\CT.Business.csproj" />
     <ProjectReference Include="..\CT.DataAccess\CT.DataAccess.csproj" />
   </ItemGroup>
