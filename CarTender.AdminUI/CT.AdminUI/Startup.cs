@@ -27,7 +27,7 @@ namespace CarTender.AdminUI
 
             services.AddHttpClient<BaseAPIService>(opt =>
             {
-                opt.BaseAddress = new Uri(Configuration["apiAddress"]);
+                opt.BaseAddress = new Uri(Configuration["ApiAddress"]);
             });
         }
 
@@ -55,7 +55,7 @@ namespace CarTender.AdminUI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Bid}/{action=ListBid}/{id?}");
+                    pattern: "{controller=Auth}/{action=Login}/{id?}");
             });
         }
     }

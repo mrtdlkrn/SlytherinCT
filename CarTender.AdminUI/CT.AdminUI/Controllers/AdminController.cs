@@ -35,6 +35,8 @@ namespace CarTender.AdminUI.Controllers
         [HttpPost]
         public IActionResult VehicleDetailInformation(AddVehicle dto)
         {
+            //await _apiService.AddVehicleDetailInformation(dto);
+            //return RedirectToAction("VehicleDetailInformation");
             return View();
         }
         public IActionResult Privacy()
