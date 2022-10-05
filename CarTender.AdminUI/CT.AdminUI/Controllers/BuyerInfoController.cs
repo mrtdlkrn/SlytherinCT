@@ -4,12 +4,8 @@ namespace CT.AdminUI.Controllers
 {
     public class BuyerInfoController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
         [HttpGet]
-        public IActionResult ViewBuyer()
+        public IActionResult Index()
         {
             return View();
         }

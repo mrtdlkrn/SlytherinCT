@@ -4,12 +4,8 @@ namespace CT.AdminUI.Controllers
 {
     public class CommissionController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
         [HttpGet]
-        public IActionResult AddCommission()
+        public IActionResult Index()
         {
 
             return View();
