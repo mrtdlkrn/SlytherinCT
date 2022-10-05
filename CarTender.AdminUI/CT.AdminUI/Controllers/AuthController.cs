@@ -1,15 +1,37 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Business.Abstract;
+using Entity.DTO;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace CarTender.AdminUI.Controllers
 {
     public class AuthController : Controller
     {
-        public IActionResult Login()
+        private readonly IAPIService _apiService;
+
+        public AuthController(IAPIService apiService)
         {
+            _apiService = apiService;
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {            
+            return View(new LoginDTO());
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginDTO dto)
+        {            
+            if(dto == null) return RedirectToAction("Register");
+
+            var user = await _apiService.POST("auth/login",dto);
+
+            if(user != null)
+            {
+
+            }
+
             return View();
         }
         public IActionResult Register()

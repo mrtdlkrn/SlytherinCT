@@ -1,0 +1,169 @@
+﻿@{
+	ViewData["Title"] = "ListBid";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>İhale Listeleme</title>
+	<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+		  rel="stylesheet">
+	<link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<label class="mt-5"><b>Araç Tanımlama/Listeleme</b></label>
+		<div class="mt-1 p-4" style="border:2px solid gray;">
+			<label class="mt-1"><b>Kriterler</b></label>
+			<div class="row mt-1 p-4" style="border:2px solid gray;">
+				<div class="col-md-4">
+					<div class="row align-items-center">
+						<label class="col-md-4">İhale Adı: </label>
+						<input type="text" @*asp-for="Brand"*@ value="" class="form-control col-md-8" />
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="row align-items-center ml-2 mr-2">
+						<label class="col-md-7" for="inputGroupSelect01">Bireysel/Kurumsal:</label>
+						<select class="form-control col-md-5 custom-select" id="inputGroupSelect01">
+							<option selected disabled>Seçiniz...</option>
+							<option value="1">Bireysel</option>
+							<option value="2">Kurumsal</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="row align-items-center">
+						<label class="col-md-4">Statü: </label>
+						<select class="form-control col-md-8 custom-select" id="inputGroupSelect01">
+							<option selected disabled>Seçiniz...</option>
+							<option value="1">Başlamadı</option>
+							<option value="2">Başladı</option>
+							<option value="3">Bitti</option>
+							<option value="4">İptal</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<label class="mt-5"><b>İhale Listesi</b></label>
+			<div class="float-right">
+				<div class="col-md-12 ">
+					<button class="btn btn-dark mt-3 mb-4" type="submit">Listele</button>
+				</div>
+			</div>
+			<div class="row mt-1 p-4" style="border:2px solid gray;">
+				@*<form asp-action="IndividualPurchase" asp-controller="Tender" method="post">*@
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">İhale ID</th>
+							<th scope="col">İhale Adı</th>
+							<th scope="col">Bireysel/Kurumsal</th>
+							<th scope="col">İhale Başlangıç</th>
+							<th scope="col">İhale Bitiş</th>
+							<th scope="col">Statü</th>
+							<th scope="col">Kaydeden Kullanıcı</th>
+							<th scope="col">Kaydetme Zamanı</th>
+							<th scope="col"></th>
+							<th scope="col"></th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">123</th>
+							<td>23/10/2020 Toyota İhalesi</td>
+							<td>Bireysel</td>
+							<td>26/09/2020</td>
+							<td>27/09/2020</td>
+							<td>Sonlandı</td>
+							<td>Ahmet K</td>
+							<td>2020/05/10-11:00</td>
+							<td><button class="btn btn-dark mt-4" type="submit">Güncelle</button></td>
+							<td><button class="btn btn-dark mt-4" type="submit">Sil</button></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><button class="btn btn-dark mt-4" type="submit">Güncelle</button></td>
+							<td><button class="btn btn-dark mt-4" type="submit">Sil</button></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><button class="btn btn-dark mt-4" type="submit">Güncelle</button></td>
+							<td><button class="btn btn-dark mt-4" type="submit">Sil</button></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><button class="btn btn-dark mt-4" type="submit">Güncelle</button></td>
+							<td><button class="btn btn-dark mt-4" type="submit">Sil</button></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><button class="btn btn-dark mt-4" type="submit">Güncelle</button></td>
+							<td><button class="btn btn-dark mt-4" type="submit">Sil</button></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><button class="btn btn-dark mt-4" type="submit">Güncelle</button></td>
+							<td><button class="btn btn-dark mt-4" type="submit">Sil</button></td>
+						</tr>
+					</tbody>
+				</table>
+
+				@*</form>*@
+			</div>
+
+			<div class="row float-right mt-3">
+				<div class="col-md-12 ">
+					<button class="btn btn-dark mt-4" type="submit">Yeni İhale</button>
+				</div>
+			</div>
+
+		</div>
+</body>
+</html>
+<script src="~/vendor/jquery/jquery.min.js"></script>
+<script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="~/js/sb-admin-2.min.js"></script>

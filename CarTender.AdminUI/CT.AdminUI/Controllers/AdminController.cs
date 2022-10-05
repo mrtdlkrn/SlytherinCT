@@ -1,37 +1,42 @@
-﻿using CarTender.AdminUI.Models;
+﻿using Business.Abstract;
+using CarTender.AdminUI.Models;
+using Entity.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarTender.AdminUI.Controllers
 {
     public class AdminController : Controller
     {
         private readonly ILogger<AdminController> _logger;
+        private readonly IAPIService _apiService;
 
-        public AdminController(ILogger<AdminController> logger)
+        public AdminController(ILogger<AdminController> logger, IAPIService apiService)
         {
             _logger = logger;
+            _apiService = apiService;
         }
 
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult ListVehicle()
-        {
-            return View();
-        }
+
         public IActionResult ListTender()
         {
             return View();
         }
+        [HttpGet]
         public IActionResult VehicleDetailInformation()
         {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult VehicleDetailInformation(AddVehicle dto)
+        {
+            //await _apiService.AddVehicleDetailInformation(dto);
+            //return RedirectToAction("VehicleDetailInformation");
             return View();
         }
         public IActionResult Privacy()
