@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Commission</title>
+    <link href='~/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src='~/js/jquery-3.6.1.min.js' type='text/javascript'></script>
+    <script src="~/js/jquery.ui.datepicker.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button"> Alıcı Görüntüle</a>
+                    </h5>
+                </div>
+
+                <div style="margin-left:5%;margin-right:5%" id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-text">Ad ve Soyad</span>
+                        <input type="text" aria-label="Ad" class="form-control">
+                        <input type="text" aria-label="Soyad" class="form-control">
+                    </div>
+                    <br />
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Mail </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <br />
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Telefon </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <br />
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Satın Alma Tarihi </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button"> Alıcı Ekle</a>
+                    </h5>
+                </div>
+                <div style="margin-left:5%;margin-right:5%" id="collapseTwo" class="collapse collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-text">Ad ve Soyad</span>
+                        <input type="text" aria-label="Ad" class="form-control">
+                        <input type="text" aria-label="Soyad" class="form-control">
+                    </div>
+                    <br />
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Mail </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <br />
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Telefon </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <br />
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Satın Alma Tarihi </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+
+                    <button class="btn btn-primary" style="float:right; margin-top:1%;margin-bottom:3%;" type="submit">Kaydet</button>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
