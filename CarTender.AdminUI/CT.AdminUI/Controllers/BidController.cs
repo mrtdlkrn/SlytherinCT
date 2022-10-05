@@ -1,9 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Business.Abstract;
+using CarTender.AdminUI.Controllers;
+using Entity.DTO;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace CT.AdminUI.Controllers
 {
     public class BidController : Controller
     {
+        private readonly IAPIService _apiService;
+
+        public BidController(IAPIService apiService)
+        {
+            _apiService = apiService;
+        }
         public IActionResult Index()
         {
             return View();
@@ -13,7 +23,7 @@ namespace CT.AdminUI.Controllers
 
         [HttpGet]
         //GET: Bid Controller for Create New Bid
-        public IActionResult Create()
+        public IActionResult Create(CreateNewBidDTO createBidDTO)
         {
             return View();
         }
