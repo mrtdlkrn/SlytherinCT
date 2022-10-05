@@ -4,15 +4,10 @@ namespace CT.AdminUI.Controllers
 {
     public class BuyNowSellController : Controller
     {
-        public IActionResult Index()
+        [HttpPost("/Index/id")]
+        public IActionResult Index(int id)
         {
             return RedirectToAction("AddCar", ""); //todo: gelen sayfaya yönlendir 
-        }
-        [HttpGet("/BuyNowSell/id")]
-        public IActionResult BuyNowSell()
-        {
-            return RedirectToAction("", "Car"); //todo: gelen sayfaya yönlendir 
-        }
-        
+        }        
     }
 }

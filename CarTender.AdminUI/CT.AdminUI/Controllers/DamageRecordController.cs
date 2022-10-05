@@ -8,9 +8,5 @@ namespace CT.AdminUI.Controllers
         {
             return View();
         }
-        public IActionResult ViewRecord()
-        {
-            return View();
-        }
     }
 }
