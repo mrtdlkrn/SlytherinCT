@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Add";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -167,53 +166,51 @@
         <div class="row">
             <div class="col-md-5">
                 <label class="mt-4"><b>Fotolar</b></label>
-                <div class="mt-1 p-4" style="border:2px solid gray; height: 150px; vertical-align:middle; display:flex; align-items:center; justify-content:center;">
-                    <div style="display:flex; justify-content:center;flex-wrap:wrap;">
-                        <div class="row">
-                            <input onchange="readImage(this,1);" type="file" id="file1" style="display:none" />
-                            <div class="col-md-6">
-                                <a onclick="photoUpload(1);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
-                            </div>
-                            <div class="col-md-6">
-                                <img id="file1Preview" src="" />
-                            </div>
+                <div class="mt-1 p-5" style="border:2px solid gray; height: 150px; vertical-align:middle; display:flex; align-items:center;">
+                    <div style="display:flex; flex-direction:column; justify-content:space-between;" >
+                        <div style="float:left;">
+                            <input onchange="readImage(this,1);" type="file" id="file1" style="display:none;" />
+                            <a onclick="photoUpload(1);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
+                        </div>                        
+                        <div class="ml-2 mt-2">
+                            <img id="file1Preview" src="" />
                         </div>
-                        <div class="row">
-                            <input onchange="readImage(this,2);" type="file" id="file2" style="display:none" />
-                            <div class="col-md-12">
-                                <a onclick="photoUpload(2);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
-                            </div>
-                            <div class="col-md-12">
-                                <img id="file2Preview" src="" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <input onchange="readImage(this,3);" type="file" id="file3" style="display:none" />
-                            <div class="col-md-12">
-                                <a onclick="photoUpload(3);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
-                            </div>
-                            <div class="col-md-12">
-                                <img id="file3Preview" src="" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <input onchange="readImage(this,4);" type="file" id="file4" style="display:none" />
-                            <div class="col-md-12">
-                                <a onclick="photoUpload(4);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
-                            </div>
-                            <div class="col-md-12">
-                                <img id="file4Preview" src="" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <input onchange="readImage(this,5);" type="file" id="file5" style="display:none" />
-                            <div class="col-md-12">
-                                <a onclick="photoUpload(5);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
-                            </div>
-                            <div class="col-md-12">
-                                <img id="file5Preview" src="" />
-                            </div>
-                        </div>
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:space-between;" >
+                        <div style="float:left;">
+                            <input onchange="readImage(this,2);" type="file" id="file2" style="display:none;" />
+                            <a onclick="photoUpload(2);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
+                        </div>                        
+                        <div class="ml-2 mt-2">
+                            <img id="file2Preview" src="" />
+                        </div>                        
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:space-between;" >
+                        <div style="float:left;">
+                            <input onchange="readImage(this,3);" type="file" id="file3" style="display:none;" />
+                            <a onclick="photoUpload(3);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
+                        </div>                        
+                        <div class="ml-2 mt-2">
+                            <img id="file3Preview" src="" />
+                        </div>                        
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:space-between;" >
+                        <div style="float:left;">
+                            <input onchange="readImage(this,4);" type="file" id="file4" style="display:none;" />
+                            <a onclick="photoUpload(4);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
+                        </div>                        
+                        <div class="ml-2 mt-2">
+                            <img id="file4Preview" src="" />
+                        </div>                        
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:space-between;" >
+                        <div style="float:left;">
+                            <input onchange="readImage(this,5);" type="file" id="file5" style="display:none;" />
+                            <a onclick="photoUpload(5);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
+                        </div>                        
+                        <div class="ml-2 mt-2">
+                            <img id="file5Preview" src="" />
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -252,8 +249,8 @@
             reader.onload = function (e) {
                 $('#' + constFileName)
                     .attr('src', e.target.result)
-                    .width(25)
-                    .height(25);
+                    .width(55)
+                    .height(55);
             };
 
             reader.readAsDataURL(input.files[0]);
