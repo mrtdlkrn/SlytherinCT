@@ -9,10 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>
+        Admin Panel - @ViewData["Title"]
+    </title>
 
     <!-- Custom fonts for this template-->
-    <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/font-awesome/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
@@ -54,9 +56,15 @@
             </div>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="/Admin/ListVehicle">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <a class="nav-link" href="/Car/Index">
+                    <i class="fa-solid fa-list"></i>
                     <span>Araç Listele</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Car/Edit">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Araç Güncelle</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -78,6 +86,18 @@
                 <a class="nav-link" href="/Admin/ListTender">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>İhale Listele</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Bid/Create">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>İhale Ekle</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Bid/Edit">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>İhale Güncelle</span>
                 </a>
             </li>
 
@@ -142,7 +162,7 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Kullanıcı Adı</span>
                                 <img class="img-profile rounded-circle"
-                                     src="img/undraw_profile.svg">
+                                     src="~/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.2.1" />
+    <PackageReference Include="Bootstrap.v3.Datetimepicker.CSS" Version="4.17.49" />
+    <PackageReference Include="jQuery-datetimepicker" Version="2.4.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Business\Business.csproj" />
   </ItemGroup>
 

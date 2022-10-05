@@ -22,10 +22,7 @@ namespace CarTender.AdminUI.Controllers
         {
             return View();
         }
-        public IActionResult ListVehicle()
-        {
-            return View();
-        }
+
         public IActionResult ListTender()
         {
             return View();

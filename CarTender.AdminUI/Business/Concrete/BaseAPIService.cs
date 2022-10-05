@@ -54,7 +54,7 @@ namespace Business.Concrete
             return false;
         }
 
-        public async Task<bool> POST<DTO>(string requestUrl, DTO dto) where DTO : class
+        public async Task<string> POST<DTO>(string requestUrl, DTO dto) where DTO : class
         {
 
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
@@ -64,9 +64,10 @@ namespace Business.Concrete
 
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsStringAsync().Result == "success" ? true : false;
+                //return response.Content.ReadAsStringAsync().Result == "success" ? " : false;
+                return "";
             }
-            return false;
+            return "";
         }
 
         public async Task<bool> PUT<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class
