@@ -1,0 +1,260 @@
+﻿@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <form class="needs-validation" novalidate asp-controller="Admin" asp-action="VehicleDetailInformation" method="post" enctype="multipart/form-data">
+        <label class="mt-5"><b>Araç Detay Bilgileri</b></label>
+        <div class="mt-1 p-4" style="border:2px solid gray;">
+            <div class="row mb-4">
+                <div class="col-md-6 ">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Bireysel / Kurumsal:</label>
+                        <select name="Bireysel" class="form-control col-md-8">
+                            <option value="Bireysel">Bireysel</option>
+                            <option value="Kurumsal">Kurumsal</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Kurumsal Şirket Adı: </label>
+                        <input type="text" @*asp-for="Brand"*@ value="" class="form-control col-md-8" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Statü: </label>
+                        <select name="Statu" class="form-control col-md-8">
+                            <option value="Hemen Al Satışta">Hemen Al Satışta</option>
+                            <option value="Kurumsal">Kurumsal</option>
+                            <option value="İhalede">İhalede</option>
+                            <option value="Hemen Al Satışta"> Satış Komisyonu tahsil edildi</option>
+                            <option value="Kurumsal">Ekspertiz sonucu bekleniyor</option>
+                            <option value="İhalede">Ekspertiz sonucu alındı</option>
+                            <option value="Hemen Al Satışta">Satıldı</option>
+                            <option value="Kurumsal">Satış İpta</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Araç Fiyat: </label>
+                        <input type="text" @*asp-for="Brand"*@ value="" class="form-control col-md-8" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <label class="mt-4"><b>Araç Detay Bilgileri</b></label>
+        <div class="mt-1 p-4" style="border:2px solid gray;">
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Araç Marka: </label>
+                        <select name="Marka" class="form-control col-md-8">
+                            <option value="BMW">BMW</option>
+                            <option value="Volvo"></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Araç Model: </label>
+                        <select name="Model" class="form-control col-md-8">
+                            <option value="3.2">3.2</option>
+                            <option value="XC60">XC60</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Gövde Tipi: </label>
+                        <select name="GovdeTipi" class="form-control col-md-8">
+                            <option value="Sedan">Sedan</option>
+                            <option value="Hatchback">Hatchback</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Yıl: </label>
+                        <select name="Yil" class="form-control col-md-8">
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Yakıt Tipi: </label>
+                        <select name="YakitTipi" class="form-control col-md-8">
+                            <option value="Dizel">Dizel</option>
+                            <option value="Benzin">Benzin</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Vites Tipi: </label>
+                        <select name="VitesTipi" class="form-control col-md-8">
+                            <option value="Otomatik">Otomatik</option>
+                            <option value="Manuel">Manuel</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Versiyon: </label>
+                        <select name="Versiyon" class="form-control col-md-8">
+                            <option value="V1">V1</option>
+                            <option value="V2">V2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Km Bilgisi: </label>
+                        <select name="KM" class="form-control col-md-8">
+                            <option value="1900">1900</option>
+                            <option value="3600">3600</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Renk: </label>
+                        <select name="Renk" class="form-control col-md-8">
+                            <option value="Siyah">Siyah</option>
+                            <option value="Beyaz">Beyaz</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row align-items-center">
+                        <label class="col-md-4">Donanım: </label>
+                        <select name="Donanim" class="form-control col-md-8">
+                            <option value="Boş">Boş</option>
+                            <option value="Dolu">Dolu</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                <label class="mt-4"><b>Fotolar</b></label>
+                <div class="mt-1 p-5" style="border:2px solid gray; height: 150px; vertical-align:middle; display:flex; align-items:center;">
+                    <div style="display:flex; flex-direction:column; justify-content:space-between;" >
+                        <div style="float:left;">
+                            <input onchange="readImage(this,1);" type="file" id="file1" style="display:none;" />
+                            <a onclick="photoUpload(1);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
+                        </div>                        
+                        <div class="ml-2 mt-2">
+                            <img id="file1Preview" src="" />
+                        </div>
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:space-between;" >
+                        <div style="float:left;">
+                            <input onchange="readImage(this,2);" type="file" id="file2" style="display:none;" />
+                            <a onclick="photoUpload(2);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
+                        </div>                        
+                        <div class="ml-2 mt-2">
+                            <img id="file2Preview" src="" />
+                        </div>                        
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:space-between;" >
+                        <div style="float:left;">
+                            <input onchange="readImage(this,3);" type="file" id="file3" style="display:none;" />
+                            <a onclick="photoUpload(3);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
+                        </div>                        
+                        <div class="ml-2 mt-2">
+                            <img id="file3Preview" src="" />
+                        </div>                        
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:space-between;" >
+                        <div style="float:left;">
+                            <input onchange="readImage(this,4);" type="file" id="file4" style="display:none;" />
+                            <a onclick="photoUpload(4);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
+                        </div>                        
+                        <div class="ml-2 mt-2">
+                            <img id="file4Preview" src="" />
+                        </div>                        
+                    </div>
+                    <div style="display:flex; flex-direction:column; justify-content:space-between;" >
+                        <div style="float:left;">
+                            <input onchange="readImage(this,5);" type="file" id="file5" style="display:none;" />
+                            <a onclick="photoUpload(5);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
+                        </div>                        
+                        <div class="ml-2 mt-2">
+                            <img id="file5Preview" src="" />
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <label class="mt-4"><b>Açıklama</b></label>
+                <div class="mt-1 p-4" style="border:2px solid gray; height: 150px;">
+                    <textarea class="form-control" style="resize:none; height: 100%"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row float-right">
+            <div class="col-md-12 mb-4 ">
+                <a class="btn btn-dark mt-4" href="/BuyNowSell/Index/id">Hemen Al Satış</a>
+                <a class="btn btn-dark mt-4" href="/Commission/Index">Komisyon</a>
+                <a class="btn btn-dark mt-4" href="/BuyerInfo/Index">Alıcı Bilgileri</a>
+                <a class="btn btn-dark mt-4" href="/CarHistory/Index">Araç Tarihçe</a>
+                <a class="btn btn-dark mt-4" href="/DamageRecord/Index">Hasar Tramer Bilgileri</a>
+                <a class="btn btn-dark mt-4" href="/Advert/Index">İlan Bilgileri</a>
+                <a class="btn btn-dark mt-4" href="#">Kaydet</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function photoUpload(id) {
+        let constFileName = "file";
+        document.getElementById(constFileName + id).click();
+    }
+
+    function readImage(input, id) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            let constFileName = "file" + id + "Preview";
+            reader.onload = function (e) {
+                $('#' + constFileName)
+                    .attr('src', e.target.result)
+                    .width(55)
+                    .height(55);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+

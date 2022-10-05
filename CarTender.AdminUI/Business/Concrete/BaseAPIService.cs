@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entity.DTO;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -9,8 +10,11 @@ namespace Business.Concrete
     public class BaseAPIService : IAPIService
     {
         private readonly HttpClient _httpClient;
-        public BaseAPIService(HttpClient httpClient)
+        private readonly IConfiguration _configuration;
+
+        public BaseAPIService(HttpClient httpClient,IConfiguration configuration)
         {
+            _configuration=configuration;
             _httpClient = httpClient;
         }
 
@@ -21,8 +25,8 @@ namespace Business.Concrete
         public async Task<DTO> GET<DTO>(TokenDTO tokenDTO, string requestUrl) where DTO : class
         {
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
-
-            var response = await _httpClient.GetAsync(requestUrl);
+            string serviceUrl = _configuration.GetValue<string>("ApiAddress");
+            var response = await _httpClient.GetAsync((serviceUrl + requestUrl));
 
             if (response.IsSuccessStatusCode)
             {
@@ -44,8 +48,8 @@ namespace Business.Concrete
 
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
             serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-
-            var response = await _httpClient.PostAsync(requestUrl, serializedDto);
+            string serviceUrl = _configuration.GetValue<string>("ApiAddress");
+            var response = await _httpClient.PostAsync((serviceUrl+requestUrl), serializedDto);
 
             if (response.IsSuccessStatusCode)
             {
@@ -59,8 +63,8 @@ namespace Business.Concrete
 
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
             serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-
-            var response = await _httpClient.PostAsync(requestUrl, serializedDto);
+            string serviceUrl = _configuration.GetValue<string>("ApiAddress");
+            var response = await _httpClient.PostAsync((serviceUrl + requestUrl), serializedDto);
 
             if (response.IsSuccessStatusCode)
             {
@@ -76,8 +80,8 @@ namespace Business.Concrete
 
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
             serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-
-            var response = await _httpClient.PutAsync(requestUrl, serializedDto);
+            string serviceUrl = _configuration.GetValue<string>("ApiAddress");
+            var response = await _httpClient.PutAsync((serviceUrl + requestUrl), serializedDto);
 
             if (response.IsSuccessStatusCode)
             {
@@ -100,7 +104,8 @@ namespace Business.Concrete
             //var response = await _httpClient.DeleteAsync(requestUrl);
 
             // url = user
-            var response = await _httpClient.DeleteAsync(requestUrl + "/delete?id={id}");
+            string serviceUrl = _configuration.GetValue<string>("ApiAddress");
+            var response = await _httpClient.DeleteAsync((serviceUrl + requestUrl));
 
             if (response.IsSuccessStatusCode)
             {

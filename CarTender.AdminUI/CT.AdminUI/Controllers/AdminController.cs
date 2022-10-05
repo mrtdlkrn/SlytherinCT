@@ -25,14 +25,6 @@ namespace CarTender.AdminUI.Controllers
             return View();
         }
 
-        public IActionResult ListTender()
-        {
-            return View();
-        }
-        public IActionResult VehicleDetailInformation()
-        {
-            return View();
-        }
         public IActionResult Privacy()
         {
             return View();
