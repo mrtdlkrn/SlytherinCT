@@ -1,7 +1,9 @@
-﻿@{
-    ViewData["Title"] = "Araç Detay Listesi";
-
+﻿
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="container">
     <form class="needs-validation" novalidate asp-controller="Admin" asp-action="VehicleDetailInformation" method="post" enctype="multipart/form-data">
         <label class="mt-5"><b>Araç Detay Bilgileri</b></label>
@@ -169,10 +171,10 @@
                     <div style="display:flex; justify-content:center;flex-wrap:wrap;">
                         <div class="row">
                             <input onchange="readImage(this,1);" type="file" id="file1" style="display:none" />
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <a onclick="photoUpload(1);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <img id="file1Preview" src="" />
                             </div>
                         </div>
@@ -225,36 +227,17 @@
 
         <div class="row float-right">
             <div class="col-md-12 mb-4 ">
-                <button class="btn btn-dark mt-4" type="submit">Hemen Al Satış</button>
-                <button class="btn btn-dark mt-4" type="submit">Komisyon</button>
-                <button class="btn btn-dark mt-4" type="submit">Alıcı Bilgileri</button>
-                <button class="btn btn-dark mt-4" type="submit">Araç Tarihçe</button>
-                <button class="btn btn-dark mt-4" type="submit">Hasar Tramer Bilgileri</button>
-                <button class="btn btn-dark mt-4" type="submit">İlan Bilgileri</button>
-                <button class="btn btn-dark mt-4" type="submit"  data-toggle="modal" data-target="#logoutModal">Kaydet</button>
+                <a class="btn btn-dark mt-4" href="/BuyNowSell/Index/id">Hemen Al Satış</a>
+                <a class="btn btn-dark mt-4" href="/Commission/Index">Komisyon</a>
+                <a class="btn btn-dark mt-4" href="/BuyerInfo/Index">Alıcı Bilgileri</a>
+                <a class="btn btn-dark mt-4" href="/CarHistory/Index">Araç Tarihçe</a>
+                <a class="btn btn-dark mt-4" href="/DamageRecord/Index">Hasar Tramer Bilgileri</a>
+                <a class="btn btn-dark mt-4" href="/Advert/Index">İlan Bilgileri</a>
+                <a class="btn btn-dark mt-4" href="#">Kaydet</a>
             </div>
         </div>
-        </form>
+    </form>
 </div>
-
-@*<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Çıkış yapmak ister misiniz?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Mevcut oturumunuzu bitirmeye hazırsanız, aşağıdan "Çıkış"ı seçin.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">İptal</button>
-                <a class="btn btn-primary" href="/Auth/Login" >Çıkış</a>
-            </div>
-        </div>
-    </div>
-</div>*@
 
 <script>
     function photoUpload(id) {
@@ -262,12 +245,12 @@
         document.getElementById(constFileName + id).click();
     }
 
-    function readImage(input,id) {
+    function readImage(input, id) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             let constFileName = "file" + id + "Preview";
             reader.onload = function (e) {
-                $('#'+constFileName)
+                $('#' + constFileName)
                     .attr('src', e.target.result)
                     .width(25)
                     .height(25);
@@ -276,7 +259,5 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-    $('#logoutModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-    })
 </script>
+

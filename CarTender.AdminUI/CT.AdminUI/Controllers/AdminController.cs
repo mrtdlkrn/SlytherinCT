@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
 using CarTender.AdminUI.Models;
-using Entity.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
@@ -23,22 +22,6 @@ namespace CarTender.AdminUI.Controllers
             return View();
         }
 
-        public IActionResult ListTender()
-        {
-            return View();
-        }
-        [HttpGet]
-        public IActionResult VehicleDetailInformation()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult VehicleDetailInformation(AddVehicle dto)
-        {
-            //await _apiService.AddVehicleDetailInformation(dto);
-            //return RedirectToAction("VehicleDetailInformation");
-            return View();
-        }
         public IActionResult Privacy()
         {
             return View();
