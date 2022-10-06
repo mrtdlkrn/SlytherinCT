@@ -78,5 +78,39 @@ namespace CT.AdminUI.Controllers
 
 
         #endregion
+
+        #region BidCorporateUSer
+        public IActionResult BidCorporateUser()
+        {
+            return View();
+        }
+        #endregion
+
+        #region BidInformation
+        public IActionResult BidInformation()
+        {
+            return View();
+        }
+        #endregion
+
+        #region BidOfferDetail
+        public IActionResult BidOfferDetail()
+        {
+            return View();
+        }
+        #endregion
+
+        #region BidStatusHistory
+        public IActionResult BidStatusHistory()
+        {
+            return View();
+        }
+        #endregion
+        #region BidUserOffer
+        public IActionResult BidUserOffer()
+        {
+            return View();
+        }
+        #endregion
     }
 }
