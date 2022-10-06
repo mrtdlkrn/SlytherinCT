@@ -1,7 +1,9 @@
 ﻿using CarTender.API.Models.DTOs;
 using CarTender.Business.Abstract;
 using CarTender.Entities;
+using CT.API.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 
 namespace CarTender.API.Controllers
@@ -21,7 +23,7 @@ namespace CarTender.API.Controllers
 
         public IActionResult Login(LoginDTO dto)
         {
-            var user = authService.Login("ahmet123", "ahmet123");
+            var user = authService.Login("sarp@gmail.com", "sarp123");
 
             // check user
             if (user == null) return BadRequest("User not found");
@@ -34,7 +36,7 @@ namespace CarTender.API.Controllers
 
 
         [HttpPost("register")]
-        public IActionResult Register(RegisterDTO dto)
+        public IActionResult Register(RabbitMQLoginDTO dto)
         {
             var userExists = authService.IsUserExist(dto.Email);
 
@@ -43,10 +45,31 @@ namespace CarTender.API.Controllers
                 return BadRequest("Kullanici mevcut");
             }
 
-            authService.Register(new User(), dto.Password);
-            var token = authService.CreateToken(new User());
+            User user = new User()
+            {
+                Username = dto.Username,
+                Customername = dto.Customername,
+                Phone = dto.Phone,
+                Email = dto.Email
+
+            };
+
+            authService.Register(user, dto.Password);
+            var token = authService.CreateToken(user);
+            //todo mesaj atma yeri RabbitMQ-Mert
             return Ok(token);
         }
 
+        [HttpPost("CustomerRegister")]
+        public IActionResult CustomerRegister(RabbitMQLoginDTO dto)
+        {
+            var CustomerExists = authService.IsUserExist(dto.Username);
+
+            if (CustomerExists)
+                return BadRequest("Kullanıcı mevcut");
+
+
+            return Ok();
+        }
     }
 }

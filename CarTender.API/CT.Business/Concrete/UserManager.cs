@@ -20,7 +20,7 @@ namespace CarTender.Business.Concrete
 
         public User GetByUserName(string userName)
         {
-            return userDAL.Get(x => x.UserName == userName);
+            return userDAL.Get(x => x.Username == userName);
         }
     }
 }

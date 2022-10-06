@@ -1,7 +1,9 @@
 ﻿using Business.Concrete;
+using Entity.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -9,6 +11,8 @@ namespace CT.UserUI.Controllers
 {
     public class AuthController : Controller
     {
+        BaseAPIService _api = new BaseAPIService();
+
         #region Login
 
         // GET: Auth Controller for Login
@@ -33,14 +37,15 @@ namespace CT.UserUI.Controllers
         [HttpGet]
         public ActionResult CustomerSignUp()
         {
-            return View();
+            return View(new RabbitMQLoginDTO());
         }
 
         //POST: Auth Controller for CustomerSignUp
         [HttpPost]
-        public ActionResult CustomerSignUp(int id)
+        public async Task<ActionResult> CustomerSignUp(RabbitMQLoginDTO dto)
         {
-            return View();
+            var query = await _api.POST<RabbitMQLoginDTO>("Auth/register", dto);
+            return View(query);
         }
 
         #endregion
