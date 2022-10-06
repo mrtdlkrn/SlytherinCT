@@ -4,14 +4,13 @@
 }
 
 <div class="container">
-    <div id="accordion">
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">Araç Detayı</a>
                 </h5>
             </div>
-
             <div id="collapseOne" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
                     <table class="table table-borderless">
@@ -21,7 +20,7 @@
                                 <th scope="col">Detay Tipi</th>
                                 <th scope="col">Detay</th>
                                 <th scope="col">Kayıt Tarihi</th>
-                                <th scope="col">Aktif Mi</th>
+                                <th scope="col">Aktif/Pasif</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
@@ -32,7 +31,7 @@
                                 <td>Yakıt Tipi</td>
                                 <td>Dizel</td>
                                 <td>21.03.2019</td>
-                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked></td>                                
+                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked></td>
                                 <td>
                                     <a class="btn btn-info" data-toggle="modal" data-target="#detail" href="#">Detay</a>
                                 </td>
@@ -56,17 +55,19 @@
                         </tbody>
                     </table>
                 </div>
-
             </div>
-            
+        </div>
+    </div>
+
+    <div id="accordion" class="mb-5">
+        <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">Araç Detayları</a>
                     <a class="btn btn-outline-success btn-sm" data-toggle="modal" style="border:none; font-size:15px;" data-target="#addCarDetail" href="#">+</a>
                 </h5>
             </div>
-
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div id="collapseTwo" class="collapse collapse p-3 ml-3 mr-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
                     <table class="table table-borderless">
                         <thead>
@@ -117,17 +118,16 @@
                     </table>
                 </div>
             </div>
-
-
-
+        </div>
+    </div>    
+    <div id="accordion" class="mb-5">
+        <div class="card">
             <div class="card-header" id="headingThree">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" role="button">Araç Detayları Değerleri</a>
                     <a class="btn btn-outline-success btn-sm" data-toggle="modal" style="border:none; font-size:15px;" data-target="#addCarDetailValue" href="#">+</a>
-
                 </h5>
             </div>
-
             <div id="collapseThree" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
                 <div class="row mt-3">
                     <div class="col-md-4">
@@ -144,7 +144,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
                     <table class="table table-borderless">
                         <thead>
@@ -204,8 +203,6 @@
                     </table>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
@@ -362,13 +359,13 @@
             <div class="modal-body">
                 <div class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect01">Araç Detayı:</label>
-                
-                <select class="custom-select" id="inputGroupSelect01">
-                    <option value="1" selected>Renk</option>
-                    <option value="2">Motor Yakıt Türü</option>
-                    <option value="3">Vites Türü</option>
-                    <option value="4">Kasa Tipi</option>
-                </select>
+
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option value="1" selected>Renk</option>
+                        <option value="2">Motor Yakıt Türü</option>
+                        <option value="3">Vites Türü</option>
+                        <option value="4">Kasa Tipi</option>
+                    </select>
                 </div>
                 <div class="input-group mb-3 mt-3">
 
