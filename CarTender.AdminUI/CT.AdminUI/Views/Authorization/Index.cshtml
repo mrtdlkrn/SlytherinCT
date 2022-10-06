@@ -2,6 +2,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div class="container">
     <div id="accordion">
@@ -11,14 +12,13 @@
                     <div class="col-md-4">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Statü Tipi:</label>
+                                <label class="input-group-text" for="inputGroupSelect01">Yetkilendirme:</label>
                             </div>
                             <select class="custom-select" id="inputGroupSelect01">
-                                <option value="1" selected>Araç</option>
-                                <option value="2">İlan</option>
-                                <option value="3">İhale</option>
-                                <option value="4">Şirket</option>
-                                <option value="3">Tramer</option>
+                                <option value="1" selected>Kullanıcı Rolü</option>
+                                <option value="2">Yetkisi</option>
+                                <option value="3">Sayfa Yetkisi</option>
+                                <option value="4">İşlem Yetkisi</option>
                             </select>
                         </div>
                     </div>
@@ -27,88 +27,88 @@
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
 
                     <div>
-                        <a class="btn btn-success" data-toggle="modal" data-target="#addStatus" href="#">Yeni Statü Ekle</a>
+                        <a class="btn btn-success" data-toggle="modal" data-target="#addAuthorization" href="#"><i class="fa-solid fa-plus"></i> Yeni Yetki Ekle</a>
                     </div>
 
                     <table class="table table-borderless">
                         <thead>
                             <tr>
-                                <th scope="col">Statü</th>
+                                <th scope="col">Kullanıcı Rolleri</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Giriş</td>
+                                <td>SuperAdmin</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Hemen Al Satışta</td>
-                                <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>İhalede</td>
+                                <td>Admin</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Satış Komisyonu tahsil edildi</td>
-                                <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Ekspertiz sonucu bekleniyor</td>
+                                <td>Moderatör</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ekspertiz sonucu alındı</td>
-                                <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Satıldı</td>
+                                <td>CEO</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Satış İptal</td>
+                                <td>Satış Departmanı</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>İnsan Kaynakları</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bölge Sorumlusu</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bireysel Kullanıcı</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -119,17 +119,27 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addAuthorization" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Statüyü Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
+                <h5 class="modal-title" id="exampleModalLabel">Yeni Rol Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Yeni Yetkilendirme Yapınız:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
         </div>
     </div>
 </div>
@@ -138,43 +148,43 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Statüyü Güncelle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
+                <h5 class="modal-title" id="exampleModalLabel">Yetki Güncelle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Statü Giriniz:</label>
+                        <label class="input-group-text" for="inputGroupSelect01">Yetki İsmi Giriniz:</label>
                     </div>
                     <input type="text" value="" class="form-control col-md-8" />
                 </div>
             </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-warning">Güncelle</button>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="addStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Statü Ekle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
+                <h5 class="modal-title" id="exampleModalLabel">Yetki Sil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Statü Giriniz:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
+                <div class="modal-body">Verilen yetkiyi silmek istediğinize emin misiniz?</div>
             </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-danger">Sil</button>
+            </div>
         </div>
     </div>
 </div>
-
