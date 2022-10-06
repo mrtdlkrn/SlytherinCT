@@ -1,4 +1,4 @@
-﻿using Business.Abstract;
+﻿using Common.Abstract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CT.AdminUI.Controllers

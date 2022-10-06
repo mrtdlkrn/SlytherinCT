@@ -1,5 +1,5 @@
-﻿using Business.Abstract;
-using CarTender.AdminUI.Controllers;
+﻿using CarTender.AdminUI.Controllers;
+using Common.Abstract;
 using Entity.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -108,6 +108,14 @@ namespace CT.AdminUI.Controllers
         #endregion
         #region BidUserOffer
         public IActionResult BidUserOffer()
+        {
+            return View();
+        }
+
+        #endregion
+
+        #region dsfsa
+        public IActionResult UserAutoBidOffer()
         {
             return View();
         }
