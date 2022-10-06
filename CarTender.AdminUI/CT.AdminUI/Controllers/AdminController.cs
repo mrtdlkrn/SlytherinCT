@@ -1,5 +1,5 @@
-﻿using Business.Abstract;
-using CarTender.AdminUI.Models;
+﻿using CarTender.AdminUI.Models;
+using Common.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
