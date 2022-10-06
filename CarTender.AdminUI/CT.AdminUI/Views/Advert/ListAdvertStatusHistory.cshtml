@@ -1,0 +1,176 @@
+﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="container">
+    <div id="accordion">
+        <div class="card">
+            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">İlanlar Statü Geçmişi</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+
+                    <div>
+                        <a class="btn btn-success" data-toggle="modal" data-target="#addStatus" href="/Advert/Index/"><i class="fa-solid fa-plus"></i> Yeni İlan Statü Geçmişi Ekle</a>
+                    </div>
+
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">İlan Bilgileri</th>
+                                <th scope="col">Statü</th>
+                                <th scope="col">Açıklama</th>
+                                <th scope="col">Güncellenme Tarihi</th>
+                                <th scope="col">Güncelleyen Kişi</th>
+                                <th scope="col">Güncelleme</th>
+                                <th scope="col">Silme</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>İlanlar</td>
+                                <td>Satışta</td>
+                                <td>Yeni</td>
+                                <td>05.10.2022</td>
+                                <td>Sarp</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>İlanlar</td>
+                                <td>Satıldı</td>
+                                <td>Eski</td>
+                                <td>06.10.2022</td>
+                                <td>Ahmet</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">İlan Statüleri Sil</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">İlanı silmek istediğinize emin misiniz?</div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">İlan Statüleri Güncelle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">İlan Bilgileri:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Statü:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Güncelleme Tarihi:</label>
+                    </div>
+                    <input type="date" value="" class="form-control col-md-8" />
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Güncelleyen Kişi:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">İlan Statüleri Ekle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">İlan Bilgileri:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Statü:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Güncelleme Tarihi:</label>
+                    </div>
+                    <input type="date" value="" class="form-control col-md-8" />
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Güncelleyen Kişi:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
+        </div>
+    </div>
+</div>
+
