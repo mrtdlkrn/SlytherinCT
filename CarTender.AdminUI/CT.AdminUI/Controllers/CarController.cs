@@ -5,9 +5,9 @@ namespace CT.AdminUI.Controllers
 {
     public class CarController : Controller
     {
-        private readonly IAPIService _apiService;
+        private readonly IApiService _apiService;
 
-        public CarController(IAPIService apiService)
+        public CarController(IApiService apiService)
         {
             _apiService = apiService;
         }

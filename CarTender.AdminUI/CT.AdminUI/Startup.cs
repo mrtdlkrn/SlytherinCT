@@ -1,5 +1,7 @@
 using Business.Abstract;
 using Business.Concrete;
+using Common.Abstract;
+using Common.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,7 +25,8 @@ namespace CarTender.AdminUI
         {
             services.AddControllersWithViews();
 
-            services.AddSingleton<IAPIService, BaseAPIService>();
+            services.AddSingleton<IBaseAPIService, BaseAPIService>();
+            services.AddSingleton<IApiService, ApiManager>();
 
             services.AddHttpClient<BaseAPIService>(opt =>
             {

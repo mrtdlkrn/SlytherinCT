@@ -8,9 +8,9 @@ namespace CT.AdminUI.Controllers
 {
     public class BidController : Controller
     {
-        private readonly IAPIService _apiService;
+        private readonly IApiService _apiService;
 
-        public BidController(IAPIService apiService)
+        public BidController(IApiService apiService)
         {
             _apiService = apiService;
         }
