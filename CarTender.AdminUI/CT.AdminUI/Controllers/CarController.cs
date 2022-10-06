@@ -59,13 +59,12 @@ namespace CT.AdminUI.Controllers
         {
             return View();
         }
+
         [HttpGet] 
         public IActionResult Detail()
         {
             return View();
         }
-
-
 
         // Car Detail
         [HttpGet]
