@@ -59,20 +59,5 @@ namespace CT.AdminUI.Controllers
         {
             return View();
         }
-
-        // Car Detail
-        [HttpGet]
-        public IActionResult CarDetail()
-        {
-            return View();
-        }
-
-        // Car Detail Value
-        [HttpGet]
-        public IActionResult CarDetailValue()
-        {
-            return View();
-        }
-
     }
 }
