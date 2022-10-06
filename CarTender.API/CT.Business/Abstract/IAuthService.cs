@@ -8,5 +8,7 @@ namespace CarTender.Business.Abstract
         User Login(string username, string password);
         bool IsUserExist(string username);
         AccessToken CreateToken(User user);
+        
+
     }
 }

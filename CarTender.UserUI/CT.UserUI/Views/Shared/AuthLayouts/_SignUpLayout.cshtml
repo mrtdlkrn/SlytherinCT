@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -18,19 +19,21 @@
             <div class="Inputs">
                 <span class="SignUpTextOne">Bireysel Kullanıcı Oluştur</span>
                 <span class="SignUpTextTwo">Ikinci El Araç Ihale Sistemi Kayıt Olun.</span>
-                <input class="SignUpUsername" type="text" placeholder="Kullanıcı Adı:" />
-                <input class="SignUpName" type="text" placeholder="Ad Soyad:" />
-                <input class="SignUpPhone" type="text" placeholder="Telefon:" />
-                <input class="SignUpEmail" type="email" placeholder="Email:" />
-                <input class="SignUpPassword" type="password" placeholder="Şifre" />
-                <input class="SignUpCheckPassword" type="password" placeholder="Şifre Tekrarı" />
+                <input class="SignUpUsername" name="@Model.Username" value="Sarp" type="text" placeholder="Kullanıcı Adı:" />
+                <input class="SignUpName" name="@Model.Customername" value="Sarp İpekçi" type="text" placeholder="Ad Soyad:" />
+                <input class="SignUpPhone" name="@Model.Phone" value="1234" type="text" placeholder="Telefon:" />
+                <input class="SignUpEmail" name="@Model.Email" value="Sarp@gmail.com" type="email" placeholder="Email:" />
+                <input class="SignUpPassword" name="@Model.Password" value="12345" type="password" placeholder="Şifre" />
+                <input class="SignUpCheckPassword" name="@Model.RePassword" value="12345" type="password" placeholder="Şifre Tekrarı" />
                 <div class="Grp">
                     <a href="~/Auth/Login" class="SignUpJoinUsTwo">Geri Dön</a>
                     <input class="SignUpJoinUsOne" type="button" value="Kayıt Ol" />
                 </div>
             </div>
+            <div class="ImageLayer">
+                <img src="~/Content/Images/NewCustomer.png" class="CarImage" />
+            </div>
         </div>
-        @RenderBody()
     </div>
 </body>
 </html>

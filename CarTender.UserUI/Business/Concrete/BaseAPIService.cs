@@ -91,6 +91,7 @@ namespace Business.Concrete
             if (response.IsSuccessStatusCode)
             {
                 //return response.Content.ReadAsStringAsync().Result == "success" ? " : false;
+                var resposeControl = response.Content.ReadAsStringAsync().Result;
                 return "";
             }
             return "";
