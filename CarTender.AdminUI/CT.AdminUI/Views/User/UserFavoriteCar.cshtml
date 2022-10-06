@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div id="accordion">
+        <div class="card">
+            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Kullanıcı Ara" aria-label="Ara">
+                                <button class="btn btn-outline-success " type="submit">Ara</button>
+                            </div>
+                            <a class="btn btn-success mt-2" data-toggle="modal" data-target="#addStatus" href="#">Kullanıcı Favori Araç Ekle</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kullanıcı</th>
+                                <th scope="col">Araç Bilgileri</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ahmet</td>
+                                <td>Hyundai Kona 2020 1.4 TSI CVT Siyah</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Yiğit</td>
+                                <td>Opel Corsa 2018 1.2 MT Mavi</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Kullanıcı Favori Araç Sil</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Kullanıcı Favori Araç Güncelle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group mb-3">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Kullanıcı Ara" aria-label="Ara">
+                        <button class="btn btn-outline-success " type="submit">Ara</button>
+                    </div>
+                    <input type="text" readonly value="Ahmet" class="form-control col-md-8 mr-sm-2" />
+                    <div class="input-group mb-3 mt-3">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Araç Ara" aria-label="Ara">
+                        <button class="btn btn-outline-success mr-sm-2" type="submit">Ara</button>
+                    </div>
+                    <input type="text" readonly value="Hyundai Kona 2020 1.4 TSI CVT Siyah" class="form-control col-md-10" />
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Kullanıcı Favori Araç Ekle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Kullanıcı Ara" aria-label="Ara">
+                    <button class="btn btn-outline-success " type="submit">Ara</button>
+                </div>
+                <input type="text" readonly value="Mert" class="form-control col-md-8 mr-sm-2" />
+                <div class="input-group mb-3 mt-3">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Araç Ara" aria-label="Ara">
+                    <button class="btn btn-outline-success mr-sm-2" type="submit">Ara</button>
+                </div>
+                <input type="text" readonly value="Volkswagen Passat 2018 1.6 TDI DSG Siyah" class="form-control col-md-10" />
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
+        </div>
+    </div>
+</div>
+
