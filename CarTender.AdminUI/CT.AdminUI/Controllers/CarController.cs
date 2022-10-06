@@ -53,5 +53,11 @@ namespace CT.AdminUI.Controllers
             return RedirectToAction("Index");
         }
 
+        // Brand Model 
+        public IActionResult BrandModel()
+        {
+            return View();
+        }
+
     }
 }
