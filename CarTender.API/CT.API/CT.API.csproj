@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CT.Business\CT.Business.csproj" />
+    <ProjectReference Include="..\CT.Common\CT.Common.csproj" />
     <ProjectReference Include="..\CT.DataAccess\CT.DataAccess.csproj" />
   </ItemGroup>
 

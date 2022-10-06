@@ -2,9 +2,13 @@
 using CarTender.Business.Abstract;
 using CarTender.Entities;
 using CT.API.Models.DTOs;
+using CT.Common.Service;
+using CT.Entities.Mail;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
+using RabbitMQ.Client;
+using System.Collections.Generic;
 
 namespace CarTender.API.Controllers
 {
@@ -13,10 +17,12 @@ namespace CarTender.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthService authService;
+        private readonly IQueueService queueService;
 
-        public AuthController(IAuthService authService, IConfiguration configuration = null)
+        public AuthController(IAuthService authService,IQueueService queueService , IConfiguration configuration = null)
         {
             this.authService = authService;
+            this.queueService = queueService;
         }
 
         [HttpPost("login")]
@@ -56,7 +62,28 @@ namespace CarTender.API.Controllers
 
             authService.Register(user, dto.Password);
             var token = authService.CreateToken(user);
-            //todo mesaj atma yeri RabbitMQ-Mert
+            List<string> eposta = new List<string>();
+            eposta.Add(user.Email);
+            MailInfo mailInfo = new MailInfo()
+            {
+                Topic = "Email Doğrulama",
+                DestinationEmails = eposta,
+                Context = "",//todo : İçerik girilecek
+            };
+            ConnectionFactory connectionFactory = new ConnectionFactory()
+            {
+                HostName = "localhost",
+                Password = "guest",
+                UserName = "guest",
+            };
+            var queue = "Register";
+            var exchange = "RegisterExchange";
+            var routingKey = "RegisterMail";
+            queueService.CreateQueue(connectionFactory, queue);
+            queueService.CreateExchange(connectionFactory, exchange);
+            queueService.CreateBinding(connectionFactory, queue, exchange, routingKey);
+            queueService.Publish(connectionFactory, mailInfo, exchange, routingKey);
+
             return Ok(token);
         }
 
@@ -67,7 +94,6 @@ namespace CarTender.API.Controllers
 
             if (CustomerExists)
                 return BadRequest("Kullanıcı mevcut");
-
 
             return Ok();
         }
