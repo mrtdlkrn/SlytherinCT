@@ -40,7 +40,6 @@ namespace CarTender.API
             services.AddScoped<IUserDAL, UserDAL>();
             services.AddScoped<ITokenHelper, JwtHelper>();
             services.AddTransient<IQueueService, QueueService>();
-            services.AddTransient<IMailEngine, MailEngine>();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
