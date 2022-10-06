@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div id="accordion">
+        <div class="card">
+            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Bilgi</th>
+                                <th scope="col">Teklif Adı</th>
+                                <th scope="col">Statu</th>
+                                <th scope="col">Aktif/Pasif</th>
+                                <th scope="col">Versiyon</th>
+                              
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>bilgi bilgi bilgi</td>
+                                <td>kedi</td>
+                                <td>XXXXXXXXXXXX</td>
+                                <td>Aktif</td>
+                                <td>V2</td>
+                                
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                            <tr>
+                                <th scope="col">Bilgi</th>
+                                <th scope="col">Teklif Adı</th>
+                                <th scope="col">Statu</th>
+                                <th scope="col">Aktif/Pasif</th>
+                                <th scope="col">Versiyon</th>
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Teklifini Sil</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+        </div>
+    </div>
+</div>
+
+
