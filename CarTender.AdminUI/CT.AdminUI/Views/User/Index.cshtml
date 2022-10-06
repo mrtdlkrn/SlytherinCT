@@ -72,7 +72,7 @@
                                 <td></td>
                                 <td>05.10.2022</td>
                                 <td>
-                                    <a class="btn btn-info" data-toggle="modal" data-target="#detail" href="#">Detay</a>
+                                    <a class="btn btn-info" data-toggle="modal" data-target="#editUser" href="#">Detay</a>
                                 </td>
                                 <td>
                                     <a class="btn btn-danger" data-toggle="modal" data-target="#delete" href="#">Sil</a>
@@ -101,162 +101,6 @@
     </div>
 </div>
 
-
-
-
-<div class="modal" id="detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tramer Detay</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sağ Arka Çamurluk:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp1">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sağ Ön Çamurluk:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp2">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sağ Arka Kapı:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp3">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sağ Ön Kapı:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp4">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sol Arka Çamurluk:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp5">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sol Ön Çamurluk:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp6">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sol Arka Kapı:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp7">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sol Ön Kapı:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp8">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Tavan:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp9">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Arka Kaput:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp10">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Motor Kaputu:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp11">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Ön Tampon:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp12">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Arka Tampon:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp13">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-info" onclick="EnableComponents()" type="button">Düzenle</button>
-                <button class="btn btn-primary" type="button">Kaydet</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="modal" id="editUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -270,13 +114,78 @@
                 <div class="input-group mb-3 col-md-12">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Bileşen Adı:</label>
+                            <label class="input-group-text" for="inputGroupSelect01">Kullanıcı Adı:</label>
                         </div>
-                        <input type="text" value="" class="form-control col-md-8" />
+                        <input disabled type="text" value="ahmetosmn" class="form-control editable" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Ad Soyad:</label>
+                        </div>
+                        <input disabled type="text" value="Ahmet Osman Sezgin" class="form-control editable" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Telefon:</label>
+                        </div>
+                        <input disabled type="text" value="5054545151351" class="form-control editable" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">E-posta:</label>
+                        </div>
+                        <input disabled type="email" value="ahmet@sezgin.com" class="form-control editable" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Kullanıcı Türü:</label>
+                        </div>
+                        <select disabled class="form-control editable" id="cmp13">
+                            <option selected>Bireysel</option>
+                            <option>Kurumsal</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">E-Posta onayı var mı?:</label>
+                        </div>
+                        <input type="checkbox" disabled checked class="form-control" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Admin onayı var mı?:</label>
+                        </div>
+                        <input type="checkbox" disabled checked class="form-control editable" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">KVKK onayı var mı?:</label>
+                        </div>
+                        <input type="checkbox" disabled checked class="form-control" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
+                        </div>
+                        <textarea readonly class="form-control editable"></textarea>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Ekleyen:</label>
+                        </div>
+                        <input type="text" disabled value="Admin" class="form-control" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Kayıt Tarihi:</label>
+                        </div>
+                        <input type="datetime" disabled value="05/10/2022" class="form-control" />
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" onclick="EnableComponents()">Düzenle</button>
+
                 <button class="btn btn-primary" type="button">Kaydet</button>
             </div>
         </div>
@@ -349,11 +258,11 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
                         </div>
-                        <input type="text" value="" class="form-control" />
+                        <textarea class="form-control"></textarea>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
+                            <label class="input-group-text" for="inputGroupSelect01">Ekleyen:</label>
                         </div>
                         <input type="text" readonly value="Current Admin" class="form-control" />
                     </div>
@@ -374,30 +283,13 @@
 
 
 <script type="text/javascript">
-    function IsActive(button) {
-        var element = button;
-        if (element.classList.contains("active")) {
-            element.classList.remove("active");
-        }
-        else {
-            element.classList.add("active");
-        }
-    }
-</script>
-<script type="text/javascript">
     function EnableComponents() {
-        document.getElementById('cmp1').disabled = false;
-        document.getElementById('cmp2').disabled = false;
-        document.getElementById('cmp3').disabled = false;
-        document.getElementById('cmp4').disabled = false;
-        document.getElementById('cmp5').disabled = false;
-        document.getElementById('cmp6').disabled = false;
-        document.getElementById('cmp7').disabled = false;
-        document.getElementById('cmp8').disabled = false;
-        document.getElementById('cmp9').disabled = false;
-        document.getElementById('cmp10').disabled = false;
-        document.getElementById('cmp11').disabled = false;
-        document.getElementById('cmp12').disabled = false;
-        document.getElementById('cmp13').disabled = false;
+        debugger;
+        var collection = document.getElementsByClassName("editable");
+
+        for(let i=0; i<collection.length;i++){
+
+            // todo
+        }
     }
 </script>
