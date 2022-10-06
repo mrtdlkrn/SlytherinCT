@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity.DTO
 {
-    public class AddVehicle
+    public class AddVehicleDTO
     {
         public string PersonalCorporate { get; set; }
         public string CompanyName { get; set; }
