@@ -54,7 +54,22 @@ namespace CT.AdminUI.Controllers
         }
 
         // Brand Model 
+        [HttpGet]
         public IActionResult BrandModel()
+        {
+            return View();
+        }
+
+        // Car Detail
+        [HttpGet]
+        public IActionResult CarDetail()
+        {
+            return View();
+        }
+
+        // Car Detail Value
+        [HttpGet]
+        public IActionResult CarDetailValue()
         {
             return View();
         }

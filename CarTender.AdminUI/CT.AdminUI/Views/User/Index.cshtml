@@ -1,0 +1,585 @@
+﻿@{
+    ViewData["Title"] = "Tramer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">Tramerler</a>
+                </h5>
+            </div>
+
+            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Marka</th>
+                                <th scope="col">Model</th>
+                                <th scope="col">Tramer Ücreti</th>
+                                <th scope="col">Kaydeden</th>
+                                <th scope="col">Kayıt Tarihi</th>
+                                <th scope="col">Güncelleyen</th>
+                                <th scope="col">Güncelleme Tarihi</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Toyota</td>
+                                <td>Yaris</td>
+                                <td>3500 TL</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>
+                                    <a class="btn btn-info" data-toggle="modal" data-target="#detail" href="#">Detay</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#delete" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ford</td>
+                                <td>Mustang</td>
+                                <td>5500 TL</td>
+                                <td>Osman</td>
+                                <td>01.10.2022</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>
+                                    <a class="btn btn-info" data-toggle="modal" data-target="#detail" href="#">Detay</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#delete" href="#">Sil</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion" class="mt-5 mb-5">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">Tramer Ekle</a>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse collapse p-5" aria-labelledby="headingOne" data-parent="#accordion">
+                <div>
+                    <div class="input-group mb-3 col-md-12">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Araba ID:</label>
+                        </div>
+                        <input type="text" value="" class="form-control col-md-12" />
+                    </div>
+                    <div class="input-group mb-3 col-md-12">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Kayıt Eden:</label>
+                        </div>
+                        <input type="text" value="" class="form-control col-md-12" />
+                    </div>
+                    <div class="input-group mb-3 col-md-12">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Kayıt Tarihi:</label>
+                        </div>
+                        <input type="text" value="" class="form-control col-md-12" />
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col col-6">
+                        <div class="list-group" id="myList">
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Sağ Arka Çamurluk</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Arka Kaput</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Sol Arka Çamurluk</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Sağ Arka Kapı</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Sağ Ön Kapı</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Tavan</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Sol Arka Kapı</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Sol Ön Kapı</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Sağ Ön Çamurluk</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Motor Kaputu</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Sol Ön Çamurluk</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Ön Tampon</button>
+                            <button type="button" class="list-group-item list-group-item-action" onclick="IsActive(this)">Arka Tampon</button>
+                        </div>
+                    </div>
+                    <div class="col col-6">
+                        <table style="text-align:center;" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Parça</th>
+                                    <th scope="col">Durumu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <select class="form-control col-md-12" aria-label="Default select example">
+                        <option value="1" selected>Orjinal</option>
+                        <option value="2">Boyalı</option>
+                        <option value="3">Değişmiş</option>
+                    </select>
+                </div>
+                <div class="row mt-3 mb-3" style="float:right;">
+                    <button type="button" class="btn btn-success mr-3">Ekle</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion" class="mt-5 mb-5">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo" role="button">Tramer Bileşenleri</a>
+                </h5>
+            </div>
+
+            <div id="collapseThree" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+
+                    <a class="btn btn-success" data-toggle="modal" data-target="#addCmp" href="#">Bileşen Ekle</a>
+
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Bileşen Adı</th>
+                                <th scope="col">Kaydeden</th>
+                                <th scope="col">Kayıt Tarihi</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sağ Arka Çamurluk</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sağ Ön Çamurluk</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sağ Arka Kapı</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sağ Ön Kapı</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sol Arka Çamurluk</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Sol Ön Çamurluk</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sağ Arka Kapı</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sol Ön Kapı</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tavan</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Arka Kaput</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Motor Kaputu</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>Ön Tampon</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Arka Tampon</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCmp" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCmp" href="#">Sil</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Trameri Sil</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="deleteCmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tramer Bileşenini Sil</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tramer Detay</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body col-md-12">
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Sağ Arka Çamurluk:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp1">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Sağ Ön Çamurluk:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp2">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Sağ Arka Kapı:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp3">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Sağ Ön Kapı:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp4">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Sol Arka Çamurluk:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp5">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Sol Ön Çamurluk:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp6">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Sol Arka Kapı:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp7">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Sol Ön Kapı:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp8">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Tavan:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp9">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Arka Kaput:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp10">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Motor Kaputu:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp11">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Ön Tampon:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp12">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Arka Tampon:</label>
+                    </div>
+                    <select disabled class="form-control col-md-12" id="cmp13">
+                        <option selected>Orjinal</option>
+                        <option>Boyalı</option>
+                        <option>Değişmiş</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" onclick="EnableComponents()" type="button">Düzenle</button>
+                <button class="btn btn-primary" type="button">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="editCmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tramer Bileşen Detay</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body col-md-12">
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Bileşen Adı:</label>
+                        </div>
+                        <input type="text" value="" class="form-control col-md-8" />
+                    </div>
+                </div>      
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="addCmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tramer Bileşeni Ekle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body col-md-12">
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Bileşen Adı:</label>
+                        </div>
+                        <input type="text" value="" class="form-control col-md-8" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" type="button">Ekle</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function IsActive(button) {
+        var element = button;
+        if (element.classList.contains("active")) {
+            element.classList.remove("active");
+        }
+        else {
+            element.classList.add("active");
+        }
+    }
+</script>
+<script type="text/javascript">
+    function EnableComponents() {
+        document.getElementById('cmp1').disabled = false;
+        document.getElementById('cmp2').disabled = false;
+        document.getElementById('cmp3').disabled = false;
+        document.getElementById('cmp4').disabled = false;
+        document.getElementById('cmp5').disabled = false;
+        document.getElementById('cmp6').disabled = false;
+        document.getElementById('cmp7').disabled = false;
+        document.getElementById('cmp8').disabled = false;
+        document.getElementById('cmp9').disabled = false;
+        document.getElementById('cmp10').disabled = false;
+        document.getElementById('cmp11').disabled = false;
+        document.getElementById('cmp12').disabled = false;
+        document.getElementById('cmp13').disabled = false;
+    }
+</script>
