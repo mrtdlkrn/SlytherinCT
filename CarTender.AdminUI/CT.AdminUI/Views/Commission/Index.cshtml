@@ -73,6 +73,8 @@
                                 <th scope="col">Komisyon Bitiş Tarihi</th>
                                 <th scope="col">Komisyon Minimum Tutarı</th>
                                 <th scope="col">Komisyon Maximum Tutarı</th>
+                                <th scope="col">Güncelle</th>
+                                <th scope="col">Sil</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -83,6 +85,12 @@
                                 <td>Büdü</td>
                                 <td>Hidi</td>
                                 <td>Hüdü</td>
+                                <td>
+                                    <a class="btn btn-info" data-toggle="modal" data-target="#edit" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#delete" href="#">Sil</a>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
@@ -91,10 +99,44 @@
                                 <td>Büdü</td>
                                 <td>Hidi</td>
                                 <td>Hüdü</td>
+                                <td>
+                                    <a class="btn btn-info" data-toggle="modal" data-target="#edit" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#delete" href="#">Sil</a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Trameri Sil</h5>
+                    <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">Silmek istediğinize emin misiniz?</div>
+                <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="deleteCmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tramer Bileşenini Sil</h5>
+                    <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">Silmek istediğinize emin misiniz?</div>
+                <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
             </div>
         </div>
     </div>
