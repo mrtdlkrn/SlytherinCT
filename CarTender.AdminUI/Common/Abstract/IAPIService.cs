@@ -1,7 +1,7 @@
 ﻿using Entity.DTO;
 using System.Threading.Tasks;
 
-namespace Business.Abstract
+namespace Common.Abstract
 {
     public interface IAPIService
     {

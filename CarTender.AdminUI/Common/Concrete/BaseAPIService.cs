@@ -1,20 +1,20 @@
-﻿using Business.Abstract;
+﻿using Common.Abstract;
 using Entity.DTO;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Business.Concrete
+namespace Common.Concrete
 {
     public class BaseAPIService : IAPIService
     {
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
 
-        public BaseAPIService(HttpClient httpClient,IConfiguration configuration)
+        public BaseAPIService(HttpClient httpClient, IConfiguration configuration)
         {
-            _configuration=configuration;
+            _configuration = configuration;
             _httpClient = httpClient;
         }
 
@@ -49,7 +49,7 @@ namespace Business.Concrete
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
             serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
             string serviceUrl = _configuration.GetValue<string>("ApiAddress");
-            var response = await _httpClient.PostAsync((serviceUrl+requestUrl), serializedDto);
+            var response = await _httpClient.PostAsync((serviceUrl + requestUrl), serializedDto);
 
             if (response.IsSuccessStatusCode)
             {
