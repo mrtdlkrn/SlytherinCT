@@ -8,5 +8,17 @@ namespace CT.AdminUI.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult ListAdvert()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult ListAdvertStatusHistory()
+        {
+            return View();
+        }
     }
 }

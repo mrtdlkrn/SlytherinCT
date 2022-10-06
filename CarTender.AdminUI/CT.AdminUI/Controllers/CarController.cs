@@ -59,5 +59,40 @@ namespace CT.AdminUI.Controllers
         {
             return View();
         }
+
+        [HttpGet] 
+        public IActionResult Detail()
+        {
+            return View();
+        }
+
+        // Car Detail
+        [HttpGet]
+        public IActionResult CarDetail()
+        {
+            return View();
+        }
+
+        // Car Detail Value
+        [HttpGet]
+        public IActionResult CarDetailValue()
+        {
+            return View();
+        }
+
+        // Car Image
+        [HttpGet]
+        public IActionResult CarImage()
+        {
+            return View();
+        }
+
+        // Car Modification
+        [HttpGet]
+        public IActionResult CarModification()
+        {
+            return View();
+        }
+
     }
 }

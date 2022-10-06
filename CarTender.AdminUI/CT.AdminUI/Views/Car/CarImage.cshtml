@@ -1,0 +1,102 @@
+﻿@{
+    ViewData["Title"] = "CarImage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div id="accordion">
+        <div class="card">
+            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Araç Plakası:</label>
+                            </div>
+                            <input class="form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="p-3 align-items-center" style="border:2px solid gray; border-radius: .35rem;">
+                    <div class="mb-3">
+                        <a class="btn btn-success" data-toggle="modal" data-target="#exampleModalAdd" href="#">Yeni Fotoğraf Ekle</a>
+                    </div>
+                    <div class="row justify-content-around">
+                        <div class="card p-2" style="width: 13rem;">
+                            <a href="~/img/camera.png">
+                                <img src="~/img/camera.png" class="card-img-top" />
+                            </a>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-danger col-md-12" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
+                                    Sil
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card p-2" style="width: 13rem;">
+                            <a href="~/img/camera.png">
+                                <img src="~/img/camera.png" class="card-img-top" />
+                            </a>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-danger col-md-12" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
+                                    Sil
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card p-2" style="width: 13rem;">
+                            <a href="~/img/camera.png">
+                                <img src="~/img/camera.png" class="card-img-top" />
+                            </a>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-danger col-md-12" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
+                                    Sil
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card p-2" style="width: 13rem;">
+                            <a href="~/img/camera.png">
+                                <img src="~/img/camera.png" class="card-img-top" />
+                            </a>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-danger col-md-12" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
+                                    Sil
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card p-2" style="width: 13rem;">
+                            <a href="~/img/camera.png">
+                                <img src="~/img/camera.png" class="card-img-top" />
+                            </a>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-danger col-md-12" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
+                                    Sil
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="deleteCmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel3">Fotoğrafı Sil</h5>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#deleteCmp').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+            </div>
+            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" type="button">Sil</button>
+            </div>
+        </div>
+    </div>
+</div>
+
