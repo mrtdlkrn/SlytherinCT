@@ -11,19 +11,23 @@
     <title></title>
     <link href="https://fonts.googleapis.com/css?family=Arial&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Jockey+One&display=swap" rel="stylesheet" />
-    <link href="~/Content/MyCss/EmailVerification/EmailVerification.css" rel="stylesheet" />
-    <script src="~/Scripts/bootstrap.js"></script>
+      <script src="~/Scripts/bootstrap.js"></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/EmailVerification/EmailVerification.css" rel="stylesheet" />
 </head>
 
 <body>
-    <img src="~/Content/Images/newverifyemail.png" class="EmailImage" />
-    <span class="EmailTextOne">Email Adresini Doğrulama</span>
-    <span class="EmailTextTwo">@TempData["Email"]
-        adresine doğrulama linki gönderdik.Email adresiniz doğrulamak için linke
-        tıklayınız.
-        Doğrulama linki 2 saat geçerlidir.
-    </span>
+    <div class="EmailCard">
+        <img src="Images/newverifyemail.png" class="EmailImage">
+        <span class="EmailTextOne">Email Adresini Doğrulama</span>
+        <span class="EmailTextTwo">@TempData["Email"]
+            Sarpipekci@gmail.com adresine doğrulama linki gönderdik.Email adresiniz doğrulamak
+            için
+            linke
+            tıklayınız.
+            Doğrulama linki 5 dakika geçerlidir.
+        </span>
+    </div>
 </body>
 
 </html>

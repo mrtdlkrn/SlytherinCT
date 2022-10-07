@@ -250,3 +250,11 @@
     height: 100%;
     float: right;
 }
+
+.ForgotPasswordCard {
+    position: relative;
+    width: 70%;
+    height: auto;
+    top: 26%;
+    margin: auto;
+}
