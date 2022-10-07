@@ -14,5 +14,11 @@ namespace CT.AdminUI.Controllers
             return View();
 
         }
+        public IActionResult UserCar()
+        {
+            return View();
+
+        }
+        
     }
 }

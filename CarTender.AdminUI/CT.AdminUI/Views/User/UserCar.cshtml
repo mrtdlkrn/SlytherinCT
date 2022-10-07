@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Kullanıcı Araçları Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div id="accordion" class="mt-5 mb-5">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo" role="button">Kullanıcı Araçları Listesi</a>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Satıcı Bilgisi</th>
+                                <th scope="col">Araç Plaka</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ahmet</td>
+                                <td>16 E 161</td>
+                            </tr>
+                            <tr>
+                                <td>Yiğit</td>
+                                <td>45 AEV 675</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
