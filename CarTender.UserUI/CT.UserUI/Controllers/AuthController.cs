@@ -44,8 +44,10 @@ namespace CT.UserUI.Controllers
         [HttpPost]
         public async Task<ActionResult> CustomerSignUp(RabbitMQLoginDTO dto)
         {
-            var query = await _api.POST<RabbitMQLoginDTO>("Auth/register", dto);
-            return View(query);
+            await _api.POST<RabbitMQLoginDTO>("Auth/register", dto);
+            //We use tempdata to send data to another page.
+            TempData["Email"] = dto.Email;
+            return RedirectToAction("EmailVerification");
         }
 
         #endregion
@@ -89,7 +91,7 @@ namespace CT.UserUI.Controllers
 
         //GET: Auth Controller for EmailVerificationIsCorrect
         [HttpGet]
-        public ActionResult EmailVerificationIsCorrect()
+        public ActionResult EmailVerificationIsCorrect(Guid id, System.IdentityModel.Tokens.Jwt.JwtSecurityToken token)
         {
             return View();
         }
