@@ -1,0 +1,174 @@
+﻿@{
+    ViewData["Title"] = "CarBuyerInformation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div id="accordion" class="mt-5 mb-5">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo" role="button">Araç - Alıcı Bilgileri</a>
+                    <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addCarBuyerInformation">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseThree" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Araç Plaka</th>
+                                <th scope="col">Alıcı Bilgisi</th>
+                                <th scope="col">Fiyat</th>
+                                <th scope="col">Açıklama</th>
+                                <th scope="col">Kaydeden</th>
+                                <th scope="col">Kayıt Tarihi</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>16 E 161</td>
+                                <td>Ahmet</td>
+                                <td>200.000</td>
+                                <td></td>
+                                <td></td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarBuyerInformation">
+                                        Güncelle
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarBuyerInformation">
+                                        Sil
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteCarBuyerInformation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel3">Araç Alıcı Bilgileri Sil</h5>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#deleteCarBuyerInformation').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+            </div>
+            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" type="button">Sil</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editCarBuyerInformation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Araç Alıcı Bilgileri Güncelle</h5>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#editCmp').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+            </div>
+            <div class="modal-body col-md-12">
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Araç Plaka:</label>
+                        </div>
+                        <input type="text" value="16 E 161" class="form-control col-md-12" />
+                    </div>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Alıcı Bilgisi:</label>
+                        </div>
+                        <input type="text" value="Ahmet" class="form-control col-md-12" />
+                    </div>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Fiyat:</label>
+                        </div>
+                        <input type="text" value="200.000" class="form-control col-md-12" />
+                    </div>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
+                        </div>
+                        <input type="text" value="" class="form-control col-md-12" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addCarBuyerInformation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Araç Alıcı Bilgileri Ekle</h5>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#addCmp').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+            </div>
+            <div class="modal-body col-md-12">
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Araç Plaka:</label>
+                        </div>
+                        <input type="text" value="" class="form-control col-md-12" />
+                    </div>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Alıcı Bilgisi:</label>
+                        </div>
+                        <input type="text" value="" class="form-control col-md-12" />
+                    </div>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Fiyat:</label>
+                        </div>
+                        <input type="text" value="" class="form-control col-md-12" />
+                    </div>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
+                        </div>
+                        <input type="text" value="" class="form-control col-md-12" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" type="button">Ekle</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
