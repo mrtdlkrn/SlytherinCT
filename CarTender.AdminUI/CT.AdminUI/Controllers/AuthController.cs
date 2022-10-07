@@ -1,4 +1,4 @@
-﻿using Business.Abstract;
+﻿using Common.Abstract;
 using Entity.DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -7,9 +7,9 @@ namespace CarTender.AdminUI.Controllers
 {
     public class AuthController : Controller
     {
-        private readonly IAPIService _apiService;
+        private readonly IApiService _apiService;
 
-        public AuthController(IAPIService apiService)
+        public AuthController(IApiService apiService)
         {
             _apiService = apiService;
         }
@@ -25,7 +25,7 @@ namespace CarTender.AdminUI.Controllers
         {            
             if(dto == null) return RedirectToAction("Register");
 
-            var user = await _apiService.POST("auth/login",dto);
+            var user = await _apiService.Post("auth/login",dto);
 
             if(user != null)
             {

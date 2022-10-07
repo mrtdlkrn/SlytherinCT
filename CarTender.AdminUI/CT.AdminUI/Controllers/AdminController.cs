@@ -1,10 +1,7 @@
-﻿using Business.Abstract;
-using CarTender.AdminUI.Models;
+﻿using CarTender.AdminUI.Models;
+using Common.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace CarTender.AdminUI.Controllers
@@ -12,9 +9,9 @@ namespace CarTender.AdminUI.Controllers
     public class AdminController : Controller
     {
         private readonly ILogger<AdminController> _logger;
-        private readonly IAPIService _apiService;
+        private readonly IBaseAPIService _apiService;
 
-        public AdminController(ILogger<AdminController> logger, IAPIService apiService)
+        public AdminController(ILogger<AdminController> logger, IBaseAPIService apiService)
         {
             _logger = logger;
             _apiService = apiService;
