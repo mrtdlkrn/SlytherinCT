@@ -1,4 +1,4 @@
-﻿
+﻿@model Entity.DTO.RabbitMQLoginDTO
 @{
     ViewBag.Title = "EmailVerification";
     Layout = null;
@@ -11,16 +11,16 @@
     <title></title>
     <link href="https://fonts.googleapis.com/css?family=Arial&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Jockey+One&display=swap" rel="stylesheet" />
-    <script src="~/Scripts/bootstrap.js"></script>
+      <script src="~/Scripts/bootstrap.js"></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link rel="stylesheet" href="EmailVerification.css">
+    <link href="~/Content/MyCss/EmailVerification/EmailVerification.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="EmailCard">
         <img src="Images/newverifyemail.png" class="EmailImage">
         <span class="EmailTextOne">Email Adresini Doğrulama</span>
-        <span class="EmailTextTwo">
+        <span class="EmailTextTwo">@TempData["Email"]
             Sarpipekci@gmail.com adresine doğrulama linki gönderdik.Email adresiniz doğrulamak
             için
             linke
@@ -29,5 +29,6 @@
         </span>
     </div>
 </body>
+
 </html>
 
