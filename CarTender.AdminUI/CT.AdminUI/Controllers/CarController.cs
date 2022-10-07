@@ -1,13 +1,13 @@
-﻿using Business.Abstract;
+﻿using Common.Abstract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CT.AdminUI.Controllers
 {
     public class CarController : Controller
     {
-        private readonly IAPIService _apiService;
+        private readonly IApiService _apiService;
 
-        public CarController(IAPIService apiService)
+        public CarController(IApiService apiService)
         {
             _apiService = apiService;
         }
@@ -59,13 +59,12 @@ namespace CT.AdminUI.Controllers
         {
             return View();
         }
+
         [HttpGet] 
         public IActionResult Detail()
         {
             return View();
         }
-
-
 
         // Car Detail
         [HttpGet]

@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Bireysel Kullanıcı Otomatik İhale Teklifleri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div id="accordion">
+        <div class="card">
+            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <h5>Bireysel Kullanıcı Otomatik İhale Teklifleri</h5>
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Maksimum Teklif</th>
+                                <th scope="col">Teklif Artış Miktarı</th>
+                                <th scope="col">Kullanıcı</th>
+                                <th scope="col">İhale Adı</th>
+                                <th scope="col">Aktif/Pasif</th>
+                                <th scope="col">Güncelle</th>
+                                <th scope="col">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>500.000</td>
+                                <td>1.000</td>
+                                <td>Ahmet</td>
+                                <td>Hedef Filo Ekim 2022 İhalesi</td>
+                                <td>Aktif</td>
+                                <td>V1</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editUserAutoBidOffer" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>550.000</td>
+                                <td>1.500</td>
+                                <td>Yiğit</td>
+                                <td>Hedef Filo Ekim 2022 İhalesi</td>
+                                <td>Aktif</td>
+                                <td>V1</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editUserAutoBidOffer" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> Teklifini Sil</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editUserAutoBidOffer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Teklifi Güncelle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Maksimum Teklif:</label>
+                    </div>
+                    <input type="text" value="500.000" class="form-control col-md-8" />
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Teklif Artış Miktarı:</label>
+                    </div>
+                    <input type="text" value="1.000" class="form-control col-md-8" />
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
+        </div>
+    </div>
+</div>
+
