@@ -18,11 +18,13 @@ namespace CarTender.API.Controllers
     {
         private readonly IAuthService authService;
         private readonly IQueueService queueService;
+        private readonly IConfiguration configuration;
 
         public AuthController(IAuthService authService,IQueueService queueService , IConfiguration configuration = null)
         {
             this.authService = authService;
             this.queueService = queueService;
+            this.configuration = configuration;
         }
 
         [HttpPost("login")]
@@ -53,6 +55,7 @@ namespace CarTender.API.Controllers
 
             User user = new User()
             {
+                Id = 1,
                 Username = dto.Username,
                 Customername = dto.Customername,
                 Phone = dto.Phone,
@@ -64,11 +67,16 @@ namespace CarTender.API.Controllers
             var token = authService.CreateToken(user);
             List<string> eposta = new List<string>();
             eposta.Add(user.Email);
+
+            string domain = configuration.GetSection("Application:AppDomain").Value;
+            string confirmationLink = domain + configuration.GetSection("Application:LoginPath").Value;
+            confirmationLink += configuration.GetSection("Application:EmailConfirmation").Value;
+
             MailInfo mailInfo = new MailInfo()
             {
                 Topic = "Email Doğrulama",
                 DestinationEmails = eposta,
-                Context = "",//todo : İçerik girilecek
+                Context = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>Page Title</title>\r\n</head>\r\n<body>\r\n\r\n<h1>This is a Heading</h1>\r\n<p>This is a paragraph.</p>\r\n\r\n<a href=\""+(confirmationLink,user.Id,token)+"\">Email Doğrula</a></body>\r\n</html>" //todo : İçerik girilecek
             };
             ConnectionFactory connectionFactory = new ConnectionFactory()
             {
