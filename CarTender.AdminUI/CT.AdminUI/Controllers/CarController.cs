@@ -1,4 +1,5 @@
-﻿using Common.Abstract;
+﻿using Business.Abstract;
+using Common.Abstract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CT.AdminUI.Controllers
@@ -94,5 +95,11 @@ namespace CT.AdminUI.Controllers
             return View();
         }
 
+        // Car Commission
+        [HttpGet]
+        public IActionResult CarCommission()
+        {
+            return View();
+        }
     }
 }
