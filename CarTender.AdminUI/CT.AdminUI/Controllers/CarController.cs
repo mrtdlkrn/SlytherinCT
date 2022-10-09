@@ -95,5 +95,19 @@ namespace CT.AdminUI.Controllers
             return View();
         }
 
+        // Car Commission
+        [HttpGet]
+        public IActionResult CarCommission()
+        {
+            return View();
+        }
+
+        // Car Buyer Information
+        [HttpGet]
+        public IActionResult CarBuyerInformation()
+        {
+            return View();
+        }
+        
     }
 }

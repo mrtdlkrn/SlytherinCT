@@ -172,8 +172,109 @@
 
         <div class="row float-right mb-5">
             <div class="col-md-12 ">
-                <button class="btn btn-dark mt-4" type="submit">Araç Ekle</button>
+                <button class="btn btn-dark mt-4" type="submit" data-toggle="modal" data-target="#addCarToBid" href="#">Araç Ekle</button>
                 <button class="btn btn-dark mt-4" type="submit">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="addCarToBid" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Araç Ekle</h5>
+                    <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <a class="btn btn-dark mt-4 mb-2" href="/Car/Add/">Yeni Araç Ekle</a> @*Geçici*@
+
+                        <div class="input-group-prepend">
+
+                                <div class="table-responsive">
+                                <table class="table table-borderless" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Marka</th>
+                                            <th>Model</th>
+                                            <th>Türü</th>
+                                            <th>Eklenme Tarihi</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Audi</td>
+                                            <td>A3</td>
+                                            <td>Bireysel</td>
+                                            <td>04.10.2022-22:14</td>
+                                            <td>
+                                                <a class="btn btn-warning" href="#">Ekle</a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Ford</td>
+                                            <td>Fiesta</td>
+                                            <td>Bireysel</td>
+                                            <td>04.10.2022-22:14</td>
+                                            <td>
+                                                <a class="btn btn-warning" href="#">Ekle</a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Opel</td>
+                                            <td>Astra</td>
+                                            <td>Kurumsal</td>
+                                            <td>04.10.2022-22:14</td>
+                                            <td>
+                                                <a class="btn btn-warning" href="#">Ekle</a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Volkswagen</td>
+                                            <td>Golf</td>
+                                            <td>Kurumsal</td>
+                                            <td>04.10.2022-22:14</td>
+                                            <td>
+                                                <a class="btn btn-warning" href="#">Ekle</a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Volkswagen</td>
+                                            <td>Golf</td>
+                                            <td>Kurumsal</td>
+                                            <td>04.10.2022-22:14</td>
+                                            <td>
+                                                <a class="btn btn-warning" href="#">Ekle</a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Volkswagen</td>
+                                            <td>Golf</td>
+                                            <td>Kurumsal</td>
+                                            <td>04.10.2022-22:14</td>
+                                            <td>
+                                                <a class="btn btn-warning" href="#">Ekle</a>
+                                            </td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                       
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
             </div>
         </div>
     </div>

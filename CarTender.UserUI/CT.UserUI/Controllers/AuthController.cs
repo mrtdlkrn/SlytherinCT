@@ -2,6 +2,7 @@
 using Entity.DTO;
 using Entity.Security;
 using System;
+using Log;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -10,6 +11,7 @@ namespace CT.UserUI.Controllers
     public class AuthController : Controller
     {
         BaseAPIService _api = new BaseAPIService();
+        Logging<LogDTO> _logger = new NLog<LogDTO>();
 
         #region Login
 
@@ -17,13 +19,29 @@ namespace CT.UserUI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View();
+            return View(new UserLoginDTO());
         }
 
         //POST: Auth Controller for Login
         [HttpPost]
-        public ActionResult Login(int id)
+        public ActionResult Login(UserLoginDTO dto)
         {
+            string tempMail = "ahmet@gmail.com";
+            string tempPassword = "12345";
+
+            if(dto == null)
+            {
+                _logger.Log(new LogDTO { LogMessage = "test logu, dto null" });
+            }
+
+            if(tempMail != dto.Email || tempPassword != dto.Password)
+            {
+                _logger.Log(new LogDTO { LogMessage = "test log, şifre veya email hatalı" });
+            }
+            else
+            {
+                _logger.Log(new LogDTO { LogMessage = dto.Email + " giriş yaptı."});
+            }
             return View();
         }
 
