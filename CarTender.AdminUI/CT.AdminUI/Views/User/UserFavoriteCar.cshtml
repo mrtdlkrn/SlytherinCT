@@ -13,9 +13,10 @@
                             <div class="input-group">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Kullanıcı Ara" aria-label="Ara">
                                 <button class="btn btn-outline-success " type="submit">Ara</button>
+                                <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addUserFavoriteCar">
+                                    <i class="fa fa-plus"></i>
+                                </button>
                             </div>
-                            <a class="btn btn-success mt-2" data-toggle="modal" data-target="#addStatus" href="#">Kullanıcı Favori Araç Ekle</a>
-
                         </div>
                     </div>
                 </div>
@@ -27,7 +28,6 @@
                                 <th scope="col">Kullanıcı</th>
                                 <th scope="col">Araç Bilgileri</th>
                                 <th scope="col"></th>
-                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,20 +35,17 @@
                                 <td>Ahmet</td>
                                 <td>Hyundai Kona 2020 1.4 TSI CVT Siyah</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                    <a class="btn btn-warning col-md-5" data-toggle="modal" data-target="#editUserFavoriteCar" href="#">Güncelle</a>
+                                    <a class="btn btn-danger col-md-5" data-toggle="modal" data-target="#deleteUserFavoriteCar" href="#">Sil</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Yiğit</td>
                                 <td>Opel Corsa 2018 1.2 MT Mavi</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#">Güncelle</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#">Sil</a>
+                                    <a class="btn btn-warning col-md-5" data-toggle="modal" data-target="#editUserFavoriteCar" href="#">Güncelle</a>
+                                    <a class="btn btn-danger col-md-5" data-toggle="modal" data-target="#deleteUserFavoriteCar" href="#">Sil</a>
+
                                 </td>
                             </tr>
                         </tbody>
@@ -59,7 +56,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteUserFavoriteCar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -74,7 +71,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editUserFavoriteCar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -102,7 +99,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="addStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addUserFavoriteCar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

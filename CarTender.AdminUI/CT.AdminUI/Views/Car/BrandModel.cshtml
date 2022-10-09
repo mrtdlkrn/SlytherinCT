@@ -1,62 +1,145 @@
-﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+﻿@{
+    ViewData["Title"] = "Marka Model";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 <div class="container">
     <div id="accordion">
         <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">Marka Listesi</a>
+                    <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addBrand">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col">Marka Adı</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fiat</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editBrand" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteBrand" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Opel</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editBrand" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteBrand" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>BMW</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editBrand" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteBrand" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Renault</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editBrand" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteBrand" href="#">Sil</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">Model Listesi</a>
+
+                </h5>
+            </div>
+
             <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="row mt-3">
                     <div class="col-md-4">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Marka Model</label>
+                                <label class="input-group-text" for="inputGroupSelect01">Marka:</label>
                             </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option value="1" selected>Fiat</option>
+                                <option value="2">Opel</option>
+                                <option value="3">BMW</option>
+                                <option value="4">Renault</option>
+                            </select>
+                            <button type="button" class="btn btn-outline-success ml-2" id="myInput" data-bs-toggle="modal" data-bs-target="#addModel">
+                                <i class="fa fa-plus"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-
-                    <div>
-                        <a class="btn btn-success" href="/Advert/Index/"><i class="fa-solid fa-plus"></i> Yeni Marka Ekle</a>
-                    </div>
-
                     <table class="table table-borderless">
                         <thead>
                             <tr>
-                                <th scope="col">Araç Bilgisi</th>
-                                <th scope="col">Başlık</th>
-                                <th scope="col">Ön Değerlendirme Fiyatı</th>
-                                <th scope="col">Fiyat Bilgisi</th>
-                                <th scope="col">Açıklama</th>
-                                <th scope="col">Güncelleme</th>
-                                <th scope="col">Silme</th>
+                                <th scope="col">Model Adı</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Nissan</td>
-                                <td>Eski İlan</td>
-                                <td>80.000 TL</td>
-                                <td>100.000 TL</td>
-                                <td>Eski</td>
+                                <td>Egea</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editModel" href="#">Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteModel" href="#">Sil</a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Toyota</td>
-                                <td>Yeni İlan</td>
-                                <td>160.000 TL</td>
-                                <td>200.000 TL</td>
-                                <td>Yeni</td>
+                                <td>Linea</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editModel" href="#">Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteModel" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Doblo</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editModel" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteModel" href="#">Sil</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>500</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editModel" href="#">Güncelle</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteModel" href="#">Sil</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -67,56 +150,34 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteBrand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">İlanı Sil</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Marka Sil</h5>
                 <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
                     <i class="fa-solid fa-x"></i>
                 </button>
             </div>
-            <div class="modal-body">İlanı silmek istediğinize emin misiniz?</div>
+            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
             <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editBrand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">İlanları Güncelle</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Marka Güncelle</h5>
                 <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
                     <i class="fa-solid fa-x"></i>
                 </button>
             </div>
             <div class="modal-body">
-                <div class="input-group mb-4">
+                <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Başlık:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-4">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
-                    <input type="text" class="form-control" />
-                    <div class="input-group-append">
-                        <span class="input-group-text">TL</span>
-                        <span class="input-group-text">0.00</span>
-                    </div>
-                </div>
-                <div class="input-group mb-4">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Fiyat Bilgisi:</span>
-                    <input type="text" class="form-control" />
-                    <div class="input-group-append">
-                        <span class="input-group-text">TL</span>
-                        <span class="input-group-text">0.00</span>
-                    </div>
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
+                        <label class="input-group-text" for="inputGroupSelect01">Marka Giriniz:</label>
                     </div>
                     <input type="text" value="" class="form-control col-md-8" />
                 </div>
@@ -125,3 +186,85 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="addBrand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Marka Ekle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Marka Giriniz:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Model Sil</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Model Güncelle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Model Adı Giriniz:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Model Ekle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Model Adı Giriniz:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
+        </div>
+    </div>
+</div>
+
