@@ -210,13 +210,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\AuthLayouts\_CompanySignUpLayout.cshtml" />
     <Content Include="Views\Shared\AuthLayouts\_EmailVerficationIsCorrectLayout.cshtml" />
-    <Content Include="Views\Shared\AuthLayouts\_EmailVerificationLayout.cshtml" />
-    <Content Include="Views\Shared\AuthLayouts\_ForgotPasswordLayout.cshtml" />
     <Content Include="Views\Shared\AuthLayouts\_LoginLayout.cshtml" />
     <Content Include="Views\Shared\AuthLayouts\_ResetPassword.cshtml" />
-    <Content Include="Views\Shared\AuthLayouts\_SignUpLayout.cshtml" />
     <Content Include="Views\Auth\CompanySignUp.cshtml" />
     <Content Include="Views\Auth\CustomerSignUp.cshtml" />
     <Content Include="Views\Auth\EmailVerification.cshtml" />

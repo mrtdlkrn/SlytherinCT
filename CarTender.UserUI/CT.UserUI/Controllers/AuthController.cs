@@ -71,8 +71,9 @@ namespace CT.UserUI.Controllers
 
         //GET: Auth Controller for EmailVerification
         [HttpGet]
-        public ActionResult EmailVerification()
+        public ActionResult EmailVerification(RabbitMQLoginDTO dto)
         {
+            TempData["Email"] = dto.Email;
             return View();
         }
 
