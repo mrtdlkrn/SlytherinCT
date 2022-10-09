@@ -76,7 +76,7 @@ namespace CarTender.API.Controllers
             {
                 Topic = "Email Doğrulama",
                 DestinationEmails = eposta,
-                Context = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>Page Title</title>\r\n</head>\r\n<body>\r\n\r\n<h1>This is a Heading</h1>\r\n<p>This is a paragraph.</p>\r\n\r\n<a href=\""+(confirmationLink,user.Id,token)+"\">Email Doğrula</a></body>\r\n</html>" //todo : İçerik girilecek
+                Context = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>Page Title</title>\r\n</head>\r\n<body>\r\n\r\n<h1>This is a Heading</h1>\r\n<p>This is a paragraph.</p>\r\n\r\n<a href=\""+confirmationLink+token.Token.ToString()+"\">Email Doğrula</a></body>\r\n</html>" //todo : İçerik girilecek
             };
             ConnectionFactory connectionFactory = new ConnectionFactory()
             {

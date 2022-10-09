@@ -1,5 +1,7 @@
 ﻿using Business.Concrete;
 using Entity.DTO;
+using Entity.Security;
+using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -87,14 +89,14 @@ namespace CT.UserUI.Controllers
 
         //GET: Auth Controller for EmailVerificationIsCorrect
         [HttpGet]
-        public ActionResult EmailVerificationIsCorrect(Guid id, System.IdentityModel.Tokens.Jwt.JwtSecurityToken token)
+        public ActionResult EmailVerificationIsCorrect(int uid , string token)
         {
             return View();
         }
 
         //POST: Auth Controller for EmailVerificationIsCorrect
         [HttpPost]
-        public ActionResult EmailVerificationIsCorrect(int id)
+        public ActionResult EmailVerificationIsCorrect()
         {
             return View();
         }
