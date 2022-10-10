@@ -1,17 +1,16 @@
 ﻿using Business.Concrete;
+using CT.UserUI.Logging.Concrete;
 using Entity.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CT.UserUI.Controllers
 {
     public class AuthController : Controller
     {
-        BaseAPIService _api = new BaseAPIService();
+        private readonly BaseAPIService _api = new BaseAPIService();
+
+        private readonly Logger _logger = new Logger(new Creater().FactoryMethod(LoggerTypes.DbLogger));
 
         #region Login
 
@@ -19,14 +18,25 @@ namespace CT.UserUI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View();
+            return View(new UserLoginDTO());
         }
 
         //POST: Auth Controller for Login
         [HttpPost]
-        public ActionResult Login(int id)
+        public ActionResult Login(UserLoginDTO dto)
         {
-            return View();
+            string email = "ahmet@gmail.com";
+            string password = "123";
+
+            if (dto.Password != password || dto.Email != email)
+            {
+                _logger.Log("hatalı kullanıcı girişi - USERUI");
+                return RedirectToAction("Login");
+            }
+
+            _logger.Log(email + " kullanıcı giriş yaptı. - USERUI");
+
+            return RedirectToAction("CustomerSignUp");
         }
 
         #endregion
