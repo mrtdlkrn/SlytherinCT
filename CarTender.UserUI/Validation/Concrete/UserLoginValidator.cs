@@ -12,8 +12,11 @@ namespace Common.Validation.Concrete
     {
         public UserLoginValidator()
         {
-            RuleFor(user => user.Email).NotEmpty().MinimumLength(2).MaximumLength(30);
-            RuleFor(user => user.Password).NotEmpty().MinimumLength(2).MaximumLength(30);
+            RuleFor(dto => dto.Email).NotEmpty().MinimumLength(2).MaximumLength(30);
+            RuleFor(dto => dto.Password).NotEmpty().MinimumLength(8).MaximumLength(20)
+                .Matches("[A-Z]").WithMessage("'{PropertyName}' must contain one or more capital letters.")
+                .Matches("[a-z]").WithMessage("'{PropertyName}' must contain one or more lowercase letters.")
+                .Matches(@"\d").WithMessage("'{PropertyName}' must contain one or more digits.");
         }
     }
 }

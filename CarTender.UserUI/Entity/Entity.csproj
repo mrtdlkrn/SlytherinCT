@@ -42,8 +42,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\AddUserDTO.cs" />
+    <Compile Include="DTO\AddVehicleDTO.cs" />
+    <Compile Include="DTO\BidCorporateUserDTO.cs" />
+    <Compile Include="DTO\BidInformationDTO.cs" />
+    <Compile Include="DTO\BidListDTO.cs" />
+    <Compile Include="DTO\BidOfferDetailDTO.cs" />
+    <Compile Include="DTO\BidStatusHistoryDTO.cs" />
+    <Compile Include="DTO\BidUserOfferDTO.cs" />
+    <Compile Include="DTO\CarListDTO.cs" />
+    <Compile Include="DTO\CreateNewBidDTO.cs" />
+    <Compile Include="DTO\ExpertiseDTO.cs" />
+    <Compile Include="DTO\MessageContentDTO.cs" />
+    <Compile Include="DTO\MessageDTO.cs" />
+    <Compile Include="DTO\NeighborhoodDTO.cs" />
     <Compile Include="DTO\RabbitMQLoginDTO.cs" />
+    <Compile Include="DTO\ShowNewBidDTO.cs" />
     <Compile Include="DTO\TokenDTO.cs" />
+    <Compile Include="DTO\UpdateCarDTO.cs" />
+    <Compile Include="DTO\UpdateUserDTO.cs" />
+    <Compile Include="DTO\UserLoginDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

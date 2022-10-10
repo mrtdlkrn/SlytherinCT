@@ -48,12 +48,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concrete\UpdateUserValidator.cs" />
+    <Compile Include="Concrete\UpdateCarValidator.cs" />
+    <Compile Include="Concrete\ShowNewBidValidator.cs" />
+    <Compile Include="Concrete\NeighborhoodValidator.cs" />
+    <Compile Include="Concrete\MessageValidator.cs" />
+    <Compile Include="Concrete\MessageContentValidator.cs" />
+    <Compile Include="Concrete\ExpertiseValidator.cs" />
+    <Compile Include="Concrete\CreateNewBidValidator.cs" />
+    <Compile Include="Concrete\CarListValidator.cs" />
+    <Compile Include="Concrete\BidUserOfferValidator.cs" />
+    <Compile Include="Concrete\BidStatusHistoryValidator.cs" />
+    <Compile Include="Concrete\BidOfferDetailValidator.cs" />
+    <Compile Include="Concrete\BidListValidator.cs" />
+    <Compile Include="Concrete\BidInformationValidator.cs" />
+    <Compile Include="Concrete\BidCorporateUserValidator.cs" />
+    <Compile Include="Concrete\AddVehicleValidator.cs" />
+    <Compile Include="Concrete\AddUserValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Concrete\TokenValidator.cs" />
     <Compile Include="Concrete\UserLoginValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{1AC6FC98-2B25-423F-ABD7-07201B00900F}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
