@@ -16,26 +16,54 @@
 </head>
 
 <body>
+    <style>
+        body {
+            background-color: #0FB79F;
+        }
+    </style>
     <form asp-controller="Auth" asp-action="CustomerSignUp" method="post">
         <div class="SignUp">
             <div class="SignUpInputs">
                 <div class="Inputs">
-                    <span class="SignUpTextOne">Bireysel Kullanıcı Oluştur</span>
-                    <span class="SignUpTextTwo">Ikinci El Araç Ihale Sistemi Kayıt Olun.</span>
-                    <input class="SignUpUsername" name="Username" value="Sarp" type="text" placeholder="Kullanıcı Adı:" />
-                    <input class="SignUpName" name="Customername" value="Sarp İpekçi" type="text" placeholder="Ad Soyad:" />
-                    <input class="SignUpPhone" name="Phone" value="1234" type="text" placeholder="Telefon:" />
-                    <input class="SignUpEmail" name="Email" value="Sarp@gmail.com" type="email" placeholder="Email:" />
-                    <input class="SignUpPassword" name="Password" value="12345" type="password" placeholder="Şifre" />
-                    <input class="SignUpCheckPassword" name="RePassword" value="12345" type="password" placeholder="Şifre Tekrarı" />
-                    <div class="Grp">
-                        <a href="~/Auth/Login" class="SignUpJoinUsTwo">Geri Dön</a>
-                        <input class="SignUpJoinUsOne" type="submit" value="Kayıt Ol" />
+                    <div class="row mt-5">
+                        <div class="row">
+                            <span class="SignUpTextOne">Bireysel Kullanıcı Oluştur</span>
+                        </div>
+                        <div class="row">
+                            <span class="SignUpTextTwo">Ikinci El Araç Ihale Sistemi Kayıt Olun.</span>
+                        </div>
+                    </div>
+                    <div class="InputsCard mt-4">
+                        <input class="input-group-text mt-4 w-100 p-1" name="Username" type="text" id="Username"
+                               placeholder="Kullanıcı Adı:"
+                               style="text-align: left; background-color: white; color: black;" />
+                        <input class="input-group-text mt-3 w-100 p-1" name="Username" type="text" id="Customername"
+                               placeholder="Ad Soyad:" style="text-align: left; background-color: white; color: black;" />
+                        <input class="input-group-text mt-3 w-100 p-1" name="Phone" type="text" id="Phone"
+                               style="text-align: left; background-color: white; color: black;" placeholder="Telefon:" />
+                        <input class="input-group-text mt-3 w-100 p-1" name="Email" type="email" id="Email"
+                               style="text-align: left; background-color: white; color: black;" placeholder="Email:" />
+                        <input class="input-group-text mt-3 w-100 p-1" name="Password" type="password" id="Password"
+                               style="text-align: left; background-color: white; color: black;" placeholder="Şifre" />
+                        <input class="input-group-text mt-3 w-100 p-1" name="RePassword" type="password" id="RePassword"
+                               style="text-align: left; background-color: white; color: black;"
+                               placeholder="Şifre Tekrarı" />
+                        <div class="row mt-4">
+                            <div class="btn-group">
+                                <a class="btn btn-primary col-2 w-10" href="~/Auth/Login" id="GoBack"
+                                   style="background-color: #D35400; border-radius:15px; border:none; color:white; font-size:16px; font-weight:500;">
+                                    Geri
+                                    Dön
+                                </a>
+                                <input class="btn btn-primary col-2 w-10" value="Kayıt Ol" type="submit" id="Create"
+                                       style="background-color: #FCB510; border-radius:15px; border:none; color:white; font-size:16px; font-weight:500; text-align: center;" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="ImageLayer">
-                <img src="~/Content/Images/NewCustomer.png" class="CarImage" />
+                <img src="~/Content/Images/NewCustomer.png" style="width: 100%; height:100%; position:relative;"/>
             </div>
         </div>
     </form>

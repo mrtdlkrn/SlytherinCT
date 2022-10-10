@@ -1,0 +1,190 @@
+﻿@using CT.AdminUI.Models
+@using Entity.DTO
+@using System.Linq;
+@using System.Reflection
+@using System.ComponentModel
+@model GenericViewModel
+@{
+    ViewData["Title"] = @Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var deneme = Model.MyModel.GetType().GetProperties();
+}
+
+@*Model.MyModel.GetType().GetProperty(member.Name)*@
+
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">@Model.PageHeader</h1>
+    <p class="mb-4">
+        @Model.Information
+    </p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Form Bilgileri</h6>
+        </div>
+        <div class="card-body">
+            <form class="row" Model="@Model.MyModel" asp-controller="@Model.ActionController" asp-action="@Model.ActionMethod" method="post">
+                @foreach (var member in Model.MyModel.GetType().GetProperties())
+                {
+
+                    //String propertyler icin input type text olarak olusturuyoruz.
+                    @if (Model.MyModel.GetType().GetProperty(member.Name).PropertyType == typeof(String))
+                    {
+                        <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
+                            <label for="exampleFormControlInput1">@(Model.MyModel.GetType().GetProperty(member.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? Model.MyModel.GetType().GetProperty(member.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : @Model.MyModel.GetType().GetProperty(member.Name).Name)</label>
+                            <input class="form-control" name="MyModel.@Model.MyModel.GetType().GetProperty(member.Name).Name">
+                        </div>
+                    }
+                    else if (Model.MyModel.GetType().GetProperty(member.Name).PropertyType == typeof(DateTime))
+                    {
+                        <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
+                            <label for="exampleFormControlInput1">@(Model.MyModel.GetType().GetProperty(member.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? Model.MyModel.GetType().GetProperty(member.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : @Model.MyModel.GetType().GetProperty(member.Name).Name)</label>
+                            <div class="input-group date" data-provide="datepicker">
+                                <input type="text" class="form-control" name="MyModel.@Model.MyModel.GetType().GetProperty(member.Name).Name">
+                                <div class="input-group-addon">
+                                    <i data-feather="calendar"></i>
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    else if (Model.MyModel.GetType().GetProperty(member.Name).PropertyType == typeof(List<string>))
+                    {
+                        <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
+                            <div class="mb-3">
+                                <label for="exampleFormControlSelect1">@(Model.MyModel.GetType().GetProperty(member.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? Model.MyModel.GetType().GetProperty(member.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : @Model.MyModel.GetType().GetProperty(member.Name).Name)</label>
+                                <select class="form-control" name="MyModel.@Model.MyModel.GetType().GetProperty(member.Name).Name" id="exampleFormControlSelect1">
+                                    <option disabled selected>Seçim yapınız</option>
+                                    @foreach (var property in (List<string>)Model.MyModel.GetType().GetProperty(member.Name).GetValue(Model.MyModel, null))
+                                    {
+                                        <option value="@property">@property</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                    }
+                    else if (Model.MyModel.GetType().GetProperty(member.Name).PropertyType == typeof(bool))
+                    {
+                        <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
+                            <label for="exampleFormControlInput1">@(Model.MyModel.GetType().GetProperty(member.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? Model.MyModel.GetType().GetProperty(member.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : @Model.MyModel.GetType().GetProperty(member.Name).Name)</label>
+                            <div class="btn-group btn-group-toggle form-control p-0" data-toggle="buttons">
+                                <label class="btn btn-outline-success active">
+                                    <input type="radio" value="true" name="MyModel.@Model.MyModel.GetType().GetProperty(member.Name).Name" id="@Model.MyModel.GetType().GetProperty(member.Name).Name 1" checked> Onayla
+                                </label>
+                                <label class="btn btn-outline-danger">
+                                    <input type="radio" value="false" name="MyModel.@Model.MyModel.GetType().GetProperty(member.Name).Name" id="@Model.MyModel.GetType().GetProperty(member.Name).Name 2"> Reddet
+                                </label>
+                            </div>
+                        </div>
+                    }
+                    else if (Model.MyModel.GetType().GetProperty(member.Name).GetType().IsClass && Model.MyModel.GetType().GetProperty(member.Name).PropertyType != typeof(int))
+                    {
+                        <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
+                            <label for="exampleFormControlInput1">@(Model.MyModel.GetType().GetProperty(member.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? Model.MyModel.GetType().GetProperty(member.Name).GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : @Model.MyModel.GetType().GetProperty(member.Name).Name)</label>
+                            <button type="button" class="btn btn-info btn-block form-control" data-toggle="modal" data-target="#@Model.MyModel.GetType().GetProperty(member.Name).Name-modal">
+                                @Model.MyModel.GetType().GetProperty(member.Name).Name
+                            </button>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade bd-example-modal-lg" id="@Model.MyModel.GetType().GetProperty(member.Name).Name-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">@Model.MyModel.GetType().GetProperty(member.Name).Name</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        @foreach (var modalProperty in Model.MyModel.GetType().GetProperty(member.Name).PropertyType.GetProperties())
+                                        {
+
+                                            <div>@modalProperty.Name</div>
+
+
+
+                                            //String propertyler icin input type text olarak olusturuyoruz.
+                                            @*@if (Model.MyModel.GetType().GetProperty(member.Name).GetType().GetProperty(modalProperty.Name).PropertyType == typeof(String))
+                                {
+                                <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
+                                <label for="exampleFormControlInput1">@(Model.MyModel.GetType().GetProperty(member.Name).GetType().GetProperty(modalProperty.Name).Name)</label>
+                                <input class="form-control" name="@Model.MyModel.GetType().GetProperty(member.Name).GetType().GetProperty(modalProperty.Name).Name ">
+                                </div>
+                                }*@
+                                            @*else if (Model.MyModel.GetType().GetProperty(modalProperty.Name).PropertyType == typeof(DateTime))
+                                {
+                                <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
+                                <label for="exampleFormControlInput1">@Model.MyModel.GetType().GetProperty(modalProperty.Name).Name</label>
+                                <div class="input-group date" data-provide="datepicker">
+                                <input type="text" class="form-control" name="@Model.MyModel.GetType().GetProperty(modalProperty.Name).Name">
+                                <div class="input-group-addon">
+                                <i data-feather="calendar"></i>
+                                <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                                </div>
+                                </div>
+
+                                }
+                                else if (Model.MyModel.GetType().GetProperty(modalProperty.Name).PropertyType == typeof(List<string>))
+                                {
+                                <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
+                                <div class="mb-3">
+                                <label for="exampleFormControlSelect1">@Model.MyModel.GetType().GetProperty(modalProperty.Name).Name</label>
+                                <select class="form-control" name="@Model.MyModel.GetType().GetProperty(modalProperty.Name).Name" id="exampleFormControlSelect1">
+                                <option disabled selected>Seçim yapınız</option>
+                                @foreach (var property in (List<string>)Model.MyModel.GetType().GetProperty(modalProperty.Name).GetValue(Model.MyModel, null))
+                                {
+                                <option value="@property">@property</option>
+                                }
+                                </select>
+                                </div>
+                                </div>
+
+                                }
+                                else if (Model.MyModel.GetType().GetProperty(member.Name).PropertyType == typeof(bool))
+                                {
+                                <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
+                                <label for="exampleFormControlInput1">@Model.MyModel.GetType().GetProperty(member.Name).Name</label>
+                                <input type="hidden">
+
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-outline-success active">
+                                <input type="radio" value="true" name="@Model.MyModel.GetType().GetProperty(member.Name).Name" id="@Model.MyModel.GetType().GetProperty(member.Name).Name 1" checked> Onayla
+                                </label>
+                                <label class="btn btn-outline-danger">
+                                <input type="radio" value="false" name="@Model.MyModel.GetType().GetProperty(member.Name).Name" id="@Model.MyModel.GetType().GetProperty(member.Name).Name 2"> Reddet
+                                </label>
+                                </div>
+                                </div>
+                                }*@
+                                        }
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+
+                <div class="col-md-6 col-sm-12 mt-3">
+                    <input type="submit" class="btn btn-success btn-block" value="Kaydet" />
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+@*((object)Model.MyModel.GetType().GetProperty(member.Name))*@

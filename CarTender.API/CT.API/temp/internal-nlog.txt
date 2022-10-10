@@ -1,0 +1,351 @@
+2022-10-10 17:48:29.2739 Info Message Template Auto Format enabled
+2022-10-10 17:48:29.2958 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 17:48:29.5344 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 17:48:29.5724 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\Logging\DatabaseNLog\NLog.config
+2022-10-10 17:48:30.3249 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\Logging\DatabaseNLog\NLog.config
+2022-10-10 17:58:51.6158 Info Message Template Auto Format enabled
+2022-10-10 17:58:51.6433 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 17:58:51.8706 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 17:58:51.9069 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\Logging\DatabaseNLog\NLog.config
+2022-10-10 18:01:51.9989 Info Message Template Auto Format enabled
+2022-10-10 18:01:52.0265 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:01:52.2103 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:01:52.2340 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:06:18.0062 Info Message Template Auto Format enabled
+2022-10-10 18:06:18.0327 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:06:18.2155 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:06:18.2361 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:12:22.1047 Info Message Template Auto Format enabled
+2022-10-10 18:12:22.1238 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:12:22.2419 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:12:22.2994 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:12:22.7840 Info Loading NLog config from XML file: C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:12:22.7840 Info Message Template Auto Format enabled
+2022-10-10 18:12:22.7840 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:12:22.7840 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:12:22.7840 Info Closing old configuration.
+2022-10-10 18:12:22.8230 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:12:23.1534 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:15:03.1980 Info Message Template Auto Format enabled
+2022-10-10 18:15:03.2263 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:15:03.4084 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:15:03.4802 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:15:03.9577 Info Loading NLog config from XML file: C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:15:03.9577 Info Message Template Auto Format enabled
+2022-10-10 18:15:03.9577 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:15:03.9577 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:15:03.9577 Info Closing old configuration.
+2022-10-10 18:15:03.9992 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:15:04.3385 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:17:40.1175 Info Message Template Auto Format enabled
+2022-10-10 18:17:40.1399 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:17:40.3271 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:17:40.3899 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:17:40.8572 Info Loading NLog config from XML file: C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:17:40.8572 Info Message Template Auto Format enabled
+2022-10-10 18:17:40.8641 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:17:40.8641 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:17:40.8641 Info Closing old configuration.
+2022-10-10 18:17:40.9027 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:17:41.1798 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:21:41.2115 Info Message Template Auto Format enabled
+2022-10-10 18:21:41.2305 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:21:41.3420 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:21:41.3857 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:21:41.8753 Info Loading NLog config from XML file: C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:21:41.8753 Info Message Template Auto Format enabled
+2022-10-10 18:21:41.8753 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:21:41.8753 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:21:41.8753 Info Closing old configuration.
+2022-10-10 18:21:41.9083 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:21:42.1813 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:22:46.0357 Info Message Template Auto Format enabled
+2022-10-10 18:22:46.0546 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:22:46.1702 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:22:46.2170 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:22:46.5831 Info Loading NLog config from XML file: C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:22:46.5831 Info Message Template Auto Format enabled
+2022-10-10 18:22:46.5831 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:22:46.5831 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:22:46.5831 Info Closing old configuration.
+2022-10-10 18:22:46.6206 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:22:46.9197 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:22:54.8443 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.SNIWritePacket(PacketHandle packet, UInt32& sniError, Boolean canAccumulate, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WriteSni(Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WritePacket(Byte flushMode, Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParser.TdsLogin(SqlLogin rec, FeatureExtension requestedFeatures, SessionData recoverySessionData, FederatedAuthenticationFeatureExtensionData fedAuthFeatureExtensionData, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.Login(ServerInfo server, TimeoutTimer timeout, String newPassword, SecureString newSecurePassword, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:8e4f1f19-e8c4-4d90-a1db-099c97e0f3e6
+Error Number:-2146893019,State:0,Class:20
+2022-10-10 18:23:14.5163 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.SNIWritePacket(PacketHandle packet, UInt32& sniError, Boolean canAccumulate, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WriteSni(Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WritePacket(Byte flushMode, Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParser.TdsLogin(SqlLogin rec, FeatureExtension requestedFeatures, SessionData recoverySessionData, FederatedAuthenticationFeatureExtensionData fedAuthFeatureExtensionData, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.Login(ServerInfo server, TimeoutTimer timeout, String newPassword, SecureString newSecurePassword, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:2eaa1e0f-e750-44ea-9a2e-02aa606f3a83
+Error Number:-2146893019,State:0,Class:20
+2022-10-10 18:24:33.8941 Info Message Template Auto Format enabled
+2022-10-10 18:24:33.9111 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:24:34.0186 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:24:34.0733 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:24:34.4789 Info Loading NLog config from XML file: C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:24:34.4789 Info Message Template Auto Format enabled
+2022-10-10 18:24:34.4789 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:24:34.4850 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:24:34.4850 Info Closing old configuration.
+2022-10-10 18:24:34.5129 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:24:34.7450 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:24:47.5027 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.SNIWritePacket(PacketHandle packet, UInt32& sniError, Boolean canAccumulate, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WriteSni(Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WritePacket(Byte flushMode, Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParser.TdsLogin(SqlLogin rec, FeatureExtension requestedFeatures, SessionData recoverySessionData, FederatedAuthenticationFeatureExtensionData fedAuthFeatureExtensionData, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.Login(ServerInfo server, TimeoutTimer timeout, String newPassword, SecureString newSecurePassword, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:c80146b4-a2c4-45c1-8eea-2e1a0045e692
+Error Number:-2146893019,State:0,Class:20
+2022-10-10 18:27:35.0988 Info Message Template Auto Format enabled
+2022-10-10 18:27:35.1179 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:27:35.2305 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:27:35.2775 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:27:35.7194 Info Loading NLog config from XML file: C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:27:35.7194 Info Message Template Auto Format enabled
+2022-10-10 18:27:35.7194 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:27:35.7194 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:27:35.7194 Info Closing old configuration.
+2022-10-10 18:27:35.7545 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:27:36.0827 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:27:46.1145 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.SNIWritePacket(PacketHandle packet, UInt32& sniError, Boolean canAccumulate, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WriteSni(Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WritePacket(Byte flushMode, Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParser.TdsLogin(SqlLogin rec, FeatureExtension requestedFeatures, SessionData recoverySessionData, FederatedAuthenticationFeatureExtensionData fedAuthFeatureExtensionData, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.Login(ServerInfo server, TimeoutTimer timeout, String newPassword, SecureString newSecurePassword, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:a561944e-d16d-4d95-9922-9927b77bda9e
+Error Number:-2146893019,State:0,Class:20
+2022-10-10 18:28:26.8633 Info Message Template Auto Format enabled
+2022-10-10 18:28:26.8852 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:28:27.0047 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:28:27.0574 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:28:27.4653 Info Loading NLog config from XML file: C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:28:27.4653 Info Message Template Auto Format enabled
+2022-10-10 18:28:27.4703 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:28:27.4703 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:28:27.4703 Info Closing old configuration.
+2022-10-10 18:28:27.4989 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:28:27.8598 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:37:13.5757 Info Message Template Auto Format enabled
+2022-10-10 18:37:13.5918 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:37:13.6995 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:37:13.7439 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:37:14.1902 Info Loading NLog config from XML file: C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:37:14.1902 Info Message Template Auto Format enabled
+2022-10-10 18:37:14.2045 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:37:14.2045 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:37:14.2045 Info Closing old configuration.
+2022-10-10 18:37:14.2461 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:37:14.5566 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:37:48.9514 Info Message Template Auto Format enabled
+2022-10-10 18:37:48.9678 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:37:49.0711 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:37:49.1929 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:37:49.6461 Info Loading NLog config from XML file: C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:37:49.6461 Info Message Template Auto Format enabled
+2022-10-10 18:37:49.6576 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:37:49.6576 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:37:49.6576 Info Closing old configuration.
+2022-10-10 18:37:49.7161 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:37:49.9917 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:40:47.6645 Info Message Template Auto Format enabled
+2022-10-10 18:40:47.6809 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:40:47.7995 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 18:40:47.8509 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:40:48.3348 Info Loading NLog config from XML file: C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:40:48.3348 Info Message Template Auto Format enabled
+2022-10-10 18:40:48.3348 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:40:48.3348 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 18:40:48.3348 Info Closing old configuration.
+2022-10-10 18:40:48.3695 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:40:48.6252 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\NLog.config
+2022-10-10 18:46:19.1629 Info Message Template Auto Format enabled
+2022-10-10 18:46:19.1841 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:46:19.3173 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 18:46:19.3857 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 18:46:20.1879 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 19:06:56.4006 Info Message Template Auto Format enabled
+2022-10-10 19:06:56.4170 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 19:06:56.5696 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 19:06:56.6137 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 19:06:57.4738 Error DatabaseTarget(Name=dbhede): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - The certificate chain was issued by an authority that is not trusted.)
+ ---> System.ComponentModel.Win32Exception (0x80090325): The certificate chain was issued by an authority that is not trusted.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.SNIWritePacket(PacketHandle packet, UInt32& sniError, Boolean canAccumulate, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WriteSni(Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.WritePacket(Byte flushMode, Boolean canAccumulate)
+   at Microsoft.Data.SqlClient.TdsParser.TdsLogin(SqlLogin rec, FeatureExtension requestedFeatures, SessionData recoverySessionData, FederatedAuthenticationFeatureExtensionData fedAuthFeatureExtensionData, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.Login(ServerInfo server, TimeoutTimer timeout, String newPassword, SecureString newSecurePassword, SqlConnectionEncryptOption encrypt)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:dccb6258-31c5-4463-adfe-65e487c79d28
+Error Number:-2146893019,State:0,Class:20
+2022-10-10 19:42:27.5537 Info Message Template Auto Format enabled
+2022-10-10 19:42:27.5777 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 19:42:27.7570 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 19:42:27.7998 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 19:44:22.0919 Info Message Template Auto Format enabled
+2022-10-10 19:44:22.1067 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 19:44:22.1874 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 19:44:22.2464 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 19:44:23.1997 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 19:47:40.3330 Info Message Template Auto Format enabled
+2022-10-10 19:47:40.3488 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 19:47:40.4441 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 19:47:40.4890 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 19:47:41.5337 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 19:59:36.4451 Info Message Template Auto Format enabled
+2022-10-10 19:59:36.4815 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 19:59:36.6234 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 19:59:36.6689 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 19:59:37.7284 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 20:37:51.3518 Info Message Template Auto Format enabled
+2022-10-10 20:37:51.3690 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 20:37:51.4802 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 20:37:51.5272 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 20:37:52.4861 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 20:38:30.9878 Info Message Template Auto Format enabled
+2022-10-10 20:38:31.0033 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 20:38:31.1023 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 20:38:31.1440 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 20:38:32.0867 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 20:41:07.1479 Info Message Template Auto Format enabled
+2022-10-10 20:41:07.1645 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 20:41:07.2750 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 20:41:07.3173 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 20:41:08.2808 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 20:42:04.9270 Info Message Template Auto Format enabled
+2022-10-10 20:42:04.9492 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 20:42:05.1199 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 20:42:05.1725 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 20:42:06.2121 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 20:43:25.6948 Info Message Template Auto Format enabled
+2022-10-10 20:43:25.7106 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 20:43:25.8173 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 20:43:25.8649 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 20:43:26.8626 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 21:04:08.2814 Info Message Template Auto Format enabled
+2022-10-10 21:04:08.3019 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 21:04:08.4894 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 21:04:08.5395 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 21:04:11.2555 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config

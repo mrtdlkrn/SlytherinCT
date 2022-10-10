@@ -1,4 +1,3 @@
-﻿using Common.Validation.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using FluentValidation;
 
 namespace Common.Validation.Concrete
 {
-    public class UserValidator : Abstract.AbstractValidator<User>
+    public class UserValidator : AbstractValidator<User>
     {
         public UserValidator()
         {

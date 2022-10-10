@@ -4,6 +4,9 @@ using CarTender.Core.Security.Encryption;
 using CarTender.Core.Security.JWT;
 using CarTender.DataAccess.Abstract;
 using CarTender.DataAccess.Concrete.Dapper;
+using CT.API.Logging.Abstract;
+using CT.API.Logging.Concrete;
+using CT.Common.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,12 +37,13 @@ namespace CarTender.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarTender.API", Version = "v1" });
             });
 
+            services.AddSingleton<ILoggerManager, LoggerManager>();
+
             services.AddScoped<IAuthService, AuthManager>();
             services.AddScoped<IUserService, UserManager>();
-
             services.AddScoped<IUserDAL, UserDAL>();
-
             services.AddScoped<ITokenHelper, JwtHelper>();
+            services.AddTransient<IQueueService, QueueService>();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
@@ -56,7 +60,6 @@ namespace CarTender.API
                     IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                 };
             });
-
 
         }
 
@@ -83,5 +86,6 @@ namespace CarTender.API
                 endpoints.MapControllers();
             });
         }
+
     }
 }

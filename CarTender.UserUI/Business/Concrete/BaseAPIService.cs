@@ -24,6 +24,14 @@ namespace Business.Concrete
         }
 
         #region GET
+
+        /// <summary>
+        /// Get action method using User's Token
+        /// </summary>
+        /// <typeparam name="DTO">A class</typeparam>
+        /// <param name="tokenDTO">User's Token</param>
+        /// <param name="requestUrl">Request URL</param>
+        /// <returns></returns>
         public async Task<DTO> GET<DTO>(TokenDTO tokenDTO, string requestUrl) where DTO : class
         {
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
@@ -38,6 +46,14 @@ namespace Business.Concrete
             }
         }
 
+        /// <summary>
+        /// Get action method  using User's Token with filtered information 
+        /// </summary>
+        /// <typeparam name="DTO">A class</typeparam>
+        /// <param name="tokenDTO">User's Token</param>
+        /// <param name="requestUrl">Request URL</param>
+        /// <param name="filter">Can be a class to filter a list</param>
+        /// <returns></returns>
         public async Task<DTO> GET<DTO>(TokenDTO tokenDTO, string requestUrl,DTO filter) where DTO : class
         {
             //DTO filter, UI dan gelecek filtrelemeleri alacak DTO
@@ -53,6 +69,12 @@ namespace Business.Concrete
             }
         }
 
+        /// <summary>
+        /// Get action method without using a token
+        /// </summary>
+        /// <typeparam name="DTO">A class</typeparam>
+        /// <param name="requestUrl">Request URL</param>
+        /// <returns></returns>
         public async Task<DTO> GET<DTO>(string requestUrl) where DTO : class
         {
             var response = await _httpClient.GetAsync((connectionString + requestUrl));
@@ -69,6 +91,15 @@ namespace Business.Concrete
         #endregion
 
         #region POST
+
+        /// <summary>
+        /// Post action method using User's Token
+        /// </summary>
+        /// <typeparam name="DTO">A class</typeparam>
+        /// <param name="tokenDTO">User's Token</param>
+        /// <param name="requestUrl">Request URL</param>
+        /// <param name="dto">A class</param>
+        /// <returns></returns>
         public async Task<bool> POST<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class
         {
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
@@ -83,6 +114,13 @@ namespace Business.Concrete
             return false;
         }
 
+        /// <summary>
+        /// Post action method without using a token
+        /// </summary>
+        /// <typeparam name="DTO">A class</typeparam>
+        /// <param name="requestUrl">Request URL</param>
+        /// <param name="dto">A class</param>
+        /// <returns></returns>
         public async Task<string> POST<DTO>(string requestUrl, DTO dto) where DTO : class
         {
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
@@ -99,6 +137,15 @@ namespace Business.Concrete
         #endregion
 
         #region PUT
+
+        /// <summary>
+        /// Put action method using User's Token
+        /// </summary>
+        /// <typeparam name="DTO">A class</typeparam>
+        /// <param name="tokenDTO">User's Token</param>
+        /// <param name="requestUrl">Request URL</param>
+        /// <param name="dto">A class</param>
+        /// <returns></returns>
         public async Task<bool> PUT<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class
         {
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
@@ -114,6 +161,13 @@ namespace Business.Concrete
             return false;
         }
 
+        /// <summary>
+        /// Put action method without using a token
+        /// </summary>
+        /// <typeparam name="DTO">A class</typeparam>
+        /// <param name="requestUrl">Request URL</param>
+        /// <param name="dto">A class</param>
+        /// <returns></returns>
         public async Task<bool> PUT<DTO>(string requestUrl, DTO dto) where DTO : class
         {
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
@@ -131,6 +185,13 @@ namespace Business.Concrete
 
         #region DELETE
 
+        /// <summary>
+        /// Delete action method using User's Token
+        /// </summary>
+        /// <param name="tokenDTO">User's Token</param>
+        /// <param name="requestUrl">Request URL</param>
+        /// <param name="id">Deleted Object's ID</param>
+        /// <returns></returns>
         public async Task<bool> DELETE(TokenDTO tokenDTO, string requestUrl, object id)
         {
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
@@ -146,10 +207,10 @@ namespace Business.Concrete
         }
 
         /// <summary>
-        /// Calls delete action in http client without token
+        /// Delete action method without using a token
         /// </summary>
-        /// <param name="requestUrl"></param>
-        /// <param name="id"></param>
+        /// <param name="requestUrl">Request URL</param>
+        /// <param name="id">Deleted Object's ID</param>
         /// <returns></returns>
         public async Task<bool> DELETE(string requestUrl)
         {
