@@ -31,10 +31,14 @@ namespace CarTender.API.Controllers
 
         public IActionResult Login(LoginDTO dto)
         {
-            var user = authService.Login("sarp@gmail.com", "sarp123");
+            //var user = authService.Login("sarp@gmail.com", "sarp123");
+            string email= "ahmet@gmail.com";
+            string password = "123";
 
             // check user
-            if (user == null) return BadRequest("User not found");
+            //if (user == null) return BadRequest("User not found");
+
+            if (dto.Password != password || dto.Email != email) return BadRequest("kullanıcı bilgileri hatalı.");
 
             // if user exists
             var token = authService.CreateToken(new User());
