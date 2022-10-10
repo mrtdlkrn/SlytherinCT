@@ -1,7 +1,85 @@
 ﻿
 @{
     ViewBag.Title = "CompanySignUp";
-    Layout = "~/Views/Shared/AuthLayouts/_CompanySignUpLayout.cshtml";
+    Layout = null;
 }
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Arial&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Jockey+One&display=swap" rel="stylesheet" />
+    <link href="~/Content/MyCss/SignUp/CompanySignUp/CompanySignUp.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #0FB79F;
+        }
+    </style>
+    <div class="SignUp">
+        <div class="SignUpInputs">
+            <div class="Inputs">
+                <div class="row mt-5">
+                    <div class="row">
+                        <span class="SignUpTextOne">Bireysel Kullanıcı Oluştur</span>
+                    </div>
+                    <div class="row">
+                        <span class="SignUpTextTwo">Ikinci El Araç Ihale Sistemi Kayıt Olun.</span>
+                    </div>
+                </div>
+                <div class="InputsCard mt-4">
+                    <input class="input-group-text mt-4 w-100 p-1" name="Username" type="text" id="Username"
+                           placeholder="Kullanıcı Adı:" style="text-align: left; background-color: white; color: black;" />
+                    <input class="input-group-text mt-1 w-100 p-1" name="Username" type="text" id="Customername"
+                           placeholder="Ad Soyad:" style="text-align: left; background-color: white; color: black;" />
+                    <input class="input-group-text mt-1 w-100 p-1" name="Phone" type="text" id="Phone"
+                           style="text-align: left; background-color: white; color: black;" placeholder="Telefon:" />
+                    <input class="input-group-text mt-1 w-100 p-1" name="Email" type="email" id="Email"
+                           style="text-align: left; background-color: white; color: black;" placeholder="Email:" />
+                    <select class="form-select mt-1" id="City">
+                        <option selected>Şehir Seçiniz...</option>
+                        <option value="1">Ankara</option>
+                        <option value="2">İstanbul</option>
+                        <option value="3">İzmir</option>
+                    </select>
+                    <select class="form-select mt-1" id="Town">
+                        <option selected>İlçe Seçiniz...</option>
+                        <option value="1">Çankaya</option>
+                        <option value="2">Kadıköy</option>
+                        <option value="3">Karşıyaka</option>
+                    </select>
+                    <select class="form-select mt-1" id="Neighboor">
+                        <option selected>Mahalle Seçiniz...</option>
+                        <option value="1">Remzi Oğuz Arık</option>
+                        <option value="2">Göztepe</option>
+                        <option value="3">Alsancak</option>
+                    </select>
+                    <input class="input-group-text mt-1 w-100 p-1" name="Username" type="text" id="CompanyName"
+                           placeholder="Firma Adı:" style="text-align: left; background-color: white; color: black;" />
+                    <input class="input-group-text mt-1 w-100 p-1" name="Username" type="text" id="CompanyInfo"
+                           placeholder="Firma Bilgisi:" style="text-align: left; background-color: white; color: black;" />
+                    <div class="row mt-1">
+                        <div class="btn-group">
+                            <input class="btn btn-primary col-2 w-10" type="button" value="Geri Dön"
+                                   style="background-color: #D35400; border-radius:15px; border:none; color:white; font-size:16px; font-weight:500;" />
+                            <input class="btn btn-primary col-2 w-10" type="button" value="Kayıt Ol"
+                                   style="background-color: #FCB510; border-radius:15px; border:none; color:white; font-size:16px; font-weight:500; text-align: center;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ImageLayer">
+            <img src="~/Content/Images/NewCompany.png" style="width: 100%; height:100%; position:relative;" />
+        </div>
+    </div>
+</body>
+
+</html>
 

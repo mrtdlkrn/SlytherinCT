@@ -4,6 +4,8 @@
 }
 
 <div class="container">
+    <h1 class="h3 mb-2 text-gray-800">Marka Model Sayfası</h1>
+
     <div id="accordion">
         <div class="card">
             <div class="card-header" id="headingOne">
@@ -16,8 +18,21 @@
             </div>
 
             <div id="collapseOne" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Marka:</label>
+                            </div>
+                            <input class="form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-borderless">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">Marka Adı</th>
@@ -29,50 +44,70 @@
                             <tr>
                                 <td>Fiat</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editBrand" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteBrand" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Opel</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editBrand" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteBrand" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>BMW</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editBrand" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteBrand" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Renault</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editBrand" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteBrand" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
 
-
-
+    <div id="accordion" class="mt-5 mb-5">
+        <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">Model Listesi</a>
-
+                    <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addModel">
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </h5>
             </div>
 
@@ -83,21 +118,30 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">Marka:</label>
                             </div>
-                            <select class="custom-select" id="inputGroupSelect01">
+                            <select class="custom-select col-md-12" id="inputGroupSelect01">
                                 <option value="1" selected>Fiat</option>
                                 <option value="2">Opel</option>
                                 <option value="3">BMW</option>
                                 <option value="4">Renault</option>
                             </select>
-                            <button type="button" class="btn btn-outline-success ml-2" id="myInput" data-bs-toggle="modal" data-bs-target="#addModel">
-                                <i class="fa fa-plus"></i>
-                            </button>
                         </div>
                     </div>
                 </div>
-
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Model:</label>
+                            </div>
+                            <input class="form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-borderless">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">Model Adı</th>
@@ -109,37 +153,53 @@
                             <tr>
                                 <td>Egea</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editModel" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteModel" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Linea</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editModel" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteModel" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Doblo</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editModel" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteModel" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>500</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editModel" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteModel" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -150,120 +210,133 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteBrand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteBrand" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Marka Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
+                <h5 class="modal-title" id="exampleModalLabel">Markayı Sil</h5>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
             </div>
             <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+            <div class="modal-footer"><button class="btn btn-danger" type="button">Sil</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="editBrand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editBrand" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Marka Güncelle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+
             </div>
             <div class="modal-body">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Marka Giriniz:</label>
+                        <label class="input-group-text" for="inputGroupSelect01">Yeni Marka Adı:</label>
                     </div>
-                    <input type="text" value="" class="form-control col-md-8" />
+                    <input type="text" value="" class="form-control col-md-12" />
                 </div>
             </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button">Kaydet</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="addBrand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addBrand" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Marka Ekle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+
             </div>
             <div class="modal-body">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Marka Giriniz:</label>
                     </div>
-                    <input type="text" value="" class="form-control col-md-8" />
+                    <input type="text" value="" class="form-control col-md-12" />
                 </div>
             </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
+            <div class="modal-footer"><button class="btn btn-success" type="button">Ekle</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="deleteModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Model Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
+                <h5 class="modal-title" id="exampleModalLabel">Modeli Sil</h5>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+
             </div>
             <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+            <div class="modal-footer"><button class="btn btn-danger" type="button">Sil</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="editModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Model Güncelle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
             </div>
             <div class="modal-body">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Model Adı Giriniz:</label>
+                        <label class="input-group-text" for="inputGroupSelect01">Marka Seçiniz:</label>
                     </div>
-                    <input type="text" value="" class="form-control col-md-8" />
+                    <select class="custom-select col-md-12" id="inputGroupSelect01">
+                        <option value="1" selected>Fiat</option>
+                        <option value="2">Opel</option>
+                        <option value="3">BMW</option>
+                        <option value="4">Renault</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Yeni Model Adı:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-12" />
                 </div>
             </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button">Kaydet</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="addModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Model Ekle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
             </div>
             <div class="modal-body">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Marka Seçiniz:</label>
+                    </div>
+                    <select class="custom-select col-md-12" id="inputGroupSelect01">
+                        <option value="1" selected>Fiat</option>
+                        <option value="2">Opel</option>
+                        <option value="3">BMW</option>
+                        <option value="4">Renault</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Model Adı Giriniz:</label>
                     </div>
-                    <input type="text" value="" class="form-control col-md-8" />
+                    <input type="text" value="" class="form-control col-md-12" />
                 </div>
             </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
+            <div class="modal-footer"><button class="btn btn-success" type="button">Ekle</button></div>
         </div>
     </div>
 </div>

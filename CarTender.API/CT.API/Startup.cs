@@ -4,6 +4,7 @@ using CarTender.Core.Security.Encryption;
 using CarTender.Core.Security.JWT;
 using CarTender.DataAccess.Abstract;
 using CarTender.DataAccess.Concrete.Dapper;
+using CT.Common.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,10 +37,9 @@ namespace CarTender.API
 
             services.AddScoped<IAuthService, AuthManager>();
             services.AddScoped<IUserService, UserManager>();
-
             services.AddScoped<IUserDAL, UserDAL>();
-
             services.AddScoped<ITokenHelper, JwtHelper>();
+            services.AddTransient<IQueueService, QueueService>();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
@@ -56,7 +56,6 @@ namespace CarTender.API
                     IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                 };
             });
-
 
         }
 

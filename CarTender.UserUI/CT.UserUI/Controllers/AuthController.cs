@@ -1,7 +1,10 @@
 ﻿using Business.Concrete;
 using Entity.DTO;
-using Log;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 
 namespace CT.UserUI.Controllers
@@ -9,7 +12,6 @@ namespace CT.UserUI.Controllers
     public class AuthController : Controller
     {
         BaseAPIService _api = new BaseAPIService();
-        Logging<LogDTO> _logger = new NLog<LogDTO>();
 
         #region Login
 
@@ -17,29 +19,13 @@ namespace CT.UserUI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View(new UserLoginDTO());
+            return View();
         }
 
         //POST: Auth Controller for Login
         [HttpPost]
-        public ActionResult Login(UserLoginDTO dto)
+        public ActionResult Login(int id)
         {
-            string tempMail = "ahmet@gmail.com";
-            string tempPassword = "12345";
-
-            if(dto == null)
-            {
-                _logger.Log(new LogDTO { LogMessage = "test logu, dto null" });
-            }
-
-            if(tempMail != dto.Email || tempPassword != dto.Password)
-            {
-                _logger.Log(new LogDTO { LogMessage = "test log, şifre veya email hatalı" });
-            }
-            else
-            {
-                _logger.Log(new LogDTO { LogMessage = dto.Email + " giriş yaptı."});
-            }
             return View();
         }
 
@@ -85,8 +71,9 @@ namespace CT.UserUI.Controllers
 
         //GET: Auth Controller for EmailVerification
         [HttpGet]
-        public ActionResult EmailVerification()
+        public ActionResult EmailVerification(RabbitMQLoginDTO dto)
         {
+            TempData["Email"] = dto.Email;
             return View();
         }
 

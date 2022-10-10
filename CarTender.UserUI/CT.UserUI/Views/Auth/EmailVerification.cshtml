@@ -13,20 +13,32 @@
     <link href="https://fonts.googleapis.com/css?family=Jockey+One&display=swap" rel="stylesheet" />
     <script src="~/Scripts/bootstrap.js"></script>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link rel="stylesheet" href="EmailVerification.css">
+    <link href="~/Content/MyCss/EmailVerification/EmailVerification.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="EmailCard">
-        <img src="Images/newverifyemail.png" class="EmailImage">
-        <span class="EmailTextOne">Email Adresini Doğrulama</span>
-        <span class="EmailTextTwo">
-            Sarpipekci@gmail.com adresine doğrulama linki gönderdik.Email adresiniz doğrulamak
-            için
-            linke
-            tıklayınız.
-            Doğrulama linki 5 dakika geçerlidir.
-        </span>
+        <div class="row mt-2">
+            <img src="~/Content/Images/newverifyemail.png" class="EmailImage" />
+        </div>
+        <div class="row mt-2">
+            <span class="EmailTextOne">Email Adresini Doğrulama</span>
+        </div>
+        <div class="row mt-2">
+            <span class="EmailTextTwo">
+                @TempData["Email"]
+                adresine doğrulama linki gönderdik.Email adresiniz doğrulamak
+                için
+                linke
+                tıklayınız.
+                Doğrulama linki 5 dakika geçerlidir.
+            </span>
+        </div>
+        <div class="row mt-5">
+
+        </div>
+        <input type="submit" class="btn btn-warning" value="Emaili Tekrar Gönder"
+               style="width:30%;text-align: center; margin-left: auto; margin-right: auto; display: block; position: relative; color: white;  font-size: 18px; font-weight: 700;" />
     </div>
 </body>
 </html>
