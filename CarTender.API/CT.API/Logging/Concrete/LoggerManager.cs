@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using CT.API.Logging.Abstract;
+using NLog;
 
 namespace CT.API.Logging.Concrete
 {

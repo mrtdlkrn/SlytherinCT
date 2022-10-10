@@ -1,4 +1,7 @@
-﻿namespace CT.API.Logging.Concrete
+﻿using CT.API.Logging.Abstract;
+using CT.API.Logging.Concrete.Loggers;
+
+namespace CT.API.Logging.Concrete
 {
     public enum LoggerTypes
     {

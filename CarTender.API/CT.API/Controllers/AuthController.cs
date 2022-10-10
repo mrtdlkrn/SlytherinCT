@@ -1,6 +1,7 @@
 ﻿using CarTender.API.Models.DTOs;
 using CarTender.Business.Abstract;
 using CarTender.Entities;
+using CT.API.Logging.Concrete;
 using CT.API.Models.DTOs;
 using CT.Common.Service;
 using CT.Entities.Mail;

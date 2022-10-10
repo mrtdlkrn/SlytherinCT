@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CT.API.Logging.Abstract;
+using System;
 using System.IO;
 
 namespace CT.API.Logging.Concrete.Loggers

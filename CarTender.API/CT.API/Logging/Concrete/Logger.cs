@@ -1,4 +1,6 @@
-﻿namespace CT.API.Logging.Concrete
+﻿using CT.API.Logging.Abstract;
+
+namespace CT.API.Logging.Concrete
 {
     public class Logger
     {

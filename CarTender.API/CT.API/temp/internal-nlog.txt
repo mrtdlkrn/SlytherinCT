@@ -344,3 +344,8 @@ Error Number:-2146893019,State:0,Class:20
 2022-10-10 20:43:25.8173 Info Adding target DatabaseTarget(Name=dbhede)
 2022-10-10 20:43:25.8649 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
 2022-10-10 20:43:26.8626 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 21:04:08.2814 Info Message Template Auto Format enabled
+2022-10-10 21:04:08.3019 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 21:04:08.4894 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-10 21:04:08.5395 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-10 21:04:11.2555 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config

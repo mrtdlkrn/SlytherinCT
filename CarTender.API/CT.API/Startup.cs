@@ -4,6 +4,8 @@ using CarTender.Core.Security.Encryption;
 using CarTender.Core.Security.JWT;
 using CarTender.DataAccess.Abstract;
 using CarTender.DataAccess.Concrete.Dapper;
+using CT.API.Logging.Abstract;
+using CT.API.Logging.Concrete;
 using CT.Common.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
