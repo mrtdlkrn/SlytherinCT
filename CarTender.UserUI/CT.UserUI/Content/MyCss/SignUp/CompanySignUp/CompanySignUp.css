@@ -27,211 +27,39 @@
 }
 
 .SignUpTextOne {
-    position: relative;
-    color: black;
-    top: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    font-family: 'Jockey One';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 30px;
     text-align: center;
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: auto;
 }
 
 .SignUpTextTwo {
-    position: relative;
+    text-align: center;
     color: black;
-    top: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    font-family: 'Jockey One';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 26px;
-    text-align: center;
-}
-
-.SignUpUsername {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 70%;
-    top: 15%;
-    height: 5%;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 5px;
-}
-
-.SignUpName {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    top: 17%;
-    width: 70%;
-    height: 5%;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 5px;
-}
-
-.SignUpPhone {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    top: 19%;
-    width: 70%;
-    height: 5%;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 5px;
-}
-
-.SignUpEmail {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    top: 21%;
-    width: 70%;
-    height: 5%;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 5px;
-}
-
-.City {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    top: 23%;
-    width: 70%;
-    height: 5%;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 5px;
-}
-
-.Town {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    top: 25%;
-    width: 70%;
-    height: 5%;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 5px;
-}
-
-.Adress {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    top: 27%;
-    width: 70%;
-    height: 5%;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 5px;
-}
-
-.SignUpCompanyName {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    top: 29%;
-    width: 70%;
-    height: 5%;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 5px;
-}
-
-.SignUpCompanyInfo {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    top: 31%;
-    width: 70%;
-    height: 5%;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 5px;
-}
-
-.SignUpJoinUsOne {
+    font-size: 16px;
+    font-weight: 500;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
     width: auto;
+}
+
+.InputsCard {
+    position: relative;
+    width: 90%;
     height: auto;
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 26px;
-    text-align: center;
-    color: #FFFFFF;
-    background: #FCB510;
-    border-radius: 10px;
-    border: none;
-    float: right;
-}
-
-.SignUpJoinUsTwo {
-    width: auto;
-    height: auto;
-    font-family: 'Arial';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 26px;
-    text-align: center;
-    color: #FFFFFF;
-    background: #D35400;
-    border-radius: 10px;
-    border: none;
-    float: right;
-    text-decoration: none;
-}
-
-    .SignUpJoinUsTwo:hover {
-        width: auto;
-        height: auto;
-        font-family: 'Arial';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 26px;
-        text-align: center;
-        color: #FFFFFF;
-        background: #D35400;
-        border-radius: 10px;
-        border: none;
-        float: right;
-        text-decoration: none;
-    }
-
-.Inputs {
-    position: relative;
-    height: 100%;
-    display: block;
-    width: auto;
-}
-
-.Grp {
-    position: relative;
-    width: auto;
-    background-color: red;
-    height: auto;
-    display: block;
-    top: 35%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: auto;
 }
 
@@ -239,13 +67,128 @@
     position: relative;
     width: 60%;
     height: 100%;
-    margin: auto;
     float: right;
+    display: block;
+    margin: auto;
 }
 
-.CarImage {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: auto;
+@media only screen and (max-width: 1024px) {
+    body {
+        background-color: #0FB79F;
+    }
+
+    .SignUp {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .SignUpInputs {
+        position: relative;
+        width: 40%;
+        background-color: #ABEBC6;
+        height: 100%;
+        display: block;
+        float: left;
+        margin: auto;
+    }
+
+    .SignUpTextOne {
+        text-align: center;
+        color: black;
+        font-size: 14px;
+        font-weight: 600;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: auto;
+    }
+
+    .SignUpTextTwo {
+        text-align: center;
+        color: black;
+        font-size: 10px;
+        font-weight: 500;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: auto;
+    }
+
+    .InputsCard {
+        position: relative;
+        width: 90%;
+        height: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .ImageLayer {
+        position: relative;
+        width: 60%;
+        height: 100%;
+        float: right;
+        display: block;
+        margin: auto;
+    }
+
+    #Username {
+        height: 1%;
+        font-size: 10px;
+    }
+
+    #Customername {
+        height: 1%;
+        font-size: 10px;
+    }
+
+    #Phone {
+        height: 1%;
+        font-size: 10px;
+    }
+
+    #Email {
+        height: 1%;
+        font-size: 10px;
+    }
+
+    #City {
+        height: 1%;
+        font-size: 6px;
+    }
+
+    #Town {
+        height: 1%;
+        font-size: 6px;
+    }
+
+    #Neighboor {
+        height: 1%;
+        font-size: 6px;
+    }
+
+    #CompanyName {
+        height: 1%;
+        font-size: 10px;
+    }
+
+    #CompanyInfo {
+        height: 1%;
+        font-size: 10px;
+    }
 }

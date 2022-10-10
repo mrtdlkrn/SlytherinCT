@@ -4,9 +4,13 @@ using CarTender.Entities;
 using CT.API.Models.DTOs;
 using CT.Log.Abstract;
 using CT.Log.Concrete;
+using CT.Common.Service;
+using CT.Entities.Mail;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using NLog;
+using RabbitMQ.Client;
+using System.Collections.Generic;
 
 namespace CarTender.API.Controllers
 {
@@ -16,21 +20,29 @@ namespace CarTender.API.Controllers
     {
         
         private readonly IAuthService authService;
+        private readonly IQueueService queueService;
+        private readonly IConfiguration configuration;
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
-        public AuthController(IAuthService authService, IConfiguration configuration = null)
+        public AuthController(IAuthService authService,IQueueService queueService , IConfiguration configuration = null)
         {
             this.authService = authService;
+            this.queueService = queueService;
+            this.configuration = configuration;
         }
 
         [HttpPost("login")]
 
         public IActionResult Login(LoginDTO dto)
         {
-            var user = authService.Login("sarp@gmail.com", "sarp123");
+            //var user = authService.Login("sarp@gmail.com", "sarp123");
+            string email= "ahmet@gmail.com";
+            string password = "123";
 
             // check user
-            if (user == null) return BadRequest("User not found");
+            //if (user == null) return BadRequest("User not found");
+
+            if (dto.Password != password || dto.Email != email) return BadRequest("kullanıcı bilgileri hatalı.");
 
             // if user exists
             var token = authService.CreateToken(new User());
@@ -51,6 +63,7 @@ namespace CarTender.API.Controllers
 
             User user = new User()
             {
+                Id = 1,
                 Username = dto.Username,
                 Customername = dto.Customername,
                 Phone = dto.Phone,
@@ -60,7 +73,33 @@ namespace CarTender.API.Controllers
 
             authService.Register(user, dto.Password);
             var token = authService.CreateToken(user);
-            //todo mesaj atma yeri RabbitMQ-Mert
+            List<string> eposta = new List<string>();
+            eposta.Add(user.Email);
+
+            string domain = configuration.GetSection("Application:AppDomain").Value;
+            string confirmationLink = domain + configuration.GetSection("Application:LoginPath").Value;
+            confirmationLink += configuration.GetSection("Application:EmailConfirmation").Value;
+
+            MailInfo mailInfo = new MailInfo()
+            {
+                Topic = "Email Doğrulama",
+                DestinationEmails = eposta,
+                Context = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>Page Title</title>\r\n</head>\r\n<body>\r\n\r\n<h1>This is a Heading</h1>\r\n<p>This is a paragraph.</p>\r\n\r\n<a href=\""+confirmationLink+token.Token.ToString()+"\">Email Doğrula</a></body>\r\n</html>" //todo : İçerik girilecek
+            };
+            ConnectionFactory connectionFactory = new ConnectionFactory()
+            {
+                HostName = "localhost",
+                Password = "guest",
+                UserName = "guest",
+            };
+            var queue = "Register";
+            var exchange = "RegisterExchange";
+            var routingKey = "RegisterMail";
+            queueService.CreateQueue(connectionFactory, queue);
+            queueService.CreateExchange(connectionFactory, exchange);
+            queueService.CreateBinding(connectionFactory, queue, exchange, routingKey);
+            queueService.Publish(connectionFactory, mailInfo, exchange, routingKey);
+
             return Ok(token);
         }
 
@@ -71,7 +110,6 @@ namespace CarTender.API.Controllers
 
             if (CustomerExists)
                 return BadRequest("Kullanıcı mevcut");
-
 
             return Ok();
         }

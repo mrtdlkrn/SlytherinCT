@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Araç Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -79,7 +78,7 @@
 
     <div class="row mb-4 clearfix">
         <div class="col-md-3 float-right">
-            <a class="btn btn-success btn-block " asp-controller="Car" asp-action="Edit" >Araç Oluştur</a>
+            <a class="btn btn-success btn-block " asp-controller="Car" asp-action="Edit">Araç Oluştur</a>
         </div>
 
     </div>
@@ -94,33 +93,20 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Araç Id</th>
+                            <th>Plaka</th>
                             <th>Marka</th>
                             <th>Model</th>
                             <th>Bireysel/Kurumsal</th>
                             <th>Statü</th>
                             <th>Kaydeden Kullanıcı</th>
                             <th>Kaydetme Zamanı</th>
-                            <th>Güncelle</th>
-                            <th>Sil</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Araç Id</th>
-                            <th>Marka</th>
-                            <th>Model</th>
-                            <th>Bireysel/Kurumsal</th>
-                            <th>Statü</th>
-                            <th>Kaydeden Kullanıcı</th>
-                            <th>Kaydetme Zamanı</th>
-                            <th>Güncelle</th>
-                            <th>Sil</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         <tr>
-                            <td>123</td>
+                            <td>16 E 123</td>
                             <td>Audi</td>
                             <td>A3</td>
                             <td>Bireysel</td>
@@ -128,15 +114,17 @@
                             <td>Burkay A.</td>
                             <td>04.10.2022-22:14</td>
                             <td>
-                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit" >Güncelle</a>
+                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit">Güncelle</a>
                             </td>
                             <td>
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
+                                    Sil
+                                </button>
                             </td>
                         </tr>
 
                         <tr>
-                            <td>234</td>
+                            <td>16 E 124</td>
                             <td>Ford</td>
                             <td>Fiesta</td>
                             <td>Bireysel</td>
@@ -147,12 +135,14 @@
                                 <a class="btn btn-warning" asp-controller="Car" asp-action="Edit">Güncelle</a>
                             </td>
                             <td>
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
+                                    Sil
+                                </button>
                             </td>
                         </tr>
 
                         <tr>
-                            <td>804</td>
+                            <td>16 E 125</td>
                             <td>Opel</td>
                             <td>Astra</td>
                             <td>Kurumsal</td>
@@ -163,12 +153,14 @@
                                 <a class="btn btn-warning" asp-controller="Car" asp-action="Edit">Güncelle</a>
                             </td>
                             <td>
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
+                                    Sil
+                                </button>
                             </td>
                         </tr>
 
                         <tr>
-                            <td>483</td>
+                            <td>16 E 126</td>
                             <td>Volkswagen</td>
                             <td>Golf</td>
                             <td>Kurumsal</td>
@@ -179,12 +171,14 @@
                                 <a class="btn btn-warning" asp-controller="Car" asp-action="Edit">Güncelle</a>
                             </td>
                             <td>
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
+                                    Sil
+                                </button>
                             </td>
                         </tr>
 
                         <tr>
-                            <td>123</td>
+                            <td>16 E 127</td>
                             <td>Volkswagen</td>
                             <td>Golf</td>
                             <td>Kurumsal</td>
@@ -195,12 +189,14 @@
                                 <a class="btn btn-warning" asp-controller="Car" asp-action="Edit">Güncelle</a>
                             </td>
                             <td>
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
+                                    Sil
+                                </button>
                             </td>
                         </tr>
 
                         <tr>
-                            <td>123</td>
+                            <td>16 E 128</td>
                             <td>Volkswagen</td>
                             <td>Golf</td>
                             <td>Kurumsal</td>
@@ -211,7 +207,9 @@
                                 <a class="btn btn-warning" asp-controller="Car" asp-action="Edit">Güncelle</a>
                             </td>
                             <td>
-                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">Sil</button>
+                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
+                                    Sil
+                                </button>
                             </td>
                         </tr>
 
@@ -225,17 +223,18 @@
 </div>
 <!-- /.container-fluid -->
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteCar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Aracı Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#deleteCar').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+
             </div>
             <div class="modal-body">Aracı silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" type="button">Sil</button>
+            </div>
         </div>
     </div>
 </div>

@@ -13,7 +13,7 @@
             </div>
             <div id="collapseOne" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-borderless">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">Araç Plaka</th>
@@ -31,12 +31,18 @@
                                 <td>Yakıt Tipi</td>
                                 <td>Dizel</td>
                                 <td>21.03.2019</td>
-                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked></td>
-                                <td>
-                                    <a class="btn btn-info" data-toggle="modal" data-target="#detail" href="#">Detay</a>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#delete" href="#">Sil</a>
+                                    <button type="button" class="btn btn-info" id="myInput" data-bs-toggle="modal" data-bs-target="#detail">
+                                        Detay
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
@@ -44,12 +50,18 @@
                                 <td>Gövde Tipi</td>
                                 <td>Sedan</td>
                                 <td>21.03.2019</td>
-                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked></td>
-                                <td>
-                                    <a class="btn btn-info" data-toggle="modal" data-target="#detail" href="#">Detay</a>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#delete" href="#">Sil</a>
+                                    <button type="button" class="btn btn-info" id="myInput" data-bs-toggle="modal" data-bs-target="#detail">
+                                        Detay
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -64,7 +76,9 @@
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">Araç Detayları</a>
-                    <a class="btn btn-outline-success btn-sm" data-toggle="modal" style="border:none; font-size:15px;" data-target="#addCarDetail" href="#">+</a>
+                    <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addCarDetail">
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </h5>
             </div>
             <div id="collapseTwo" class="collapse collapse p-3 ml-3 mr-3" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -81,37 +95,53 @@
                             <tr>
                                 <td>Renk</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetail" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetail">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetail" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetail">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Motor Yakıt Türü</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetail" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetail">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetail" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetail">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Vites Türü</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetail" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetail">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetail" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetail">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kasa Tipi</td>
-                                <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetail" href="#">Güncelle</a>
+                                 <td>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetail">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetail" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetail">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -119,13 +149,16 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+
     <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingThree">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" role="button">Araç Detayları Değerleri</a>
-                    <a class="btn btn-outline-success btn-sm" data-toggle="modal" style="border:none; font-size:15px;" data-target="#addCarDetailValue" href="#">+</a>
+                    <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addCarDetailValue">
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </h5>
             </div>
             <div id="collapseThree" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
@@ -156,47 +189,67 @@
                         <tbody>
                             <tr>
                                 <td>Siyah</td>
-                                <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetailValue" href="#">Güncelle</a>
+                                 <td>
+                                   <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetailValue">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetailValue" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetailValue">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Beyaz</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetailValue" href="#">Güncelle</a>
+                                   <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetailValue">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetailValue" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetailValue">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Mavi</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetailValue" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetailValue">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetailValue" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetailValue">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Kırmızı</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetailValue" href="#">Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetailValue">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetailValue" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetailValue">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Gri</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetailValue" href="#">Güncelle</a>
+                                   <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetailValue">
+                                        Güncelle
+                                    </button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetailValue" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetailValue">
+                                        Sil
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
@@ -207,7 +260,7 @@
     </div>
 </div>
 
-<div class="modal" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+<div class="modal fade" id="delete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -217,26 +270,12 @@
                 </button>
             </div>
             <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
-        </div>
-    </div>
-</div>
-<div class="modal" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Trameri Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+            <div class="modal-footer"><button class="btn btn-danger" type="button">Sil</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal" id="deleteCmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+<div class="modal fade" id="deleteCmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -246,12 +285,12 @@
                 </button>
             </div>
             <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+            <div class="modal-footer"><button class="btn btn-danger" type="button">Sil</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="deleteCarDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteCarDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -261,12 +300,12 @@
                 </button>
             </div>
             <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+            <div class="modal-footer"><button class="btn btn-danger" type="button">Sil</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="editCarDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editCarDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -283,12 +322,12 @@
                     <input type="text" value="" class="form-control col-md-8" />
                 </div>
             </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
+            <div class="modal-footer"><button class="btn btn-danger" type="button">Kaydet</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="addCarDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addCarDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -305,12 +344,12 @@
                     <input type="text" value="" class="form-control col-md-8" />
                 </div>
             </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
+            <div class="modal-footer"><button class="btn btn-danger" type="button">Ekle</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="deleteCarDetailValue" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteCarDetailValue" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -320,12 +359,12 @@
                 </button>
             </div>
             <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+            <div class="modal-footer"><button class="btn btn-danger" type="button">Sil</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="editCarDetailValue" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editCarDetailValue" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -342,12 +381,12 @@
                     <input type="text" value="" class="form-control col-md-8" />
                 </div>
             </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
+            <div class="modal-footer"><button class="btn btn-danger" type="button">Kaydet</button></div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="addCarDetailValue" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addCarDetailValue" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -375,13 +414,12 @@
                     <input type="text" value="" class="form-control col-md-8" />
                 </div>
             </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
+            <div class="modal-footer"><button class="btn btn-danger" type="button">Ekle</button></div>
         </div>
     </div>
 </div>
 
-
-<div class="modal" id="detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+<div class="modal fade" id="detail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -539,7 +577,7 @@
     </div>
 </div>
 
-<div class="modal" id="editCmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+<div class="modal fade" id="editCmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -565,7 +603,7 @@
     </div>
 </div>
 
-<div class="modal" id="addCmp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+<div class="modal fade" id="addCmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -591,7 +629,7 @@
     </div>
 </div>
 
-<div class="modal" id="statusHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel6" aria-hidden="true">
+<div class="modal fade" id="statusHistory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
