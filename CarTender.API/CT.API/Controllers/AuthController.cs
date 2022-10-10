@@ -1,8 +1,6 @@
 ﻿using CarTender.API.Models.DTOs;
 using CarTender.Business.Abstract;
 using CarTender.Entities;
-using CT.API.Logging.DatabaseNLog.Abstract;
-using CT.API.Logging.DatabaseNLog.Concrete;
 using CT.API.Models.DTOs;
 using CT.Common.Service;
 using CT.Entities.Mail;
@@ -18,14 +16,14 @@ namespace CarTender.API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        
+
         private readonly IAuthService authService;
         private readonly IQueueService queueService;
         private readonly IConfiguration configuration;
         private readonly Logger _logger = new(new Creater().FactoryMethod(LoggerTypes.DbLogger));
 
 
-        public AuthController(IAuthService authService,IQueueService queueService, IConfiguration configuration = null)
+        public AuthController(IAuthService authService, IQueueService queueService, IConfiguration configuration = null)
         {
             this.authService = authService;
             this.queueService = queueService;
@@ -36,7 +34,7 @@ namespace CarTender.API.Controllers
 
         public IActionResult Login(LoginDTO dto)
         {
-            string email= "ahmet@gmail.com";
+            string email = "ahmet@gmail.com";
             string password = "123";
 
 
@@ -91,7 +89,7 @@ namespace CarTender.API.Controllers
             {
                 Topic = "Email Doğrulama",
                 DestinationEmails = eposta,
-                Context = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>Page Title</title>\r\n</head>\r\n<body>\r\n\r\n<h1>This is a Heading</h1>\r\n<p>This is a paragraph.</p>\r\n\r\n<a href=\""+confirmationLink+token.Token.ToString()+"\">Email Doğrula</a></body>\r\n</html>" //todo : İçerik girilecek
+                Context = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>Page Title</title>\r\n</head>\r\n<body>\r\n\r\n<h1>This is a Heading</h1>\r\n<p>This is a paragraph.</p>\r\n\r\n<a href=\"" + confirmationLink + token.Token.ToString() + "\">Email Doğrula</a></body>\r\n</html>" //todo : İçerik girilecek
             };
             ConnectionFactory connectionFactory = new()
             {

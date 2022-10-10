@@ -13,7 +13,7 @@ namespace CarTender.API
         public static void Main(string[] args)
         {
             var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetLogger("dbtest");
-            
+
             try
             {
                 logger.Debug("init main");
@@ -36,7 +36,8 @@ namespace CarTender.API
                       .ConfigureWebHostDefaults(webBuilder =>
                       {
                           webBuilder.UseStartup<Startup>();
-                      }).ConfigureLogging(opt => {
+                      }).ConfigureLogging(opt =>
+                      {
                           opt.ClearProviders();
                           opt.SetMinimumLevel(LogLevel.Trace);
                       }).UseNLog();

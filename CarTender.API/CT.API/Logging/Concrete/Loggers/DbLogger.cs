@@ -1,6 +1,4 @@
-﻿using CT.API.Logging.DatabaseNLog.Abstract;
-
-namespace CT.API.Logging.DatabaseNLog.Concrete.Loggers
+﻿namespace CT.API.Logging.Concrete.Loggers
 {
     public class DbLogger : AbstractLogger
     {

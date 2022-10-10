@@ -1,11 +1,10 @@
-﻿using CT.API.Logging.DatabaseNLog.Abstract;
-using NLog;
+﻿using NLog;
 
-namespace CT.API.Logging.DatabaseNLog.Concrete
+namespace CT.API.Logging.Concrete
 {
     public class LoggerManager : ILoggerManager
     {
-        private static ILogger logger = LogManager.GetLogger("dbtest");        
+        private static ILogger logger = LogManager.GetLogger("dbtest");
         public void LogDebug(string message) => logger.Debug(message);
         public void LogError(string message) => logger.Error(message);
         public void LogInfo(string message) => logger.Info(message);
