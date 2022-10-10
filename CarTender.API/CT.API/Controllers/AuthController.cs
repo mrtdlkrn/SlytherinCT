@@ -2,11 +2,13 @@
 using CarTender.Business.Abstract;
 using CarTender.Entities;
 using CT.API.Models.DTOs;
+using CT.Log.Abstract;
+using CT.Log.Concrete;
 using CT.Common.Service;
 using CT.Entities.Mail;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
+using NLog;
 using RabbitMQ.Client;
 using System.Collections.Generic;
 
@@ -16,9 +18,11 @@ namespace CarTender.API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        
         private readonly IAuthService authService;
         private readonly IQueueService queueService;
         private readonly IConfiguration configuration;
+        private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         public AuthController(IAuthService authService,IQueueService queueService , IConfiguration configuration = null)
         {
@@ -109,5 +113,16 @@ namespace CarTender.API.Controllers
 
             return Ok();
         }
+
+
+        [HttpPost("log")]
+        public IActionResult Logger()
+        {
+
+            logger.Info("test leoh");
+            return Ok();
+        }
+
+
     }
 }
