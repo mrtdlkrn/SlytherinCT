@@ -10,13 +10,14 @@ namespace CT.Log.Concrete
 { 
 
 
-    public class NLog : ILog
+    public class NLogger : ILog
     {
-        private readonly Logger _logger;
+        private readonly Logger _logger = LogManager.GetLogger("dblog");
         public string LogType { get; set; }
 
-        public bool CreateLog()
+        public bool CreateLog(string message)
         {
+            _logger.Debug(message);
             return true;
         }
     }
@@ -24,9 +25,9 @@ namespace CT.Log.Concrete
     {
         public string LogType { get ; set ; }
 
-        public bool CreateLog()
+        public bool CreateLog(string message)
         {
-            return true;
+            throw new NotImplementedException();
         }
     }
 }

@@ -2,9 +2,11 @@
 using CarTender.Business.Abstract;
 using CarTender.Entities;
 using CT.API.Models.DTOs;
+using CT.Log.Abstract;
+using CT.Log.Concrete;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
+using NLog;
 
 namespace CarTender.API.Controllers
 {
@@ -12,7 +14,9 @@ namespace CarTender.API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        
         private readonly IAuthService authService;
+        private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         public AuthController(IAuthService authService, IConfiguration configuration = null)
         {
@@ -71,5 +75,16 @@ namespace CarTender.API.Controllers
 
             return Ok();
         }
+
+
+        [HttpPost("log")]
+        public IActionResult Logger()
+        {
+
+            logger.Info("test leoh");
+            return Ok();
+        }
+
+
     }
 }
