@@ -6,7 +6,7 @@ namespace CT.API.Models.DTOs
     {
         public Guid ID { get; set; }
 
-        
+
 
 
     }

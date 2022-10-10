@@ -1,7 +1,4 @@
-﻿using CT.API.Logging.DatabaseNLog.Abstract;
-using CT.API.Logging.DatabaseNLog.Concrete.Loggers;
-
-namespace CT.API.Logging.DatabaseNLog.Concrete
+﻿namespace CT.API.Logging.Concrete
 {
     public enum LoggerTypes
     {

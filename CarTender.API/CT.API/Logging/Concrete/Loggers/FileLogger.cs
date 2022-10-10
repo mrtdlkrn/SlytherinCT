@@ -1,8 +1,7 @@
-﻿using CT.API.Logging.DatabaseNLog.Abstract;
-using System;
+﻿using System;
 using System.IO;
 
-namespace CT.API.Logging.DatabaseNLog.Concrete.Loggers
+namespace CT.API.Logging.Concrete.Loggers
 {
     public class FileLogger : AbstractLogger
     {

@@ -6,7 +6,7 @@ namespace CT.API.Controllers.AdminControllers
     /// <summary>
     /// All actions an admin needs regarding tramers will be here
     /// </summary>
-    
+
     public class TramerController : Controller
     {
         // GET: TramerController

@@ -1,4 +1,4 @@
-﻿namespace CT.API.Logging.DatabaseNLog.Abstract
+﻿namespace CT.API.Logging.Abstract
 {
     public interface ILoggerManager
     {

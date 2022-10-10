@@ -6,7 +6,7 @@ namespace CT.API.Controllers.AdminControllers
     /// <summary>
     /// All actions an admin needs regarding corporates will be here
     /// </summary>
-     
+
     public class CorporateController : Controller
     {
         // GET: CorporateController

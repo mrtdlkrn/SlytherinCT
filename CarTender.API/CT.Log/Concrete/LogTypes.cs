@@ -5,7 +5,7 @@ namespace CT.Log.Concrete
 {
 
 
-    public class NLogger 
+    public class NLogger
     {
         //private readonly Logger _logger = LogManager.GetLogger("databaseLogger");
         //public string LogType { get; set; }
@@ -18,7 +18,7 @@ namespace CT.Log.Concrete
     }
     public class FileLog : ILog
     {
-        public string LogType { get ; set ; }
+        public string LogType { get; set; }
 
         public bool CreateLog(string message)
         {
