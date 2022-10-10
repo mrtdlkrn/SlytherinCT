@@ -1,25 +1,20 @@
 ﻿using CT.Log.Abstract;
-using NLog;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CT.Log.Concrete
-{ 
+{
 
 
-    public class NLogger : ILog
+    public class NLogger 
     {
-        private readonly Logger _logger = LogManager.GetLogger("dblog");
-        public string LogType { get; set; }
+        //private readonly Logger _logger = LogManager.GetLogger("databaseLogger");
+        //public string LogType { get; set; }
 
-        public bool CreateLog(string message)
-        {
-            _logger.Debug(message);
-            return true;
-        }
+        //public bool CreateLog(string message)
+        //{
+        //    _logger.Debug(message);
+        //    return true;
+        //}
     }
     public class FileLog : ILog
     {
