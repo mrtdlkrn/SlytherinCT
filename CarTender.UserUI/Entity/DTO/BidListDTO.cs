@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entity.DTO
 {
-    public class UserLoginDTO
+    public class BidListDTO
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public List<CarListDTO> CarList { get; set; }
+        public List<CreateNewBidDTO> CreateNewBid { get; set; }
     }
 }
