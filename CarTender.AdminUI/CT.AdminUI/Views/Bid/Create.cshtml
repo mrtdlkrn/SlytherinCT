@@ -138,7 +138,7 @@
                             <td>Ahmet123</td>
                             <td>05.10.2022</td>
                             <td>255.000 TL</td>
-                            <td><a href="#" class="btn btn-danger">X</a></td>
+                            <td><a class="btn btn-danger" href="#"><i class="far fa-trash-alt"></i> Sil</a></td>
                         </tr>
                         <tr>
                             <td scope="row">16 E 988</td>
@@ -149,7 +149,7 @@
                             <td>Sarp123</td>
                             <td>14.10.2022</td>
                             <td>1.255.000 TL</td>
-                            <td><a href="#" class="btn btn-danger">X</a></td>
+                            <td><a class="btn btn-danger" href="#"><i class="far fa-trash-alt"></i> Sil</a></td>
                         </tr>
                         <tr>
                             <td scope="row">16 E 989</td>
@@ -160,7 +160,7 @@
                             <td>Mert123</td>
                             <td>21.10.2022</td>
                             <td>755.000 TL</td>
-                            <td><a href="#" class="btn btn-danger">X</a></td>
+                            <td><a class="btn btn-danger" href="#"><i class="far fa-trash-alt"></i> Sil</a></td>
                         </tr>
 
                     </tbody>
@@ -170,8 +170,8 @@
 
         <div class="row float-right mb-5">
             <div class="col-md-12 ">
-                <button class="btn btn-dark mt-4" type="submit" data-toggle="modal" data-target="#addCarToBid" href="#">Araç Ekle</button>
-                <button class="btn btn-dark mt-4" type="submit">Kaydet</button>
+                <button class="btn btn-success mt-4" type="submit" data-toggle="modal" data-target="#addCarToBid" href="#"><i class="fa-solid fa-plus"></i> Araç Ekle</button>
+                <button class="btn btn-primary mt-4" type="submit"><i class="fa-regular fa-floppy-disk"></i> Kaydet</button>
             </div>
         </div>
     </div>
@@ -190,7 +190,7 @@
                         <a class="btn btn-dark mt-4 mb-2" href="/Car/Add/">Yeni Araç Ekle</a> @*Geçici*@
                         <div class="input-group-prepend">
                             <div class="table-responsive">
-                                <table class="table table-borderless" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-border" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>Marka</th>
@@ -268,7 +268,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button>
+                    <button class="btn btn-danger" type="button">Kaydet</button>
+                </div>
             </div>
         </div>
     </div>
