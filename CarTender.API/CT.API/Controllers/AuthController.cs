@@ -7,9 +7,10 @@ using CT.Common.Service;
 using CT.Entities.Mail;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CarTender.API.Controllers
 {
@@ -21,18 +22,27 @@ namespace CarTender.API.Controllers
         private readonly IAuthService authService;
         private readonly IQueueService queueService;
         private readonly IConfiguration configuration;
-        private readonly Logger _logger = new(new Creater().FactoryMethod(LoggerTypes.DbLogger));
-
+        private readonly Logger _logger;
+        private static IDictionary<string, string> apiRoutes;
 
         public AuthController(IAuthService authService, IQueueService queueService, IConfiguration configuration = null)
         {
             this.authService = authService;
             this.queueService = queueService;
             this.configuration = configuration;
+            string json = System.IO.File.ReadAllText("setting.json");
+            dynamic jsonObj = JsonConvert.DeserializeObject<dynamic>(json)!;
+            var loggerType = jsonObj.LoggerType.ToString();
+            _logger = new(new Creater().FactoryMethod(loggerType));
+            var _apiRoutes = jsonObj.ApiRoutes[0].Actions[0];
+            apiRoutes = new Dictionary<string, string>();
+            foreach (var action in _apiRoutes)
+            {
+                apiRoutes.Add(action.Name.ToString(), action.Value.ToString());
+            }
         }
 
-        [HttpPost("login")]
-
+        [HttpPost()]
         public IActionResult Login(LoginDTO dto)
         {
             string email = "ahmet@gmail.com";
