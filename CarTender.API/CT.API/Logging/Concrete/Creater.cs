@@ -2,24 +2,18 @@
 using CT.API.Logging.Concrete.Loggers;
 
 namespace CT.API.Logging.Concrete
-{
-    public enum LoggerTypes
-    {
-        DbLogger,
-        FileLogger
-    }
+{    
     public class Creater
     {
-        public AbstractLogger FactoryMethod(LoggerTypes type)
+        public AbstractLogger FactoryMethod(string type)
         {
             AbstractLogger logger = null;
-
             switch (type)
             {
-                case LoggerTypes.DbLogger:
+                case "database":
                     logger = new DbLogger(new LoggerManager());
                     break;
-                case LoggerTypes.FileLogger:
+                case "file":
                     logger = new FileLogger("CT_Logs.txt");
                     break;
             }
