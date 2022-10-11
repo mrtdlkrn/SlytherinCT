@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -40,9 +39,8 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#"><i class="far fa-trash-alt"></i> Sil</a>
-                                    </td>
-
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
+                                </td>
                         </tbody>
                     </table>
                 </div>
@@ -51,20 +49,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ekspertizi Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("DeleteModal", new{title = "Ekspertizi Sil", body="Ekspertizi silmek istediğinize emin misiniz?", id="delete"})
 
 <div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

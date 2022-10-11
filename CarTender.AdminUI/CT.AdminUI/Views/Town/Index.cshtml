@@ -63,21 +63,7 @@
     </div>
 </div>
 
-
-<div class="modal fade" id="deleteTown" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel3">İlçeyi Sil</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#deleteTown').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer">
-                <button class="btn btn-danger" type="button">Sil</button>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("DeleteModal", new{title = "İlçe Sil", body="İlçeyi silmek istediğinize emin misiniz?", id="deleteTown"})
 
 <div class="modal fade" id="editTown" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
     <div class="modal-dialog">
