@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Common.Abstract;
 using Entity.DTO;
+using Entity.DTO.Pagination;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,11 +21,11 @@ namespace CT.AdminUI.Controllers
             cars.Add(new CarListDTO() { Plate = "12 y 155", CarBrand = "Ford", CarModel = "Fiesta", CreatedDate = DateTime.Now.AddDays(2) });
             cars.Add(new CarListDTO() { Plate = "14 e 66", CarBrand = "Opel", CarModel = "Astra", CreatedDate = DateTime.Now.AddDays(-2) });
             cars.Add(new CarListDTO() { Plate = "11 x 54", CarBrand = "Volkswagen", CarModel = "Golf", CreatedDate = DateTime.Now.AddDays(23) });
-            cars.Add(new CarListDTO() { Plate = "456", CarBrand = "Volkswagen", CarModel = "Golf", CreatedDate = DateTime.Now.AddDays(-3) });
-            cars.Add(new CarListDTO() { Plate = "982", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(-11) });
-            cars.Add(new CarListDTO() { Plate = "946", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(-24) });
-            cars.Add(new CarListDTO() { Plate = "567", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
-            cars.Add(new CarListDTO() { Plate = "56227", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new CarListDTO() { Plate = "44 h 244", CarBrand = "Volkswagen", CarModel = "Golf", CreatedDate = DateTime.Now.AddDays(-3) });
+            cars.Add(new CarListDTO() { Plate = "22 j 53", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(-11) });
+            cars.Add(new CarListDTO() { Plate = "42 kl 22", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(-24) });
+            cars.Add(new CarListDTO() { Plate = "55 ko 12", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new CarListDTO() { Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
         }
 
 
