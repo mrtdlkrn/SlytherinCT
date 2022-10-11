@@ -1,4 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using System.IO;
 using System.Text;
 
 namespace CarTender.Core.Security.Encryption
