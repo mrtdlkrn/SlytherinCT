@@ -226,6 +226,8 @@
     <Content Include="Content\MyCss\ResetPassword\ResetPassword.css" />
     <Content Include="Content\MyCss\SignUp\CompanySignUp\CompanySignUp.css" />
     <Content Include="Content\MyCss\SignUp\CustomerSignUp\CustomerSignUp.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\style.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -268,6 +270,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
