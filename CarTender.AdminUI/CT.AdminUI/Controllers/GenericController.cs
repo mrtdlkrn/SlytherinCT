@@ -11,12 +11,22 @@ namespace CT.AdminUI.Controllers
     {
 
         [HttpGet]
+        public IActionResult ListItems(string modelName)
+        {
+
+
+            return View();
+        }
+
+
+        [HttpGet]
         public IActionResult Create()
         {
             //AddUserDTO dto = new AddUserDTO() { Name = "Burkay", Surname = "Akgul" };
             //AddVehicle dto = new AddVehicle() {BodyType="Sedan",Color="Red",Year="2022",CompanyName="burkaycompanisi",FuelType="Benzin" };
-            ModelDeneme dto = new ModelDeneme() { ID = 1, IsimAlani = "Burkay", OnayliMi = false, stringler = new List<string>() { "burkay", "akgul" }};
+            ModelDeneme dto = new ModelDeneme();
             GenericViewModel model = new GenericViewModel() { MyModel = dto, ActionController = "Generic", ActionMethod = "Create", Title = "Burkay123" };
+
             return View("~/Views/FlyPages/Create.cshtml", model);
 
         }
