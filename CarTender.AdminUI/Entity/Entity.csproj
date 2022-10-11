@@ -13,4 +13,8 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTO\Pagination\" />
+  </ItemGroup>
+
 </Project>
