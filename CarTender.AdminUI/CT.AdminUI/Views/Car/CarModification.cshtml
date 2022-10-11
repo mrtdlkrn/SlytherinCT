@@ -114,36 +114,8 @@
     </div>
 </div>
 
-
-<div class="modal fade" id="deleteModif" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Modifiyeyi Sil</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#deleteModif').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer">
-                <button class="btn btn-danger" type="button">Sil</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="deleteCmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel3">Modifiye Bileşenini Sil</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#deleteCmp').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer">
-                <button class="btn btn-danger" type="button">Sil</button>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("DeleteModal", new{title = "Modifiyeyi Sil", body="Modifiyeyi silmek istediğinize emin misiniz?", id="deleteModif"})
+@await Component.InvokeAsync("DeleteModal", new{title = "Bileşeni Sil", body="Bileşeni silmek istediğinize emin misiniz?", id="deleteCmp"})
 
 <div class="modal fade" id="editCmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
     <div class="modal-dialog">
