@@ -3,10 +3,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cbidofferd1" aria-expanded="true" aria-controls="cbidofferd1" role="button">Teklif Detayları</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addStatus">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </h5>
+            </div>
+            <div id="cbidofferd1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
 
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
 
@@ -31,7 +39,43 @@
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
-                            </tr> 
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cbidofferd2" aria-expanded="true" aria-controls="cbidofferd2" role="button">Pasif Durumdaki Teklif Detayları</a>
+                </h5>
+            </div>
+            <div id="cbidofferd2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kullanıcı Teklif Adı</th>
+                                <th scope="col">Fiyat</th>
+                                <th scope="col">Aktif/Pasif</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>XXXXXXXXXXx</td>
+                                <td>500</td>
+                                <td>Aktif</td>
+                                 <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -42,6 +86,7 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Teklif Sil", body="Teklif bilgisini silmek istediğinize emin misiniz?", id="delete"})
 
+@await Component.InvokeAsync("ActivationModal", new{title = "Teklif Aktif Et", body="Teklifi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 <div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -52,7 +97,7 @@
                 </button>
             </div>
             <div class="modal-body">
-               
+
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Fiyat:</label>
