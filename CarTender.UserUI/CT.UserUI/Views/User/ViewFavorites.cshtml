@@ -3,8 +3,6 @@
     ViewBag.Title = "Favorilerim";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Favorilerim</h2>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +17,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="~/Scripts/main.js"></script>
 </head>
-<div class="container">
-    <div id="accordion">
+</div>
+<div class="container-fluid mb-5">
+    <h2 class="text-center">Favorilerim</h2>
+    <div>
         <div class="card">
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="row mt-3">
+            <div id="collapseTwo" class="collapse show p-3 container" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="row mt-3 ">
                     <div class="col-md-4">
                         <div class="input-group mb-3">
                             <div class="input-group">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
 
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                <div class="p-3 container" style="border:2px solid gray; border-radius: .35rem;">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
