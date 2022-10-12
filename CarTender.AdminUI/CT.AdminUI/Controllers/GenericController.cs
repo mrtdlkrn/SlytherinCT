@@ -50,7 +50,8 @@ namespace CT.AdminUI.Controllers
             GenericViewModel model = new GenericViewModel() { MyModel = list, ModelName = modelName, Title = modelName + " Listeleme Sayfasi" };
 
 
-            return View("~/Views/FlyPages/ListItems.cshtml", model);
+            //return View("~/Views/FlyPages/ListItems.cshtml", model);
+            return View("~/Views/FlyPages/ListItems.cshtml");
         }
 
 
