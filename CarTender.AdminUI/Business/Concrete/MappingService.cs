@@ -14,6 +14,7 @@ namespace Business.Concrete
 {
     public class MappingService : IMappingService
     {
+
         public T GetModel<T>(IFormCollection formCollection) where T : class
         {
             T model = (T)Activator.CreateInstance(typeof(T));
@@ -25,15 +26,13 @@ namespace Business.Concrete
                 var mykey = propertyInfo.Name;
                 try
                 {
-                    var value = formCollection["MyModel." + mykey];
+                    var value = formCollection[mykey];
                     Type propType = propertyInfo.PropertyType;
                     //var sonuc2 = Mapping.TryParse < (propertyInfo.PropertyType.GetEnumUnderlyingType()) > (formCollection.ToString(), out model);
                     if (!propertyInfo.PropertyType.IsPrimitive && propertyInfo.PropertyType != typeof(string))
                     {
                         var x = new AddUserDTO() { Name = "sdfaadfs", Surname = "asdffasd" };
-                        //propertyInfo.SetValue(Convert.ChangeType(x.GetType(), propertyInfo.PropertyType),x);
                         propertyInfo.SetValue(model, x);
-                        //propertyInfo.SetValue(x,propertyInfo.GetValue().);
                     }
                     propertyInfo.SetValue(model, Convert.ChangeType(value.ToString(), propertyInfo.PropertyType));
                 }

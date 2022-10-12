@@ -1,4 +1,6 @@
-﻿using CT.AdminUI.Models;
+﻿using Business.Abstract;
+using Business.Concrete;
+using CT.AdminUI.Models;
 using Entity.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +12,15 @@ namespace CT.AdminUI.Controllers
 {
     public class GenericController : Controller
     {
+        private readonly IMappingService _mappingService;
+
+
+        public GenericController(IMappingService mappingService)
+        {
+            _mappingService = mappingService;
+        }
+
+        #region DenemeDTO Listesi
         List<DenemeDTO> denemeList = new List<DenemeDTO>()
         {
             new DenemeDTO { Age = 25,IsRetired=false,Name="Burkay",Surname="Akgul",Salary=2000},
@@ -19,37 +30,19 @@ namespace CT.AdminUI.Controllers
             new DenemeDTO { Age = 24,IsRetired=false,Name="iyusdf",Surname="bndfgfd",Salary=1000},
             new DenemeDTO { Age = 26,IsRetired=false,Name="qwerqwre",Surname="trrtwe",Salary=5000},
         };
+        #endregion
 
         [HttpGet]
         public IActionResult ListItems(string modelName)
         {
-            ///<summary>0
-            /// Burada .net'in assembly kodlarindan veri tipleri arasindan tip adi bizim httpget ile aldigimiz model adina esit olan ilk tipin type bilgisini alir
-            /// Boylece gonderdigimiz modelName bilgisine gore veri tipini elde etmis oluruz.
-            /// </summary>
-            Type myModelType = System.AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes()).First(x => x.Name == modelName);
 
-            ///<summary>
-            /// Oluşturduğumuz model tipimizi listeye referans olarak veremedğimizden dolayı makegenerictype ile modelimizle bağlantılı bir liste
-            /// tipi oluşturmuş oluruz.
-            /// </summary>
-            Type customListType = typeof(List<>).MakeGenericType(myModelType);
-
-            ///<summary>
-            ///List<GelenModelTipi> şeklinde bir liste instance'ı oluşturuyoruz
-            ///</summary>
-            var list = Activator.CreateInstance(customListType);
-
-            ///<summary>
-            ///Oluşturduğumuz liste instance'na liste halindeki verilerimizi aktarıyoruz, şuan için api katmanında veritabanı bağlantısı bulunmadığından dolayı örnek verileri kendimiz oluşturup gönderiyoruz...
-            ///</summary>
+            var list = _mappingService.GetModelListByName(modelName);
             list = denemeList;
-
             GenericViewModel model = new GenericViewModel() { MyModel = list, ModelName = modelName, Title = modelName + " Listeleme Sayfasi" };
 
+            
+            return View("~/Views/FlyPages/ListItems.cshtml", model);
 
-            //return View("~/Views/FlyPages/ListItems.cshtml", model);
-            return View("~/Views/FlyPages/ListItems.cshtml");
 
         }
 
@@ -59,23 +52,29 @@ namespace CT.AdminUI.Controllers
         {
             //AddUserDTO dto = new AddUserDTO() { Name = "Burkay", Surname = "Akgul" };
             //AddVehicle dto = new AddVehicle() {BodyType="Sedan",Color="Red",Year="2022",CompanyName="burkaycompanisi",FuelType="Benzin" };
-            ModelDeneme dto = new ModelDeneme();
-            GenericViewModel model = new GenericViewModel() { MyModel = dto, ModelName=modelName, Title = "Burkay123" };
+
+            var dto = _mappingService.GetModelListByName(modelName);
+            GenericViewModel model = new GenericViewModel() { MyModel = dto, ModelName = modelName, Title = "Burkay123" };
 
             return View("~/Views/FlyPages/Create.cshtml", model);
 
         }
 
         [HttpPost]
-        public IActionResult Create(IFormCollection modelFormCollection)
+        public IActionResult Create(IFormCollection modelFormCollection, string modelName)
         {
-            //Gelen Formcollection modelini maplemek icin bu 
-            //MappingService mappingService = new MappingService();
-            //mappingService.GetModel<ModelDeneme>(modelFormCollection);
+            #region Generic Model Casting
+            ///<summary>
+            /// Burada formcollection verimizi mappingservice içerisindeki GetModel metodu ile istediğimiz tipe çevirebilmek için öncelikle GetModel metodu bir generic tip metod olduğundan dolayı veri tipimizi sadece variable olarak elde edebildiğimizden burada tekrardan Reflection kütüphanesine başvururuz. Reflection GetMethod ile metodumuzu elde ederiz daha sonra metodumuz generic tipte olduğu için MakeGenericType deyip modelimizden elde ettimiz tip değişkenini içine göndeririz şeklen yorumlamak istersek GetModel<T>(veriler) metodunu GetModel<ModelTipi>(veriler) 'e çevirmiş olduk. Metodumuzun cast edilmiş halini elde ettikten sonra artık Invoke metodu ile verimizi çağırabiliriz Invoke metodunun içerisine alacağı veri tipleri metodumuzun bulunduğu class'ın instance'ı ve object array tipinde modelin içine göndereceğimiz verilerimizdir.
+            /// </summary>
+            var dto = _mappingService.GetModelByName(modelName);
+            Type type = dto.GetType();
+            var method = _mappingService.GetType().GetMethod("GetModel");
+            var genericMethod = method.MakeGenericMethod(type);
+            var result = genericMethod.Invoke(new MappingService(), new object[] { modelFormCollection });
+            #endregion
 
-            
-
-            return  View("~/Views/FlyPages/Create.cshtml");
+            return RedirectToAction("Index", "Admin");
         }
 
 
