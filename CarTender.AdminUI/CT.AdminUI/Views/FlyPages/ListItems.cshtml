@@ -1,12 +1,22 @@
-﻿@*@using CT.AdminUI.Models
+﻿@using CT.AdminUI.Models
 @using Entity.DTO
 @using System.Linq;
 @using System.Reflection
+@using System.Collections.Generic
 @using System.ComponentModel
 @model GenericViewModel
 @{
     ViewData["Title"] = "ListItems";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Type modelType = Model.MyModel.GetType().GetProperties()[2].PropertyType;
+    Type customListType = typeof(List<>).MakeGenericType(modelType);
+   // var myList = Convert.ChangeType(Model.MyModel, customListType);
+    
+    //myList = Convert.ChangeType(Model.MyModel, customListType);
+
+    //var asdf = myList.GetType().MakeArrayType().;
+
+    var sadf = 5;
 }
 
 <div class="container-fluid">
@@ -67,48 +77,26 @@
                 <table class="table table-bordered" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Plaka</a></th>
-                            <th>Marka</th>
-                            <th>Model</th>
-                            <th>Bireysel/Kurumsal</th>
-                            <th>Statü</th>
-                            <th>Kaydeden Kullanıcı</th>
-                            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Kayıt Tarihi</a></th>
-                            <th></th>
-                            <th></th>
+                            @foreach(var modelProperties in modelType.GetProperties()){
+
+                                <th>@(modelProperties.GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? modelProperties.GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : modelProperties.Name)</th>
+                            }
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
+                        @*@foreach (var items in myList)
                         {
-                            <tr>
-                                <td>@item.Plate</td>
-                                <td>@item.CarBrand</td>
-                                <td>@item.CarModel</td>
-                                <td>@item.IsCorporate</td>
-                                <td>@item.Status</td>
-                                <td>@item.CreatedBy</td>
-                                <td>@item.CreatedDate</td>
-                                <td>
-                                    <a class="btn btn-warning" asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
-                                        <i class="far fa-trash-alt"></i>
-                                        Sil
-                                    </button>
-                                </td>
-                            </tr>
-                        }
+                            <tr>@items</tr>
+                        }*@
                     </tbody>
                 </table>
 
-                @{
+                @*@{
                     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
                     var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-                }
+                }*@
 
-                <a asp-action="Index"
+                @*<a asp-action="Index"
                    asp-route-sortOrder="@ViewData["CurrentSort"]"
                    asp-route-pageNumber="@(Model.PageIndex - 1)"
                    asp-route-currentFilter="@ViewData["CurrentFilter"]"
@@ -121,14 +109,13 @@
                    asp-route-currentFilter="@ViewData["CurrentFilter"]"
                    class="btn btn-default @nextDisabled">
                     Sonraki
-                </a>
+                </a>*@
             </div>
         </div>
     </div>
 
 </div>
 
-@await Component.InvokeAsync("DeleteModal", new{title = "Aracı Sil", body="Aracı silmek istediğinize emin misiniz?", id="deleteCar"})
+@*@await Component.InvokeAsync("DeleteModal", new{title = "Aracı Sil", body="Aracı silmek istediğinize emin misiniz?", id="deleteCar"})*@
 
 
-*@

@@ -4,10 +4,15 @@
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cauthindex1" aria-expanded="true" aria-controls="cauthindex1" role="button">Rol - Yetki</a>  
+                </h5>
+            </div>
+            <div id="cauthindex1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="row mt-3">
                     <div class="col-md-4">
                         <div class="input-group mb-3">
@@ -26,11 +31,11 @@
 
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
 
-                    <div>
+                    <div class="mb-3">
                         <a class="btn btn-success" data-toggle="modal" data-target="#addAuthorization" href="#"><i class="fa-solid fa-plus"></i> Yeni Yetki Ekle</a>
                     </div>
 
-                    <table class="table table-border">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">Kullanıcı Rolleri</th>
@@ -117,16 +122,47 @@
             </div>
         </div>
     </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cauthindex2" aria-expanded="true" aria-controls="cauthindex2" role="button">Pasif Durumdaki Rol - Yetkiler</a>
+                </h5>
+            </div>
+            <div id="cauthindex2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">           
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kullanıcı Rolleri</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SuperAdmin</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Yetki Sil", body="Verilen yetkiyi silmek istediğinize emin misiniz?", id="deleteAuth"})
 
+@await Component.InvokeAsync("ActivationModal", new{title = "Yetki Aktif Et", body="Yetkiyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 
 <div class="modal fade" id="addAuthorization" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Yeni Rol Ekle</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Yeni Yetki Ekle</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

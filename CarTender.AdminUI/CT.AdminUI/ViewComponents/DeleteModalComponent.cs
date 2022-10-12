@@ -7,11 +7,11 @@ namespace CT.AdminUI.ViewComponents
     [ViewComponent(Name = "DeleteModal")] //Solution
     public class DeleteModalComponent : ViewComponent
     {
-        DeleteModalDTO dto;
+        ModalDTO dto;
 
         public IViewComponentResult Invoke(string title, string body, string id)
         {
-            dto = new DeleteModalDTO() { ModalID = id, ModalTitle = title, ModalBody = body };
+            dto = new ModalDTO() { ModalID = id, ModalTitle = title, ModalBody = body };
             return View("Default", dto);
         }
     }

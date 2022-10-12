@@ -28,6 +28,7 @@ namespace CarTender.AdminUI
             services.AddControllersWithViews();
 
             services.AddSingleton<IBaseAPIService, BaseAPIService>();
+            services.AddSingleton<IMappingService, MappingService>();
             services.AddSingleton<IApiService, ApiManager>();
 
             services.AddValidatorsFromAssemblyContaining<AdminLoginDAL>();

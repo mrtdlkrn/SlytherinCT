@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Concrete\BaseValidator.cs" />
     <Compile Include="Concrete\UpdateUserValidator.cs" />
     <Compile Include="Concrete\UpdateCarValidator.cs" />
     <Compile Include="Concrete\ShowNewBidValidator.cs" />
