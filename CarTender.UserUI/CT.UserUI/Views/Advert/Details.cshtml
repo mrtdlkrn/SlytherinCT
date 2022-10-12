@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "İlan Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>İlan Detay</h2>
+
+<div class="container">
+        <div id="collapseOne" class="collapse show p-5" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="input-group mb-4">
+                <span class="input-group-text col-md-3" id="inputGroup-sizing-default">İlan Başlığı:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-4">
+                <span class="input-group-text col-md-3" id="inputGroup-sizing-default">İlan Açıklama:</span>
+                <textarea class="form-control" id="exampleFormControlTextarea1" style="resize:none;" rows="3"></textarea>
+            </div>
+            <div class="input-group mb-4">
+                <span class="input-group-text col-md-3" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
+                <input type="text" class="form-control" />
+                <div class="input-group-append">
+                    <span class="input-group-text">TL</span>
+                </div>
+            </div>
+            <div class="input-group mb-4">
+                <span class="input-group-text col-md-3" id="inputGroup-sizing-default">Fiyatı:</span>
+                <input type="text" class="form-control" />
+                <div class="input-group-append">
+                    <span class="input-group-text">TL</span>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-0"></div>
+            <div class="col-md-3" style="float:right;">
+                <button class="btn btn-info btn-block" style="background-color: #2E86C1;" type="button"><i class="fa-solid" style="color:white;"></i>  Teklif Yap</button>
+            </div>
+        </div>
+</div>

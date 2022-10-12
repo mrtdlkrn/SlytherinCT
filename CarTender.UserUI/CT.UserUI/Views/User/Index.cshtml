@@ -8,12 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("scripts")
-
-    <!-- Favicon -->
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -21,85 +16,58 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="~/Scripts/main.js"></script>
-
 </head>
-
 <div class="modal-content">
     <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Profil</h5>
     </div>
     <div class="modal-body col-md-12 ">
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Kullanıcı Adı:</label>
-            </div>
+            <span class="input-group-text col-md-4" for="inputGroupSelect01">Kullanıcı Adı:</span>
             <input disabled type="text" value="yigitkygs" class="form-control editable" />
         </div>
         <div class="input-group mb-3">
-            <div class="input-group-prepend ">
-                <label class="input-group-text" for="inputGroupSelect01">Ad Soyad:</label>
-            </div>
+            <label class="input-group-text col-md-4" for="inputGroupSelect01">Ad Soyad:</label>
             <input disabled type="text" value="Yiğit Kaygısız" class="form-control editable" />
         </div>
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Telefon:</label>
-            </div>
+            <label class="input-group-text col-md-4" for="inputGroupSelect01">Telefon:</label>
             <input disabled type="text" value="5054545151351" class="form-control editable" />
         </div>
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">E-posta:</label>
-            </div>
+            <label class="input-group-text col-md-4" for="inputGroupSelect01">E-posta:</label>
             <input disabled type="email" value="yigit@yigit.com" class="form-control editable" />
         </div>
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Kullanıcı Türü:</label>
-            </div>
-            <select class="form-control editable" id="cmp13">
+            <label class="input-group-text col-md-4" for="inputGroupSelect01">Kullanıcı Türü:</label>
+            <select disabled class="form-control editable" id="cmp13">
                 <option selected>Bireysel</option>
                 <option>Kurumsal</option>
             </select>
         </div>
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">E-Posta onayı var mı?:</label>
-            </div>
-            <input type="checkbox" disabled checked class="form-control" />
+            <label class="input-group-text col-md-4" for="inputGroupSelect01">E-Posta onayı var mı?:</label>
+            <input disabled type="email" value="Evet" class="form-control editable" />
         </div>
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Admin onayı var mı?:</label>
-            </div>
-            <input type="checkbox" disabled checked class="form-control editable" />
+            <label class="input-group-text col-md-4" for="inputGroupSelect01">Admin onayı var mı?:</label>
+            <input disabled type="email" value="Evet" class="form-control editable" />
         </div>
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">KVKK onayı var mı?:</label>
-            </div>
-            <input type="checkbox" disabled checked class="form-control" />
+            <label class="input-group-text col-md-4" for="inputGroupSelect01">KVKK onayı var mı?:</label>
+            <input disabled type="email" value="Evet" class="form-control editable" />
         </div>
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
-            </div>
+            <label class="input-group-text col-md-4" for="inputGroupSelect01">Açıklama:</label>
             <textarea readonly class="form-control editable"></textarea>
         </div>
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Ekleyen:</label>
-            </div>
-            <input type="text" disabled value="Admin" class="form-control" />
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Kayıt Tarihi:</label>
-            </div>
+            <label class="input-group-text col-md-4" for="inputGroupSelect01">Kayıt Tarihi:</label>
             <input type="datetime" disabled value="05/10/2022" class="form-control" />
         </div>
     </div>
     <div class="modal-footer">
+        <button class="btn btn-dark" type="button" onclick="EnableComponents()">Şifre Değiştir</button>
         <button class="btn btn-secondary" type="button" onclick="EnableComponents()">Düzenle</button>
         <button class="btn btn-primary" type="button">Kaydet</button>
     </div>

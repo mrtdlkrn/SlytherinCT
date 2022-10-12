@@ -8,7 +8,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <!-- Favicon -->
     <!-- Google Web Fonts -->
@@ -20,7 +19,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="~/Scripts/main.js"></script>
 </head>
-
 <div class="container-fluid">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -62,8 +60,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3 flexb" style="justify-content: flex-end;">
-                    <button class="btn btn-info btn-block col-md-6" style="background-color: #2E86C1 ;" type="button"><i class="fa-solid fa-list" style="color:white;"></i> Listele</button>
+                <div class="col-md-4 mb-3" ">
+                    <button class="btn btn-info btn-block col-md-6" style="background-color: #2E86C1 ;" type="button"><i class="fa-solid" style="color:white;"></i> Listele</button>
                 </div>
             </form>
         </div>
@@ -83,8 +81,8 @@
                             <th scope="col">İhale Başlangıç</th>
                             <th scope="col">İhale Bitiş</th>
                             <th scope="col">Statü</th>
-                            <th scope="col">Eklenme Tarihi</th>
-                            </tr>
+                            <th scope="col"></th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -93,45 +91,52 @@
                             <td>26/09/2020</td>
                             <td>27/09/2020</td>
                             <td>Sonlandı</td>
-                            <td>2020/05/10-11:00</td>
-                            </tr>
+                            <td>
+                                <a class="btn btn-warning col-md-12" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                            </td>
+                        </tr>
                         <tr>
                             <td>23/10/2020 Toyota İhalesi</td>
                             <td>Bireysel</td>
                             <td>26/09/2020</td>
                             <td>27/09/2020</td>
                             <td>Sonlandı</td>
-                            <td>2020/05/10-11:00</td>
-                            </tr>
+                            <td>
+                                <a class="btn btn-warning col-md-12" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                            </td>
+                        </tr>
                         <tr>
                             <td>23/10/2020 Toyota İhalesi</td>
                             <td>Bireysel</td>
                             <td>26/09/2020</td>
                             <td>27/09/2020</td>
                             <td>Sonlandı</td>
-                            <td>2020/05/10-11:00</td>
-                            </tr>
+                            <td>
+                                <a class="btn btn-warning col-md-12" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                            </td>
+                        </tr>
                         <tr>
                             <td>23/10/2020 Toyota İhalesi</td>
                             <td>Bireysel</td>
                             <td>26/09/2020</td>
                             <td>27/09/2020</td>
                             <td>Sonlandı</td>
-                            <td>2020/05/10-11:00</td>
-                            </tr>
+                            <td>
+                                <a class="btn btn-warning col-md-12" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                            </td>
+                        </tr>
                         <tr>
                             <td>23/10/2020 Toyota İhalesi</td>
                             <td>Bireysel</td>
                             <td>26/09/2020</td>
                             <td>27/09/2020</td>
                             <td>Sonlandı</td>
-                            <td>2020/05/10-11:00</td>
-                           </tr>
+                            <td>
+                                <a class="btn btn-warning col-md-12" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
-            </div>
-            <div class=" float-right mt-3">
-                <button class="btn btn-success mt-4" type="submit"><i class="fa-solid fa-plus"></i> Yeni İhale Ekle</button>
             </div>
         </div>
     </div>
