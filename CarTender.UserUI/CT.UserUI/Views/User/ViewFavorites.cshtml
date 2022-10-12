@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Favorilerim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Favorilerim</h2>
+
+<div class="container">
+    <div id="accordion">
+        <div class="card">
+            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Araç Ara" aria-label="Ara">
+                                <button class="btn btn-outline-success " type="submit">Ara</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Araç Bilgileri</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hyundai Kona 2020 1.4 TSI AT Siyah</td>
+                                <td>
+                                    <a class="btn btn-warning col-md-5" data-toggle="modal" data-target="#editUserFavoriteCar" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Araca Git</a>
+                                    <button type="button" class="btn btn-danger col-md-5" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteUserFavoriteCar"><i class="far fa-trash-alt"></i> Favorilerden Çıkar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Opel Corsa 2018 1.2 MT Mavi</td>
+                                <td>
+                                    <a class="btn btn-warning col-md-5" data-toggle="modal" data-target="#editUserFavoriteCar" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Araca Git</a>
+                                    <button type="button" class="btn btn-danger col-md-5" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteUserFavoriteCar"><i class="far fa-trash-alt"></i> Favorilerden Çıkar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,8 @@
 ﻿using Business.Concrete;
+using Common.Validation.Concrete;
 using CT.UserUI.Logging.Concrete;
 using Entity.DTO;
+using FluentValidation.Results;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -18,6 +20,19 @@ namespace CT.UserUI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            string email = "ahme";
+            string password = "1";
+            UserLoginDTO dto = new UserLoginDTO() { Email = email,Password = password };
+
+            BaseValidator<UserLoginDTO> validator = new BaseValidator<UserLoginDTO>(dto);
+            ValidationResult result = validator.Validate(dto);
+
+            if (result.IsValid)
+            {
+
+            }
+
+
             return View(new UserLoginDTO());
         }
 
@@ -28,6 +43,13 @@ namespace CT.UserUI.Controllers
             string email = "ahmet@gmail.com";
             string password = "123";
 
+            BaseValidator<UserLoginDTO> validator = new BaseValidator<UserLoginDTO>(dto);
+            ValidationResult result = validator.Validate(dto);
+
+            if (result.IsValid)
+            {
+
+            }
             if (dto.Password != password || dto.Email != email)
             {
                 _logger.Log("hatalı kullanıcı girişi - USERUI");
