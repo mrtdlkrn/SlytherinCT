@@ -2,10 +2,14 @@
 using Common.Abstract;
 using Entity.DTO;
 using Entity.DTO.Pagination;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using FluentValidation.AspNetCore;
+using CarTender.FluentValidation.DAL.CombineDAL.Car;
+using CarTender.FluentValidation.DTO.CombineDTO.Car;
 
 namespace CT.AdminUI.Controllers
 {
@@ -80,16 +84,36 @@ namespace CT.AdminUI.Controllers
 
 
         [HttpGet]
-        public IActionResult Add(int carID)
-        {
-
-            return View();
-        }
-
-        [HttpPost]
         public IActionResult Add()
         {
 
+            return View(new AddVehicleDTO());
+        }
+
+        [HttpPost]
+        public IActionResult Add(AddVehicleDTO dto)
+        {
+            CombineAddOrEditVecihleDAL validations = new CombineAddOrEditVecihleDAL();
+            ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
+            {
+
+                KM = dto.KM,
+                VehiclePrice = dto.VehiclePrice,
+                Explanation = dto.Explanation,
+                PhotoPath1 = dto.PhotoPath1,
+                PhotoPath2 = dto.PhotoPath2,
+                PhotoPath3 = dto.PhotoPath3,
+                PhotoPath4 = dto.PhotoPath4,
+                PhotoPath5 = dto.PhotoPath5
+
+            });
+
+            if (!validationResult.IsValid)
+            {
+                validationResult.AddToModelState(this.ModelState);
+
+                return View("Add", dto);
+            }
 
             return RedirectToAction("Index");
         }

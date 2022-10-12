@@ -8,7 +8,7 @@ namespace Entity
 {
     public class BidInformationDTO
     {
-        public string? BidName { get; set; }
+        public string BidName { get; set; }
         public bool IsCorporate { get; set; }
         public bool IsApproved { get; set; }
         public DateTime? FinishedDate { get; set; }

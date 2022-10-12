@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarTender.FluentValidation.DTO
+namespace CarTender.FluentValidation.DTO.AdminDTO.Login
 {
     public class AdminLoginDTO
     {
