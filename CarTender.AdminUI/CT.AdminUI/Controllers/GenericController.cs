@@ -15,17 +15,17 @@ namespace CT.AdminUI.Controllers
         List<DenemeDTO> denemeList = new List<DenemeDTO>()
         {
             new DenemeDTO { Age = 25,IsRetired=false,Name="Burkay",Surname="Akgul",Salary=2000},
-            new DenemeDTO { Age = 25,IsRetired=false,Name="Burkay",Surname="Akgul",Salary=2000},
-            new DenemeDTO { Age = 25,IsRetired=false,Name="Burkay",Surname="Akgul",Salary=2000},
-            new DenemeDTO { Age = 25,IsRetired=false,Name="Burkay",Surname="Akgul",Salary=2000},
-            new DenemeDTO { Age = 25,IsRetired=false,Name="Burkay",Surname="Akgul",Salary=2000},
-            new DenemeDTO { Age = 25,IsRetired=false,Name="Burkay",Surname="Akgul",Salary=2000},
+            new DenemeDTO { Age = 23,IsRetired=false,Name="asdfdfas",Surname="12sdaf",Salary=3000},
+            new DenemeDTO { Age = 21,IsRetired=false,Name="vxcsdaf",Surname="11123",Salary=4000},
+            new DenemeDTO { Age = 29,IsRetired=false,Name="cvcvxsdf",Surname="bgrwwfgsa",Salary=2000},
+            new DenemeDTO { Age = 24,IsRetired=false,Name="iyusdf",Surname="bndfgfd",Salary=1000},
+            new DenemeDTO { Age = 26,IsRetired=false,Name="qwerqwre",Surname="trrtwe",Salary=5000},
         };
 
         [HttpGet]
         public IActionResult ListItems(string modelName)
         {
-            ///<summary>
+            ///<summary>0
             /// Burada .net'in assembly kodlarindan veri tipleri arasindan tip adi bizim httpget ile aldigimiz model adina esit olan ilk tipin type bilgisini alir
             /// Boylece gonderdigimiz modelName bilgisine gore veri tipini elde etmis oluruz.
             /// </summary>
@@ -46,8 +46,8 @@ namespace CT.AdminUI.Controllers
             ///Oluşturduğumuz liste instance'na liste halindeki verilerimizi aktarıyoruz, şuan için api katmanında veritabanı bağlantısı bulunmadığından dolayı örnek verileri kendimiz oluşturup gönderiyoruz...
             ///</summary>
             list = denemeList;
-            
 
+            GenericViewModel model = new GenericViewModel() { MyModel = list, ModelName = modelName, Title = modelName + " Listeleme Sayfasi" };
 
 
             return View("~/Views/FlyPages/ListItems.cshtml", model);
@@ -55,12 +55,12 @@ namespace CT.AdminUI.Controllers
 
 
         [HttpGet]
-        public IActionResult Create()
+        public IActionResult Create(string modelName)
         {
             //AddUserDTO dto = new AddUserDTO() { Name = "Burkay", Surname = "Akgul" };
             //AddVehicle dto = new AddVehicle() {BodyType="Sedan",Color="Red",Year="2022",CompanyName="burkaycompanisi",FuelType="Benzin" };
             ModelDeneme dto = new ModelDeneme();
-            GenericViewModel model = new GenericViewModel() { MyModel = dto, ActionController = "Generic", ActionMethod = "Create", Title = "Burkay123" };
+            GenericViewModel model = new GenericViewModel() { MyModel = dto, ModelName=modelName, Title = "Burkay123" };
 
             return View("~/Views/FlyPages/Create.cshtml", model);
 
