@@ -1,12 +1,10 @@
 ﻿using CT.AdminUI.Models;
 using Entity.DTO;
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 
 namespace CT.AdminUI.Controllers
 {
@@ -52,6 +50,7 @@ namespace CT.AdminUI.Controllers
 
             //return View("~/Views/FlyPages/ListItems.cshtml", model);
             return View("~/Views/FlyPages/ListItems.cshtml");
+
         }
 
 

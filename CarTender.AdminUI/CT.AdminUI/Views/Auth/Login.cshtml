@@ -1,9 +1,9 @@
-﻿@using CarTender.FluentValidation.DTO
+﻿@using Entity.DTO
 @{ 
     Layout="";
 }
 
-@model AdminLoginDTO
+@model LoginDTO
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +57,7 @@
                                                        <span asp-validation-for="Email" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" asp-for="Password" class="form-control form-control-user"
+                                                <input type="password" asp-for="Password" value="@TempData["Password"]" class="form-control form-control-user"
                                                        id="exampleInputPassword" placeholder="Şifre">
                                                        <span asp-validation-for="Password" class="text-danger"></span>
                                             </div>

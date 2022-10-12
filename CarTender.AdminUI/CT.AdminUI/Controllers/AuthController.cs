@@ -4,9 +4,9 @@ using Entity.DTO;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using CarTender.FluentValidation.DAL;
-using CarTender.FluentValidation.DTO;
 using FluentValidation.AspNetCore;
+using CarTender.FluentValidation.DAL.AdminDAL.Login;
+using CarTender.FluentValidation.DTO.AdminDTO.Login;
 
 namespace CarTender.AdminUI.Controllers
 {
@@ -21,18 +21,25 @@ namespace CarTender.AdminUI.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View(new AdminLoginDTO());
+            return View(new LoginDTO());
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(AdminLoginDTO dto)
+        public async Task<IActionResult> Login(LoginDTO dto)
         {
             AdminLoginDAL validations = new AdminLoginDAL();
-            ValidationResult validationResult = validations.Validate(dto);
+            ValidationResult validationResult = validations.Validate(new AdminLoginDTO
+            {
+
+                Email = dto.Email,
+                Password = dto.Password
+            });
 
             if (!validationResult.IsValid)
             {
                 validationResult.AddToModelState(this.ModelState);
+
+                TempData["Password"] = dto.Password;
 
                 return View("Login", dto);
             }

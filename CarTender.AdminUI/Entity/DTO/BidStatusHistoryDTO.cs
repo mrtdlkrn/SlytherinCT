@@ -8,7 +8,7 @@ namespace Entity.DTO
 {
     public class BidStatusHistoryDTO
     {
-        public string? Information { get; set; }
+        public string Information { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public Guid? ModifiedBy { get; set; }
         public Guid BidID { get; set; }
