@@ -36,7 +36,7 @@
                                 <td>Hyundai Kona 2020 1.4 TSI CVT Siyah</td>
                                 <td>
                                     <a class="btn btn-warning col-md-5" data-toggle="modal" data-target="#editUserFavoriteCar" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                                    <a class="btn btn-danger col-md-5" data-toggle="modal" data-target="#deleteUserFavoriteCar" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteUserFavoriteCar"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -44,8 +44,7 @@
                                 <td>Opel Corsa 2018 1.2 MT Mavi</td>
                                 <td>
                                     <a class="btn btn-warning col-md-5" data-toggle="modal" data-target="#editUserFavoriteCar" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                                    <a class="btn btn-danger col-md-5" data-toggle="modal" data-target="#deleteUserFavoriteCar" href="#"><i class="far fa-trash-alt"></i> Sil</a>
-
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteUserFavoriteCar"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -56,20 +55,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteUserFavoriteCar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Kullanıcı Favori Araç Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("DeleteModal", new{title = "Favoriden Araç Kaldır", body="Aracı favoriden kaldırmak istediğinize emin misiniz?", id="deleteUserFavoriteCar"})
 
 <div class="modal fade" id="editUserFavoriteCar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

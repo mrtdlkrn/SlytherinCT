@@ -6,7 +6,7 @@ namespace CT.API.Controllers.AdminControllers
     /// <summary>
     /// All actions an admin needs regarding users will be here
     /// </summary>
-    
+
     public class UserController : Controller
     {
         // GET: UserController

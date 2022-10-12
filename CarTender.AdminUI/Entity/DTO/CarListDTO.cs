@@ -9,6 +9,7 @@ namespace Entity.DTO
     public class CarListDTO
     {
         public Guid CarID { get; set; }
+        public string Plate { get; set; }
         public string CarBrand { get; set; }
         public string CarModel { get; set; }
         public bool IsCorporate { get; set; }

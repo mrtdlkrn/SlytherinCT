@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CT.Entities", "CT.Entities\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CT.LogLayer", "CT.Log\CT.LogLayer.csproj", "{47F207E6-A951-41D5-8BA7-D8F1B2EFE9A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CT.Common", "CT.Common\CT.Common.csproj", "{611BA5E9-6851-4DED-9429-52AB7B38DCBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CT.Common", "CT.Common\CT.Common.csproj", "{611BA5E9-6851-4DED-9429-52AB7B38DCBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

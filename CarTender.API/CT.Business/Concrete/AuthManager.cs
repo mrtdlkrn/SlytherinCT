@@ -42,7 +42,7 @@ namespace CarTender.Business.Concrete
         {
             byte[] passwordSalt;
             byte[] passwordHash;
-            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt );
+            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;

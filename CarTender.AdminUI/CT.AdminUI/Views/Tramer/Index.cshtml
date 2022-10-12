@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<div>
     <div id="accordion">
         <div class="card">
             <div class="card-header" id="headingTwo">
@@ -374,21 +374,8 @@
     </div>
 </div>
 
-
-<div class="modal fade" id="deleteTramer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Trameri Sil</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#deleteTramer').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer">
-                <button class="btn btn-danger" type="button">Sil</button>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("DeleteModal", new{title = "Trameri Sil", body="Tramer bilgisini silmek istediğinize emin misiniz?", id="deleteTramer"})
+@await Component.InvokeAsync("DeleteModal", new{title = "Tramer Bileşenini Sil", body="Tramer bileşenini silmek istediğinize emin misiniz?", id="deleteCmp"})
 
 <div class="modal fade" id="detail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -541,21 +528,6 @@
                     <button class="btn btn-info" onclick="EnableComponents()" type="button">Düzenle</button>
                     <button class="btn btn-primary" type="button">Kaydet</button>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="deleteCmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel3">Tramer Bileşenini Sil</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#deleteCmp').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer">
-                <button class="btn btn-danger" type="button">Sil</button>
             </div>
         </div>
     </div>

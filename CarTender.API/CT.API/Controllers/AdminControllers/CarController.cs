@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace CT.API.Controllers.AdminControllers
 {
@@ -8,6 +7,6 @@ namespace CT.API.Controllers.AdminControllers
     public class CarController : ControllerBase
     {
         // GET: CarController
-        
+
     }
 }
