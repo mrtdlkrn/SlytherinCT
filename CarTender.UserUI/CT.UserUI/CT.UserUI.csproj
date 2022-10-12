@@ -191,6 +191,7 @@
     <Compile Include="Controllers\AdvertController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BidController.cs" />
+    <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -311,6 +312,7 @@
     <Content Include="Views\User\ViewFavorites.cshtml" />
     <Content Include="Views\Bid\Details.cshtml" />
     <Content Include="Views\Advert\Details.cshtml" />
+    <Content Include="Views\Car\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
