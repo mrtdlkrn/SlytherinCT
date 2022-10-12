@@ -50,7 +50,8 @@ namespace CT.AdminUI.Controllers
 
 
 
-            return View("~/Views/FlyPages/ListItems.cshtml", model);
+            //return View("~/Views/FlyPages/ListItems.cshtml", model);
+            return View("~/Views/FlyPages/ListItems.cshtml");
         }
 
 
