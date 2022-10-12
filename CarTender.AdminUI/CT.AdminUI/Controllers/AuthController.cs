@@ -4,7 +4,7 @@ using Entity.DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace CarTender.AdminUI.Controllers
+namespace CT.AdminUI.Controllers
 {
     public class AuthController : Controller
     {
