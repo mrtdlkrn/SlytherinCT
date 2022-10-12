@@ -20,4 +20,10 @@
     <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CarTender.FluentValidation">
+      <HintPath>C:\Users\Sarp\Desktop\CarTender.FluentValidation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
