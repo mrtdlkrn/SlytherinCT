@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-
+using Microsoft.Extensions.Logging;
 namespace CarTender.AdminUI
 {
     public class Program
@@ -16,5 +16,6 @@ namespace CarTender.AdminUI
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+          
     }
 }
