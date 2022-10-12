@@ -309,6 +309,8 @@
     <Content Include="Views\Advert\Index.cshtml" />
     <Content Include="Views\Advert\ViewAdvert.cshtml" />
     <Content Include="Views\User\ViewFavorites.cshtml" />
+    <Content Include="Views\Bid\Details.cshtml" />
+    <Content Include="Views\Advert\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
