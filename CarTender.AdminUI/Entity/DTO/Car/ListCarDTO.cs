@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entity.DTO
+namespace Entity.DTO.Car
 {
-    public class CarListDTO
+    public class ListCarDTO
     {
         public Guid CarID { get; set; }
+        public string CarPlate { get; set; }
         public string CarBrand { get; set; }
         public string CarModel { get; set; }
         public bool IsCorporate { get; set; }

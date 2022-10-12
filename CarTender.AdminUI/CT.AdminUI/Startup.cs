@@ -26,7 +26,8 @@ namespace CarTender.AdminUI
             services.AddControllersWithViews();
 
             services.AddSingleton<IBaseAPIService, BaseAPIService>();
-            services.AddSingleton<IApiService, ApiManager>();
+            services.AddSingleton<IApiService, ApiManager>();            
+            services.AddSingleton<IApiRoutes, ApiRoutes>();
 
             services.AddHttpClient<BaseAPIService>(opt =>
             {

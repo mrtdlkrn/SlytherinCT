@@ -22,11 +22,12 @@ namespace Business.Concrete
            return  _baseAPIService.DELETE(tokenDTO, requestUrl);
         }
 
+        
         public Task<DTO> Get<DTO>(TokenDTO tokenDTO, string requestUrl) where DTO : class
         {
             return _baseAPIService.GET<DTO>(tokenDTO,requestUrl);
         }
-
+        
         public Task<bool> Post<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class
         {
             return _baseAPIService.POST(tokenDTO, requestUrl, dto);
@@ -40,6 +41,10 @@ namespace Business.Concrete
         public Task<bool> Put<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class
         {
             return _baseAPIService.PUT(tokenDTO, requestUrl, dto); 
+        }
+        public Task<DTO> GET<DTO, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto) where DTO : class where FilterDTO : class
+        {
+            return _baseAPIService.GET<DTO, FilterDTO>(tokenDTO, requestUrl, dto);
         }
     }
 }
