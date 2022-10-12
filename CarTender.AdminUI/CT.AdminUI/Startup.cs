@@ -2,12 +2,14 @@ using Business.Abstract;
 using Business.Concrete;
 using Common.Abstract;
 using Common.Concrete;
+using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using CarTender.FluentValidation.DAL;
 
 namespace CarTender.AdminUI
 {
@@ -27,6 +29,8 @@ namespace CarTender.AdminUI
 
             services.AddSingleton<IBaseAPIService, BaseAPIService>();
             services.AddSingleton<IApiService, ApiManager>();
+
+            services.AddValidatorsFromAssemblyContaining<AdminLoginDAL>();
 
             services.AddHttpClient<BaseAPIService>(opt =>
             {
