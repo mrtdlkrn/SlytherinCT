@@ -17,7 +17,8 @@ namespace CarTender.AdminUI.Controllers
 
         [HttpGet]
         public IActionResult Login()
-        {            
+        {
+            _apiService.Test("test");        
             return View(new LoginDTO());
         }
 

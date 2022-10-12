@@ -10,7 +10,6 @@ namespace Core.Logging
         //Loglama yaparken log içeriğinde olması gereken parametreleri belirttiğimiz obje örn: bu işlem ne zaman gerçekleşti,...
         public DateTime TransactionDate { get; set; }
         public string MethodName { get; set; }
-        public object ReturnValue { get; set; }
         public List<LogParameter> LogParameters { get; set; }
     }
 }
