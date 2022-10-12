@@ -4,7 +4,7 @@ using Entity.DTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace CarTender.AdminUI.Controllers
+namespace CT.AdminUI.Controllers
 {
     public class AuthController : Controller
     {
@@ -18,7 +18,7 @@ namespace CarTender.AdminUI.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            _apiService.Test("test"); 
+            _apiService.Test("test");        
             return View(new LoginDTO());
         }
 
