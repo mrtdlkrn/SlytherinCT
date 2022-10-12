@@ -1,12 +1,10 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "CarModification";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
@@ -17,7 +15,7 @@
                 </h5>
             </div>
 
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">               
+            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="row mt-3">
                     <div class="col-md-4">
                         <div class="input-group mb-3">
@@ -51,10 +49,10 @@
                                 <td>06.10.2022</td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModif">
-                                       <i class="far fa-trash-alt"></i>  Sil
+                                        <i class="far fa-trash-alt"></i>  Sil
                                     </button>
                                 </td>
-                            </tr>                           
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -62,7 +60,58 @@
         </div>
     </div>
 
-    <div id="accordion" class="mt-5 mb-5">
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarcm1" aria-expanded="true" aria-controls="ccarcm1" role="button">Pasif Durumdaki Modifiyeler</a>
+                </h5>
+            </div>
+
+            <div id="ccarcm1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Araç Plakası:</label>
+                            </div>
+                            <input class="form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Plaka</th>
+                                <th scope="col">Parça</th>
+                                <th scope="col">Ekleyen</th>
+                                <th scope="col">Ekleme Tarihi</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>16 E 16</td>
+                                <td>Rüzgarlık</td>
+                                <td>Ahmet</td>
+                                <td>06.10.2022</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
@@ -105,7 +154,46 @@
                                     </button>
                                 </td>
                             </tr>
-                            
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarcm2" aria-expanded="true" aria-controls="ccarcm2" role="button">Pasif Durumdaki Modifiye Bileşenleri</a>
+                </h5>
+            </div>
+
+            <div id="ccarcm2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">               
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Bileşen Adı</th>
+                                <th scope="col">Kaydeden</th>
+                                <th scope="col">Kayıt Tarihi</th>
+                                <th scope="col">Düzenleyen</th>
+                                <th scope="col">Düzenleme Tarihi</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rüzgarlık</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <th></th>
+                                <th></th>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation2"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -116,6 +204,9 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Modifiyeyi Sil", body="Modifiyeyi silmek istediğinize emin misiniz?", id="deleteModif"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Bileşeni Sil", body="Bileşeni silmek istediğinize emin misiniz?", id="deleteCmp"})
+
+@await Component.InvokeAsync("ActivationModal", new{title = "Modifiye Aktif Et", body="Modifiyeyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("ActivationModal", new{title = "Modifiye Bileşeni Aktif Et", body="Modifiye Bileşenini aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
 
 <div class="modal fade" id="editCmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
     <div class="modal-dialog">

@@ -3,13 +3,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <h5>Bireysel Kullanıcı Otomatik İhale Teklifleri</h5>
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cbiduabi1" aria-expanded="true" aria-controls="cbiduabi1" role="button">Bireysel Kullanıcı Otomatik İhale Teklifleri</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </h5>
+            </div>
+            <div id="cbiduabi1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -59,9 +65,46 @@
             </div>
         </div>
     </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cbiduabi2" aria-expanded="true" aria-controls="cbiduabi2" role="button">Pasif Durumdaki Bireysel Kullanıcı Otomatik İhale Teklifleri</a>
+                </h5>
+            </div>
+            <div id="cbiduabi2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Maksimum Teklif</th>
+                                <th scope="col">Teklif Artış Miktarı</th>
+                                <th scope="col">Kullanıcı</th>
+                                <th scope="col">İhale Adı</th>
+                                <th scope="col"></th>                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>500.000</td>
+                                <td>1.000</td>
+                                <td>Ahmet</td>
+                                <td>Hedef Filo Ekim 2022 İhalesi</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Teklif Sil", body="Teklif bilgisini silmek istediğinize emin misiniz?", id="delete"})
+@await Component.InvokeAsync("ActivationModal", new{title = "Teklif Aktif Et", body="Teklifi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 
 <div class="modal fade" id="editUserAutoBidOffer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
