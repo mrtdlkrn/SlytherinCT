@@ -1,11 +1,11 @@
 ﻿using CT.AdminUI.Models.ModalDTOs;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace CT.AdminUI.ViewComponents
 {
-    [ViewComponent(Name = "DeleteModal")] //Solution
-    public class DeleteModalComponent : ViewComponent
+    [ViewComponent(Name = "ActivationModal")] 
+
+    public class ActivationModalComponent : ViewComponent
     {
         ModalDTO dto;
 

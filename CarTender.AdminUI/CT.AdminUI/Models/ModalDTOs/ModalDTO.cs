@@ -1,6 +1,6 @@
 ﻿namespace CT.AdminUI.Models.ModalDTOs
 {
-    public class DeleteModalDTO
+    public class ModalDTO
     {
         public string ModalID { get; set; }
         public string ModalTitle { get; set; }
