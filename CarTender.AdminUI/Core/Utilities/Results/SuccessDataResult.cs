@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ContactProject.Core.Utilities.Results
+namespace Core.Utilities.Results
 {
     public class SuccessDataResult<T> : DataResult<T> where T : class
     {

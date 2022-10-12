@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Core.Utilities.Results;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ContactProject.Core.Utilities.Results
+namespace Core.Utilities.Results
 {
     public class SuccessResult : Result
     {

@@ -1,4 +1,4 @@
-﻿using ContactProject.Core.Utilities.Results;
+﻿using Core.Utilities.Results;
 using System;
 using System.Collections.Generic;
 using System.Text;

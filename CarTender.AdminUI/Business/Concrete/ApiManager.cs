@@ -11,7 +11,9 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    //[LogAspect(typeof(FileLogger))]
+    [ExceptionLogAspect(typeof(FileLogger))]
+    [LogAspect(typeof(FileLogger))]
+    
     public class ApiManager : IApiService
     {
         private readonly IBaseAPIService _baseAPIService;
@@ -46,13 +48,9 @@ namespace Business.Concrete
             return _baseAPIService.PUT(tokenDTO, requestUrl, dto); 
         }
 
-        [ExceptionLogAspect(typeof(FileLogger))]
+        
         public void Test(string test)
         {
-            int x = 5;
-            int y = 0;
-            int sonuc = x / y;
-
             System.Console.WriteLine("test");
         }
     }

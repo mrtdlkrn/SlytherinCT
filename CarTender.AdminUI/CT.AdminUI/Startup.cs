@@ -5,6 +5,7 @@ using Common.Concrete;
 using Core.DependencyResolvers;
 using Core.Extensions;
 using Core.Utilities.IoC;
+using CT.AdminUI.ExceptionHandler.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -60,6 +61,8 @@ namespace CarTender.AdminUI
             //}
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            app.ConfigureExceptionHandler();
 
             app.UseRouting();
 
