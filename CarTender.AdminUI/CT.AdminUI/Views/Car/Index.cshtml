@@ -1,10 +1,26 @@
 ﻿@using Entity.DTO
 @using Entity.DTO.Pagination
+@using System.Reflection
 @model PaginatedList<CarListDTO>
 
 @{
     ViewData["Title"] = "Araç Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var tempheads = typeof(CarListDTO).GetProperties();
+
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in tempheads)
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
 }
 <div class="container-fluid p-5">
 
@@ -83,7 +99,6 @@
         <div class="col-md-3 float-right">
             <a class="btn btn-success btn-block " asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-plus"></i> Araç Oluştur</a>
         </div>
-
     </div>
 
     <div class="card shadow mb-4">
@@ -91,86 +106,21 @@
             <h6 class="m-0 font-weight-bold text-primary">Araç Listesi</h6>
         </div>
         <div class="card-body">
-            <form asp-action="Index" method="get">
-                <div class="form-actions">
-                    <div class="row mt-3 mb-3">
-                        <div class="col-md-4">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Plaka:</label>
-                                </div>
-                                <input type="text" class="form-control" name="SearchString" value="@ViewData["CurrentFilter"]" />
-                            </div>
-                        </div>
-                        <div class="col-md-1">
-                            <button class="btn btn-warning" type="submit"><i class="fa fa-search"></i></button>
-                        </div>
-                        <div class="col-md-2">
-                            <a asp-action="Index" class="btn btn-info">Hepsini Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <div class="table-responsive">
-                <table class="table table-bordered" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Plaka</a></th>
-                            <th>Marka</th>
-                            <th>Model</th>
-                            <th>Bireysel/Kurumsal</th>
-                            <th>Statü</th>
-                            <th>Kaydeden Kullanıcı</th>
-                            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Kayıt Tarihi</a></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>@item.Plate</td>
-                                <td>@item.CarBrand</td>
-                                <td>@item.CarModel</td>
-                                <td>@item.IsCorporate</td>
-                                <td>@item.Status</td>
-                                <td>@item.CreatedBy</td>
-                                <td>@item.CreatedDate</td>
-                                <td>
-                                    <a class="btn btn-warning" asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
-                                        <i class="far fa-trash-alt"></i>
-                                        Sil
-                                    </button>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-
-                @{
-                    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-                    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-                }
-
-                <a asp-action="Index"
-                   asp-route-sortOrder="@ViewData["CurrentSort"]"
-                   asp-route-pageNumber="@(Model.PageIndex - 1)"
-                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
-                   class="btn btn-default @prevDisabled">
-                    Önceki
-                </a>
-                <a asp-action="Index"
-                   asp-route-sortOrder="@ViewData["CurrentSort"]"
-                   asp-route-pageNumber="@(Model.PageIndex + 1)"
-                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
-                   class="btn btn-default @nextDisabled">
-                    Sonraki
-                </a>
-            </div>
+            @await Component.InvokeAsync("BaseTable",
+            new{
+                FormActionStr="Index",
+                SearchbarStr="Plaka",
+                EditBtnStr="Güncelle", 
+                EditBtnController="Car",
+                EditBtnAction="Edit", 
+                DeleteBtnStr="Sil",
+                DeleteBtnModalID="deleteCar", 
+                TableHeads=heads,
+                TableDatas=datas,
+                HasPreviousPage=Model.HasPreviousPage,
+                HasNextPage = Model.HasNextPage,
+                PageIndex = Model.PageIndex
+            })
         </div>
     </div>
 
