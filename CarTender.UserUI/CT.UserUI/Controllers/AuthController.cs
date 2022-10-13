@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using CarTender.FluentValidation.DAL.UserDAL.Login_Register;
 using Common.Validation.Concrete;
 using CT.UserUI.Logging.Concrete;
 using Entity.DTO;
@@ -20,43 +21,48 @@ namespace CT.UserUI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            string email = "ahme";
-            string password = "1";
-            UserLoginDTO dto = new UserLoginDTO() { Email = email,Password = password };
-
-            BaseValidator<UserLoginDTO> validator = new BaseValidator<UserLoginDTO>(dto);
-            ValidationResult result = validator.Validate(dto);
+            UserLoginDAL validations = new UserLoginDAL();
+            ValidationResult result = validations.Validate( new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
+            {
+                Username = "yigit",
+                Password = "1234"
+            });
 
             if (result.IsValid)
             {
 
             }
 
-
-            return View(new UserLoginDTO());
+            return View();
         }
 
         //POST: Auth Controller for Login
         [HttpPost]
         public ActionResult Login(UserLoginDTO dto)
         {
-            string email = "ahmet@gmail.com";
+            string username = "ahmet";
             string password = "123";
 
-            BaseValidator<UserLoginDTO> validator = new BaseValidator<UserLoginDTO>(dto);
-            ValidationResult result = validator.Validate(dto);
+
+            //BaseValidator<UserLoginDTO> validator = new BaseValidator<UserLoginDTO>(dto);
+            UserLoginDAL validations = new UserLoginDAL();
+            ValidationResult result = validations.Validate( new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
+            {
+                Username = username,
+                Password = password
+            });
 
             if (result.IsValid)
             {
 
             }
-            if (dto.Password != password || dto.Email != email)
+            if (dto.Password != password || dto.Username != username)
             {
                 _logger.Log("hatalı kullanıcı girişi - USERUI");
                 return RedirectToAction("Login");
             }
 
-            _logger.Log(email + " kullanıcı giriş yaptı. - USERUI");
+            _logger.Log(username + " kullanıcı giriş yaptı. - USERUI");
 
             return RedirectToAction("CustomerSignUp");
         }
