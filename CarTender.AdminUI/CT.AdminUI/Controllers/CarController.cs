@@ -37,7 +37,7 @@ namespace CT.AdminUI.Controllers
 
 
         //Araç listesi ekranı       
-        public async Task<IActionResult> Index(
+        public IActionResult Index(
             string sortOrder,
             string currentFilter,
             string searchString,
@@ -140,10 +140,10 @@ namespace CT.AdminUI.Controllers
 
         // Brand Model 
         [HttpGet]
-        public async Task<IActionResult> BrandModel()
+        public IActionResult BrandModel()
         {
-            TokenDTO tokenDTO = new TokenDTO();
-            var result = await _apiService.Get<ListBrandModelDTO>(tokenDTO, _routes["BrandModel"]);
+            //TokenDTO tokenDTO = new TokenDTO();
+            //var result = await _apiService.Get<ListBrandModelDTO>(tokenDTO, _routes["BrandModel"]);
             //todo : sayfaya veriler basılacak
 
             return View();
