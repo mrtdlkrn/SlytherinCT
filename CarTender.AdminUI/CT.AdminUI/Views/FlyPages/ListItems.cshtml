@@ -14,8 +14,8 @@
     Type modelType = Model.MyModel.GetType().GetProperties()[2].PropertyType;
     Type customListType = typeof(List<>).MakeGenericType(modelType);
     var myList = (IList)Activator.CreateInstance(customListType, Model.MyModel);
-
-
+    //var hede = myList[0];
+    //var bidi = hede.GetType().GetProperties().Where(x => x.GetCustomAttributes(typeof(KeyAttribute), true).FirstOrDefault() != null).First().;
 }
 
 <div class="container-fluid">
@@ -89,24 +89,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var items in myList)
+                        @foreach (var objects in myList)
                         {
                             <tr>
-                                @foreach (var item in items.GetType().GetProperties())
+                                @foreach (var item in objects.GetType().GetProperties())
                                 {
                                     @if (item.GetCustomAttributes(typeof(KeyAttribute), true).FirstOrDefault() == null)
                                     {
 
 
-                                        <td>@item.GetValue(items,null)</td>
+                                        <td>@item.GetValue(objects,null)</td>
                                     }
 
                                 }
                                 <td>
-                                    <a class="btn btn-warning" asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
+                                    <a class="btn btn-warning" asp-controller="Generic" asp-action="Edit" asp-route-modelName="@Model.ModelName" asp-route-id="@(objects.GetType().GetProperty("ID").GetValue(objects,null))"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar" asp-controller="Generic" asp-action="Delete" asp-route-modelName="@Model.ModelName" asp-route-id="@(objects.GetType().GetProperty("ID").GetValue(objects,null))" >
                                         <i class="far fa-trash-alt"></i>
                                         Sil
                                     </button>
