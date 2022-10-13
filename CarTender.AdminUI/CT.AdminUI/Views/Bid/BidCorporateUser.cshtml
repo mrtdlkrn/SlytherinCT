@@ -3,11 +3,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cbidbcu1" aria-expanded="true" aria-controls="cbidbcu1" role="button">Şirket İlan Bilgileri</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </h5>
+            </div>
+            <div id="cbidbcu1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
 
                     <table class="table table-bordered">
@@ -33,7 +40,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteOffer"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -46,7 +53,46 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteOffer"><i class="far fa-trash-alt"></i> Sil</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cbidbcu2" aria-expanded="true" aria-controls="cbidbcu2" role="button">Pasif Durumdaki Şirket İlan Bilgileri</a>
+                </h5>
+            </div>
+            <div id="cbidbcu2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Teklif</th>
+                                <th scope="col">Kullanıcı</th>
+                                <th scope="col">Kurumsal Şirket Adı</th>
+                                <th scope="col">Aktif/Pasif</th>
+                                <th scope="col">Versiyon</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>500</td>
+                                <td>Ahmet</td>
+                                <td>XXXXXXXXXXXX</td>
+                                <td>Aktif</td>
+                                <td>V1</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -57,20 +103,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"> Teklifini Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("DeleteModal", new{title = "Teklifi Sil", body="Teklifi silmek istediğinize emin misiniz?", id="deleteOffer"})
+@await Component.InvokeAsync("ActivationModal", new{title = "Teklif Aktif Et", body="Teklifi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 
 <div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

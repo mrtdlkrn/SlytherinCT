@@ -2,29 +2,21 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Paketler:</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cp1" aria-expanded="true" aria-controls="cp1" role="button">Paketler</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addPackage">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </h5>
+            </div>
+            <div id="cp1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-
-                    <div>
-                        <a class="btn btn-success" data-toggle="modal" data-target="#addAuthorization" href="#"><i class="fa-solid fa-plus"></i> Yeni Paket Ekle</a>
-                    </div>
-
-                    <table class="table table-border" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered mt-3" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th scope="col">Kullanıcı Paketleri</th>
@@ -39,7 +31,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -48,7 +40,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -57,7 +49,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -66,9 +58,44 @@
             </div>
         </div>
     </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cp2" aria-expanded="true" aria-controls="cp2" role="button">Pasif Durumdaki Paketler</a>
+                </h5>
+            </div>
+            <div id="cp2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered mt-3" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kullanıcı Paketleri</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Altın</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="modal fade" id="addAuthorization" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@await Component.InvokeAsync("DeleteModal", new{title = "Paket Sil", body="Paketi silmek istediğinize emin misiniz?", id="delete"})
+
+@await Component.InvokeAsync("ActivationModal", new{title = "Paket Aktif Et", body="Paketi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+
+<div class="modal fade" id="addPackage" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -86,7 +113,6 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
                 <button type="button" class="btn btn-primary">Kaydet</button>
             </div>
         </div>
@@ -117,26 +143,4 @@
         </div>
     </div>
 </div>
-
-<div class="modal fade" id="exampleModalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Paket Sil</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-body">Paketi silmek istediğinize emin misiniz?</div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                <button type="button" class="btn btn-danger">Sil</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 

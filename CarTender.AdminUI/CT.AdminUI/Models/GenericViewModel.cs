@@ -1,12 +1,11 @@
-﻿namespace CT.AdminUI.Models
+﻿using System.Collections.Generic;
+
+namespace CT.AdminUI.Models
 {
     public class GenericViewModel
     {
         //Form'da donus yapacagimiz Controller ismi
-        public string ActionController { get; set; }
-
-        //Form'da donus yapacagimiz Metod ismi
-        public string ActionMethod { get; set; }
+        public string ModelName { get; set; }
 
         //DTO objelerimizi gonderecegimiz model
         public object MyModel { get; set; }

@@ -1,92 +1,226 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>İlan Bilgileri</title>
-    <link href='~/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <script src='~/js/jquery-3.6.1.min.js' type='text/javascript'></script>
-    <script src="~/js/jquery.ui.datepicker.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div id="accordion">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">İlan Görüntüle</a>
-                    </h5>
-                </div>
-                <div id="collapseOne" class="collapse show p-5" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="input-group mb-4">
-                        <span class="input-group-text" id="inputGroup-sizing-default">İlan Başlığı:</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                    </div>
-                    <div class="input-group mb-4">
-                        <span class="input-group-text" id="inputGroup-sizing-default">İlan Açıklama:</span>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" style="resize:none;" rows="3"></textarea>
-                    </div>
-                    <div class="input-group mb-4">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
-                        <input type="text" class="form-control" />
-                        <div class="input-group-append">
-                            <span class="input-group-text">TL</span>
-                            <span class="input-group-text">0.00</span>
-                        </div>
-                    </div>
-                    <div class="input-group mb-4">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Fiyatı:</span>
-                        <input type="text" class="form-control" />
-                        <div class="input-group-append">
-                            <span class="input-group-text">TL</span>
-                            <span class="input-group-text">0.00</span>
-                        </div>
-                    </div>
-                    <div class="col-md-9 col-sm-0"></div>
-                    <div class="col-md-3 col-sm-12" style="float:right;">
-                        <button class="btn btn-info btn-block" style="background-color: #2E86C1 ;" type="button"><i class="fa-solid fa-list" style="color:white;"></i>  Görüntüle</button>
-                    </div>
-                </div>
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cadvertindex1" aria-expanded="true" aria-controls="cadvertindex1" role="button">İlanlar</a>
+                </h5>
             </div>
-        </div>
-        <br />
-        <br />
-        <div id="accordion">
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                        <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button"> İlan Ekle</a>
-                    </h5>
-                </div>
-                <div id="collapseTwo" class="collapse collapse p-5" aria-labelledby="headingTwo" data-parent="#accordion">
-                    <div class="input-group mb-4">
-                        <span class="input-group-text" id="inputGroup-sizing-default">İlan Başlığı</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <div id="cadvertindex1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+
+                    <div class="mb-3">
+                        <a class="btn btn-success" href="/Advert/Index/"><i class="fa-solid fa-plus"></i> Yeni İlan Ekle</a>
                     </div>
-                    <div class="input-group mb-4">
-                        <span class="input-group-text" id="inputGroup-sizing-default">İlan Açıklama</span>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="resize:none;"></textarea>
-                    </div>
-                    <div class="input-group mb-4">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
-                        <input type="text" class="form-control" />
-                        <div class="input-group-append">
-                            <span class="input-group-text">TL</span>
-                            <span class="input-group-text">0.00</span>
-                        </div>
-                    </div>
-                    <div class="input-group mb-4">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Fiyatı:</span>
-                        <input type="text" class="form-control" />
-                        <div class="input-group-append">
-                            <span class="input-group-text">TL</span>
-                            <span class="input-group-text">0.00</span>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary" style="float:right;" type="submit"><i class="fa-regular fa-floppy-disk"></i> Kaydet</button>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Araç Bilgisi</th>
+                                <th scope="col">Başlık</th>
+                                <th scope="col">Ön Değerlendirme Fiyatı</th>
+                                <th scope="col">Fiyat Bilgisi</th>
+                                <th scope="col">Açıklama</th>
+                                <th scope="col">Güncelleme</th>
+                                <th scope="col">Silme</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nissan</td>
+                                <td>Eski İlan</td>
+                                <td>80.000 TL</td>
+                                <td>100.000 TL</td>
+                                <td>Eski</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAdvert"><i class="far fa-trash-alt"></i> Sil</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Toyota</td>
+                                <td>Yeni İlan</td>
+                                <td>160.000 TL</td>
+                                <td>200.000 TL</td>
+                                <td>Yeni</td>
+                                <td>
+                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAdvert"><i class="far fa-trash-alt"></i> Sil</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-</body>
-</html>
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cadvertindex4" aria-expanded="true" aria-controls="cadvertindex4" role="button"> Pasif Durumdaki İlanlar</a>
+                </h5>
+            </div>
+            <div id="cadvertindex4" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Araç Bilgisi</th>
+                                <th scope="col">Başlık</th>
+                                <th scope="col">Ön Değerlendirme Fiyatı</th>
+                                <th scope="col">Fiyat Bilgisi</th>
+                                <th scope="col">Açıklama</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nissan</td>
+                                <td>Eski İlan</td>
+                                <td>80.000 TL</td>
+                                <td>100.000 TL</td>
+                                <td>Eski</td>
+                                  <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cadvertindex2" aria-expanded="true" aria-controls="cadvertindex2" role="button">İlan Görüntüle</a>
+                </h5>
+            </div>
+            <div id="cadvertindex2" class="collapse show p-5" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">İlan Başlığı:</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">İlan Açıklama:</span>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" style="resize:none;" rows="3"></textarea>
+                </div>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
+                    <input type="text" class="form-control" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">TL</span>
+                        <span class="input-group-text">0.00</span>
+                    </div>
+                </div>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Fiyatı:</span>
+                    <input type="text" class="form-control" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">TL</span>
+                        <span class="input-group-text">0.00</span>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-0"></div>
+                <div class="col-md-3 col-sm-12" style="float:right;">
+                    <button class="btn btn-info btn-block" style="background-color: #2E86C1 ;" type="button"><i class="fa-solid fa-list" style="color:white;"></i>  Görüntüle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="hadvertindex3">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cadvertindex3" aria-expanded="true" aria-controls="cadvertindex3" role="button"> İlan Ekle</a>
+                </h5>
+            </div>
+            <div id="cadvertindex3" class="collapse collapse p-5" aria-labelledby="hadvertindex3" data-parent="#accordion">
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">İlan Başlığı</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">İlan Açıklama</span>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="resize:none;"></textarea>
+                </div>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
+                    <input type="text" class="form-control" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">TL</span>
+                        <span class="input-group-text">0.00</span>
+                    </div>
+                </div>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Fiyatı:</span>
+                    <input type="text" class="form-control" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">TL</span>
+                        <span class="input-group-text">0.00</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" style="float:right;" type="submit"><i class="fa-regular fa-floppy-disk"></i> Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@await Component.InvokeAsync("DeleteModal", new{title = "İlan Sil", body="İlanı silmek istediğinize emin misiniz?", id="deleteAdvert"})
+@await Component.InvokeAsync("ActivationModal", new{title = "İlan Aktif Et", body="İlanı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+
+<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">İlanları Güncelle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Başlık:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
+                    <input type="text" class="form-control" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">TL</span>
+                        <span class="input-group-text">0.00</span>
+                    </div>
+                </div>
+                <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Fiyat Bilgisi:</span>
+                    <input type="text" class="form-control" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">TL</span>
+                        <span class="input-group-text">0.00</span>
+                    </div>
+                </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
+                    </div>
+                    <input type="text" value="" class="form-control col-md-8" />
+                </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
+        </div>
+    </div>
+</div>

@@ -1,12 +1,18 @@
-﻿@{
+﻿@using CT.AdminUI.Models.ModalDTOs
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cs1" aria-expanded="true" aria-controls="cs1" role="button">Statüler</a>
+                </h5>
+            </div>
+            <div id="cs1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="row mt-3">
                     <div class="col-md-4">
                         <div class="input-group mb-3">
@@ -43,7 +49,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -52,7 +58,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -61,7 +67,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -70,7 +76,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -79,7 +85,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -88,7 +94,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -97,16 +103,63 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Satış İptal</td>
-                                <td> 
+                                <td>
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalDelete" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cs2" aria-expanded="true" aria-controls="cs2" role="button">Pasif Durumdaki Statüler</a>
+                </h5>
+            </div>
+            <div id="cs2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Statü Tipi:</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option value="1" selected>Araç</option>
+                                <option value="2">İlan</option>
+                                <option value="3">İhale</option>
+                                <option value="4">Şirket</option>
+                                <option value="3">Tramer</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Statü</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Giriş</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -167,23 +220,5 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Statü Sil</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-body">Statüyü silmek istediğinize emin misiniz?</div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                <button type="button" class="btn btn-danger">Sil</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+@await Component.InvokeAsync("DeleteModal", new{title = "Statü Sil", body="Statüyü silmek istediğinize emin misiniz?", id="deleteStatus"})
+@await Component.InvokeAsync("ActivationModal", new{title = "Statü Aktif Et", body="Statüyü aktif hale getirmek istediğinize emin misiniz?", id="activation"})

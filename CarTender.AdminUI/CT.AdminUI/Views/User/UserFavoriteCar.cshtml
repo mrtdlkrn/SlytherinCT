@@ -3,19 +3,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cuufc1" aria-expanded="true" aria-controls="cuufc1" role="button">Kullanıcı - Favori Araç Listesi</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addUserFavoriteCar">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </h5>
+            </div>
+            <div id="cuufc1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="row mt-3">
                     <div class="col-md-4">
                         <div class="input-group mb-3">
                             <div class="input-group">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Kullanıcı Ara" aria-label="Ara">
                                 <button class="btn btn-outline-success " type="submit">Ara</button>
-                                <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addUserFavoriteCar">
-                                    <i class="fa fa-plus"></i>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -36,7 +41,7 @@
                                 <td>Hyundai Kona 2020 1.4 TSI CVT Siyah</td>
                                 <td>
                                     <a class="btn btn-warning col-md-5" data-toggle="modal" data-target="#editUserFavoriteCar" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                                    <a class="btn btn-danger col-md-5" data-toggle="modal" data-target="#deleteUserFavoriteCar" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteUserFavoriteCar"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -44,8 +49,7 @@
                                 <td>Opel Corsa 2018 1.2 MT Mavi</td>
                                 <td>
                                     <a class="btn btn-warning col-md-5" data-toggle="modal" data-target="#editUserFavoriteCar" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                                    <a class="btn btn-danger col-md-5" data-toggle="modal" data-target="#deleteUserFavoriteCar" href="#"><i class="far fa-trash-alt"></i> Sil</a>
-
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteUserFavoriteCar"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -54,23 +58,54 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="modal fade" id="deleteUserFavoriteCar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Kullanıcı Favori Araç Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cuufc2" aria-expanded="true" aria-controls="cuufc2" role="button">Pasif Durumdaki Kullanıcı - Favori Araç Bilgileri</a>
+                </h5>
             </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
+            <div id="cuufc2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Kullanıcı Ara" aria-label="Ara">
+                                <button class="btn btn-outline-success " type="submit">Ara</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kullanıcı</th>
+                                <th scope="col">Araç Bilgileri</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ahmet</td>
+                                <td>Hyundai Kona 2020 1.4 TSI CVT Siyah</td>
+                         <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
+@await Component.InvokeAsync("DeleteModal", new{title = "Favoriden Araç Kaldır", body="Aracı favoriden kaldırmak istediğinize emin misiniz?", id="deleteUserFavoriteCar"})
+@await Component.InvokeAsync("ActivationModal", new{title = "Favori Araç Bilgisi Aktif Et", body="Favori araç bilgisini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 <div class="modal fade" id="editUserFavoriteCar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

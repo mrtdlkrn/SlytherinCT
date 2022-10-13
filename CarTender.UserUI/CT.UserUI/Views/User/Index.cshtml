@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Profil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</head>
+</div>
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h2 class="text-center">Profil</h2>
+
+        </div>
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <span class="input-group-text col-md-4" for="inputGroupSelect01">Kullanıcı Adı:</span>
+                <input disabled type="text" value="yigitkygs" class="form-control editable" />
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text col-md-4" for="inputGroupSelect01">Ad Soyad:</label>
+                <input disabled type="text" value="Yiğit Kaygısız" class="form-control editable" />
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text col-md-4" for="inputGroupSelect01">Telefon:</label>
+                <input disabled type="text" value="5054545151351" class="form-control editable" />
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text col-md-4" for="inputGroupSelect01">E-posta:</label>
+                <input disabled type="email" value="yigit@yigit.com" class="form-control editable" />
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text col-md-4" for="inputGroupSelect01">Kullanıcı Türü:</label>
+                <select disabled class="form-control editable" id="cmp13">
+                    <option selected>Bireysel</option>
+                    <option>Kurumsal</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text col-md-4" for="inputGroupSelect01">E-Posta onayı var mı?:</label>
+                <input disabled type="email" value="Evet" class="form-control editable" />
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text col-md-4" for="inputGroupSelect01">Admin onayı var mı?:</label>
+                <input disabled type="email" value="Evet" class="form-control editable" />
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text col-md-4" for="inputGroupSelect01">KVKK onayı var mı?:</label>
+                <input disabled type="email" value="Evet" class="form-control editable" />
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text col-md-4" for="inputGroupSelect01">Açıklama:</label>
+                <textarea readonly class="form-control editable"></textarea>
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text col-md-4" for="inputGroupSelect01">Kayıt Tarihi:</label>
+                <input type="datetime" disabled value="05/10/2022" class="form-control" />
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-dark" type="button" onclick="EnableComponents()">Şifre Değiştir</button>
+            <button class="btn btn-secondary" type="button" onclick="EnableComponents()">Düzenle</button>
+            <button class="btn btn-primary" type="button">Kaydet</button>
+        </div>
+    </div>
+</div>
+
+
+

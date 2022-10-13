@@ -3,17 +3,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#caddressindex1" aria-expanded="true" aria-controls="caddressindex1" role="button">Mahalleler</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addStatus">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </h5>
+            </div>
 
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-
-                    <div>
-                        <a class="btn btn-success" data-toggle="modal" data-target="#addStatus" href="#"><i class="fa-solid fa-plus"></i> Yeni Mahalle Ekle</a>
-                    </div>
-
+            <div id="caddressindex1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">        
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -33,7 +36,43 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" href="#"><i class="far fa-trash-alt"></i> Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAddress"><i class="far fa-trash-alt"></i> Sil</button>
+                                </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#caddressindex2" aria-expanded="true" aria-controls="caddressindex2" role="button">Pasif Haldeki Mahalleler</a>
+                </h5>
+            </div>
+
+            <div id="caddressindex2" class="collapse show p-3" aria-labelledby="headingg3" data-parent="#accordion">
+
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Mahalle</th>
+                                <th scope="col">Aktif/Pasif</th>
+                                <th scope="col">Versiyon</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AAAAAAAAAAAAAA</td>
+                                <td>Aktif</td>
+                                <td>v1</td> 
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
                                 </td>
                         </tbody>
                     </table>
@@ -43,20 +82,8 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Mahalleyi Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("DeleteModal", new{title = "Mahalle Sil", body="Mahalleyi silmek istediğinize emin misiniz?", id="deleteAddress"})
+@await Component.InvokeAsync("ActivationModal", new{title = "Mahalle Aktif Et", body="Mahalleyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 
 <div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
