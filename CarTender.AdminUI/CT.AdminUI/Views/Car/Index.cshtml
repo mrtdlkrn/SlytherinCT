@@ -1,13 +1,13 @@
-﻿@using Entity.DTO
+﻿@using Entity.DTO.Car
 @using Entity.DTO.Pagination
 @using System.Reflection
-@model PaginatedList<CarListDTO>
+@model PaginatedList<ListCarDTO>
 
 @{
     ViewData["Title"] = "Araç Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    var tempheads = typeof(CarListDTO).GetProperties();
+    var tempheads = typeof(ListCarDTO).GetProperties();
 
     List<string> heads = new List<string>();
     List<object> datas = new List<object>();

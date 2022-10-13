@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Entity.DTO
+namespace Entity.DTO.Car
 {
-    public class CarListDTO
+    public class ListCarDTO
     {
         //public Guid CarID { get; set; }
         [DisplayName("Plaka")]
@@ -16,8 +16,9 @@ namespace Entity.DTO
         [DisplayName("Model")]
         public string CarModel { get; set; }
 
+        // todo: fiyat decimal olacak.
         [DisplayName("Fiyat")]
-        public decimal Price { get; set; }
+        public int Price { get; set; }
 
         [DisplayName("Bireysel/Kurumsal")]
         public bool IsCorporate { get; set; }

@@ -11,14 +11,11 @@ namespace CT.API.Logging.Concrete
             switch (type)
             {
                 case "database":
-                    logger = new DbLogger(new LoggerManager());
-                    break;
+                    return logger = new DbLogger(new LoggerManager());
                 case "file":
-                    logger = new FileLogger("CT_Logs.txt");
-                    break;
+                    return logger = new FileLogger("CT_Logs.txt");
             }
-
-            return logger;
+            return logger = new DbLogger(new LoggerManager());
         }
     }
 }

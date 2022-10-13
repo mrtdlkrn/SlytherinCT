@@ -1,7 +1,10 @@
-﻿namespace CT.API.Models.DTOs
+﻿using System.Collections.Generic;
+
+namespace CT.API.Models.DTOs
 {
     public class BrandModelDTO
     {
-        public int ID { get; set; }
+        public List<string> Brand { get; set; }
+        public List<string> Model { get; set; }
     }
 }

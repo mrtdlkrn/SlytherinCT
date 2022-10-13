@@ -48,9 +48,8 @@ namespace CT.AdminUI.Controllers
 
             if (dto == null) return RedirectToAction("Register");
 
-            var user = await _apiService.Post("auth/login", dto);
-
-            if (user != null)
+            var user = await _apiService.Post("auth/login",dto);
+            if(user != null)
             {
 
             }

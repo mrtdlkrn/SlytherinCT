@@ -1,15 +1,18 @@
 ﻿using Business.Abstract;
 using Common.Abstract;
 using Entity.DTO;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using FluentValidation.AspNetCore;
+using CarTender.FluentValidation.DAL.AdminDAL.Login;
+using CarTender.FluentValidation.DTO.AdminDTO.Login;
 
 namespace CT.AdminUI.Controllers
 {
     public class AuthController : Controller
     {
         private readonly IApiService _apiService;
-
         public AuthController(IApiService apiService)
         {
             _apiService = apiService;
@@ -19,16 +22,33 @@ namespace CT.AdminUI.Controllers
         public IActionResult Login()
         {
             _apiService.Test("test");        
+
             return View(new LoginDTO());
         }
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginDTO dto)
-        {            
-            if(dto == null) return RedirectToAction("Register");
+        {
+            AdminLoginDAL validations = new AdminLoginDAL();
+            ValidationResult validationResult = validations.Validate(new AdminLoginDTO
+            {
+
+                Email = dto.Email,
+                Password = dto.Password
+            });
+
+            if (!validationResult.IsValid)
+            {
+                validationResult.AddToModelState(this.ModelState);
+
+                TempData["Password"] = dto.Password;
+
+                return View("Login", dto);
+            }
+
+            if (dto == null) return RedirectToAction("Register");
 
             var user = await _apiService.Post("auth/login",dto);
-
             if(user != null)
             {
 

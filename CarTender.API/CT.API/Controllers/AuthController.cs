@@ -34,7 +34,7 @@ namespace CarTender.API.Controllers
             dynamic jsonObj = JsonConvert.DeserializeObject<dynamic>(json)!;
             var loggerType = jsonObj.LoggerType.ToString();
             _logger = new(new Creater().FactoryMethod(loggerType));
-            var _apiRoutes = jsonObj.ApiRoutes[0].Actions[0];
+            var _apiRoutes = jsonObj.ApiRoutes[0].Actions[0]; 
             apiRoutes = new Dictionary<string, string>();
             foreach (var action in _apiRoutes)
             {
@@ -42,7 +42,7 @@ namespace CarTender.API.Controllers
             }
         }
 
-        [HttpPost()]
+        [HttpPost]
         public IActionResult Login(LoginDTO dto)
         {
             string email = "ahmet@gmail.com";

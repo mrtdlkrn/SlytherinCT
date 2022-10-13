@@ -1,10 +1,10 @@
-﻿@using Entity.DTO
+﻿@using Entity.DTO.Car
 @{
     ViewData["Title"] = "Add";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model AddVehicleDTO
+@model AddCarDTO
 <div class="container">
     <h1 class="h3 mb-2 text-gray-800">Araç Ekleme Sayfası</h1>
 
@@ -58,8 +58,8 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Araç Fiyat:</label>                   
                         </div>
-                        <input type="text" value="" asp-for="VehiclePrice" class="form-control" />
-                        <span asp-validation-for="VehiclePrice" class="text-danger"></span>
+                        <input type="text" value="" asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>                                                              B
                     </div>
                 </div>
             </div>
