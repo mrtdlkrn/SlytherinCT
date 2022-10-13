@@ -123,48 +123,6 @@
             })
         </div>
     </div>
-
-    <div id="accordion" class="mb-5">
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarindex1" aria-expanded="true" aria-controls="ccarindex1" role="button">Pasif Durumdaki Araçlar</a>
-                </h5>
-            </div>
-            <div id="ccarindex1" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Plaka</th>
-                                <th>Marka</th>
-                                <th>Model</th>
-                                <th>Bireysel/Kurumsal</th>
-                                <th>Statü</th>
-                                <th>Kaydeden Kullanıcı</th>
-                                <th>Kayıt Tarihi</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>hede</td>
-                                <td>hede</td>
-                                <td>hede</td>
-                                <td>hede</td>
-                                <td>hede</td>
-                                <td>hede</td>
-                                <td>hede</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Aracı Sil", body="Aracı silmek istediğinize emin misiniz?", id="deleteCar"})

@@ -1,14 +1,25 @@
 ﻿@{
     ViewData["Title"] = "Kullanıcı Araçları Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
+
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
 
-<div class="container">
-    <div id="accordion" class="mt-5 mb-5">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo" role="button">Kullanıcı Araçları Listesi</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#add">
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </h5>
             </div>
             <div id="collapseThree" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
@@ -18,16 +29,30 @@
                             <tr>
                                 <th scope="col">Satıcı Bilgisi</th>
                                 <th scope="col">Araç Plaka</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Ahmet</td>
                                 <td>16 E 161</td>
+                                <td>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td>Yiğit</td>
                                 <td>45 AEV 675</td>
+                                <td>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -36,3 +61,7 @@
         </div>
     </div>
 </div>
+
+@await Component.InvokeAsync("DeleteModal", new{title = "Kullanıcı-Araç Bilgisini Kaldır", body="Kullanıcı-araç bilgisini kaldırmak istediğinize emin misiniz?", id="delete"})
+@await Component.InvokeAsync("EditModal", new {modalID="edit", modalTitle="Kullanıcı-Araç Bilgisini Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Kullanıcı-Araç Bilgisi Ekle", Labelstrs = AddModalLblstrs})

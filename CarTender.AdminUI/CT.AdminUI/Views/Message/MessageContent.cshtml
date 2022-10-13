@@ -4,6 +4,10 @@
     List<string> AddModalLblstrs = new List<string>();
     AddModalLblstrs.Add("Sarp");
     AddModalLblstrs.Add("Ahmet");
+
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
 
 <div class="container-fuild p-5">
@@ -35,43 +39,10 @@
                                 <td>Aktif</td>
                                 <td>v1</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editMessageContent"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#cmc2" aria-expanded="true" aria-controls="cmc2" role="button">Pasif Durumdaki Mesaj içerik Listesi</a>
-                </h5>
-            </div>
-            <div id="cmc2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">İçerik Metni</th>
-                                <th scope="col">Aktif/Pasif</th>
-                                <th scope="col">Versiyon</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>dlkfjdjd</td>
-                                <td>Aktif</td>
-                                <td>v1</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
                                 </td>
                         </tbody>
                     </table>
@@ -83,73 +54,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Mesaj İçeriğini Sil", body="Mesaj içeriğini silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Mesaj İçeriğini Aktif Et", body="Mesaj İçeriğini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addMessageContent",modalTitle = "Yeni Mesaj Ekle", Labelstrs = AddModalLblstrs})
-
-<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Mesaj Metnini Güncelle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Mesaj Metni:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Aktif/Pasif:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Versiyon:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="addStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Mesaj Metni Ekle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Mesaj Metni:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Aktif/Pasif:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Versiyon:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
-        </div>
-    </div>
-</div>
-
+@await Component.InvokeAsync("AddModal", new{ModalID = "addMessageContent",modalTitle = "Yeni Mesaj İçeriği Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("EditModal", new {modalID="editMessageContent", modalTitle="Mesaj İçeriği Güncelle",labelStrs=tempList})

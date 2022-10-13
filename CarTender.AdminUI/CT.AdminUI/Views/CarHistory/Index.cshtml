@@ -1,9 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
     List<string> AddModalLblstrs = new List<string>();
     AddModalLblstrs.Add("Sarp");
     AddModalLblstrs.Add("Ahmet");
+
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
 <div class="container-fuild p-5">
     <div id="accordion">
@@ -11,6 +16,9 @@
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">Araç Tarihçe</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#add">
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </h5>
             </div>
             <div style="margin-left:5%;margin-right:5%" id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -23,6 +31,8 @@
                             <th scope="col">Bireysel/Kurumsal</th>
                             <th scope="col">Statü</th>
                             <th scope="col">Statü Değişim Tarihi</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,6 +42,16 @@
                             <td>Kurumsal</td>
                             <td>İhalede</td>
                             <td>05.10.2022</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#edit">
+                                    <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete">
+                                    <i class="far fa-trash-alt"></i> Sil
+                                </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>Nissan</td>
@@ -39,6 +59,16 @@
                             <td>Kurumsal</td>
                             <td>Satış Komisyonu tahsil edildi</td>
                             <td>06.10.2022</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#edit">
+                                    <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete">
+                                    <i class="far fa-trash-alt"></i> Sil
+                                </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>Nissan</td>
@@ -46,6 +76,16 @@
                             <td>Kurumsal</td>
                             <td>Ekspertiz sonucu bekleniyor</td>
                             <td>08.10.2022</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#edit">
+                                    <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete">
+                                    <i class="far fa-trash-alt"></i> Sil
+                                </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>Nissan</td>
@@ -53,6 +93,16 @@
                             <td>Kurumsal</td>
                             <td>Ekspertiz sonucu alındı</td>
                             <td>09.10.2022</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#edit">
+                                    <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete">
+                                    <i class="far fa-trash-alt"></i> Sil
+                                </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>Nissan</td>
@@ -60,12 +110,24 @@
                             <td>Kurumsal</td>
                             <td>Satıldı</td>
                             <td>10.10.2022</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#edit">
+                                    <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete">
+                                    <i class="far fa-trash-alt"></i> Sil
+                                </button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-                <br />
-                <br />
             </div>
         </div>
     </div>
 </div>
+
+@await Component.InvokeAsync("DeleteModal", new{title = "Kaydı Sil", body="Kaydı silmek istediğinize emin misiniz?", id="delete"})
+@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Tarihçe Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("EditModal", new {modalID="edit", modalTitle="Tarihçe Güncelle",labelStrs=tempList})

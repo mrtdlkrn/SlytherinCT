@@ -6,6 +6,9 @@
     AddModalLblstrs.Add("Sarp");
     AddModalLblstrs.Add("Ahmet");
 
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
 
 <div class="container-fuild p-5">
@@ -63,127 +66,9 @@
             </div>
         </div>
     </div>
-
-    <div id="accordion">
-        <div class="card">
-
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#cti2" aria-expanded="true" aria-controls="cti2" role="button">Pasif Durumdaki İlçeler</a>
-                </h5>
-            </div>
-            <div id="cti2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="row mt-3 mb-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">İlçe Adı:</label>
-                            </div>
-                            <input class="form-control" type="text" />
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-
-                <table style="text-align:center;" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">İlçe Adı</th>
-                            <th scope="col">Şehir</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Karacabey</td>
-                            <td>Bursa</td>
-                            <td>
-                                <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "İlçe Sil", body="İlçeyi silmek istediğinize emin misiniz?", id="deleteTown"})
-
 @await Component.InvokeAsync("ActivationModal", new{title = "İlçe Aktif Et", body="İlçeyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-
 @await Component.InvokeAsync("AddModal", new{ModalID = "addTown",modalTitle = "Yeni İlçe Ekle", Labelstrs = AddModalLblstrs})
-
-<div class="modal fade" id="editTown" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">İlçeyi Güncelle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#editTown').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">İlçe Adı:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Şehir:</label>
-                        </div>
-                        <select class="custom-select col-md-12" id="inputGroupSelect01">
-                            <option value="1" selected>Bursa</option>
-                            <option value="2">Ankara</option>
-                            <option value="3">İstanbul</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button">Kaydet</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="addTown" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">İlçe Ekle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#addTown').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">İlçe Adı:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Şehir:</label>
-                        </div>
-                        <select class="custom-select col-md-12" id="inputGroupSelect01">
-                            <option value="1" selected>Bursa</option>
-                            <option value="2">Ankara</option>
-                            <option value="3">İstanbul</option>
-                        </select>
-                    </div>
-                </div>              
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-success" type="button">Ekle</button>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("EditModal", new {modalID="editTown", modalTitle="İlçe Güncelle",labelStrs=tempList})
