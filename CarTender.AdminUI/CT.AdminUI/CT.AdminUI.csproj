@@ -32,7 +32,7 @@
 
   <ItemGroup>
     <Reference Include="CarTender.FluentValidation">
-      <HintPath>D:\CarTender.FluentValidation.dll</HintPath>
+      <HintPath>..\..\CT.FluentValidation\CarTender.FluentValidation\bin\Debug\net5.0\CarTender.FluentValidation.dll</HintPath>
     </Reference>
   </ItemGroup>
 
