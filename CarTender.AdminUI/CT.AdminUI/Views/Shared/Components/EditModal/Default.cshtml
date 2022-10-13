@@ -1,0 +1,27 @@
+﻿@using CT.AdminUI.Models.ModalDTOs
+@model EditModalDTO
+
+<div class="modal fade" id="@Model.ModalID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Model.ModalTitle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                @foreach (var item in Model.LabelStrs)
+                {
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">@item</label>
+                        </div>
+                        <input type="text" value="" class="form-control col-md-12" />
+                    </div>
+                }
+            </div>
+            <div class="modal-footer"><button class="btn btn-primary" type="button">@Model.SaveBtnStr</button></div>
+        </div>
+    </div>
+</div>
