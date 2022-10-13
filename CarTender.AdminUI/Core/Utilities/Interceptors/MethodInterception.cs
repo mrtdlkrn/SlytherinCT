@@ -5,6 +5,8 @@ using System.Text;
 
 namespace Core.Utilities.Interceptors
 {
+    //Metot çalışmadan önce belli validasyonlarımız var ise interceptor ile araya girip çalıştırıp devam edebiliriz.
+    //Castle kütüphanesiyle metot çalışmadan önce metodu yakaladığımız kısım
     public class MethodInterception : MethodInterceptionBaseAttribute
     {
         protected virtual void OnBefore(IInvocation invocation) { }

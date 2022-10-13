@@ -10,6 +10,8 @@ namespace Core.Aspects.Autofac.Logging
 {
     public class LogAspect : MethodInterception
     {
+        //Eğer gelen tip loggerservicebase den kalıtım almamışsa senin log tipin yanlış diye exception fırlatıyor
+        //instance oluşturuyoruz
         private LoggerServiceBase _loggerServiceBase;
         public LogAspect(Type loggerService)
         {
