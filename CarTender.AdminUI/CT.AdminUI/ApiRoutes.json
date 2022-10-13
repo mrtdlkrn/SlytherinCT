@@ -2,20 +2,12 @@
   "ApiRoutes": [
     {
       "ControllerName": "Auth",
-      "Actions": [
-        {
-          "Index": "api/Auth/Index"
-        },
-        {
-          "Create": "api/Auth/Create"
-        },
-        {
-          "Update": "api/Auth/Update"
-        },
-        {
-          "Delete": "api/Auth/Delete"
-        }
-      ]
+      "Actions": {
+        "Index": "api/Auth/Index",
+        "Create": "api/Auth/Create",
+        "Update": "api/Auth/Update",
+        "Delete": "api/Auth/Delete"
+      }
     },
     {
       "ControllerName": "Car",
@@ -35,20 +27,12 @@
     },
     {
       "ControllerName": "User",
-      "Actions": [
-        {
-          "Index": "api/User/Index"
-        },
-        {
-          "Create": "api/User/Create"
-        },
-        {
-          "Update": "api/User/Update"
-        },
-        {
-          "Delete": "api/User/Delete"
-        }
-      ]
+      "Actions": {
+        "Index": "api/User/Index",
+        "Create": "api/User/Create",
+        "Update": "api/User/Update",
+        "Delete": "api/User/Delete"    
+      }
     }
   ]
 }
