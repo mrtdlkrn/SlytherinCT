@@ -99,7 +99,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(AddCarDTO dto)
         {
-            CombineAddOrEditVecihleDAL validations = new CombineAddOrEditVecihleDAL();
+            CombineAddOrEditVehicleDAL validations = new CombineAddOrEditVehicleDAL();
             ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
             {
 
