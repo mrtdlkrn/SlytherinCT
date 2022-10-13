@@ -9,6 +9,7 @@
     ViewData["Title"] = @Model.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
     var modeProperties = Model.MyModel.GetType().GetProperties();
+
 }
 
 @*Model.MyModel.GetType().GetProperty(member.Name)*@
@@ -28,7 +29,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Form Bilgileri</h6>
         </div>
         <div class="card-body">
-            <form class="row" Model="@Model.MyModel" asp-controller="Generic" asp-action="Create" asp-route-modelName="@Model.ModelName" method="post">
+            <form class="row" asp-controller="Generic" asp-action="Update" asp-route-modelName="@Model.ModelName" method="post">
                 @foreach (var member in modeProperties)
                 {
 
@@ -37,14 +38,14 @@
                     {
                         <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
                             <label for="exampleFormControlInput1">@(member.GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? member.GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : member.Name)</label>
-                            <input class="form-control"  name="@member.Name">
+                            <input class="form-control" value="@member.GetValue(Model.MyModel,null)" name="@member.Name">
                         </div>
                     }
                     else if (member.PropertyType == typeof(int) && member.GetCustomAttributes(typeof(KeyAttribute), true).FirstOrDefault() == null)
                     {
                         <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
                             <label for="exampleFormControlInput1">@(member.GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? member.GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : member.Name)</label>
-                            <input class="form-control" name="@member.Name">
+                            <input class="form-control" value="@member.GetValue(Model.MyModel,null)" name="@member.Name">
                         </div>
                     }
                     else if (member.PropertyType == typeof(DateTime))
@@ -52,7 +53,7 @@
                         <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
                             <label for="exampleFormControlInput1">@(member.GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? member.GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : member.Name)</label>
                             <div class="input-group date" data-provide="datepicker">
-                                <input type="text" class="form-control" name="@member.Name">
+                                <input type="text" value="@member.GetValue(Model.MyModel,null)" class="form-control" name="@member.Name">
                                 <div class="input-group-addon">
                                     <i data-feather="calendar"></i>
                                     <span class="glyphicon glyphicon-th"></span>
@@ -75,6 +76,7 @@
                                 </select>
                             </div>
                         </div>
+
                     }
                     else if (member.PropertyType == typeof(bool))
                     {
@@ -82,10 +84,10 @@
                             <label for="exampleFormControlInput1">@(member.GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? member.GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : member.Name)</label>
                             <div class="btn-group btn-group-toggle form-control p-0" data-toggle="buttons">
                                 <label class="btn btn-outline-success active">
-                                    <input type="radio" value="true" name="@member.Name" id="@member.Name 1" checked> Onayla
+                                    <input type="radio" value="true" @((bool)member.GetValue(Model.MyModel,null) == true ? "checked":"") name="@member.Name" id="@member.Name 1"> Onayla
                                 </label>
                                 <label class="btn btn-outline-danger">
-                                    <input type="radio" value="false" name="@member.Name" id="@member.Name 2"> Reddet
+                                    <input type="radio" value="false" @((bool)member.GetValue(Model.MyModel,null) == false ? "checked":"") name="@member.Name" id="@member.Name 2"> Reddet
                                 </label>
                             </div>
                         </div>
@@ -94,23 +96,23 @@
                     {
                         <div class="mb-3 col-md-6 col-sm-12 bg-light border-start border-lg rounded border-primary p-3">
                             <label for="exampleFormControlInput1">@(member.GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? member.GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : member.Name)</label>
-                            <button type="button" class="btn btn-info btn-block form-control" data-toggle="modal" data-target="#@Model.MyModel.GetType().GetProperty(member.Name).Name-modal">
-                                @Model.MyModel.GetType().GetProperty(member.Name).Name
+                            <button type="button" class="btn btn-info btn-block form-control" data-toggle="modal" data-target="#@member.Name-modal">
+                                @member.Name
                             </button>
                         </div>
                         <!-- Modal -->
-                        <div class="modal fade bd-example-modal-lg" id="@Model.MyModel.GetType().GetProperty(member.Name).Name-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal fade bd-example-modal-lg" id="@member.Name-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">@Model.MyModel.GetType().GetProperty(member.Name).Name</h5>
+                                        <h5 class="modal-title" id="exampleModalLongTitle">@member.Name</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
 
-                                        @foreach (var modalProperty in Model.MyModel.GetType().GetProperty(member.Name).PropertyType.GetProperties())
+                                        @foreach (var modalProperty in member.PropertyType.GetProperties())
                                         {
 
                                             <div>@modalProperty.Name</div>

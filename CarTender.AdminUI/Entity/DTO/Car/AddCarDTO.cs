@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entity.DTO
+namespace Entity.DTO.Car
 {
-    public class AddVehicleDTO
+    public class AddCarDTO
     {
-        public string PersonalCorporate { get; set; }
+        public bool IsCorporate { get; set; }
         public string CompanyName { get; set; }
-        public string Statu { get; set; }
-        public int VehiclePrice { get; set; }
-        public string VehicleBrand { get; set; }
-        public string VehicleModel { get; set; }
+        public string Status { get; set; }
+
+        // todo: price decimal olacak
+        public int Price { get; set; }
+        public string CarBrand { get; set; }
+        public string CarModel { get; set; }
         public string BodyType { get; set; }
         public string Year { get; set; }
         public string FuelType { get; set; }
@@ -21,7 +23,7 @@ namespace Entity.DTO
         public string Version { get; set; }
         public int KM { get; set; }
         public string Color { get; set; }
-        public string Hardware { get; set; }
+        public string[] Hardwares { get; set; }
         public string PhotoPath1 { get; set; }
         public string PhotoPath2 { get; set; }
         public string PhotoPath3 { get; set; }

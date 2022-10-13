@@ -1,5 +1,5 @@
 ﻿{
-  "LoggerType": "database",
+  "LoggerType": "file",
   "ApiRoutes": [
     {
       "ControllerName": "Auth",

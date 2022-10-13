@@ -1,41 +1,43 @@
 ﻿using Business.Abstract;
-using Common.Abstract;
+using CarTender.FluentValidation.DAL.CombineDAL.Car;
+using CarTender.FluentValidation.DTO.CombineDTO.Car;
 using Entity.DTO;
+using Entity.DTO.Car;
 using Entity.DTO.Pagination;
+using FluentValidation.AspNetCore;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using FluentValidation.AspNetCore;
-using CarTender.FluentValidation.DAL.CombineDAL.Car;
-using CarTender.FluentValidation.DTO.CombineDTO.Car;
+using System.Threading.Tasks;
 
 namespace CT.AdminUI.Controllers
 {
     public class CarController : Controller
     {
         private readonly IApiService _apiService;
-        List<CarListDTO> cars = new List<CarListDTO>();
+        private readonly IDictionary<string, string> _routes;
+        List<ListCarDTO> cars = new List<ListCarDTO>();
 
-        public CarController(IApiService apiService)
+        public CarController(IApiService apiService, IApiRoutes routes)
         {
             _apiService = apiService;
-            cars.Add(new CarListDTO() { Price= 56345, Plate = "16 r 123", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now });
-            cars.Add(new CarListDTO() { Price= 363234, Plate = "12 y 155", CarBrand = "Ford", CarModel = "Fiesta", CreatedDate = DateTime.Now.AddDays(2) });
-            cars.Add(new CarListDTO() { Price= 12356, Plate = "14 e 66", CarBrand = "Opel", CarModel = "Astra", CreatedDate = DateTime.Now.AddDays(-2) });
-            cars.Add(new CarListDTO() { Price= 685342, Plate = "11 x 54", CarBrand = "Volkswagen", CarModel = "Golf", CreatedDate = DateTime.Now.AddDays(23) });
-            cars.Add(new CarListDTO() { Price= 64353, Plate = "44 h 244", CarBrand = "Volkswagen", CarModel = "Golf", CreatedDate = DateTime.Now.AddDays(-3) });
-            cars.Add(new CarListDTO() { Price= 456234, Plate = "22 j 53", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(-11) });
-            cars.Add(new CarListDTO() { Price= 234234, Plate = "42 kl 22", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(-24) });
-            cars.Add(new CarListDTO() { Price= 453421, Plate = "55 ko 12", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
-            cars.Add(new CarListDTO() { Price= 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 56345, Plate = "16 r 123", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now });
+            cars.Add(new ListCarDTO() { Price = 363234, Plate = "12 y 155", CarBrand = "Ford", CarModel = "Fiesta", CreatedDate = DateTime.Now.AddDays(2) });
+            cars.Add(new ListCarDTO() { Price = 12356, Plate = "14 e 66", CarBrand = "Opel", CarModel = "Astra", CreatedDate = DateTime.Now.AddDays(-2) });
+            cars.Add(new ListCarDTO() { Price = 685342, Plate = "11 x 54", CarBrand = "Volkswagen", CarModel = "Golf", CreatedDate = DateTime.Now.AddDays(23) });
+            cars.Add(new ListCarDTO() { Price = 64353, Plate = "44 h 244", CarBrand = "Volkswagen", CarModel = "Golf", CreatedDate = DateTime.Now.AddDays(-3) });
+            cars.Add(new ListCarDTO() { Price = 456234, Plate = "22 j 53", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(-11) });
+            cars.Add(new ListCarDTO() { Price = 234234, Plate = "42 kl 22", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(-24) });
+            cars.Add(new ListCarDTO() { Price = 453421, Plate = "55 ko 12", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            _routes = routes.GetApiRoutes("Car");
         }
 
 
-        //Araç listesi ekranı
-        [HttpGet]
-        public IActionResult Index(
+        //Araç listesi ekranı       
+        public async Task<IActionResult> Index(
             string sortOrder,
             string currentFilter,
             string searchString,
@@ -79,7 +81,11 @@ namespace CT.AdminUI.Controllers
 
             int pageSize = 4;
 
-            return View(PaginatedList<CarListDTO>.Create(cars.AsQueryable(), pageNumber ?? 1, pageSize));
+            /*var CarListDTO = new ListCarDTO();
+            var result = await _apiService.Post(_routes["Index"], CarListDTO);
+            //todo : sayfaya veriler basılacak*/
+
+            return View(PaginatedList<ListCarDTO>.Create(cars.AsQueryable(), pageNumber ?? 1, pageSize));
         }
 
 
@@ -87,18 +93,18 @@ namespace CT.AdminUI.Controllers
         public IActionResult Add()
         {
 
-            return View(new AddVehicleDTO());
+            return View(new AddCarDTO());
         }
 
         [HttpPost]
-        public IActionResult Add(AddVehicleDTO dto)
+        public async Task<IActionResult> Add(AddCarDTO dto)
         {
             CombineAddOrEditVecihleDAL validations = new CombineAddOrEditVecihleDAL();
             ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
             {
 
                 KM = dto.KM,
-                VehiclePrice = dto.VehiclePrice,
+                VehiclePrice = dto.Price,
                 Explanation = dto.Explanation,
                 PhotoPath1 = dto.PhotoPath1,
                 PhotoPath2 = dto.PhotoPath2,
@@ -114,11 +120,9 @@ namespace CT.AdminUI.Controllers
 
                 return View("Add", dto);
             }
-
+            var result = await _apiService.Post(_routes["Create"], dto);
             return RedirectToAction("Index");
         }
-
-
 
         [HttpGet]
         public IActionResult Edit(int carID)
@@ -128,67 +132,80 @@ namespace CT.AdminUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit()
+        public async Task<IActionResult> Edit(UpdateCarDTO dto)
         {
-
-
+            var result = await _apiService.Post(_routes["Update"], dto);
             return RedirectToAction("Index");
         }
 
         // Brand Model 
         [HttpGet]
-        public IActionResult BrandModel()
+        public async Task<IActionResult> BrandModel()
         {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<ListBrandModelDTO>(tokenDTO, _routes["BrandModel"]);
+            //todo : sayfaya veriler basılacak
+
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Detail()
+        [HttpGet("Detail/{id}")]
+        public async Task<IActionResult> Detail(Guid id)
         {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<ListCarDTO>(tokenDTO, _routes["Detail"]);
+            //todo : sayfaya veriler basılacak
             return View();
         }
 
         // Car Detail
-        [HttpGet]
-        public IActionResult CarDetail()
+        [HttpGet("CarDetail")]
+        public async Task<IActionResult> CarDetail()
         {
-            return View();
-        }
-
-        // Car Detail Value
-        [HttpGet]
-        public IActionResult CarDetailValue()
-        {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarDetail"]);
+            //todo : sayfaya veriler basılacak
             return View();
         }
 
         // Car Image
-        [HttpGet]
-        public IActionResult CarImage()
+        [HttpGet("CarImage/{id}")]
+        public async Task<IActionResult> CarImage(string plate)
         {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarImage"]);
+            //todo : sayfaya veriler basılacak
             return View();
         }
 
         // Car Modification
-        [HttpGet]
-        public IActionResult CarModification()
+        [HttpGet("CarModification/{id}")]
+        public async Task<IActionResult> CarModification(Guid id)
         {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarModification"]);
+            //todo : sayfaya veriler basılacak
             return View();
         }
 
         // Car Commission
-        [HttpGet]
-        public IActionResult CarCommission()
+        [HttpGet("CarCommission/{id}")]
+        public async Task<IActionResult> CarCommission(Guid id)
         {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarCommission"]);
+            //todo : sayfaya veriler basılacak
             return View();
         }
 
         // Car Buyer Information
-        [HttpGet]
-        public IActionResult CarBuyerInformation()
+        [HttpGet("CarBuyerInformation/{id}")]
+        public async Task<IActionResult> CarBuyerInformation(Guid id)
         {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarBuyerInformation"]);
+            //todo : sayfaya veriler basılacak
             return View();
         }
-
     }
 }

@@ -1,0 +1,54 @@
+﻿{
+  "ApiRoutes": [
+    {
+      "ControllerName": "Auth",
+      "Actions": [
+        {
+          "Index": "api/Auth/Index"
+        },
+        {
+          "Create": "api/Auth/Create"
+        },
+        {
+          "Update": "api/Auth/Update"
+        },
+        {
+          "Delete": "api/Auth/Delete"
+        }
+      ]
+    },
+    {
+      "ControllerName": "Car",
+      "Actions": {
+        "Index": "api/Car/Index",
+        "Create": "api/Car/Create",
+        "Update": "api/Car/Update",
+        "Delete": "api/Car/Delete",
+        "BrandModel": "api/Car/BrandModel",
+        "Detail": "api/Car/Detail",
+        "CarDetail": "api/Car/CarDetail",
+        "CarImage": "api/Car/CarImage",
+        "CarModification": "api/Car/CarModification",
+        "CarCommission": "api/Car/CarCommission",
+        "CarBuyerInformation": "api/Car/CarBuyerInformation"
+      }
+    },
+    {
+      "ControllerName": "User",
+      "Actions": [
+        {
+          "Index": "api/User/Index"
+        },
+        {
+          "Create": "api/User/Create"
+        },
+        {
+          "Update": "api/User/Update"
+        },
+        {
+          "Delete": "api/User/Delete"
+        }
+      ]
+    }
+  ]
+}
