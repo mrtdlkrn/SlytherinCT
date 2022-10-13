@@ -3,8 +3,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
@@ -14,7 +14,7 @@
 
             <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-borderless">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">Plaka</th>
@@ -71,7 +71,48 @@
         </div>
     </div>
 
-    <div id="accordion" class="mt-5 mb-5">
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cti1" aria-expanded="true" aria-controls="cti1" role="button">Pasif Durumdaki Tramerler</a>
+                </h5>
+            </div>
+
+            <div id="cti1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Plaka</th>
+                                <th scope="col">Tramer Ücreti</th>
+                                <th scope="col">Kaydeden</th>
+                                <th scope="col">Kayıt Tarihi</th>
+                                <th scope="col">Güncelleyen</th>
+                                <th scope="col">Güncelleme Tarihi</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>16 E 16</td>
+                                <td>3500 TL</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
@@ -147,7 +188,7 @@
         </div>
     </div>
 
-    <div id="accordion" class="mt-5 mb-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
@@ -160,7 +201,7 @@
 
             <div id="collapseThree" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-borderless">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">Bileşen Adı</th>
@@ -372,23 +413,48 @@
             </div>
         </div>
     </div>
-</div>
 
-
-<div class="modal fade" id="deleteTramer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Trameri Sil</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#deleteTramer').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cti2" aria-expanded="true" aria-controls="cti2" role="button">Pasif Durumdaki Tramer Bileşenleri</a>
+                </h5>
             </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer">
-                <button class="btn btn-danger" type="button">Sil</button>
+
+            <div id="cti2" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Bileşen Adı</th>
+                                <th scope="col">Kaydeden</th>
+                                <th scope="col">Kayıt Tarihi</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sağ Arka Çamurluk</td>
+                                <td>Ahmet</td>
+                                <td>05.10.2022</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation2"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>                        
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+@await Component.InvokeAsync("DeleteModal", new{title = "Trameri Sil", body="Tramer bilgisini silmek istediğinize emin misiniz?", id="deleteTramer"})
+@await Component.InvokeAsync("DeleteModal", new{title = "Tramer Bileşenini Sil", body="Tramer bileşenini silmek istediğinize emin misiniz?", id="deleteCmp"})
+
+@await Component.InvokeAsync("ActivationModal", new{title = "Trameri Aktif Et", body="Trameri aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("ActivationModal", new{title = "Tramer Bileşenini Aktif Et", body="Tramer bileşenini aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
 
 <div class="modal fade" id="detail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -541,21 +607,6 @@
                     <button class="btn btn-info" onclick="EnableComponents()" type="button">Düzenle</button>
                     <button class="btn btn-primary" type="button">Kaydet</button>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="deleteCmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel3">Tramer Bileşenini Sil</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#deleteCmp').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer">
-                <button class="btn btn-danger" type="button">Sil</button>
             </div>
         </div>
     </div>

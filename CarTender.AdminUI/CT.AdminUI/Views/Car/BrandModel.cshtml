@@ -3,10 +3,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<div class="container-fuild p-5">
     <h1 class="h3 mb-2 text-gray-800">Marka Model Sayfası</h1>
 
-    <div id="accordion">
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
@@ -93,6 +93,50 @@
                                     </button>
                                 </td>
                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne22" aria-expanded="true" aria-controls="collapseOne22" role="button">Pasif Durumdaki Marka Listesi</a>
+                </h5>
+            </div>
+
+            <div id="collapseOne22" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Marka:</label>
+                            </div>
+                            <input class="form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Marka Adı</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fiat</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>                          
                         </tbody>
                     </table>
                 </div>
@@ -208,17 +252,48 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="modal fade" id="deleteBrand" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Markayı Sil</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne222" aria-expanded="true" aria-controls="collapseOne222" role="button">Pasif Durumdaki Model Listesi</a>
+                </h5>
             </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-danger" type="button">Sil</button></div>
+
+            <div id="collapseOne222" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Model:</label>
+                            </div>
+                            <input class="form-control" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Model Adı</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Egea</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation2"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -261,20 +336,6 @@
                 </div>
             </div>
             <div class="modal-footer"><button class="btn btn-success" type="button"><i class="fa-solid fa-plus"></i> Ekle</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="deleteModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modeli Sil</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-danger" type="button">Sil</button></div>
         </div>
     </div>
 </div>
@@ -341,3 +402,9 @@
     </div>
 </div>
 
+@await Component.InvokeAsync("DeleteModal", new{title = "Modeli Sil", body="Modeli silmek istediğinize emin misiniz?", id="deleteModel"})
+
+@await Component.InvokeAsync("DeleteModal", new{title = "Markayı Sil", body="Markayı silmek istediğinize emin misiniz?", id="deleteBrand"})
+
+@await Component.InvokeAsync("ActivationModal", new{title = "Marka Aktif Et", body="Markayı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("ActivationModal", new{title = "Model Aktif Et", body="Model, aktif hale getirmek istediğinize emin misiniz?", id="activation2"})

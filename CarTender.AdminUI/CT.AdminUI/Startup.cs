@@ -6,12 +6,14 @@ using Core.DependencyResolvers;
 using Core.Extensions;
 using Core.Utilities.IoC;
 using CT.AdminUI.ExceptionHandler.Extensions;
+using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using CarTender.FluentValidation.DAL.AdminDAL.Login;
 
 namespace CarTender.AdminUI
 {
@@ -30,7 +32,10 @@ namespace CarTender.AdminUI
             services.AddControllersWithViews();
 
             services.AddSingleton<IBaseAPIService, BaseAPIService>();
+            services.AddSingleton<IMappingService, MappingService>();
             services.AddSingleton<IApiService, ApiManager>();
+
+            services.AddValidatorsFromAssemblyContaining<AdminLoginDAL>();
 
             services.AddHttpClient<BaseAPIService>(opt =>
             {

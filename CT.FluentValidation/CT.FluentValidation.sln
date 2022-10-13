@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarTender.FluentValidation", "CarTender.FluentValidation\CarTender.FluentValidation.csproj", "{EFA87BB2-3A60-4A26-B7B3-1AD88D4DBA91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFA87BB2-3A60-4A26-B7B3-1AD88D4DBA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA87BB2-3A60-4A26-B7B3-1AD88D4DBA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA87BB2-3A60-4A26-B7B3-1AD88D4DBA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA87BB2-3A60-4A26-B7B3-1AD88D4DBA91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A5E5FBA-DB7D-489E-86F6-DA04B6BF8117}
+	EndGlobalSection
+EndGlobal

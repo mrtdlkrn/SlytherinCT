@@ -3,19 +3,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">Araç Detayları</a>
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarcd1" aria-expanded="true" aria-controls="ccarcd1" role="button">Araç Detayları</a>
                     <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addCarDetail">
                         <i class="fa fa-plus"></i>
                     </button>
                 </h5>
             </div>
 
-            <div id="collapseOne" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
+            <div id="ccarcd1" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
                     <table class="table table-bordered">
                         <thead>
@@ -32,7 +32,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetail" href="#">Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetail" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetail"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -41,7 +41,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetail" href="#">Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetail" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetail"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -50,7 +50,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetail" href="#">Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetail" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetail"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -59,7 +59,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetail" href="#">Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetail" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetail"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -69,7 +69,38 @@
         </div>
     </div>
 
-    <div id="accordion">
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarcd2" aria-expanded="true" aria-controls="ccarcd2" role="button">Pasif Durumdaki Araç Detayları</a>
+                </h5>
+            </div>
+
+            <div id="ccarcd2" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Araç Detay</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Renk</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation1"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
@@ -113,7 +144,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetailValue" href="#">Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetailValue" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetailValue"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -122,7 +153,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetailValue" href="#">Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetailValue" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetailValue"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -131,7 +162,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetailValue" href="#">Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetailValue" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetailValue"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -140,7 +171,7 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetailValue" href="#">Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetailValue" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetailValue"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                             <tr>
@@ -149,7 +180,38 @@
                                     <a class="btn btn-warning" data-toggle="modal" data-target="#editCarDetailValue" href="#">Güncelle</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCarDetailValue" href="#">Sil</a>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarDetailValue"><i class="far fa-trash-alt"></i> Sil</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarcd4" aria-expanded="true" aria-controls="ccarcd4" role="button">Pasif Durumdaki Araç Detay Değerleri</a>
+                </h5>
+            </div>
+
+            <div id="ccarcd4" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Araç Detay Değeri</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Siyah</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation2"><i class="far fa-plus"></i> Aktif Et</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -160,20 +222,10 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteCarDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Araç Detayını Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("ActivationModal", new{title = "Araç Detayı Et", body="Araç Detayını hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("ActivationModal", new{title = "Araç Detay Değeri Aktif Et", body="Araç Detay Değerini aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
+@await Component.InvokeAsync("DeleteModal", new{title = "Araç Detayını Sil", body="Statüyü silmek istediğinize emin misiniz?", id="deleteCarDetail"})
+@await Component.InvokeAsync("DeleteModal", new{title = "Araç Detay Değerini Sil", body="Araç detay değerini silmek istediğinize emin misiniz?", id="deleteCarDetailValue"})
 
 <div class="modal fade" id="editCarDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -215,21 +267,6 @@
                 </div>
             </div>
             <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="deleteCarDetailValue" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Araç Detay Değerini Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Sil</button></div>
         </div>
     </div>
 </div>
@@ -277,4 +314,3 @@
         </div>
     </div>
 </div>
-

@@ -1,12 +1,14 @@
-﻿@{
+﻿@using Entity.DTO
+@{
     ViewData["Title"] = "Add";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@model AddVehicleDTO
 <div class="container">
     <h1 class="h3 mb-2 text-gray-800">Araç Ekleme Sayfası</h1>
 
-    <form class="needs-validation" novalidate asp-controller="Admin" asp-action="VehicleDetailInformation" method="post" enctype="multipart/form-data">
+    <form class="needs-validation" novalidate asp-controller="Car" asp-action="Add" method="post" enctype="multipart/form-data">
         <label class="mt-3"><b>Araç Detay Bilgileri</b></label>
         <div class="mt-1 p-4" style="border:2px solid gray;">
             <div class="row">
@@ -54,9 +56,10 @@
                 <div class="col-md-4">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Araç Fiyat:</label>
+                            <label class="input-group-text" for="inputGroupSelect01">Araç Fiyat:</label>                   
                         </div>
-                        <input type="text" value="" class="form-control" />
+                        <input type="text" value="" asp-for="VehiclePrice" class="form-control" />
+                        <span asp-validation-for="VehiclePrice" class="text-danger"></span>
                     </div>
                 </div>
             </div>
@@ -153,7 +156,8 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">KM Bilgisi:</label>
                         </div>
-                        <input type="text" value="" class="form-control" />
+                        <input type="text" value="" asp-for="KM" class="form-control" />
+                        <span asp-validation-for="KM" class="text-danger"></span>
                     </div>
                 </div>
             </div>
@@ -190,7 +194,7 @@
                 <div class="mt-1 p-5" style="border:2px solid gray; height: 150px; vertical-align:middle; display:flex; align-items:center;">
                     <div style="display:flex; flex-direction:column; justify-content:space-between;" >
                         <div style="float:left;">
-                            <input onchange="readImage(this,1);" type="file" id="file1" style="display:none;" />
+                            <input onchange="readImage(this,1);" type="file" id="file1" style="display:none;" asp-for="PhotoPath1" />
                             <a onclick="photoUpload(1);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
                         </div>                        
                         <div class="ml-2 mt-2">
@@ -237,8 +241,9 @@
             </div>
             <div class="col-md-7">
                 <label class="mt-4"><b>Açıklama</b></label>
+                 <span asp-validation-for="Explanation" class="text-danger"></span>
                 <div class="mt-1 p-4" style="border:2px solid gray; height: 150px;">
-                    <textarea class="form-control" style="resize:none; height: 100%"></textarea>
+                    <textarea class="form-control" style="resize:none; height: 100%" asp-for="Explanation"></textarea>
                 </div>
             </div>
         </div>
@@ -251,7 +256,7 @@
                 <a class="btn btn-dark mt-4" href="/CarHistory/Index">Araç Tarihçe</a>
                 <a class="btn btn-dark mt-4" href="/DamageRecord/Index">Hasar Tramer Bilgileri</a>
                 <a class="btn btn-dark mt-4" href="/Advert/Index">İlan Bilgileri</a>
-                <a class="btn btn-dark mt-4" href="#">Kaydet</a>
+                <input class="btn btn-dark mt-4" type="submit" value="Kaydet" />
             </div>
         </div>
     </form>
