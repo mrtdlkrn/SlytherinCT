@@ -6,18 +6,16 @@ namespace CT.AdminUI.Models.ModalDTOs
     {
         public EditModalDTO(
             string modalId,
-            string modalTitle, 
-            List<string> labelStrs, 
-            string saveBtnStr)
+            string modalTitle,
+            List<string> labelStrs
+            )
         {
             ModalID = modalId;
             ModalTitle = modalTitle;
             LabelStrs = labelStrs;
-            SaveBtnStr = saveBtnStr;
         }
         public string ModalID { get; set; }
         public string ModalTitle { get; set; }
-        public List<string> LabelStrs{ get; set; }
-        public string SaveBtnStr { get; set; }
+        public List<string> LabelStrs { get; set; }
     }
 }

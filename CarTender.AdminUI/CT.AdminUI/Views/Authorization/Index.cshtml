@@ -1,18 +1,22 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    List<string> tempList = new List<string>();
+    tempList.Add("Sarp");
+    tempList.Add("Ahmet");
+    
     List<string> AddModalLblstrs = new List<string>();
     AddModalLblstrs.Add("Sarp");
     AddModalLblstrs.Add("Ahmet");
 }
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div class="container-fuild p-5">
     <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#cauthindex1" aria-expanded="true" aria-controls="cauthindex1" role="button">Rol - Yetki</a>  
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cauthindex1" aria-expanded="true" aria-controls="cauthindex1" role="button">Rol - Yetki</a>
                 </h5>
             </div>
             <div id="cauthindex1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -35,7 +39,7 @@
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
 
                     <div class="mb-3">
-                          <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addAuthorization"><i class="fa-solid fa-plus"></i> Yeni Yetki Ekle</button>
+                         <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addAuthorization"><i class="fa-solid fa-plus"></i> Yeni Yetki Ekle</button>
                     </div>
 
                     <table class="table table-bordered">
@@ -50,7 +54,7 @@
                             <tr>
                                 <td>SuperAdmin</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuth"><i class="far fa-trash-alt"></i> Sil</button>
@@ -59,7 +63,7 @@
                             <tr>
                                 <td>Admin</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuth"><i class="far fa-trash-alt"></i> Sil</button>
@@ -68,7 +72,7 @@
                             <tr>
                                 <td>Moderatör</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuth"><i class="far fa-trash-alt"></i> Sil</button>
@@ -77,7 +81,7 @@
                             <tr>
                                 <td>CEO</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuth"><i class="far fa-trash-alt"></i> Sil</button>
@@ -86,7 +90,7 @@
                             <tr>
                                 <td>Satış Departmanı</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuth"><i class="far fa-trash-alt"></i> Sil</button>
@@ -95,7 +99,7 @@
                             <tr>
                                 <td>İnsan Kaynakları</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuth"><i class="far fa-trash-alt"></i> Sil</button>
@@ -104,7 +108,7 @@
                             <tr>
                                 <td>Bölge Sorumlusu</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuth"><i class="far fa-trash-alt"></i> Sil</button>
@@ -113,7 +117,7 @@
                             <tr>
                                 <td>Bireysel Kullanıcı</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuth"><i class="far fa-trash-alt"></i> Sil</button>
@@ -126,35 +130,6 @@
         </div>
     </div>
 
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#cauthindex2" aria-expanded="true" aria-controls="cauthindex2" role="button">Pasif Durumdaki Rol - Yetkiler</a>
-                </h5>
-            </div>
-            <div id="cauthindex2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">           
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Kullanıcı Rolleri</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>SuperAdmin</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            </tr>                        
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Yetki Sil", body="Verilen yetkiyi silmek istediğinize emin misiniz?", id="deleteAuth"})
@@ -163,8 +138,9 @@
 
 @await Component.InvokeAsync("AddModal", new{ModalID = "addAuthorization",modalTitle = "Yeni Yetki Ekle", Labelstrs = AddModalLblstrs})
 
+@await Component.InvokeAsync("EditModal", new {modalID="editAuthorization", modalTitle="Yetki Güncelle",labelStrs=tempList})
 
-<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@*<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -187,4 +163,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@

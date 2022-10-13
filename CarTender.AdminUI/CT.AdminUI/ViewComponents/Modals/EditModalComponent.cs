@@ -10,11 +10,10 @@ namespace CT.AdminUI.ViewComponents.Modals
         public IViewComponentResult Invoke(
             string modalID,
             string modalTitle,
-            List<string> labelStrs,
-            string saveBtnStr
+            List<string> labelStrs
             )
         {
-            EditModalDTO dto = new EditModalDTO(modalID,modalTitle, labelStrs, saveBtnStr);
+            EditModalDTO dto = new EditModalDTO(modalID,modalTitle, labelStrs);
             return View("Default",dto);
         }
     }

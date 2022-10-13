@@ -1,8 +1,11 @@
 ﻿@{
     ViewData["Title"] = "ListBid";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
-<div class="container-fluid">
+<div class="container-fluid p-5">
     <h1 class="h3 mb-2 text-gray-800">İhale Tanımlama / Listeleme</h1>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -84,7 +87,7 @@
                             <td>Sonlandı</td>
                             <td>Ahmet K</td>
                             <td>2020/05/10-11:00</td>
-                            <td><button class="btn btn-warning align-content-center" type="submit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
+                            <td><button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBid6"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
                             <td><button type="button" class="btn btn-danger align-content-center" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBid"><i class="far fa-trash-alt"></i> Sil</button></td>
                         </tr>
                         <tr>
@@ -95,7 +98,7 @@
                             <td>Sonlandı</td>
                             <td>Ahmet K</td>
                             <td>2020/05/10-11:00</td>
-                            <td><button class="btn btn-warning align-content-center" type="submit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
+                            <td><button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBid6"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
                             <td><button type="button" class="btn btn-danger align-content-center" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBid"><i class="far fa-trash-alt"></i> Sil</button></td>
                         </tr>
                         <tr>
@@ -106,7 +109,7 @@
                             <td>Sonlandı</td>
                             <td>Ahmet K</td>
                             <td>2020/05/10-11:00</td>
-                            <td><button class="btn btn-warning align-content-center" type="submit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
+                            <td><button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBid6"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
                             <td><button type="button" class="btn btn-danger align-content-center" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBid"><i class="far fa-trash-alt"></i> Sil</button></td>
                         </tr>
                         <tr>
@@ -117,7 +120,9 @@
                             <td>Sonlandı</td>
                             <td>Ahmet K</td>
                             <td>2020/05/10-11:00</td>
-                            <td><button class="btn btn-warning align-content-center" type="submit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
+                            <td>
+                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBid6"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                            </td>
                             <td><button type="button" class="btn btn-danger align-content-center" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBid"><i class="far fa-trash-alt"></i> Sil</button></td>
                         </tr>
                         <tr>
@@ -128,7 +133,7 @@
                             <td>Sonlandı</td>
                             <td>Ahmet K</td>
                             <td>2020/05/10-11:00</td>
-                            <td><button class="btn btn-warning align-content-center" type="submit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
+                            <td><button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBid6"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
                             <td><button type="button" class="btn btn-danger align-content-center" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBid"><i class="far fa-trash-alt"></i> Sil</button></td>
                         </tr>
 
@@ -140,51 +145,8 @@
             </div>
         </div>
     </div>
-
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#cbidindex2" aria-expanded="true" aria-controls="cbidindex2" role="button">Pasif Durumdaki İhaleler</a>
-                </h5>
-            </div>
-            <div id="cbidindex2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">İhale Adı</th>
-                                <th scope="col">Bireysel/Kurumsal</th>
-                                <th scope="col">İhale Başlangıç</th>
-                                <th scope="col">İhale Bitiş</th>
-                                <th scope="col">Statü</th>
-                                <th scope="col">Kaydeden Kullanıcı</th>
-                                <th scope="col">Kaydetme Zamanı</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>23/10/2020 Toyota İhalesi</td>
-                                <td>Bireysel</td>
-                                <td>26/09/2020</td>
-                                <td>27/09/2020</td>
-                                <td>Sonlandı</td>
-                                <td>Ahmet K</td>
-                                <td>2020/05/10-11:00</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            <tr>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "İhaleyi Sil", body="İhaleyi silmek istediğinize emin misiniz?", id="deleteBid"})
-
 @await Component.InvokeAsync("ActivationModal", new{title = "İhale Aktif Et", body="İhaleyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("EditModal", new {modalID="editBid6", modalTitle="İhale Güncelle",labelStrs=tempList})
