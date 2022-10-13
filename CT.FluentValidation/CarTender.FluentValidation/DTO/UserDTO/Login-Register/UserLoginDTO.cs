@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entity.DTO
+namespace CarTender.FluentValidation.DTO.UserDTO.Login_Register
 {
     public class UserLoginDTO
     {
