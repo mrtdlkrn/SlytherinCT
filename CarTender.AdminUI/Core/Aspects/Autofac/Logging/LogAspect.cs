@@ -45,9 +45,10 @@ namespace Core.Aspects.Autofac.Logging
                     Type = invocation.Arguments[i].GetType().Name
                 });
             }
-
+            //todo: Username token veya sessiondan çekilecek
             var logDetail = new LogDetail
             {
+                UserName="Emine",
                 MethodName = invocation.Method.Name,
                 LogParameters = logParameters,
                 TransactionDate = DateTime.Now,

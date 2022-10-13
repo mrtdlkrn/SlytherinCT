@@ -43,9 +43,10 @@ namespace Core.Aspects.Autofac.Exception
                     Type = invocation.Arguments[i].GetType().Name,
                 });
             }
-
+            //todo: tokendan username al
             var logDetailWithException = new LogDetailWithException
             {
+                UserName="Emine",
                 MethodName = invocation.Method.Name,
                 LogParameters = logParameters,
                 TransactionDate = DateTime.Now
