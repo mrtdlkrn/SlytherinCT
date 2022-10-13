@@ -1,12 +1,14 @@
 ﻿using Castle.DynamicProxy;
-using Core.Utilities.Interceptors;
 using Core.Logging;
 using Core.Logging.Log4Net;
+using Core.Utilities.Interceptors;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Core.Aspects.Autofac.Logging
+namespace Core.Aspect.Autofac.Logging
 {
     public class LogAspect : MethodInterception
     {
@@ -45,10 +47,9 @@ namespace Core.Aspects.Autofac.Logging
                     Type = invocation.Arguments[i].GetType().Name
                 });
             }
-            //todo: Username token veya sessiondan çekilecek
+
             var logDetail = new LogDetail
             {
-                UserName="Emine",
                 MethodName = invocation.Method.Name,
                 LogParameters = logParameters,
                 TransactionDate = DateTime.Now,
