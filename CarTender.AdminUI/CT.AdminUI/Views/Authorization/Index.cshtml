@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -32,7 +35,7 @@
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
 
                     <div class="mb-3">
-                        <a class="btn btn-success" data-toggle="modal" data-target="#addAuthorization" href="#"><i class="fa-solid fa-plus"></i> Yeni Yetki Ekle</a>
+                          <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addAuthorization"><i class="fa-solid fa-plus"></i> Yeni Yetki Ekle</button>
                     </div>
 
                     <table class="table table-bordered">
@@ -158,30 +161,8 @@
 
 @await Component.InvokeAsync("ActivationModal", new{title = "Yetki Aktif Et", body="Yetkiyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 
-<div class="modal fade" id="addAuthorization" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Yeni Yetki Ekle</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Yeni Yetkilendirme Yapınız:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                <button type="button" class="btn btn-primary">Kaydet</button>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("AddModal", new{ModalID = "addAuthorization",modalTitle = "Yeni Yetki Ekle", Labelstrs = AddModalLblstrs, SaveBtnStr = "Kaydet"})
+
 
 <div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
