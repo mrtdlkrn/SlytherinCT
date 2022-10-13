@@ -8,9 +8,11 @@ using log4net.Repository;
 
 namespace Core.Logging.Log4Net
 {
+    //log4netin configini yaptığımız class singleton çalışır  
     public class LoggerServiceBase
     {
         private ILog _log;
+        //log4net.config dosyasının okunduğu kısım burada okunan değerlerin db ye mi dosyaya mı çıkarılacağı kısım
         public LoggerServiceBase(string name)
         {
             XmlDocument xmlDocument = new XmlDocument();
