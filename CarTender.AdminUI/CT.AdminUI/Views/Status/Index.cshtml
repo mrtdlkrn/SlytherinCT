@@ -2,6 +2,9 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
 }
 
 <div class="container-fuild p-5">
@@ -170,7 +173,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="exampleModalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@*<div class="modal fade" id="exampleModalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -193,7 +196,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 <div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -222,3 +225,4 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Statü Sil", body="Statüyü silmek istediğinize emin misiniz?", id="deleteStatus"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Statü Aktif Et", body="Statüyü aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("AddModal", new{ModalID = "exampleModalAdd",modalTitle = "Yeni Yetki Ekle", Labelstrs = AddModalLblstrs})

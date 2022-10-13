@@ -1,6 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
+
 }
 
 <div class="container-fuild p-5">
@@ -9,7 +13,7 @@
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#cmi1" aria-expanded="true" aria-controls="cmi1" role="button">Mesaj Bilgi Listesi</a>
-                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addMessage">
                         <i class="fa fa-plus"></i>
                     </button>
                 </h5>
@@ -47,48 +51,12 @@
             </div>
         </div>
     </div>
-
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#cmi2" aria-expanded="true" aria-controls="cmi2" role="button">Pasif Durumdaki Mesaj Bilgi Listesi</a>
-                </h5>
-            </div>
-            <div id="cmi2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Mesaj Metni</th>
-                                <th scope="col">Kullanıcı Adı</th>
-                                <th scope="col">Aktif/Pasif</th>
-                                <th scope="col">Versiyon</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>dlkfjdjd</td>
-                                <td>Emine</td>
-                                <td>Aktif</td>
-                                <td>v1</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Mesajı Sil", body="Mesajı silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Mesajı Aktif Et", body="Mesajı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addMessage",modalTitle = "Yeni Mesaj Ekle", Labelstrs = AddModalLblstrs})
+
 <div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

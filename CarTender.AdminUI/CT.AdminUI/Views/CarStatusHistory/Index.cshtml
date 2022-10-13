@@ -2,6 +2,10 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
+
 }
 
 <div class="container-fuild p-5">
@@ -10,7 +14,7 @@
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#ccsh1" aria-expanded="true" aria-controls="ccsh1" role="button">Araç Statü Tarihçe</a>
-                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addStatus">
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addCarStatus">
                         <i class="fa fa-plus"></i>
                     </button>
                 </h5>
@@ -71,53 +75,13 @@
             </div>
         </div>
     </div>
-
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccsh2" aria-expanded="true" aria-controls="ccsh2" role="button">Pasif Durumdaki Araç Statüleri</a>
-                </h5>
-            </div>
-            <div id="ccsh2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <table style="text-align:center;" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">Araç Plaka</th>
-                            <th scope="col">Statü</th>
-                            <th scope="col">Açıklama</th>
-                            <th scope="col">Ekleyen</th>
-                            <th scope="col">Ekleme Tarihi</th>
-                            <th scope="col">Düzenleyen</th>
-                            <th scope="col">Düzenleme Tarihi</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>16 E 16</td>
-                            <td>Satışta</td>
-                            <td>Arcımız satışta durumuna gelmiştir.</td>
-                            <td>Ahmet Sezgin</td>
-                            <td>05.10.2022</td>
-                            <td>Sarp İpekçi</td>
-                            <td>12.10.2022</td>
-                            <td>
-                                <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br />
-                <br />
-            </div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Statü Bilgisini Sil", body="Statü bilgisini silmek istediğinize emin misiniz?", id="deleteStatus"})
 
 @await Component.InvokeAsync("ActivationModal", new{title = "Statü Bilgisini Aktif Et", body="Statü bilgisini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarStatus",modalTitle = "Yeni Statü Tarihçe Ekle", Labelstrs = AddModalLblstrs})
 
 <div class="modal fade" id="editStatus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
     <div class="modal-dialog">
@@ -187,7 +151,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="addStatus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+@*<div class="modal fade" id="addStatus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -244,4 +208,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@

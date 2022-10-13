@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
 }
 
 <div class="container-fuild p-5">
@@ -106,6 +109,8 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Favoriden Araç Kaldır", body="Aracı favoriden kaldırmak istediğinize emin misiniz?", id="deleteUserFavoriteCar"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Favori Araç Bilgisi Aktif Et", body="Favori araç bilgisini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addUserFavoriteCar",modalTitle = "Yeni Kullanıcı Favori Aracı Ekle", Labelstrs = AddModalLblstrs})
+
 <div class="modal fade" id="editUserFavoriteCar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -134,7 +139,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="addUserFavoriteCar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@*<div class="modal fade" id="addUserFavoriteCar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -158,5 +163,5 @@
             <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
         </div>
     </div>
-</div>
+</div>*@
 

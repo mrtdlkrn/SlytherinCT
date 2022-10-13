@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Komisyon Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
 }
 <div class="container-fuild p-5">
     <div id="accordion" class="mb-5">
@@ -47,7 +50,7 @@
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button"> Komisyon Listesi</a>
-                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#AddCommission">
                         <i class="fa fa-plus"></i>
                     </button>
                 </h5>
@@ -145,4 +148,6 @@
 @await Component.InvokeAsync("DeleteModal", new{title = "Komisyon Sil", body="Komisyonu silmek istediğinize emin misiniz?", id="delete"})
 
 @await Component.InvokeAsync("ActivationModal", new{title = "Komisyon Aktif Et", body="Komisyonu aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+
+@await Component.InvokeAsync("AddModal", new{ModalID = "AddCommission",modalTitle = "Yeni Komisyon Ekle", Labelstrs = AddModalLblstrs})
 
