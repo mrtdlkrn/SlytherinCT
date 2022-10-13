@@ -2,6 +2,10 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
+
 }
 
 <div class="container-fuild p-5">
@@ -109,6 +113,8 @@
 @await Component.InvokeAsync("DeleteModal", new{title = "İlçe Sil", body="İlçeyi silmek istediğinize emin misiniz?", id="deleteTown"})
 
 @await Component.InvokeAsync("ActivationModal", new{title = "İlçe Aktif Et", body="İlçeyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+
+@await Component.InvokeAsync("AddModal", new{ModalID = "addTown",modalTitle = "Yeni İlçe Ekle", Labelstrs = AddModalLblstrs})
 
 <div class="modal fade" id="editTown" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
     <div class="modal-dialog">

@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
 }
 
 <div class="container-fuild p-5">
@@ -226,6 +229,8 @@
 @await Component.InvokeAsync("ActivationModal", new{title = "Araç Detay Değeri Aktif Et", body="Araç Detay Değerini aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Araç Detayını Sil", body="Statüyü silmek istediğinize emin misiniz?", id="deleteCarDetail"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Araç Detay Değerini Sil", body="Araç detay değerini silmek istediğinize emin misiniz?", id="deleteCarDetailValue"})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarDetail",modalTitle = "Yeni Yetki Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarDetail",modalTitle = "Yeni Yetki Ekle", Labelstrs = AddModalLblstrs})
 
 <div class="modal fade" id="editCarDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -249,7 +254,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="addCarDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@*<div class="modal fade" id="addCarDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -269,7 +274,7 @@
             <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
         </div>
     </div>
-</div>
+</div>*@
 
 <div class="modal fade" id="editCarDetailValue" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -293,7 +298,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="addCarDetailValue" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@*<div class="modal fade" id="addCarDetailValue" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -313,4 +318,4 @@
             <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
         </div>
     </div>
-</div>
+</div>*@

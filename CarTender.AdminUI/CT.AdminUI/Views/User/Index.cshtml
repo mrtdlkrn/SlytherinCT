@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Kullanıcılar";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
 }
 
 <div class="container-fuild p-5">
@@ -85,62 +88,11 @@
             </div>
         </div>
     </div>
-
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#cui1" aria-expanded="true" aria-controls="cui1" role="button">Pasif Durumdaki Kullanıcılar</a>
-                </h5>
-            </div>
-
-            <div id="cui1" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Kullanıcı Adı</th>
-                                <th scope="col">Ad Soyad</th>
-                                <th scope="col">Telefon</th>
-                                <th scope="col">E-posta</th>
-                                <th scope="col">Kullanıcı Türü</th>
-                                @*<th scope="col">E-Posta Onayı</th>
-                                <th scope="col">Admin Onayı</th>
-                                <th scope="col">KVKK Onayı</th>
-                                <th scope="col">Açıklama</th>*@
-                                <th scope="col">Onaylayan Kullanıcı</th>
-                                <th scope="col">Kayıt Tarihi</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ahmetosmn</td>
-                                <td>Ahmet Osman Sezgin</td>
-                                <td>5054545151351</td>
-                                <td>ahmet@sezgin.com</td>
-                                <td>Bireysel</td>
-                                @* <td>Evet</td>
-                                <td>Evet</td>
-                                <td>Evet</td>
-                                <td></td>*@
-                                <td>Admin</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Kullanıcı Sil", body="Kullanıcıyı silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Kullanıcı Aktif Et", body="Kullanıcıyı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addUser",modalTitle = "Yeni Kullanıcı Ekle", Labelstrs = AddModalLblstrs})
 
 <div class="modal" id="editUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -233,7 +185,7 @@
     </div>
 </div>
 
-<div class="modal" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+@*<div class="modal" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel5" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -320,7 +272,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 
 <script type="text/javascript">

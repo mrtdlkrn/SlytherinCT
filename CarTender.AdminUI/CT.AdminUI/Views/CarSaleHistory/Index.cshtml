@@ -1,6 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
+
 }
 <div class="container-fuild p-5">
     <div id="accordion" class="mb-5">
@@ -65,48 +69,12 @@
             </div>
         </div>
     </div>
-
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarsaleh2" aria-expanded="true" aria-controls="ccarsaleh2" role="button">Pasif Durumdaki Araç Satışlar</a>
-                </h5>
-            </div>
-            <div id="ccarsaleh2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <table style="text-align:center;" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">Araç Plaka</th>
-                            <th scope="col">Satıcı</th>
-                            <th scope="col">Alıcı</th>
-                            <th scope="col">Satış Fiyatı</th>
-                            <th scope="col">Komisyon</th>
-                            <th scope="col">Satış Tarihi</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>16 E 16</td>
-                            <td>Ahmet Sezgin</td>
-                            <td>Osman Sezgin</td>
-                            <td>180.000 TL</td>
-                            <td>8.000 TL</td>
-                            <td>05.10.2022</td>
-                            <td>
-                                <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Satışı Sil", body="Satışı silmek istediğinize emin misiniz?", id="deleteSale"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Satışı Aktif Et", body="Satışı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addSale",modalTitle = "Yeni Satış Tarihçe Ekle", Labelstrs = AddModalLblstrs})
+
 <div class="modal fade" id="editSale" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -147,7 +115,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="addSale" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+@*<div class="modal fade" id="addSale" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -210,5 +178,5 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 

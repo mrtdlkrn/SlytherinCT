@@ -161,7 +161,7 @@
 
 @await Component.InvokeAsync("ActivationModal", new{title = "Yetki Aktif Et", body="Yetkiyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 
-@await Component.InvokeAsync("AddModal", new{ModalID = "addAuthorization",modalTitle = "Yeni Yetki Ekle", Labelstrs = AddModalLblstrs, SaveBtnStr = "Kaydet"})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addAuthorization",modalTitle = "Yeni Yetki Ekle", Labelstrs = AddModalLblstrs})
 
 
 <div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

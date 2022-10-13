@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "CarBuyerInformation";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
 }
 
 <div class="container-fuild p-5">
@@ -104,6 +107,8 @@
 
 @await Component.InvokeAsync("ActivationModal", new{title = "Araç Alıcı Bilgilerini Aktif Et", body="Araç Alıcı Bilgilerini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarBuyerInformation",modalTitle = "Yeni Yetki Ekle", Labelstrs = AddModalLblstrs})
+
 <div class="modal fade" id="editCarBuyerInformation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -152,7 +157,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="addCarBuyerInformation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
+@*<div class="modal fade" id="addCarBuyerInformation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -198,7 +203,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 
 
