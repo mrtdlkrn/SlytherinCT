@@ -90,5 +90,6 @@ namespace Business.Abstract
         /// </param>
         /// <returns>This aciton returns true if operation is success.</returns>
         Task<bool> Delete(TokenDTO tokenDTO, string requestUrl);
+        void Test(string test);
     }
 }

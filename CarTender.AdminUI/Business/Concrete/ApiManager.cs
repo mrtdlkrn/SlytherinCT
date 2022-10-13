@@ -1,6 +1,9 @@
 ﻿using Business.Abstract;
 using Common.Abstract;
 using Common.Concrete;
+using Core.Aspects.Autofac.Exception;
+using Core.Aspects.Autofac.Logging;
+using Core.Logging.Log4Net.Loggers;
 using Entity.DTO;
 using Microsoft.Extensions.Configuration;
 using System.Net.Http;
@@ -8,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
+    [ExceptionLogAspect(typeof(FileLogger))]
+    [LogAspect(typeof(FileLogger))]
+    
     public class ApiManager : IApiService
     {
         private readonly IBaseAPIService _baseAPIService;
@@ -45,6 +51,12 @@ namespace Business.Concrete
         public Task<DTO> GET<DTO, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto) where DTO : class where FilterDTO : class
         {
             return _baseAPIService.GET<DTO, FilterDTO>(tokenDTO, requestUrl, dto);
+        }
+
+        
+        public void Test(string test)
+        {
+            System.Console.WriteLine("test");
         }
     }
 }

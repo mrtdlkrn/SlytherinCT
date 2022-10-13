@@ -11,7 +11,9 @@ namespace Entity.DTO.Car
         public bool IsCorporate { get; set; }
         public string CompanyName { get; set; }
         public string Status { get; set; }
-        public decimal Price { get; set; }
+
+        // todo: price decimal olacak
+        public int Price { get; set; }
         public string CarBrand { get; set; }
         public string CarModel { get; set; }
         public string BodyType { get; set; }

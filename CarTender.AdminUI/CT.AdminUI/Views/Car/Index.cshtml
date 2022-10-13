@@ -1,8 +1,28 @@
-﻿@{
+﻿@using Entity.DTO.Car
+@using Entity.DTO.Pagination
+@using System.Reflection
+@model PaginatedList<ListCarDTO>
+
+@{
     ViewData["Title"] = "Araç Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var tempheads = typeof(ListCarDTO).GetProperties();
+
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in tempheads)
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
 }
-<div class="container-fluid">
+<div class="container-fluid p-5">
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Araç Tanımlama / Listeleme</h1>
@@ -79,169 +99,74 @@
         <div class="col-md-3 float-right">
             <a class="btn btn-success btn-block " asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-plus"></i> Araç Oluştur</a>
         </div>
-
     </div>
 
-    <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Araç Listesi</h6>
         </div>
         <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Plaka</th>
-                            <th>Marka</th>
-                            <th>Model</th>
-                            <th>Bireysel/Kurumsal</th>
-                            <th>Statü</th>
-                            <th>Kaydeden Kullanıcı</th>
-                            <th>Kaydetme Zamanı</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>16 E 123</td>
-                            <td>Audi</td>
-                            <td>A3</td>
-                            <td>Bireysel</td>
-                            <td>Satışta</td>
-                            <td>Burkay A.</td>
-                            <td>04.10.2022-22:14</td>
-                            <td>
-                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
-                                    <i class="far fa-trash-alt"></i>
-                                     Sil
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>16 E 124</td>
-                            <td>Ford</td>
-                            <td>Fiesta</td>
-                            <td>Bireysel</td>
-                            <td>Satıldı</td>
-                            <td>Burkay A.</td>
-                            <td>04.10.2022-22:14</td>
-                            <td>
-                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
-                                    <i class="far fa-trash-alt"></i>
-                                     Sil
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>16 E 125</td>
-                            <td>Opel</td>
-                            <td>Astra</td>
-                            <td>Kurumsal</td>
-                            <td>İhalede</td>
-                            <td>Burkay A.</td>
-                            <td>04.10.2022-22:14</td>
-                            <td>
-                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
-                                    <i class="far fa-trash-alt"></i>
-                                     Sil
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>16 E 126</td>
-                            <td>Volkswagen</td>
-                            <td>Golf</td>
-                            <td>Kurumsal</td>
-                            <td>Satışta</td>
-                            <td>Burkay A.</td>
-                            <td>04.10.2022-22:14</td>
-                            <td>
-                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
-                                    <i class="far fa-trash-alt"></i>
-                                     Sil
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>16 E 127</td>
-                            <td>Volkswagen</td>
-                            <td>Golf</td>
-                            <td>Kurumsal</td>
-                            <td>Satışta</td>
-                            <td>Burkay A.</td>
-                            <td>04.10.2022-22:14</td>
-                            <td>
-                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
-                                    <i class="far fa-trash-alt"></i>
-                                     Sil
-                                </button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>16 E 128</td>
-                            <td>Volkswagen</td>
-                            <td>Golf</td>
-                            <td>Kurumsal</td>
-                            <td>Satışta</td>
-                            <td>Burkay A.</td>
-                            <td>04.10.2022-22:14</td>
-                            <td>
-                                <a class="btn btn-warning" asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
-                                    <i class="far fa-trash-alt"></i>
-                                     Sil
-                                </button>
-                            </td>
-                        </tr>
-
-
-                    </tbody>
-                </table>
-            </div>
+            @await Component.InvokeAsync("BaseTable",
+            new{
+                FormActionStr="Index",
+                SearchbarStr="Plaka",
+                EditBtnStr="Güncelle", 
+                EditBtnController="Car",
+                EditBtnAction="Edit", 
+                DeleteBtnStr="Sil",
+                DeleteBtnModalID="deleteCar", 
+                TableHeads=heads,
+                TableDatas=datas,
+                HasPreviousPage=Model.HasPreviousPage,
+                HasNextPage = Model.HasNextPage,
+                PageIndex = Model.PageIndex
+            })
         </div>
     </div>
 
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarindex1" aria-expanded="true" aria-controls="ccarindex1" role="button">Pasif Durumdaki Araçlar</a>
+                </h5>
+            </div>
+            <div id="ccarindex1" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Plaka</th>
+                                <th>Marka</th>
+                                <th>Model</th>
+                                <th>Bireysel/Kurumsal</th>
+                                <th>Statü</th>
+                                <th>Kaydeden Kullanıcı</th>
+                                <th>Kayıt Tarihi</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>hede</td>
+                                <td>hede</td>
+                                <td>hede</td>
+                                <td>hede</td>
+                                <td>hede</td>
+                                <td>hede</td>
+                                <td>hede</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!-- /.container-fluid -->
-@*
-<div class="modal fade" id="deleteCar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Aracı Sil</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#deleteCar').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-
-            </div>
-            <div class="modal-body">Aracı silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer">
-                <button class="btn btn-danger" type="button">Sil</button>
-            </div>
-        </div>
-    </div>
-</div>*@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Aracı Sil", body="Aracı silmek istediğinize emin misiniz?", id="deleteCar"})
+
+@await Component.InvokeAsync("ActivationModal", new{title = "Aracı Aktif Et", body="Aracı aktif hale getirmek istediğinize emin misiniz?", id="activation"})

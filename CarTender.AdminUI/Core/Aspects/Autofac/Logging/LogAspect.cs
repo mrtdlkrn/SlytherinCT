@@ -49,7 +49,6 @@ namespace Core.Aspects.Autofac.Logging
                 MethodName = invocation.Method.Name,
                 LogParameters = logParameters,
                 TransactionDate = DateTime.Now,
-                ReturnValue = invocation.ReturnValue!=null ? invocation.ReturnValue.ToString() : null
             };
 
             return logDetail;

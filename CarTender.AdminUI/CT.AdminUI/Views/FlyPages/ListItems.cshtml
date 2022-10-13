@@ -1,0 +1,146 @@
+﻿@using CT.AdminUI.Models
+@using Entity.DTO
+@using System.Linq;
+@using System.Runtime;
+@using System.ComponentModel.DataAnnotations;
+@using System.Reflection
+@using System.Collections.Generic
+@using System.ComponentModel
+@using System.Collections
+@model GenericViewModel
+@{
+    ViewData["Title"] = "ListItems";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Type modelType = Model.MyModel.GetType().GetProperties()[2].PropertyType;
+    Type customListType = typeof(List<>).MakeGenericType(modelType);
+    var myList = (IList)Activator.CreateInstance(customListType, Model.MyModel);
+
+
+}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Araç Tanımlama / Listeleme</h1>
+    <p class="mb-4">
+        Kullanıcıların eklemiş olduğu araçları buradan inceleyip ve düzenleyebilirsiniz.
+    </p>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Arama Kriterleri</h6>
+        </div>
+        <div class="card-body">
+            <form class="row">
+
+                <div class="col-md-9 col-sm-0"></div>
+                <div class="col-md-3 col-sm-12">
+                    <button class="btn btn-info btn-block" style="background-color: #2E86C1 ;" type="button"><i class="fa-solid fa-list" style="color:white;"></i>  Listele</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mb-4 clearfix">
+        <div class="col-md-3 float-right">
+            <a class="btn btn-success btn-block " asp-controller="Generic" asp-action="Create" asp-route-modelName="@Model.ModelName"><i class="fa-solid fa-plus"></i> @(modelType.GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? modelType.GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : modelType.Name) Oluştur</a>
+        </div>
+
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Araç Listesi</h6>
+        </div>
+        <div class="card-body">
+            <form asp-action="Index" method="get">
+                <div class="form-actions">
+                    <div class="row mt-3 mb-3">
+                        <div class="col-md-4">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Plaka:</label>
+                                </div>
+                                <input type="text" class="form-control" name="SearchString" value="@ViewData["CurrentFilter"]" />
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-warning" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                        <div class="col-md-2">
+                            <a asp-action="Index" class="btn btn-info">Hepsini Göster</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-bordered" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            @foreach (var modelProperties in modelType.GetProperties())
+                            {
+                                @if (modelProperties.GetCustomAttributes(typeof(KeyAttribute), true).FirstOrDefault() == null)
+                                {
+                                    <th>@(modelProperties.GetCustomAttributes(typeof(DisplayNameAttribute), true).SingleOrDefault() != null ? modelProperties.GetCustomAttributes(typeof(DisplayNameAttribute), true).Cast<DisplayNameAttribute>().Single().DisplayName : modelProperties.Name)</th>
+                                }
+
+                            }
+                            <th>Güncelle</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var items in myList)
+                        {
+                            <tr>
+                                @foreach (var item in items.GetType().GetProperties())
+                                {
+                                    @if (item.GetCustomAttributes(typeof(KeyAttribute), true).FirstOrDefault() == null)
+                                    {
+
+
+                                        <td>@item.GetValue(items,null)</td>
+                                    }
+
+                                }
+                                <td>
+                                    <a class="btn btn-warning" asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCar">
+                                        <i class="far fa-trash-alt"></i>
+                                        Sil
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                @*@{
+                var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+                }*@
+
+                @*<a asp-action="Index"
+                asp-route-sortOrder="@ViewData["CurrentSort"]"
+                asp-route-pageNumber="@(Model.PageIndex - 1)"
+                asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                class="btn btn-default @prevDisabled">
+                Önceki
+                </a>
+                <a asp-action="Index"
+                asp-route-sortOrder="@ViewData["CurrentSort"]"
+                asp-route-pageNumber="@(Model.PageIndex + 1)"
+                asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                class="btn btn-default @nextDisabled">
+                Sonraki
+                </a>*@
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@await Component.InvokeAsync("DeleteModal", new{title = "Aracı Sil", body="Aracı silmek istediğinize emin misiniz?", id="deleteCar"})
+
+

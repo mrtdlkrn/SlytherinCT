@@ -2,18 +2,18 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
-            <div class="card-header" id="headingTwo">
+            <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse">Araç Satış Tarihçe</a>
-                    <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addSale">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarsaleh1" aria-expanded="true" aria-controls="ccarsaleh1" role="button">Araç Satış Tarihçe</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addSale">
                         <i class="fa fa-plus"></i>
                     </button>
                 </h5>
             </div>
-            <div  id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div id="ccarsaleh1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="row mt-3 mb-3">
                     <div class="col-md-4">
                         <div class="input-group mb-3">
@@ -62,15 +62,51 @@
                         </tr>
                     </tbody>
                 </table>
-                <br />
-                <br />
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarsaleh2" aria-expanded="true" aria-controls="ccarsaleh2" role="button">Pasif Durumdaki Araç Satışlar</a>
+                </h5>
+            </div>
+            <div id="ccarsaleh2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <table style="text-align:center;" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Araç Plaka</th>
+                            <th scope="col">Satıcı</th>
+                            <th scope="col">Alıcı</th>
+                            <th scope="col">Satış Fiyatı</th>
+                            <th scope="col">Komisyon</th>
+                            <th scope="col">Satış Tarihi</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>16 E 16</td>
+                            <td>Ahmet Sezgin</td>
+                            <td>Osman Sezgin</td>
+                            <td>180.000 TL</td>
+                            <td>8.000 TL</td>
+                            <td>05.10.2022</td>
+                            <td>
+                                <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Satışı Sil", body="Satışı silmek istediğinize emin misiniz?", id="deleteSale"})
-
+@await Component.InvokeAsync("ActivationModal", new{title = "Satışı Aktif Et", body="Satışı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 <div class="modal fade" id="editSale" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

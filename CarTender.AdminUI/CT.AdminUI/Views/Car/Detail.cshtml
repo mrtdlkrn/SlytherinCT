@@ -3,12 +3,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<div class="container-fuild p-5">
     <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">Araç Detayı</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </h5>
             </div>
             <div id="collapseOne" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
@@ -62,6 +65,46 @@
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete">
                                         <i class="far fa-trash-alt"></i> Sil
                                     </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccard1" aria-expanded="true" aria-controls="ccard1" role="button">Pasif Durumdaki Araç Detayları</a>
+                </h5>
+            </div>
+            <div id="ccard1" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Araç Plaka</th>
+                                <th scope="col">Detay Tipi</th>
+                                <th scope="col">Detay</th>
+                                <th scope="col">Kayıt Tarihi</th>
+                                <th scope="col">Aktif/Pasif</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>48AGK058</td>
+                                <td>Yakıt Tipi</td>
+                                <td>Dizel</td>
+                                <td>21.03.2019</td>
+                                <td class="text-center">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -142,6 +185,36 @@
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCategory">
                                         <i class="far fa-trash-alt"></i> Sil
                                     </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccard2" aria-expanded="true" aria-controls="ccard2" role="button">Pasif Durumdaki Araç Detay Kategorileri</a>
+                </h5>
+            </div>
+            <div id="ccard2" class="collapse collapse p-3 ml-3 mr-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kategori</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Renk</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation2"><i class="far fa-plus"></i> Aktif Et</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -258,12 +331,45 @@
             </div>
         </div>
     </div>
+
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccard3" aria-expanded="true" aria-controls="ccard3" role="button">Pasif Durumdaki Kategori Değerleri</a>
+                </h5>
+            </div>
+            <div id="ccard3" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Araç Detay Değeri</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Siyah</td>
+                                <td>
+                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation3"><i class="far fa-plus"></i> Aktif Et</button>
+                                </td>
+                            </tr>                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Detayı Sil", body="Detay bilgisini silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Kategoriyi Sil", body="Kategoriyi silmek istediğinize emin misiniz?", id="deleteCategory"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Kategori Değerini Sil", body="Kategori değerini silmek istediğinize emin misiniz?", id="deleteCarDetailValue"})
 
+@await Component.InvokeAsync("ActivationModal", new{title = "Detayı Aktif Et", body="Detayı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("ActivationModal", new{title = "Kategoriyi Aktif Et", body="Kategoriyi aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
+@await Component.InvokeAsync("ActivationModal", new{title = "Kategori Değerini Aktif Et", body="Kategori Değerini aktif hale getirmek istediğinize emin misiniz?", id="activation3"})
 
 <div class="modal fade" id="editCarDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

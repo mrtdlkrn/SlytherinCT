@@ -3,15 +3,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">Araç Komisyon Listesi</a>
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarbm1" aria-expanded="true" aria-controls="ccarbm1" role="button">Araç Komisyon Listesi</a>
+                    <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </h5>
             </div>
-            <div style="margin-left:5%;margin-right:5%" id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div style="margin-left:5%;margin-right:5%" id="ccarbm1" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
                 <br />
                 <table class="table table-bordered">
                     <thead>
@@ -60,8 +63,48 @@
             </div>
         </div>
     </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarbm2" aria-expanded="true" aria-controls="ccarbm2" role="button">Pasif Durumdaki Araç Komisyon Listesi</a>
+                </h5>
+            </div>
+            <div style="margin-left:5%;margin-right:5%" id="ccarbm2" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+                <br />
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Komisyon Tutarı</th>
+                            <th scope="col">Açıklama</th>
+                            <th scope="col">Minimum Araç Tutarı</th>
+                            <th scope="col">Maksimum Araç Tutarı</th>
+                            <th scope="col">Başlangıç Tarihi</th>
+                            <th scope="col">Bitiş Tarihi</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>4500</td>
+                            <td>Nakit ödenmiştir</td>
+                            <td>150.000</td>
+                            <td>350.000</td>
+                            <td>01.9.2022</td>
+                            <td>01.10.2022</td>
+                            <td>
+                                <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 
+@await Component.InvokeAsync("ActivationModal", new{title = "Araç Komisyonu'nu Aktif Et", body="Araç Komisyonu bilgisini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Araç Komisyonu'nu Sil", body="Komisyon bilgisini silmek istediğinize emin misiniz?", id="deleteCarCommission"})
 
 <div class="modal fade" id="editCarCommission" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

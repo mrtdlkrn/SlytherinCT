@@ -2,8 +2,8 @@
     ViewData["Title"] = "Komisyon Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="container">
-    <div id="accordion">
+<div class="container-fuild p-5">
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
@@ -41,17 +41,18 @@
             </div>
         </div>
     </div>
-    <br />
-    <br />
-    <div id="accordion">
+
+    <div id="accordion" class="mb-5">
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button"> Komisyon Listesi</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </h5>
             </div>
-            <div style="margin-left:5%;margin-right:5%" id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-                <br />
+            <div id="collapseTwo" class="collapse show p-1" aria-labelledby="headingTwo" data-parent="#accordion">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -99,7 +100,49 @@
             </div>
         </div>
     </div>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccom1" aria-expanded="true" aria-controls="ccom1" role="button">Pasif Durumdaki Komisyon Listesi</a>
+                </h5>
+            </div>
+            <div id="ccom1" class="collapse show p-1" aria-labelledby="headingTwo" data-parent="#accordion">
+                <br />
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Komisyon Numarası</th>
+                            <th scope="col">Komisyon Tutarı</th>
+                            <th scope="col">Komisyon Başlangıç Tarihi</th>
+                            <th scope="col">Komisyon Bitiş Tarihi</th>
+                            <th scope="col">Komisyon Minimum Tutarı</th>
+                            <th scope="col">Komisyon Maximum Tutarı</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Hede</td>
+                            <td>Bidi</td>
+                            <td>Büdü</td>
+                            <td>Hidi</td>
+                            <td>Hüdü</td>
+                            <td>
+                                <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                            </td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Komisyon Sil", body="Komisyonu silmek istediğinize emin misiniz?", id="delete"})
+
+@await Component.InvokeAsync("ActivationModal", new{title = "Komisyon Aktif Et", body="Komisyonu aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 

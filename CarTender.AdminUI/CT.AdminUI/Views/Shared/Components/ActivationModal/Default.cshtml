@@ -1,0 +1,19 @@
+﻿@using CT.AdminUI.Models.ModalDTOs
+@model ModalDTO
+
+<div class="modal fade" id="@Model.ModalID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Model.ModalTitle</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">@Model.ModalBody</div>
+            <div class="modal-footer">
+                <button class="btn btn-success" type="button">Aktif Et</button>
+            </div>
+        </div>
+    </div>
+</div>

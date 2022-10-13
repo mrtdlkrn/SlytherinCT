@@ -22,7 +22,7 @@
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Admin/Index">
                 <div class="sidebar-brand-text mx-3">Admin</div>
             </a>
-            <hr class="sidebar-divider my-0">
+            <li><hr class="sidebar-divider my-0"></li>
 
             <li class="nav-item active">
                 <a class="nav-link" href="/Admin/Index">
@@ -31,178 +31,135 @@
                 </a>
             </li>
 
-            <hr class="sidebar-divider">
+            <li><hr class="sidebar-divider"></li>
 
-            <div class="sidebar-heading">
-                Araç
-            </div>
-            <li class="nav-item">
-                <a class="nav-link" href="/Car/Index">
-                    <i class="fa-solid fa-list"></i>
-                    <span>Araç Listele</span>
+            <li class="nav-item active">
+                <a class="nav-link" asp-controller="Generic"
+                   asp-action="ListItems"
+                   asp-route-modelName="DenemeDTO">
+                    <i class="fa-light fa-car"></i>
+                    <span>Arac Listele - Generic</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Car/Add">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Araç Ekle</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Car/Edit">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Araç Güncelle</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Car/BrandModel">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Marka Model</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Car/Detail">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Detay</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Car/CarDetail">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Araç Parçaları</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Car/CarImage">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Araç Fotoğraf</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Car/CarModification">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Araç Modifiye</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/CarSaleHistory/Index">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Araç Satış Tarihçe</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/CarStatusHistory/Index">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Araç Statü Tarihçe</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Car/CarCommission">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Araç Komisyon</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Car/CarBuyerInformation">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Araç Alıcı Bilgileri</span>
-                </a>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
-            <div class="sidebar-heading">
-                İhale
-            </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="/Bid/ListBid">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>İhale Listele</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse2"
+                   aria-expanded="true" aria-controls="collapse2">
+                    <i class="fas fa-fw fa-car"></i>
+                    <span>Araç</span>
                 </a>
+                <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Araç Sayfaları:</h6>
+                        <a class="collapse-item" href="/Car/Index">Araç Listele</a>
+                        <a class="collapse-item" href="/Car/Add">Araç Ekle</a>
+                        <a class="collapse-item" href="/Car/Edit">Araç Güncelle</a>
+                        <a class="collapse-item" href="/Car/BrandModel">Marka Model</a>
+                        <a class="collapse-item" href="/Car/Detail">Detay</a>
+                        <a class="collapse-item" href="/Car/CarDetail">Araç Parçaları</a>
+                        <a class="collapse-item" href="/Car/CarImage">Araç Fotoğraf</a>
+                        <a class="collapse-item" href="/Car/CarModification">Araç Modifiye</a>
+                        <a class="collapse-item" href="/CarSaleHistory/Index">Araç Satış Tarihçe</a>
+                        <a class="collapse-item" href="/CarStatusHistory/Index">Araç Statü Tarihçe</a>
+                        <a class="collapse-item" href="/Car/CarCommission">Araç Komisyon</a>
+                        <a class="collapse-item" href="/Car/CarBuyerInformation">Araç Alıcı Bilgileri</a>
+                    </div>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Bid/Create">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>İhale Ekle</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Bid/Edit">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>İhale Güncelle</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Bid/BidCorporateUser">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Kurumsal Kullanıcı Teklif</span>
-                </a>
-            </li>
-            <hr class="sidebar-divider">
 
-            <div class="sidebar-heading">
-                Statü
-            </div>
+            <li><hr class="sidebar-divider"></li>
+
             <li class="nav-item">
-                <a class="nav-link" href="/Status/Index">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3"
+                   aria-expanded="true" aria-controls="collapse3">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>İhale</span>
+                </a>
+                <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">İhale Sayfaları:</h6>
+                        <a class="collapse-item" href="/Bid/ListBid">İhale Listele</a>
+                        <a class="collapse-item" href="/Bid/Create">İhale Ekle</a>
+                        <a class="collapse-item" href="/Bid/Edit">İhale Güncelle</a>
+                        <a class="collapse-item" href="/Bid/BidCorporateUser">Kurumsal Kullanıcı Teklif</a>
+                        <a class="collapse-item" href="/Bid/ListBid"></a>
+                        <a class="collapse-item" href="/Bid/ListBid"></a>
+                    </div>
+                </div>
+            </li>
+
+            <li><hr class="sidebar-divider"></li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse4"
+                   aria-expanded="true" aria-controls="collapse4">
+                    <i class="fas fa-fw fa-cog"></i>
                     <span>Statü</span>
                 </a>
+                <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Statü Sayfaları:</h6>
+                        <a class="collapse-item" href="/Status/Index">Statü</a>
+                    </div>
+                </div>
             </li>
-            <hr class="sidebar-divider">
 
-            <div class="sidebar-heading">
-                İlçe
-            </div>
+            <li><hr class="sidebar-divider"></li>
             <li class="nav-item">
-                <a class="nav-link" href="/Town/Index">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse5"
+                   aria-expanded="true" aria-controls="collapse5">
+                    <i class="fas fa-fw fa-cog"></i>
                     <span>İlçe</span>
                 </a>
+                <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">İlçe Sayfaları:</h6>
+                        <a class="collapse-item" href="/Town/Index">İlçe</a>
+                    </div>
+                </div>
             </li>
 
-            <hr class="sidebar-divider">
 
-            <div class="sidebar-heading">
-                Tramer
-            </div>
+            <li><hr class="sidebar-divider"></li>
+
             <li class="nav-item">
-                <a class="nav-link" href="/Tramer/Index">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse6"
+                   aria-expanded="true" aria-controls="collapse6">
+                    <i class="fas fa-fw fa-cog"></i>
                     <span>Tramer</span>
                 </a>
+                <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Tramer Sayfaları:</h6>
+                        <a class="collapse-item" href="/Tramer/Index">Tramer</a>
+                    </div>
+                </div>
             </li>
 
-            <hr class="sidebar-divider">
+            <li><hr class="sidebar-divider"></li>
 
-            <div class="sidebar-heading">
-                Kullanıcı
-            </div>
             <li class="nav-item">
-                <a class="nav-link" href="/User/Index">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Kullanıcılar</span>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse7"
+                   aria-expanded="true" aria-controls="collapse7">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Kullanıcı</span>
                 </a>
+                <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Kullanıcı Sayfaları:</h6>
+                        <a class="collapse-item" href="/User/Index">Kullanıcılar</a>
+                        <a class="collapse-item" href="/User/UserCar">Kullanıcı Araçları</a>
+                        <a class="collapse-item" href="/User/UserFavoriteCar">Kullanıcı Favori Araçları</a>
+                    </div>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/User/UserCar">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Kullanıcı Araçları</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/User/UserFavoriteCar">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Kullanıcı Favori Araçları</span>
-                </a>
-            </li>
-            <hr class="sidebar-divider d-none d-md-block">
+
+            <li><hr class="sidebar-divider d-none d-md-block"></li>
 
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
         </ul>
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -269,15 +226,15 @@
                 </nav>
                 @RenderBody()
             </div>
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2021</span>
-                        </div>
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
                     </div>
-                </footer>
-            </div>
+                </div>
+            </footer>
         </div>
+    </div>
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
@@ -293,7 +250,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                Mevcut oturumunuzu bitirmeye hazırsanız, aşağıdan "Çıkış"ı seçin.
+                    Mevcut oturumunuzu bitirmeye hazırsanız, aşağıdan "Çıkış"ı seçin.
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">İptal</button>
@@ -302,7 +259,7 @@
             </div>
         </div>
     </div>
-   
+
     <script src="~/vendor/jquery/jquery.min.js"></script>
     <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
