@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
 }
 
 <div class="container-fuild p-5">
@@ -9,7 +12,7 @@
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#cmc1" aria-expanded="true" aria-controls="cmc1" role="button">Mesaj içerik Listesi</a>
-                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addMessageContent">
                         <i class="fa fa-plus"></i>
                     </button>
                 </h5>
@@ -80,6 +83,7 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Mesaj İçeriğini Sil", body="Mesaj içeriğini silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Mesaj İçeriğini Aktif Et", body="Mesaj İçeriğini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addMessageContent",modalTitle = "Yeni Mesaj Ekle", Labelstrs = AddModalLblstrs})
 
 <div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

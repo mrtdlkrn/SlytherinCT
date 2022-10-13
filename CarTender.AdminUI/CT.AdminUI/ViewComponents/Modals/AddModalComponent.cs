@@ -8,9 +8,9 @@ namespace CT.AdminUI.ViewComponents.Modals
     [ViewComponent(Name = "AddModal")]
     public class AddModalComponent : ViewComponent
     {
-        public IViewComponentResult Invoke(string ModalID,string modalTitle, List<string> Labelstrs, string SaveBtnStr)
+        public IViewComponentResult Invoke(string ModalID,string modalTitle, List<string> Labelstrs)
         {
-            AddModalDTO dto = new AddModalDTO(ModalID,modalTitle,Labelstrs,SaveBtnStr);
+            AddModalDTO dto = new AddModalDTO(ModalID,modalTitle,Labelstrs);
             return View("Default",dto);
         }
     }
