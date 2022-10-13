@@ -14,7 +14,7 @@ namespace Core.Logging.Log4Net.Layouts
         {
 
         }
-
+        //Gelen text değerini formatladığımız kısım
         public override void Format(TextWriter writer, LoggingEvent loggingEvent)
         {
             var logEvent = new SerializableLogEvent(loggingEvent);

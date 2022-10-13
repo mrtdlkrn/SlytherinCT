@@ -10,5 +10,6 @@ namespace Business.Abstract
         Task<string> Post<DTO>(string requestUrl, DTO dto) where DTO : class;
         Task<bool> Put<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class;       
         Task<bool> Delete(TokenDTO tokenDTO, string requestUrl);
+        void Test(string test);
     }
 }
