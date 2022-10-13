@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <Reference Include="CarTender.FluentValidation">
-      <HintPath>..\..\CarTender.FluentValidation.dll</HintPath>
+      <HintPath>D:\CarTender.FluentValidation.dll</HintPath>
     </Reference>
   </ItemGroup>
 
