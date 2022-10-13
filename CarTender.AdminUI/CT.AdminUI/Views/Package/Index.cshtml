@@ -4,6 +4,10 @@
     List<string> AddModalLblstrs = new List<string>();
     AddModalLblstrs.Add("Sarp");
     AddModalLblstrs.Add("Ahmet");
+
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
 
 <div class="container-fuild p-5">
@@ -31,7 +35,7 @@
                             <tr>
                                 <td>Altın</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editPackage"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
@@ -40,7 +44,7 @@
                             <tr>
                                 <td>Gümüş</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editPackage"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
@@ -49,7 +53,7 @@
                             <tr>
                                 <td>Bronz</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editPackage"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
@@ -61,61 +65,9 @@
             </div>
         </div>
     </div>
-
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Paket Sil", body="Paketi silmek istediğinize emin misiniz?", id="delete"})
-
 @await Component.InvokeAsync("ActivationModal", new{title = "Paket Aktif Et", body="Paketi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-
 @await Component.InvokeAsync("AddModal", new{ModalID = "addPackage",modalTitle = "Yeni Paket Ekle", Labelstrs = AddModalLblstrs})
-
-@*<div class="modal fade" id="addPackage" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Yeni Paket Ekle</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Paket Adını Giriniz:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Kaydet</button>
-            </div>
-        </div>
-    </div>
-</div>*@
-
-<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Paket Güncelle</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Paket Adını Giriniz:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                <button type="button" class="btn btn-warning">Güncelle</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+@await Component.InvokeAsync("EditModal", new {modalID="editPackage", modalTitle="Paket Güncelle",labelStrs=tempList})

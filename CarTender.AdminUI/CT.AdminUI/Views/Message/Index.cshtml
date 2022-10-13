@@ -5,6 +5,9 @@
     AddModalLblstrs.Add("Sarp");
     AddModalLblstrs.Add("Ahmet");
 
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
 
 <div class="container-fuild p-5">
@@ -40,7 +43,7 @@
                                 <td>Aktif</td>
                                 <td>v1</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editMessage"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
@@ -56,35 +59,4 @@
 @await Component.InvokeAsync("DeleteModal", new{title = "Mesajı Sil", body="Mesajı silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Mesajı Aktif Et", body="Mesajı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("AddModal", new{ModalID = "addMessage",modalTitle = "Yeni Mesaj Ekle", Labelstrs = AddModalLblstrs})
-
-<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Mesajı Güncelle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Aktif/Pasif:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Versiyon:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
-        </div>
-    </div>
-</div>
-
-
-
+@await Component.InvokeAsync("EditModal", new {modalID="editMessage", modalTitle="Mesajı Güncelle",labelStrs=tempList})

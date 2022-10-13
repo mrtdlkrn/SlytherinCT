@@ -149,7 +149,7 @@ namespace CT.AdminUI.Controllers
             return View();
         }
 
-        [HttpGet("Detail/{id}")]
+        //[HttpGet("Detail/{id}")]
         public async Task<IActionResult> Detail(Guid id)
         {
             TokenDTO tokenDTO = new TokenDTO();
@@ -159,7 +159,7 @@ namespace CT.AdminUI.Controllers
         }
 
         // Car Detail
-        [HttpGet("CarDetail")]
+        //[HttpGet("CarDetail")]
         public async Task<IActionResult> CarDetail()
         {
             TokenDTO tokenDTO = new TokenDTO();
@@ -169,7 +169,7 @@ namespace CT.AdminUI.Controllers
         }
 
         // Car Image
-        [HttpGet("CarImage/{id}")]
+        //[HttpGet("CarImage/{id}")]
         public async Task<IActionResult> CarImage(string plate)
         {
             TokenDTO tokenDTO = new TokenDTO();
@@ -179,7 +179,7 @@ namespace CT.AdminUI.Controllers
         }
 
         // Car Modification
-        [HttpGet("CarModification/{id}")]
+        //[HttpGet("CarModification/{id}")]
         public async Task<IActionResult> CarModification(Guid id)
         {
             TokenDTO tokenDTO = new TokenDTO();
@@ -189,7 +189,7 @@ namespace CT.AdminUI.Controllers
         }
 
         // Car Commission
-        [HttpGet("CarCommission/{id}")]
+        //[HttpGet("CarCommission/{id}")]
         public async Task<IActionResult> CarCommission(Guid id)
         {
             TokenDTO tokenDTO = new TokenDTO();
@@ -199,7 +199,8 @@ namespace CT.AdminUI.Controllers
         }
 
         // Car Buyer Information
-        [HttpGet("CarBuyerInformation/{id}")]
+        //[HttpGet("CarBuyerInformation/{id}")]
+        [HttpGet]
         public async Task<IActionResult> CarBuyerInformation(Guid id)
         {
             TokenDTO tokenDTO = new TokenDTO();

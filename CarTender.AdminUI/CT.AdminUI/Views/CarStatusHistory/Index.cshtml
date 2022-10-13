@@ -6,6 +6,9 @@
     AddModalLblstrs.Add("Sarp");
     AddModalLblstrs.Add("Ahmet");
 
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
 
 <div class="container-fuild p-5">
@@ -78,134 +81,6 @@
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Statü Bilgisini Sil", body="Statü bilgisini silmek istediğinize emin misiniz?", id="deleteStatus"})
-
 @await Component.InvokeAsync("ActivationModal", new{title = "Statü Bilgisini Aktif Et", body="Statü bilgisini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-
 @await Component.InvokeAsync("AddModal", new{ModalID = "addCarStatus",modalTitle = "Yeni Statü Tarihçe Ekle", Labelstrs = AddModalLblstrs})
-
-<div class="modal fade" id="editStatus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Statüyü Güncelle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#editStatus').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Statü:</label>
-                        </div>
-                        <select class="custom-select col-md-12" id="inputGroupSelect01">
-                            <option value="1" selected>Satışta</option>
-                            <option value="2">İhalede</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Ekleyen:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Ekleme Tarihi:</label>
-                        </div>
-                        <input type="date" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Düzenleyen:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Düzenleme Tarihi:</label>
-                        </div>
-                        <input type="date" value="" class="form-control col-md-12" />
-
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button">Kaydet</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-@*<div class="modal fade" id="addStatus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Satış Ekle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#addStatus').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Araç Plaka:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Statü:</label>
-                        </div>
-                        <select class="custom-select col-md-12" id="inputGroupSelect01">
-                            <option value="1" selected>Satışta</option>
-                            <option value="2">İhalede</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Ekleyen:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Ekleme Tarihi:</label>
-                        </div>
-                        <input type="date" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-success" type="button">Ekle</button>
-            </div>
-        </div>
-    </div>
-</div>*@
+@await Component.InvokeAsync("EditModal", new {modalID="editStatus", modalTitle="Statü Güncelle",labelStrs=tempList})

@@ -4,6 +4,11 @@
     List<string> tempList = new List<string>();
     tempList.Add("hede:");
     tempList.Add("bidi:");
+
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
+
 }
 
 <div class="container-fuild p-5">
@@ -12,7 +17,7 @@
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#cbidcsh1" aria-expanded="true" aria-controls="cbidcsh1" role="button">İhale Statü Geçmişi</a>
-                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#add">
                         <i class="fa fa-plus"></i>
                     </button>
                 </h5>
@@ -56,3 +61,4 @@
 @await Component.InvokeAsync("DeleteModal", new{title = "Teklif Sil", body="Teklif bilgisini silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Mahalle Aktif Et", body="Mahalleyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("EditModal", new {modalID="editBid4", modalTitle="İhale Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Statü Ekle", Labelstrs = AddModalLblstrs})

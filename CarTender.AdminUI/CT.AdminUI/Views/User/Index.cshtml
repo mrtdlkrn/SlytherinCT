@@ -4,6 +4,10 @@
     List<string> AddModalLblstrs = new List<string>();
     AddModalLblstrs.Add("Sarp");
     AddModalLblstrs.Add("Ahmet");
+
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
 
 <div class="container-fuild p-5">
@@ -20,7 +24,7 @@
 
             <div id="collapseOne" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <div>
+                    <div class="mb-3">
                         <a class="btn btn-success" data-toggle="modal" data-target="#addStatus" href="#"><i class="fa-solid fa-plus"></i> Onaylı Kullanıcıları Göster</a>
                         <a class="btn btn-warning" data-toggle="modal" data-target="#addStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Onay Bekleyen Kullanıcıları Göster</a>
 
@@ -41,6 +45,7 @@
                                 <th scope="col">Kayıt Tarihi</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,7 +62,10 @@
                                 <td>Admin</td>
                                 <td>05.10.2022</td>
                                 <td>
-                                    <a class="btn btn-info" data-toggle="modal" data-target="#editUser" href="#"><i class="fa-solid fa-circle-info"></i> Detay</a>
+                                    <a class="btn btn-info" data-toggle="modal" data-target="#" href="#"><i class="fa-solid fa-circle-info"></i> Detay</a>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editUser"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
@@ -76,7 +84,10 @@
                                 <td></td>
                                 <td>05.10.2022</td>
                                 <td>
-                                    <a class="btn btn-info" data-toggle="modal" data-target="#editUser" href="#"><i class="fa-solid fa-circle-info"></i> Detay</a>
+                                    <a class="btn btn-info" data-toggle="modal" data-target="#" href="#"><i class="fa-solid fa-circle-info"></i> Detay</a>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editUser"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
@@ -93,187 +104,7 @@
 @await Component.InvokeAsync("DeleteModal", new{title = "Kullanıcı Sil", body="Kullanıcıyı silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Kullanıcı Aktif Et", body="Kullanıcıyı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("AddModal", new{ModalID = "addUser",modalTitle = "Yeni Kullanıcı Ekle", Labelstrs = AddModalLblstrs})
-
-<div class="modal" id="editUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Kullanıcı Detay</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Kullanıcı Adı:</label>
-                        </div>
-                        <input disabled type="text" value="ahmetosmn" class="form-control editable" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Ad Soyad:</label>
-                        </div>
-                        <input disabled type="text" value="Ahmet Osman Sezgin" class="form-control editable" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Telefon:</label>
-                        </div>
-                        <input disabled type="text" value="5054545151351" class="form-control editable" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">E-posta:</label>
-                        </div>
-                        <input disabled type="email" value="ahmet@sezgin.com" class="form-control editable" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Kullanıcı Türü:</label>
-                        </div>
-                        <select disabled class="form-control editable" id="cmp13">
-                            <option selected>Bireysel</option>
-                            <option>Kurumsal</option>
-                        </select>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">E-Posta onayı var mı?:</label>
-                        </div>
-                        <input type="checkbox" disabled checked class="form-control" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Admin onayı var mı?:</label>
-                        </div>
-                        <input type="checkbox" disabled checked class="form-control editable" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">KVKK onayı var mı?:</label>
-                        </div>
-                        <input type="checkbox" disabled checked class="form-control" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
-                        </div>
-                        <textarea readonly class="form-control editable"></textarea>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Ekleyen:</label>
-                        </div>
-                        <input type="text" disabled value="Admin" class="form-control" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Kayıt Tarihi:</label>
-                        </div>
-                        <input type="datetime" disabled value="05/10/2022" class="form-control" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" onclick="EnableComponents()">Düzenle</button>
-
-                <button class="btn btn-primary" type="button">Kaydet</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-@*<div class="modal" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel5" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Kullanıcı Ekle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Kullanıcı Adı:</label>
-                        </div>
-                        <input type="text" value="" class="form-control" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Ad Soyad:</label>
-                        </div>
-                        <input type="text" value="" class="form-control" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Telefon:</label>
-                        </div>
-                        <input type="text" value="" class="form-control" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">E-posta:</label>
-                        </div>
-                        <input type="email" value="" class="form-control" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Kullanıcı Türü:</label>
-                    </div>
-                    <select class="form-control" id="cmp13">
-                        <option selected>Bireysel</option>
-                        <option>Kurumsal</option>
-                    </select>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">E-Posta onayı var mı?:</label>
-                        </div>
-                        <input type="checkbox" disabled class="form-control" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Admin onayı var mı?:</label>
-                        </div>
-                        <input type="checkbox" disabled class="form-control" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">KVKK onayı var mı?:</label>
-                        </div>
-                        <input type="checkbox" disabled class="form-control" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
-                        </div>
-                        <textarea class="form-control"></textarea>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Ekleyen:</label>
-                        </div>
-                        <input type="text" readonly value="Current Admin" class="form-control" />
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Kayıt Tarihi:</label>
-                        </div>
-                        <input type="datetime" readonly value="06/10/2022" class="form-control" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-success" type="button">Ekle</button>
-            </div>
-        </div>
-    </div>
-</div>*@
-
+@await Component.InvokeAsync("EditModal", new {modalID="editUser", modalTitle="Kullanıcı Güncelle",labelStrs=tempList})
 
 <script type="text/javascript">
     function EnableComponents() {
