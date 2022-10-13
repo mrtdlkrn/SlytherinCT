@@ -1,6 +1,13 @@
-﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
-<div class="container">
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
+}
+
+<div class="container-fuild p-5">
     <div id="accordion">
         <div class="card">
             <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -16,7 +23,7 @@
 
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
 
-                    <div>
+                    <div class="mb-3">
                         <a class="btn btn-success" href="/Advert/Index/"><i class="fa-solid fa-plus"></i> Yeni İlan Ekle</a>
                     </div>
 
@@ -40,7 +47,7 @@
                                 <td>100.000 TL</td>
                                 <td>Eski</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAdvert"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAdvert"><i class="far fa-trash-alt"></i> Sil</button>
@@ -53,7 +60,7 @@
                                 <td>200.000 TL</td>
                                 <td>Yeni</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAdvert"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAdvert"><i class="far fa-trash-alt"></i> Sil</button>
@@ -68,48 +75,4 @@
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "İlan Sil", body="İlanı silmek istediğinize emin misiniz?", id="deleteAdvert"})
-
-<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">İlanları Güncelle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Başlık:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-4">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
-                    <input type="text" class="form-control" />
-                    <div class="input-group-append">
-                        <span class="input-group-text">TL</span>
-                        <span class="input-group-text">0.00</span>
-                    </div>
-                </div>
-                <div class="input-group mb-4">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Fiyat Bilgisi:</span>
-                    <input type="text" class="form-control" />
-                    <div class="input-group-append">
-                        <span class="input-group-text">TL</span>
-                        <span class="input-group-text">0.00</span>
-                    </div>
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
-        </div>
-    </div>
-</div>
-
+@await Component.InvokeAsync("EditModal", new {modalID="editAdvert", modalTitle="İlan Güncelle",labelStrs=tempList})

@@ -1,5 +1,15 @@
-﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
+
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
+}
 <div class="container-fuild p-5">
     <div id="accordion" class="mb-5">
         <div class="card">
@@ -33,7 +43,7 @@
                                 <td>05.10.2022</td>
                                 <td>Sarp</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAdvert"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAdvertStatus"><i class="far fa-trash-alt"></i> Sil</button>
@@ -46,7 +56,7 @@
                                 <td>06.10.2022</td>
                                 <td>Ahmet</td>
                                 <td>
-                                    <a class="btn btn-warning" data-toggle="modal" data-target="#editStatus" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i>    Güncelle</a>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAdvert"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAdvertStatus"><i class="far fa-trash-alt"></i> Sil</button>
@@ -58,157 +68,9 @@
             </div>
         </div>
     </div>
-
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#cadvertsh2" aria-expanded="true" aria-controls="cadvertsh2" role="button">Pasif Durumdaki Statü Geçmişleri</a>
-                </h5>
-            </div>
-            <div id="cadvertsh2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">İlan Bilgileri</th>
-                                <th scope="col">Statü</th>
-                                <th scope="col">Açıklama</th>
-                                <th scope="col">Güncellenme Tarihi</th>
-                                <th scope="col">Güncelleyen Kişi</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>İlanlar</td>
-                                <td>Satışta</td>
-                                <td>Yeni</td>
-                                <td>05.10.2022</td>
-                                <td>Sarp</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>İlanlar</td>
-                                <td>Satışta</td>
-                                <td>Yeni</td>
-                                <td>05.10.2022</td>
-                                <td>Sarp</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>İlanlar</td>
-                                <td>Satışta</td>
-                                <td>Yeni</td>
-                                <td>05.10.2022</td>
-                                <td>Sarp</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            </tr>                         
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "İlan Statüsü Geçmişi Sil", body="İlan statü bilgisini silmek istediğinize emin misiniz?", id="deleteAdvertStatus"})
 @await Component.InvokeAsync("ActivationModal", new{title = "İlan Statü Aktif Et", body="Statüyü aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">İlan Statüleri Güncelle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">İlan Bilgileri:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Statü:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Güncelleme Tarihi:</label>
-                    </div>
-                    <input type="date" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Güncelleyen Kişi:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="addStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">İlan Statüleri Ekle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">İlan Bilgileri:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Statü:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Güncelleme Tarihi:</label>
-                    </div>
-                    <input type="date" value="" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-4">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Güncelleyen Kişi:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Ekle</button></div>
-        </div>
-    </div>
-</div>
-
+@await Component.InvokeAsync("EditModal", new {modalID="editAdvert", modalTitle="İlan Statü Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addStatus",modalTitle = "İlan Statü Ekle", Labelstrs = AddModalLblstrs})

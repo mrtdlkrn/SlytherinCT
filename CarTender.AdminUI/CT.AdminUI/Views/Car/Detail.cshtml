@@ -1,6 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Araç Detay";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
+
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
 }
 
 <div class="container-fuild p-5">
@@ -9,9 +17,6 @@
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">Araç Detayı</a>
-                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#">
-                        <i class="fa fa-plus"></i>
-                    </button>
                 </h5>
             </div>
             <div id="collapseOne" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
@@ -25,6 +30,7 @@
                                 <th scope="col">Kayıt Tarihi</th>
                                 <th scope="col">Aktif/Pasif</th>
                                 <th scope="col">Detaylar</th>
+                                <th scope="col">Güncelle</th>
                                 <th scope="col">Sil</th>
                             </tr>
                         </thead>
@@ -41,6 +47,9 @@
                                     <button type="button" class="btn btn-info" id="myInput" data-bs-toggle="modal" data-bs-target="#detail">
                                         <i class="fa-solid fa-circle-info"></i> Detay
                                     </button>
+                                </td>
+                                <td>
+                                    <a class="btn btn-warning" href="/Car/Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete">
@@ -62,49 +71,12 @@
                                     </button>
                                 </td>
                                 <td>
+                                    <a class="btn btn-warning" href="/Car/Edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
+                                </td>
+                                <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete">
                                         <i class="far fa-trash-alt"></i> Sil
                                     </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="accordion" class="mb-5">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccard1" aria-expanded="true" aria-controls="ccard1" role="button">Pasif Durumdaki Araç Detayları</a>
-                </h5>
-            </div>
-            <div id="ccard1" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Araç Plaka</th>
-                                <th scope="col">Detay Tipi</th>
-                                <th scope="col">Detay</th>
-                                <th scope="col">Kayıt Tarihi</th>
-                                <th scope="col">Aktif/Pasif</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>48AGK058</td>
-                                <td>Yakıt Tipi</td>
-                                <td>Dizel</td>
-                                <td>21.03.2019</td>
-                                <td class="text-center">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -152,7 +124,7 @@
                                 <td>Motor Yakıt Türü</td>
                                 <td>
                                     <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetail">
-                                        Güncelle
+                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
                                     </button>
                                 </td>
                                 <td>
@@ -165,7 +137,7 @@
                                 <td>Vites Türü</td>
                                 <td>
                                     <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetail">
-                                        Güncelle
+                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
                                     </button>
                                 </td>
                                 <td>
@@ -178,7 +150,7 @@
                                 <td>Kasa Tipi</td>
                                 <td>
                                     <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarDetail">
-                                        Güncelle
+                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
                                     </button>
                                 </td>
                                 <td>
@@ -194,37 +166,7 @@
         </div>
     </div>
 
-    <div id="accordion" class="mb-5">
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccard2" aria-expanded="true" aria-controls="ccard2" role="button">Pasif Durumdaki Araç Detay Kategorileri</a>
-                </h5>
-            </div>
-            <div id="ccard2" class="collapse collapse p-3 ml-3 mr-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Kategori</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Renk</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation2"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="accordion" class="mb-5">
+    <div id="accordion">
         <div class="card">
             <div class="card-header" id="headingThree">
                 <h5 class="mb-0">
@@ -331,369 +273,18 @@
             </div>
         </div>
     </div>
-
-    <div id="accordion" class="mb-5">
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccard3" aria-expanded="true" aria-controls="ccard3" role="button">Pasif Durumdaki Kategori Değerleri</a>
-                </h5>
-            </div>
-            <div id="ccard3" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Araç Detay Değeri</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Siyah</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation3"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            </tr>                           
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Detayı Sil", body="Detay bilgisini silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Kategoriyi Sil", body="Kategoriyi silmek istediğinize emin misiniz?", id="deleteCategory"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Kategori Değerini Sil", body="Kategori değerini silmek istediğinize emin misiniz?", id="deleteCarDetailValue"})
-
 @await Component.InvokeAsync("ActivationModal", new{title = "Detayı Aktif Et", body="Detayı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Kategoriyi Aktif Et", body="Kategoriyi aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Kategori Değerini Aktif Et", body="Kategori Değerini aktif hale getirmek istediğinize emin misiniz?", id="activation3"})
-
-<div class="modal fade" id="editCarDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Araç Detayını Güncelle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Araç Detayı Giriniz:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-danger" type="button">Kaydet</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="addCarDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Araç Detayı Ekle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Araç Detayı Giriniz:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-danger" type="button">Ekle</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="deleteCarDetailValue" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Araç Detay Değerini Sil</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">Silmek istediğinize emin misiniz?</div>
-            <div class="modal-footer"><button class="btn btn-danger" type="button">Sil</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="editCarDetailValue" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Araç Detay Değerini Güncelle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Araç Detay Değeri Giriniz:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-danger" type="button">Kaydet</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="addCarDetailValue" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Araç Detay Değeri Ekle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Araç Detayı:</label>
-
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option value="1" selected>Renk</option>
-                        <option value="2">Motor Yakıt Türü</option>
-                        <option value="3">Vites Türü</option>
-                        <option value="4">Kasa Tipi</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 mt-3">
-
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Araç Detay Değeri Giriniz:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-danger" type="button">Ekle</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="detail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tramer Detay</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sağ Arka Çamurluk:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp1">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sağ Ön Çamurluk:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp2">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sağ Arka Kapı:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp3">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sağ Ön Kapı:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp4">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sol Arka Çamurluk:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp5">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sol Ön Çamurluk:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp6">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sol Arka Kapı:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp7">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Sol Ön Kapı:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp8">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Tavan:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp9">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Arka Kaput:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp10">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Motor Kaputu:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp11">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Ön Tampon:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp12">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Arka Tampon:</label>
-                    </div>
-                    <select disabled class="form-control col-md-12" id="cmp13">
-                        <option selected>Orjinal</option>
-                        <option>Boyalı</option>
-                        <option>Değişmiş</option>
-                    </select>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div>
-                    <button class="btn btn-secondary" type="button">Geçmiş</button>
-                </div>
-                <div>
-                    <button class="btn btn-info" onclick="EnableComponents()" type="button">Düzenle</button>
-                    <button class="btn btn-primary" type="button">Kaydet</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="editCmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tramer Bileşen Detay</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Bileşen Adı:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-8" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button">Kaydet</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="addCmp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tramer Bileşeni Ekle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Bileşen Adı:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-8" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-success" type="button">Ekle</button>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("EditModal", new {modalID="editCarDetail", modalTitle="Kategoriyi Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("EditModal", new {modalID="editCarDetailValue", modalTitle="Kategori Değerini Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarDetail",modalTitle = "Kategori Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarDetailValue",modalTitle = "Kategori Değeri Ekle", Labelstrs = AddModalLblstrs})
 
 <div class="modal fade" id="statusHistory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

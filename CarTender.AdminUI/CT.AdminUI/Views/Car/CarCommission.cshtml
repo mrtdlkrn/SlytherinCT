@@ -1,6 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Araç Komisyon";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
+
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
 }
 
 <div class="container-fuild p-5">
@@ -9,7 +16,7 @@
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#ccarbm1" aria-expanded="true" aria-controls="ccarbm1" role="button">Araç Komisyon Listesi</a>
-                    <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#add">
                         <i class="fa fa-plus"></i>
                     </button>
                 </h5>
@@ -38,7 +45,7 @@
                             <td>01.10.2022</td>
                             <td>01.11.2022</td>
                             <td>
-                                <a class="btn btn-warning" data-toggle="modal" data-target="#editCarCommission" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
+                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarCommission"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarCommission"><i class="far fa-trash-alt"></i> Sil</button>
@@ -52,49 +59,10 @@
                             <td>01.9.2022</td>
                             <td>01.10.2022</td>
                             <td>
-                                <a class="btn btn-warning" data-toggle="modal" data-target="#editCarCommission" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
+                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCarCommission"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCarCommission"><i class="far fa-trash-alt"></i> Sil</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarbm2" aria-expanded="true" aria-controls="ccarbm2" role="button">Pasif Durumdaki Araç Komisyon Listesi</a>
-                </h5>
-            </div>
-            <div style="margin-left:5%;margin-right:5%" id="ccarbm2" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
-                <br />
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">Komisyon Tutarı</th>
-                            <th scope="col">Açıklama</th>
-                            <th scope="col">Minimum Araç Tutarı</th>
-                            <th scope="col">Maksimum Araç Tutarı</th>
-                            <th scope="col">Başlangıç Tarihi</th>
-                            <th scope="col">Bitiş Tarihi</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>4500</td>
-                            <td>Nakit ödenmiştir</td>
-                            <td>150.000</td>
-                            <td>350.000</td>
-                            <td>01.9.2022</td>
-                            <td>01.10.2022</td>
-                            <td>
-                                <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
                             </td>
                         </tr>
                     </tbody>
@@ -106,25 +74,5 @@
 
 @await Component.InvokeAsync("ActivationModal", new{title = "Araç Komisyonu'nu Aktif Et", body="Araç Komisyonu bilgisini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Araç Komisyonu'nu Sil", body="Komisyon bilgisini silmek istediğinize emin misiniz?", id="deleteCarCommission"})
-
-<div class="modal fade" id="editCarCommission" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Araç Komisyonu'nu Güncelle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Aktif/Pasif:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("EditModal", new {modalID="editCarCommission", modalTitle="Komisyon Bilgisini Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Komisyon Bilgisi Ekle", Labelstrs = AddModalLblstrs})

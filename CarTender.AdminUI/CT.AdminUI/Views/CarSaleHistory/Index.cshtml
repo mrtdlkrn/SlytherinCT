@@ -1,6 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
+
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
 <div class="container-fuild p-5">
     <div id="accordion" class="mb-5">
@@ -65,150 +72,9 @@
             </div>
         </div>
     </div>
-
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#ccarsaleh2" aria-expanded="true" aria-controls="ccarsaleh2" role="button">Pasif Durumdaki Araç Satışlar</a>
-                </h5>
-            </div>
-            <div id="ccarsaleh2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <table style="text-align:center;" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">Araç Plaka</th>
-                            <th scope="col">Satıcı</th>
-                            <th scope="col">Alıcı</th>
-                            <th scope="col">Satış Fiyatı</th>
-                            <th scope="col">Komisyon</th>
-                            <th scope="col">Satış Tarihi</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>16 E 16</td>
-                            <td>Ahmet Sezgin</td>
-                            <td>Osman Sezgin</td>
-                            <td>180.000 TL</td>
-                            <td>8.000 TL</td>
-                            <td>05.10.2022</td>
-                            <td>
-                                <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 </div>
 
-@await Component.InvokeAsync("DeleteModal", new{title = "Satışı Sil", body="Satışı silmek istediğinize emin misiniz?", id="deleteSale"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Satışı Aktif Et", body="Satışı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-<div class="modal fade" id="editSale" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Satışı Güncelle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#editSale').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Satış Fiyatı:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Komisyon:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect02">Satış Tarihi:</label>
-                        </div>
-                        <input type="date" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button">Kaydet</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="addSale" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Satış Ekle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#addSale').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Araç Plakası:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Satıcı Mail:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect02">Alıcı Mail:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect02">Satış Fiyatı:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect02">Komisyon:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect02">Satış Tarihi:</label>
-                        </div>
-                        <input type="date" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-success" type="button">Ekle</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+@await Component.InvokeAsync("DeleteModal", new{title = "Satışı Sil", body="Satışı silmek istediğinize emin misiniz?", id="deleteSale"})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addSale",modalTitle = "Yeni Satış Tarihçe Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("EditModal", new {modalID="editSale", modalTitle="Satışı Güncelle",labelStrs=tempList})

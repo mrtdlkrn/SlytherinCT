@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace CarTender.FluentValidation.DAL.CombineDAL.Car
 {
-    public class CombineAddOrEditVecihleDAL : AbstractValidator<CombineAddOrEditVehicleDTO>
+    public class CombineAddOrEditVehicleDAL : AbstractValidator<CombineAddOrEditVehicleDTO>
     {
-        public CombineAddOrEditVecihleDAL()
+        public CombineAddOrEditVehicleDAL()
         {
-            #region Admin and User Add Vecihle Page
+            #region Admin and User Add Vehicle Page
             //Combined tier is for public domain fields on both admin side and User side
 
-            #region Vechile Price
+            #region Vehicle Price
 
             RuleFor(x => x.VehiclePrice)
                 .Cascade(CascadeMode.StopOnFirstFailure)
@@ -75,7 +75,7 @@ namespace CarTender.FluentValidation.DAL.CombineDAL.Car
 
             #endregion
 
-            #region VecihleBrand
+            #region VehicleBrand
 
             RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.VehicleBrand)
                 .Cascade(CascadeMode.StopOnFirstFailure)
@@ -84,7 +84,7 @@ namespace CarTender.FluentValidation.DAL.CombineDAL.Car
 
             #endregion
 
-            #region VecihleModel
+            #region VehicleModel
 
             RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.VehicleModel)
                 .Cascade(CascadeMode.StopOnFirstFailure)

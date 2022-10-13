@@ -1,6 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
+
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
+
 }
 
 <div class="container-fuild p-5">
@@ -9,7 +17,7 @@
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#cbidcsh1" aria-expanded="true" aria-controls="cbidcsh1" role="button">İhale Statü Geçmişi</a>
-                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#add">
                         <i class="fa fa-plus"></i>
                     </button>
                 </h5>
@@ -24,44 +32,7 @@
                                 <th scope="col">Statu</th>
                                 <th scope="col">Aktif/Pasif</th>
                                 <th scope="col">Versiyon</th>
-                                <th scope="col">Sil</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>bilgi bilgi bilgi</td>
-                                <td>kedi</td>
-                                <td>XXXXXXXXXXXX</td>
-                                <td>Aktif</td>
-                                <td>V2</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="accordion" class="mb-5">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#cbidcsh2" aria-expanded="true" aria-controls="cbidcsh2" role="button">Pasif Durumdaki İhale Statü Geçmişleri</a>
-                </h5>
-            </div>
-            <div id="cbidcsh2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Bilgi</th>
-                                <th scope="col">Teklif Adı</th>
-                                <th scope="col">Statu</th>
-                                <th scope="col">Aktif/Pasif</th>
-                                <th scope="col">Versiyon</th>
+                                <th scope="col"></th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
@@ -73,7 +44,10 @@
                                 <td>Aktif</td>
                                 <td>V2</td>
                                 <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBid4"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -86,3 +60,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Teklif Sil", body="Teklif bilgisini silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Mahalle Aktif Et", body="Mahalleyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
+@await Component.InvokeAsync("EditModal", new {modalID="editBid4", modalTitle="İhale Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Statü Ekle", Labelstrs = AddModalLblstrs})

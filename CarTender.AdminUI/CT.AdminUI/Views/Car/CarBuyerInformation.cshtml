@@ -1,6 +1,13 @@
 ﻿@{
     ViewData["Title"] = "CarBuyerInformation";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
+
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
 
 <div class="container-fuild p-5">
@@ -56,149 +63,9 @@
             </div>
         </div>
     </div>
-
-    <div id="accordion" class="mb-5">
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseThree2" aria-expanded="true" aria-controls="collapseThree2" role="button">Pasif Durumdaki Araç - Alıcı Bilgileri</a>      
-                </h5>
-            </div>
-
-            <div id="collapseThree2" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Araç Plaka</th>
-                                <th scope="col">Alıcı Bilgisi</th>
-                                <th scope="col">Fiyat</th>
-                                <th scope="col">Açıklama</th>
-                                <th scope="col">Kaydeden</th>
-                                <th scope="col">Kayıt Tarihi</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>16 E 161</td>
-                                <td>Ahmet</td>
-                                <td>200.000</td>
-                                <td></td>
-                                <td></td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Araç Alıcı Bilgilerini Sil", body="Alıcı bilgilerini silmek istediğinize emin misiniz?", id="deleteCarBuyerInformation"})
-
 @await Component.InvokeAsync("ActivationModal", new{title = "Araç Alıcı Bilgilerini Aktif Et", body="Araç Alıcı Bilgilerini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-
-<div class="modal fade" id="editCarBuyerInformation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Araç Alıcı Bilgileri Güncelle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#editCmp').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Araç Plaka:</label>
-                        </div>
-                        <input type="text" value="16 E 161" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Alıcı Bilgisi:</label>
-                        </div>
-                        <input type="text" value="Ahmet" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Fiyat:</label>
-                        </div>
-                        <input type="text" value="200.000" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="button">Kaydet</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="addCarBuyerInformation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel5" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Araç Alıcı Bilgileri Ekle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#addCmp').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body col-md-12">
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Araç Plaka:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Alıcı Bilgisi:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Fiyat:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-                <div class="input-group mb-3 col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Açıklama:</label>
-                        </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-success" type="button">Ekle</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarBuyerInformation",modalTitle = "Araç Alıcı Bilgisi Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("EditModal", new {modalID="editCarBuyerInformation", modalTitle="Araç Alıcı Bilgisi Güncelle",labelStrs=tempList})

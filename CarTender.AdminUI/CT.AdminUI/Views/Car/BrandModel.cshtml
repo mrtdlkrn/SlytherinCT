@@ -1,6 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Marka Model";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> AddModalLblstrs = new List<string>();
+    AddModalLblstrs.Add("Sarp");
+    AddModalLblstrs.Add("Ahmet");
+
+    List<string> tempList = new List<string>();
+    tempList.Add("hede:");
+    tempList.Add("bidi:");
 }
 
 <div class="container-fuild p-5">
@@ -44,9 +51,7 @@
                             <tr>
                                 <td>Fiat</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
@@ -57,9 +62,7 @@
                             <tr>
                                 <td>Opel</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
-                                    </button>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
@@ -70,9 +73,7 @@
                             <tr>
                                 <td>BMW</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
-                                    </button>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
@@ -83,9 +84,7 @@
                             <tr>
                                 <td>Renault</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
-                                    </button>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
@@ -93,50 +92,6 @@
                                     </button>
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne22" aria-expanded="true" aria-controls="collapseOne22" role="button">Pasif Durumdaki Marka Listesi</a>
-                </h5>
-            </div>
-
-            <div id="collapseOne22" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Marka:</label>
-                            </div>
-                            <input class="form-control" type="text" />
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Marka Adı</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Fiat</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            </tr>                          
                         </tbody>
                     </table>
                 </div>
@@ -197,9 +152,7 @@
                             <tr>
                                 <td>Egea</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
@@ -210,9 +163,7 @@
                             <tr>
                                 <td>Linea</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
-                                    </button>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
@@ -223,9 +174,7 @@
                             <tr>
                                 <td>Doblo</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
-                                    </button>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
@@ -236,9 +185,7 @@
                             <tr>
                                 <td>500</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
-                                    </button>
+                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
@@ -252,159 +199,13 @@
             </div>
         </div>
     </div>
-
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne222" aria-expanded="true" aria-controls="collapseOne222" role="button">Pasif Durumdaki Model Listesi</a>
-                </h5>
-            </div>
-
-            <div id="collapseOne222" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Model:</label>
-                            </div>
-                            <input class="form-control" type="text" />
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Model Adı</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Egea</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" id="myInput" data-bs-toggle="modal" data-bs-target="#activation2"><i class="far fa-plus"></i> Aktif Et</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="editBrand" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Marka Güncelle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Yeni Marka Adı:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-12" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="button">Kaydet</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="addBrand" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Marka Ekle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Marka Giriniz:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-12" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-success" type="button"><i class="fa-solid fa-plus"></i> Ekle</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="editModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Model Güncelle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Marka Seçiniz:</label>
-                    </div>
-                    <select class="custom-select col-md-12" id="inputGroupSelect01">
-                        <option value="1" selected>Fiat</option>
-                        <option value="2">Opel</option>
-                        <option value="3">BMW</option>
-                        <option value="4">Renault</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Yeni Model Adı:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-12" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="button">Kaydet</button></div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="addModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Model Ekle</h5>
-                <button type="button" class="btn-close btn-circle btn-sm btn-dark" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Marka Seçiniz:</label>
-                    </div>
-                    <select class="custom-select col-md-12" id="inputGroupSelect01">
-                        <option value="1" selected>Fiat</option>
-                        <option value="2">Opel</option>
-                        <option value="3">BMW</option>
-                        <option value="4">Renault</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Model Adı Giriniz:</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-12" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-success" type="button">Ekle</button></div>
-        </div>
-    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Modeli Sil", body="Modeli silmek istediğinize emin misiniz?", id="deleteModel"})
-
 @await Component.InvokeAsync("DeleteModal", new{title = "Markayı Sil", body="Markayı silmek istediğinize emin misiniz?", id="deleteBrand"})
-
 @await Component.InvokeAsync("ActivationModal", new{title = "Marka Aktif Et", body="Markayı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Model Aktif Et", body="Model, aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addBrand",modalTitle = "Yeni Marka Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addModel",modalTitle = "Yeni Model Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("EditModal", new {modalID="editBrand", modalTitle="Marka Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("EditModal", new {modalID="editModel", modalTitle="Model Güncelle",labelStrs=tempList})
