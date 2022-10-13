@@ -1,0 +1,134 @@
+﻿{
+  {
+    "Message": {
+      "TransactionDate": "2022-10-13T10:26:59.8297361+03:00",
+      "MethodName": "Test",
+      "LogParameters": [
+        {
+          "Name": "test",
+          "Value": "test",
+          "Type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "Message": {
+      "TransactionDate": "2022-10-13T10:26:59.9703992+03:00",
+      "MethodName": "Test",
+      "LogParameters": [
+        {
+          "Name": "test",
+          "Value": "test",
+          "Type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "Message": {
+      "TransactionDate": "2022-10-13T10:27:00.0319718+03:00",
+      "MethodName": "Test",
+      "LogParameters": [
+        {
+          "Name": "test",
+          "Value": "test",
+          "Type": "String"
+        }
+      ]
+    }
+  },
+  {
+    "Message": {
+      "TransactionDate": "2022-10-13T10:27:00.0340856+03:00",
+      "MethodName": "Test",
+      "LogParameters": [
+        {
+          "Name": "test",
+          "Value": "test",
+          "Type": "String"
+        }
+      ]
+    }
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-13T10:31:03.6687792+03:00",
+    "MethodName": "Test",
+    "LogParameters": [
+      {
+        "Name": "test",
+        "Value": "test",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-13T10:31:03.8134921+03:00",
+    "MethodName": "Test",
+    "LogParameters": [
+      {
+        "Name": "test",
+        "Value": "test",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-13T10:33:04.5512434+03:00",
+    "MethodName": "Test",
+    "LogParameters": [
+      {
+        "Name": "test",
+        "Value": "test",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "ExceptionMessage": "Attempted to divide by zero.",
+    "TransactionDate": "2022-10-13T10:33:04.7601384+03:00",
+    "MethodName": "Test",
+    "LogParameters": [
+      {
+        "Name": "test",
+        "Value": "test",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-13T10:33:11.4737723+03:00",
+    "MethodName": "Test",
+    "LogParameters": [
+      {
+        "Name": "test",
+        "Value": "test",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "ExceptionMessage": "Attempted to divide by zero.",
+    "TransactionDate": "2022-10-13T10:33:11.5175883+03:00",
+    "MethodName": "Test",
+    "LogParameters": [
+      {
+        "Name": "test",
+        "Value": "test",
+        "Type": "String"
+      }
+    ]
+  }
+}
