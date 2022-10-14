@@ -1,15 +1,19 @@
-﻿@{
+﻿@using Entity.DTO.CarBuyerInformation
+@{
     ViewData["Title"] = "CarBuyerInformation";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddCarBuyerInformationDTO addDto = new AddCarBuyerInformationDTO();
+
+    EditCarBuyerInformationDTO editDto = new EditCarBuyerInformationDTO();
+    editDto.CarPlate = "16 E 555";
+    editDto.BuyerMail = "ahmet@gmail.com";
+    editDto.Price = 440000;
+    editDto.Info = "Araç satın alımı açıklaması";
+    editDto.CreatedBy = "osman@gmail.com";
+    editDto.CreatedDate = DateTime.Now;
+
 }
-
 <div class="container-fuild p-5">
     <div id="accordion" class="mb-5">
         <div class="card">
@@ -67,5 +71,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Araç Alıcı Bilgilerini Sil", body="Alıcı bilgilerini silmek istediğinize emin misiniz?", id="deleteCarBuyerInformation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Araç Alıcı Bilgilerini Aktif Et", body="Araç Alıcı Bilgilerini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addCarBuyerInformation",modalTitle = "Araç Alıcı Bilgisi Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("EditModal", new {modalID="editCarBuyerInformation", modalTitle="Araç Alıcı Bilgisi Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarBuyerInformation",modalTitle = "Araç Alıcı Bilgisi Ekle", dto = addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="editCarBuyerInformation", modalTitle="Araç Alıcı Bilgisi Güncelle",dto= editDto})

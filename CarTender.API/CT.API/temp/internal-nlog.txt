@@ -736,3 +736,8 @@ Error Number:2812,State:62,Class:16
 ClientConnectionId:11997a56-a9a9-4abb-8454-bb9192b23fc7
 Error Number:2812,State:62,Class:16
 2022-10-14 02:16:12.1598 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Users\burka\Documents\GitHub\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-14 15:15:14.3495 Info Message Template Auto Format enabled
+2022-10-14 15:15:14.3700 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-14 15:15:14.5446 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-14 15:15:14.6034 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-14 15:15:16.5217 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config

@@ -2,8 +2,8 @@
 @model BaseModalDTO
 @{
     // todo: add ve edit component'leri birleştirilebilir, ayrı da kalabilir. Buna ortak karar verilecek.
-    // todo: datetime tipinde verinin değerini value içerisinde gösteremedim. Düzeltilecek.
-    // todo: editdto ile verilen bilgiler value içerisinde gösteriliyordu, yanlışlıkla sildi. Düzeltilecek. 
+    // todo: datetime tipinde gösterme yapılırken bozuk geliyor. Düzenlenecek.
+    // todo: prop type bool olduğunda görüntü biraz bozuk duruyor. Düzenlenecek.
 }
 
 <div class="modal fade" id="@Model.ModalID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -24,7 +24,7 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                             </div>
-                            <input type="text" value="@item.GetValue(Model.DTO.GetType())" class="form-control col-md-12" />
+                            <input type="text" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" />
                         </div>
                     }
                     else if (item.PropertyType == typeof(int) || item.PropertyType == typeof(decimal))
@@ -33,16 +33,16 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                             </div>
-                            <input type="number" value="" class="form-control col-md-12" />
+                            <input type="number" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" />
                         </div>
-                    }                 
+                    }
                     else if (item.PropertyType == typeof(bool))
                     {
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                             </div>
-                            <input type="checkbox" value="" class="form-control col-md-12" />
+                            <input type="checkbox" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" />
                         </div>
                     }
                     else if (item.PropertyType == typeof(DateTime))
@@ -51,8 +51,14 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                             </div>
-                            <input type="date" value="" class="form-control col-md-12" />
-                        </div>
+                            <div class="date" data-provide="datepicker">
+                                <input type="text" class="form-control col-md-12" name="@item.Name" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)">
+                                <div class="input-group-addon">
+                                    <i data-feather="calendar"></i>
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>                            
                     }
                     else if (item.PropertyType == typeof(List<string>))
                     {

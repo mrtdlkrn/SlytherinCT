@@ -1,11 +1,12 @@
 ﻿using Business.Abstract;
-using CarTender.FluentValidation.DAL.AdminDAL.Login;
-using CarTender.FluentValidation.DTO.AdminDTO.Login;
+using Common.Abstract;
 using Entity.DTO;
-using FluentValidation.AspNetCore;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using FluentValidation.AspNetCore;
+using CarTender.FluentValidation.DAL.AdminDAL.Login;
+using CarTender.FluentValidation.DTO.AdminDTO.Login;
 
 namespace CT.AdminUI.Controllers
 {
@@ -20,7 +21,7 @@ namespace CT.AdminUI.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            _apiService.Test("test");
+            _apiService.Test("test");        
 
             return View(new LoginDTO());
         }
@@ -47,8 +48,8 @@ namespace CT.AdminUI.Controllers
 
             if (dto == null) return RedirectToAction("Register");
 
-            var user = await _apiService.Post("auth/login", dto);
-            if (user != null)
+            var user = await _apiService.Post("auth/login",dto);
+            if(user != null)
             {
 
             }

@@ -3765,3 +3765,2467 @@
     ]
   }
 }
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:14:25.5516864+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:14:25.6967877+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:09.0308832+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:09.0347279+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:18.2179481+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:18.2183787+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:18.7139826+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:18.7143163+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:18.862708+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:18.8628939+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:19.014374+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:19.0149366+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:19.1625744+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:19.1627526+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:19.4217879+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:19.4220585+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:19.5658015+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:19.5661821+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:26.5041322+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:15:26.6433+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:16:23.3000469+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:16:23.4254902+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:16:56.8952851+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:16:57.0192597+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:16:57.2882311+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:16:57.2889352+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:18:29.3013689+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:18:29.4298825+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:18:32.3799358+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:18:32.5035749+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:21:16.8409653+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:21:16.9646418+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:21:21.6209268+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:21:21.761801+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:21:28.6850094+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:21:28.8235832+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:21:35.3952714+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:21:35.5153991+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:22:59.5782215+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:22:59.7001951+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:24:38.9846495+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:24:39.1249642+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:24:48.1443024+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:24:48.2750401+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:25:45.1257493+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:25:45.258414+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:25:51.7980079+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:25:51.925669+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:28:29.3823513+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:28:29.5007918+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:28:58.1949911+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:28:58.3205799+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:29:10.7584501+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:29:10.8900847+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:32:01.7253905+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:32:01.8503497+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:32:14.6606956+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:32:14.7852295+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:32:24.5094965+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:32:24.6716348+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:32:51.1767458+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:32:51.2993671+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:33:10.1900162+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:33:10.3536601+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:33:29.160959+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:33:29.2981501+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:33:37.8436366+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:33:37.9919228+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:33:59.3787438+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:33:59.5122083+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:34:46.82523+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:34:46.9474208+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:35:07.7683905+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:35:07.8926817+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:35:18.1744898+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:35:18.320538+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:40:27.540353+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:40:27.6658115+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:41:37.319859+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:41:37.4581172+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:42:25.3043007+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:42:25.4328405+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:43:14.7118318+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:43:14.8594299+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:43:29.2087689+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:43:29.3369624+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:43:40.1121529+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:43:40.249985+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:43:51.3017015+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:43:51.4301239+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:44:08.6973716+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:44:08.8238599+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:44:57.4606386+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:44:57.6305768+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:45:19.6248204+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:45:19.7643006+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:45:31.5402283+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:45:31.6727329+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarDetail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:48:38.8996149+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarModification",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:48:39.0176044+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarModification",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:49:12.9666058+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarModification",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:49:13.0981031+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarModification",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:51:12.5649417+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:51:12.6897067+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:51:53.0335989+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:51:53.1553309+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:51:54.3885278+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:51:54.3891442+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:52:17.0321419+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:52:17.1587022+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:53:29.7124639+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-14T15:53:29.8372268+03:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
