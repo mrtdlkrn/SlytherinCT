@@ -1,13 +1,13 @@
-﻿@{
+﻿@using Entity.DTO.UserFavoriteCar
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddUserFavoriteCarDTO addDto = new AddUserFavoriteCarDTO();
+
+    EditUserFavoriteCarDTO editDto = new EditUserFavoriteCarDTO();
+    editDto.UserEmail = "Ahmet@gmail.com";
+    editDto.CarPlate = "16 E 555";
 }
 
 <div class="container-fuild p-5">
@@ -72,7 +72,7 @@
     </div>
 </div>
 
-@await Component.InvokeAsync("EditModal", new {modalID="editUserFavoriteCar", modalTitle="Kullanıcı Favori Aracı Bilgisi Güncelle",labelStrs=tempList})
 @await Component.InvokeAsync("DeleteModal", new{title = "Favoriden Araç Kaldır", body="Aracı favoriden kaldırmak istediğinize emin misiniz?", id="deleteUserFavoriteCar"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Favori Araç Bilgisi Aktif Et", body="Favori araç bilgisini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addUserFavoriteCar",modalTitle = "Yeni Kullanıcı Favori Aracı Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addUserFavoriteCar",modalTitle = "Yeni Kullanıcı Favori Aracı Ekle", dto = addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="editUserFavoriteCar", modalTitle="Kullanıcı Favori Aracı Bilgisi Güncelle",dto=editDto})

@@ -1,13 +1,13 @@
-﻿@{
+﻿@using Entity.DTO.Package
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddPackageDTO addDto = new AddPackageDTO();
+
+    EditPackageDTO editDto = new EditPackageDTO();
+    editDto.Name = "test";
+    //editDto.Capacity = 42;
 }
 
 <div class="container-fuild p-5">
@@ -69,5 +69,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Paket Sil", body="Paketi silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Paket Aktif Et", body="Paketi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addPackage",modalTitle = "Yeni Paket Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("EditModal", new {modalID="editPackage", modalTitle="Paket Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal",  new {ModalID = "addPackage", modalTitle = "Yeni Paket Ekle", dto = addDto})
+@await Component.InvokeAsync("EditModal", new {modalID = "editPackage", modalTitle = "Paket Güncelle", dto = editDto})

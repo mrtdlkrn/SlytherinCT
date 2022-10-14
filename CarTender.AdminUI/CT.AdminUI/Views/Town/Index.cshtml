@@ -1,14 +1,17 @@
-﻿
+﻿@using Entity.DTO.Town
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    // todo: cities null gelirse proje patlıyor.
+
+    AddTownDTO addDto = new AddTownDTO();
+    addDto.Cities = new List<string> { "İstanbul", "Bursa", "Ankara", "Samsun" };
+
+    EditTownDTO editDto = new EditTownDTO();
+    editDto.Cities = new List<string> { "İstanbul", "Bursa", "Ankara", "Samsun" };
+    editDto.Name = "Karacabey";
 }
 
 <div class="container-fuild p-5">
@@ -70,5 +73,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "İlçe Sil", body="İlçeyi silmek istediğinize emin misiniz?", id="deleteTown"})
 @await Component.InvokeAsync("ActivationModal", new{title = "İlçe Aktif Et", body="İlçeyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addTown",modalTitle = "Yeni İlçe Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("EditModal", new {modalID="editTown", modalTitle="İlçe Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addTown",modalTitle = "Yeni İlçe Ekle", dto = addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="editTown", modalTitle="İlçe Güncelle", dto = editDto})

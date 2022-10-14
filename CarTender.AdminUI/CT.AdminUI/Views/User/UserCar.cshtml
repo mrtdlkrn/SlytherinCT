@@ -1,14 +1,13 @@
-﻿@{
+﻿@using Entity.DTO.UserCar
+@{
     ViewData["Title"] = "Kullanıcı Araçları Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
+    AddUserCarDTO addDto = new AddUserCarDTO();
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    EditUserCarDTO editDto = new EditUserCarDTO();
+    editDto.UserEmail = "Ahmet@gmail.com";
+    editDto.CarPlate = "16 E 555";
 }
 
 <div class="container-fuild p-5">
@@ -63,5 +62,5 @@
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Kullanıcı-Araç Bilgisini Kaldır", body="Kullanıcı-araç bilgisini kaldırmak istediğinize emin misiniz?", id="delete"})
-@await Component.InvokeAsync("EditModal", new {modalID="edit", modalTitle="Kullanıcı-Araç Bilgisini Güncelle",labelStrs=tempList})
-@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Kullanıcı-Araç Bilgisi Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Kullanıcı-Araç Bilgisi Ekle", dto = addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="edit", modalTitle="Kullanıcı-Araç Bilgisini Güncelle",dto=editDto})

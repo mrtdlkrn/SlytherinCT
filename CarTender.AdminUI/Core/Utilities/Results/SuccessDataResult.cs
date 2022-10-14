@@ -1,9 +1,4 @@
-﻿using Core.Utilities.Results;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Core.Utilities.Results
+﻿namespace Core.Utilities.Results
 {
     public class SuccessDataResult<T> : DataResult<T> where T : class
     {
@@ -11,17 +6,17 @@ namespace Core.Utilities.Results
         {
         }
 
-        public SuccessDataResult(T data) : base(data,true)
+        public SuccessDataResult(T data) : base(data, true)
         {
 
         }
 
-        public SuccessDataResult(string message) : base(data:default,true,message)
+        public SuccessDataResult(string message) : base(data: default, true, message)
         {
 
         }
 
-        public SuccessDataResult() : base(data:default,true)
+        public SuccessDataResult() : base(data: default, true)
         {
 
         }

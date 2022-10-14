@@ -1,5 +1,5 @@
-﻿using System;
-using log4net.Core;
+﻿using log4net.Core;
+using System;
 
 namespace Core.Logging.Log4Net
 {

@@ -12,7 +12,7 @@ namespace Common.Concrete
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
 
-        public BaseAPIService(HttpClient httpClient, IConfiguration configuration=null)
+        public BaseAPIService(HttpClient httpClient, IConfiguration configuration = null)
         {
             _configuration = configuration;
             _httpClient = httpClient;

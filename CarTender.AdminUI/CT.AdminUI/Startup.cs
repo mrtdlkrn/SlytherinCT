@@ -1,5 +1,6 @@
 using Business.Abstract;
 using Business.Concrete;
+using CarTender.FluentValidation.DAL.AdminDAL.Login;
 using Common.Abstract;
 using Common.Concrete;
 using Core.DependencyResolvers;
@@ -11,9 +12,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using System;
-using CarTender.FluentValidation.DAL.AdminDAL.Login;
 
 namespace CarTender.AdminUI
 {
@@ -34,7 +33,7 @@ namespace CarTender.AdminUI
             services.AddSingleton<IBaseAPIService, BaseAPIService>();
             services.AddSingleton<IMappingService, MappingService>();
             services.AddSingleton<IApiService, ApiManager>();
-            services.AddSingleton<IApiService, ApiManager>();            
+            services.AddSingleton<IApiService, ApiManager>();
             services.AddSingleton<IApiRoutes, ApiRoutes>();
 
             services.AddValidatorsFromAssemblyContaining<AdminLoginDAL>();

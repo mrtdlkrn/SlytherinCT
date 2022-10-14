@@ -1,10 +1,9 @@
 ﻿using Castle.DynamicProxy;
-using Core.Utilities.Interceptors;
 using Core.Logging;
 using Core.Logging.Log4Net;
+using Core.Utilities.Interceptors;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Core.Aspects.Autofac.Logging
 {

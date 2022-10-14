@@ -1,7 +1,6 @@
 ﻿using CT.AdminUI.Models.BaseTableDTOs;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Reflection;
 
 namespace CT.AdminUI.ViewComponents
 {
@@ -37,9 +36,9 @@ namespace CT.AdminUI.ViewComponents
                 TableDatas = tabledatas,
                 HasNextPage = hasnextpage,
                 HasPreviousPage = haspreviouspage,
-                PageIndex = pageIndex               
+                PageIndex = pageIndex
             };
-            return View("Default",dto);
+            return View("Default", dto);
         }
     }
 }
