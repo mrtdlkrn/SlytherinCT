@@ -1,14 +1,14 @@
 ﻿@using CT.AdminUI.Models.ModalDTOs
+@using Entity.DTO.Status
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddStatusDTO addDto = new AddStatusDTO();
+    addDto.StatusType = new List<string>() { "Araç", "İlan", "İhale", "Şirket", "Tramer" };
+
+    EditStatusDTO editDto = new EditStatusDTO();
+    editDto.Name = "Yeni Statü";
 }
 
 <div class="container-fuild p-5">
@@ -17,6 +17,9 @@
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#cs1" aria-expanded="true" aria-controls="cs1" role="button">Statüler</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#exampleModalAdd">
+                        <i class="fa fa-plus"></i>
+                    </button>
                 </h5>
             </div>
             <div id="cs1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -33,9 +36,6 @@
                                 <option value="4">Şirket</option>
                                 <option value="3">Tramer</option>
                             </select>
-                            <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#exampleModalAdd">
-                                <i class="fa fa-plus"></i>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -132,5 +132,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Statü Sil", body="Statüyü silmek istediğinize emin misiniz?", id="deleteStatus"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Statü Aktif Et", body="Statüyü aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "exampleModalAdd",modalTitle = "Yeni Yetki Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("EditModal", new {modalID="editStatus", modalTitle="Statü Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "exampleModalAdd",modalTitle = "Yeni Statü Ekle", dto =addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="editStatus", modalTitle="Statü Güncelle",dto = editDto})

@@ -7,7 +7,7 @@ namespace CT.AdminUI.Controllers
         [HttpGet("Index/{id}")]
         public IActionResult Index(int id)
         {
-            return RedirectToAction("Index","Car"); //todo: gelen sayfaya yönlendir 
-        }        
+            return RedirectToAction("Index", "Car"); //todo: gelen sayfaya yönlendir 
+        }
     }
 }

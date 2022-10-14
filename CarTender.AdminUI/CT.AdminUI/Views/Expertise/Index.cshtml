@@ -1,13 +1,22 @@
-﻿@{
+﻿@using Entity.DTO
+@using Entity.DTO.Expertise
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddExpertiseDTO addDto = new AddExpertiseDTO();
+    addDto.City = new List<string>() { "İstanbul", "İzmir", "Bursa" };
+    addDto.Town = new List<string>() { "Kestel", "Mustafa Kemal Paşa", "Karacabey" };
+    addDto.Address = new List<string>() { "Emirsultan", "Sırabademler", "Cumhuriyet" };
+
+    EditExpertiseDTO editDto = new EditExpertiseDTO();
+    editDto.City = new List<string>() { "İstanbul", "İzmir", "Bursa" };
+    editDto.Town = new List<string>() { "Kestel", "Mustafa Kemal Paşa", "Karacabey" };
+    editDto.Address = new List<string>() { "Emirsultan", "Sırabademler", "Cumhuriyet" };
+    editDto.ExpertiseName = "SZGN Ekspertiz";
+    editDto.Longitude = 22;
+    editDto.Latitude = 42;
+
 }
 
 <div class="container-fuild p-5">
@@ -60,5 +69,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Ekspertizi Sil", body="Ekspertizi silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Ekspertizi Aktif Et", body="Ekspertizi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "Exp",modalTitle = "Yeni Ekspertiz Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("EditModal", new {modalID="editExpertise", modalTitle="Ekspertiz Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "Exp",modalTitle = "Yeni Ekspertiz Ekle", dto =addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="editExpertise", modalTitle="Ekspertiz Güncelle",dto=editDto})

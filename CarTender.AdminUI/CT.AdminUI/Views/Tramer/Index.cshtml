@@ -1,14 +1,14 @@
-﻿@{
+﻿@using Entity.DTO.TramerComponent
+@{
     ViewData["Title"] = "Tramer";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddTramerComponentDTO addDto = new AddTramerComponentDTO();
 
-    List<string> AddModalLblstrs = new List<string>();
-AddModalLblstrs.Add("Sarp");
-AddModalLblstrs.Add("Ahmet");
+    EditTramerComponentDTO editDto = new EditTramerComponentDTO();
+    editDto.Name = "Sol ön far";
+    editDto.CreatedBy = "Ahmet Osman";
+    editDto.CreatedDate = DateTime.Now;
 }
 
 <div class="container-fuild p-5">
@@ -386,8 +386,8 @@ AddModalLblstrs.Add("Ahmet");
 @await Component.InvokeAsync("DeleteModal", new{title = "Tramer Bileşenini Sil", body="Tramer bileşenini silmek istediğinize emin misiniz?", id="deleteCmp"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Trameri Aktif Et", body="Trameri aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Tramer Bileşenini Aktif Et", body="Tramer bileşenini aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
-@await Component.InvokeAsync("EditModal", new {modalID="editCmp", modalTitle="Tramer Bileşenini Güncelle",labelStrs=tempList})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addCmp",modalTitle = "Tramer Bileşeni Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCmp",modalTitle = "Tramer Bileşeni Ekle", dto = addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="editCmp", modalTitle="Tramer Bileşenini Güncelle",dto=editDto})
 
 <div class="modal fade" id="detail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
     <div class="modal-dialog" role="document">

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CT.AdminUI.ViewComponents
 {
-    [ViewComponent(Name = "ActivationModal")] 
+    [ViewComponent(Name = "ActivationModal")]
 
     public class ActivationModalComponent : ViewComponent
     {

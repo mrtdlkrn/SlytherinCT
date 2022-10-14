@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CT.AdminUI.Controllers
 {
@@ -40,7 +39,7 @@ namespace CT.AdminUI.Controllers
             list = denemeList;
             GenericViewModel model = new GenericViewModel() { MyModel = list, ModelName = modelName, Title = modelName + " Listeleme Sayfasi" };
 
-            
+
             return View("~/Views/FlyPages/ListItems.cshtml", model);
 
 
