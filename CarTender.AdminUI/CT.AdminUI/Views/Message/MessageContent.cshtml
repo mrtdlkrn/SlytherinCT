@@ -1,13 +1,12 @@
-﻿@{
+﻿@using Entity.DTO.MessageContent
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddMessageContentDTO addDto = new AddMessageContentDTO();
+
+    EditMessageContentDTO editDto = new EditMessageContentDTO();
+    editDto.ContentText = "test mesaj içeriği";
 }
 
 <div class="container-fuild p-5">
@@ -54,5 +53,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Mesaj İçeriğini Sil", body="Mesaj içeriğini silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Mesaj İçeriğini Aktif Et", body="Mesaj İçeriğini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addMessageContent",modalTitle = "Yeni Mesaj İçeriği Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("EditModal", new {modalID="editMessageContent", modalTitle="Mesaj İçeriği Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addMessageContent",modalTitle = "Yeni Mesaj İçeriği Ekle", dto = addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="editMessageContent", modalTitle="Mesaj İçeriği Güncelle",dto=editDto})

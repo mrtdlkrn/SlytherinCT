@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Entity.DTO
+namespace Entity.DTO.MessageContent
 {
     public class MessageContentDTO
     {

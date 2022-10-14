@@ -1,13 +1,20 @@
-﻿@{
+﻿@using Entity.DTO.CarDetail
+@using Entity.DTO.CarDetailValue
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddCarDetailDTO addCarDetailDTO = new AddCarDetailDTO();
+
+    EditCarDetailDTO editCarDetailDTO = new EditCarDetailDTO();
+    editCarDetailDTO.Name = "Test Kategori";
+
+    AddCarDetailValueDTO addCarDetailValueDTO = new AddCarDetailValueDTO();
+    addCarDetailValueDTO.Categories = new List<string>(){"Renk","Vites Tipi","Gövde Tipi"};
+
+    EditCarDetailValueDTO editCarDetailValueDTO = new EditCarDetailValueDTO();
+    editCarDetailValueDTO.Categories = new List<string>() { "Renk", "Vites Tipi", "Gövde Tipi" };
+    editCarDetailValueDTO.Name = "Test Kategori Değeri";
 }
 
 <div class="container-fuild p-5">
@@ -88,22 +95,6 @@
             </div>
 
             <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Araç Detayı:</label>
-                            </div>
-                            <select class="custom-select" id="inputGroupSelect01">
-                                <option value="1" selected>Renk</option>
-                                <option value="2">Motor Yakıt Türü</option>
-                                <option value="3">Vites Türü</option>
-                                <option value="4">Kasa Tipi</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
                     <table class="table table-bordered">
                         <thead>
@@ -171,7 +162,7 @@
 @await Component.InvokeAsync("ActivationModal", new{title = "Araç Detay Değeri Aktif Et", body="Araç Detay Değerini aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Araç Detayını Sil", body="Statüyü silmek istediğinize emin misiniz?", id="deleteCarDetail"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Araç Detay Değerini Sil", body="Araç detay değerini silmek istediğinize emin misiniz?", id="deleteCarDetailValue"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addCarDetail",modalTitle = "Yeni Yetki Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addCarDetail",modalTitle = "Yeni Yetki Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("EditModal", new {modalID="editCarDetail", modalTitle="Araç Detayını Güncelle",labelStrs=tempList})
-@await Component.InvokeAsync("EditModal", new {modalID="editCarDetailValue", modalTitle="Araç Detay Değerini Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarDetail",modalTitle = "Yeni Kategori Ekle", dto = addCarDetailDTO})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarDetailValue",modalTitle = "Yeni Kategori Değeri Ekle", dto = addCarDetailValueDTO})
+@await Component.InvokeAsync("EditModal", new {modalID="editCarDetail", modalTitle="Araç Detayını Güncelle",dto=editCarDetailDTO})
+@await Component.InvokeAsync("EditModal", new {modalID="editCarDetailValue", modalTitle="Araç Detay Değerini Güncelle",dto=editCarDetailValueDTO})
