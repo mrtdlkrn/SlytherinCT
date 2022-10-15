@@ -1,12 +1,12 @@
 ﻿using Business.Abstract;
 using Common.Abstract;
-using Entity.DTO;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using FluentValidation.AspNetCore;
 using CarTender.FluentValidation.DAL.AdminDAL.Login;
 using CarTender.FluentValidation.DTO.AdminDTO.Login;
+using Entity.DTO.Auth;
 
 namespace CT.AdminUI.Controllers
 {

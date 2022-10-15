@@ -1,5 +1,5 @@
 ﻿using Common.Abstract;
-using Entity.DTO;
+using Entity.DTO.Auth;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System.Net.Http;

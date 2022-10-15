@@ -1,4 +1,4 @@
-﻿using Entity.DTO;
+﻿using Entity.DTO.Auth;
 using System.Threading.Tasks;
 
 namespace Common.Abstract

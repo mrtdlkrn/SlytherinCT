@@ -1,5 +1,5 @@
 ﻿using CarTender.Core.Utilities;
-using CT.API.Models.DTOs;
+using CT.API.Models.DTOs.Car;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

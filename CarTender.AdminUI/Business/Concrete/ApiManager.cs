@@ -4,7 +4,7 @@ using Common.Concrete;
 using Core.Aspects.Autofac.Exception;
 using Core.Aspects.Autofac.Logging;
 using Core.Logging.Log4Net.Loggers;
-using Entity.DTO;
+using Entity.DTO.Auth;
 using Microsoft.Extensions.Configuration;
 using System.Net.Http;
 using System.Threading.Tasks;
