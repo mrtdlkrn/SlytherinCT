@@ -2,7 +2,7 @@
 
 namespace CT.AdminUI.Controllers
 {
-    public class AddressController : Controller
+    public class NeighborhoodController : Controller
     {
 
         public IActionResult Index()

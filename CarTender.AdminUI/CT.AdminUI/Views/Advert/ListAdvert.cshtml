@@ -5,6 +5,8 @@
     List<string> tempList = new List<string>();
     tempList.Add("hede:");
     tempList.Add("bidi:");
+
+    // todo: burada yapılan aynı işlemler Index içerisinde var. Bu sayfa silinebilir.
 }
 
 <div class="container-fuild p-5">
@@ -73,6 +75,6 @@
         </div>
     </div>
 </div>
-
-@await Component.InvokeAsync("DeleteModal", new{title = "İlan Sil", body="İlanı silmek istediğinize emin misiniz?", id="deleteAdvert"})
-@await Component.InvokeAsync("EditModal", new {modalID="editAdvert", modalTitle="İlan Güncelle",labelStrs=tempList})
+@*
+//@await Component.InvokeAsync("DeleteModal", new{title = "İlan Sil", body="İlanı silmek istediğinize emin misiniz?", id="deleteAdvert"})
+//@await Component.InvokeAsync("EditModal", new {modalID="editAdvert", modalTitle="İlan Güncelle",labelStrs=tempList})*@
