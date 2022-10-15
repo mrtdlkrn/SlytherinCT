@@ -1,6 +1,6 @@
-﻿namespace Entity.DTO
+﻿namespace Entity.DTO.User
 {
-    public class UpdateUserDTO
+    public class GetUserDTO
     {
         public string Name { get; set; }
         public string Surname { get; set; }

@@ -1,12 +1,14 @@
-﻿@{
+﻿@using Entity.DTO.Neighborhood
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> editModalLabelStrs = new List<string>();
-    editModalLabelStrs.Add("asdasd");
 
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
+    AddNeighborhoodDTO addNeighborhoodDTO = new AddNeighborhoodDTO();
+    addNeighborhoodDTO.Towns = new List<string>() {"Karacabey","Kemalpaşa","Kestel"};
+
+    EditNeighborhoodDTO editNeighborhoodDTO = new EditNeighborhoodDTO();
+    editNeighborhoodDTO.Towns = new List<string>() { "Karacabey", "Kemalpaşa", "Kestel" };
+    editNeighborhoodDTO.Name = "Emirsultan";
 }
 
 <div class="container-fuild p-5">
@@ -54,5 +56,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Mahalle Sil", body="Mahalleyi silmek istediğinize emin misiniz?", id="deleteAddress"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Mahalle Aktif Et", body="Mahalleyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("EditModal", new {modalID="editAddress", modalTitle="Mahalle Güncelle",labelStrs=editModalLabelStrs})
-@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Yeni Satış Tarihçe Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("EditModal", new {modalID="editAddress", modalTitle="Mahalle Güncelle",dto=editNeighborhoodDTO})
+@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Yeni Mahalle Ekle", dto = addNeighborhoodDTO})
