@@ -19,6 +19,6 @@ namespace CT.AdminUI.Controllers
             return View();
 
         }
-        
+
     }
 }

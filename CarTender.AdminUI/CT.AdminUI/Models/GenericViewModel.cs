@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CT.AdminUI.Models
+﻿namespace CT.AdminUI.Models
 {
     public class GenericViewModel
     {

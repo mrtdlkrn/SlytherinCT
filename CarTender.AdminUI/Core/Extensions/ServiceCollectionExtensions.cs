@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Core.Utilities.IoC;
 using Microsoft.Extensions.DependencyInjection;
-using System.Threading.Tasks;
-using Core.Utilities.IoC;
 
 namespace Core.Extensions
 {

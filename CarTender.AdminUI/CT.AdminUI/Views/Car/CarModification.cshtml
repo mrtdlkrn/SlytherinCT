@@ -1,14 +1,20 @@
-﻿@{
+﻿@using Entity.DTO.CarModification
+@using Entity.DTO.CarModificationComponent
+@{
     ViewData["Title"] = "CarModification";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddCarModificationDTO addCarModificationDTO = new AddCarModificationDTO();
+    addCarModificationDTO.ModificationComponents = new List<string>() { "Rüzgarlık", "Nitro", "Ses sistemi" };
 
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
+    EditCarModificationDTO editCarModificationDTO = new EditCarModificationDTO();
+    editCarModificationDTO.ModificationComponents = new List<string>() { "Rüzgarlık", "Nitro", "Ses sistemi" };
+    editCarModificationDTO.CarPlate = "16 E 555";
+
+    AddCarModificationComponentDTO addCarModificationComponentDTO = new AddCarModificationComponentDTO();
+
+    EditCarModificationComponentDTO editCarModificationComponentDTO = new EditCarModificationComponentDTO();
+    editCarModificationComponentDTO.Name = "Ses sistemi";
 }
 
 <div class="container-fuild p-5">
@@ -132,7 +138,7 @@
 @await Component.InvokeAsync("DeleteModal", new{title = "Bileşeni Sil", body="Bileşeni silmek istediğinize emin misiniz?", id="deleteCmp"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Modifiye Aktif Et", body="Modifiyeyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Modifiye Bileşeni Aktif Et", body="Modifiye Bileşenini aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
-@await Component.InvokeAsync("EditModal", new {modalID="editModif", modalTitle="Modifiye Güncelle",labelStrs=tempList})
-@await Component.InvokeAsync("EditModal", new {modalID="editCmp", modalTitle="Modifiye Bileşenini Güncelle",labelStrs=tempList})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addModif",modalTitle = "Modifiye Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addCmp",modalTitle = "Bileşen Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("EditModal", new {modalID="editModif", modalTitle="Modifiye Güncelle",dto=editCarModificationDTO})
+@await Component.InvokeAsync("EditModal", new {modalID="editCmp", modalTitle="Modifiye Bileşenini Güncelle",dto=editCarModificationComponentDTO})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addModif",modalTitle = "Modifiye Ekle", dto = addCarModificationDTO})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCmp",modalTitle = "Bileşen Ekle", dto =addCarModificationComponentDTO})

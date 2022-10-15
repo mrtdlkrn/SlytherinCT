@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
 using Common.Abstract;
-using Common.Concrete;
 using Core.Aspects.Autofac.Exception;
 using Core.Aspects.Autofac.Logging;
 using Core.Logging.Log4Net.Loggers;
@@ -13,7 +12,7 @@ namespace Business.Concrete
 {
     [ExceptionLogAspect(typeof(FileLogger))]
     [LogAspect(typeof(FileLogger))]
-    
+
     public class ApiManager : IApiService
     {
         private readonly IBaseAPIService _baseAPIService;
@@ -25,15 +24,15 @@ namespace Business.Concrete
 
         public Task<bool> Delete(TokenDTO tokenDTO, string requestUrl)
         {
-           return  _baseAPIService.DELETE(tokenDTO, requestUrl);
+            return _baseAPIService.DELETE(tokenDTO, requestUrl);
         }
 
-        
+
         public Task<DTO> Get<DTO>(TokenDTO tokenDTO, string requestUrl) where DTO : class
         {
-            return _baseAPIService.GET<DTO>(tokenDTO,requestUrl);
+            return _baseAPIService.GET<DTO>(tokenDTO, requestUrl);
         }
-        
+
         public Task<bool> Post<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class
         {
             return _baseAPIService.POST(tokenDTO, requestUrl, dto);
@@ -46,14 +45,14 @@ namespace Business.Concrete
 
         public Task<bool> Put<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class
         {
-            return _baseAPIService.PUT(tokenDTO, requestUrl, dto); 
+            return _baseAPIService.PUT(tokenDTO, requestUrl, dto);
         }
         public Task<DTO> GET<DTO, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto) where DTO : class where FilterDTO : class
         {
             return _baseAPIService.GET<DTO, FilterDTO>(tokenDTO, requestUrl, dto);
         }
 
-        
+
         public void Test(string test)
         {
             System.Console.WriteLine("test");

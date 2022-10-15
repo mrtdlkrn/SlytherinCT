@@ -4,9 +4,6 @@ using Core.Logging.Log4Net;
 using Core.Utilities.Interceptors;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Aspects.Autofac.Exception
 {
@@ -43,9 +40,10 @@ namespace Core.Aspects.Autofac.Exception
                     Type = invocation.Arguments[i].GetType().Name,
                 });
             }
-
+            //todo: tokendan username al
             var logDetailWithException = new LogDetailWithException
             {
+                UserName="Emine",
                 MethodName = invocation.Method.Name,
                 LogParameters = logParameters,
                 TransactionDate = DateTime.Now

@@ -1,13 +1,13 @@
-﻿@{
+﻿@using Entity.DTO.User
+@{
     ViewData["Title"] = "Kullanıcılar";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddUserDTO addDto = new AddUserDTO();
+
+    EditUserDTO editDto = new EditUserDTO();
+    editDto.Email = "Ahmet@gmail.com";
+    editDto.Name = "Ahmet Osman";
 }
 
 <div class="container-fuild p-5">
@@ -103,8 +103,8 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Kullanıcı Sil", body="Kullanıcıyı silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Kullanıcı Aktif Et", body="Kullanıcıyı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addUser",modalTitle = "Yeni Kullanıcı Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("EditModal", new {modalID="editUser", modalTitle="Kullanıcı Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addUser",modalTitle = "Yeni Kullanıcı Ekle", dto = addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="editUser", modalTitle="Kullanıcı Güncelle",dto=editDto})
 
 <script type="text/javascript">
     function EnableComponents() {

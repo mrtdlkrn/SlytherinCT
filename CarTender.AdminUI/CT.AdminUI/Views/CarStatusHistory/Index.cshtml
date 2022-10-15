@@ -1,14 +1,19 @@
-﻿
+﻿@using Entity.DTO.CarStatusHistory
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddCarStatusHistoryDTO addDto = new AddCarStatusHistoryDTO();
+    addDto.CarStatus = new List<string>() { "İlanda","Ekspertizde","Satışa Hazır"};
+
+    EditCarStatusHistoryDTO editDto = new EditCarStatusHistoryDTO();
+    editDto.CarStatus = new List<string>() { "İlanda", "Ekspertizde", "Satışa Hazır" };
+    editDto.Info = "Araç statü değişikliği açıklaması";
+    editDto.CarPlate = "16 E 555";
+    editDto.CreatedDate = DateTime.Now.AddDays(10);
+    editDto.CreatedBy = "ahmet@gmail.com";
+    editDto.EditedDate = DateTime.Now;
 }
 
 <div class="container-fuild p-5">
@@ -82,5 +87,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Statü Bilgisini Sil", body="Statü bilgisini silmek istediğinize emin misiniz?", id="deleteStatus"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Statü Bilgisini Aktif Et", body="Statü bilgisini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addCarStatus",modalTitle = "Yeni Statü Tarihçe Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("EditModal", new {modalID="editStatus", modalTitle="Statü Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarStatus",modalTitle = "Yeni Statü Tarihçe Ekle", dto = addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="editStatus", modalTitle="Statü Güncelle",dto = editDto})
