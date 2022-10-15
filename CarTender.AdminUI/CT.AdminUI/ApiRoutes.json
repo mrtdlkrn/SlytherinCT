@@ -31,7 +31,16 @@
         "Index": "api/User/Index",
         "Create": "api/User/Create",
         "Update": "api/User/Update",
-        "Delete": "api/User/Delete"    
+        "Delete": "api/User/Delete"
+      }
+    },
+    {
+      "ControllerName": "Bid",
+      "Actions": {
+        "Index": "api/Bid/Index",
+        "Create": "api/Bid/Create",
+        "Update": "api/Bid/Update",
+        "Delete": "api/Bid/Delete"    
       }
     }
   ]
