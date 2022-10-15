@@ -3,85 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CT.API.Controllers.AdminControllers
 {
-    /// <summary>
-    /// All actions an admin needs regarding bids will be here
-    /// </summary>
-
-    public class BidController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class BidController : ControllerBase
     {
-        // GET: BidController
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        // GET: BidController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: BidController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: BidController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: BidController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: BidController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: BidController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: BidController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
