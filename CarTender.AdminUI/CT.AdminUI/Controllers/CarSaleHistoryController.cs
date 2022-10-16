@@ -1,25 +1,20 @@
 ﻿using Business.Abstract;
-using CarTender.AdminUI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace CT.AdminUI.Controllers
 {
-    public class PackageController : Controller
+    public class CarSaleHistoryController : Controller
     {
-        //todo : Package'a ait DTOlar hazırlanacak.
+        //todo : CarStatusHistory'a ait dtolar çıkarılacak
         private readonly IApiService _apiService;
         private readonly IDictionary<string, string> _routes;
-        public PackageController(IApiService apiService,IApiRoutes routes)
+        public CarSaleHistoryController(IApiRoutes routes, IApiService apiService)
         {
             this._apiService = apiService;
-            _routes = routes.GetApiRoutes("Package");
+            _routes = routes.GetApiRoutes("CarStatusHistory");
         }
-        #region Package Controller
-
-        [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             //todo : User'a göre tokenDto oluşturulacak
             /*TokenDTO tokenDTO = new TokenDTO()
@@ -39,38 +34,13 @@ namespace CT.AdminUI.Controllers
             {
                 ErrorViewModel model = new ErrorViewModel()
                 {
-                    Header = "Package",
-                    Message = "Package ilgili bilgiler bulunamadı",
+                    Header = "CarSaleHistory",
+                    Message = "CarStatusHistory ilgili bilgiler bulunamadı",
                     StatusCode = 500
                 };
                 return View("~/Views/Shared/Error.cshtml", model);
             }*/
             return View();
         }
-
-        [HttpPost]
-        public async Task<IActionResult> Create()
-        {
-            //todo : gerekli dto post'a gönderilecek
-            /*var result = await _apiService.Post(_routes["Create"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Package",
-                    Message = "Package ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }*/
-            return View();
-        }
-
-        #endregion
     }
 }

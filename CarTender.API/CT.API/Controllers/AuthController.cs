@@ -44,7 +44,7 @@ namespace CarTender.API.Controllers
         [HttpPost]
         public IActionResult Login(LoginDTO dto)
         {
-            string email = "ahmet@gmail.com";
+            string email = "testuser@hotmail.com";
             string password = "123";
 
 

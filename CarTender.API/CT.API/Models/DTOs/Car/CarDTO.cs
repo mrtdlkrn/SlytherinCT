@@ -6,6 +6,7 @@ namespace CT.API.Models.DTOs.Car
     {
         //todo : Guid id aktife çekilecek. Mert(Yani Ben) şimdilik böyle yaptım. 
         //public Guid CarID { get; set; }
+        public string Plate { get; set; }
         public string CarBrand { get; set; }
         public string CarModel { get; set; }
         public bool IsCorporate { get; set; }
