@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
-using Entity.DTO;
-using Entity.DTO.User;
+using Entity.DTO.Auth;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;

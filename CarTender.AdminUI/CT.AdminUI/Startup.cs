@@ -33,10 +33,7 @@ namespace CarTender.AdminUI
             services.AddSingleton<IBaseAPIService, BaseAPIService>();
             services.AddSingleton<IMappingService, MappingService>();
             services.AddSingleton<IApiService, ApiManager>();
-            services.AddSingleton<IApiService, ApiManager>();
             services.AddSingleton<IApiRoutes, ApiRoutes>();
-
-            services.AddValidatorsFromAssemblyContaining<AdminLoginDAL>();
 
             services.AddHttpClient<BaseAPIService>(opt =>
             {

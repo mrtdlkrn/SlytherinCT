@@ -6229,3 +6229,31 @@
     ]
   }
 }
+{
+  "Message": {
+    "TransactionDate": "2022-10-16T15:53:35.3959164+03:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "test",
+        "Value": "test",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-16T15:53:35.5655026+03:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "test",
+        "Value": "test",
+        "Type": "String"
+      }
+    ]
+  }
+}
