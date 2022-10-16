@@ -12,6 +12,7 @@ namespace CT.AdminUI.Controllers
 {
     public class AuthController : Controller
     {
+        //todo : Api bağlantısı yapılacak
         private readonly IApiService _apiService;
         public AuthController(IApiService apiService)
         {
