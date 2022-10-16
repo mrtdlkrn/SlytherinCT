@@ -1,10 +1,18 @@
-﻿@{
+﻿@using Entity.DTO.Advert
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddAdvertDTO addAdvertDTO = new AddAdvertDTO();
+
+    EditAdvertDTO editAdvertDTO = new EditAdvertDTO();
+    editAdvertDTO.CarPlate = "16 E 555";
+    editAdvertDTO.Title = "Hede";
+    editAdvertDTO.PreliminaryPrice = 255000;
+    editAdvertDTO.Price = 280000;
+    editAdvertDTO.Info = "Hede ilanı detayları için bize ulaşabilirsiniz.";
+
+    // todo: ilan detayına gidildiğinde araç bilgilerinin de görüldüğü kapsamlı bir ilan sayfası olmalı. Şuanlık ilan detay sayfası yok.
 }
 
 <div class="container-fuild p-5">
@@ -25,6 +33,7 @@
                                 <th scope="col">Ön Değerlendirme Fiyatı</th>
                                 <th scope="col">Fiyat Bilgisi</th>
                                 <th scope="col">Açıklama</th>
+                                <th scope="col">Detay</th>
                                 <th scope="col">Güncelleme</th>
                                 <th scope="col">Silme</th>
                             </tr>
@@ -36,6 +45,9 @@
                                 <td>80.000 TL</td>
                                 <td>100.000 TL</td>
                                 <td>Eski</td>
+                                <td>
+                                    <a class="btn btn-info" href="#"><i class="fa-solid fa-search" style="color:black;"></i> Detay</a>
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAdvert"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
@@ -49,6 +61,9 @@
                                 <td>160.000 TL</td>
                                 <td>200.000 TL</td>
                                 <td>Yeni</td>
+                                <td>
+                                    <a class="btn btn-info" href="#"><i class="fa-solid fa-search" style="color:black;"></i> Detay</a>
+                                </td>
                                 <td>
                                     <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAdvert"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
                                 </td>
@@ -71,6 +86,10 @@
             </div>
             <div id="cadvertindex3" class="collapse collapse p-5" aria-labelledby="hadvertindex3" data-parent="#accordion">
                 <div class="input-group mb-4">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Araç Plakası</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-4">
                     <span class="input-group-text" id="inputGroup-sizing-default">İlan Başlığı</span>
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
@@ -80,25 +99,25 @@
                 </div>
                 <div class="input-group mb-4">
                     <span class="input-group-text" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
-                    <input type="text" class="form-control" />
+                    <input type="number" class="form-control" />
                     <div class="input-group-append">
                         <span class="input-group-text">TL</span>
-                        <span class="input-group-text">0.00</span>
                     </div>
                 </div>
                 <div class="input-group mb-4">
                     <span class="input-group-text" id="inputGroup-sizing-default">Fiyatı:</span>
-                    <input type="text" class="form-control" />
+                    <input type="number" class="form-control" />
                     <div class="input-group-append">
                         <span class="input-group-text">TL</span>
-                        <span class="input-group-text">0.00</span>
                     </div>
                 </div>
                 <button class="btn btn-primary" style="float:right;" type="submit"><i class="fa-regular fa-floppy-disk"></i> Kaydet</button>
             </div>
         </div>
     </div>
-    <div id="accordion">
+
+    @* todo: Bu kısım şuanlık gereksiz geldi bana. Konuşuruz eğer gereksiz ise sileriz.*@
+    @*<div id="accordion">
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
@@ -136,9 +155,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "İlan Sil", body="İlanı silmek istediğinize emin misiniz?", id="deleteAdvert"})
 @await Component.InvokeAsync("ActivationModal", new{title = "İlan Aktif Et", body="İlanı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("EditModal", new {modalID="editAdvert", modalTitle="İhale Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("EditModal", new {modalID="editAdvert", modalTitle="İlan Güncelle",dto=editAdvertDTO})

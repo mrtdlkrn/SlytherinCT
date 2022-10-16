@@ -7,18 +7,23 @@ namespace CT.API.Logging.Concrete.Loggers
     public class FileLogger : AbstractLogger
     {
         private readonly string _fileName;
+        private string folderPath = @"c:\MyLogs";
+
         public FileLogger(string fileName)
         {
             _fileName = fileName;
-        }
 
-        string filePath = "C:\\MyLogs";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }                                       
+        }        
 
         public override void Log(string message)
         {
             //string strJson = JsonConvert.SerializeObject(alinacakLog);
-            string fullPath = Path.Combine(filePath, _fileName);
-            File.AppendAllText(fullPath, message + Environment.NewLine);
+            string fullPath = Path.Combine(folderPath, _fileName);
+            File.AppendAllText(fullPath, message + " - " + DateTime.Now + Environment.NewLine);
         }
     }
 }

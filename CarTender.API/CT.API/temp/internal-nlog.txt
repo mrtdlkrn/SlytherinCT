@@ -906,3 +906,18 @@ Error Number:2812,State:62,Class:16
 2022-10-14 15:15:14.5446 Info Adding target DatabaseTarget(Name=dbhede)
 2022-10-14 15:15:14.6034 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
 2022-10-14 15:15:16.5217 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-16 16:16:34.4064 Info Message Template Auto Format enabled
+2022-10-16 16:16:34.4229 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-16 16:16:34.5818 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-16 16:16:34.6276 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-16 16:16:36.1046 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-16 16:19:10.1685 Info Message Template Auto Format enabled
+2022-10-16 16:19:10.1823 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-16 16:19:10.2823 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-16 16:19:10.3281 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-16 16:19:11.1912 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-16 16:21:26.7819 Info Message Template Auto Format enabled
+2022-10-16 16:21:26.7955 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-16 16:21:26.8812 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-16 16:21:26.9227 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-16 16:21:27.7694 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
