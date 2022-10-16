@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>CarTender.FluentValidation</id>
+    <version>1.0.0</version>
+    <title>Car Tender</title>
+    <authors>Slytherin</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/mrtdlkrn/SlytherinCT</projectUrl>
+    <description>Start Deveploment education traning final project fluent validation part.</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright © 2022</copyright>
+    <tags>C# HTML CSS MVC.Core .NET</tags>
+  </metadata>
+</package>
