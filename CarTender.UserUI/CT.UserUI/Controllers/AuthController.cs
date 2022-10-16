@@ -1,19 +1,28 @@
-﻿using Business.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
 using CarTender.FluentValidation.DAL.UserDAL.Login_Register;
-using Common.Validation.Concrete;
+using Common.Abstract;
+using Common.Concrete;
 using CT.UserUI.Logging.Concrete;
 using Entity.DTO;
+using Entity.DTO.Auth;
 using FluentValidation.Results;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Windows.Forms.Design;
 
 namespace CT.UserUI.Controllers
 {
     public class AuthController : Controller
     {
-        private readonly BaseAPIService _api = new BaseAPIService();
+        private readonly IApiManager _apiManager;
 
         private readonly Logger _logger = new Logger(new Creater().FactoryMethod(LoggerTypes.DbLogger));
+
+        public AuthController()
+        {
+            _apiManager = new ApiManager(new BaseAPIService());
+        }
 
         #region Login
 
@@ -21,24 +30,23 @@ namespace CT.UserUI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            UserLoginDAL validations = new UserLoginDAL();
-            ValidationResult result = validations.Validate( new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
-            {
-                Username = "yigit",
-                Password = "1234"
-            });
+            //UserLoginDAL validations = new UserLoginDAL();
+            //ValidationResult result = validations.Validate( new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
+            //{
+            //    Username = "yigit",
+            //    Password = "1234"
+            //});
 
-            if (result.IsValid)
-            {
+            //if (result.IsValid)
+            //{
 
-            }
-
+            //}
             return View();
         }
 
         //POST: Auth Controller for Login
         [HttpPost]
-        public ActionResult Login(UserLoginDTO dto)
+        public ActionResult Login(LoginDTO dto)
         {
             string username = "ahmet";
             string password = "123";
@@ -82,7 +90,7 @@ namespace CT.UserUI.Controllers
         [HttpPost]
         public async Task<ActionResult> CustomerSignUp(RabbitMQLoginDTO dto)
         {
-            var query = await _api.POST<RabbitMQLoginDTO>("Auth/register", dto);
+            var query = await _apiManager.Post<RabbitMQLoginDTO>("Auth/register", dto);
             return View(query);
         }
 
