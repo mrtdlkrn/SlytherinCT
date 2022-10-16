@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entity.DTO;
+using Entity.DTO.Bid;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CT.AdminUI.Controllers

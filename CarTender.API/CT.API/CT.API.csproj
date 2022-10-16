@@ -27,7 +27,6 @@
     <ProjectReference Include="..\CT.Business\CT.Business.csproj" />
     <ProjectReference Include="..\CT.Common\CT.Common.csproj" />
     <ProjectReference Include="..\CT.DataAccess\CT.DataAccess.csproj" />
-    <ProjectReference Include="..\CT.Log\CT.LogLayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
