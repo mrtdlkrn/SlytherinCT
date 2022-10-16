@@ -1,14 +1,18 @@
-﻿@{
+﻿@using Entity.DTO.CarHistory
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
+    AddCarHistoryDTO addDto = new AddCarHistoryDTO();
+    addDto.CarStatus = new List<string>() { "İlanda", "Ekspertizde", "Satışa Hazır" };
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    EditCarHistoryDTO editDto = new EditCarHistoryDTO();
+    editDto.CarStatus = new List<string>() { "İlanda", "Ekspertizde", "Satışa Hazır" };
+    editDto.CarPlate = "16 E 555";
+    editDto.Brand = "Ford";
+    editDto.Model = "Connect";
+    editDto.IsCorporete = false;
+    editDto.StatusChangeDate = DateTime.Now.AddDays(-5);
 }
 <div class="container-fuild p-5">
     <div id="accordion">
@@ -26,7 +30,7 @@
                 <table style="text-align:center;" class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">Araç Adı</th>
+                            <th scope="col">Araç Plakası</th>
                             <th scope="col">Araç Modeli</th>
                             <th scope="col">Bireysel/Kurumsal</th>
                             <th scope="col">Statü</th>
@@ -129,5 +133,5 @@
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Kaydı Sil", body="Kaydı silmek istediğinize emin misiniz?", id="delete"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Tarihçe Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("EditModal", new {modalID="edit", modalTitle="Tarihçe Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Tarihçe Ekle", dto = addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="edit", modalTitle="Tarihçe Güncelle",dto=editDto})

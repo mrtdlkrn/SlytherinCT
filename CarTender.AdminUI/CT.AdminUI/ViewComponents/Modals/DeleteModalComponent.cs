@@ -1,6 +1,5 @@
 ﻿using CT.AdminUI.Models.ModalDTOs;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace CT.AdminUI.ViewComponents
 {

@@ -1,5 +1,10 @@
 ﻿@using CT.AdminUI.Models.ModalDTOs
-@model EditModalDTO
+@model BaseModalDTO
+@{
+    // todo: add ve edit component'leri birleştirilebilir, ayrı da kalabilir. Buna ortak karar verilecek.
+    // todo: datetime tipinde gösterme yapılırken bozuk geliyor. Düzenlenecek.
+    // todo: prop type bool olduğunda görüntü biraz bozuk duruyor. Düzenlenecek.
+}
 
 <div class="modal fade" id="@Model.ModalID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -11,14 +16,66 @@
                 </button>
             </div>
             <div class="modal-body">
-                @foreach (var item in Model.LabelStrs)
+                @foreach (var item in Model.DTO.GetType().GetProperties())
                 {
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">@item</label>
+                    if (item.PropertyType == typeof(string))
+                    {
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
+                            </div>
+                            <input type="text" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" />
                         </div>
-                        <input type="text" value="" class="form-control col-md-12" />
-                    </div>
+                    }
+                    else if (item.PropertyType == typeof(int) || item.PropertyType == typeof(decimal))
+                    {
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
+                            </div>
+                            <input type="number" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" />
+                        </div>
+                    }
+                    else if (item.PropertyType == typeof(bool))
+                    {
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
+                            </div>
+                            <input type="checkbox" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" />
+                        </div>
+                    }
+                    else if (item.PropertyType == typeof(DateTime))
+                    {
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
+                            </div>
+                            <div class="date" data-provide="datepicker">
+                                <input type="text" class="form-control col-md-12" name="@item.Name" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)">
+                                <div class="input-group-addon">
+                                    <i data-feather="calendar"></i>
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>                            
+                    }
+                    else if (item.PropertyType == typeof(List<string>))
+                    {
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
+                            </div>
+                            <select class="form-control col-md-12">
+                                @{
+                                    foreach (var listItem in (List<string>)Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null))
+                                    {
+                                        <option>@listItem</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    }
                 }
             </div>
             <div class="modal-footer"><button class="btn btn-primary" type="button">Kaydet</button></div>

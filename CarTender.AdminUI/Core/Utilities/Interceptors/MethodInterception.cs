@@ -1,7 +1,5 @@
 ﻿using Castle.DynamicProxy;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Core.Utilities.Interceptors
 {
@@ -22,10 +20,10 @@ namespace Core.Utilities.Interceptors
             {
                 invocation.Proceed();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 isSuccess = false;
-                OnException(invocation,e);
+                OnException(invocation, e);
                 throw;
             }
             finally

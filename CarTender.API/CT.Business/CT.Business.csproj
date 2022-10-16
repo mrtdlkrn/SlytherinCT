@@ -6,9 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.17" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CT.Common\CT.Common.csproj" />
     <ProjectReference Include="..\CT.Core\CT.Core.csproj" />
     <ProjectReference Include="..\CT.DataAccess\CT.DataAccess.csproj" />
     <ProjectReference Include="..\CT.Entities\CT.Entities.csproj" />

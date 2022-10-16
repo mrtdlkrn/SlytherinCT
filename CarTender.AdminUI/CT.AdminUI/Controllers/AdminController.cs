@@ -37,9 +37,13 @@ namespace CarTender.AdminUI.Controllers
             //{
             //    HeaderValue = values.FirstOrDefault();
             //}
-            return View(new ErrorViewModel { StatusCode = Response.StatusCode,
-                Header = Response.Headers.TryGetValue("X-BB-SESSION", out var values) ? values.FirstOrDefault() : null,Message = "Burkay" });
-            
+            return View(new ErrorViewModel
+            {
+                StatusCode = Response.StatusCode,
+                Header = Response.Headers.TryGetValue("X-BB-SESSION", out var values) ? values.FirstOrDefault() : null,
+                Message = "Burkay"
+            });
+
         }
     }
 }

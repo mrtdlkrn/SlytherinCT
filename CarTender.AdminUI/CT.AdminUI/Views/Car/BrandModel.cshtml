@@ -1,13 +1,20 @@
-﻿@{
+﻿@using Entity.DTO.Brand
+@using Entity.DTO.Model
+@{
     ViewData["Title"] = "Marka Model";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
 
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+    AddBrandDTO addBrandDto = new AddBrandDTO();
+
+    EditBrandDTO editBrandDTO = new EditBrandDTO();
+    editBrandDTO.Name = "Ford";
+
+    AddModelDTO addModelDTO = new AddModelDTO();
+    addModelDTO.Brands = new List<string>() { "Ford", "Mercedes", "BMW", "Audi" };
+
+    EditModelDTO editModelDTO = new EditModelDTO();
+    editModelDTO.Brands = new List<string>() { "Ford", "Mercedes", "BMW", "Audi" };
+    editModelDTO.Name = "Test Model";
 }
 
 <div class="container-fuild p-5">
@@ -115,21 +122,6 @@
                     <div class="col-md-4">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Marka:</label>
-                            </div>
-                            <select class="custom-select col-md-12" id="inputGroupSelect01">
-                                <option value="1" selected>Fiat</option>
-                                <option value="2">Opel</option>
-                                <option value="3">BMW</option>
-                                <option value="4">Renault</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">Model:</label>
                             </div>
                             <input class="form-control" type="text" />
@@ -205,7 +197,7 @@
 @await Component.InvokeAsync("DeleteModal", new{title = "Markayı Sil", body="Markayı silmek istediğinize emin misiniz?", id="deleteBrand"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Marka Aktif Et", body="Markayı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Model Aktif Et", body="Model, aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addBrand",modalTitle = "Yeni Marka Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addModel",modalTitle = "Yeni Model Ekle", Labelstrs = AddModalLblstrs})
-@await Component.InvokeAsync("EditModal", new {modalID="editBrand", modalTitle="Marka Güncelle",labelStrs=tempList})
-@await Component.InvokeAsync("EditModal", new {modalID="editModel", modalTitle="Model Güncelle",labelStrs=tempList})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addBrand",modalTitle = "Yeni Marka Ekle", dto = addBrandDto})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addModel",modalTitle = "Yeni Model Ekle", dto = addModelDTO})
+@await Component.InvokeAsync("EditModal", new {modalID="editBrand", modalTitle="Marka Güncelle",dto=editBrandDTO})
+@await Component.InvokeAsync("EditModal", new {modalID="editModel", modalTitle="Model Güncelle",dto=editModelDTO})

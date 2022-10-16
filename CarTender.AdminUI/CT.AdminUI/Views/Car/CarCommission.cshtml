@@ -1,13 +1,18 @@
-﻿@{
+﻿@using Entity.DTO.CarCommission
+@{
     ViewData["Title"] = "Araç Komisyon";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
 
-    List<string> AddModalLblstrs = new List<string>();
-    AddModalLblstrs.Add("Sarp");
-    AddModalLblstrs.Add("Ahmet");
+    AddCarCommissionDTO addDto = new AddCarCommissionDTO();
+
+    EditCarCommissionDTO editDto = new EditCarCommissionDTO();
+    editDto.CarPlate = "16 E 555";
+    editDto.CommissionPrice = 5555;
+    editDto.Info = "Test açıklaması";
+    editDto.MinPrice = 200000;
+    editDto.MaxPrice = 250000;
+    editDto.StartDate = DateTime.Now.AddDays(-5);
+    editDto.EndDate = DateTime.Now.AddDays(5);
 }
 
 <div class="container-fuild p-5">
@@ -21,11 +26,12 @@
                     </button>
                 </h5>
             </div>
-            <div style="margin-left:5%;margin-right:5%" id="ccarbm1" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div id="ccarbm1" class="collapse show p-1" aria-labelledby="headingTwo" data-parent="#accordion">
                 <br />
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th scope="col">Araç Plaka</th>
                             <th scope="col">Komisyon Tutarı</th>
                             <th scope="col">Açıklama</th>
                             <th scope="col">Minimum Araç Tutarı</th>
@@ -38,6 +44,7 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <td>16 E 555</td>
                             <td>5000</td>
                             <td>Nakit ödenmiştir</td>
                             <td>150.000</td>
@@ -52,6 +59,7 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>16 E 555</td>
                             <td>4500</td>
                             <td>Nakit ödenmiştir</td>
                             <td>150.000</td>
@@ -74,5 +82,5 @@
 
 @await Component.InvokeAsync("ActivationModal", new{title = "Araç Komisyonu'nu Aktif Et", body="Araç Komisyonu bilgisini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Araç Komisyonu'nu Sil", body="Komisyon bilgisini silmek istediğinize emin misiniz?", id="deleteCarCommission"})
-@await Component.InvokeAsync("EditModal", new {modalID="editCarCommission", modalTitle="Komisyon Bilgisini Güncelle",labelStrs=tempList})
-@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Komisyon Bilgisi Ekle", Labelstrs = AddModalLblstrs})
+@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Komisyon Bilgisi Ekle", dto = addDto})
+@await Component.InvokeAsync("EditModal", new {modalID="editCarCommission", modalTitle="Komisyon Bilgisini Güncelle",dto=editDto})
