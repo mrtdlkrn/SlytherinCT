@@ -1,6 +1,6 @@
 ﻿using Business.Abstract;
-using CarTender.FluentValidation.VAL.CombineVAL.Car;
 using CarTender.FluentValidation.DTO.CombineDTO.Car;
+using CarTender.FluentValidation.VAL.CombineVAL.Car;
 using Entity.DTO.Auth;
 using Entity.DTO.Car;
 using FluentValidation.AspNetCore;

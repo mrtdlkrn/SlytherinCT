@@ -5,7 +5,11 @@ using Entity.DTO.Auth;
 using FluentValidation.AspNetCore;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
+using CarTender.FluentValidation.VAL.AdminVAL.Register;
+using CarTender.FluentValidation.DTO.AdminDTO.Register;
+using CarTender.FluentValidation.VAL.AdminVAL.ForgotPassword;
 
 namespace CT.AdminUI.Controllers
 {
@@ -44,22 +48,80 @@ namespace CT.AdminUI.Controllers
                 return View("Login", dto);
             }
 
-            if (dto == null) return RedirectToAction("Register");
-
-            var user = await _apiService.Login(dto);
-            if (user != null)
+            try
             {
+                var user = await _apiService.Login(dto);
+                if (user != null)
+                {
 
+                }
+
+                return View();
+            }
+            catch (System.Exception)
+            {
+                return BadRequest();
             }
 
-            return View();
         }
+        [HttpGet]
         public IActionResult Register()
         {
-            return View();
+            return View(new AdminRegisterDTO());
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(AdminRegisterDTO dto)
+        {
+            RegisterVAL validations = new RegisterVAL();
+            ValidationResult validationResult = validations.Validate(new RegisterDTO
+            {
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                Email = dto.Email,
+                Password = dto.Password,
+                RePassword = dto.RePassword,
+            });
+
+            if (!validationResult.IsValid)
+            {
+                validationResult.AddToModelState(this.ModelState);
+
+                TempData["Password"] = dto.Password;
+
+                return View("Register", dto);
+            }
+
+            try
+            {
+                var register = await _apiService.Register(dto);
+                if (register != null)
+                {
+
+                }
+                return RedirectToAction("Login");
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+
+        }
+
+        [HttpGet]
         public IActionResult ForgotPassword()
         {
+            return View(new ForgotPasswordDTO());
+        }
+
+        [HttpPost]
+        public IActionResult ForgotPassword(ForgotPasswordDTO dto)
+        {
+            ForgotPasswordVAL validations = new ForgotPasswordVAL();
+            ValidationResult validationResult = validations.Validate(new CarTender.FluentValidation.DTO.AdminDTO.ForgotPassword.ForgotPasswordDTO
+            {
+                Email = dto.Email
+            });
             return View();
         }
     }

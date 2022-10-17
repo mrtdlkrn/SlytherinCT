@@ -90,5 +90,21 @@ namespace Business.Abstract
         /// <param name="dto"></param>
         /// <returns>This aciton returns JWT token key if operation is success.</returns>
         Task<ResponseDTO<T>> Login<T>(T dto) where T : class;
+
+        /// <summary>
+        /// This action makes POST request to the given request url. Used to get Token from API. 
+        /// </summary>
+        /// <typeparam name="T">Type of model to be create.</typeparam>
+        /// <param name="dto"></param>
+        /// <returns>This aciton returns JWT token key if operation is success.</returns>
+        Task<ResponseDTO<T>> Register<T>(T dto) where T : class;
+
+        /// <summary>
+        /// This action makes POST request to the given request url. Used to get Token from API. 
+        /// </summary>
+        /// <typeparam name="T">Type of model to be create.</typeparam>
+        /// <param name="dto"></param>
+        /// <returns>This aciton returns JWT token key if operation is success.</returns>
+        Task<ResponseDTO<T>> ForgotPassword<T>(T dto) where T : class;
     }
 }

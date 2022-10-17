@@ -26,6 +26,11 @@ namespace Business.Concrete
             return _baseAPIService.DELETE<T>(tokenDTO, requestUrl);
         }
 
+        public Task<ResponseDTO<T>> ForgotPassword<T>(T dto) where T : class
+        {
+            return _baseAPIService.FORGOTPASSWORD(dto);
+        }
+
         public Task<ResponseDTO<T>> Get<T>(TokenDTO tokenDTO, string requestUrl) where T : class
         {
             return _baseAPIService.GET<T>(tokenDTO, requestUrl);
@@ -51,6 +56,11 @@ namespace Business.Concrete
         public Task<ResponseDTO<T>> Put<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class
         {
             return _baseAPIService.PUT(tokenDTO, requestUrl, dto);
+        }
+
+        public Task<ResponseDTO<T>> Register<T>(T dto) where T : class
+        {
+            return _baseAPIService.REGISTER(dto);
         }
     }
 }

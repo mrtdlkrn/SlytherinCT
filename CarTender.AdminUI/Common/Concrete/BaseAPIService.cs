@@ -144,6 +144,34 @@ namespace Common.Concrete
             return null;
         }
 
+        public async Task<ResponseDTO<T>> REGISTER<T>(T dto) where T : class
+        {
+            var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
+            serializedDto.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            string serviceUrl = _configuration.GetValue<string>("ApiAddress") + "auth/register";
+            var response = await _httpClient.PostAsync(serviceUrl, serializedDto);
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<ResponseDTO<T>>(await response.Content.ReadAsStringAsync());
+            }
+            return null;
+        }
+
+        public async Task<ResponseDTO<T>> FORGOTPASSWORD<T>(T dto) where T : class
+        {
+            var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
+            serializedDto.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            //todo resigster yerine api de controller içinde smtp yapılacak.
+            string serviceUrl = _configuration.GetValue<string>("ApiAddress") + "auth/register";
+            var response = await _httpClient.PostAsync(serviceUrl, serializedDto);
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<ResponseDTO<T>>(await response.Content.ReadAsStringAsync());
+            }
+            return null;
+        }
+
         #endregion
     }
 }
