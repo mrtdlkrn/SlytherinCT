@@ -40,6 +40,7 @@
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
                     @await Component.InvokeAsync("BaseTable",
                     new{
+                    TableID = "myTable1",
                     EditIsModal = true,
                     EditBtnModalID = "editAdvert",
                     EditBtnController="",
@@ -93,43 +94,43 @@
 
     @* todo: Bu kısım şuanlık gereksiz geldi bana. Konuşuruz eğer gereksiz ise sileriz.*@
     @*<div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#cadvertindex2" aria-expanded="true" aria-controls="cadvertindex2" role="button">İlan Görüntüle</a>
-                </h5>
-            </div>
-            <div id="cadvertindex2" class="collapse show p-5" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="input-group mb-4">
-                    <span class="input-group-text" id="inputGroup-sizing-default">İlan Başlığı:</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                </div>
-                <div class="input-group mb-4">
-                    <span class="input-group-text" id="inputGroup-sizing-default">İlan Açıklama:</span>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" style="resize:none;" rows="3"></textarea>
-                </div>
-                <div class="input-group mb-4">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
-                    <input type="text" class="form-control" />
-                    <div class="input-group-append">
-                        <span class="input-group-text">TL</span>
-                        <span class="input-group-text">0.00</span>
-                    </div>
-                </div>
-                <div class="input-group mb-4">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Fiyatı:</span>
-                    <input type="text" class="form-control" />
-                    <div class="input-group-append">
-                        <span class="input-group-text">TL</span>
-                        <span class="input-group-text">0.00</span>
-                    </div>
-                </div>
-                <div class="col-md-9 col-sm-0"></div>
-                <div class="col-md-3 col-sm-12" style="float:right;">
-                    <button class="btn btn-info btn-block" style="background-color: #2E86C1 ;" type="button"><i class="fa-solid fa-list" style="color:white;"></i>  Görüntüle</button>
-                </div>
-            </div>
-        </div>
+    <div class="card">
+    <div class="card-header" id="headingOne">
+    <h5 class="mb-0">
+    <a class="btn btn-light" data-toggle="collapse" data-target="#cadvertindex2" aria-expanded="true" aria-controls="cadvertindex2" role="button">İlan Görüntüle</a>
+    </h5>
+    </div>
+    <div id="cadvertindex2" class="collapse show p-5" aria-labelledby="headingOne" data-parent="#accordion">
+    <div class="input-group mb-4">
+    <span class="input-group-text" id="inputGroup-sizing-default">İlan Başlığı:</span>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-4">
+    <span class="input-group-text" id="inputGroup-sizing-default">İlan Açıklama:</span>
+    <textarea class="form-control" id="exampleFormControlTextarea1" style="resize:none;" rows="3"></textarea>
+    </div>
+    <div class="input-group mb-4">
+    <span class="input-group-text" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
+    <input type="text" class="form-control" />
+    <div class="input-group-append">
+    <span class="input-group-text">TL</span>
+    <span class="input-group-text">0.00</span>
+    </div>
+    </div>
+    <div class="input-group mb-4">
+    <span class="input-group-text" id="inputGroup-sizing-default">Fiyatı:</span>
+    <input type="text" class="form-control" />
+    <div class="input-group-append">
+    <span class="input-group-text">TL</span>
+    <span class="input-group-text">0.00</span>
+    </div>
+    </div>
+    <div class="col-md-9 col-sm-0"></div>
+    <div class="col-md-3 col-sm-12" style="float:right;">
+    <button class="btn btn-info btn-block" style="background-color: #2E86C1 ;" type="button"><i class="fa-solid fa-list" style="color:white;"></i>  Görüntüle</button>
+    </div>
+    </div>
+    </div>
     </div>*@
 </div>
 

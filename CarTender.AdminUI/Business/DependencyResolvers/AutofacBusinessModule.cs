@@ -15,7 +15,7 @@ namespace Business.DependencyResolvers
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
                 .EnableInterfaceInterceptors(new ProxyGenerationOptions()
                 {
-                    Selector = new AspectInterceptorSelector()
+                    //Selector = new AspectInterceptorSelector()
                 }).SingleInstance();
         }
     }

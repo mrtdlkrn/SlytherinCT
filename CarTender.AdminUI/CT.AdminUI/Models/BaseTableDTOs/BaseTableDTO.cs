@@ -4,6 +4,7 @@ namespace CT.AdminUI.Models.BaseTableDTOs
 {
     public class BaseTableDTO
     {
+        public string TableID { get; set; }
         public bool EditIsModal { get; set; }
         public string EditBtnController { get; set; }
         public string EditBtnModalID { get; set; }
