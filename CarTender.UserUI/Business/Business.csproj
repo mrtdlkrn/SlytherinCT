@@ -69,7 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IApiManager.cs" />
+    <Compile Include="Abstract\IApiRoutes.cs" />
     <Compile Include="Concrete\ApiManager.cs" />
+    <Compile Include="Concrete\ApiRoutes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
