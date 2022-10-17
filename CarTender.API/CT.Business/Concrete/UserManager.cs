@@ -1,6 +1,6 @@
 ﻿using CarTender.Business.Abstract;
 using CarTender.DataAccess.Abstract;
-using CarTender.Entities;
+using CT.Entities.Entities;
 
 namespace CarTender.Business.Concrete
 {

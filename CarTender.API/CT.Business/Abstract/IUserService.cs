@@ -1,4 +1,4 @@
-﻿using CarTender.Entities;
+﻿using CT.Entities.Entities;
 
 namespace CarTender.Business.Abstract
 {

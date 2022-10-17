@@ -1,4 +1,4 @@
-﻿using CT.Entities;
+﻿using CT.Entities.Entities;
 
 namespace CT.Business.Abstract
 {

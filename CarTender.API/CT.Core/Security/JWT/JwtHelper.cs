@@ -1,5 +1,5 @@
 ﻿using CarTender.Core.Security.Encryption;
-using CarTender.Entities;
+using CT.Entities.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
