@@ -68,11 +68,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IBaseAPIService.cs" />
-    <Compile Include="Concrete\BaseAPIService.cs" />
+    <Compile Include="Abstract\IApiManager.cs" />
+    <Compile Include="Concrete\ApiManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{8F5E1659-A847-48F3-8434-490D7AF5360B}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{1AC6FC98-2B25-423F-ABD7-07201B00900F}</Project>
       <Name>Entity</Name>
@@ -82,5 +86,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
