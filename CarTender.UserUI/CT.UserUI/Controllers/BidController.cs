@@ -1,6 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
-using CarTender.FluentValidation.DAL.CombineDAL.Bid;
+using CarTender.FluentValidation.VAL.CombineVAL.Bid;
 using Common.Concrete;
 using Entity.DTO.Auth;
 using Entity.DTO.Bid;
@@ -34,12 +34,14 @@ namespace CT.UserUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<ShowNewBidDTO>(tokenDTO, _routes["ListBid"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
+            //var result = await _apiManager.Get<ShowNewBidDTO>(tokenDTO, _routes["ListBid"]);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return View();
+            //}
+            if (true)
                 return View();
-            }
             else
             {
                 //ErrorViewModel model = new ErrorViewModel()
@@ -64,12 +66,14 @@ namespace CT.UserUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<ShowNewBidDTO>(tokenDTO, _routes["Details"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
+            //var result = await _apiManager.Get<ShowNewBidDTO>(tokenDTO, _routes["Details"]);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return View();
+            //}
+            if (true)
                 return View();
-            }
             else
             {
                 //ErrorViewModel model = new ErrorViewModel()
@@ -93,7 +97,7 @@ namespace CT.UserUI.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(CreateNewBidDTO dto)
         {
-            CombineBidAddDAL validations = new CombineBidAddDAL();
+            CombineBidAddVAL validations = new CombineBidAddVAL();
 
             var result = await _apiManager.Post(_routes["Create"], dto);
             if (result != null)
@@ -101,6 +105,7 @@ namespace CT.UserUI.Controllers
                 //todo: sayfaya veriler basılacak
                 return RedirectToAction("Index");
             }
+
             else
             {
                 //ErrorViewModel model = new ErrorViewModel()
@@ -126,12 +131,14 @@ namespace CT.UserUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<BidInformationDTO>(tokenDTO, _routes["UpdateGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
+            //var result = await _apiManager.Get<BidInformationDTO>(tokenDTO, _routes["UpdateGet"]);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return View();
+            //}
+            if (true)
                 return View();
-            }
             else
             {
                 //ErrorViewModel model = new ErrorViewModel()
