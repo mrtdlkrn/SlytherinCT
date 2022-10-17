@@ -27,23 +27,18 @@
                         @if (Model.EditIsModal)
                         {
                             <td>
-                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#@Model.EditBtnModalID">
-                                    <i class="far fa-trash-alt"></i>
-                                    Güncelle
-                                </button>
+                                @await Component.InvokeAsync("EditButton", new{ModalID = Model.EditBtnModalID})
                             </td>
+
                         }
                         else
                         {
                             <td>
-                                <a class="btn btn-warning" asp-controller="@Model.EditBtnController" asp-action="@Model.EditBtnAction"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</a>
+                                @await Component.InvokeAsync("EditButton", new{ModalID = Model.EditBtnModalID})
                             </td>
                         }
                         <td>
-                            <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#@Model.DeleteBtnModalID">
-                                <i class="far fa-trash-alt"></i>
-                                Sil
-                            </button>
+                            @await Component.InvokeAsync("DeleteButton", new{ModalID = Model.EditBtnModalID})
                         </td>
                     </tr>
                 }

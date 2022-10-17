@@ -23,9 +23,7 @@
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#cauthindex1" aria-expanded="true" aria-controls="cauthindex1" role="button">Roller</a>
-                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addRole">
-                        <i class="fa fa-plus"></i>
-                    </button>
+                    @await Component.InvokeAsync("AddButton", new{IsHref=false,LinkHref="",ControllerName="",ActionName="", ButtonName="", ModalID="addRole"})
                 </h5>
             </div>
             <div id="cauthindex1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
