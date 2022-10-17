@@ -11,7 +11,7 @@
     },
     {
       "ControllerName": "Car",
-      "Actions": {
+      "Actions": { 
         "Index": "api/Car/Index",
         "Create": "api/Car/Create",
         "Update": "api/Car/Update",
@@ -39,23 +39,23 @@
         "Index": "",
         "Create": "",
         "UpdateGet": "",
-        "Update": "",
+        "UpdatePost": "",
         "DeleteGet": "",
-        "Delete": "",
+        "DeletePost": "",
         "ListBid": "",
         "ListBidFilter": "",
         "BidCorporateUserGet": "",
-        "BidCorporateUser": "",
+        "BidCorporateUserPost": "",
         "BidInformationGet": "",
-        "BidInformation": "",
+        "BidInformationPost": "",
         "BidOfferDetailGet": "",
-        "BidOfferDetail": "",
+        "BidOfferDetailPost": "",
         "BidStatusHistoryGet": "",
-        "BidStatusHistory": "",
+        "BidStatusHistoryPost": "",
         "BidUserOfferGet": "",
-        "BidUserOffer": "",
+        "BidUserOfferPost": "",
         "UserAutoBidOfferGet": "",
-        "UserAutoBidOffer": ""
+        "UserAutoBidOfferPost": ""
       }
     },
     {

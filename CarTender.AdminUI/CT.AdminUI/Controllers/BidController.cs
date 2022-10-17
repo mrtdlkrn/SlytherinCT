@@ -122,7 +122,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(CreateNewBidDTO dto)
         {
-            var result = await _apiService.Post(_routes["Update"], dto);
+            var result = await _apiService.Post(_routes["UpdatePost"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -180,7 +180,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(BidInformationDTO dto)
         {
-            var result = await _apiService.Post(_routes["Delete"], dto);
+            var result = await _apiService.Post(_routes["DeletePost"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -300,7 +300,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> BidCorporateUser(BidCorporateUserDTO dto)
         {
-            var result = await _apiService.Post(_routes["BidCorporateUser"], dto);
+            var result = await _apiService.Post(_routes["BidCorporateUserPost"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -354,7 +354,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> BidInformation(BidInformationDTO dto)
         {
-            var result = await _apiService.Post(_routes["BidInformation"], dto);
+            var result = await _apiService.Post(_routes["BidInformationPost"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -408,7 +408,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> BidOfferDetail(BidOfferDetailDTO dto)
         {
-            var result = await _apiService.Post(_routes["BidOfferDetail"], dto);
+            var result = await _apiService.Post(_routes["BidOfferDetailPost"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -461,7 +461,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> BidStatusHistory(BidStatusHistoryDTO dto)
         {
-            var result = await _apiService.Post(_routes["BidStatusHistory"], dto);
+            var result = await _apiService.Post(_routes["BidStatusHistoryPost"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -514,7 +514,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> BidUserOffer(BidUserOfferDTO dto)
         {
-            var result = await _apiService.Post(_routes["BidUserOffer"], dto);
+            var result = await _apiService.Post(_routes["BidUserOfferPost"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -567,7 +567,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> UserAutoBidOffer(BidUserOfferDTO dto) //todo : Yeni bir dto gerekebilir
         {
-            var result = await _apiService.Post(_routes["UserAutoBidOffer"], dto);
+            var result = await _apiService.Post(_routes["UserAutoBidOfferPost"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak

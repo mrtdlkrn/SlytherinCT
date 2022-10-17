@@ -3,7 +3,7 @@
     public class ErrorDataResult<T> : DataResult<T>
     {
 
-        public ErrorDataResult(string message) : base(default, false, message)
+        public ErrorDataResult(string message, int statusCode) : base(default, false, message,statusCode)
         {
         }
     }

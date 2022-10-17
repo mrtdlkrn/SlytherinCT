@@ -26,7 +26,7 @@ namespace CT.API.Controllers.AdminControllers
                     IsCorporate = true,                    
                 });
             }
-            var dataResult = new SuccessDataResult<List<BidInformationDTO>>(bidDTOs, "Data Added");
+            var dataResult = new SuccessDataResult<List<BidInformationDTO>>(bidDTOs, "Data Added",200);
 
             return Ok(dataResult);
         }
@@ -35,7 +35,7 @@ namespace CT.API.Controllers.AdminControllers
         public IActionResult Create(object dto)
         {
             //Todo : Dapper eklenecek
-            var dataResult = new SuccessResult("Data Added");
+            var dataResult = new SuccessResult("Data Added", 200);
             return Ok(dataResult);
         }
 
@@ -43,7 +43,7 @@ namespace CT.API.Controllers.AdminControllers
         public IActionResult Update(object dto)
         {
             //Todo : Dapper eklenecek
-            var dataResult = new SuccessResult("Date Updated");
+            var dataResult = new SuccessResult("Date Updated", 200);
             return Ok(dataResult);
         }
 
@@ -51,7 +51,7 @@ namespace CT.API.Controllers.AdminControllers
         public IActionResult Delete(object dto)
         {
             //Todo : Dapper eklenecek
-            var dataResult = new SuccessResult("Data Deleted");
+            var dataResult = new SuccessResult("Data Deleted", 200);
             return Ok(dataResult);
         }
 

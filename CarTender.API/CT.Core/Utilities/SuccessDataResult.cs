@@ -2,7 +2,8 @@
 {
     public class SuccessDataResult<T> : DataResult<T>
     {
-        public SuccessDataResult(T data, string message) : base(data, true, message)
+        //todo : bak
+        public SuccessDataResult(T data, string message,int statusCode) : base(data, true, message, statusCode)
         {
         }
     }
