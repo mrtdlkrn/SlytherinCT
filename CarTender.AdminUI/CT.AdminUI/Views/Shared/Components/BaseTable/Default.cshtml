@@ -1,50 +1,16 @@
 ﻿@using CT.AdminUI.Models.BaseTableDTOs
 @model BaseTableDTO
 @{
-    var hede = Model;
-
-    int limit = Model.TableHeads.Count();
-    int index = 1;
 }
 
 <div>
-    <form asp-action="@Model.FormActionStr" method="get">
-        <div class="form-actions">
-            <div class="row mt-3 mb-3">
-                <div class="col-md-4">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">@Model.SearchbarStr:</label>
-                        </div>
-                        <input type="text" class="form-control" name="SearchString" value="@ViewData["CurrentFilter"]" />
-                    </div>
-                </div>
-                <div class="col-md-1">
-                    <button class="btn btn-warning" type="submit"><i class="fa fa-search"></i></button>
-                </div>
-                <div class="col-md-2">
-                    <a asp-action="@Model.FormActionStr" class="btn btn-info">Hepsini Göster</a>
-                </div>
-            </div>
-        </div>
-    </form>
     <div class="table-responsive">
-        <table class="table table-bordered" width="100%" cellspacing="0">
+        <table id="@Model.TableID" class="table table-bordered" width="100%" cellspacing="0">
             <thead>
                 <tr>
                     @foreach (var item in Model.TableHeads)
                     {
-                        @if (index == 1){
-                            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">@item</a></th>
-                            index++;
-                        }
-                        else if(index == limit){
-                            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">@item</a></th>
-                        }
-                        else{
-                            <th>@item</th>
-                            index++;
-                        }
+                        <th>@item</th>
                     }
                     <th></th>
                     <th></th>
@@ -58,38 +24,25 @@
                         {
                             <td>@item.GetType().GetProperty(detail.Name).GetValue(item)</td>
                         }
+                        @if (Model.EditIsModal)
+                        {
+                            <td>
+                                @await Component.InvokeAsync("EditButton", new{ModalID = Model.EditBtnModalID})
+                            </td>
+
+                        }
+                        else
+                        {
+                            <td>
+                                @await Component.InvokeAsync("EditButton", new{ModalID = Model.EditBtnModalID})
+                            </td>
+                        }
                         <td>
-                            <a class="btn btn-warning" asp-controller="@Model.EditBtnController" asp-action="@Model.EditBtnAction"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> @Model.EditBtnStr</a>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#@Model.DeleteBtnModalID">
-                                <i class="far fa-trash-alt"></i>
-                                @Model.DeleteBtnStr
-                            </button>
+                            @await Component.InvokeAsync("DeleteButton", new{ModalID = Model.EditBtnModalID})
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
-
-        @{
-            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-        }
-
-        <a asp-action="@Model.FormActionStr"
-           asp-route-sortOrder="@ViewData["CurrentSort"]"
-           asp-route-pageNumber="@(Model.PageIndex - 1)"
-           asp-route-currentFilter="@ViewData["CurrentFilter"]"
-           class="btn btn-default @prevDisabled">
-            Önceki
-        </a>
-        <a asp-action="@Model.FormActionStr"
-           asp-route-sortOrder="@ViewData["CurrentSort"]"
-           asp-route-pageNumber="@(Model.PageIndex + 1)"
-           asp-route-currentFilter="@ViewData["CurrentFilter"]"
-           class="btn btn-default @nextDisabled">
-            Sonraki
-        </a>
     </div>
 </div>

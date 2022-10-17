@@ -1,0 +1,16 @@
+﻿@using CT.AdminUI.Models.ButtonDTOs.AddDTO
+@model AddDTO
+@{
+    var hede = Model;
+}
+
+@if (Model.IsHref)
+{
+    <a class="btn btn-success" asp-controller="@Model.ControllerName" asp-action="@Model.ActionName"><i class="fa-solid fa-plus"></i> @Model.ButtonName</a>
+}
+else
+{
+    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#@Model.ModalID">
+        <i class="fa fa-plus"></i>
+    </button>
+}

@@ -1,13 +1,12 @@
+using Business;
 using Business.Abstract;
 using Business.Concrete;
-using CarTender.FluentValidation.DAL.AdminDAL.Login;
 using Common.Abstract;
 using Common.Concrete;
 using Core.DependencyResolvers;
 using Core.Extensions;
 using Core.Utilities.IoC;
 using CT.AdminUI.ExceptionHandler.Extensions;
-using FluentValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -30,10 +29,8 @@ namespace CarTender.AdminUI
         {
             services.AddControllersWithViews();
 
-            services.AddSingleton<IBaseAPIService, BaseAPIService>();
-            services.AddSingleton<IMappingService, MappingService>();
-            services.AddSingleton<IApiService, ApiManager>();
-            services.AddSingleton<IApiRoutes, ApiRoutes>();
+            ServiceRegistration.AddMyServices(services);
+
 
             services.AddHttpClient<BaseAPIService>(opt =>
             {

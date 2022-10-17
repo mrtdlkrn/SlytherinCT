@@ -47,8 +47,8 @@
     <Reference Include="CarTender.FluentValidation">
       <HintPath>..\..\CT.FluentValidation\CarTender.FluentValidation\bin\Debug\net5.0\CarTender.FluentValidation.dll</HintPath>
     </Reference>
-    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentValidation.8.6.3\lib\net45\FluentValidation.dll</HintPath>
+    <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.11.0.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -273,6 +273,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="NLog.config" />
+    <Content Include="ApiRoutes.json" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -311,7 +312,6 @@
     <Content Include="Views\Bid\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Advert\Index.cshtml" />
-    <Content Include="Views\Advert\ViewAdvert.cshtml" />
     <Content Include="Views\User\ViewFavorites.cshtml" />
     <Content Include="Views\Bid\Details.cshtml" />
     <Content Include="Views\Advert\Details.cshtml" />
@@ -331,6 +331,10 @@
       <Project>{768AF72E-A9F5-49F9-B182-601ED93B84F2}</Project>
       <Name>Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{8F5E1659-A847-48F3-8434-490D7AF5360B}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{1AC6FC98-2B25-423F-ABD7-07201B00900F}</Project>
       <Name>Entity</Name>
@@ -338,10 +342,6 @@
     <ProjectReference Include="..\LogLayer\LogLayer.csproj">
       <Project>{C21290AF-1F87-4AF8-89EC-F9BFE32B3B5B}</Project>
       <Name>LogLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Validation\Validation.csproj">
-      <Project>{07E4907F-60CA-48FD-BE09-274FB66C535A}</Project>
-      <Name>Validation</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

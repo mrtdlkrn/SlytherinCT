@@ -1,18 +1,16 @@
 ﻿@using Entity.DTO.Car
 @using Entity.DTO.Pagination
 @using System.Reflection
-@model PaginatedList<ListCarDTO>
+@model List<ListCarDTO>
 
 @{
     ViewData["Title"] = "Araç Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    var tempheads = typeof(ListCarDTO).GetProperties();
-
     List<string> heads = new List<string>();
     List<object> datas = new List<object>();
 
-    foreach (var item in tempheads)
+    foreach (var item in typeof(ListCarDTO).GetProperties())
     {
         heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
     }
@@ -97,7 +95,7 @@
 
     <div class="row mb-4 clearfix">
         <div class="col-md-3 float-right">
-            <a class="btn btn-success btn-block " asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-plus"></i> Araç Oluştur</a>
+            @await Component.InvokeAsync("AddButton", new{IsHref=true,LinkHref="",ControllerName="Car",ActionName="Edit", ButtonName="Araç Oluştur", ModalID=""})
         </div>
     </div>
 
@@ -108,18 +106,13 @@
         <div class="card-body">
             @await Component.InvokeAsync("BaseTable",
             new{
-                FormActionStr="Index",
-                SearchbarStr="Plaka",
-                EditBtnStr="Güncelle", 
-                EditBtnController="Car",
-                EditBtnAction="Edit", 
-                DeleteBtnStr="Sil",
-                DeleteBtnModalID="deleteCar", 
-                TableHeads=heads,
-                TableDatas=datas,
-                HasPreviousPage=Model.HasPreviousPage,
-                HasNextPage = Model.HasNextPage,
-                PageIndex = Model.PageIndex
+            EditIsModal = false,
+            EditBtnModalID = "",
+            EditBtnController="Car",
+            EditBtnAction="Edit",
+            DeleteBtnModalID="deleteCar",
+            TableHeads=heads,
+            TableDatas=datas
             })
         </div>
     </div>
