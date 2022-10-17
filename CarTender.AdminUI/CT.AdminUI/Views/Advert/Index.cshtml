@@ -38,6 +38,7 @@
             </div>
             <div id="cadvertindex1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+
                     @await Component.InvokeAsync("BaseTable",
                     new{
                     TableID = "myTable1",
@@ -49,6 +50,7 @@
                     TableHeads=heads,
                     TableDatas=datas
                     })
+
                 </div>
             </div>
         </div>

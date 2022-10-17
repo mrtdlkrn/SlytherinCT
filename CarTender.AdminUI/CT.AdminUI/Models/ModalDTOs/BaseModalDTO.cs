@@ -1,7 +1,7 @@
 ﻿namespace CT.AdminUI.Models.ModalDTOs
 {
     /// <summary>
-    /// Add ve Edit modalları için kullanılır.
+    /// Using for Add and Edit modals.
     /// </summary>
     public class BaseModalDTO
     {

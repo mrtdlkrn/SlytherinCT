@@ -46,6 +46,7 @@
     <Compile Include="DTO\AdvertStatusHistory\EditAdvertStatusHistoryDTO.cs" />
     <Compile Include="DTO\Advert\AddAdvertDTO.cs" />
     <Compile Include="DTO\Advert\EditAdvertDTO.cs" />
+    <Compile Include="DTO\Advert\ListAdvertDTO.cs" />
     <Compile Include="DTO\Auth\LoginDTO.cs" />
     <Compile Include="DTO\Auth\TokenDTO.cs" />
     <Compile Include="DTO\Bid\BidCorporateUserDTO.cs" />

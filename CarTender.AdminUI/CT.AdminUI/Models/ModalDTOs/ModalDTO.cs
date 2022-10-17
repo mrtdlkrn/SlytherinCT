@@ -1,7 +1,7 @@
 ﻿namespace CT.AdminUI.Models.ModalDTOs
 {
     /// <summary>
-    /// Silme ve Aktif etme modalları için kullanılır.
+    /// Using for Delete and Active modals.
     /// </summary>
     public class ModalDTO
     {

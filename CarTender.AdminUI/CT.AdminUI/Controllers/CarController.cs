@@ -1,6 +1,4 @@
 ﻿using Business.Abstract;
-using CarTender.FluentValidation.DAL.CombineDAL.Car;
-using CarTender.FluentValidation.DTO.CombineDTO.Car;
 using Entity.DTO.Auth;
 using Entity.DTO.Car;
 using Entity.DTO.Pagination;
@@ -105,6 +103,7 @@ namespace CT.AdminUI.Controllers
                 return View("Add", dto);
             }
             var result = await _apiService.Post(tokenDTO,_routes["Create"], dto);
+
             return RedirectToAction("Index");
         }
 
