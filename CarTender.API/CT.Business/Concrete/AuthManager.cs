@@ -1,7 +1,7 @@
 ﻿using CarTender.Business.Abstract;
 using CarTender.Core.Security.Hashing;
 using CarTender.Core.Security.JWT;
-using CarTender.Entities;
+using CT.Entities.Entities;
 using System.Collections.Generic;
 
 namespace CarTender.Business.Concrete

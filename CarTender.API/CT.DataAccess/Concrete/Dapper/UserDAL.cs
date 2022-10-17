@@ -1,5 +1,5 @@
 ﻿using CarTender.DataAccess.Abstract;
-using CarTender.Entities;
+using CT.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;

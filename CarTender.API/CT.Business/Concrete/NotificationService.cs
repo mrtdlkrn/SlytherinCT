@@ -1,6 +1,6 @@
 ﻿using CT.Business.Abstract;
 using CT.Common.Service;
-using CT.Entities;
+using CT.Entities.Entities;
 using CT.Entities.Mail;
 using Microsoft.Extensions.Configuration;
 using RabbitMQ.Client;

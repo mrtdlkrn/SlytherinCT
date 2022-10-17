@@ -1,4 +1,4 @@
-﻿using CarTender.Entities;
+﻿using CT.Entities.Entities;
 using System.Collections.Generic;
 
 namespace CarTender.Core.Security.JWT
