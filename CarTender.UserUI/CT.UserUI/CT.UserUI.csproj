@@ -318,6 +318,7 @@
     <Content Include="Views\Advert\Details.cshtml" />
     <Content Include="Views\Car\Details.cshtml" />
     <Content Include="Views\Home\Expertise.cshtml" />
+    <Content Include="Views\Car\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
