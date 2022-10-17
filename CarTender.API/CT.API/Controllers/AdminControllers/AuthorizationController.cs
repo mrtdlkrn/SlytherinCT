@@ -22,7 +22,7 @@ namespace CT.API.Controllers.AdminControllers
             roles.Add(new ListRoleDTO() { Name = "İnsan Kaynakları" });
             roles.Add(new ListRoleDTO() { Name = "Bireysel Kullanıcı" });
 
-            return Ok(new SuccessDataResult<List<ListRoleDTO>>(roles, "Roller listelendi"));
+            return Ok(new SuccessDataResult<List<ListRoleDTO>>(roles, "Roller listelendi", 200));
         }
 
 
@@ -35,7 +35,7 @@ namespace CT.API.Controllers.AdminControllers
             authorizations.Add(new ListAuthorizationDTO() { Name = "Güncelle" });
             authorizations.Add(new ListAuthorizationDTO() { Name = "Düzenle" });
 
-            return Ok(new SuccessDataResult<List<ListAuthorizationDTO>>(authorizations, "Yetkiler listelendi"));
+            return Ok(new SuccessDataResult<List<ListAuthorizationDTO>>(authorizations, "Yetkiler listelendi", 200));
         }
 
     }
