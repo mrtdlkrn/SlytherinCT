@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarTender.FluentValidation.DAL.AdminDAL.Status
+namespace CarTender.FluentValidation.VAL.AdminVAL.Status
 {
     public class AdminStatusVAL : AbstractValidator<AdminStatusDTO>
     {
@@ -16,7 +16,7 @@ namespace CarTender.FluentValidation.DAL.AdminDAL.Status
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty().WithMessage("Lütfen Statü Giriniz.")
                 .MaximumLength(50).WithMessage("50 Karakterden Fazla Girdiniz.");
-                
+
         }
     }
 }

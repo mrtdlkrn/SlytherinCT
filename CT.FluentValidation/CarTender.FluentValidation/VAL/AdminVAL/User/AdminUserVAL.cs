@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarTender.FluentValidation.DAL.AdminDAL.User
+namespace CarTender.FluentValidation.VAL.AdminVAL.User
 {
     public class AdminUserVAL : AbstractValidator<AdminUserDTO>
     {
@@ -18,7 +18,7 @@ namespace CarTender.FluentValidation.DAL.AdminDAL.User
                 .MinimumLength(4).WithMessage("Kullanıcı Adı 4 Karakterden Küçük Olamaz.")
                 .MaximumLength(60).WithMessage("Kullanıcı Adı 60 Karakterden Fazla Olamaz.");
 
-            RuleFor(x=>x.CustomerName)
+            RuleFor(x => x.CustomerName)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty().WithMessage("Müşteri Adı Boş Bırakılamaz.")
                 .MinimumLength(4).WithMessage("Müşteri Adı 4 Karakterden Küçük Olamaz.")

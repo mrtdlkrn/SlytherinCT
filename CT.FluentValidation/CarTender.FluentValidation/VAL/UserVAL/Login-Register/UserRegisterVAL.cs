@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarTender.FluentValidation.DAL.UserDAL.Login_Register
+namespace CarTender.FluentValidation.VAL.UserVAL.Login_Register
 {
     public class UserRegisterVAL : AbstractValidator<UserRegisterDTO>
     {
