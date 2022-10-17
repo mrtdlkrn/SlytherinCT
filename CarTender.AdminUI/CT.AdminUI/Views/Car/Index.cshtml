@@ -95,7 +95,7 @@
 
     <div class="row mb-4 clearfix">
         <div class="col-md-3 float-right">
-            <a class="btn btn-success btn-block " asp-controller="Car" asp-action="Edit"><i class="fa-solid fa-plus"></i> Araç Oluştur</a>
+            @await Component.InvokeAsync("AddButton", new{IsHref=true,LinkHref="",ControllerName="Car",ActionName="Edit", ButtonName="Araç Oluştur", ModalID=""})
         </div>
     </div>
 
