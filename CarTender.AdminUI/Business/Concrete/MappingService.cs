@@ -1,5 +1,4 @@
 ﻿using Business.Abstract;
-using Entity.DTO.Auth;
 using Entity.DTO.User;
 using Microsoft.AspNetCore.Http;
 using System;

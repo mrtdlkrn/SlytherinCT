@@ -1,16 +1,11 @@
 ﻿using Business.Abstract;
 using Common.Abstract;
-using Entity.DTO;
 using Entity.DTO.Auth;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    public class ApiManager:IApiManager
+    public class ApiManager : IApiManager
     {
         private readonly IBaseAPIService _baseAPIService;
 

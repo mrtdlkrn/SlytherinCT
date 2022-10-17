@@ -1,11 +1,6 @@
 ﻿using Business.Abstract;
-using CarTender.AdminUI.Models;
-using Entity.DTO.Auth;
-using Entity.DTO.Bid;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace CT.AdminUI.Controllers
@@ -14,9 +9,9 @@ namespace CT.AdminUI.Controllers
     {
         //todo : Town'a ait Dtolar oluşturulacak.
         private readonly IApiService _apiService;
-        private readonly IDictionary<string,string> _routes;
+        private readonly IDictionary<string, string> _routes;
 
-        public TownController(IApiService apiService,IApiRoutes routes)
+        public TownController(IApiService apiService, IApiRoutes routes)
         {
             this._routes = routes.GetApiRoutes("Town");
             this._apiService = apiService;

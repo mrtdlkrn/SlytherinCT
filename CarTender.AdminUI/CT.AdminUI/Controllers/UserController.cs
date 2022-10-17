@@ -1,9 +1,5 @@
 ﻿using Business.Abstract;
-using CarTender.AdminUI.Models;
-using Entity.DTO.Auth;
-using Entity.DTO.Bid;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,10 +8,10 @@ namespace CT.AdminUI.Controllers
     public class UserController : Controller
     {
         //todo : User'a ait dtolar oluşturulacak
-        private readonly IDictionary<string,string> _routes;
+        private readonly IDictionary<string, string> _routes;
         private readonly IApiService _apiService;
 
-        public UserController(IApiService apiService,IApiRoutes routes)
+        public UserController(IApiService apiService, IApiRoutes routes)
         {
             _apiService = apiService;
             _routes = routes.GetApiRoutes("User");

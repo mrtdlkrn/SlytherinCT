@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 
 namespace CT.AdminUI.Controllers

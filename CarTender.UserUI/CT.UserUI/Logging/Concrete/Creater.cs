@@ -1,9 +1,5 @@
 ﻿using CT.UserUI.Logging.Abstract;
 using CT.UserUI.Logging.Concrete.Loggers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace CT.UserUI.Logging.Concrete
 {

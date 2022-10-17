@@ -9,6 +9,6 @@ namespace Entity.DTO.CarModification
         public string CarPlate { get; set; }
 
         [DisplayName("Modifiye Bileşeni")]
-        public List<string> ModificationComponents{ get; set; }
+        public List<string> ModificationComponents { get; set; }
     }
 }

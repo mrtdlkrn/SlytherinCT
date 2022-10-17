@@ -16,7 +16,7 @@ namespace CT.API.Controllers.AdminControllers
         {
             //Todo : Dapper eklenecek
             List<CarDTO> carDTOs = new List<CarDTO>();
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 carDTOs.Add(new CarDTO()
                 {
@@ -33,7 +33,7 @@ namespace CT.API.Controllers.AdminControllers
 
             return Ok(dataResult);
         }
-        
+
         [HttpPost("Create")]
         public IActionResult Create(object dto)
         {
@@ -41,7 +41,7 @@ namespace CT.API.Controllers.AdminControllers
             var dataResult = new SuccessResult("Ekleme Başarılı");
             return Ok(dataResult);
         }
-        
+
         [HttpPost("Update")]
         public IActionResult Update(object dto)
         {
@@ -49,7 +49,7 @@ namespace CT.API.Controllers.AdminControllers
             var dataResult = new SuccessResult("Güncelleme Başarılı");
             return Ok(dataResult);
         }
-        
+
         [HttpPost("Delete")]
         public IActionResult Delete(object dto)
         {
@@ -57,7 +57,7 @@ namespace CT.API.Controllers.AdminControllers
             var dataResult = new SuccessResult("Silme Başarılı");
             return Ok(dataResult);
         }
-        
+
         [HttpGet("BrandModel")]
         public IActionResult BrandModel(object dto)
         {
@@ -66,7 +66,7 @@ namespace CT.API.Controllers.AdminControllers
             var dataResult = new SuccessDataResult<BrandModelDTO>(data, "Data Eklendi");
             return Ok(dataResult);
         }
-        
+
         [HttpGet("Detail")]
         public IActionResult Detail(object dto)
         {
@@ -84,34 +84,34 @@ namespace CT.API.Controllers.AdminControllers
             var dataResult = new SuccessDataResult<CarDTO>(car, "Data Eklendi");
             return Ok(dataResult);
         }
-        
+
         [HttpGet("CarDetail")]
         public IActionResult CarDetail(object dto)
         {
             //Todo : Dapper eklenecek
             CarDetailDTO data = new CarDetailDTO();
-            var dataResult = new SuccessDataResult<CarDetailDTO>(data,"Data Eklendi");
+            var dataResult = new SuccessDataResult<CarDetailDTO>(data, "Data Eklendi");
             return Ok(dataResult);
         }
-        
+
         [HttpGet("CarImage")]
         public IActionResult CarImage(object dto)
         {
             //Todo : Dapper eklenecek
             CarImageDTO data = new CarImageDTO();
-            var dataResult = new SuccessDataResult<CarImageDTO>(data,"Data Eklendi");
+            var dataResult = new SuccessDataResult<CarImageDTO>(data, "Data Eklendi");
             return Ok(dataResult);
         }
-        
+
         [HttpGet("CarModification")]
         public IActionResult CarModification(object dto)
         {
             //Todo : Dapper eklenecek
             CarModificationDTO data = new CarModificationDTO();
-            var dataResult = new SuccessDataResult<CarModificationDTO>(data,"Data Eklendi");
+            var dataResult = new SuccessDataResult<CarModificationDTO>(data, "Data Eklendi");
             return Ok(dataResult);
         }
-        
+
         [HttpGet("CarCommission")]
         public IActionResult CarCommission(object dto)
         {
@@ -135,16 +135,16 @@ namespace CT.API.Controllers.AdminControllers
                 StartDate = DateTime.Today,
                 FinishDate = DateTime.Now
             });
-            var dataResult = new SuccessDataResult<List<CarCommissionDTO>>(data,"Data Eklendi");
+            var dataResult = new SuccessDataResult<List<CarCommissionDTO>>(data, "Data Eklendi");
             return Ok(dataResult);
         }
-        
+
         [HttpGet("CarBuyerInformation")]
         public IActionResult CarBuyerInformation(object dto)
         {
             //Todo : Dapper eklenecek
             CarBuyerDTO data = new CarBuyerDTO();
-            var dataResult = new SuccessDataResult<CarBuyerDTO>(data,"Data Eklendi");
+            var dataResult = new SuccessDataResult<CarBuyerDTO>(data, "Data Eklendi");
             return Ok(dataResult);
         }
     }

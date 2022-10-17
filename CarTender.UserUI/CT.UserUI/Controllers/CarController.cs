@@ -1,14 +1,9 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
-using CarTender.FluentValidation.DAL.CombineDAL.Car;
-using CarTender.FluentValidation.DTO.CombineDTO.Car;
 using Common.Concrete;
-using Entity.DTO;
 using Entity.DTO.Advert;
 using Entity.DTO.Auth;
-using Entity.DTO.Bid;
 using Entity.DTO.Car;
-using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -25,7 +20,7 @@ namespace CT.UserUI.Controllers
         public CarController()
         {
             _apiManager = new ApiManager(new BaseAPIService());
-            _routes =  new ApiRoutes().GetApiRoutes("Car");
+            _routes = new ApiRoutes().GetApiRoutes("Car");
 
             Cars.Add(new ListCarDTO()
             {

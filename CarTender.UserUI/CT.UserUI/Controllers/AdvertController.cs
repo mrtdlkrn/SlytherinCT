@@ -1,12 +1,9 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
-using CarTender.FluentValidation.DAL.CombineDAL.Car;
-using CarTender.FluentValidation.DTO.CombineDTO.Car;
 using Common.Concrete;
 using Entity.DTO.Advert;
 using Entity.DTO.Auth;
 using Entity.DTO.Bid;
-using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

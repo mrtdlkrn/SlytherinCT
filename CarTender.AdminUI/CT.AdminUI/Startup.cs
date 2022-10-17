@@ -1,4 +1,3 @@
-using Business;
 using Business.Abstract;
 using Business.Concrete;
 using Common.Abstract;
@@ -29,8 +28,10 @@ namespace CarTender.AdminUI
         {
             services.AddControllersWithViews();
 
-            ServiceRegistration.AddMyServices(services);
-
+            services.AddSingleton<IBaseAPIService, BaseAPIService>();
+            services.AddSingleton<IMappingService, MappingService>();
+            services.AddSingleton<IApiService, ApiManager>();
+            services.AddSingleton<IApiRoutes, ApiRoutes>();
 
             services.AddHttpClient<BaseAPIService>(opt =>
             {
