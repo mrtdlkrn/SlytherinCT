@@ -1,6 +1,4 @@
 ﻿using Business.Abstract;
-using CarTender.FluentValidation.DAL.CombineDAL.Car;
-using CarTender.FluentValidation.DTO.CombineDTO.Car;
 using Entity.DTO.Auth;
 using Entity.DTO.Car;
 using Entity.DTO.Pagination;
@@ -99,27 +97,27 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(AddCarDTO dto)
         {
-            CombineAddOrEditVehicleVAL validations = new CombineAddOrEditVehicleVAL();
-            ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
-            {
+            //CombineAddOrEditVehicleVAL validations = new CombineAddOrEditVehicleVAL();
+            //ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
+            //{
 
-                KM = dto.KM,
-                VehiclePrice = dto.Price,
-                Explanation = dto.Explanation,
-                PhotoPath1 = dto.PhotoPath1,
-                PhotoPath2 = dto.PhotoPath2,
-                PhotoPath3 = dto.PhotoPath3,
-                PhotoPath4 = dto.PhotoPath4,
-                PhotoPath5 = dto.PhotoPath5
+            //    KM = dto.KM,
+            //    VehiclePrice = dto.Price,
+            //    Explanation = dto.Explanation,
+            //    PhotoPath1 = dto.PhotoPath1,
+            //    PhotoPath2 = dto.PhotoPath2,
+            //    PhotoPath3 = dto.PhotoPath3,
+            //    PhotoPath4 = dto.PhotoPath4,
+            //    PhotoPath5 = dto.PhotoPath5
 
-            });
+            //});
 
-            if (!validationResult.IsValid)
-            {
-                validationResult.AddToModelState(this.ModelState);
+            //if (!validationResult.IsValid)
+            //{
+            //    validationResult.AddToModelState(this.ModelState);
 
-                return View("Add", dto);
-            }
+            //    return View("Add", dto);
+            //}
             var result = await _apiService.Post(_routes["Create"], dto);
             return RedirectToAction("Index");
         }
