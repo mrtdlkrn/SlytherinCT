@@ -29,7 +29,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginDTO dto)
         {
-            AdminLoginDAL validations = new AdminLoginDAL();
+            AdminLoginVAL validations = new AdminLoginVAL();
             ValidationResult validationResult = validations.Validate(new AdminLoginDTO
             {
 
