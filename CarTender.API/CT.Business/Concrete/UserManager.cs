@@ -1,6 +1,7 @@
 ﻿using CarTender.Business.Abstract;
 using CarTender.DataAccess.Abstract;
 using CT.Entities.Entities;
+using System.Collections.Generic;
 
 namespace CarTender.Business.Concrete
 {
@@ -18,9 +19,19 @@ namespace CarTender.Business.Concrete
             return userDAL.Add(user);
         }
 
+        public List<User> GetAll()
+        {
+            return userDAL.GetAll();
+        }
+
         public User GetByUserName(string userName)
         {
             return userDAL.Get(x => x.Username == userName);
+        }
+
+        public bool Update(User user)
+        {
+            return userDAL.Update(user);
         }
     }
 }
