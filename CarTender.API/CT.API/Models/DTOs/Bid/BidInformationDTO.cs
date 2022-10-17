@@ -15,7 +15,7 @@ namespace Entity.DTO.Bid
         public DateTime? ModifiedDate { get; set; }
         public Guid? ApprovedBy { get; set; }
         public Guid? FinishedBy { get; set; }
-        public Guid CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         public Guid? ModifiedBy { get; set; }
         public Guid? UserID { get; set; }
         public bool IsActive { get; set; }

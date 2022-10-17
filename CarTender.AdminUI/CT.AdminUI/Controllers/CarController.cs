@@ -1,7 +1,7 @@
 ﻿using Business.Abstract;
 using CarTender.FluentValidation.DAL.CombineDAL.Car;
 using CarTender.FluentValidation.DTO.CombineDTO.Car;
-using Entity.DTO;
+using Entity.DTO.Auth;
 using Entity.DTO.Car;
 using Entity.DTO.Pagination;
 using FluentValidation.AspNetCore;
@@ -99,7 +99,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(AddCarDTO dto)
         {
-            CombineAddOrEditVehicleDAL validations = new CombineAddOrEditVehicleDAL();
+            CombineAddOrEditVehicleVAL validations = new CombineAddOrEditVehicleVAL();
             ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
             {
 
