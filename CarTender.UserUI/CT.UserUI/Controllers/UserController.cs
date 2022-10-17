@@ -35,12 +35,14 @@ namespace CT.UserUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<List<GetUserDTO>>(tokenDTO, _routes["Index"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
+            //var result = await _apiManager.Get<List<GetUserDTO>>(tokenDTO, _routes["Index"]);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return View();
+            //}
+            if (true)
                 return View();
-            }
             else
             {
                 //ErrorViewModel model = new ErrorViewModel()
@@ -65,12 +67,14 @@ namespace CT.UserUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<EditUserDTO>(tokenDTO, _routes["UpdateGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
+            //var result = await _apiManager.Get<EditUserDTO>(tokenDTO, _routes["UpdateGet"]);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return View();
+            //}
+            if (true)
                 return View();
-            }
             else
             {
                 //ErrorViewModel model = new ErrorViewModel()

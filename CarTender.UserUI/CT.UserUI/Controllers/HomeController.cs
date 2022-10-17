@@ -22,5 +22,12 @@ namespace CT.UserUI.Controllers
 
             return View();
         }
+
+        public ActionResult Expertise()
+        {
+            ViewBag.Message = "Expertise page.";
+
+            return View();
+        }
     }
 }

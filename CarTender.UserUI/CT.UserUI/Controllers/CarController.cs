@@ -20,7 +20,7 @@ namespace CT.UserUI.Controllers
         public CarController()
         {
             _apiManager = new ApiManager(new BaseAPIService());
-            _routes = new ApiRoutes().GetApiRoutes("Car");
+            //_routes = new ApiRoutes().GetApiRoutes("Car");
 
             Cars.Add(new ListCarDTO()
             {
@@ -44,12 +44,15 @@ namespace CT.UserUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<ListCarDTO>(tokenDTO, _routes["ListCar"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
+            //var result = await _apiManager.Get<ListCarDTO>(tokenDTO, _routes["ListCar"]);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return View();
+            //}
+
+            if (true)
                 return View();
-            }
             else
             {
                 //ErrorViewModel model = new ErrorViewModel()
@@ -74,12 +77,14 @@ namespace CT.UserUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<ListAdvertDTO>(tokenDTO, _routes["Details"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
+            //var result = await _apiManager.Get<ListAdvertDTO>(tokenDTO, _routes["Details"]);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return View();
+            //}
+            if (true)
                 return View();
-            }
             else
             {
                 //ErrorViewModel model = new ErrorViewModel()
@@ -135,12 +140,14 @@ namespace CT.UserUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<UpdateCarDTO>(tokenDTO, _routes["UpdateGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
+            //var result = await _apiManager.Get<UpdateCarDTO>(tokenDTO, _routes["UpdateGet"]);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return View();
+            //}
+            if (true)
                 return View();
-            }
             else
             {
                 //ErrorViewModel model = new ErrorViewModel()
