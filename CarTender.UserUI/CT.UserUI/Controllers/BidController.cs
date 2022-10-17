@@ -1,6 +1,14 @@
-﻿using System;
+﻿using Business.Abstract;
+using Business.Concrete;
+using CarTender.FluentValidation.DAL.CombineDAL.Bid;
+using Common.Concrete;
+using Entity.DTO.Advert;
+using Entity.DTO.Auth;
+using Entity.DTO.Bid;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,81 +16,212 @@ namespace CT.UserUI.Controllers
 {
     public class BidController : Controller
     {
-        // GET: Bid
-        public ActionResult Index()
+        private readonly IApiManager _apiManager;
+        private readonly IDictionary<string, string> _routes;
+
+
+        public BidController()
         {
-            return View();
+            _apiManager = new ApiManager(new BaseAPIService());
+            _routes = new ApiRoutes().GetApiRoutes("Bid");
         }
 
-        // GET: Bid/Details/5
-        public ActionResult Details(int id)
+        // Bid List GET
+        public async Task<ActionResult> Index()
         {
-            return View();
+            //todo : User'a göre tokenDto oluşturulacak
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            var result = await _apiManager.Get<ShowNewBidDTO>(tokenDTO, _routes["ListBid"]);
+            if (result != null)
+            {
+                //todo: sayfaya veriler basılacak
+                return View();
+            }
+            else
+            {
+                //ErrorViewModel model = new ErrorViewModel()
+                //{
+                //    Header = "Bid",
+                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+                //    StatusCode = 500
+                //};
+                //return View("~/Views/Shared/Error.cshtml", model);
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
 
-        // GET: Bid/Create
+        // Bid Details
+        public async Task<ActionResult> Details()
+        {
+            //todo : User'a göre tokenDto oluşturulacak
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            var result = await _apiManager.Get<ShowNewBidDTO>(tokenDTO, _routes["Details"]);
+            if (result != null)
+            {
+                //todo: sayfaya veriler basılacak
+                return View();
+            }
+            else
+            {
+                //ErrorViewModel model = new ErrorViewModel()
+                //{
+                //    Header = "Bid",
+                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+                //    StatusCode = 500
+                //};
+                //return View("~/Views/Shared/Error.cshtml", model);
+                return View("~/Views/Shared/Error.cshtml");
+            }
+        }
+
+        // Bid Create GET
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Bid/Create
+        // Bid Create POST
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public async Task<ActionResult> Create(CreateNewBidDTO dto)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            CombineBidAddDAL validations = new CombineBidAddDAL();
 
+            var result = await _apiManager.Post(_routes["Create"], dto);
+            if (result != null)
+            {
+                //todo: sayfaya veriler basılacak
                 return RedirectToAction("Index");
             }
-            catch
+            else
             {
-                return View();
+                //ErrorViewModel model = new ErrorViewModel()
+                //{
+                //    Header = "Bid",
+                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+                //    StatusCode = 500
+                //};
+                //return View("~/Views/Shared/Error.cshtml", model);
+                return View("~/Views/Shared/Error.cshtml");
+
             }
         }
 
-        // GET: Bid/Edit/5
-        public ActionResult Edit(int id)
+        // Bid Edit Page GET
+        public async Task<ActionResult> Edit()
         {
-            return View();
+            //todo : User'a göre tokenDto oluşturulacak
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            var result = await _apiManager.Get<BidInformationDTO>(tokenDTO, _routes["UpdateGet"]);
+            if (result != null)
+            {
+                //todo: sayfaya veriler basılacak
+                return View();
+            }
+            else
+            {
+                //ErrorViewModel model = new ErrorViewModel()
+                //{
+                //    Header = "Bid",
+                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+                //    StatusCode = 500
+                //};
+                //return View("~/Views/Shared/Error.cshtml", model);
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
 
-        // POST: Bid/Edit/5
+        // Bid Edit Page POST
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public async Task<ActionResult> Edit(int id, CreateNewBidDTO dto)
         {
-            try
+            var result = await _apiManager.Post(_routes["Update"], dto);
+            if (result != null)
             {
-                // TODO: Add update logic here
-
+                //todo: sayfaya veriler basılacak
                 return RedirectToAction("Index");
             }
-            catch
+            else
             {
-                return View();
+                //ErrorViewModel model = new ErrorViewModel()
+                //{
+                //    Header = "Bid",
+                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+                //    StatusCode = 500
+                //};
+                //return View("~/Views/Shared/Error.cshtml", model);
+                return View("~/Views/Shared/Error.cshtml");
+
             }
         }
 
-        // GET: Bid/Delete/5
-        public ActionResult Delete(int id)
+        // Bid Delete GET
+        public async Task<ActionResult> Delete()
         {
-            return View();
+            //todo : User'a göre tokenDto oluşturulacak
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+                 ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            var result = await _apiManager.Get<CreateNewBidDTO>(tokenDTO, _routes["DeleteGet"]);
+            if (result != null)
+            {
+                //todo: sayfaya veriler basılacak
+                return View();
+            }
+            else
+            {
+                //ErrorViewModel model = new ErrorViewModel()
+                //{
+                //    Header = "Bid",
+                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+                //    StatusCode = 500
+                //};
+                //return View("~/Views/Shared/Error.cshtml", model);
+                return View("~/Views/Shared/Error.cshtml");
+            }
         }
 
-        // POST: Bid/Delete/5
+        // Bid Delete POST
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public async Task<ActionResult> Delete(CreateNewBidDTO dto)
         {
-            try
+            var result = await _apiManager.Post(_routes["Delete"], dto);
+            if (result != null)
             {
-                // TODO: Add delete logic here
-
+                //todo: sayfaya veriler basılacak
                 return RedirectToAction("Index");
             }
-            catch
+            else
             {
-                return View();
+                //ErrorViewModel model = new ErrorViewModel()
+                //{
+                //    Header = "Bid",
+                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+                //    StatusCode = 500
+                //};
+                //return View("~/Views/Shared/Error.cshtml", model);
+                return View("~/Views/Shared/Error.cshtml");
             }
         }
     }

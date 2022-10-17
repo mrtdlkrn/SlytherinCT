@@ -37,7 +37,7 @@ namespace Business.Abstract
         /// </param>
         /// <param name="dto">A model to filter datas.</param>
         /// <returns>This aciton returns filtered datas.</returns>
-        Task<DTO> GET<DTO, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto) where DTO : class where FilterDTO : class;
+        Task<DTO> Get<DTO, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto) where DTO : class where FilterDTO : class;
         /// <summary>
         /// This action makes POST request to the given request url. Used to create datas.
         /// </summary>
