@@ -1,10 +1,5 @@
 ﻿using CarTender.FluentValidation.DTO.UserDTO.Login_Register;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarTender.FluentValidation.VAL.UserVAL.Login_Register
 {

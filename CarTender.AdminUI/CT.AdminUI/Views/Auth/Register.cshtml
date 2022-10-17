@@ -1,6 +1,8 @@
-﻿@{ 
-    Layout="";
+﻿@using Entity.DTO.Auth
+@{
+    Layout = "";
 }
+@model AdminRegisterDTO
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,64 +29,67 @@
 
 <body class="bg-gradient-primary">
 
-    <div class="container">
-
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block ">
-                        <img src="~/vendor/fontawesome-free/svgs/solid/car-side.svg" />
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Hesap Oluştur!</h1>
-                            </div>
-                            <form class="user">
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                               placeholder="Ad">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                               placeholder="Soyad">
-                                    </div>
+    <form asp-controller="Auth" asp-action="Register" method="post">
+        <div class="container">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-lg-5 d-none d-lg-block ">
+                            <img src="~/vendor/fontawesome-free/svgs/solid/car-side.svg" />
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Hesap Oluştur!</h1>
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                           placeholder="Email Adres">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                               id="exampleInputPassword" placeholder="Şifre">
+                                <form class="user">
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input type="text" asp-for="FirstName" class="form-control form-control-user" id="exampleFirstName"
+                                                   placeholder="Ad">
+                                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" asp-for="LastName" class="form-control form-control-user" id="exampleLastName"
+                                                   placeholder="Soyad">
+                                            <span asp-validation-for="LastName" class="text-danger"></span>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                               id="exampleRepeatPassword" placeholder="Tekrar Şifre">
+                                    <div class="form-group">
+                                        <input type="email" asp-for="Email" class="form-control form-control-user" id="exampleInputEmail"
+                                               placeholder="Email Adres">
+                                        <span asp-validation-for="Email" class="text-danger"></span>
                                     </div>
-                                </div>
-                                <a href="/Auth/Login" class="btn btn-primary btn-user btn-block">
-                                    Kayıt Ol
-                                </a>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input type="password" asp-for="Password" value="@TempData["Password"]" class="form-control form-control-user"
+                                                   id="exampleInputPassword" placeholder="Şifre">
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="password" asp-for="RePassword" class="form-control form-control-user"
+                                                   id="exampleRepeatPassword" placeholder="Tekrar Şifre">
+                                            <span asp-validation-for="RePassword" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <input class="btn btn-primary btn-user btn-block" value="Kayıt Ol" type="submit" />
+                                    <hr>
+                                </form>
                                 <hr>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="/Auth/ForgotPassword">Şifremi Unuttum?</a>
-                            </div>
-                            <div class="text-center">
-                                <a class="small" href="/Auth/Login">Zaten hesabınız var mı? Giriş yap!</a>
+                                <div class="text-center">
+                                    <a class="small" href="/Auth/ForgotPassword">Şifremi Unuttum?</a>
+                                </div>
+                                <div class="text-center">
+                                    <a class="small" href="/Auth/Login">Zaten hesabınız var mı? Giriş yap!</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
+    </form>
 
     <!-- Bootstrap core JavaScript-->
     <script src="~/vendor/jquery/jquery.min.js"></script>

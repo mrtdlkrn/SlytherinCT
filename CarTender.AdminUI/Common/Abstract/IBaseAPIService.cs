@@ -18,6 +18,9 @@ namespace Common.Abstract
         Task<ResponseDTO<T>> PUT<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class;
 
         Task<ResponseDTO<T>> DELETE<T>(TokenDTO tokenDTO, string requestUrl) where T : class;
+        
+        Task<ResponseDTO<T>> REGISTER<T>(T dto) where T : class;
 
+        Task<ResponseDTO<T>> FORGOTPASSWORD<T>(T dto) where T : class;
     }
 }

@@ -16,7 +16,7 @@
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.2.1" />
     <PackageReference Include="Bootstrap.v3.Datetimepicker.CSS" Version="4.17.49" />
-    <PackageReference Include="CarTender.FluentValidation" Version="1.0.0" />
+    <PackageReference Include="CarTender.FluentValidation" Version="1.0.3" />
     <PackageReference Include="jQuery-datetimepicker" Version="2.4.5" />
     <PackageReference Include="log4net" Version="2.0.15" />
     <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="5.0.4" />

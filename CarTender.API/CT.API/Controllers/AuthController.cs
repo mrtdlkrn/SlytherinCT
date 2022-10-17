@@ -128,15 +128,12 @@ namespace CarTender.API.Controllers
             return Ok();
         }
 
-
         [HttpPost("log")]
         public IActionResult Logger()
         {
-
             _logger.Log("Hello, this is the index!");
             return Ok();
         }
-
 
     }
 }
