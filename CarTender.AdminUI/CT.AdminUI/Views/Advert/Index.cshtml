@@ -3,6 +3,19 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(ListAdvertDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
+
     AddAdvertDTO addAdvertDTO = new AddAdvertDTO();
 
     EditAdvertDTO editAdvertDTO = new EditAdvertDTO();
@@ -25,54 +38,16 @@
             </div>
             <div id="cadvertindex1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Araç Bilgisi</th>
-                                <th scope="col">Başlık</th>
-                                <th scope="col">Ön Değerlendirme Fiyatı</th>
-                                <th scope="col">Fiyat Bilgisi</th>
-                                <th scope="col">Açıklama</th>
-                                <th scope="col">Detay</th>
-                                <th scope="col">Güncelleme</th>
-                                <th scope="col">Silme</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Nissan</td>
-                                <td>Eski İlan</td>
-                                <td>80.000 TL</td>
-                                <td>100.000 TL</td>
-                                <td>Eski</td>
-                                <td>
-                                    <a class="btn btn-info" href="#"><i class="fa-solid fa-search" style="color:black;"></i> Detay</a>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAdvert"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAdvert"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Toyota</td>
-                                <td>Yeni İlan</td>
-                                <td>160.000 TL</td>
-                                <td>200.000 TL</td>
-                                <td>Yeni</td>
-                                <td>
-                                    <a class="btn btn-info" href="#"><i class="fa-solid fa-search" style="color:black;"></i> Detay</a>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAdvert"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAdvert"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    EditIsModal = true,
+                    EditBtnModalID = "editAdvert",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="deleteAdvert",
+                    TableHeads=heads,
+                    TableDatas=datas
+                    })
                 </div>
             </div>
         </div>
