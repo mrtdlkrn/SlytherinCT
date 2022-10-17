@@ -19,14 +19,14 @@ namespace CT.API.Controllers.AdminControllers
             {
                 bidDTOs.Add(new BidInformationDTO()
                 {
-                    BidName ="Mert LTD",
+                    BidName = "Mert LTD",
                     IsActive = true,
                     CreatedDate = DateTime.Now,
                     IsApproved = true,
-                    IsCorporate = true,                    
+                    IsCorporate = true,
                 });
             }
-            var dataResult = new SuccessDataResult<List<BidInformationDTO>>(bidDTOs, "Data Added",200);
+            var dataResult = new SuccessDataResult<List<BidInformationDTO>>(bidDTOs, "Data Added", 200);
 
             return Ok(dataResult);
         }

@@ -1,9 +1,5 @@
 ﻿using Business.Abstract;
-using CarTender.AdminUI.Models;
-using Entity.DTO.Auth;
-using Entity.DTO.Bid;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -14,7 +10,7 @@ namespace CT.AdminUI.Controllers
         //todo : Tramer'a ait dtolar oluşturulacak.
         private readonly IApiService _apiService;
         private readonly IDictionary<string, string> _routes;
-        public TramerController(IApiService apiService,IApiRoutes routes)
+        public TramerController(IApiService apiService, IApiRoutes routes)
         {
             this._apiService = apiService;
             _routes = routes.GetApiRoutes("Tramer");

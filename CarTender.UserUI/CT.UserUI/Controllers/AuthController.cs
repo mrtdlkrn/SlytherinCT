@@ -1,15 +1,12 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
 using CarTender.FluentValidation.DAL.UserDAL.Login_Register;
-using Common.Abstract;
 using Common.Concrete;
 using CT.UserUI.Logging.Concrete;
 using Entity.DTO;
 using Entity.DTO.Auth;
-using FluentValidation.Results;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using System.Windows.Forms.Design;
 
 namespace CT.UserUI.Controllers
 {
@@ -54,7 +51,7 @@ namespace CT.UserUI.Controllers
 
             //BaseValidator<UserLoginDTO> validator = new BaseValidator<UserLoginDTO>(dto);
             UserLoginDAL validations = new UserLoginDAL();
-            ValidationResult result = validations.Validate( new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
+            ValidationResult result = validations.Validate(new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
             {
                 Username = username,
                 Password = password

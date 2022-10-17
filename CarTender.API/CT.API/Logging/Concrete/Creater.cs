@@ -2,7 +2,7 @@
 using CT.API.Logging.Concrete.Loggers;
 
 namespace CT.API.Logging.Concrete
-{    
+{
     public class Creater
     {
         public AbstractLogger FactoryMethod(string type)

@@ -6,11 +6,11 @@ namespace CT.AdminUI.ViewComponents.Buttons
     [ViewComponent(Name = "EditButton")]
     public class EditButtonComponent : ViewComponent
     {
-        
+
         public IViewComponentResult Invoke(string modalID)
         {
             EditAndDeleteDTO editAndDeleteDTO = new EditAndDeleteDTO(modalID);
-            return View("Default",editAndDeleteDTO);
+            return View("Default", editAndDeleteDTO);
         }
     }
 }

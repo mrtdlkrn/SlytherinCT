@@ -1,18 +1,10 @@
-﻿using CarTender.Business.Abstract;
-using CarTender.Entities;
-using CT.Business.Abstract;
+﻿using CT.Business.Abstract;
+using CT.Common.Service;
 using CT.Entities;
 using CT.Entities.Mail;
-using Microsoft.AspNetCore.Connections;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RabbitMQ.Client;
-using CT.Common.Service;
-using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 
 namespace CT.Business.Concrete
 {
@@ -26,14 +18,14 @@ namespace CT.Business.Concrete
             this.queueService = queueService;
             this.configuration = configuration;
         }
-        
+
         public bool SendNotification(Message message)
         {
-           
 
 
 
-            
+
+
             List<string> eposta = new()
             {
                 message.EMail

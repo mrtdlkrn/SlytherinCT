@@ -16,8 +16,8 @@ namespace CT.API.Logging.Concrete.Loggers
             if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
-            }                                       
-        }        
+            }
+        }
 
         public override void Log(string message)
         {

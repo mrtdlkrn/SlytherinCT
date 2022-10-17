@@ -1,8 +1,5 @@
 ﻿using Business.Abstract;
 using CarTender.AdminUI.Models;
-using Common.Abstract;
-using Entity.DTO.Advert;
-using Entity.DTO.AdvertStatusHistory;
 using Entity.DTO.Auth;
 using Entity.DTO.RoleAuthorization;
 using Microsoft.AspNetCore.Mvc;

@@ -3,13 +3,11 @@ using CarTender.FluentValidation.DAL.CombineDAL.Car;
 using CarTender.FluentValidation.DTO.CombineDTO.Car;
 using Entity.DTO.Auth;
 using Entity.DTO.Car;
-using Entity.DTO.Pagination;
 using FluentValidation.AspNetCore;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CT.AdminUI.Controllers
@@ -56,7 +54,7 @@ namespace CT.AdminUI.Controllers
         //Araç listesi ekranı       
         public IActionResult Index()
         {
-            
+
 
             /*var CarListDTO = new ListCarDTO();
             var result = await _apiService.Post(_routes["Index"], CarListDTO);
@@ -104,7 +102,7 @@ namespace CT.AdminUI.Controllers
 
                 return View("Add", dto);
             }
-            var result = await _apiService.Post(tokenDTO,_routes["Create"], dto);
+            var result = await _apiService.Post(tokenDTO, _routes["Create"], dto);
 
             return RedirectToAction("Index");
         }
@@ -126,7 +124,7 @@ namespace CT.AdminUI.Controllers
             ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiService.Post(tokenDTO,_routes["Update"], dto);
+            var result = await _apiService.Post(tokenDTO, _routes["Update"], dto);
             return RedirectToAction("Index");
         }
 

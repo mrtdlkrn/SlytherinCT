@@ -9,6 +9,6 @@ namespace Entity.DTO.Town
         public string Name { get; set; }
 
         [DisplayName("Şehir")]
-        public List<string> Cities{ get; set; }
+        public List<string> Cities { get; set; }
     }
 }

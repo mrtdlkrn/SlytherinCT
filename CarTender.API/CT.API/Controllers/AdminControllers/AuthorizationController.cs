@@ -1,10 +1,7 @@
 ﻿using CarTender.Core.Utilities;
-using Entity.DTO.Bid;
-using Microsoft.AspNetCore.Http;
+using CT.API.Models.DTOs.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System;
-using CT.API.Models.DTOs.Authorization;
 
 namespace CT.API.Controllers.AdminControllers
 {

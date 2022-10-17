@@ -1,16 +1,12 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
-using CarTender.FluentValidation.DAL.UserDAL.Login_Register;
 using CarTender.FluentValidation.DTO.UserDTO.Favorite;
 using Common.Concrete;
 using Entity.DTO.Auth;
-using Entity.DTO.Bid;
 using Entity.DTO.User;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CT.UserUI.Controllers

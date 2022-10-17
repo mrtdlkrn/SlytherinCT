@@ -7,8 +7,8 @@ namespace Entity.DTO.Message
     {
         [DisplayName("Kullanıcı Emaili")]
         public string UserEmail { get; set; }
-       
+
         [DisplayName("Mesaj Başlığı")]
-        public List<string> MessageTitle{ get; set; }
+        public List<string> MessageTitle { get; set; }
     }
 }

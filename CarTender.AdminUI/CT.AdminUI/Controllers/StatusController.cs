@@ -1,9 +1,5 @@
 ﻿using Business.Abstract;
-using CarTender.AdminUI.Models;
-using Entity.DTO.Auth;
-using Entity.DTO.Bid;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 
 namespace CT.AdminUI.Controllers
@@ -14,7 +10,7 @@ namespace CT.AdminUI.Controllers
         private readonly IDictionary<string, string> _routes;
 
         //todo : Status'a ait Dtolar oluşturulacak.
-        public StatusController(IApiService apiService,IApiRoutes routes)
+        public StatusController(IApiService apiService, IApiRoutes routes)
         {
             this._apiService = apiService;
             _routes = routes.GetApiRoutes("Status");

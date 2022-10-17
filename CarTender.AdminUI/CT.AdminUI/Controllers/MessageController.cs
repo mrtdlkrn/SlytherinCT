@@ -9,7 +9,7 @@ namespace CT.AdminUI.Controllers
         //todo : Message'a ait dtolar çıkarılacak
         private readonly IApiService _apiService;
         private readonly IDictionary<string, string> _routes;
-        public MessageController(IApiRoutes routes,IApiService apiService)
+        public MessageController(IApiRoutes routes, IApiService apiService)
         {
             this._apiService = apiService;
             _routes = routes.GetApiRoutes("Message");

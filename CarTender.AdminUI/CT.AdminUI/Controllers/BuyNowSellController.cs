@@ -42,7 +42,7 @@ namespace CT.AdminUI.Controllers
                 };
                 return View("~/Views/Shared/Error.cshtml", model);
             }*/
-            return RedirectToAction("Index","Car"); //todo: gelen sayfaya yönlendir 
-        }        
+            return RedirectToAction("Index", "Car"); //todo: gelen sayfaya yönlendir 
+        }
     }
 }

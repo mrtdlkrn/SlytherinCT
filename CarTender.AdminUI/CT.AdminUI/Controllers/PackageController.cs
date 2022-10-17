@@ -1,5 +1,4 @@
 ﻿using Business.Abstract;
-using CarTender.AdminUI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,7 +10,7 @@ namespace CT.AdminUI.Controllers
         //todo : Package'a ait DTOlar hazırlanacak.
         private readonly IApiService _apiService;
         private readonly IDictionary<string, string> _routes;
-        public PackageController(IApiService apiService,IApiRoutes routes)
+        public PackageController(IApiService apiService, IApiRoutes routes)
         {
             this._apiService = apiService;
             _routes = routes.GetApiRoutes("Package");

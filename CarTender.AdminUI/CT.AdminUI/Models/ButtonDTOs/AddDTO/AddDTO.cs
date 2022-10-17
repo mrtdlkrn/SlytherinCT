@@ -4,9 +4,9 @@
     {
         public AddDTO(string ButtonName, string ModalID, string LinkHref, string ControllerName, string ActionName, bool IsHref)
         {
-            this.LinkHref = LinkHref;   
+            this.LinkHref = LinkHref;
             this.ButtonName = ButtonName;
-            this.ModalID = ModalID; 
+            this.ModalID = ModalID;
             this.ControllerName = ControllerName;
             this.ActionName = ActionName;
             this.IsHref = IsHref;

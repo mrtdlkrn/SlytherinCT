@@ -1,13 +1,8 @@
 ﻿using Common.Abstract;
-using Entity.DTO;
 using Entity.DTO.Auth;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Common.Concrete
@@ -84,7 +79,7 @@ namespace Common.Concrete
         #endregion
 
         #region PUT
-        
+
         public async Task<bool> PUT<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class
         {
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
@@ -103,7 +98,7 @@ namespace Common.Concrete
         #endregion
 
         #region DELETE
-        
+
         public async Task<bool> DELETE(TokenDTO tokenDTO, string requestUrl)
         {
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
