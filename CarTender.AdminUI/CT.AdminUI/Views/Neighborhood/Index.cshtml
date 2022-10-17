@@ -3,6 +3,23 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    #region heads and datas
+
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(ListNeighborhoodDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
+
+    #endregion
+
     AddNeighborhoodDTO addNeighborhoodDTO = new AddNeighborhoodDTO();
     addNeighborhoodDTO.Towns = new List<string>() {"Karacabey","Kemalpaşa","Kestel"};
 
@@ -25,29 +42,17 @@
 
             <div id="caddressindex1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Mahalle</th>
-                                <th scope="col">Aktif/Pasif</th>
-                                <th scope="col">Versiyon</th>
-                                <th scope="col">Güncelle</th>
-                                <th scope="col">Sil</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>AAAAAAAAAAAAAA</td>
-                                <td>Aktif</td>
-                                <td>v1</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAddress"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAddress"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable1",
+                    EditIsModal = true,
+                    EditBtnModalID = "editAddress",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="deleteAddress",
+                    TableHeads=heads,
+                    TableDatas=datas
+                    })
                 </div>
             </div>
         </div>

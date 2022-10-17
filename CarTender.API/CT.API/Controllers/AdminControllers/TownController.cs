@@ -10,7 +10,7 @@ namespace CT.API.Controllers.AdminControllers
     public class TownController : ControllerBase
     {
 
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             List<ListTownDTO> towns = new List<ListTownDTO>();

@@ -12,8 +12,8 @@
                     {
                         <th>@item</th>
                     }
-                    <th></th>
-                    <th></th>
+                    <th class="text-center"></th>
+                    <th class="text-center"></th>
                 </tr>
             </thead>
             <tbody>
@@ -26,19 +26,19 @@
                         }
                         @if (Model.EditIsModal)
                         {
-                            <td>
+                            <td class="text-center">
                                 @await Component.InvokeAsync("EditButton", new{ModalID = Model.EditBtnModalID})
                             </td>
 
                         }
                         else
                         {
-                            <td>
+                            <td class="text-center">
                                 @await Component.InvokeAsync("EditButton", new{ModalID = Model.EditBtnModalID})
                             </td>
                         }
-                        <td>
-                            @await Component.InvokeAsync("DeleteButton", new{ModalID = Model.EditBtnModalID})
+                        <td class="text-center">
+                            @await Component.InvokeAsync("DeleteButton", new{ModalID = Model.DeleteBtnModalID})
                         </td>
                     </tr>
                 }

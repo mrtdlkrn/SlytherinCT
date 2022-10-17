@@ -3,6 +3,19 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(ListUserFavoriteCarDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
+
     AddUserFavoriteCarDTO addDto = new AddUserFavoriteCarDTO();
 
     EditUserFavoriteCarDTO editDto = new EditUserFavoriteCarDTO();
@@ -21,51 +34,19 @@
                     </button>
                 </h5>
             </div>
-            <div id="cuufc1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Kullanıcı Ara" aria-label="Ara">
-                                <button class="btn btn-outline-success " type="submit">Ara</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div id="cuufc1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">           
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Kullanıcı</th>
-                                <th scope="col">Araç Bilgileri</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Ahmet</td>
-                                <td>Hyundai Kona 2020 1.4 TSI CVT Siyah</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editUserFavoriteCar"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteUserFavoriteCar"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Yiğit</td>
-                                <td>Opel Corsa 2018 1.2 MT Mavi</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editUserFavoriteCar"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteUserFavoriteCar"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable1",
+                    EditIsModal = true,
+                    EditBtnModalID = "editUserFavoriteCar",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="deleteUserFavoriteCar",
+                    TableHeads=heads,
+                    TableDatas=datas
+                    })
                 </div>
             </div>
         </div>
