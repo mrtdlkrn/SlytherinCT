@@ -12,9 +12,9 @@ namespace CT.AdminUI.Controllers
     public class BidController : Controller
     {
         private readonly IApiService _apiService;
-        private readonly IDictionary<string,string> _routes;
+        private readonly IDictionary<string, string> _routes;
 
-        public BidController(IApiService apiService,IApiRoutes routes)
+        public BidController(IApiService apiService, IApiRoutes routes)
         {
             _apiService = apiService;
             _routes = routes.GetApiRoutes("Bid");
@@ -33,7 +33,7 @@ namespace CT.AdminUI.Controllers
                 ExpireTime = DateTime.Now.AddHours(1)
             };
             var result = await _apiService.Get<List<BidInformationDTO>>(tokenDTO, _routes["Index"]);
-            if(result!= null)
+            if (result != null)
             {
                 //todo: sayfaya veriler basılacak
                 return View();
@@ -46,7 +46,7 @@ namespace CT.AdminUI.Controllers
                     Message = "İhaleyle ilgili bilgiler bulunamadı",
                     StatusCode = 500
                 };
-                return View("~/Views/Shared/Error.cshtml",model);
+                return View("~/Views/Shared/Error.cshtml", model);
             }
         }
 
@@ -63,7 +63,15 @@ namespace CT.AdminUI.Controllers
         //POST: Bid Controller for Create New Bid
         public async Task<IActionResult> Create(CreateNewBidDTO dto)
         {
-            var result = await _apiService.Post(_routes["Create"], dto);
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+     ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+     ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+
+            var result = await _apiService.Post(tokenDTO, _routes["Create"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -78,7 +86,7 @@ namespace CT.AdminUI.Controllers
                     StatusCode = 500
                 };
                 return View("~/Views/Shared/Error.cshtml", model);
-            }            
+            }
         }
 
         #endregion
@@ -99,7 +107,7 @@ namespace CT.AdminUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiService.Get<BidInformationDTO>(tokenDTO ,_routes["UpdateGet"]);
+            var result = await _apiService.Get<BidInformationDTO>(tokenDTO, _routes["UpdateGet"]);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -122,7 +130,14 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(CreateNewBidDTO dto)
         {
-            var result = await _apiService.Post(_routes["Update"], dto);
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+     ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+     ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            var result = await _apiService.Post(tokenDTO,_routes["Update"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -180,7 +195,15 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(BidInformationDTO dto)
         {
-            var result = await _apiService.Post(_routes["Delete"], dto);
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+     ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+     ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+
+            var result = await _apiService.Post(tokenDTO, _routes["Delete"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -300,7 +323,15 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> BidCorporateUser(BidCorporateUserDTO dto)
         {
-            var result = await _apiService.Post(_routes["BidCorporateUser"], dto);
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+
+            var result = await _apiService.Post(tokenDTO, _routes["BidCorporateUser"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -354,7 +385,14 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> BidInformation(BidInformationDTO dto)
         {
-            var result = await _apiService.Post(_routes["BidInformation"], dto);
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+              ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+              ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            var result = await _apiService.Post(tokenDTO, _routes["BidInformation"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -408,7 +446,15 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> BidOfferDetail(BidOfferDetailDTO dto)
         {
-            var result = await _apiService.Post(_routes["BidOfferDetail"], dto);
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+
+            var result = await _apiService.Post(tokenDTO, _routes["BidOfferDetail"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -429,7 +475,7 @@ namespace CT.AdminUI.Controllers
         #endregion
 
         #region BidStatusHistory
-        
+
         [HttpGet]
         public async Task<IActionResult> BidStatusHistory()
         {
@@ -461,7 +507,14 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> BidStatusHistory(BidStatusHistoryDTO dto)
         {
-            var result = await _apiService.Post(_routes["BidStatusHistory"], dto);
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+            ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+            ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            var result = await _apiService.Post(tokenDTO, _routes["BidStatusHistory"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -514,7 +567,14 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> BidUserOffer(BidUserOfferDTO dto)
         {
-            var result = await _apiService.Post(_routes["BidUserOffer"], dto);
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+            ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+            ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            var result = await _apiService.Post(tokenDTO, _routes["BidUserOffer"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -567,7 +627,14 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> UserAutoBidOffer(BidUserOfferDTO dto) //todo : Yeni bir dto gerekebilir
         {
-            var result = await _apiService.Post(_routes["UserAutoBidOffer"], dto);
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+            ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+            ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            var result = await _apiService.Post(tokenDTO,_routes["UserAutoBidOffer"], dto);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak

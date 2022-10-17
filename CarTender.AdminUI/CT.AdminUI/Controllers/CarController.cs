@@ -74,28 +74,36 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(AddCarDTO dto)
         {
-            //CombineAddOrEditVehicleVAL validations = new CombineAddOrEditVehicleVAL();
-            //ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
-            //{
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+            ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+            ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            CombineAddOrEditVehicleVAL validations = new CombineAddOrEditVehicleVAL();
+            ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
+            {
 
-            //    KM = dto.KM,
-            //    VehiclePrice = dto.Price,
-            //    Explanation = dto.Explanation,
-            //    PhotoPath1 = dto.PhotoPath1,
-            //    PhotoPath2 = dto.PhotoPath2,
-            //    PhotoPath3 = dto.PhotoPath3,
-            //    PhotoPath4 = dto.PhotoPath4,
-            //    PhotoPath5 = dto.PhotoPath5
+                KM = dto.KM,
+                VehiclePrice = dto.Price,
+                Explanation = dto.Explanation,
+                PhotoPath1 = dto.PhotoPath1,
+                PhotoPath2 = dto.PhotoPath2,
+                PhotoPath3 = dto.PhotoPath3,
+                PhotoPath4 = dto.PhotoPath4,
+                PhotoPath5 = dto.PhotoPath5
 
-            //});
+            });
 
-            //if (!validationResult.IsValid)
-            //{
-            //    validationResult.AddToModelState(this.ModelState);
+            if (!validationResult.IsValid)
+            {
+                validationResult.AddToModelState(this.ModelState);
 
-            //    return View("Add", dto);
-            //}
-            var result = await _apiService.Post(_routes["Create"], dto);
+                return View("Add", dto);
+            }
+            var result = await _apiService.Post(tokenDTO,_routes["Create"], dto);
+
             return RedirectToAction("Index");
         }
 
@@ -109,7 +117,14 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(UpdateCarDTO dto)
         {
-            var result = await _apiService.Post(_routes["Update"], dto);
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+            ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+            ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            var result = await _apiService.Post(tokenDTO,_routes["Update"], dto);
             return RedirectToAction("Index");
         }
 

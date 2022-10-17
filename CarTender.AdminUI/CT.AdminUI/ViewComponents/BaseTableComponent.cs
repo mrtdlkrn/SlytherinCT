@@ -9,6 +9,7 @@ namespace CT.AdminUI.ViewComponents
     {
 
         public IViewComponentResult Invoke(
+            string tableID,
             bool editIsModal,
             string editBtnController,
             string editBtnAction,
@@ -20,6 +21,7 @@ namespace CT.AdminUI.ViewComponents
         {           
             return View("Default", new BaseTableDTO()
             {
+                TableID  = tableID,
                 EditBtnModalID = editBtnModalID,
                 EditIsModal = editIsModal,
                 EditBtnController = editBtnController,

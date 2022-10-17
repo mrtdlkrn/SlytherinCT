@@ -149,7 +149,8 @@
     {
       "ControllerName": "Authorization",
       "Actions": {
-        "Index": "",
+        "Roles": "api/Authorization/roles",
+        "Authorizations": "api/Authorization/authorizations"
       }
     },
     {

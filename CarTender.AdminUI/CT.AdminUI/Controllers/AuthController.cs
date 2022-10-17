@@ -5,6 +5,7 @@ using Entity.DTO.Auth;
 using FluentValidation.AspNetCore;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace CT.AdminUI.Controllers
@@ -20,9 +21,7 @@ namespace CT.AdminUI.Controllers
 
         [HttpGet]
         public IActionResult Login()
-        {
-            _apiService.Test("test");        
-
+        {        
             return View(new LoginDTO());
         }
 
@@ -48,7 +47,7 @@ namespace CT.AdminUI.Controllers
 
             if (dto == null) return RedirectToAction("Register");
 
-            var user = await _apiService.Post("auth/login",dto);
+            var user = await _apiService.Login(dto);
             if(user != null)
             {
 

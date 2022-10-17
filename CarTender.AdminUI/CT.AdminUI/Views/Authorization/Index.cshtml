@@ -3,6 +3,35 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    var roles = Model.Roles;
+    List<string> headsRole = new List<string>();
+    List<object> datasRole = new List<object>();
+
+    foreach (var item in typeof(ListRoleDTO).GetProperties())
+    {
+        headsRole.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in roles)
+    {
+        datasRole.Add(item);
+    }
+
+    var auths = Model.Auths;
+    List<string> headsAuth = new List<string>();
+    List<object> datasAuth = new List<object>();
+
+
+    foreach (var item in typeof(ListAuthorizationDTO).GetProperties())
+    {
+        headsAuth.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in auths)
+    {
+        datasAuth.Add(item);
+    }
 
     AddRoleDTO addRoleDTO = new AddRoleDTO();
 
@@ -28,89 +57,17 @@
             </div>
             <div id="cauthindex1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Kullanıcı Rolleri</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>SuperAdmin</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editRole"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteRole"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Admin</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editRole"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteRole"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Moderatör</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editRole"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteRole"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>CEO</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editRole"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteRole"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Satış Departmanı</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editRole"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteRole"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>İnsan Kaynakları</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editRole"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteRole"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Bölge Sorumlusu</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editRole"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteRole"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Bireysel Kullanıcı</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editRole"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteRole"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable1",
+                    EditIsModal = true,
+                    EditBtnModalID = "editRole",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="deleteRole",
+                    TableHeads=headsRole,
+                    TableDatas=datasRole
+                    })
                 </div>
             </div>
         </div>
@@ -127,53 +84,17 @@
             </div>
             <div id="cauthindex2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">         
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Yetkiler</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Listele</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuthorization"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ekle</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuthorization"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sil</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuthorization"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Düzenle</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAuthorization"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAuthorization"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>                         
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable2",
+                    EditIsModal = true,
+                    EditBtnModalID = "editAuthorization",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="deleteAuthorization",
+                    TableHeads=headsAuth,
+                    TableDatas=datasAuth
+                    })
                 </div>
             </div>
         </div>
