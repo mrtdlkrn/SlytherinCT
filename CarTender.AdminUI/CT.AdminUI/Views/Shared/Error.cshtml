@@ -1,39 +1,25 @@
 ﻿@model ErrorViewModel
 @{
-    ViewData["Title"] = "Error";
+    ViewData["Title"] = "Hata";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int statusCode = 400;
+    string errorTitle = "", errorContent = "";
+    if (ViewBag.StatusCode != null)
+        statusCode = ViewBag.StatusCode;
+    if (ViewBag.ErrorTitle != null)
+        errorTitle = ViewBag.ErrorTitle;
+    if (ViewBag.ErrorContent != null)
+        errorContent = ViewBag.ErrorContent;
 }
 
+<div class="container-fluid">
 
-<main>
-    @*<div class="container-xl px-4">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="text-center mt-4">
-                    <img class="img-fluid p-4" src="~/img/lord-voldemort.gif" />
-                    <p class="lead">Your client has issued a malformed or illegal request.</p>
-                    <a class="text-arrow-icon" href="/Admin/Index">
-                        <i class="ms-0 me-1" data-feather="arrow-left"></i>
-                        Return to Dashboard
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>*@
-
-    <div class="card mb-4">
-        <div class="card-header d-flex align-items-center">
-            <div class="text-center mt-4">
-                <img class="img-fluid p-4" src="~/img/lord-voldemort.gif" />
-            </div>
-            <a class="btn btn-transparent-dark btn-icon" href="knowledge-base-category.html"><i data-feather="arrow-left"></i></a>
-            <div class="ms-3"><h2 class="my-3">@Model.Header /// @Model.StatusCode</h2></div>
-        </div>
-        <div class="card-body">
-            <p class="lead">@Model.Message</p>
-            <a class="text-arrow-icon" href="/Admin/Index">
-                <i class="ms-0 me-1" data-feather="arrow-left"></i>
-                Return to Dashboard
-            </a>
-        </div>
+    <!-- Error Text -->
+    <div class="text-center">
+        <div class="error mx-auto" data-text="@statusCode">@statusCode</div>
+        <p class="lead text-gray-800 mb-5">@errorTitle</p>
+        <p class="text-gray-500 mb-0">@errorContent</p>
+        <a href="/Admin/Index">&larr; Ana Sayfaya Geri Dön</a>
     </div>
-</main>
+
+</div>

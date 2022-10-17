@@ -25,7 +25,7 @@ namespace CT.UserUI.Controllers
         }
 
         // User GET
-        public async Task<ActionResult> IndexAsync()
+        public async Task<ActionResult> Index()
         {
             //todo : User'a göre tokenDto oluşturulacak
             TokenDTO tokenDTO = new TokenDTO()
@@ -35,12 +35,14 @@ namespace CT.UserUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<List<GetUserDTO>>(tokenDTO, _routes["Index"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
+            //var result = await _apiManager.Get<List<GetUserDTO>>(tokenDTO, _routes["Index"]);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return View();
+            //}
+            if (true)
                 return View();
-            }
             else
             {
                 //ErrorViewModel model = new ErrorViewModel()
@@ -55,7 +57,7 @@ namespace CT.UserUI.Controllers
         }
 
         // User Edit GET
-        public async Task<ActionResult> EditAsync(int id)
+        public async Task<ActionResult> Edit(int id)
         {
             //todo : User'a göre tokenDto oluşturulacak
             TokenDTO tokenDTO = new TokenDTO()
@@ -65,12 +67,14 @@ namespace CT.UserUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<EditUserDTO>(tokenDTO, _routes["UpdateGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
+            //var result = await _apiManager.Get<EditUserDTO>(tokenDTO, _routes["UpdateGet"]);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return View();
+            //}
+            if (true)
                 return View();
-            }
             else
             {
                 //ErrorViewModel model = new ErrorViewModel()
@@ -87,7 +91,7 @@ namespace CT.UserUI.Controllers
 
         // User Edit POST
         [HttpPost]
-        public async Task<ActionResult> EditAsync(int id, EditUserDTO dto)
+        public async Task<ActionResult> Edit(int id, EditUserDTO dto)
         {
             var result = await _apiManager.Post(_routes["Update"], dto);
             if (result != null)
@@ -109,8 +113,8 @@ namespace CT.UserUI.Controllers
         }
         public ActionResult ViewFavorites()
         {
-            var favoriteDTOs = _apiManager.Get<UserFavoriteDTO, UserFavoriteDTO>(new Entity.DTO.Auth.TokenDTO(), _routes["Favorite"], new UserFavoriteDTO() { UserID = new Guid() });
-            return View(favoriteDTOs);
+            //var favoriteDTOs = _apiManager.Get<UserFavoriteDTO, UserFavoriteDTO>(new Entity.DTO.Auth.TokenDTO(), _routes["Favorite"], new UserFavoriteDTO() { UserID = new Guid() });
+            return View();
         }
     }
 }

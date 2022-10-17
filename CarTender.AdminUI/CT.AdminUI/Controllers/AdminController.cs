@@ -28,22 +28,32 @@ namespace CarTender.AdminUI.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [Route("Admin/Error/{statusCode}")]
+        public IActionResult Error(int statusCode)
         {
-            //IEnumerable<string> values;
-            //string? HeaderValue = "";
-            //if (Response.Headers.TryGetValue("X-BB-SESSION", out values))
-            //{
-            //    HeaderValue = values.FirstOrDefault();
-            //}
-            return View(new ErrorViewModel
+            // Error sayfalarinin goruntulenebilmesi icin launchSettings.json'dan IIS express'i Developement ayarindan Production ayarina getirmek gerekir.
+            switch (statusCode)
             {
-                StatusCode = Response.StatusCode,
-                Header = Response.Headers.TryGetValue("X-BB-SESSION", out var values) ? values.FirstOrDefault() : null,
-                Message = "Burkay"
-            });
+                case 404:
+                    ViewBag.ErrorTitle = "Sayfa Bulunamadı";
+                    ViewBag.ErrorContent = "Üzgünüz, aradığınız sayfayı bulamadık.";
+                    break;
+                case 401:
+                    ViewBag.ErrorTitle = "Yetkisiz Giriş";
+                    ViewBag.ErrorContent = "Üzgünüz, girmek istediğiniz sayfa için yetkiniz bulunmuyor.";
+                    break;
+                case 500:
+                    ViewBag.ErrorTitle = "Sunucu Hatası";
+                    ViewBag.ErrorContent = "Üzgünüz, sunucu şu anda isteğinize cevap veremiyor.";
+                    break;
+                case 503:
+                    ViewBag.ErrorTitle = "Servis Kullanılamıyor";
+                    ViewBag.ErrorContent = "Üzgünüz, sunucu şu anda bakımda veya isteğinize yanıt veremiyor lütfen tekrar deneyiniz.";
+                    break;
+            }
+            ViewBag.StatusCode = statusCode;
 
+            return View();
         }
     }
 }

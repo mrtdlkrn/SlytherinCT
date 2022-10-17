@@ -1,5 +1,5 @@
 ﻿using Business.Abstract;
-using CarTender.FluentValidation.DAL.AdminDAL.Login;
+using CarTender.FluentValidation.VAL.AdminVAL.Login;
 using CarTender.FluentValidation.DTO.AdminDTO.Login;
 using Entity.DTO.Auth;
 using FluentValidation.AspNetCore;

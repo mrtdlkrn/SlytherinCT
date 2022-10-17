@@ -1,5 +1,5 @@
 ﻿using CarTender.Core.Utilities;
-using Entity.DTO.Bid;
+using CT.Entities.Bid;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

@@ -1,8 +1,8 @@
 ﻿using CarTender.Business.Abstract;
-using CarTender.Entities;
 using CT.API.Logging.Concrete;
-using CT.API.Models.DTOs.Auth;
 using CT.Common.Service;
+using CT.Entities.Auth;
+using CT.Entities.Entities;
 using CT.Entities.Mail;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
