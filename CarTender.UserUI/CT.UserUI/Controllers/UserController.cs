@@ -25,7 +25,7 @@ namespace CT.UserUI.Controllers
         }
 
         // User GET
-        public async Task<ActionResult> IndexAsync()
+        public async Task<ActionResult> Index()
         {
             //todo : User'a göre tokenDto oluşturulacak
             TokenDTO tokenDTO = new TokenDTO()
@@ -57,7 +57,7 @@ namespace CT.UserUI.Controllers
         }
 
         // User Edit GET
-        public async Task<ActionResult> EditAsync(int id)
+        public async Task<ActionResult> Edit(int id)
         {
             //todo : User'a göre tokenDto oluşturulacak
             TokenDTO tokenDTO = new TokenDTO()
@@ -91,7 +91,7 @@ namespace CT.UserUI.Controllers
 
         // User Edit POST
         [HttpPost]
-        public async Task<ActionResult> EditAsync(int id, EditUserDTO dto)
+        public async Task<ActionResult> Edit(int id, EditUserDTO dto)
         {
             var result = await _apiManager.Post(_routes["Update"], dto);
             if (result != null)
@@ -113,8 +113,8 @@ namespace CT.UserUI.Controllers
         }
         public ActionResult ViewFavorites()
         {
-            var favoriteDTOs = _apiManager.Get<UserFavoriteDTO, UserFavoriteDTO>(new Entity.DTO.Auth.TokenDTO(), _routes["Favorite"], new UserFavoriteDTO() { UserID = new Guid() });
-            return View(favoriteDTOs);
+            //var favoriteDTOs = _apiManager.Get<UserFavoriteDTO, UserFavoriteDTO>(new Entity.DTO.Auth.TokenDTO(), _routes["Favorite"], new UserFavoriteDTO() { UserID = new Guid() });
+            return View();
         }
     }
 }
