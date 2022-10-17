@@ -4,6 +4,23 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    #region heads and datas
+
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(ListStatusDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
+
+    #endregion
+
     AddStatusDTO addDto = new AddStatusDTO();
     addDto.StatusType = new List<string>() { "Araç", "İlan", "İhale", "Şirket", "Tramer" };
 
@@ -23,107 +40,18 @@
                 </h5>
             </div>
             <div id="cs1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Statü Tipi:</label>
-                            </div>
-                            <select class="custom-select" id="inputGroupSelect01">
-                                <option value="1" selected>Araç</option>
-                                <option value="2">İlan</option>
-                                <option value="3">İhale</option>
-                                <option value="4">Şirket</option>
-                                <option value="3">Tramer</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Statü</th>
-                                <th scope="col">Güncelle</th>
-                                <th scope="col">Sil</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Giriş</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editStatus"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Hemen Al Satışta</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editStatus"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>İhalede</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editStatus"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Satış Komisyonu tahsil edildi</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editStatus"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ekspertiz sonucu bekleniyor</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editStatus"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ekspertiz sonucu alındı</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editStatus"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Satıldı</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editStatus"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Satış İptal</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editStatus"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable1",
+                    EditIsModal = true,
+                    EditBtnModalID = "editStatus",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="deleteStatus",
+                    TableHeads=heads,
+                    TableDatas=datas
+                    })
                 </div>
             </div>
         </div>

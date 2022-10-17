@@ -3,6 +3,23 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    #region heads and datas
+
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(ListPackageDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
+
+    #endregion
+
     AddPackageDTO addDto = new AddPackageDTO();
 
     EditPackageDTO editDto = new EditPackageDTO();
@@ -23,44 +40,17 @@
             </div>
             <div id="cp1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered mt-3" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th scope="col">Kullanıcı Paketleri</th>
-                                <th scope="col">Güncelle</th>
-                                <th scope="col">Sil</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Altın</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editPackage"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Gümüş</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editPackage"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Bronz</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editPackage"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable1",
+                    EditIsModal = true,
+                    EditBtnModalID = "editPackage",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="delete",
+                    TableHeads=heads,
+                    TableDatas=datas
+                    })
                 </div>
             </div>
         </div>

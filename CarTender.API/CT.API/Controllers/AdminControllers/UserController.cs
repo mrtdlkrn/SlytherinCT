@@ -12,7 +12,7 @@ namespace CT.API.Controllers.AdminControllers
     public class UserController : ControllerBase
     {
 
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             List<ListUserDTO> users = new List<ListUserDTO>();
@@ -23,7 +23,7 @@ namespace CT.API.Controllers.AdminControllers
         }
 
 
-        [HttpGet("cars")]
+        [HttpGet("Cars")]
         public IActionResult GetUsersCars()
         {
             List<ListUserCarDTO> userCarList = new List<ListUserCarDTO>();
@@ -33,7 +33,7 @@ namespace CT.API.Controllers.AdminControllers
         }
 
 
-        [HttpGet("favoritecars")]
+        [HttpGet("FavoriteCars")]
         public IActionResult GetUsersFavoriteCars()
         {
             List<ListUserFavoriteCarDTO> userFavoriteCars = new List<ListUserFavoriteCarDTO>();

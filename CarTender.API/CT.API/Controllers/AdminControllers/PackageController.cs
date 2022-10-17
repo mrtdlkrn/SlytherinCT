@@ -13,7 +13,7 @@ namespace CT.API.Controllers.AdminControllers
     public class PackageController : ControllerBase
     {
 
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             List<ListPackageDTO> packages = new List<ListPackageDTO>();

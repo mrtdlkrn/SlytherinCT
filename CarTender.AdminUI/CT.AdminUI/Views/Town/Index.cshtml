@@ -6,6 +6,24 @@
 
     // todo: cities null gelirse proje patlıyor.
 
+    #region heads and datas
+
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(ListTownDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
+
+    #endregion
+
+
     AddTownDTO addDto = new AddTownDTO();
     addDto.Cities = new List<string> { "İstanbul", "Bursa", "Ankara", "Samsun" };
 
@@ -25,47 +43,18 @@
                     </button>
                 </h5>
             </div>
-            <div id="cti1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="row mt-3 mb-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">İlçe Adı:</label>
-                            </div>
-                            <input class="form-control" type="text" />
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-
-                <table style="text-align:center;" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">İlçe Adı</th>
-                            <th scope="col">Şehir</th>
-                            <th scope="col">Güncelle</th>
-                            <th scope="col">Sil</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Karacabey</td>
-                            <td>Bursa</td>
-                            <td>
-                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editTown">
-                                  <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteTown">
-                                    <i class="far fa-trash-alt"></i>  Sil
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>  
+            <div id="cti1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">                
+                @await Component.InvokeAsync("BaseTable",
+                new{
+                TableID = "myTable1",
+                EditIsModal = true,
+                EditBtnModalID = "editTown",
+                EditBtnController="",
+                EditBtnAction="",
+                DeleteBtnModalID="deleteTown",
+                TableHeads=heads,
+                TableDatas=datas
+                })
             </div>
         </div>
     </div>

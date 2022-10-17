@@ -1,10 +1,8 @@
 ﻿using CarTender.Core.Utilities;
-using CT.Entities.Authorization;
 using CT.Entities.DTOs.Tramer;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Data;
 
 namespace CT.API.Controllers.AdminControllers
 {
@@ -13,7 +11,7 @@ namespace CT.API.Controllers.AdminControllers
     public class TramerController : ControllerBase
     {
 
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             List<ListTramerDTO> tramers = new List<ListTramerDTO>();
@@ -23,7 +21,7 @@ namespace CT.API.Controllers.AdminControllers
         }
 
 
-        [HttpGet("getcomponents")]
+        [HttpGet("GetComponents")]
         public IActionResult GetComponents()
         {
             List<ListTramerComponentDTO> tramerComponents = new List<ListTramerComponentDTO>();

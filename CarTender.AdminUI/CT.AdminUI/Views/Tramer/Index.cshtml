@@ -1,7 +1,43 @@
-﻿@using Entity.DTO.TramerComponent
+﻿@using Entity.DTO.Tramer
+@using Entity.DTO.TramerComponent
 @{
     ViewData["Title"] = "Tramer";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // todo: tramer edit eklenecek
+
+    #region heads and datas
+
+    List<string> headsTramer = new List<string>();
+    List<object> datasTramer = new List<object>();
+
+    foreach (var item in typeof(ListTramerDTO).GetProperties())
+    {
+        headsTramer.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model.Tramers)
+    {
+        datasTramer.Add(item);
+    }
+    #endregion
+
+    #region heads and datas
+
+    List<string> headsTramerComponent = new List<string>();
+    List<object> datasTramerComponent = new List<object>();
+
+    foreach (var item in typeof(ListTramerComponentDTO).GetProperties())
+    {
+        headsTramerComponent.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model.TramerComponents)
+    {
+        datasTramerComponent.Add(item);
+    }
+
+    #endregion
 
     AddTramerComponentDTO addDto = new AddTramerComponentDTO();
 
@@ -22,58 +58,17 @@
 
             <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Plaka</th>
-                                <th scope="col">Tramer Ücreti</th>
-                                <th scope="col">Kaydeden</th>
-                                <th scope="col">Kayıt Tarihi</th>
-                                <th scope="col">Güncelleyen</th>
-                                <th scope="col">Güncelleme Tarihi</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>16 E 16</td>
-                                <td>3500 TL</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>
-                                    <button type="button" class="btn btn-info" id="myInput" data-bs-toggle="modal" data-bs-target="#detail">
-                                        <i class="fa-solid fa-circle-info"></i>  Detay
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteTramer">
-                                        <i class="far fa-trash-alt"></i> Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>16 A 16</td>
-                                <td>5500 TL</td>
-                                <td>Osman</td>
-                                <td>01.10.2022</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>
-                                    <button type="button" class="btn btn-info" id="myInput" data-bs-toggle="modal" data-bs-target="#detail">
-                                        <i class="fa-solid fa-circle-info"></i>  Detay
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteTramer">
-                                        <i class="far fa-trash-alt"></i> Sil
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable1",
+                    EditIsModal = true,
+                    EditBtnModalID = "",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="deleteTramer",
+                    TableHeads=headsTramer,
+                    TableDatas=datasTramer
+                    })
                 </div>
             </div>
         </div>
@@ -168,214 +163,17 @@
 
             <div id="collapseThree" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Bileşen Adı</th>
-                                <th scope="col">Kaydeden</th>
-                                <th scope="col">Kayıt Tarihi</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Sağ Arka Çamurluk</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sağ Ön Çamurluk</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>   Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sağ Arka Kapı</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i>  Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i> Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sağ Ön Kapı</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sol Arka Çamurluk</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sol Ön Çamurluk</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sağ Arka Kapı</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sol Ön Kapı</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Tavan</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Arka Kaput</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Motor Kaputu</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ön Tampon</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Arka Tampon</td>
-                                <td>Ahmet</td>
-                                <td>05.10.2022</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCmp">
-                                        <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteCmp">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable2",
+                    EditIsModal = true,
+                    EditBtnModalID = "editCmp",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="deleteCmp",
+                    TableHeads=headsTramerComponent,
+                    TableDatas=datasTramerComponent
+                    })
                 </div>
             </div>
         </div>

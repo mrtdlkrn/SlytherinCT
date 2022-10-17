@@ -28,9 +28,9 @@
     {
       "ControllerName": "User",
       "Actions": {
-        "Index": "",
-        "UserFavoriteCar": "",
-        "UserCar": ""
+        "GetAll": "api/User/GetAll",
+        "GetUsersFavoriteCars": "api/User/FavoriteCars",
+        "GetUsersCars": "api/User/cars"
       }
     },
     {
@@ -69,25 +69,27 @@
     {
       "ControllerName": "Town",
       "Actions": {
-        "Index": ""
+        "GetAll": "api/Town/GetAll"
       }
     },
     {
       "ControllerName": "Tramer",
       "Actions": {
-        "Index": ""
+        "GetAll": "api/Tramer/GetAll",
+        "GetComponents": "api/Tramer/GetComponents"
       }
     },
     {
       "ControllerName": "Status",
       "Actions": {
-        "Index": ""
+        "GetAll": "api/Status/GetAll",
+        "GetByType": "api/Status/GetByType"
       }
     },
     {
       "ControllerName": "Package",
       "Actions": {
-        "Index": "",
+        "GetAll": "api/Package/GetAll",
         "Create": ""
       }
     },
@@ -154,9 +156,9 @@
       }
     },
     {
-      "ControllerName": "Address",
+      "ControllerName": "Neighborhood",
       "Actions": {
-        "Index": "",
+        "GetAll": "api/Neighborhood/GetAll"
       }
     },
   ]

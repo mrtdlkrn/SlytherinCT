@@ -3,6 +3,19 @@
     ViewData["Title"] = "Kullanıcı Araçları Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(ListUserCarDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
+
     AddUserCarDTO addDto = new AddUserCarDTO();
 
     EditUserCarDTO editDto = new EditUserCarDTO();
@@ -23,38 +36,17 @@
             </div>
             <div id="collapseThree" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Satıcı Bilgisi</th>
-                                <th scope="col">Araç Plaka</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Ahmet</td>
-                                <td>16 E 161</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Yiğit</td>
-                                <td>45 AEV 675</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#edit"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable1",
+                    EditIsModal = true,
+                    EditBtnModalID = "edit",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="delete",
+                    TableHeads=heads,
+                    TableDatas=datas
+                    })
                 </div>
             </div>
         </div>
