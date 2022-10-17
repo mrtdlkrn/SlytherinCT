@@ -9,7 +9,7 @@ namespace CT.AdminUI.Controllers
         //todo : Address'a ait dtolar çıkarılacak
         private readonly IApiService _apiService;
         private readonly IDictionary<string, string> _routes;
-        public AddressController(IApiRoutes routes, IApiService apiService)
+        public NeighborhoodController(IApiRoutes routes, IApiService apiService)
         {
             this._apiService = apiService;
             _routes = routes.GetApiRoutes("Address");

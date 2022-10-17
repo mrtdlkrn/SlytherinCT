@@ -32,60 +32,37 @@ namespace CT.AdminUI.Controllers
             cars.Add(new ListCarDTO() { Price = 234234, Plate = "42 kl 22", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(-24) });
             cars.Add(new ListCarDTO() { Price = 453421, Plate = "55 ko 12", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
             cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
+            cars.Add(new ListCarDTO() { Price = 123412, Plate = "17 li 64", CarBrand = "Audi", CarModel = "A3", CreatedDate = DateTime.Now.AddDays(6) });
             _routes = routes.GetApiRoutes("Car");
         }
 
 
         //Araç listesi ekranı       
-        public IActionResult Index(
-            string sortOrder,
-            string currentFilter,
-            string searchString,
-            int? pageNumber)
+        public IActionResult Index()
         {
-            ViewData["CurrentSort"] = sortOrder;
-            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
-
-            if (searchString != null)
-            {
-                pageNumber = 1;
-            }
-            else
-            {
-                searchString = currentFilter;
-            }
-
-            ViewData["CurrentFilter"] = searchString;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                cars = cars.Where(s => s.Plate.Contains(searchString)).ToList();
-            }
-
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    cars = cars.OrderByDescending(s => s.Plate).ToList();
-                    break;
-                case "Date":
-                    cars = cars.OrderBy(s => s.CreatedDate).ToList();
-                    break;
-                case "date_desc":
-                    cars = cars.OrderByDescending(s => s.CreatedDate).ToList();
-                    break;
-                default:
-                    cars = cars.OrderBy(s => s.Plate).ToList();
-                    break;
-            }
-
-            int pageSize = 4;
+            
 
             /*var CarListDTO = new ListCarDTO();
             var result = await _apiService.Post(_routes["Index"], CarListDTO);
             //todo : sayfaya veriler basılacak*/
 
-            return View(PaginatedList<ListCarDTO>.Create(cars.AsQueryable(), pageNumber ?? 1, pageSize));
+            return View(cars);
         }
 
 

@@ -9,36 +9,25 @@ namespace CT.AdminUI.ViewComponents
     {
 
         public IViewComponentResult Invoke(
-            string formActionStr,
-            string searchBarStr,
-            string editBtnStr,
+            bool editIsModal,
             string editBtnController,
             string editBtnAction,
-            string deleteBtnStr,
+            string editBtnModalID,
             string deleteBtnModalID,
             List<string> tableheads,
-            List<object> tabledatas,
-            bool haspreviouspage,
-            bool hasnextpage,
-            int pageIndex
+            List<object> tabledatas
             )
-        {
-            BaseTableDTO dto = new BaseTableDTO()
+        {           
+            return View("Default", new BaseTableDTO()
             {
-                FormActionStr = formActionStr,
-                SearchbarStr = searchBarStr,
-                EditBtnStr = editBtnStr,
+                EditBtnModalID = editBtnModalID,
+                EditIsModal = editIsModal,
                 EditBtnController = editBtnController,
                 EditBtnAction = editBtnAction,
-                DeleteBtnStr = deleteBtnStr,
                 DeleteBtnModalID = deleteBtnModalID,
                 TableHeads = tableheads,
                 TableDatas = tabledatas,
-                HasNextPage = hasnextpage,
-                HasPreviousPage = haspreviouspage,
-                PageIndex = pageIndex
-            };
-            return View("Default", dto);
+            });
         }
     }
 }

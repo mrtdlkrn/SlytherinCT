@@ -3,6 +3,19 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(ListAdvertStatusHistoryDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
+
     AddAdvertStatusHistoryDTO addAdvertStatusHistoryDTO = new AddAdvertStatusHistoryDTO();
     addAdvertStatusHistoryDTO.AdvertStatus = new List<string>() {"hede","bidi"};
 
@@ -28,49 +41,16 @@
             </div>
             <div id="cadvertsh1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-
-
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">İlan Bilgileri</th>
-                                <th scope="col">Statü</th>
-                                <th scope="col">Açıklama</th>
-                                <th scope="col">Güncellenme Tarihi</th>
-                                <th scope="col">Güncelleyen Kişi</th>
-                                <th scope="col">Güncelleme</th>
-                                <th scope="col">Silme</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>İlanlar</td>
-                                <td>Satışta</td>
-                                <td>Yeni</td>
-                                <td>05.10.2022</td>
-                                <td>Sarp</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAdvertStatus"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAdvertStatus"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>İlanlar</td>
-                                <td>Satıldı</td>
-                                <td>Eski</td>
-                                <td>06.10.2022</td>
-                                <td>Ahmet</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editAdvertStatus"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteAdvertStatus"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    EditIsModal = true,
+                    EditBtnModalID = "editAdvertStatus",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="deleteAdvertStatus",
+                    TableHeads=heads,
+                    TableDatas=datas
+                    })
                 </div>
             </div>
         </div>
