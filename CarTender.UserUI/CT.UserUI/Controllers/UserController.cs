@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
 using CarTender.FluentValidation.DTO.UserDTO.Favorite;
+using CarTender.FluentValidation.VAL.AdminVAL.Login;
+using CarTender.FluentValidation.VAL.UserVAL.Login_Register;
 using Common.Concrete;
 using Entity.DTO.Auth;
 using Entity.DTO.User;

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarTender.FluentValidation.DAL.CombineDAL.Bid
+namespace CarTender.FluentValidation.VAL.CombineVAL.Bid
 {
     public class CombineBidAddVAL : AbstractValidator<CombineBidDTO>
     {

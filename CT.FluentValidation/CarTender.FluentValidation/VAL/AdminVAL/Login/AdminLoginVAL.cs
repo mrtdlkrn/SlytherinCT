@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarTender.FluentValidation.DAL.AdminDAL.Login
+namespace CarTender.FluentValidation.VAL.AdminVAL.Login
 {
     public class AdminLoginVAL : AbstractValidator<AdminLoginDTO>
     {
