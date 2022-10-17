@@ -28,11 +28,135 @@
     {
       "ControllerName": "User",
       "Actions": {
-        "Index": "api/User/Index",
-        "Create": "api/User/Create",
-        "Update": "api/User/Update",
-        "Delete": "api/User/Delete"    
+        "Index": "",
+        "UserFavoriteCar": "",
+        "UserCar": ""
       }
-    }
+    },
+    {
+      "ControllerName": "Bid",
+      "Actions": {
+        "Index": "",
+        "Create": "",
+        "UpdateGet": "",
+        "Update": "",
+        "DeleteGet": "",
+        "Delete": "",
+        "ListBid": "",
+        "ListBidFilter": "",
+        "BidCorporateUserGet": "",
+        "BidCorporateUser": "",
+        "BidInformationGet": "",
+        "BidInformation": "",
+        "BidOfferDetailGet": "",
+        "BidOfferDetail": "",
+        "BidStatusHistoryGet": "",
+        "BidStatusHistory": "",
+        "BidUserOfferGet": "",
+        "BidUserOffer": "",
+        "UserAutoBidOfferGet": "",
+        "UserAutoBidOffer": ""
+      }
+    },
+    {
+      "ControllerName": "Advert",
+      "Actions": {
+        "Index": "",
+        "ListAdvert": "",
+        "ListAdvertStatusHistory": ""
+      }
+    },
+    {
+      "ControllerName": "Town",
+      "Actions": {
+        "Index": ""
+      }
+    },
+    {
+      "ControllerName": "Tramer",
+      "Actions": {
+        "Index": ""
+      }
+    },
+    {
+      "ControllerName": "Status",
+      "Actions": {
+        "Index": ""
+      }
+    },
+    {
+      "ControllerName": "Package",
+      "Actions": {
+        "Index": "",
+        "Create": ""
+      }
+    },
+    {
+      "ControllerName": "Message",
+      "Actions": {
+        "Index": "",
+        "MessageContent": ""
+      }
+    },
+    {
+      "ControllerName": "Expertise",
+      "Actions": {
+        "Index": "",
+      }
+    },
+    {
+      "ControllerName": "DamageRecord",
+      "Actions": {
+        "Index": "",
+      }
+    },
+    {
+      "ControllerName": "Commission",
+      "Actions": {
+        "Index": "",
+      }
+    },
+    {
+      "ControllerName": "CarStatusHistory",
+      "Actions": {
+        "Index": "",
+      }
+    },
+    {
+      "ControllerName": "CarSaleHistory",
+      "Actions": {
+        "Index": "",
+      }
+    },
+    {
+      "ControllerName": "CarHistory",
+      "Actions": {
+        "Index": "",
+      }
+    },
+    {
+      "ControllerName": "BuyNowSell",
+      "Actions": {
+        "Index": "",
+      }
+    },
+    {
+      "ControllerName": "BuyerInfo",
+      "Actions": {
+        "Index": "",
+      }
+    },
+    {
+      "ControllerName": "Authorization",
+      "Actions": {
+        "Index": "",
+      }
+    },
+    {
+      "ControllerName": "Address",
+      "Actions": {
+        "Index": "",
+      }
+    },
   ]
 }

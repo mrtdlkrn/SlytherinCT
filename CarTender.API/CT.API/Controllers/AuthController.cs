@@ -9,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace CarTender.API.Controllers
 {
@@ -44,7 +43,7 @@ namespace CarTender.API.Controllers
         [HttpPost]
         public IActionResult Login(LoginDTO dto)
         {
-            string email = "ahmet@gmail.com";
+            string email = "testuser@hotmail.com";
             string password = "123";
 
 

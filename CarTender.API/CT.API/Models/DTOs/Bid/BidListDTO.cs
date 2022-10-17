@@ -1,11 +1,11 @@
-﻿using Entity.DTO.Car;
+﻿using CT.API.Models.DTOs.Car;
 using System.Collections.Generic;
 
 namespace Entity.DTO.Bid
 {
     public class BidListDTO
     {
-        public List<ListCarDTO> CarList { get; set; }
+        public List<CarDTO> CarList { get; set; }
         public List<CreateNewBidDTO> CreateNewBid { get; set; }
     }
 }

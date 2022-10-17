@@ -1,17 +1,17 @@
 ﻿using Business.Abstract;
-using Common.Abstract;
-using FluentValidation.Results;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using FluentValidation.AspNetCore;
 using CarTender.FluentValidation.DAL.AdminDAL.Login;
 using CarTender.FluentValidation.DTO.AdminDTO.Login;
 using Entity.DTO.Auth;
+using FluentValidation.AspNetCore;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace CT.AdminUI.Controllers
 {
     public class AuthController : Controller
     {
+        //todo : Api bağlantısı yapılacak
         private readonly IApiService _apiService;
         public AuthController(IApiService apiService)
         {

@@ -8,6 +8,7 @@ namespace CarTender.AdminUI.Controllers
 {
     public class AdminController : Controller
     {
+        //todo : Api bağlantısı Yapılacak
         private readonly ILogger<AdminController> _logger;
         private readonly IBaseAPIService _apiService;
 

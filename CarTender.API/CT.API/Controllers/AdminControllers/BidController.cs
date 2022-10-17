@@ -1,7 +1,7 @@
 ﻿using CarTender.Core.Utilities;
-using CT.API.Models.DTOs.Car;
-using Microsoft.AspNetCore.Http;
+using Entity.DTO.Bid;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 namespace CT.API.Controllers.AdminControllers
@@ -14,23 +14,46 @@ namespace CT.API.Controllers.AdminControllers
         public IActionResult Index(object dto)
         {
             //Todo : Dapper eklenecek
-            List<CarDTO> carDTOs = new List<CarDTO>();
+            List<BidInformationDTO> bidDTOs = new List<BidInformationDTO>();
             for (int i = 0; i < 10; i++)
             {
-                carDTOs.Add(new CarDTO()
+                bidDTOs.Add(new BidInformationDTO()
                 {
-                    CarBrand = "Toyota",
-                    CarModel = "Verso",
-                    IsCorporate = false,
-                    Status = "Beklemede",
-                    CreatedBy = "Mert",
-                    CreatedDate = System.DateTime.Now,
-                    Price = 1000000
+                    BidName ="Mert LTD",
+                    IsActive = true,
+                    CreatedDate = DateTime.Now,
+                    IsApproved = true,
+                    IsCorporate = true,                    
                 });
             }
-            var dataResult = new SuccessDataResult<List<CarDTO>>(carDTOs, "Data Eklendi");
+            var dataResult = new SuccessDataResult<List<BidInformationDTO>>(bidDTOs, "Data Added");
 
             return Ok(dataResult);
         }
+
+        [HttpPost("Create")]
+        public IActionResult Create(object dto)
+        {
+            //Todo : Dapper eklenecek
+            var dataResult = new SuccessResult("Data Added");
+            return Ok(dataResult);
+        }
+
+        [HttpPost("Update")]
+        public IActionResult Update(object dto)
+        {
+            //Todo : Dapper eklenecek
+            var dataResult = new SuccessResult("Date Updated");
+            return Ok(dataResult);
+        }
+
+        [HttpPost("Delete")]
+        public IActionResult Delete(object dto)
+        {
+            //Todo : Dapper eklenecek
+            var dataResult = new SuccessResult("Data Deleted");
+            return Ok(dataResult);
+        }
+
     }
 }
