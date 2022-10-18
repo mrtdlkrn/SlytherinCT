@@ -74,6 +74,7 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(AddCarDTO dto)
         {
+            //todo PhotoPathler DTO lar içerisine gelmiyor.
             TokenDTO tokenDTO = new TokenDTO()
             {
                 Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
@@ -86,7 +87,6 @@ namespace CT.AdminUI.Controllers
             {
 
                 KM = dto.KM,
-                VehiclePrice = dto.Price,
                 Explanation = dto.Explanation,
                 PhotoPath1 = dto.PhotoPath1,
                 PhotoPath2 = dto.PhotoPath2,
@@ -144,16 +144,6 @@ namespace CT.AdminUI.Controllers
         {
             TokenDTO tokenDTO = new TokenDTO();
             var result = await _apiService.Get<ListCarDTO>(tokenDTO, _routes["Detail"]);
-            //todo : sayfaya veriler basılacak
-            return View();
-        }
-
-        // Car Detail
-        //[HttpGet("CarDetail")]
-        public async Task<IActionResult> CarDetail()
-        {
-            TokenDTO tokenDTO = new TokenDTO();
-            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarDetail"]);
             //todo : sayfaya veriler basılacak
             return View();
         }
