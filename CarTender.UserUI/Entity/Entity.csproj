@@ -56,6 +56,7 @@
     <Compile Include="DTO\Bid\BidStatusHistoryDTO.cs" />
     <Compile Include="DTO\Bid\BidUserOfferDTO.cs" />
     <Compile Include="DTO\Bid\CreateNewBidDTO.cs" />
+    <Compile Include="DTO\Bid\BidPaymentDTO.cs" />
     <Compile Include="DTO\Bid\ShowNewBidDTO.cs" />
     <Compile Include="DTO\CarBuyerInformation\AddCarBuyerInformationDTO.cs" />
     <Compile Include="DTO\CarBuyerInformation\EditCarBuyerInformationDTO.cs" />
