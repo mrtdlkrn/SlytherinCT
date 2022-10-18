@@ -320,6 +320,7 @@
     <Content Include="Views\Home\Expertise.cshtml" />
     <Content Include="Views\Car\Create.cshtml" />
     <Content Include="Views\Bid\Create.cshtml" />
+    <Content Include="Views\Bid\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
