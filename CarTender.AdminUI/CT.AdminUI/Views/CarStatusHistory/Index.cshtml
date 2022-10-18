@@ -4,6 +4,23 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    #region heads and datas
+
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(ListCarStatusHistoryDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
+
+    #endregion
+
     AddCarStatusHistoryDTO addDto = new AddCarStatusHistoryDTO();
     addDto.CarStatus = new List<string>() { "İlanda","Ekspertizde","Satışa Hazır"};
 
@@ -28,58 +45,17 @@
                 </h5>
             </div>
             <div id="ccsh1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="row mt-3 mb-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Araç Plakası:</label>
-                            </div>
-                            <input class="form-control" type="text" />
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-
-                <table style="text-align:center;" class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">Araç Plaka</th>
-                            <th scope="col">Statü</th>
-                            <th scope="col">Açıklama</th>
-                            <th scope="col">Ekleyen</th>
-                            <th scope="col">Ekleme Tarihi</th>
-                            <th scope="col">Düzenleyen</th>
-                            <th scope="col">Düzenleme Tarihi</th>
-                            <th scope="col">Güncelle</th>
-                            <th scope="col">Sil</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>16 E 16</td>
-                            <td>Satışta</td>
-                            <td>Arcımız satışta durumuna gelmiştir.</td>
-                            <td>Ahmet Sezgin</td>
-                            <td>05.10.2022</td>
-                            <td>Sarp İpekçi</td>
-                            <td>12.10.2022</td>
-                            <td>
-                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editStatus">
-                                    <i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteStatus">
-                                    <i class="far fa-trash-alt"></i>  Sil
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br />
-                <br />
+                @await Component.InvokeAsync("BaseTable",
+                new{
+                TableID = "myTable1",
+                EditIsModal = true,
+                EditBtnModalID = "editStatus",
+                EditBtnController="",
+                EditBtnAction="",
+                DeleteBtnModalID="deleteStatus",
+                TableHeads=heads,
+                TableDatas=datas
+                })
             </div>
         </div>
     </div>

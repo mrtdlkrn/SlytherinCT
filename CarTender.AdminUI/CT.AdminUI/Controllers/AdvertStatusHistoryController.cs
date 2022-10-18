@@ -1,7 +1,7 @@
 ﻿using Business.Abstract;
 using CarTender.AdminUI.Models;
+using Entity.DTO.AdvertStatusHistory;
 using Entity.DTO.Auth;
-using Entity.DTO.CarSaleHistory;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,16 +9,17 @@ using System.Threading.Tasks;
 
 namespace CT.AdminUI.Controllers
 {
-    public class CarSaleHistoryController : Controller
+    public class AdvertStatusHistoryController : Controller
     {
-        //todo : CarStatusHistory'a ait dtolar çıkarılacak
         private readonly IApiService _apiService;
-        private readonly IDictionary<string, string> _routes;
-        public CarSaleHistoryController(IApiRoutes routes, IApiService apiService)
+        private IDictionary<string, string> _routes;
+        public AdvertStatusHistoryController(IApiService apiService, IApiRoutes routes)
         {
             this._apiService = apiService;
-            _routes = routes.GetApiRoutes("CarSaleHistory");
+            _routes = routes.GetApiRoutes("AdvertStatusHistory");
         }
+
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             //todo : User'a göre tokenDto oluşturulacak
@@ -30,17 +31,17 @@ namespace CT.AdminUI.Controllers
                 ExpireTime = DateTime.Now.AddHours(1)
             };
 
-            var result = await _apiService.Get<List<ListCarSaleHistoryDTO>>(tokenDTO, _routes["Index"]);
+            var result = await _apiService.Get<List<ListAdvertStatusHistoryDTO>>(tokenDTO, _routes["Index"]);
 
             if (result.Success)
-            {                
+            {
                 return View(result.Data);
             }
             else
             {
                 ErrorViewModel model = new ErrorViewModel()
                 {
-                    Header = "Car Sale History",
+                    Header = "Advert Status History",
                     Message = result.Message,
                     StatusCode = result.StatusCode
                 };

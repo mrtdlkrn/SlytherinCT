@@ -4,6 +4,23 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    #region heads and datas
+
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(ListExpertiseDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
+
+    #endregion
+
     AddExpertiseDTO addDto = new AddExpertiseDTO();
     addDto.City = new List<string>() { "İstanbul", "İzmir", "Bursa" };
     addDto.Town = new List<string>() { "Kestel", "Mustafa Kemal Paşa", "Karacabey" };
@@ -32,35 +49,17 @@
             </div>
             <div id="ce1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Ekspertiz</th>
-                                <th scope="col">Adres</th>
-                                <th scope="col">Enlem</th>
-                                <th scope="col">Boylam</th>
-                                <th scope="col">Aktif/Pasif</th>
-                                <th scope="col">Versiyon</th>
-                                <th scope="col">Güncelle</th>
-                                <th scope="col">Sil</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Giriş</td>
-                                <td>dlkfjdjd</td>
-                                <td>Enlem</td>
-                                <td>Boylam</td>
-                                <td>Aktif</td>
-                                <td>v1</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editExpertise"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
-                                </td>
-                        </tbody>
-                    </table>
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable1",
+                    EditIsModal = true,
+                    EditBtnModalID = "editExpertise",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="delete",
+                    TableHeads=heads,
+                    TableDatas=datas
+                    })
                 </div>
             </div>
         </div>

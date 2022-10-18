@@ -1,7 +1,7 @@
 ﻿using Business.Abstract;
 using CarTender.AdminUI.Models;
 using Entity.DTO.Auth;
-using Entity.DTO.CarSaleHistory;
+using Entity.DTO.MessageContent;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,16 +9,17 @@ using System.Threading.Tasks;
 
 namespace CT.AdminUI.Controllers
 {
-    public class CarSaleHistoryController : Controller
+    public class MessageContentController : Controller
     {
-        //todo : CarStatusHistory'a ait dtolar çıkarılacak
         private readonly IApiService _apiService;
         private readonly IDictionary<string, string> _routes;
-        public CarSaleHistoryController(IApiRoutes routes, IApiService apiService)
+
+        public MessageContentController(IApiRoutes routes, IApiService apiService)
         {
             this._apiService = apiService;
-            _routes = routes.GetApiRoutes("CarSaleHistory");
+            _routes = routes.GetApiRoutes("MessageContent");
         }
+
         public async Task<IActionResult> Index()
         {
             //todo : User'a göre tokenDto oluşturulacak
@@ -29,20 +30,18 @@ namespace CT.AdminUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-
-            var result = await _apiService.Get<List<ListCarSaleHistoryDTO>>(tokenDTO, _routes["Index"]);
-
-            if (result.Success)
-            {                
-                return View(result.Data);
+            var messageContents = await _apiService.Get<List<ListMessageConentDTO>>(tokenDTO, _routes["Index"]);
+            if (messageContents.Success)
+            {
+                return View(messageContents.Data);
             }
             else
             {
                 ErrorViewModel model = new ErrorViewModel()
                 {
-                    Header = "Car Sale History",
-                    Message = result.Message,
-                    StatusCode = result.StatusCode
+                    Header = "Message Content",
+                    Message = messageContents.Message,
+                    StatusCode = messageContents.StatusCode
                 };
                 return View("~/Views/Shared/Error.cshtml", model);
             }

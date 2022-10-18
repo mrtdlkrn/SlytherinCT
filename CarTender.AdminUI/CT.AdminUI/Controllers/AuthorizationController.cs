@@ -29,29 +29,22 @@ namespace CT.AdminUI.Controllers
                 ExpireTime = DateTime.Now.AddHours(1)
             };
 
-            AuthorizationViewDTO dto = new AuthorizationViewDTO();
-
             var roles = await _apiService.Get<List<ListRoleDTO>>(tokenDTO, _routes["Roles"]);
-
-            dto.Roles = roles.Data;
 
             var authorizations = await _apiService.Get<List<ListAuthorizationDTO>>(tokenDTO, _routes["Authorizations"]);
 
-            dto.Auths = authorizations.Data;
-
-            if (roles != null)
-            {
-                //todo: sayfaya veriler basılacak
-                //return View(new AuthorizationViewDTO { Roles = roles, Auths = authorizations });
-                return View(dto);
+            // bu if kontrolu düzenlenmeli
+            if (authorizations.Success)
+            {                
+                return View(new AuthorizationViewDTO() { Auths = authorizations.Data, Roles = roles.Data});
             }
             else
             {
                 ErrorViewModel model = new ErrorViewModel()
                 {
                     Header = "Authorization",
-                    Message = "Authorization ilgili bilgiler bulunamadı",
-                    StatusCode = 500
+                    Message = authorizations.Message,
+                    StatusCode = authorizations.StatusCode
                 };
                 return View("~/Views/Shared/Error.cshtml", model);
             }

@@ -12,7 +12,7 @@ namespace CT.API.Controllers.AdminControllers
     public class ExpertiseController : ControllerBase
     {
 
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             List<ListExpertiseDTO> expertises = new List<ListExpertiseDTO>();
