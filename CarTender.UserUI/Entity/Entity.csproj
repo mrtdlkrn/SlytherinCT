@@ -53,6 +53,7 @@
     <Compile Include="DTO\Bid\BidInformationDTO.cs" />
     <Compile Include="DTO\Bid\BidListDTO.cs" />
     <Compile Include="DTO\Bid\BidOfferDetailDTO.cs" />
+    <Compile Include="DTO\Bid\BidOfferDTO.cs" />
     <Compile Include="DTO\Bid\BidStatusHistoryDTO.cs" />
     <Compile Include="DTO\Bid\BidUserOfferDTO.cs" />
     <Compile Include="DTO\Bid\CreateNewBidDTO.cs" />

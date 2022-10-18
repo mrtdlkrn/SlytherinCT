@@ -1,16 +1,15 @@
 ﻿
 @{
-    ViewBag.Title = "İhale Detay";
+    ViewBag.Title = "İhale Teklifi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 </div>
 <div class="container-fluid mb-3">
     <div class="card shadow mb-4">
-        <h2 class="card-header py-3 text-center mt-1">İhale Detay</h2>
+        <h2 class="card-header py-3 text-center mt-1">@ViewBag.Title</h2>
         <div class="card-body">
             <label class="mt-3 text-center"><b>İhale Genel Bilgiler</b></label>
-
             <div class="card-body mt-1 p-4" style="border:2px solid gray;">
                 <div class="row ">
                     <div class="col-md-4">
@@ -107,10 +106,9 @@
                             <th scope="col">Araç Model</th>
                             <th scope="col">Bireysel / Kurumsal</th>
                             <th scope="col">Statü</th>
-                            <th scope="col">Kayıt Eden Kullanıcı</th>
-                            <th scope="col">Kayıt Etme Zamanı</th>
-                            <th scope="col">Fiyat</th>
-                            <th scope="col"></th>
+                            <th scope="col">Kaydetme Zamanı</th>
+                            <th scope="col">Belirlenen Fiyat</th>
+                            <th scope="col">Teklif</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -120,11 +118,10 @@
                             <td>Yaris</td>
                             <td>Bireysel</td>
                             <td>Satışta</td>
-                            <td>Ahmet123</td>
                             <td>05.10.2022</td>
                             <td>255.000 TL</td>
                             <td>
-                                <a class="btn btn-warning col-md-12" href="http://localhost:60964/Car/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                                <input type="text" value="" class="form-control col-md-8"/>
                             </td>
                         </tr>
                         <tr>
@@ -133,11 +130,10 @@
                             <td>Yaris</td>
                             <td>Bireysel</td>
                             <td>Satışta</td>
-                            <td>Ahmet123</td>
                             <td>05.10.2022</td>
                             <td>255.000 TL</td>
                             <td>
-                                <a class="btn btn-warning col-md-12" href="http://localhost:60964/Car/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                                <input type="text" value="" class="form-control col-md-8"/>
                             </td>
                         </tr>
                         <tr>
@@ -146,19 +142,26 @@
                             <td>Yaris</td>
                             <td>Bireysel</td>
                             <td>Satışta</td>
-                            <td>Ahmet123</td>
                             <td>05.10.2022</td>
                             <td>255.000 TL</td>
                             <td>
-                                <a class="btn btn-warning col-md-12" href="http://localhost:60964/Car/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                                <input type="text" value="" class="form-control col-md-8"/>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="row float-right mt-3 mr-3" style="margin-bottom:20px">
-                <div class="col-md-12">
-                    <a class="btn btn-primary col-md-12" href="http://localhost:60964/Bid/Offer"><i class="fa-solid" style="color:black;"></i>Teklif Ver</a>
+            <div class="row float-right mt-3 mr-3">
+                <div class="">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">Yapılan Toplam Teklif Tutarı:</span>
+                        </div>
+                        <input disabled type="text" class="form-control col-md-9" value="650.000">
+                    </div>
+                </div>
+                <div class="ml-3 mr-3">
+                    <button class="btn btn-primary" type="submit"><i class="fa-regular"></i> Teklifi Gönder</button>
                 </div>
             </div>
         </div>
