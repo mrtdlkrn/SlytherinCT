@@ -1026,3 +1026,53 @@ Error Number:2812,State:62,Class:16
 2022-10-18 01:28:07.3787 Info Adding target DatabaseTarget(Name=dbhede)
 2022-10-18 01:28:07.4564 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
 2022-10-18 01:28:08.6068 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 21:11:56.3677 Info Message Template Auto Format enabled
+2022-10-18 21:11:56.3875 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-18 21:11:56.5762 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-18 21:11:56.6287 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 21:11:58.8383 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 21:20:34.7379 Info Message Template Auto Format enabled
+2022-10-18 21:20:34.7552 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-18 21:20:34.8556 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-18 21:20:34.9004 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 21:20:35.9726 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 21:56:07.7954 Info Message Template Auto Format enabled
+2022-10-18 21:56:07.8132 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-18 21:56:07.9392 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-18 21:56:07.9859 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 21:56:08.9202 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 22:02:17.6234 Info Message Template Auto Format enabled
+2022-10-18 22:02:17.6409 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-18 22:02:17.7494 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-18 22:02:17.7936 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 22:02:18.8556 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 22:09:58.3693 Info Message Template Auto Format enabled
+2022-10-18 22:09:58.3852 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-18 22:09:58.5339 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-18 22:09:58.5992 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 22:09:59.7198 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 22:17:24.5303 Info Message Template Auto Format enabled
+2022-10-18 22:17:24.5606 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-18 22:17:24.7086 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-18 22:17:24.7565 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 22:17:25.7291 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 23:24:51.3648 Info Message Template Auto Format enabled
+2022-10-18 23:24:51.3798 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-18 23:24:51.5325 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-18 23:24:51.5814 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 23:24:52.7831 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 23:35:11.3651 Info Message Template Auto Format enabled
+2022-10-18 23:35:11.3864 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-18 23:35:11.4900 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-18 23:35:11.5375 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-18 23:35:12.6775 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-19 00:01:47.6560 Info Message Template Auto Format enabled
+2022-10-19 00:01:47.6710 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-19 00:01:47.7661 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-19 00:01:47.8137 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-19 00:01:48.7164 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-19 00:27:33.4868 Info Message Template Auto Format enabled
+2022-10-19 00:27:33.5039 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-19 00:27:33.6447 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-19 00:27:33.7394 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-19 00:27:34.7603 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config

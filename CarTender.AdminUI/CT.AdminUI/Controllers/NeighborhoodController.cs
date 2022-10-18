@@ -29,7 +29,7 @@ namespace CT.AdminUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiService.Get<List<ListNeighborhoodDTO>>(tokenDTO, _routes["GetAll"]);
+            var result = await _apiService.Get<List<ListNeighborhoodDTO>>(tokenDTO, _routes["Index"]);
             if (result.Success)
             {
                 return View(result.Data);
