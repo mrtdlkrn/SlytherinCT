@@ -1,14 +1,9 @@
 ﻿using CarTender.FluentValidation.DTO.CombineDTO.Car;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarTender.FluentValidation.VAL.CombineVAL.Car
 {
-    public class CombineCarCategoryComponentsVAL:AbstractValidator<CombineCarCategorComponentsDTO>
+    public class CombineCarCategoryComponentsVAL : AbstractValidator<CombineCarCategorComponentsDTO>
     {
         public CombineCarCategoryComponentsVAL()
         {
