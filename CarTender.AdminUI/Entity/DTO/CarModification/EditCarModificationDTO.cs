@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Entity.DTO.CarModificationComponent;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Entity.DTO.CarModification
@@ -9,6 +10,6 @@ namespace Entity.DTO.CarModification
         public string CarPlate { get; set; }
 
         [DisplayName("Modifiye Bileşeni")]
-        public List<string> ModificationComponents { get; set; }
+        public List<EditCarModificationComponentDTO> editCarModificationComponentDTOs { get; set; }
     }
 }
