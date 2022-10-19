@@ -218,7 +218,7 @@ namespace CT.UserUI.Controllers
 
         // Car Delete POST
         [HttpPost]
-        public async Task<ActionResult> DeleteAsync(UpdateCarDTO dto)
+        public async Task<ActionResult> Delete(UpdateCarDTO dto)
         {
             var result = await _apiManager.Post(_routes["Delete"], dto);
             if (result != null)
