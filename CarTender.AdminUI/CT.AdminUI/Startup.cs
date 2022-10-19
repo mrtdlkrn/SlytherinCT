@@ -63,7 +63,7 @@ namespace CarTender.AdminUI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.ConfigureExceptionHandler();
+            //app.ConfigureExceptionHandler();
 
             app.UseRouting();
 
@@ -73,7 +73,7 @@ namespace CarTender.AdminUI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Admin}/{action=Index}/{id?}");
+                    pattern: "{controller=Auth}/{action=Login}/{id?}");
             });
         }
     }
