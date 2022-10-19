@@ -20,5 +20,22 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessDataResult<List<ListNeighborhoodDTO>>(neighborhoods, "Mahalleler listelendi", 200));
         }
 
+        [HttpPost("Create")]
+        public IActionResult Create(CreateNeighborhoodDTO dto)
+        {
+            return Ok(new SuccessResult("Mahalle Ekleme Başarılı", 200));
+        }
+
+        [HttpPost("Update")]
+        public IActionResult Update(UpdateNeighborhoodDTO dto)
+        {
+            return Ok(new SuccessResult("Mahalle Güncelleme Başarılı", 200));
+        }
+
+        [HttpPost("Delete")]
+        public IActionResult Delete(object id)
+        {
+            return Ok(new SuccessResult("Mahalle Silme Başarılı", 200));
+        }
     }
 }

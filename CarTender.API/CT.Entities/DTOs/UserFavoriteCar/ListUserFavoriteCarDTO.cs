@@ -1,4 +1,4 @@
-﻿namespace CT.Entities.DTOs.User
+﻿namespace CT.Entities.DTOs.UserFavoriteCar
 {
     public class ListUserFavoriteCarDTO
     {
