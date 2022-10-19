@@ -108,6 +108,9 @@ namespace CT.UserUI.Controllers
                 return View("~/Views/Shared/Error.cshtml");
             }
         }
+
+        // User View Favorites GET
+
         public ActionResult ViewFavorites()
         {
             //var favoriteDTOs = _apiManager.Get<UserFavoriteDTO, UserFavoriteDTO>(new Entity.DTO.Auth.TokenDTO(), _routes["Favorite"], new UserFavoriteDTO() { UserID = new Guid() });

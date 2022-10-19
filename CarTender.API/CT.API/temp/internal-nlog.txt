@@ -1081,38 +1081,22 @@ Error Number:2812,State:62,Class:16
 2022-10-19 10:13:06.0792 Info Adding target DatabaseTarget(Name=dbhede)
 2022-10-19 10:13:06.1528 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
 2022-10-19 10:13:08.5969 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 12:20:59.8003 Info Message Template Auto Format enabled
-2022-10-19 12:20:59.8211 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-19 12:20:59.9891 Info Adding target DatabaseTarget(Name=dbhede)
-2022-10-19 12:21:00.0418 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 12:21:01.4990 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 12:22:05.6838 Info Message Template Auto Format enabled
-2022-10-19 12:22:05.6987 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-19 12:22:05.7936 Info Adding target DatabaseTarget(Name=dbhede)
-2022-10-19 12:22:05.8399 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 12:22:06.8001 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 13:28:20.1760 Info Message Template Auto Format enabled
-2022-10-19 13:28:20.1904 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-19 13:28:20.2863 Info Adding target DatabaseTarget(Name=dbhede)
-2022-10-19 13:28:20.3278 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 13:28:21.2935 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 13:32:28.9953 Info Message Template Auto Format enabled
-2022-10-19 13:32:29.0112 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-19 13:32:29.1035 Info Adding target DatabaseTarget(Name=dbhede)
-2022-10-19 13:32:29.1482 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 13:32:30.0515 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 13:39:26.5258 Info Message Template Auto Format enabled
-2022-10-19 13:39:26.5408 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-19 13:39:26.6469 Info Adding target DatabaseTarget(Name=dbhede)
-2022-10-19 13:39:26.6936 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 13:39:27.6212 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 13:39:40.0222 Info Message Template Auto Format enabled
-2022-10-19 13:39:40.0389 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-19 13:39:40.1751 Info Adding target DatabaseTarget(Name=dbhede)
-2022-10-19 13:39:40.3007 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 13:39:41.4825 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 13:40:39.8872 Info Message Template Auto Format enabled
-2022-10-19 13:40:39.9014 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-19 13:40:39.9957 Info Adding target DatabaseTarget(Name=dbhede)
-2022-10-19 13:40:40.0400 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
-2022-10-19 13:40:40.9731 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-19 13:07:07.9066 Info Message Template Auto Format enabled
+2022-10-19 13:07:07.9352 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-19 13:07:08.1259 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-19 13:07:08.1689 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Users\Yigit\source\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-19 13:07:08.9428 Error DatabaseTarget(Name=dbhede): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'dbo.NLog_AddEntry_p'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:7b09486d-0b61-4489-b6cb-bc46edecc75a
+Error Number:2812,State:62,Class:16
+2022-10-19 13:07:09.7658 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Users\Yigit\source\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config

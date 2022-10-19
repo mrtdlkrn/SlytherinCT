@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
-using CarTender.FluentValidation.DAL.UserDAL.Login_Register;
 using Common.Concrete;
 using CT.UserUI.Logging.Concrete;
 using Entity.DTO;
@@ -58,18 +57,17 @@ namespace CT.UserUI.Controllers
             string password = "123";
 
 
-            //BaseValidator<UserLoginDTO> validator = new BaseValidator<UserLoginDTO>(dto);
-            UserLoginDAL validations = new UserLoginDAL();
-            ValidationResult result = validations.Validate(new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
-            {
-                Username = username,
-                Password = password
-            });
+            //UserLoginDAL validations = new UserLoginDAL();
+            //ValidationResult result = validations.Validate(new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
+            //{
+            //    Username = username,
+            //    Password = password
+            //});
 
-            if (result.IsValid)
-            {
+            //if (result.IsValid)
+            //{
 
-            }
+            //}
             if (dto.Password != password || dto.Username != username)
             {
                 _logger.Log("hatalı kullanıcı girişi - USERUI");
