@@ -17,9 +17,11 @@ namespace CT.AdminUI.Controllers
     {
         //todo : Api bağlantısı yapılacak
         private readonly IApiService _apiService;
+        //private readonly CookieHelper cookieHelper;
         public AuthController(IApiService apiService)
         {
             _apiService = apiService;
+            //this.cookieHelper = cookieHelper;            
         }
 
         [HttpGet]
@@ -50,10 +52,11 @@ namespace CT.AdminUI.Controllers
 
             try
             {
-                var user = await _apiService.Login(dto);
-                if (user != null)
+                // todo: api/auth/login buradan gönderilecek.
+                var result = await _apiService.Login(dto);
+                if (result.Success)
                 {
-
+                    //cookieHelper.SetCookie();
                 }
 
                 return View();
