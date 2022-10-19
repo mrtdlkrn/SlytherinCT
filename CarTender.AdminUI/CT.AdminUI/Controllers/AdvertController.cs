@@ -19,7 +19,7 @@ namespace CT.AdminUI.Controllers
             this._apiService = apiService;
             _routes = routes.GetApiRoutes("Advert");
         }
-
+        
         [HttpGet]
         public async Task<IActionResult> Index()
         {

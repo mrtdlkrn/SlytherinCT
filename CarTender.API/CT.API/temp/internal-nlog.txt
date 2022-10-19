@@ -1086,6 +1086,7 @@ Error Number:2812,State:62,Class:16
 2022-10-19 13:07:08.1259 Info Adding target DatabaseTarget(Name=dbhede)
 2022-10-19 13:07:08.1689 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Users\Yigit\source\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
 2022-10-19 13:07:08.9428 Error DatabaseTarget(Name=dbhede): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'dbo.NLog_AddEntry_p'.
+
    at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -1097,6 +1098,8 @@ Error Number:2812,State:62,Class:16
    at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
    at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
    at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+
 ClientConnectionId:7b09486d-0b61-4489-b6cb-bc46edecc75a
 Error Number:2812,State:62,Class:16
 2022-10-19 13:07:09.7658 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Users\Yigit\source\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+
