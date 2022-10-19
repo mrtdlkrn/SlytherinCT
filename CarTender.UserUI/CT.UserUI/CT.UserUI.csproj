@@ -467,6 +467,8 @@
     <Content Include="Template\scss\bootstrap\scss\_utilities.scss" />
     <Content Include="Template\scss\bootstrap\scss\_variables.scss" />
     <Content Include="Template\scss\style.scss" />
+    <Content Include="Views\Car\Index.cshtml" />
+    <Content Include="Views\User\Messages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,7 +11,6 @@
     @Scripts.Render("~/bundles/modernizr")
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="~/Content/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -22,9 +21,19 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h2 class="text-center">Profil</h2>
-
         </div>
+       
+
         <div class="card-body">
+            <div class="mb-3 text-center">
+                <a class="btn btn-warning col-lg-1" href="http://localhost:60964/User/ViewFavorites"><i class="fa-solid"></i>Favori İlanlar</a>
+                <a class="btn btn-warning col-lg-1" href="http://localhost:60964/"><i class="fa-solid"></i>Favori Aramalar</a>
+                <a class="btn btn-warning col-lg-1" href="http://localhost:60964/"><i class="fa-solid "></i>Sattığım Araçlar</a>
+                <a class="btn btn-warning col-lg-1" href="http://localhost:60964/Bid/Payment"><i class="fa-solid"></i>Aldığım Araçlar</a>
+                <a class="btn btn-warning col-lg-1" href="http://localhost:60964/"><i class="fa-solid"></i>Teklif Verdiğim Araçlar</a>
+                <a class="btn btn-warning col-lg-1" href="http://localhost:60964/User/Messages"><i class="fa-solid"></i>Mesajlarım</a>
+
+            </div>
             <div class="input-group mb-3">
                 <span class="input-group-text col-md-4" for="inputGroupSelect01">Kullanıcı Adı:</span>
                 <input disabled type="text" value="yigitkygs" class="form-control editable" />
