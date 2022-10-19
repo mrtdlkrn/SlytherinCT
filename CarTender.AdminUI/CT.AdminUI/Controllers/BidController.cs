@@ -1,92 +1,40 @@
 ﻿using Business.Abstract;
-using CarTender.AdminUI.Models;
-using Entity.DTO.Auth;
+using CarTender.AdminUI.Controllers;
+using Common.Abstract;
+using Entity.DTO;
 using Entity.DTO.Bid;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace CT.AdminUI.Controllers
 {
     public class BidController : Controller
     {
         private readonly IApiService _apiService;
-        private readonly IDictionary<string, string> _routes;
 
-        public BidController(IApiService apiService, IApiRoutes routes)
+        public BidController(IApiService apiService)
         {
             _apiService = apiService;
-            _routes = routes.GetApiRoutes("Bid");
         }
-
-        [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            // todo: token cookie de tutulacak
-            //todo : User'a göre tokenDto oluşturulacak
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Get<List<BidInformationDTO>>(tokenDTO, _routes["Index"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
 
         #region Create
 
         [HttpGet]
         //GET: Bid Controller for Create New Bid
-        public IActionResult Create()
+        public IActionResult Create(CreateNewBidDTO createBidDTO)
         {
             return View();
         }
 
         [HttpPost]
         //POST: Bid Controller for Create New Bid
-        public async Task<IActionResult> Create(CreateNewBidDTO dto)
+        public IActionResult Create(int id)
         {
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-     ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-     ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-
-            var result = await _apiService.Post(tokenDTO, _routes["Create"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
 
         #endregion
@@ -96,129 +44,19 @@ namespace CT.AdminUI.Controllers
         //GET: Edit Bid Method
 
         [HttpGet]
-        public async Task<IActionResult> Edit()
+        public IActionResult Edit()
         {
-
-            //todo : User'a göre tokenDto oluşturulacak
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Get<BidInformationDTO>(tokenDTO, _routes["UpdateGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
 
         //POST: Edit Bid Method
 
         [HttpPost]
-        public async Task<IActionResult> Edit(CreateNewBidDTO dto)
+        public IActionResult Edit(int id)
         {
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Post(tokenDTO, _routes["UpdatePost"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
 
-        #endregion
-
-        #region Delete Bid
-
-        //GET: Edit Bid Method
-
-        [HttpGet]
-        public async Task<IActionResult> Delete()
-        {
-            //todo : User'a göre tokenDto oluşturulacak
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                 ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Get<BidInformationDTO>(tokenDTO, _routes["DeleteGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
-        }
-
-        //POST: Edit Bid Method
-
-        [HttpPost]
-        public async Task<IActionResult> Delete(BidInformationDTO dto)
-        {
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Post(tokenDTO, _routes["DeletePost"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
-        }
 
         #endregion
 
@@ -227,428 +65,62 @@ namespace CT.AdminUI.Controllers
         //GET: List Bid Method
 
         [HttpGet]
-        public async Task<IActionResult> ListBid()
+        public IActionResult ListBid()
         {
-            //todo : User'a göre tokenDto oluşturulacak
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Get<BidInformationDTO>(tokenDTO, _routes["ListBid"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
 
         //POST: List Bid Method with Filter
 
-        [HttpGet]
-        public async Task<IActionResult> ListBid(object filteredBidInfo)
+        [HttpPost]
+        public IActionResult ListBid(object filteredBidInfo)
         {
-            //todo : User'a göre tokenDto oluşturulacak
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            //todo : filter gönderme eklenecek
-            var result = await _apiService.Get<BidInformationDTO>(tokenDTO, _routes["ListBidFilter"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
+
 
         #endregion
 
-        #region BidCorporateUser
-
-        [HttpGet]
-        public async Task<IActionResult> BidCorporateUser()
+        #region BidCorporateUSer
+        public IActionResult BidCorporateUser()
         {
-            //todo : User'a göre tokenDto oluşturulacak
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Get<BidInformationDTO>(tokenDTO, _routes["BidCorporateUserGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> BidCorporateUser(BidCorporateUserDTO dto)
-        {
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Post(tokenDTO, _routes["BidCorporateUserPost"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
-        }
-
         #endregion
 
         #region BidInformation
-
-        [HttpGet]
-        public async Task<IActionResult> BidInformation()
+        public IActionResult BidInformation()
         {
-
-            //todo : User'a göre tokenDto oluşturulacak
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Get<BidInformationDTO>(tokenDTO, _routes["BidInformationGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> BidInformation(BidInformationDTO dto)
-        {
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Post(tokenDTO, _routes["BidInformationPost"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
-        }
-
         #endregion
 
         #region BidOfferDetail
-
-        [HttpGet]
-        public async Task<IActionResult> BidOfferDetail()
+        public IActionResult BidOfferDetail()
         {
-
-            //todo : User'a göre tokenDto oluşturulacak
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Get<BidInformationDTO>(tokenDTO, _routes["BidOfferDetailGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> BidOfferDetail(BidOfferDetailDTO dto)
-        {
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Post(tokenDTO, _routes["BidOfferDetailPost"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
-        }
-
         #endregion
 
         #region BidStatusHistory
-
-        [HttpGet]
-        public async Task<IActionResult> BidStatusHistory()
+        public IActionResult BidStatusHistory()
         {
-            //todo : User'a göre tokenDto oluşturulacak
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Get<BidInformationDTO>(tokenDTO, _routes["BidStatusHistoryGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> BidStatusHistory(BidStatusHistoryDTO dto)
-        {
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Post(tokenDTO, _routes["BidStatusHistoryPost"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
-        }
-
         #endregion
-
         #region BidUserOffer
-
-        [HttpGet]
-        public async Task<IActionResult> BidUserOffer()
+        public IActionResult BidUserOffer()
         {
-            //todo : User'a göre tokenDto oluşturulacak
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Get<BidInformationDTO>(tokenDTO, _routes["BidUserOfferGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
-        }
-        [HttpPost]
-        public async Task<IActionResult> BidUserOffer(BidUserOfferDTO dto)
-        {
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Post(tokenDTO, _routes["BidUserOfferPost"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
 
         #endregion
 
-        #region UserAutoBidOffer
-
-        [HttpGet]
-        public async Task<IActionResult> UserAutoBidOffer()
+        #region dsfsa
+        public IActionResult UserAutoBidOffer()
         {
-            //todo : User'a göre tokenDto oluşturulacak
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Get<BidInformationDTO>(tokenDTO, _routes["UserAutoBidOfferGet"]);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
+            return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> UserAutoBidOffer(BidUserOfferDTO dto) //todo : Yeni bir dto gerekebilir
-        {
-            TokenDTO tokenDTO = new TokenDTO()
-            {
-                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
-                ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
-                ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
-                ExpireTime = DateTime.Now.AddHours(1)
-            };
-            var result = await _apiService.Post(tokenDTO, _routes["UserAutoBidOfferPost"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return View();
-            }
-            else
-            {
-                ErrorViewModel model = new ErrorViewModel()
-                {
-                    Header = "Bid",
-                    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                    StatusCode = 500
-                };
-                return View("~/Views/Shared/Error.cshtml", model);
-            }
-        }
-
         #endregion
     }
 }

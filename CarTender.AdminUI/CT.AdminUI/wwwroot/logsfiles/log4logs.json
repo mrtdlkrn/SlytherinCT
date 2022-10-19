@@ -1,3 +1,911 @@
-﻿{
-  
+﻿
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T17:43:13.6744494+00:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "deneme",
+        "Value": "aaaa",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T17:43:20.6247497+00:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "deneme",
+        "Value": "aaaa",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T17:46:38.763877+00:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "deneme",
+        "Value": "aaaa",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T17:46:38.849871+00:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "deneme",
+        "Value": "aaaa",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T17:47:38.6374985+00:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "deneme",
+        "Value": "aaaa",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T17:47:38.6378452+00:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "deneme",
+        "Value": "aaaa",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T17:50:18.5728523+00:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "deneme",
+        "Value": "aaaa",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T17:50:18.6576156+00:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "deneme",
+        "Value": "aaaa",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T17:57:28.3401458+00:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "deneme",
+        "Value": "aaaa",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T17:57:28.446868+00:00",
+    "MethodName": "Test",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "deneme",
+        "Value": "aaaa",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:09:49.4546233+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:09:53.1855527+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:12:55.1213759+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:12:58.7706354+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:15:21.569798+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:15:30.6027297+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/Detail",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:15:47.2930335+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarImage",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:15:47.3166326+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarImage",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:15:52.6746005+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarModification",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:15:52.6891114+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarModification",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:15:56.3472961+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ.YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+          "ExpireTime": "2022-10-19T19:15:56.347004+00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/CarSaleHistory/GetAll",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:15:56.3574355+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ.YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+          "ExpireTime": "2022-10-19T19:15:56.347004+00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/CarSaleHistory/GetAll",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:16:05.5526753+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:16:05.5667126+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarCommission",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:16:12.0028695+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:16:12.0225424+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": null,
+          "ExpireTime": "0001-01-01T00:00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Car/CarBuyerInformation",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:16:30.2155673+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ.YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+          "ExpireTime": "2022-10-19T19:16:30.2154343+00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Status/GetAll",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:16:30.2245631+00:00",
+    "MethodName": "Get",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "tokenDTO",
+        "Value": {
+          "Token": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ.YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+          "ExpireTime": "2022-10-19T19:16:30.2154343+00:00"
+        },
+        "Type": "TokenDTO"
+      },
+      {
+        "Name": "requestUrl",
+        "Value": "api/Status/GetAll",
+        "Type": "String"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:17:02.0114477+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "emine.baltaci@bilgeadam.com",
+          "Password": "Emine.12"
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:17:02.0281519+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "emine.baltaci@bilgeadam.com",
+          "Password": "Emine.12"
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:18:27.7794258+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "emine.baltaci@bilgeadam.com",
+          "Password": "Emine.12"
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:18:27.8563511+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "emine.baltaci@bilgeadam.com",
+          "Password": "Emine.12"
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:19:00.669783+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "emine.baltaci@bilgeadam.com",
+          "Password": "Emine.12"
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:19:00.6959331+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "emine.baltaci@bilgeadam.com",
+          "Password": "Emine.12"
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:19:07.5018062+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "emine.baltaci@bilgeadam.com",
+          "Password": "Emine.12"
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:19:07.5333959+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "emine.baltaci@bilgeadam.com",
+          "Password": "Emine.12"
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:21:40.7562711+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:21:40.7772094+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:21:49.0159239+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:21:49.0363209+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:22:03.2196739+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:22:03.2262333+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:22:58.1995707+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:22:58.2112232+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:25:11.670579+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:25:12.3249014+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:26:38.7986782+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:26:39.3838482+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:30:16.0541231+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+}
+{
+  "Message": {
+    "TransactionDate": "2022-10-19T18:30:16.7067723+00:00",
+    "MethodName": "Login",
+    "UserName": "Emine",
+    "LogParameters": [
+      {
+        "Name": "dto",
+        "Value": {
+          "Email": "testuser@hotmail.com",
+          "Password": "1234Abc."
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
 }

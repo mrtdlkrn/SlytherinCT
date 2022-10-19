@@ -54,9 +54,10 @@ namespace CT.AdminUI.Controllers
             {
                 // todo: api/auth/login buradan gönderilecek.
                 var result = await _apiService.Login(dto);
-                if (result.Success)
+                if (result!=null)
                 {
                     //cookieHelper.SetCookie();
+                    return RedirectToAction("Index","Admin");
                 }
 
                 return View();
