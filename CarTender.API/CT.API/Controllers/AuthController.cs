@@ -1,4 +1,6 @@
 ﻿using CarTender.Business.Abstract;
+using CarTender.Core.Security.JWT;
+using CarTender.Core.Utilities;
 using CT.API.Logging.Concrete;
 using CT.Common.Service;
 using CT.Entities.Auth;
@@ -40,11 +42,11 @@ namespace CarTender.API.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("Login")]
         public IActionResult Login(LoginDTO dto)
         {
             string email = "testuser@hotmail.com";
-            string password = "123";
+            string password = "1234Abc.";
 
 
 
@@ -57,12 +59,12 @@ namespace CarTender.API.Controllers
             _logger.Log(email + " kullanıcı giriş yaptı.");
             // if user exists
             var token = authService.CreateToken(new User());
-            return Ok(token);
+            return Ok(new SuccessDataResult<AccessToken>(token,"Kullanıcı giriş yaptı",200));
         }
 
 
 
-        [HttpPost("register")]
+        [HttpPost("Register")]
         public IActionResult Register(RabbitMQLoginDTO dto)
         {
             var userExists = authService.IsUserExist(dto.Email);
@@ -128,7 +130,7 @@ namespace CarTender.API.Controllers
             return Ok();
         }
 
-        [HttpPost("log")]
+        [HttpPost("Logger")]
         public IActionResult Logger()
         {
             _logger.Log("Hello, this is the index!");

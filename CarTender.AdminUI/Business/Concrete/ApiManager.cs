@@ -43,7 +43,7 @@ namespace Business.Concrete
             return _baseAPIService.GET<T, FilterDTO>(tokenDTO, requestUrl, dto);
         }
 
-        public Task<ResponseDTO<T>> Login<T>(T dto) where T : class
+        public Task<ResponseDTO<TokenDTO>> Login<T>(T dto) where T : class
         {
             return _baseAPIService.LOGIN(dto);
         }

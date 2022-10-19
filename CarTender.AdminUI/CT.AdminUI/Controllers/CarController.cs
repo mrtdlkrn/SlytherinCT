@@ -81,10 +81,27 @@ namespace CT.AdminUI.Controllers
             ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
+            dto.PhotoPath1 = "hede";
+            dto.PhotoPath2 = "hede";
+            dto.PhotoPath3 = "hede";
+            dto.PhotoPath4 = "hede";
+            dto.PhotoPath5 = "hede";
+
             CombineAddOrEditVehicleVAL validations = new CombineAddOrEditVehicleVAL();
             ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
             {
 
+                CombineAddOrEditVehicleDetailDTO = new CombineAddOrEditVehicleDetailDTO {
+                BodyType = dto.BodyType,
+                Color = dto.Color,
+                FuelType = dto.FuelType,
+                GearType = dto.GearType,
+                Hardware = "asdasd",
+                Year = dto.Year,
+                VehicleBrand = dto.CarBrand,
+                VehicleModel = dto.CarModel,
+                Version = dto.Version,
+                },
                 KM = dto.KM,
                 VehiclePrice = dto.Price,
                 Explanation = dto.Explanation,
@@ -94,7 +111,7 @@ namespace CT.AdminUI.Controllers
                 PhotoPath4 = dto.PhotoPath4,
                 PhotoPath5 = dto.PhotoPath5
 
-            });
+            });;
 
             if (!validationResult.IsValid)
             {

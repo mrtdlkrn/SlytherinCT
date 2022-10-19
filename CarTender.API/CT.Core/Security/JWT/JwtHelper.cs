@@ -34,7 +34,7 @@ namespace CarTender.Core.Security.JWT
             return new AccessToken
             {
                 Token = token,
-                Expiration = _accessTokenExpiration
+                ExpireTime = _accessTokenExpiration
             };
 
         }

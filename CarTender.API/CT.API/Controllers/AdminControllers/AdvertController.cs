@@ -20,5 +20,13 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessDataResult<List<ListAdvertDTO>>(adverts, "İlanlar listelendi", 200));
         }
 
+
+        [HttpPost("Create")]
+        public IActionResult Create()
+        {
+            return Ok();
+        }
+
+
     }
 }
