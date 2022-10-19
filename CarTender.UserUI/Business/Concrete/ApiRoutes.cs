@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Business.Concrete
 {
@@ -12,7 +14,7 @@ namespace Business.Concrete
             string json = "";
             try
             {
-                json = System.IO.File.ReadAllText(@"\CT.UserUI\ApiRoutes.json");
+                json = new StreamReader(AppContext.BaseDirectory + "ApiRoutes.json").ReadToEnd();
                 dynamic jsonObj = JsonConvert.DeserializeObject<dynamic>(json);
                 var Controllers = jsonObj.ApiRoutes;
                 foreach (var Controller in Controllers)
