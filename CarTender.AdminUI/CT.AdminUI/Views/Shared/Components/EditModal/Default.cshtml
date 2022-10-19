@@ -24,7 +24,7 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                             </div>
-                            <input type="text" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" />
+                            <input type="text" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" name="@item.Name" />
                         </div>
                     }
                     else if (item.PropertyType == typeof(int) || item.PropertyType == typeof(decimal))
@@ -33,7 +33,7 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                             </div>
-                            <input type="number" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" />
+                            <input type="number" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" name="@item.Name" />
                         </div>
                     }
                     else if (item.PropertyType == typeof(bool))
@@ -42,7 +42,7 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                             </div>
-                            <input type="checkbox" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" />
+                            <input type="checkbox" value="@Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null)" class="form-control col-md-12" name="@item.Name" />
                         </div>
                     }
                     else if (item.PropertyType == typeof(DateTime))
@@ -66,7 +66,7 @@
                             <div class="input-group-prepend">
                                 <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                             </div>
-                            <select class="form-control col-md-12">
+                            <select class="form-control col-md-12" name="@item.Name">
                                 @{
                                     foreach (var listItem in (List<string>)Model.DTO.GetType().GetProperty(item.Name).GetValue(Model.DTO, null))
                                     {
@@ -78,7 +78,7 @@
                     }
                 }
             </div>
-            <div class="modal-footer"><button class="btn btn-primary" type="button">Kaydet</button></div>
+            <div class="modal-footer"><button class="btn btn-primary" type="submit">Kaydet</button></div>
         </div>
     </div>
 </div>

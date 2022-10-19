@@ -197,7 +197,16 @@
 @await Component.InvokeAsync("DeleteModal", new{title = "Markayı Sil", body="Markayı silmek istediğinize emin misiniz?", id="deleteBrand"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Marka Aktif Et", body="Markayı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Model Aktif Et", body="Model, aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
+<form asp-controller="Car" asp-action="AddBrand" method="post">
 @await Component.InvokeAsync("AddModal", new{ModalID = "addBrand",modalTitle = "Yeni Marka Ekle", dto = addBrandDto})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addModel",modalTitle = "Yeni Model Ekle", dto = addModelDTO})
+</form>
+<form asp-controller="Car" asp-action="EditBrand" method="post">
 @await Component.InvokeAsync("EditModal", new {modalID="editBrand", modalTitle="Marka Güncelle",dto=editBrandDTO})
+</form>
+<form asp-controller="Car" asp-action="AddModel" method="post">
+@await Component.InvokeAsync("AddModal", new{ModalID = "addModel",modalTitle = "Yeni Model Ekle", dto = addModelDTO})
+</form>
+<form asp-controller="Car" asp-action="EditModel" method="post">
 @await Component.InvokeAsync("EditModal", new {modalID="editModel", modalTitle="Model Güncelle",dto=editModelDTO})
+</form>
+
