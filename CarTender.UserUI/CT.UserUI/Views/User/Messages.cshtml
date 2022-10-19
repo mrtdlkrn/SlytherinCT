@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Mesajlarım";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+</div>
+<div class="container-fluid">
+    <h2 class="text-center">@ViewBag.Title</h2>
+    <div class="card-header bg-light p-30 ">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Mesaj Türü</th>
+                    <th scope="col">Mesaj Adı</th>
+                    <th scope="col">Tarih</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bilgilendirme</td>
+                    <td>İlanınıza yeni bir teklif yapıldı</td>
+                    <td>17/10/2020</td>
+                    <td>
+                        <button type="button" class="btn btn-warning col-md-5" id="myInput" data-toggle="modal" data-target="#messageDetails">
+                            Detaylar
+                        </button>
+                        <button type="button" class="btn btn-danger col-md-5" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteMessage"><i class="far fa-trash-alt"></i> Sil</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Üyelik</td>
+                    <td>Hesabınıza yeni bir cihazdan giriş yapılmıştır</td>
+                    <td>05/10/2020</td>
+                    <td>
+                        <button type="button" class="btn btn-warning col-md-5" id="myInput" data-toggle="modal" data-target="#messageDetails">
+                            Detaylar
+                        </button>
+                        <button type="button" class="btn btn-danger col-md-5" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteMessage"><i class="far fa-trash-alt"></i> Sil</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bilgilendirme</td>
+                    <td>İlanınız onaylanmıştır</td>
+                    <td>27/09/2020</td>
+                    <td>
+                        <button type="button" class="btn btn-warning col-md-5" id="myInput" data-toggle="modal" data-target="#messageDetails">
+                            Detaylar
+                        </button>
+                        <button type="button" class="btn btn-danger col-md-5" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteMessage"><i class="far fa-trash-alt"></i> Sil</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+<div class="modal" id="messageDetails" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel3">Mesaj Detayı</h5>
+                <button type="button" class="btn-close btn-circle btn-sm btn-dark" onclick="$('#messageDetails').modal('hide');" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+            </div>
+            <div class="modal-body col-md-12">
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Mesaj Türü:</label>
+                        </div>
+                        <input disabled type="text" value="Bilgilendirme" class="form-control col-md-12" />
+                    </div>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Mesaj Başlığı:</label>
+                        </div>
+                        <input disabled type="text" value="İlanınıza yeni bir teklif yapıldı" class="form-control col-md-12" />
+                    </div>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Mesaj İçeriği:</label>
+                        </div>
+                        <textarea disabled rows="10" class="form-control col-md-12"> Proin scelerisque mauris eget libero auctor,sit amet pharetra ante luctus. Maecenas faucibus ante nec congue pharetra.Integer venenatis at elit eget vestibulum. In at quam diam. In ex nibh, blandit vel neque nec, tincidunt maximus nulla. Phasellus id imperdiet tortor, vitae gravida tortor. Donec at malesuada metus. Proin tempus</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

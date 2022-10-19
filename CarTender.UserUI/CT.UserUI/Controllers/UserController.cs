@@ -116,5 +116,13 @@ namespace CT.UserUI.Controllers
             //var favoriteDTOs = _apiManager.Get<UserFavoriteDTO, UserFavoriteDTO>(new Entity.DTO.Auth.TokenDTO(), _routes["Favorite"], new UserFavoriteDTO() { UserID = new Guid() });
             return View();
         }
+
+        // User View Favorites GET
+
+        public ActionResult Messages()
+        {
+            //var favoriteDTOs = _apiManager.Get<UserFavoriteDTO, UserFavoriteDTO>(new Entity.DTO.Auth.TokenDTO(), _routes["Favorite"], new UserFavoriteDTO() { UserID = new Guid() });
+            return View();
+        }
     }
 }
