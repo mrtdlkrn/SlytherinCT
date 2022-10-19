@@ -74,59 +74,59 @@ namespace CarTender.FluentValidation.VAL.CombineVAL.Car
 
             #endregion
 
-            #region BodyType
+            //#region BodyType
 
-            RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.BodyType)
-                .Cascade(CascadeMode.StopOnFirstFailure)
-                .NotEmpty().WithMessage("Lütfen Aracın Kasa Tipini Giriniz.")
-                .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
+            //RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.BodyType)
+            //    .Cascade(CascadeMode.StopOnFirstFailure)
+            //    .NotEmpty().WithMessage("Lütfen Aracın Kasa Tipini Giriniz.")
+            //    .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
 
-            #endregion
+            //#endregion
 
-            #region FuelType
+            //#region FuelType
 
-            RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.FuelType)
-                .Cascade(CascadeMode.StopOnFirstFailure)
-                .NotEmpty().WithMessage("Lütfen Aracın Yakıt Tipini Giriniz.")
-                .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
+            //RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.FuelType)
+            //    .Cascade(CascadeMode.StopOnFirstFailure)
+            //    .NotEmpty().WithMessage("Lütfen Aracın Yakıt Tipini Giriniz.")
+            //    .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
 
-            #endregion
+            //#endregion
 
-            #region GearType
+            //#region GearType
 
-            RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.GearType)
-                .Cascade(CascadeMode.StopOnFirstFailure)
-                .NotEmpty().WithMessage("Lütfen Aracın Vitis Tipini Giriniz.")
-                .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
+            //RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.GearType)
+            //    .Cascade(CascadeMode.StopOnFirstFailure)
+            //    .NotEmpty().WithMessage("Lütfen Aracın Vitis Tipini Giriniz.")
+            //    .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
 
-            #endregion
+            //#endregion
 
-            #region Color
+            //#region Color
 
-            RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.Color)
-                .Cascade(CascadeMode.StopOnFirstFailure)
-                .NotEmpty().WithMessage("Lütfen Aracın Rengini Giriniz.")
-                .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
+            //RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.Color)
+            //    .Cascade(CascadeMode.StopOnFirstFailure)
+            //    .NotEmpty().WithMessage("Lütfen Aracın Rengini Giriniz.")
+            //    .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
 
-            #endregion
+            //#endregion
 
-            #region Hardware
+            //#region Hardware
 
-            RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.Hardware)
-                .Cascade(CascadeMode.StopOnFirstFailure)
-                .NotEmpty().WithMessage("Lütfen Aracın Donanımını Giriniz.")
-                .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
+            //RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.Hardware)
+            //    .Cascade(CascadeMode.StopOnFirstFailure)
+            //    .NotEmpty().WithMessage("Lütfen Aracın Donanımını Giriniz.")
+            //    .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
 
-            #endregion
+            //#endregion
 
-            #region Version
+            //#region Version
 
-            RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.Version)
-                .Cascade(CascadeMode.StopOnFirstFailure)
-                .NotEmpty().WithMessage("Lütfen Aracın Versiyonunu Giriniz.")
-                .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
+            //RuleFor(x => x.CombineAddOrEditVehicleDetailDTO.Version)
+            //    .Cascade(CascadeMode.StopOnFirstFailure)
+            //    .NotEmpty().WithMessage("Lütfen Aracın Versiyonunu Giriniz.")
+            //    .MaximumLength(50).WithMessage("Girmeniz Gerekenden Fazla Karakter Girdiniz.");
 
-            #endregion
+            //#endregion
 
             #endregion
 
