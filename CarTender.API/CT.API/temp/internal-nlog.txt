@@ -1076,3 +1076,8 @@ Error Number:2812,State:62,Class:16
 2022-10-19 00:27:33.6447 Info Adding target DatabaseTarget(Name=dbhede)
 2022-10-19 00:27:33.7394 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
 2022-10-19 00:27:34.7603 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-19 10:13:05.8630 Info Message Template Auto Format enabled
+2022-10-19 10:13:05.8816 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-19 10:13:06.0792 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-19 10:13:06.1528 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-19 10:13:08.5969 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Projects\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
