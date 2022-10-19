@@ -17,7 +17,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Bireysel/Kurumsal:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="IsCorporate">
                             <option value="1" selected>Bireysel Müşteri</option>
                             <option value="2">Kurumsal Müşteri</option>
                         </select>
@@ -28,7 +28,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Şirket Adı:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="CompanyName">
                             <option value="1" selected>Hede</option>
                             <option value="2">Bidi</option>
                         </select>
@@ -39,7 +39,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Statü:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="Status">
                             <option selected value="Hemen Al Satışta">Hemen Al Satışta</option>
                             <option value="Kurumsal">Kurumsal</option>
                             <option value="İhalede">İhalede</option>
@@ -58,7 +58,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Araç Fiyat:</label>                   
                         </div>
-                        <input type="text" value="" asp-for="Price" class="form-control" />
+                        <input type="text" value="" asp-for="Price" class="form-control"/>
                         <span asp-validation-for="Price" class="text-danger"></span>                                                            
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Araç Marka:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="CarBrand">
                             <option value="BMW">BMW</option>
                             <option value="Volvo">Volvo</option>
                         </select>
@@ -84,7 +84,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Araç Model:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="CarModel">
                             <option value="3.2">3.2</option>
                             <option value="XC60">XC60</option>
                         </select>
@@ -98,7 +98,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Gövde Tipi:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="BodyType">
                             <option value="Sedan">Sedan</option>
                             <option value="Hatchback">Hatchback</option>
                         </select>
@@ -109,7 +109,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Yıl:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="Year">
                             <option value="2022">2022</option>
                             <option value="2021">2021</option>
                         </select>
@@ -120,7 +120,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Yakıt Tipi:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="FuelType">
                             <option value="Dizel">Dizel</option>
                             <option value="Benzin">Benzin</option>
                         </select>
@@ -134,7 +134,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Vites Tipi:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="GearType">
                             <option value="Otomatik">Otomatik</option>
                             <option value="Manuel">Manuel</option>
                         </select>
@@ -145,7 +145,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Versiyon:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="Version">
                             <option value="V1">V1</option>
                             <option value="V2">V2</option>
                         </select>
@@ -156,7 +156,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">KM Bilgisi:</label>
                         </div>
-                        <input type="text" value="" asp-for="KM" class="form-control" />
+                        <input type="text" value="" asp-for="KM" class="form-control"/>
                         <span asp-validation-for="KM" class="text-danger"></span>
                     </div>
                 </div>
@@ -168,7 +168,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Renk:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="Color">
                             <option value="Siyah">Siyah</option>
                             <option value="Beyaz">Beyaz</option>
                         </select>
@@ -179,7 +179,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Donanım:</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" asp-for="Hardwares">
                             <option value="Boş">Boş</option>
                             <option value="Dolu">Dolu</option>
                         </select>
@@ -194,7 +194,7 @@
                 <div class="mt-1 p-5" style="border:2px solid gray; height: 150px; vertical-align:middle; display:flex; align-items:center;">
                     <div style="display:flex; flex-direction:column; justify-content:space-between;" >
                         <div style="float:left;">
-                            <input onchange="readImage(this,1);" type="file" id="file1" style="display:none;" asp-for="PhotoPath1" />
+                            <input onchange="readImage(this,1);" type="file" id="file1" style="display:none;" asp-for="PhotoPath1"/>
                             <a onclick="photoUpload(1);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
                         </div>                        
                         <div class="ml-2 mt-2">
@@ -203,7 +203,7 @@
                     </div>
                     <div style="display:flex; flex-direction:column; justify-content:space-between;" >
                         <div style="float:left;">
-                            <input onchange="readImage(this,2);" type="file" id="file2" style="display:none;" />
+                            <input onchange="readImage(this,2);" type="file" id="file2" style="display:none;" asp-for="PhotoPath2"/>
                             <a onclick="photoUpload(2);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
                         </div>                        
                         <div class="ml-2 mt-2">
@@ -212,7 +212,7 @@
                     </div>
                     <div style="display:flex; flex-direction:column; justify-content:space-between;" >
                         <div style="float:left;">
-                            <input onchange="readImage(this,3);" type="file" id="file3" style="display:none;" />
+                            <input onchange="readImage(this,3);" type="file" id="file3" style="display:none;" asp-for="PhotoPath3" />
                             <a onclick="photoUpload(3);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
                         </div>                        
                         <div class="ml-2 mt-2">
@@ -221,7 +221,7 @@
                     </div>
                     <div style="display:flex; flex-direction:column; justify-content:space-between;" >
                         <div style="float:left;">
-                            <input onchange="readImage(this,4);" type="file" id="file4" style="display:none;" />
+                            <input onchange="readImage(this,4);" type="file" id="file4" style="display:none;" asp-for="PhotoPath4"/>
                             <a onclick="photoUpload(4);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
                         </div>                        
                         <div class="ml-2 mt-2">
@@ -230,7 +230,7 @@
                     </div>
                     <div style="display:flex; flex-direction:column; justify-content:space-between;" >
                         <div style="float:left;">
-                            <input onchange="readImage(this,5);" type="file" id="file5" style="display:none;" />
+                            <input onchange="readImage(this,5);" type="file" id="file5" style="display:none;" asp-for="PhotoPath5"/>
                             <a onclick="photoUpload(5);" class="btn btn-dark btn-lg ml-2"><i class="fa fa-camera"></i></a>
                         </div>                        
                         <div class="ml-2 mt-2">

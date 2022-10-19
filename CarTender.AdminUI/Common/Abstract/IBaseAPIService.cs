@@ -13,7 +13,7 @@ namespace Common.Abstract
 
         Task<ResponseDTO<T>> POST<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class;
 
-        Task<ResponseDTO<T>> LOGIN<T>(T dto) where T : class;
+        Task<ResponseDTO<TokenDTO>> LOGIN<T>(T dto) where T : class;
 
         Task<ResponseDTO<T>> PUT<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class;
 
