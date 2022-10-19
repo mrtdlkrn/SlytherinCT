@@ -1,4 +1,5 @@
-﻿@using Entity.DTO.Brand
+﻿@using CT.AdminUI.Models.ModalDTOs
+@using Entity.DTO.Brand
 @using Entity.DTO.Model
 @{
     ViewData["Title"] = "Marka Model";
@@ -197,16 +198,8 @@
 @await Component.InvokeAsync("DeleteModal", new{title = "Markayı Sil", body="Markayı silmek istediğinize emin misiniz?", id="deleteBrand"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Marka Aktif Et", body="Markayı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Model Aktif Et", body="Model, aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
-<form asp-controller="Car" asp-action="AddBrand" method="post">
-@await Component.InvokeAsync("AddModal", new{ModalID = "addBrand",modalTitle = "Yeni Marka Ekle", dto = addBrandDto})
-</form>
-<form asp-controller="Car" asp-action="EditBrand" method="post">
-@await Component.InvokeAsync("EditModal", new {modalID="editBrand", modalTitle="Marka Güncelle",dto=editBrandDTO})
-</form>
-<form asp-controller="Car" asp-action="AddModel" method="post">
-@await Component.InvokeAsync("AddModal", new{ModalID = "addModel",modalTitle = "Yeni Model Ekle", dto = addModelDTO})
-</form>
-<form asp-controller="Car" asp-action="EditModel" method="post">
-@await Component.InvokeAsync("EditModal", new {modalID="editModel", modalTitle="Model Güncelle",dto=editModelDTO})
-</form>
+@await Component.InvokeAsync("AddModal", new {modalID = "addBrand",modalTitle = "Yeni Marka Ekle", dto= addBrandDto , ActionName="AddBrand",ControllerName = "Car"})
+@await Component.InvokeAsync("EditModal", new {modalID="editBrand", modalTitle="Marka Güncelle",dto=editBrandDTO, ActionName="EditBrand",ControllerName = "Car"})
+@await Component.InvokeAsync("AddModal", new{modalID = "addModel",modalTitle = "Yeni Model Ekle", dto = addModelDTO, ActionName="AddModel",ControllerName = "Car"})
+@await Component.InvokeAsync("EditModal", new {modalID="editModel", modalTitle="Model Güncelle",dto=editModelDTO, ActionName="EditModel",ControllerName = "Car"})
 

@@ -5,6 +5,7 @@ using CT.AdminUI.Models.ModalDTOs;
 using Entity.DTO.Auth;
 using Entity.DTO.Brand;
 using Entity.DTO.Car;
+using Entity.DTO.CarBuyerInformation;
 using Entity.DTO.Model;
 using FluentValidation.AspNetCore;
 using FluentValidation.Results;
@@ -264,6 +265,22 @@ namespace CT.AdminUI.Controllers
         //[HttpGet("CarBuyerInformation/{id}")]
         [HttpGet]
         public async Task<IActionResult> CarBuyerInformation(Guid id)
+        {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarBuyerInformation"]);
+            //todo : sayfaya veriler basılacak
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddCarBuyerInformation(AddCarBuyerInformationDTO dto)
+        {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarBuyerInformation"]);
+            //todo : sayfaya veriler basılacak
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditCarBuyerInformation(EditCarBuyerInformationDTO dto)
         {
             TokenDTO tokenDTO = new TokenDTO();
             var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarBuyerInformation"]);

@@ -71,5 +71,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Araç Alıcı Bilgilerini Sil", body="Alıcı bilgilerini silmek istediğinize emin misiniz?", id="deleteCarBuyerInformation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Araç Alıcı Bilgilerini Aktif Et", body="Araç Alıcı Bilgilerini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addCarBuyerInformation",modalTitle = "Araç Alıcı Bilgisi Ekle", dto = addDto})
-@await Component.InvokeAsync("EditModal", new {modalID="editCarBuyerInformation", modalTitle="Araç Alıcı Bilgisi Güncelle",dto= editDto})
+@await Component.InvokeAsync("AddModal", new{ModalID = "addCarBuyerInformation",modalTitle = "Araç Alıcı Bilgisi Ekle", dto = addDto, ActionName="AddCarBuyerInformation",ControllerName = "Car"})
+@await Component.InvokeAsync("EditModal", new {modalID="editCarBuyerInformation", modalTitle="Araç Alıcı Bilgisi Güncelle",dto= editDto, ActionName="EditCarBuyerInformation",ControllerName = "Car"})
