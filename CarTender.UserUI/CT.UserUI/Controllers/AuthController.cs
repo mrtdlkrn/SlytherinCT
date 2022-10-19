@@ -1,12 +1,13 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
-using CarTender.FluentValidation.VAL.UserVAL.Login_Register;
 using Common.Concrete;
 using CT.UserUI.Logging.Concrete;
 using Entity.DTO;
 using Entity.DTO.Auth;
 using FluentValidation.Results;
+using System;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 
 namespace CT.UserUI.Controllers
@@ -39,6 +40,12 @@ namespace CT.UserUI.Controllers
             //{
 
             //}
+            if (HttpContext.Request.Cookies["token"] != null)
+            {
+                HttpCookie gelenCookie = HttpContext.Request.Cookies["Ihlae"];
+                string token = gelenCookie.Values["token"];
+            }
+
             return View();
         }
 
@@ -50,18 +57,17 @@ namespace CT.UserUI.Controllers
             string password = "123";
 
 
-            //BaseValidator<UserLoginDTO> validator = new BaseValidator<UserLoginDTO>(dto);
-            UserLoginVAL validations = new UserLoginVAL();
-            ValidationResult result = validations.Validate(new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
-            {
-                Username = username,
-                Password = password
-            });
+            //UserLoginDAL validations = new UserLoginDAL();
+            //ValidationResult result = validations.Validate(new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
+            //{
+            //    Username = username,
+            //    Password = password
+            //});
 
-            if (result.IsValid)
-            {
+            //if (result.IsValid)
+            //{
 
-            }
+            //}
             if (dto.Password != password || dto.Username != username)
             {
                 _logger.Log("hatalı kullanıcı girişi - USERUI");
@@ -70,10 +76,18 @@ namespace CT.UserUI.Controllers
 
             _logger.Log(username + " kullanıcı giriş yaptı. - USERUI");
 
+            HttpCookie httpCookie = new HttpCookie("Ihale");
+            httpCookie.Expires = DateTime.Now.AddDays(1);
+            //httpCookie.Expires = DateTime.Now.AddDays(-1); silmek için bu şekilde kullanırız
+            httpCookie.Values.Add("token", "hede");
+            HttpContext.Response.Cookies.Add(httpCookie);
+
             return RedirectToAction("CustomerSignUp");
         }
 
         #endregion
+
+        // todo: logout yazılacak
 
         #region CustomerSignUp
 

@@ -1,6 +1,18 @@
 ﻿{
   "ApiRoutes": [
     {
+      "ControllerName": "Advert",
+      "Actions": {
+        "Index": "api/Advert/GetAll"
+      }
+    },
+    {
+      "ControllerName": "AdvertStatusHistory",
+      "Actions": {
+        "Index": "api/AdvertStatusHistory/GetAll"
+      }
+    },
+    {
       "ControllerName": "Auth",
       "Actions": {
         "Index": "api/Auth/Index",
@@ -10,27 +22,10 @@
       }
     },
     {
-      "ControllerName": "Car",
-      "Actions": { 
-        "Index": "api/Car/Index",
-        "Create": "api/Car/Create",
-        "Update": "api/Car/Update",
-        "Delete": "api/Car/Delete",
-        "BrandModel": "api/Car/BrandModel",
-        "Detail": "api/Car/Detail",
-        "CarDetail": "api/Car/CarDetail",
-        "CarImage": "api/Car/CarImage",
-        "CarModification": "api/Car/CarModification",
-        "CarCommission": "api/Car/CarCommission",
-        "CarBuyerInformation": "api/Car/CarBuyerInformation"
-      }
-    },
-    {
-      "ControllerName": "User",
+      "ControllerName": "Authorization",
       "Actions": {
-        "GetAll": "api/User/GetAll",
-        "GetUsersFavoriteCars": "api/User/FavoriteCars",
-        "GetUsersCars": "api/User/cars"
+        "Roles": "api/Authorization/roles",
+        "Authorizations": "api/Authorization/authorizations"
       }
     },
     {
@@ -59,107 +54,121 @@
       }
     },
     {
-      "ControllerName": "Advert",
+      "ControllerName": "BuyerInfo",
       "Actions": {
-        "Index": "",
-        "ListAdvert": "",
-        "ListAdvertStatusHistory": ""
-      }
-    },
-    {
-      "ControllerName": "Town",
-      "Actions": {
-        "GetAll": "api/Town/GetAll"
-      }
-    },
-    {
-      "ControllerName": "Tramer",
-      "Actions": {
-        "GetAll": "api/Tramer/GetAll",
-        "GetComponents": "api/Tramer/GetComponents"
-      }
-    },
-    {
-      "ControllerName": "Status",
-      "Actions": {
-        "GetAll": "api/Status/GetAll",
-        "GetByType": "api/Status/GetByType"
-      }
-    },
-    {
-      "ControllerName": "Package",
-      "Actions": {
-        "GetAll": "api/Package/GetAll",
-        "Create": ""
-      }
-    },
-    {
-      "ControllerName": "Message",
-      "Actions": {
-        "Index": "",
-        "MessageContent": ""
-      }
-    },
-    {
-      "ControllerName": "Expertise",
-      "Actions": {
-        "Index": "",
-      }
-    },
-    {
-      "ControllerName": "DamageRecord",
-      "Actions": {
-        "Index": "",
-      }
-    },
-    {
-      "ControllerName": "Commission",
-      "Actions": {
-        "Index": "",
-      }
-    },
-    {
-      "ControllerName": "CarStatusHistory",
-      "Actions": {
-        "Index": "",
-      }
-    },
-    {
-      "ControllerName": "CarSaleHistory",
-      "Actions": {
-        "Index": "",
-      }
-    },
-    {
-      "ControllerName": "CarHistory",
-      "Actions": {
-        "Index": "",
+        "Index": ""
       }
     },
     {
       "ControllerName": "BuyNowSell",
       "Actions": {
-        "Index": "",
+        "Index": ""
       }
     },
     {
-      "ControllerName": "BuyerInfo",
+      "ControllerName": "Car",
       "Actions": {
-        "Index": "",
+        "Index": "api/Car/Index",
+        "Create": "api/Car/Create",
+        "Update": "api/Car/Update",
+        "Delete": "api/Car/Delete",
+        "BrandModel": "api/Car/BrandModel",
+        "Detail": "api/Car/Detail",
+        "CarDetail": "api/Car/CarDetail",
+        "CarImage": "api/Car/CarImage",
+        "CarModification": "api/Car/CarModification",
+        "CarCommission": "api/Car/CarCommission",
+        "CarBuyerInformation": "api/Car/CarBuyerInformation"
       }
     },
     {
-      "ControllerName": "Authorization",
+      "ControllerName": "CarHistory",
       "Actions": {
-        "Roles": "api/Authorization/roles",
-        "Authorizations": "api/Authorization/authorizations"
+        "Index": ""
+      }
+    },
+    {
+      "ControllerName": "CarSaleHistory",
+      "Actions": {
+        "Index": "api/CarSaleHistory/GetAll"
+      }
+    },
+    {
+      "ControllerName": "CarStatusHistory",
+      "Actions": {
+        "Index": "api/CarStatusHistory/GetAll"
+      }
+    },
+    {
+      "ControllerName": "Commission",
+      "Actions": {
+        "Index": "api/Commission/GetAll"
+      }
+    },
+    {
+      "ControllerName": "DamageRecord",
+      "Actions": {
+        "Index": ""
+      }
+    },
+    {
+      "ControllerName": "Expertise",
+      "Actions": {
+        "Index": "api/Expertise/GetAll"
+      }
+    },
+    {
+      "ControllerName": "MessageContent",
+      "Actions": {
+        "Index": "api/MessageContent/GetAll"
+      }
+    },
+    {
+      "ControllerName": "Message",
+      "Actions": {
+        "Index": "api/Message/GetAll"
       }
     },
     {
       "ControllerName": "Neighborhood",
       "Actions": {
-        "GetAll": "api/Neighborhood/GetAll"
+        "Index": "api/Neighborhood/GetAll"
       }
     },
+    {
+      "ControllerName": "Package",
+      "Actions": {
+        "Index": "api/Package/GetAll",
+        "Create": ""
+      }
+    },
+    {
+      "ControllerName": "Status",
+      "Actions": {
+        "Index": "api/Status/GetAll",
+        "GetByType": "api/Status/GetByType"
+      }
+    },
+    {
+      "ControllerName": "Town",
+      "Actions": {
+        "Index": "api/Town/GetAll"
+      }
+    },
+    {
+      "ControllerName": "Tramer",
+      "Actions": {
+        "Index": "api/Tramer/GetAll",
+        "GetComponents": "api/Tramer/GetComponents"
+      }
+    },
+    {
+      "ControllerName": "User",
+      "Actions": {
+        "Index": "api/User/GetAll",
+        "GetUsersFavoriteCars": "api/User/FavoriteCars",
+        "GetUsersCars": "api/User/cars"
+      }
+    }
   ]
 }
