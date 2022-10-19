@@ -1,5 +1,6 @@
 ﻿using CarTender.Core.Utilities;
 using CT.Entities.DTOs.MessageContent;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -9,8 +10,7 @@ namespace CT.API.Controllers.AdminControllers
     [ApiController]
     public class MessageContentController : ControllerBase
     {
-
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             List<ListMessageContentDTO> messageContents = new List<ListMessageContentDTO>();
@@ -19,6 +19,5 @@ namespace CT.API.Controllers.AdminControllers
             messageContents.Add(new ListMessageContentDTO() { Title = "Favori İlan Fiyat Arttı Uyarısı", Content = "Değerli kullanıcımız favoriye eklediğiniz ilanın fiyatı arttı." });
             return Ok(new SuccessDataResult<List<ListMessageContentDTO>>(messageContents, "Mesaj içerikleri listelendi", 200));
         }
-
     }
 }

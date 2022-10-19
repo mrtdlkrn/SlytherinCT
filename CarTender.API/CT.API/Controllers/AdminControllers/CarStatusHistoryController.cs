@@ -13,7 +13,7 @@ namespace CT.API.Controllers.AdminControllers
     public class CarStatusHistoryController : ControllerBase
     {
 
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             List<ListCarStatusHistoryDTO> carStatusHistories = new List<ListCarStatusHistoryDTO>();
@@ -22,7 +22,7 @@ namespace CT.API.Controllers.AdminControllers
         }
 
 
-        [HttpGet("getByCarPlate")]
+        [HttpGet("GetByCarPlate")]
         public IActionResult GetByCarPlate(string carPlate)
         {
             List<ListCarStatusHistoryDTO> carStatusHistories = new List<ListCarStatusHistoryDTO>();

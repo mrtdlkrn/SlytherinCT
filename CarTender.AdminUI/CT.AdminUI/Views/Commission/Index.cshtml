@@ -3,6 +3,23 @@
     ViewData["Title"] = "Komisyon Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    #region heads and datas
+
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(ListCommissionDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
+
+    #endregion
+
     AddCommissionDTO addDto = new AddCommissionDTO();
 
     EditCommissionDTO editDto = new EditCommissionDTO();
@@ -60,50 +77,17 @@
                 </h5>
             </div>
             <div id="collapseTwo" class="collapse show p-1" aria-labelledby="headingTwo" data-parent="#accordion">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">Komisyon Numarası</th>
-                            <th scope="col">Komisyon Tutarı</th>
-                            <th scope="col">Komisyon Başlangıç Tarihi</th>
-                            <th scope="col">Komisyon Bitiş Tarihi</th>
-                            <th scope="col">Komisyon Minimum Tutarı</th>
-                            <th scope="col">Komisyon Maximum Tutarı</th>
-                            <th scope="col">Güncelle</th>
-                            <th scope="col">Sil</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Hede</td>
-                            <td>Bidi</td>
-                            <td>Büdü</td>
-                            <td>Hidi</td>
-                            <td>Hüdü</td>
-                            <td>
-                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCommission"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Hede</td>
-                            <td>Bidi</td>
-                            <td>Büdü</td>
-                            <td>Hidi</td>
-                            <td>Hüdü</td>
-                            <td>
-                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editCommission"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#delete"><i class="far fa-trash-alt"></i> Sil</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                @await Component.InvokeAsync("BaseTable",
+                new{
+                TableID = "myTable1",
+                EditIsModal = true,
+                EditBtnModalID = "editCommission",
+                EditBtnController="",
+                EditBtnAction="",
+                DeleteBtnModalID="delete",
+                TableHeads=heads,
+                TableDatas=datas
+                })
             </div>
         </div>
     </div>

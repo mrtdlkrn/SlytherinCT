@@ -11,7 +11,7 @@ namespace CT.API.Controllers.AdminControllers
     public class CarSaleHistoryController : ControllerBase
     {
 
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             List<ListCarSaleHistoryDTO> carSaleHistories = new List<ListCarSaleHistoryDTO>();
@@ -23,7 +23,7 @@ namespace CT.API.Controllers.AdminControllers
         }
 
 
-        [HttpGet("getByUsername")]
+        [HttpGet("GetByUserName")]
         public IActionResult GetByUserName(string username)
         {
             List<ListCarSaleHistoryDTO> carSaleHistories = new List<ListCarSaleHistoryDTO>();

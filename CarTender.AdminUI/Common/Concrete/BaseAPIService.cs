@@ -129,17 +129,19 @@ namespace Common.Concrete
         #endregion
 
         #region LOGIN
-        public async Task<ResponseDTO<T>> LOGIN<T>(T dto) where T : class
+
+        // todo: burası direkt sabit olarak logindto alsa daha güzel olmaz mı?
+        public async Task<ResponseDTO<TokenDTO>> LOGIN<T>(T dto) where T : class
         {
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
             serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
-            string serviceUrl = _configuration.GetValue<string>("ApiAddress") + "auth/login";
+            string serviceUrl = _configuration.GetValue<string>("ApiAddress") + "api/auth/login";
             var response = await _httpClient.PostAsync(serviceUrl, serializedDto);
 
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<ResponseDTO<T>>(await response.Content.ReadAsStringAsync());
+                return JsonConvert.DeserializeObject<ResponseDTO<TokenDTO>>(await response.Content.ReadAsStringAsync());
             }
             return null;
         }

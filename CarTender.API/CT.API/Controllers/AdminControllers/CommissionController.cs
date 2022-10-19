@@ -11,7 +11,7 @@ namespace CT.API.Controllers.AdminControllers
     public class CommissionController : ControllerBase
     {
 
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             List<ListCommissionDTO> commissions = new List<ListCommissionDTO>();

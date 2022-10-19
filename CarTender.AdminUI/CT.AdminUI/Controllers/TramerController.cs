@@ -31,7 +31,7 @@ namespace CT.AdminUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var tramers = await _apiService.Get<List<ListTramerDTO>>(tokenDTO, _routes["GetAll"]);
+            var tramers = await _apiService.Get<List<ListTramerDTO>>(tokenDTO, _routes["Index"]);
             var components = await _apiService.Get<List<ListTramerComponentDTO>>(tokenDTO, _routes["GetComponents"]);
 
             if (tramers.Success && components.Success)
@@ -42,7 +42,7 @@ namespace CT.AdminUI.Controllers
             {
                 ErrorViewModel model = new ErrorViewModel()
                 {
-                    Header = "User",
+                    Header = "Tramer",
                     // todo burası düzenlenmeli.
                     Message = components.Message,
                     StatusCode = components.StatusCode
