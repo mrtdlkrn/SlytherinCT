@@ -1,5 +1,6 @@
 ﻿using CarTender.Core.Utilities;
 using CT.Entities.Authorization;
+using CT.Entities.DTOs.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -9,8 +10,9 @@ namespace CT.API.Controllers.AdminControllers
     [ApiController]
     public class AuthorizationController : ControllerBase
     {
+        #region Roles
 
-        [HttpGet("roles")]
+        [HttpGet("Roles")]
         public IActionResult Roles()
         {
             List<ListRoleDTO> roles = new List<ListRoleDTO>();
@@ -24,8 +26,29 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessDataResult<List<ListRoleDTO>>(roles, "Roller listelendi", 200));
         }
 
+        [HttpPost("CreateRole")]
+        public IActionResult CreateRole(CreateRoleDTO dto)
+        {
+            return Ok(new SuccessResult("Rol Ekleme Başarılı", 200));
+        }
 
-        [HttpGet("authorizations")]
+        [HttpPost("UpdateRole")]
+        public IActionResult UpdateRole(UpdateRoleDTO dto)
+        {
+            return Ok(new SuccessResult("Rol Güncelleme Başarılı", 200));
+        }
+
+        [HttpPost("DeleteRole")]
+        public IActionResult DeleteRole(object id)
+        {
+            return Ok(new SuccessResult("Rol Silme Başarılı", 200));
+        }
+
+        #endregion
+
+        #region Authorizations
+
+        [HttpGet("Authorizations")]
         public IActionResult Authorizations()
         {
             List<ListAuthorizationDTO> authorizations = new List<ListAuthorizationDTO>();
@@ -36,5 +59,25 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessDataResult<List<ListAuthorizationDTO>>(authorizations, "Yetkiler listelendi", 200));
         }
 
+
+        [HttpPost("CreateAuthorization")]
+        public IActionResult CreateAuthorization(CreateAuthorizationDTO dto)
+        {
+            return Ok(new SuccessResult("Yetki Ekleme Başarılı", 200));
+        }
+
+        [HttpPost("UpdateAuthorization")]
+        public IActionResult UpdateAuthorization(UpdateAuthorizationDTO dto)
+        {
+            return Ok(new SuccessResult("Yetki Güncelleme Başarılı", 200));
+        }
+
+        [HttpPost("DeleteAuthorization")]
+        public IActionResult DeleteAuthorization(object id)
+        {
+            return Ok(new SuccessResult("Yetki Silme Başarılı", 200));
+        }
+
+        #endregion
     }
 }

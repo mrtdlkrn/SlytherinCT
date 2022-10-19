@@ -19,5 +19,23 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessDataResult<List<ListTownDTO>>(towns, "İlçeler listelendi", 200));
         }
 
+        [HttpPost("Create")]
+        public IActionResult Create(CreateTownDTO dto)
+        {
+            return Ok(new SuccessResult("İlçe Ekleme Başarılı", 200));
+        }
+
+        [HttpPost("Update")]
+        public IActionResult Update(UpdateTownDTO dto)
+        {
+            return Ok(new SuccessResult("İlçe Güncelleme Başarılı", 200));
+        }
+
+        [HttpPost("Delete")]
+        public IActionResult Delete(object id)
+        {
+            return Ok(new SuccessResult("İlçe Silme Başarılı", 200));
+        }
+
     }
 }
