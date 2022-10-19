@@ -23,7 +23,7 @@ namespace CT.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-
+            // todo: token cookie de tutulacak
             //todo : User'a göre tokenDto oluşturulacak
             TokenDTO tokenDTO = new TokenDTO()
             {
