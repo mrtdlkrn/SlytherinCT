@@ -1,6 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
-using CarTender.FluentValidation.VAL.CombineVAL.Bid;
+using CarTender.FluentValidation.DAL.CombineDAL.Bid;
 using Common.Concrete;
 using Entity.DTO.Auth;
 using Entity.DTO.Bid;
@@ -97,7 +97,7 @@ namespace CT.UserUI.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(CreateNewBidDTO dto)
         {
-            CombineBidAddVAL validations = new CombineBidAddVAL();
+            CombineBidAddDAL validations = new CombineBidAddDAL();
 
             var result = await _apiManager.Post(_routes["Create"], dto);
             if (result != null)
