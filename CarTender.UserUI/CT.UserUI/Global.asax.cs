@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -16,14 +18,10 @@ namespace CT.UserUI
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
-        protected void Session_Start(object sender, EventArgs e)     
+        protected void Application_BeginRequest(object sender, EventArgs e) 
         {
-            HttpContext httpContext = HttpContext.Current;
-            if (httpContext.Request.Cookies["token"] != null)
-            {
-                HttpCookie gelenCookie = httpContext.Request.Cookies["Ihlae"];
-                string token = gelenCookie.Values["token"];
-            }
+            string token = Request.Cookies.Get("Ihale").Values["token"];
+            //Session.Add("token", token);
         }
     }
 }

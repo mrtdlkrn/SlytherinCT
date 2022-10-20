@@ -6,13 +6,13 @@ namespace Entity.DTO.Commission
     public class AddCommissionDTO
     {
         [DisplayName("Komisyon Ücreti")]
-        public int CommissionPrice { get; set; }
+        public decimal CommissionPrice { get; set; }
 
         [DisplayName("Minimum Ücret")]
-        public int MinPrice { get; set; }
+        public decimal MinPrice { get; set; }
 
         [DisplayName("Maksimum Ücreti")]
-        public int MaxPrice { get; set; }
+        public decimal MaxPrice { get; set; }
 
         [DisplayName("Başlangıç Tarihi")]
         public DateTime StartDate { get; set; }

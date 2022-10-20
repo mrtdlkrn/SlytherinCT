@@ -71,13 +71,14 @@ namespace CT.AdminUI.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-
+            _apiService.Test("aaaa");
             return View(new AddCarDTO());
         }
 
         [HttpPost]
         public async Task<IActionResult> Add(AddCarDTO dto)
         {
+            //todo PhotoPathler DTO lar içerisine gelmiyor.
             TokenDTO tokenDTO = new TokenDTO()
             {
                 Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
@@ -95,19 +96,20 @@ namespace CT.AdminUI.Controllers
             ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
             {
 
-                CombineAddOrEditVehicleDetailDTO = new CombineAddOrEditVehicleDetailDTO {
-                BodyType = dto.BodyType,
-                Color = dto.Color,
-                FuelType = dto.FuelType,
-                GearType = dto.GearType,
-                Hardware = "asdasd",
-                Year = dto.Year,
-                VehicleBrand = dto.CarBrand,
-                VehicleModel = dto.CarModel,
-                Version = dto.Version,
+                CombineAddOrEditVehicleDetailDTO = new CombineAddOrEditVehicleDetailDTO
+                {
+                    BodyType = dto.BodyType,
+                    Color = dto.Color,
+                    FuelType = dto.FuelType,
+                    GearType = dto.GearType,
+                    Hardware = "asdasd",
+                    Year = dto.Year,
+                    VehicleBrand = dto.CarBrand,
+                    VehicleModel = dto.CarModel,
+                    Version = dto.Version,
                 },
+                Price = dto.Price,
                 KM = dto.KM,
-                VehiclePrice = dto.Price,
                 Explanation = dto.Explanation,
                 PhotoPath1 = dto.PhotoPath1,
                 PhotoPath2 = dto.PhotoPath2,
@@ -115,11 +117,15 @@ namespace CT.AdminUI.Controllers
                 PhotoPath4 = dto.PhotoPath4,
                 PhotoPath5 = dto.PhotoPath5
 
-            });;
+            });
 
             if (!validationResult.IsValid)
             {
                 validationResult.AddToModelState(this.ModelState);
+
+                TempData["CarPrice"] = dto.Price;
+                TempData["KM"] = dto.KM;
+                TempData["Information"] = dto.Explanation;
 
                 return View("Add", dto);
             }
@@ -129,10 +135,9 @@ namespace CT.AdminUI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int carID)
+        public IActionResult Edit()
         {
-
-            return View();
+            return View(new UpdateCarDTO());
         }
 
         [HttpPost]
@@ -145,6 +150,51 @@ namespace CT.AdminUI.Controllers
             ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
+
+            dto.PhotoPath1 = "hede";
+            dto.PhotoPath2 = "hede";
+            dto.PhotoPath3 = "hede";
+            dto.PhotoPath4 = "hede";
+            dto.PhotoPath5 = "hede";
+
+            CombineAddOrEditVehicleVAL validations = new CombineAddOrEditVehicleVAL();
+            ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
+            {
+
+                CombineAddOrEditVehicleDetailDTO = new CombineAddOrEditVehicleDetailDTO
+                {
+                    BodyType = dto.BodyType,
+                    Color = dto.Color,
+                    FuelType = dto.FuelType,
+                    GearType = dto.GearType,
+                    Hardware = "asdasd",
+                    Year = dto.Year,
+                    VehicleBrand = dto.CarBrand,
+                    VehicleModel = dto.CarModel,
+                    Version = dto.Version,
+                },
+                Price = dto.Price,
+                KM = dto.KM,
+                Explanation = dto.Explanation,
+                PhotoPath1 = dto.PhotoPath1,
+                PhotoPath2 = dto.PhotoPath2,
+                PhotoPath3 = dto.PhotoPath3,
+                PhotoPath4 = dto.PhotoPath4,
+                PhotoPath5 = dto.PhotoPath5
+
+            });
+
+            if (!validationResult.IsValid)
+            {
+                validationResult.AddToModelState(this.ModelState);
+
+                TempData["CarPrice"] = dto.Price;
+                TempData["KM"] = dto.KM;
+                TempData["Information"] = dto.Explanation;
+
+                return View("Edit", dto);
+            }
+
             var result = await _apiService.Post(tokenDTO, _routes["Update"], dto);
             return RedirectToAction("Index");
         }
@@ -217,16 +267,6 @@ namespace CT.AdminUI.Controllers
         {
             TokenDTO tokenDTO = new TokenDTO();
             var result = await _apiService.Get<ListCarDTO>(tokenDTO, _routes["Detail"]);
-            //todo : sayfaya veriler basılacak
-            return View();
-        }
-
-        // Car Detail
-        //[HttpGet("CarDetail")]
-        public async Task<IActionResult> CarDetail()
-        {
-            TokenDTO tokenDTO = new TokenDTO();
-            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarDetail"]);
             //todo : sayfaya veriler basılacak
             return View();
         }

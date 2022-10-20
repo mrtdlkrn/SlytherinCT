@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@model UpdateCarDTO
 <div class="container-fuild p-5">
     <h1 class="h3 mb-2 text-gray-800">Araç Güncelleme Sayfası</h1>
     <form class="needs-validation" novalidate asp-controller="Car" asp-action="Edit" method="post" enctype="multipart/form-data">
@@ -57,8 +58,9 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Araç Fiyat:</label>
                         </div>
-                        <input type="text" value="" class="form-control" asp-for="Price"/>
+                        <input type="text" value="@TempData["CarPrice"]" asp-for="Price" class="form-control" />
                     </div>
+                    <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
             </div>
         </div>
@@ -156,6 +158,7 @@
                         </div>
                         <input type="text" value="" class="form-control" asp-for="KM"/>
                     </div>
+                    <span asp-validation-for="KM" class="text-danger"></span>
                 </div>
             </div>
 
@@ -252,7 +255,7 @@
                 <a class="btn btn-dark mt-4" href="/CarHistory/Index">Araç Tarihçe</a>
                 <a class="btn btn-dark mt-4" href="/DamageRecord/Index">Hasar Tramer Bilgileri</a>
                 <a class="btn btn-dark mt-4" href="/Advert/Index">İlan Bilgileri</a>
-                <a class="btn btn-dark mt-4" href="#">Kaydet</a>
+                <input class="btn btn-dark mt-4" type="submit" value="Kaydet" />
             </div>
         </div>
     </form>

@@ -79,6 +79,7 @@
     <Compile Include="DTO\CarStatusHistory\EditCarStatusHistoryDTO.cs" />
     <Compile Include="DTO\Car\AddCarDTO.cs" />
     <Compile Include="DTO\Car\CarDetailDTO.cs" />
+    <Compile Include="DTO\Car\CarDTO.cs" />
     <Compile Include="DTO\Car\ListBrandModelDTO.cs" />
     <Compile Include="DTO\Car\ListCarDTO.cs" />
     <Compile Include="DTO\Car\UpdateCarDTO.cs" />

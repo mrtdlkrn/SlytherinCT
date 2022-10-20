@@ -21,5 +21,22 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessDataResult<List<ListCommissionDTO>>(commissions, "Komisyonlar listelendi", 200));
         }
 
+        [HttpPost("Create")]
+        public IActionResult Create(CreateCommissionDTO dto)
+        {
+            return Ok(new SuccessResult("Komisyon Ekleme Başarılı", 200));
+        }
+
+        [HttpPost("Update")]
+        public IActionResult Update(UpdateCommissionDTO dto)
+        {
+            return Ok(new SuccessResult("Komisyon Güncelleme Başarılı", 200));
+        }
+
+        [HttpPost("Delete")]
+        public IActionResult Delete(object id)
+        {
+            return Ok(new SuccessResult("Komisyon Silme Başarılı", 200));
+        }
     }
 }

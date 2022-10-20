@@ -1,6 +1,7 @@
 ﻿using CarTender.Core.Utilities;
-using CT.Entities.Authorization;
 using CT.Entities.DTOs.User;
+using CT.Entities.DTOs.UserCar;
+using CT.Entities.DTOs.UserFavoriteCar;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace CT.API.Controllers.AdminControllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        #region User
 
         [HttpGet("GetAll")]
         public IActionResult GetAll()
@@ -23,6 +25,28 @@ namespace CT.API.Controllers.AdminControllers
         }
 
 
+        [HttpPost("Create")]
+        public IActionResult Create(CreateUserDTO dto)
+        {
+            return Ok(new SuccessResult("Kullanıcı Ekleme Başarılı", 200));
+        }
+
+        [HttpPost("Update")]
+        public IActionResult Update(UpdateUserDTO dto)
+        {
+            return Ok(new SuccessResult("Kullanıcı Güncelleme Başarılı", 200));
+        }
+
+        [HttpPost("Delete")]
+        public IActionResult Delete(object id)
+        {
+            return Ok(new SuccessResult("Kullanıcı Silme Başarılı", 200));
+        }
+
+        #endregion
+
+        #region UserCar
+
         [HttpGet("Cars")]
         public IActionResult GetUsersCars()
         {
@@ -32,6 +56,27 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessDataResult<List<ListUserCarDTO>>(userCarList, "Kullanıcılar ile arabaları listelendi", 200));
         }
 
+        [HttpPost("CreateUsersCars")]
+        public IActionResult CreateUsersCars(CreateUserDTO dto)
+        {
+            return Ok(new SuccessResult("\"Kullanıcı-araç Bilgisi Ekleme Başarılı", 200));
+        }
+
+        [HttpPost("UpdateUsersCars")]
+        public IActionResult UpdateUsersCars(UpdateUserDTO dto)
+        {
+            return Ok(new SuccessResult("\"Kullanıcı-araç Bilgisi Güncelleme Başarılı", 200));
+        }
+
+        [HttpPost("DeleteUsersCars")]
+        public IActionResult DeleteUsersCars(object id)
+        {
+            return Ok(new SuccessResult("Kullanıcı-araç Bilgisi Silme Başarılı", 200));
+        }
+
+        #endregion
+
+        #region FavoriteCars
 
         [HttpGet("FavoriteCars")]
         public IActionResult GetUsersFavoriteCars()
@@ -42,5 +87,24 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessDataResult<List<ListUserFavoriteCarDTO>>(userFavoriteCars, "Kullanıcılar ile favori arabaları listelendi", 200));
         }
 
+        [HttpPost("CreateUsersFavoriteCars")]
+        public IActionResult CreateUsersFavoriteCars(CreateUserDTO dto)
+        {
+            return Ok(new SuccessResult("Kullanıcı Favori Araç Ekleme Başarılı", 200));
+        }
+
+        [HttpPost("UpdateUsersFavoriteCars")]
+        public IActionResult UpdateUsersFavoriteCars(UpdateUserDTO dto)
+        {
+            return Ok(new SuccessResult("Kullanıcı Favori Araç Güncelleme Başarılı", 200));
+        }
+
+        [HttpPost("DeleteUsersFavoriteCars")]
+        public IActionResult DeleteUsersFavoriteCars(object id)
+        {
+            return Ok(new SuccessResult("Kullanıcı Favori Araç Silme Başarılı", 200));
+        }
+
+        #endregion
     }
 }

@@ -4,6 +4,7 @@ namespace CT.Entities.DTOs.User
 {
     public class ListUserDTO
     {
+        // Listeleme için
         public string UserName { get; set; }
         public string NameSurname  { get; set; }
         public string Phone { get; set; }

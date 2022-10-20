@@ -19,33 +19,33 @@ namespace CT.UserUI
             );
 
             routes.MapRoute(
-            name: "Advert",
-            url: "{controller}/{action}/{id}",
-            defaults: new { controller = "Advert", id = UrlParameter.Optional }
+                name: "Advert",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Advert", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-            name: "Bid",
-            url: "{controller}/{action}/{id}",
-            defaults: new { controller = "Bid", id = UrlParameter.Optional }
+                name: "Bid",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Bid", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-            name: "Car",
-            url: "{controller}/{action}/{id}",
-            defaults: new { controller = "Car", id = UrlParameter.Optional }
+                name: "Car",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Car", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-            name: "User",
-            url: "{controller}/{action}/{id}",
-            defaults: new { controller = "User", id = UrlParameter.Optional }
+                name: "User",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "User", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-            name: "Home",
-            url: "{controller}/{action}/{id}",
-            defaults: new { controller = "Home", id = UrlParameter.Optional }
+                name: "Home",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", id = UrlParameter.Optional }
             );
         }
     }

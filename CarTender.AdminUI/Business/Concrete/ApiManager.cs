@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Business.Concrete
 {
     //[ExceptionLogAspect(typeof(FileLogger))]
-    //[LogAspect(typeof(FileLogger))]
+    [LogAspect(typeof(FileLogger))]
 
     public class ApiManager : IApiService
     {
@@ -36,7 +36,7 @@ namespace Business.Concrete
             return _baseAPIService.GET<T>(tokenDTO, requestUrl);
         }
 
-        public Task<ResponseDTO<T>> Get<T, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto)
+        public Task<ResponseDTO<T>> Get1<T, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto)
             where T : class
             where FilterDTO : class
         {
@@ -61,6 +61,11 @@ namespace Business.Concrete
         public Task<ResponseDTO<T>> Register<T>(T dto) where T : class
         {
             return _baseAPIService.REGISTER(dto);
+        }
+       
+        public void Test(string deneme)
+        {
+            
         }
     }
 }

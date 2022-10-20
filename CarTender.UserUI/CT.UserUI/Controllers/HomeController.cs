@@ -6,6 +6,8 @@ namespace CT.UserUI.Controllers
     {
         public ActionResult Index()
         {
+            string cookie = Request.Cookies.Get("Ihale").Value;
+            //var token = Session["token"].ToString();
             return View();
         }
 

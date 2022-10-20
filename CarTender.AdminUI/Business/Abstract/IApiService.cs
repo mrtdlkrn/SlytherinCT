@@ -34,7 +34,7 @@ namespace Business.Abstract
         /// </param>
         /// <param name="dto">A model to filter datas.</param>
         /// <returns>This aciton returns filtered datas.</returns>
-        Task<ResponseDTO<T>> Get<T, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto) where T : class where FilterDTO : class;
+        Task<ResponseDTO<T>> Get1<T, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto) where T : class where FilterDTO : class;
 
         /// <summary>
         /// This action makes POST request to the given request url. Used to create datas.
@@ -106,5 +106,6 @@ namespace Business.Abstract
         /// <param name="dto"></param>
         /// <returns>This aciton returns JWT token key if operation is success.</returns>
         Task<ResponseDTO<T>> ForgotPassword<T>(T dto) where T : class;
+        void Test(string deneme);
     }
 }

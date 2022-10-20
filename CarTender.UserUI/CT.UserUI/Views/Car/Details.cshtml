@@ -3,228 +3,128 @@
     ViewBag.Title = "Araç Detay";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-</div>
-<div class="container-fluid">
-    <div class="card shadow mt-1 p-4" style="border:2px solid gray;">
-        <h2 class="text-center ">Nissan Skyline GT-R / Premium Edition / R35 Facelift</h2>
-        <div class="row mt-2">
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Bireysel/Kurumsal:</label>
-                    </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option value="1" selected>Bireysel Müşteri</option>
-                        <option value="2">Kurumsal Müşteri</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Şirket Adı:</label>
-                    </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option value="1" selected></option>
-                        <option value="2">Bidi</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Statü:</label>
-                    </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option selected value="Hemen Al Satışta">Hemen Al Satışta</option>
-                        <option value="Kurumsal">Kurumsal</option>
-                        <option value="İhalede">İhalede</option>
-                        <option value="Hemen Al Satışta"> Satış Komisyonu tahsil edildi</option>
-                        <option value="Kurumsal">Ekspertiz sonucu bekleniyor</option>
-                        <option value="İhalede">Ekspertiz sonucu alındı</option>
-                        <option value="Hemen Al Satışta">Satıldı</option>
-                        <option value="Kurumsal">Satış İpta</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Araç Fiyat:</label>
-                    </div>
-                    <input disabled type="text" value="5.750.000 TL" class="form-control" />
-                </div>
+@section Breadcrumb{
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="#">Home</a>
+                    <a class="breadcrumb-item text-dark" href="#">Shop</a>
+                    <span class="breadcrumb-item active">Shop Detail</span>
+                </nav>
             </div>
         </div>
     </div>
-    <div class="card shadow mt-1 p-4" style="border:2px solid gray;">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Araç Marka:</label>
+    <!-- Breadcrumb End -->
+}
+
+
+<div class="container-fluid pb-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-5 mb-30">
+            <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner bg-light">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://i0.shbdn.com/photos/86/40/48/x16_10438640487dn.jpg" alt="First slide">
                     </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option selected value="Nissan">Nissan</option>
-                        <option value="Volvo"></option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Araç Model:</label>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://i0.shbdn.com/photos/86/40/48/x16_1043864048aeg.jpg" alt="Second slide">
                     </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option selected value="GT-R">GT-R</option>
-                        <option value="XC60">XC60</option>
-                    </select>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://i0.shbdn.com/photos/86/40/48/x16_10438640480se.jpg" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://i0.shbdn.com/photos/86/40/48/x16_10438640481mj.jpg" alt="Fourth slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://i0.shbdn.com/photos/86/40/48/x16_10438640485fy.jpg" alt="Fifth slide">
+                    </div>
                 </div>
+                <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
+                    <i class="fa fa-2x fa-angle-left text-dark"></i>
+                </a>
+                <a class="carousel-control-next" href="#product-carousel" data-slide="next">
+                    <i class="fa fa-2x fa-angle-right text-dark"></i>
+                </a>
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Gövde Tipi:</label>
-                    </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option selected value="Coupe">Coupe</option>
-                        <option value="Hatchback">Hatchback</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Yıl:</label>
-                    </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option selected value="2011">2011</option>
-                        <option value="2012">2012</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Yakıt Tipi:</label>
-                    </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option selected value="Benzin">Benzin</option>
-                        <option value="Dizel">Dizel</option>
-                    </select>
-                </div>
-            </div>
-        </div>
+        <div class="col-lg-7 h-auto mb-30">
+            <div class="h-100 bg-light p-30">
+                <h3>Toyota Corolla Temiz Kullanıldı Sadece 2 Taklası Var</h3>
+                <div class="d-flex mb-3">
 
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Vites Tipi:</label>
-                    </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option selected value="Otomatik">Otomatik</option>
-                        <option value="Manuel">Manuel</option>
-                    </select>
+                    <small class="pt-1">(99 Kişinin Favorisi)</small>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Versiyon:</label>
+                <h3 class="font-weight-semi-bold mb-4">₺650.00</h3>
+                <p class="mb-4">
+                    Araç Hakkında kısa bilginin verileceği alan.
+                </p>
+                <div class="d-flex mb-3">
+                    <div class="mr-3">
+                        <strong class="text-dark mr-3">Marka:</strong>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3 mr-2">
+                            <input type="checkbox"  checked class="custom-control-input" id="color-1">
+                            <label class="custom-control-label" for="color-1">Toyota</label>
+                        </div>
                     </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option disabled selected value="Premium Edition">Premium Edition</option>
-                        <option value="V2">V2</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">KM Bilgisi:</label>
+                    <div class="mr-3">
+                        <strong class="text-dark mr-3">Model:</strong>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3 mr-2">
+                            <input type="checkbox" checked class="custom-control-input" id="color-1">
+                            <label class="custom-control-label" for="color-1">Corolla</label>
+                        </div>
                     </div>
-                    <input disabled type="text" value="51.000" class="form-control" />
+                    <div class="mr-3">
+                        <strong class="text-dark mr-3">Yıl:</strong>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3 mr-2">
+                            <input type="checkbox" checked class="custom-control-input" id="color-1">
+                            <label class="custom-control-label" for="color-1">2015</label>
+                        </div>
+                    </div>
+                    <div>
+                        <strong class="text-dark mr-3">Renk:</strong>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3 mr-2">
+                            <input type="checkbox" checked class="custom-control-input" id="color-1">
+                            <label class="custom-control-label" for="color-1">Beyaz</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+                
+                <div class="d-flex align-items-center mb-4 pt-2">
+                    <div class="input-group quantity mr-3" style="width: 130px;">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary btn-minus">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary btn-plus">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary px-3">
+                        <i class="fa fa-shopping-cart mr-1"></i> Kart'a Ekle
+                    </button>
+                </div>
 
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Renk:</label>
-                    </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option selected value="Beyaz">Beyaz</option>
-                        <option value="Siyah">Siyah</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Donanım:</label>
-                    </div>
-                    <select disabled class="custom-select" id="inputGroupSelect01">
-                        <option selected value="START&STOP">START&STOP</option>
-                        <option value="Dolu">Dolu</option>
-                    </select>
-                </div>
             </div>
         </div>
     </div>
-
-    <div class="card shadow mt-1 p-4" style="border:2px solid gray;">
-
-        <div class="row">
-            <div class="col-md-5">
-                <label class="mt-4"><b>Fotoğraflar</b></label>
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="https://i0.shbdn.com/photos/86/40/48/x16_10438640487dn.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="https://i0.shbdn.com/photos/86/40/48/x16_1043864048aeg.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="https://i0.shbdn.com/photos/86/40/48/x16_10438640480se.jpg" alt="Third slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="https://i0.shbdn.com/photos/86/40/48/x16_10438640481mj.jpg" alt="Fourth slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="https://i0.shbdn.com/photos/86/40/48/x16_10438640485fy.jpg" alt="Fifth slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+    <div class="row px-xl-5">
+        <div class="col">
+            <div class="bg-light p-30">
+                <div class="nav nav-tabs mb-4">
+                    <a class="nav-item nav-link text-dark active" data-toggle="tab" href="#tab-pane-1">Açıklama</a>
+                    <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-2">Özellikler</a>
+                    <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">Tramer Bilgisi</a>
                 </div>
-            </div>
-
-            <div class="col-md-7">
-                <label class="mt-4"><b>Açıklama</b></label>
-                <div class="mt-1 p-4" style="border:2px solid gray; ">
-                    <textarea disabled class="form-control" rows="25">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tab-pane-1">
+                        <textarea disabled class="form-control" rows="25">
 NİSSAN SKYLİNE
 GT-R / R35 
 Model Yılı : 2011
@@ -258,170 +158,78 @@ ARAÇ EXPERTİZE
 SAĞ ÖN KAPI BOYALI
 TRAMER : 68.000₺
 </textarea>
+                    </div>
+                    <div class="tab-pane fade" id="tab-pane-2">
+                        <table>
+                            <thead>
+                                <tr>Ozellik</tr>
+                                <tr>Ozellik</tr>
+                                <tr>Ozellik</tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>adfsasdf</td>
+                                    <td>adfsasdf</td>
+                                    <td>adfsasdf</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="tab-pane-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="mb-4">1 review for "Product Name"</h4>
+                                <div class="media mb-4">
+                                    <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                    <div class="media-body">
+                                        <h6>John Doe<small> - <i>01 Jan 2045</i></small></h6>
+                                        <div class="text-primary mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <p>Diam amet duo labore stet elitr ea clita ipsum, tempor labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="mb-4">Leave a review</h4>
+                                <small>Your email address will not be published. Required fields are marked *</small>
+                                <div class="d-flex my-3">
+                                    <p class="mb-0 mr-2">Your Rating * :</p>
+                                    <div class="text-primary">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="message">Your Review *</label>
+                                        <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Your Name *</label>
+                                        <input type="text" class="form-control" id="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Your Email *</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <div id="accordion" class="mb-5 mt-2 ">
-        <div class="card ">
-            <div class="card-header" id="headingTwo">
-                <h5 class="mb-0 ">
-                    <a class="btn btn-light justify-content-center" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo" role="button">Hasar Tramer Bilgileri</a>
-                </h5>
-            </div>
-
-            <div id="collapseThree" class="collapse show p-3" aria-labelledby="headingThree" data-parent="#accordion">
-                    <div class="modal-content">
-                        <div class="modal-body col-md-12">
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Sağ Arka Çamurluk:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp1">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Sağ Ön Çamurluk:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp2">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Sağ Arka Kapı:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp3">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Sağ Ön Kapı:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp4">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Sol Arka Çamurluk:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp5">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Sol Ön Çamurluk:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp6">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Sol Arka Kapı:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp7">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Sol Ön Kapı:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp8">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Tavan:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp9">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Arka Kaput:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp10">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Motor Kaputu:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp11">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Ön Tampon:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp12">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-                            <div class="input-group mb-3 col-md-12">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Arka Tampon:</label>
-                                </div>
-                                <select disabled class="form-control col-md-12" id="cmp13">
-                                    <option selected>Orjinal</option>
-                                    <option>Boyalı</option>
-                                    <option>Değişmiş</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <div>
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#statusHistory">Geçmiş</button>
-                            </div>
-                            <div>
-                                @{ /* Todo: Sadece kendi eklediği araç ise düzenleyebilecek*/}
-                                <button class="btn btn-info" onclick="EnableComponents()" type="button">Düzenle</button>
-                                <button class="btn btn-primary" type="button">Kaydet</button>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
 </div>
+<!-- Shop Detail End -->

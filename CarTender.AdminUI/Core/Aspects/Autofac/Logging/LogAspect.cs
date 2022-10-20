@@ -44,7 +44,7 @@ namespace Core.Aspects.Autofac.Logging
                     Type = invocation.Arguments[i].GetType().Name
                 });
             }
-            //todo: Username token veya sessiondan çekilecek
+            //todo: Username cookieden çekilecek
             var logDetail = new LogDetail
             {
                 UserName = "Emine",

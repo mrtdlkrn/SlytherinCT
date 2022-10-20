@@ -54,9 +54,10 @@ namespace CT.AdminUI.Controllers
             {
                 // todo: api/auth/login buradan gönderilecek.
                 var result = await _apiService.Login(dto);
-                if (result.Success)
+                if (result!=null)
                 {
                     //cookieHelper.SetCookie();
+                    return RedirectToAction("Index","Admin");
                 }
 
                 return View();
@@ -118,14 +119,33 @@ namespace CT.AdminUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult ForgotPassword(ForgotPasswordDTO dto)
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordDTO dto)
         {
             ForgotPasswordVAL validations = new ForgotPasswordVAL();
             ValidationResult validationResult = validations.Validate(new CarTender.FluentValidation.DTO.AdminDTO.ForgotPassword.ForgotPasswordDTO
             {
                 Email = dto.Email
             });
-            return View();
+            if (!validationResult.IsValid)
+            {
+                validationResult.AddToModelState(this.ModelState);
+
+                return View("Register", dto);
+            }
+
+            try
+            {
+                var forgotpassword = await _apiService.ForgotPassword(dto);
+                if (forgotpassword != null)
+                {
+
+                }
+                return RedirectToAction("Login");
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }
