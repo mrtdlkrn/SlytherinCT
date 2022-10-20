@@ -2,7 +2,7 @@
 
 namespace CT.Entities.Bid
 {
-    public class BidInformationDTO
+    public class ListBidDTO
     {
         public string BidName { get; set; }
         public bool IsCorporate { get; set; }

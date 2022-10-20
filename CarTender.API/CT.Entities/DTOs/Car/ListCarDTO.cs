@@ -2,7 +2,7 @@
 
 namespace CT.Entities.Car
 {
-    public class CarDTO
+    public class ListCarDTO
     {
         //todo : Guid id aktife çekilecek. Mert(Yani Ben) şimdilik böyle yaptım. 
         //public Guid CarID { get; set; }

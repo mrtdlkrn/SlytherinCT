@@ -10,14 +10,14 @@ namespace CT.API.Controllers.AdminControllers
     [ApiController]
     public class BidController : ControllerBase
     {
-        [HttpGet("Index")]
-        public IActionResult Index(object dto)
+        [HttpGet("GetAll")]
+        public IActionResult GetAll()
         {
             //Todo : Dapper eklenecek
-            List<BidInformationDTO> bidDTOs = new List<BidInformationDTO>();
+            List<ListBidDTO> bidDTOs = new List<ListBidDTO>();
             for (int i = 0; i < 10; i++)
             {
-                bidDTOs.Add(new BidInformationDTO()
+                bidDTOs.Add(new ListBidDTO()
                 {
                     BidName = "Mert LTD",
                     IsActive = true,
@@ -26,34 +26,33 @@ namespace CT.API.Controllers.AdminControllers
                     IsCorporate = true,
                 });
             }
-            var dataResult = new SuccessDataResult<List<BidInformationDTO>>(bidDTOs, "Data Added", 200);
+            var dataResult = new SuccessDataResult<List<ListBidDTO>>(bidDTOs, "Data Added", 200);
 
             return Ok(dataResult);
         }
 
         [HttpPost("Create")]
-        public IActionResult Create(object dto)
+        public IActionResult Create(CreateModelDTO dto)
         {
-            //Todo : Dapper eklenecek
-            var dataResult = new SuccessResult("Data Added", 200);
-            return Ok(dataResult);
+            return Ok(new SuccessResult("İhale Ekleme Başarılı", 200));
         }
 
         [HttpPost("Update")]
-        public IActionResult Update(object dto)
+        public IActionResult Update(UpdateBidDTO dto)
         {
-            //Todo : Dapper eklenecek
-            var dataResult = new SuccessResult("Date Updated", 200);
-            return Ok(dataResult);
+            return Ok(new SuccessResult("İhale Güncelleme Başarılı", 200));
         }
 
         [HttpPost("Delete")]
-        public IActionResult Delete(object dto)
+        public IActionResult Delete(object bidID)
         {
-            //Todo : Dapper eklenecek
-            var dataResult = new SuccessResult("Data Deleted", 200);
-            return Ok(dataResult);
+            return Ok(new SuccessResult("İhale Silme Başarılı", 200));
         }
 
+        [HttpGet("GetByID")]
+        public IActionResult GetByID(object bidID)
+        {
+            return Ok(new SuccessResult("İhale Silme Başarılı", 200));
+        }
     }
 }

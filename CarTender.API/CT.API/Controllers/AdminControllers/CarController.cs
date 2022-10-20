@@ -1,5 +1,7 @@
 ﻿using CarTender.Core.Utilities;
+using CT.Entities.Bid;
 using CT.Entities.Car;
+using CT.Entities.DTOs.Car;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,14 +13,17 @@ namespace CT.API.Controllers.AdminControllers
     public class CarController : ControllerBase
     {
         // GET: CarController
-        [HttpGet("Index")]
-        public IActionResult Index(object dto)
+
+        #region Car
+
+        [HttpGet("GetAll")]
+        public IActionResult GetAll()
         {
             //Todo : Dapper eklenecek
-            List<CarDTO> carDTOs = new List<CarDTO>();
+            List<ListCarDTO> carDTOs = new List<ListCarDTO>();
             for (int i = 0; i < 10; i++)
             {
-                carDTOs.Add(new CarDTO()
+                carDTOs.Add(new ListCarDTO()
                 {
                     CarBrand = "Toyota",
                     CarModel = "Verso",
@@ -29,49 +34,34 @@ namespace CT.API.Controllers.AdminControllers
                     Price = 1000000
                 });
             }
-            var dataResult = new SuccessDataResult<List<CarDTO>>(carDTOs, "Data Eklendi", 200);
+            var dataResult = new SuccessDataResult<List<ListCarDTO>>(carDTOs, "Data Eklendi", 200);
 
             return Ok(dataResult);
         }
 
         [HttpPost("Create")]
-        public IActionResult Create(object dto)
+        public IActionResult Create(CreateCarDTO dto)
         {
-            //Todo : Dapper eklenecek
-            var dataResult = new SuccessResult("Ekleme Başarılı", 200);
-            return Ok(dataResult);
+            return Ok(new SuccessResult("Araba Ekleme Başarılı", 200));
         }
 
         [HttpPost("Update")]
-        public IActionResult Update(object dto)
+        public IActionResult Update(UpdateCarDTO dto)
         {
-            //Todo : Dapper eklenecek
-            var dataResult = new SuccessResult("Güncelleme Başarılı", 200);
-            return Ok(dataResult);
+            return Ok(new SuccessResult("Araba Güncelleme Başarılı", 200));
         }
 
         [HttpPost("Delete")]
-        public IActionResult Delete(object dto)
+        public IActionResult Delete(object carID)
         {
-            //Todo : Dapper eklenecek
-            var dataResult = new SuccessResult("Silme Başarılı",200);
-            return Ok(dataResult);
+            return Ok(new SuccessResult("Araba Silme Başarılı", 200));
         }
 
-        [HttpGet("BrandModel")]
-        public IActionResult BrandModel(object dto)
-        {
-            BrandModelDTO data = new BrandModelDTO();
-            //Todo : Dapper eklenecek
-            var dataResult = new SuccessDataResult<BrandModelDTO>(data, "Data Eklendi",200);
-            return Ok(dataResult);
-        }
-
-        [HttpGet("Detail")]
-        public IActionResult Detail(object dto)
+        [HttpGet("GetByID")]
+        public IActionResult GetByID(object carID)
         {
             //Todo : Dapper eklenecek
-            CarDTO car = new CarDTO()
+            ListCarDTO car = new ListCarDTO()
             {
                 CarBrand = "Toyota",
                 CarModel = "Verso",
@@ -81,27 +71,128 @@ namespace CT.API.Controllers.AdminControllers
                 CreatedDate = System.DateTime.Now,
                 Price = 1000000
             };
-            var dataResult = new SuccessDataResult<CarDTO>(car, "Data Eklendi", 200);
+            var dataResult = new SuccessDataResult<ListCarDTO>(car, "Data Eklendi", 200);
             return Ok(dataResult);
         }
 
-        [HttpGet("CarDetail")]
-        public IActionResult CarDetail(object dto)
+        [HttpGet("GetByPlate")]
+        public IActionResult GetByPlate(string carPlate)
         {
             //Todo : Dapper eklenecek
-            CarDetailDTO data = new CarDetailDTO();
-            var dataResult = new SuccessDataResult<CarDetailDTO>(data, "Data Eklendi", 200);
+            ListCarDTO car = new ListCarDTO()
+            {
+                CarBrand = "Toyota",
+                CarModel = "Verso",
+                IsCorporate = false,
+                Status = "Beklemede",
+                CreatedBy = "Mert",
+                CreatedDate = System.DateTime.Now,
+                Price = 1000000
+            };
+            var dataResult = new SuccessDataResult<ListCarDTO>(car, "Data Eklendi", 200);
             return Ok(dataResult);
         }
 
-        [HttpGet("CarImage")]
-        public IActionResult CarImage(object dto)
+        [HttpGet("GetByBrand")]
+        public IActionResult GetByBrand(string brand)
+        {
+            //Todo : Dapper eklenecek
+            ListCarDTO car = new ListCarDTO()
+            {
+                CarBrand = "Toyota",
+                CarModel = "Verso",
+                IsCorporate = false,
+                Status = "Beklemede",
+                CreatedBy = "Mert",
+                CreatedDate = System.DateTime.Now,
+                Price = 1000000
+            };
+            var dataResult = new SuccessDataResult<ListCarDTO>(car, "Data Eklendi", 200);
+            return Ok(dataResult);
+        }
+
+        [HttpGet("GetByModel")]
+        public IActionResult GetByModel(string model)
+        {
+            //Todo : Dapper eklenecek
+            ListCarDTO car = new ListCarDTO()
+            {
+                CarBrand = "Toyota",
+                CarModel = "Verso",
+                IsCorporate = false,
+                Status = "Beklemede",
+                CreatedBy = "Mert",
+                CreatedDate = System.DateTime.Now,
+                Price = 1000000
+            };
+            var dataResult = new SuccessDataResult<ListCarDTO>(car, "Data Eklendi", 200);
+            return Ok(dataResult);
+        }
+
+        [HttpGet("GetByAdvert")]
+        public IActionResult GetByAdvert(object advertID)
+        {
+            //Todo : Dapper eklenecek
+            ListCarDTO car = new ListCarDTO()
+            {
+                CarBrand = "Toyota",
+                CarModel = "Verso",
+                IsCorporate = false,
+                Status = "Beklemede",
+                CreatedBy = "Mert",
+                CreatedDate = System.DateTime.Now,
+                Price = 1000000
+            };
+            var dataResult = new SuccessDataResult<ListCarDTO>(car, "Data Eklendi", 200);
+            return Ok(dataResult);
+        }
+
+        [HttpGet("GetByBid")]
+        public IActionResult GetByBid(object bidID)
+        {
+            //Todo : Dapper eklenecek
+            ListCarDTO car = new ListCarDTO()
+            {
+                CarBrand = "Toyota",
+                CarModel = "Verso",
+                IsCorporate = false,
+                Status = "Beklemede",
+                CreatedBy = "Mert",
+                CreatedDate = System.DateTime.Now,
+                Price = 1000000
+            };
+            var dataResult = new SuccessDataResult<ListCarDTO>(car, "Data Eklendi", 200);
+            return Ok(dataResult);
+        }
+
+        [HttpGet("GetByUser")]
+        public IActionResult GetByUser(object userID)
+        {
+            //Todo : Dapper eklenecek
+            ListCarDTO car = new ListCarDTO()
+            {
+                CarBrand = "Toyota",
+                CarModel = "Verso",
+                IsCorporate = false,
+                Status = "Beklemede",
+                CreatedBy = "Mert",
+                CreatedDate = System.DateTime.Now,
+                Price = 1000000
+            };
+            var dataResult = new SuccessDataResult<ListCarDTO>(car, "Data Eklendi", 200);
+            return Ok(dataResult);
+        }
+
+        [HttpGet("GetImages")]
+        public IActionResult GetImages(object carID)
         {
             //Todo : Dapper eklenecek
             CarImageDTO data = new CarImageDTO();
             var dataResult = new SuccessDataResult<CarImageDTO>(data, "Data Eklendi", 200);
             return Ok(dataResult);
         }
+
+        #endregion
 
         [HttpGet("CarModification")]
         public IActionResult CarModification(object dto)
@@ -111,33 +202,7 @@ namespace CT.API.Controllers.AdminControllers
             var dataResult = new SuccessDataResult<CarModificationDTO>(data, "Data Eklendi", 200);
             return Ok(dataResult);
         }
-
-        [HttpGet("CarCommission")]
-        public IActionResult CarCommission(object dto)
-        {
-            //Todo : Dapper eklenecek
-            List<CarCommissionDTO> data = new List<CarCommissionDTO>();
-            data.Add(new CarCommissionDTO()
-            {
-                Price = 45000,
-                MinPrice = 20000,
-                MaxPrice = 50000,
-                Information = "Ödenmedi",
-                StartDate = DateTime.Today,
-                FinishDate = DateTime.Now
-            });
-            data.Add(new CarCommissionDTO()
-            {
-                Price = 45000,
-                MinPrice = 20000,
-                MaxPrice = 50000,
-                Information = "Ödenmedi",
-                StartDate = DateTime.Today,
-                FinishDate = DateTime.Now
-            });
-            var dataResult = new SuccessDataResult<List<CarCommissionDTO>>(data, "Data Eklendi",200);
-            return Ok(dataResult);
-        }
+       
 
         [HttpGet("CarBuyerInformation")]
         public IActionResult CarBuyerInformation(object dto)

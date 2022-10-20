@@ -1,6 +1,6 @@
 ﻿namespace CT.Entities.DTOs.Advert
 {
-    public class AddAdvertDTO
+    public class UpdateAdvertDTO
     {
         public string CarPlate { get; set; }
         public string Title { get; set; }

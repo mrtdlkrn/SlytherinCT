@@ -18,7 +18,7 @@ namespace CT.API.Controllers.UserControllers
         public IActionResult Detail()
         {
             //Todo : Dapper eklenecek
-            CarDTO car = new CarDTO()
+            ListCarDTO car = new ListCarDTO()
             {
                 CarBrand = "Toyota",
                 CarModel = "Corolla",
@@ -28,7 +28,7 @@ namespace CT.API.Controllers.UserControllers
                 CreatedDate = System.DateTime.Now,
                 Price = 1000000
             };
-            var dataResult = new SuccessDataResult<CarDTO>(car, "Veri Cekildi", 200);
+            var dataResult = new SuccessDataResult<ListCarDTO>(car, "Veri Cekildi", 200);
             return Ok(dataResult);
         }
     }
