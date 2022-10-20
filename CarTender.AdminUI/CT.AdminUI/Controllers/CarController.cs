@@ -2,9 +2,12 @@
 using CarTender.FluentValidation.DTO.AdminDTO.Car;
 using CarTender.FluentValidation.DTO.CombineDTO.Car;
 using CarTender.FluentValidation.VAL.CombineVAL.Car;
+using CT.AdminUI.Models.ModalDTOs;
 using Entity.DTO.Auth;
 using Entity.DTO.Brand;
 using Entity.DTO.Car;
+using Entity.DTO.CarBuyerInformation;
+using Entity.DTO.Model;
 using FluentValidation.AspNetCore;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
@@ -203,6 +206,58 @@ namespace CT.AdminUI.Controllers
             }
             return View(dto);
         }
+        [HttpPost]
+        public async Task<IActionResult> AddBrand(AddBrandDTO dto)
+        {
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+            ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+            ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            //var result = await _apiService.Post(tokenDTO, _routes["AddBrand"], dto);
+            return RedirectToAction("BrandModel");
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditBrand(EditBrandDTO dto)
+        {
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+            ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+            ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            //var result = await _apiService.Post(tokenDTO, _routes["EditBrand"], dto);
+            return RedirectToAction("BrandModel");
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddModel(AddModelDTO dto)
+        {
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+            ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+            ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            //var result = await _apiService.Post(tokenDTO, _routes["AddModel"], dto);
+            return RedirectToAction("BrandModel");
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditModel(EditModelDTO dto)
+        {
+            TokenDTO tokenDTO = new TokenDTO()
+            {
+                Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+            ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+            ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+                ExpireTime = DateTime.Now.AddHours(1)
+            };
+            //var result = await _apiService.Post(tokenDTO, _routes["EditModel"], dto);
+            return RedirectToAction("BrandModel");
+        }
 
         //[HttpGet("Detail/{id}")]
         public async Task<IActionResult> Detail(Guid id)
@@ -247,6 +302,22 @@ namespace CT.AdminUI.Controllers
         //[HttpGet("CarBuyerInformation/{id}")]
         [HttpGet]
         public async Task<IActionResult> CarBuyerInformation(Guid id)
+        {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarBuyerInformation"]);
+            //todo : sayfaya veriler basılacak
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddCarBuyerInformation(AddCarBuyerInformationDTO dto)
+        {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarBuyerInformation"]);
+            //todo : sayfaya veriler basılacak
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditCarBuyerInformation(EditCarBuyerInformationDTO dto)
         {
             TokenDTO tokenDTO = new TokenDTO();
             var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarBuyerInformation"]);
