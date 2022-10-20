@@ -5,8 +5,7 @@
         public string PersonalCorporate { get; set; }
         public string CompanyName { get; set; }
         public string Statu { get; set; }
-        public decimal Price { get; set; }
-        public CombineAddOrEditVehicleDetailDTO CombineAddOrEditVehicleDetailDTO { get; set; }
+        public int Price { get; set; }
         public int KM { get; set; }
         public string PhotoPath1 { get; set; }
         public string PhotoPath2 { get; set; }

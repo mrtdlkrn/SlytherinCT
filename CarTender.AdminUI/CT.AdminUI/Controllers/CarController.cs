@@ -1,7 +1,9 @@
 ﻿using Business.Abstract;
+using CarTender.FluentValidation.DTO.AdminDTO.Car;
 using CarTender.FluentValidation.DTO.CombineDTO.Car;
 using CarTender.FluentValidation.VAL.CombineVAL.Car;
 using Entity.DTO.Auth;
+using Entity.DTO.Brand;
 using Entity.DTO.Car;
 using FluentValidation.AspNetCore;
 using FluentValidation.Results;
@@ -91,20 +93,7 @@ namespace CT.AdminUI.Controllers
             CombineAddOrEditVehicleVAL validations = new CombineAddOrEditVehicleVAL();
             ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
             {
-
-                CombineAddOrEditVehicleDetailDTO = new CombineAddOrEditVehicleDetailDTO
-                {
-                    BodyType = dto.BodyType,
-                    Color = dto.Color,
-                    FuelType = dto.FuelType,
-                    GearType = dto.GearType,
-                    Hardware = "asdasd",
-                    Year = dto.Year,
-                    VehicleBrand = dto.CarBrand,
-                    VehicleModel = dto.CarModel,
-                    Version = dto.Version,
-                },
-                Price = dto.Price,
+                Price = (int)dto.Price,
                 KM = dto.KM,
                 Explanation = dto.Explanation,
                 PhotoPath1 = dto.PhotoPath1,
@@ -157,19 +146,7 @@ namespace CT.AdminUI.Controllers
             ValidationResult validationResult = validations.Validate(new CombineAddOrEditVehicleDTO
             {
 
-                CombineAddOrEditVehicleDetailDTO = new CombineAddOrEditVehicleDetailDTO
-                {
-                    BodyType = dto.BodyType,
-                    Color = dto.Color,
-                    FuelType = dto.FuelType,
-                    GearType = dto.GearType,
-                    Hardware = "asdasd",
-                    Year = dto.Year,
-                    VehicleBrand = dto.CarBrand,
-                    VehicleModel = dto.CarModel,
-                    Version = dto.Version,
-                },
-                Price = dto.Price,
+                Price = (int)dto.Price,
                 KM = dto.KM,
                 Explanation = dto.Explanation,
                 PhotoPath1 = dto.PhotoPath1,
@@ -199,11 +176,32 @@ namespace CT.AdminUI.Controllers
         [HttpGet]
         public IActionResult BrandModel()
         {
+            
             //TokenDTO tokenDTO = new TokenDTO();
             //var result = await _apiService.Get<ListBrandModelDTO>(tokenDTO, _routes["BrandModel"]);
             //todo : sayfaya veriler basılacak
 
-            return View();
+            return View(new AddBrandDTO());
+        }
+
+        [HttpPost]
+
+        public IActionResult BrandModel(AddBrandDTO dto)
+        {
+            BrandVAL validations = new BrandVAL();
+            ValidationResult validationResult = validations.Validate(new CarBrandDTO
+            {
+                VehicleBrand = dto.Name,
+            });
+            if (!validationResult.IsValid)
+            {
+                validationResult.AddToModelState(this.ModelState);
+
+                TempData["BrandName"] = dto.Name;
+
+                return View("BrandModel", dto);
+            }
+            return View(dto);
         }
 
         //[HttpGet("Detail/{id}")]

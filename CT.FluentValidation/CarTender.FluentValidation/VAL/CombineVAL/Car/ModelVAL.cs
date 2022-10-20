@@ -1,15 +1,15 @@
-﻿using CarTender.FluentValidation.DTO.CombineDTO.Car;
+﻿using CarTender.FluentValidation.DTO.AdminDTO.Car;
 using FluentValidation;
 
 namespace CarTender.FluentValidation.VAL.CombineVAL.Car
 {
-    public class ModelVAL : AbstractValidator<CombineAddOrEditVehicleDetailDTO>
+    public class ModelVAL : AbstractValidator<CarModelDTO>
     {
         public ModelVAL()
         {
             #region VehicleModel
 
-            RuleFor(x => x.VehicleModel)
+            RuleFor(x => x.ModelName)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty().WithMessage("Lütfen aracın modelini giriniz.")
                 .MinimumLength(2).WithMessage("Girmeniz gerekenden az karakter girdiniz.")
