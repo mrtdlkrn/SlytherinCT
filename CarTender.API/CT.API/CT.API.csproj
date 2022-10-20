@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="Common\**" />
+    <Compile Remove="Models\**" />
     <Content Remove="Common\**" />
+    <Content Remove="Models\**" />
     <EmbeddedResource Remove="Common\**" />
+    <EmbeddedResource Remove="Models\**" />
     <None Remove="Common\**" />
+    <None Remove="Models\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,10 +36,6 @@
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
     <None Include="NLog.config" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

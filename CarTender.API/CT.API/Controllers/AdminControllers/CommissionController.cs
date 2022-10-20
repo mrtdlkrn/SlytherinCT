@@ -38,5 +38,11 @@ namespace CT.API.Controllers.AdminControllers
         {
             return Ok(new SuccessResult("Komisyon Silme Başarılı", 200));
         }
+
+        [HttpGet("GetByCarID")]
+        public IActionResult GetByCarID (object carID)
+        {
+            return Ok(new SuccessResult("Araba ID'si İle Komisyon Bilgisi Getirme Başarılı", 200));
+        }
     }
 }

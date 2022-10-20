@@ -2,7 +2,7 @@
 
 namespace CT.Entities.Bid
 {
-    public class CreateNewBidDTO
+    public class UpdateBidDTO
     {
         public string BidName { get; set; }
         public bool CustomerType { get; set; }
