@@ -97,6 +97,11 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessResult("Model Getirme Başarılı", 200));
         }
 
+        [HttpGet("GetModelByBrand")]
+        public IActionResult GetModelByBrand(object brandID)
+        {
+            return Ok(new SuccessResult("Model Getirme Başarılı", 200));
+        }
         #endregion
     }
 }

@@ -10,8 +10,29 @@ namespace CT.API.Controllers.AdminControllers
     public class NeighborhoodController : ControllerBase
     {
 
-        [HttpGet("getall")]
+        [HttpGet("GetAll")]
         public IActionResult GetAll()
+        {
+            List<ListNeighborhoodDTO> neighborhoods = new List<ListNeighborhoodDTO>();
+            neighborhoods.Add(new ListNeighborhoodDTO() { Name = "Emirsultan", CityName = "Bursa", TownName = "Karacabey" });
+            neighborhoods.Add(new ListNeighborhoodDTO() { Name = "Saadet", CityName = "Bursa", TownName = "Karacabey" });
+            neighborhoods.Add(new ListNeighborhoodDTO() { Name = "Esentepe", CityName = "Bursa", TownName = "Karacabey" });
+            return Ok(new SuccessDataResult<List<ListNeighborhoodDTO>>(neighborhoods, "Mahalleler listelendi", 200));
+        }
+
+        [HttpGet("GetByCity")]
+        public IActionResult GetByCity(object cityID)
+        {
+            List<ListNeighborhoodDTO> neighborhoods = new List<ListNeighborhoodDTO>();
+            neighborhoods.Add(new ListNeighborhoodDTO() { Name = "Emirsultan", CityName = "Bursa", TownName = "Karacabey" });
+            neighborhoods.Add(new ListNeighborhoodDTO() { Name = "Saadet", CityName = "Bursa", TownName = "Karacabey" });
+            neighborhoods.Add(new ListNeighborhoodDTO() { Name = "Esentepe", CityName = "Bursa", TownName = "Karacabey" });
+            return Ok(new SuccessDataResult<List<ListNeighborhoodDTO>>(neighborhoods, "Mahalleler listelendi", 200));
+        }
+
+
+        [HttpGet("GetByTown")]
+        public IActionResult GetByTown(object townID)
         {
             List<ListNeighborhoodDTO> neighborhoods = new List<ListNeighborhoodDTO>();
             neighborhoods.Add(new ListNeighborhoodDTO() { Name = "Emirsultan", CityName = "Bursa", TownName = "Karacabey" });

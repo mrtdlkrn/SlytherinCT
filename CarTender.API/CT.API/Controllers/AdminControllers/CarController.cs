@@ -2,6 +2,7 @@
 using CT.Entities.Bid;
 using CT.Entities.Car;
 using CT.Entities.DTOs.Car;
+using CT.Entities.DTOs.CarModification;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,6 @@ namespace CT.API.Controllers.AdminControllers
     public class CarController : ControllerBase
     {
         // GET: CarController
-
-        #region Car
 
         [HttpGet("GetAll")]
         public IActionResult GetAll()
@@ -94,7 +93,7 @@ namespace CT.API.Controllers.AdminControllers
         }
 
         [HttpGet("GetByBrand")]
-        public IActionResult GetByBrand(string brand)
+        public IActionResult GetByBrand(object brandID)
         {
             //Todo : Dapper eklenecek
             ListCarDTO car = new ListCarDTO()
@@ -112,7 +111,7 @@ namespace CT.API.Controllers.AdminControllers
         }
 
         [HttpGet("GetByModel")]
-        public IActionResult GetByModel(string model)
+        public IActionResult GetByModel(object modelID)
         {
             //Todo : Dapper eklenecek
             ListCarDTO car = new ListCarDTO()
@@ -183,34 +182,32 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(dataResult);
         }
 
-        [HttpGet("GetImages")]
-        public IActionResult GetImages(object carID)
+        [HttpGet("GetModifications")]
+        public IActionResult GetModifications(object carID)
         {
-            //Todo : Dapper eklenecek
-            CarImageDTO data = new CarImageDTO();
-            var dataResult = new SuccessDataResult<CarImageDTO>(data, "Data Eklendi", 200);
-            return Ok(dataResult);
+            return Ok(new SuccessResult("Modifiyeleri Listeleme Başarılı", 200));
         }
 
-        #endregion
-
-        [HttpGet("CarModification")]
-        public IActionResult CarModification(object dto)
+        [HttpPost("AddModificationToCar")]
+        public IActionResult AddModificationToCar(object carID, CreateCarModificationDTO dto)
         {
-            //Todo : Dapper eklenecek
-            CarModificationDTO data = new CarModificationDTO();
-            var dataResult = new SuccessDataResult<CarModificationDTO>(data, "Data Eklendi", 200);
-            return Ok(dataResult);
+            return Ok(new SuccessResult("Arabaya Modifiye Ekleme Listeleme Başarılı", 200));
         }
-       
 
-        [HttpGet("CarBuyerInformation")]
-        public IActionResult CarBuyerInformation(object dto)
+        [HttpPost("DeleteModificationFromCar")]
+        public IActionResult DeleteModificationFromCar(object carID, object modificationID)
         {
-            //Todo : Dapper eklenecek
-            CarBuyerDTO data = new CarBuyerDTO();
-            var dataResult = new SuccessDataResult<CarBuyerDTO>(data, "Data Eklendi",200);
-            return Ok(dataResult);
+            return Ok(new SuccessResult("Modifiyeleri Listeleme Başarılı", 200));
         }
+
+
+        //[HttpGet("CarBuyerInformation")]
+        //public IActionResult CarBuyerInformation(object dto)
+        //{
+        //    //Todo : Dapper eklenecek
+        //    CarBuyerDTO data = new CarBuyerDTO();
+        //    var dataResult = new SuccessDataResult<CarBuyerDTO>(data, "Data Eklendi",200);
+        //    return Ok(dataResult);
+        //}
     }
 }
