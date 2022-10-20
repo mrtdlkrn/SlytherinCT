@@ -58,9 +58,9 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Araç Fiyat:</label>                   
                         </div>
-                        <input type="text" value="" asp-for="Price" class="form-control"/>
-                        <span asp-validation-for="Price" class="text-danger"></span>                                                            
+                        <input type="text" value="@TempData["CarPrice"]" asp-for="Price" class="form-control"/>                                                    
                     </div>
+                    <span asp-validation-for="Price" class="text-danger"></span> 
                 </div>
             </div>
         </div>
@@ -156,7 +156,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">KM Bilgisi:</label>
                         </div>
-                        <input type="text" value="" asp-for="KM" class="form-control"/>
+                        <input type="text" value="@TempData["KM"]" asp-for="KM" class="form-control"/>
                         <span asp-validation-for="KM" class="text-danger"></span>
                     </div>
                 </div>
