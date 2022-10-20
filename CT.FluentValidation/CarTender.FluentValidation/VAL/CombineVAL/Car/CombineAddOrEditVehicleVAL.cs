@@ -16,7 +16,7 @@ namespace CarTender.FluentValidation.VAL.CombineVAL.Car
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty().WithMessage("Lütfen araç fiyatı giriniz.")
                 .GreaterThan(0).WithMessage("Araç fiyatı 0 TL olamaz.")
-                .Must(x => x > 0 && x < 1000000000).WithMessage("Araç fiyatı girilebilecek miktar aralğında değil.(0-1.000.000.000)");
+                .Must(x => x > 0 && x < 1000000000).WithMessage("Araç fiyatı girilebilecek miktar aralığında değil.(0-1.000.000.000)");
 
             #endregion
 
@@ -25,7 +25,7 @@ namespace CarTender.FluentValidation.VAL.CombineVAL.Car
             RuleFor(x => x.KM)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty().WithMessage("Araç kilometre bilgisi boş bırakılamaz.")
-                .Must(x => x > 0 && x < 1000000).WithMessage("Araç fiyatı girilebilecek miktar aralğında değil.(0-1.000.000)");
+                .Must(x => x > 0 && x < 1000000).WithMessage("Araç fiyatı girilebilecek miktar aralığında değil.(0-1.000.000)");
 
             #endregion
 
