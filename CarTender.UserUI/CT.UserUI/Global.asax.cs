@@ -20,7 +20,7 @@ namespace CT.UserUI
 
         protected void Application_BeginRequest(object sender, EventArgs e) 
         {
-            string token = Request.Cookies.Get("Ihale").Values["token"];
+            //string token = Request.Cookies.Get("Ihale").Values["token"];
             //Session.Add("token", token);
         }
     }

@@ -60,5 +60,5 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Statü Sil", body="Statüyü silmek istediğinize emin misiniz?", id="deleteStatus"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Statü Aktif Et", body="Statüyü aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "exampleModalAdd",modalTitle = "Yeni Statü Ekle", dto =addDto})
-@await Component.InvokeAsync("EditModal", new {modalID="editStatus", modalTitle="Statü Güncelle",dto = editDto})
+@await Component.InvokeAsync("AddModal", new {modalID = "exampleModalAdd",modalTitle = "Yeni Statü Ekle", dto= addDto , ActionName="Add",ControllerName = "Status"})
+@await Component.InvokeAsync("EditModal", new {modalID = "editStatus",modalTitle = "Statü Güncelle", dto= editDto , ActionName="Edit",ControllerName = "Status"})
