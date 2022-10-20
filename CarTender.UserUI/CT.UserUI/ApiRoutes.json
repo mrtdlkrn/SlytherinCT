@@ -43,7 +43,7 @@
             "ControllerName": "Car",
             "Actions": {
                 "Index": "api/Car/Index",
-                "Details": "api/Car/Detail",
+                "Details": "api/User/Car/Detail",
                 "CreateGet": "api/Car/Create",
                 "CreatePost": "api/Car/Create",
                 "EditGet": "api/Car/Update",

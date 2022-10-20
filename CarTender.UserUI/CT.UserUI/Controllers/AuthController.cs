@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using CarTender.FluentValidation.VAL.UserVAL.Login_Register;
 using Common.Concrete;
 using CT.UserUI.Logging.Concrete;
 using Entity.DTO;
@@ -57,7 +58,8 @@ namespace CT.UserUI.Controllers
             string password = "123";
 
 
-            //UserLoginDAL validations = new UserLoginDAL();
+            //BaseValidator<UserLoginDTO> validator = new BaseValidator<UserLoginDTO>(dto);
+            //UserLoginVAL validations = new UserLoginVAL();
             //ValidationResult result = validations.Validate(new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
             //{
             //    Username = username,
@@ -68,11 +70,11 @@ namespace CT.UserUI.Controllers
             //{
 
             //}
-            if (dto.Password != password || dto.Username != username)
-            {
-                _logger.Log("hatalı kullanıcı girişi - USERUI");
-                return RedirectToAction("Login");
-            }
+            //if (dto.Password != password || dto.Username != username)
+            //{
+            //    _logger.Log("hatalı kullanıcı girişi - USERUI");
+            //    return RedirectToAction("Login");
+            //}
 
             _logger.Log(username + " kullanıcı giriş yaptı. - USERUI");
 
@@ -81,8 +83,8 @@ namespace CT.UserUI.Controllers
             //httpCookie.Expires = DateTime.Now.AddDays(-1); silmek için bu şekilde kullanırız
             httpCookie.Values.Add("token", "hede");
             HttpContext.Response.Cookies.Add(httpCookie);
-
-            return RedirectToAction("CustomerSignUp");
+            
+            return RedirectToAction("Index","Home");
         }
 
         #endregion

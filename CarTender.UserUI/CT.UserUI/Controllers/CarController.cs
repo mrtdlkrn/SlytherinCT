@@ -20,7 +20,7 @@ namespace CT.UserUI.Controllers
         public CarController()
         {
             _apiManager = new ApiManager(new BaseAPIService());
-            //_routes = new ApiRoutes().GetApiRoutes("Car");
+            _routes = new ApiRoutes().GetApiRoutes("Car");
 
             Cars.Add(new ListCarDTO()
             {
@@ -67,7 +67,8 @@ namespace CT.UserUI.Controllers
         }
 
         // Car Details
-        public async Task<ActionResult> Details()
+        [HttpGet]
+        public async Task<ActionResult> Details(object ID)
         {
             //todo : User'a göre tokenDto oluşturulacak
             TokenDTO tokenDTO = new TokenDTO()
@@ -77,12 +78,13 @@ namespace CT.UserUI.Controllers
                 ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            //var result = await _apiManager.Get<ListAdvertDTO>(tokenDTO, _routes["Details"]);
-            //if (result != null)
-            //{
-            //    //todo: sayfaya veriler basılacak
-            //    return View();
-            //}
+
+            var result = await _apiManager.Get<CarDTO>(tokenDTO, _routes["Details"]);
+            if (result != null)
+            {
+                //todo: sayfaya veriler basılacak
+                return View(result);
+            }
             if (true)
                 return View();
             else
