@@ -5,7 +5,7 @@ using CT.Entities.Entities;
 
 namespace CT.DataAccess.Concrete.Dapper
 {
-    public class CarDAL : DapperRepository<Car, CarTenderDbContext>, ICarDAL
+    public class TramerDAL : DapperRepository<Tramer, CarTenderDbContext>, ITramerDAL
     {
     }
 }
