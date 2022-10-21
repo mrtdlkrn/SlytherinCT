@@ -188,17 +188,17 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessResult("Modifiyeleri Listeleme Başarılı", 200));
         }
 
-        [HttpPost("AddModificationToCar")]
-        public IActionResult AddModificationToCar(object carID, CreateCarModificationDTO dto)
-        {
-            return Ok(new SuccessResult("Arabaya Modifiye Ekleme Listeleme Başarılı", 200));
-        }
+        //[HttpPost("AddModificationToCar")]
+        //public IActionResult AddModificationToCar(object carID, CreateCarModificationDTO dto)
+        //{
+        //    return Ok(new SuccessResult("Arabaya Modifiye Ekleme Listeleme Başarılı", 200));
+        //}
 
-        [HttpPost("DeleteModificationFromCar")]
-        public IActionResult DeleteModificationFromCar(object carID, object modificationID)
-        {
-            return Ok(new SuccessResult("Modifiyeleri Listeleme Başarılı", 200));
-        }
+        //[HttpPost("DeleteModificationFromCar")]
+        //public IActionResult DeleteModificationFromCar(object carID, object modificationID)
+        //{
+        //    return Ok(new SuccessResult("Modifiyeleri Listeleme Başarılı", 200));
+        //}
 
 
         //[HttpGet("CarBuyerInformation")]

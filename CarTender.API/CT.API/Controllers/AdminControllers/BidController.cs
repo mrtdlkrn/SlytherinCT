@@ -10,12 +10,15 @@ namespace CT.API.Controllers.AdminControllers
     [ApiController]
     public class BidController : ControllerBase
     {
+
+
+
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
             //Todo : Dapper eklenecek
             List<ListBidDTO> bidDTOs = new List<ListBidDTO>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 15; i++)
             {
                 bidDTOs.Add(new ListBidDTO()
                 {
@@ -24,6 +27,8 @@ namespace CT.API.Controllers.AdminControllers
                     CreatedDate = DateTime.Now,
                     IsApproved = true,
                     IsCorporate = true,
+                    
+                    
                 });
             }
             var dataResult = new SuccessDataResult<List<ListBidDTO>>(bidDTOs, "Data Added", 200);

@@ -26,16 +26,16 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessResult("Resim Silme Başarılı", 200));
         }
 
-        [HttpPost("DeleteImageFromCarWithCarID")]
-        public IActionResult DeleteImageFromCarWithCarID(object carID, object imageID)
-        {
-            return Ok(new SuccessResult("Arabadan Resim Silme Başarılı", 200));
-        }
+        //[HttpPost("DeleteImageFromCarWithCarID")]
+        //public IActionResult DeleteImageFromCarWithCarID(object carID, object imageID)
+        //{
+        //    return Ok(new SuccessResult("Arabadan Resim Silme Başarılı", 200));
+        //}
 
-        [HttpPost("AddImageToCarWithCarID")]
-        public IActionResult AddImageToCarWithCarID(object carID, object imageID)
-        {
-            return Ok(new SuccessResult("Arabaya Resim Ekleme Başarılı", 200));
-        }
+        //[HttpPost("AddImageToCarWithCarID")]
+        //public IActionResult AddImageToCarWithCarID(object carID, object imageID)
+        //{
+        //    return Ok(new SuccessResult("Arabaya Resim Ekleme Başarılı", 200));
+        //}
     }
 }

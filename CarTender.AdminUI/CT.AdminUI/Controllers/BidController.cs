@@ -1,20 +1,41 @@
 ﻿using Business.Abstract;
 using CarTender.AdminUI.Controllers;
+using CarTender.FluentValidation.VAL.CombineVAL.Bid;
 using Common.Abstract;
 using Entity.DTO;
+using Entity.DTO.Auth;
 using Entity.DTO.Bid;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using CarTender.FluentValidation.DTO.CombineDTO.Bid;
+using Microsoft.AspNetCore.Http;
+using FluentValidation;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CT.AdminUI.Controllers
 {
     public class BidController : Controller
     {
         private readonly IApiService _apiService;
+        private readonly IMappingService _mappingService;
+        private readonly IDictionary<string, string> _routes;
+        TokenDTO tokenDTO = new TokenDTO()
+        {
+            Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+            ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+            ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+            ExpireTime = DateTime.Now.AddHours(1)
+        };
 
-        public BidController(IApiService apiService)
+
+        public BidController(IApiService apiService,IMappingService mappingService, IApiRoutes routes)
         {
             _apiService = apiService;
+            _mappingService = mappingService;
+            _routes = routes.GetApiRoutes("Bid");
         }
         public IActionResult Index()
         {
@@ -65,17 +86,33 @@ namespace CT.AdminUI.Controllers
         //GET: List Bid Method
 
         [HttpGet]
-        public IActionResult ListBid()
+        public async Task<IActionResult> ListBid()
         {
-            return View();
+
+            var result = await _apiService.Get<List<BidListDTO>>(tokenDTO, _routes["ListBid"]);
+            if (result.Success)
+            {
+                return View(result.Data);
+            }
+            return RedirectToAction();
         }
 
         //POST: List Bid Method with Filter
 
         [HttpPost]
-        public IActionResult ListBid(object filteredBidInfo)
+        public async Task<IActionResult> ListBid(IFormCollection filteredBidInfo)
         {
-            return View();
+            CombineBidListVAL bidVAL = new CombineBidListVAL();
+            ValidationResult validationResult = bidVAL.Validate(_mappingService.GetModel<CombineBidDTO>(filteredBidInfo));
+
+            if (!validationResult.IsValid)
+            {
+
+            }
+
+            var result = await _apiService.Get<List<BidInformationDTO>>(tokenDTO, _routes["ListBid"]);
+
+            return View(result);
         }
 
 
