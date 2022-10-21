@@ -38,7 +38,7 @@
         "DeleteGet": "",
         "DeletePost": "",
         "ListBid": "api/Bid/GetAll",
-        "ListBidFilter": "",
+        "ListBidFilter": "api/Bid/GetAllByQuery",
         "BidCorporateUserGet": "",
         "BidCorporateUserPost": "",
         "BidInformationGet": "",

@@ -53,7 +53,7 @@ namespace Common.Concrete
 
             // todo: verilen filter dto request'e eklecenek.
             string serviceUrl = _configuration.GetValue<string>("ApiAddress") + requestUrl;
-            var response = await _httpClient.GetAsync(serviceUrl);
+            var response = await _httpClient.PostAsync(serviceUrl,serializedDto);
 
             if (response.IsSuccessStatusCode)
             {

@@ -1,5 +1,6 @@
 ﻿using CarTender.Core.Utilities;
 using CT.Entities.Bid;
+using CT.Entities.DTOs.Bid;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -27,11 +28,36 @@ namespace CT.API.Controllers.AdminControllers
                     CreatedDate = DateTime.Now,
                     IsApproved = true,
                     IsCorporate = true,
-                    
-                    
+
+
                 });
             }
             var dataResult = new SuccessDataResult<List<ListBidDTO>>(bidDTOs, "Data Added", 200);
+
+            return Ok(dataResult);
+        }
+
+        [HttpPost("GetAllByQuery")]
+        public IActionResult GetAllByQuery(BidQuerryDTO dto)
+        {
+            // Todo : dapper eklenecek bidquerrydto icinde gelen verilere gore sorgu yapilacak
+            List<ListBidDTO> bidDTOs = new List<ListBidDTO>();
+
+            for (int i = 0; i < 15; i++)
+            {
+                bidDTOs.Add(new ListBidDTO()
+                {
+                    BidName = "Slytherin Sirketi",
+                    IsActive = true,
+                    CreatedDate = DateTime.Now.AddDays(-5),
+                    IsApproved = true,
+                    IsCorporate = true,
+                    FinishedDate = DateTime.Now,
+                    UserID = new Guid(),
+
+                });
+            }
+            var dataResult = new SuccessDataResult<List<ListBidDTO>>(bidDTOs, "Data Searched", 200);
 
             return Ok(dataResult);
         }

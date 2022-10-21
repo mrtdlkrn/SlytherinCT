@@ -21,12 +21,6 @@ namespace Entity.DTO.Bid
         [DisplayName("Statü")]
         public string Status { get; set; }
 
-        [DisplayName("Bitiş Tarihi")]
-        public DateTime? FinishedDate { get; set; }
-
-        [DisplayName("Bitiren")]
-        public Guid? FinishedBy { get; set; }
-
         [DisplayName("Oluşturma Tarihi")]
         public DateTime CreatedDate { get; set; }
 
