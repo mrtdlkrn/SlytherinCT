@@ -3,7 +3,7 @@ using CT.Entities.Entities;
 
 namespace CT.DataAccess.Abstract
 {
-    public interface IBidDAL : IBaseRepository<Bid>
+    public interface ICarImageDAL : IBaseRepository<CarImage>
     {
     }
 }
