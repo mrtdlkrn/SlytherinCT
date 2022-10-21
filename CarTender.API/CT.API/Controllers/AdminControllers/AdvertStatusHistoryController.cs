@@ -1,7 +1,5 @@
 ﻿using CarTender.Core.Utilities;
-using CT.Entities.DTOs.Advert;
 using CT.Entities.DTOs.AdvertStatusHistory;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -25,5 +23,28 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessDataResult<List<ListAdvertStatusHistoryDTO>>(advertStatusHistories, "İlan statü geçmişleri listelendi", 200));
         }
 
+        [HttpPost("Create")]
+        public IActionResult Create(CreateAdvertStatusHistoryDTO dto)
+        {
+            return Ok(new SuccessResult("İlan Statü Ekleme Başarılı", 200));
+        }
+
+        [HttpPost("Update")]
+        public IActionResult Update(UpdateAdvertStatusHistoryDTO dto)
+        {
+            return Ok(new SuccessResult("İlan Statü Güncelleme Başarılı", 200));
+        }
+
+        [HttpPost("Delete")]
+        public IActionResult Delete(object historyID)
+        {
+            return Ok(new SuccessResult("İlan Statü Silme Başarılı", 200));
+        }
+
+        [HttpGet("GetByID")]
+        public IActionResult GetByID(object historyID)
+        {
+            return Ok(new SuccessResult("Tarihçe Detay Getirme Başarılı", 200));
+        }       
     }
 }

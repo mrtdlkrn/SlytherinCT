@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using CarTender.AdminUI.Models;
 using Entity.DTO.Auth;
+using Entity.DTO.Car;
 using Entity.DTO.Commission;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -45,6 +46,15 @@ namespace CT.AdminUI.Controllers
                 };
                 return View("~/Views/Shared/Error.cshtml", model);
             }
+        }
+        // Car Commission
+        //[HttpGet("CarCommission/{id}")]
+        public async Task<IActionResult> Detail(int carId)
+        {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["Detail"]);
+            //todo : sayfaya veriler basılacak
+            return View();
         }
     }
 }

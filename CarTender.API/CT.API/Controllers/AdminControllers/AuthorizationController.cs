@@ -12,8 +12,8 @@ namespace CT.API.Controllers.AdminControllers
     {
         #region Roles
 
-        [HttpGet("Roles")]
-        public IActionResult Roles()
+        [HttpGet("GetAllRoles")]
+        public IActionResult GetAllRoles()
         {
             List<ListRoleDTO> roles = new List<ListRoleDTO>();
             roles.Add(new ListRoleDTO() { Name = "Süper Admin" });
@@ -39,17 +39,24 @@ namespace CT.API.Controllers.AdminControllers
         }
 
         [HttpPost("DeleteRole")]
-        public IActionResult DeleteRole(object id)
+        public IActionResult DeleteRole(object roleID)
         {
             return Ok(new SuccessResult("Rol Silme Başarılı", 200));
+        }
+
+
+        [HttpGet("GetByID")]
+        public IActionResult GetRoleByID(object roleID)
+        {
+            return Ok(new SuccessResult("Rol Detay Getirme Başarılı", 200));
         }
 
         #endregion
 
         #region Authorizations
 
-        [HttpGet("Authorizations")]
-        public IActionResult Authorizations()
+        [HttpGet("GetAllAuthorizations")]
+        public IActionResult GetAllAuthorizations()
         {
             List<ListAuthorizationDTO> authorizations = new List<ListAuthorizationDTO>();
             authorizations.Add(new ListAuthorizationDTO() { Name = "Listele" });
@@ -59,9 +66,8 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessDataResult<List<ListAuthorizationDTO>>(authorizations, "Yetkiler listelendi", 200));
         }
 
-
         [HttpPost("CreateAuthorization")]
-        public IActionResult CreateAuthorization(CreateAuthorizationDTO dto)
+        public IActionResult CreateAuthorization(CreateAdvertDTO dto)
         {
             return Ok(new SuccessResult("Yetki Ekleme Başarılı", 200));
         }
@@ -76,6 +82,12 @@ namespace CT.API.Controllers.AdminControllers
         public IActionResult DeleteAuthorization(object id)
         {
             return Ok(new SuccessResult("Yetki Silme Başarılı", 200));
+        }
+
+        [HttpGet("GetAuthorizationByID")]
+        public IActionResult GetAuthorizationByID(object authorizationID)
+        {
+            return Ok(new SuccessResult("Yetki Detay Getirme Başarılı", 200));
         }
 
         #endregion

@@ -301,16 +301,6 @@ namespace CT.AdminUI.Controllers
             return View();
         }
 
-        // Car Commission
-        //[HttpGet("CarCommission/{id}")]
-        public async Task<IActionResult> CarCommission(Guid id)
-        {
-            TokenDTO tokenDTO = new TokenDTO();
-            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarCommission"]);
-            //todo : sayfaya veriler basılacak
-            return View();
-        }
-
         // Car Buyer Information
         //[HttpGet("CarBuyerInformation/{id}")]
         [HttpGet]

@@ -37,8 +37,8 @@
         "UpdatePost": "",
         "DeleteGet": "",
         "DeletePost": "",
-        "ListBid": "",
-        "ListBidFilter": "",
+        "ListBid": "api/Bid/GetAll",
+        "ListBidFilter": "api/Bid/GetAllByQuery",
         "BidCorporateUserGet": "",
         "BidCorporateUserPost": "",
         "BidInformationGet": "",
@@ -143,11 +143,14 @@
       }
     },
     {
-      "ControllerName": "Status",
-      "Actions": {
+     "ControllerName": "Status",
+     "Actions": {
         "Index": "api/Status/GetAll",
-        "GetByType": "api/Status/GetByType"
-      }
+        "GetByType": "api/Status/GetByType",
+        "Create": "api/Status/Create",
+        "Update": "api/Status/Update",
+        "Delete": "api/Status/Delete",
+     }
     },
     {
       "ControllerName": "Town",
