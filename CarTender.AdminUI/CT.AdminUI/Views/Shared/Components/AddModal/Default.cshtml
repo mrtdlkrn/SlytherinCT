@@ -24,6 +24,7 @@
                                     <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                                 </div>
                                 <input type="text" value="" class="form-control col-md-12" name="@item.Name" />
+                                <span asp-validation-for="@item.Name" class="text-danger"></span>
                             </div>
                         }
                         else if (item.PropertyType == typeof(int))
@@ -33,6 +34,7 @@
                                     <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                                 </div>
                                 <input type="number" value="" class="form-control col-md-12" name="@item.Name" />
+                                <span asp-validation-for="@item.Name" class="text-danger"></span>
                             </div>
                         }
                         else if (item.PropertyType == typeof(decimal))
@@ -42,6 +44,7 @@
                                     <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                                 </div>
                                 <input type="number" value="" class="form-control col-md-12" name="@item.Name" />
+                                <span asp-validation-for="@item.Name" class="text-danger"></span>
                             </div>
                         }
                         else if (item.PropertyType == typeof(bool))
@@ -51,6 +54,7 @@
                                     <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                                 </div>
                                 <input type="checkbox" value="" class="form-control col-md-12" name="@item.Name" />
+                                <span asp-validation-for="@item.Name" class="text-danger"></span>
                             </div>
                         }
                         else if (item.PropertyType == typeof(DateTime))
@@ -60,6 +64,7 @@
                                     <label class="input-group-text" for="inputGroupSelect01">@item.CustomAttributes.First().ConstructorArguments.First().Value.ToString()</label>
                                 </div>
                                 <input type="date" value="" class="form-control col-md-12" name="@item.Name" />
+                                <span asp-validation-for="@item.Name" class="text-danger"></span>
                             </div>
                         }
                         else if (item.PropertyType == typeof(List<string>))
@@ -76,6 +81,7 @@
                                         }
                                     }
                                 </select>
+                                <span asp-validation-for="@item.Name" class="text-danger"></span>
                             </div>
                         }
                     }
