@@ -99,6 +99,33 @@
             </div>
         </div>
     </div>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cauthindex2" aria-expanded="true" aria-controls="cauthindex2" role="button">Yetkiler</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addAuthorization">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </h5>
+            </div>
+            <div id="cauthindex2" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable3",
+                    EditIsModal = true,
+                    EditBtnModalID = "editAuthorization",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="deleteAuthorization",
+                    TableHeads=headsAuth,
+                    TableDatas=datasAuth
+                    })
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Yetki Sil", body="Yetkiyi silmek istediğinize emin misiniz?", id="deleteAuthorization"})

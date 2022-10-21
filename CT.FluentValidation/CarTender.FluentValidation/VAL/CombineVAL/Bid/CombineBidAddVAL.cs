@@ -1,5 +1,7 @@
 ﻿using CarTender.FluentValidation.DTO.CombineDTO.Bid;
 using FluentValidation;
+using Microsoft.AspNetCore.Localization;
+using System;
 
 namespace CarTender.FluentValidation.VAL.CombineVAL.Bid
 {
@@ -12,27 +14,40 @@ namespace CarTender.FluentValidation.VAL.CombineVAL.Bid
             RuleFor(x => x.BidName)
                .Cascade(CascadeMode.StopOnFirstFailure)
                .NotEmpty().WithMessage("Lütfen İhale Adı Giriniz.")
-               .MaximumLength(50).WithMessage("50 Fazla Karakter Girdiniz.");
+               .MinimumLength(2).WithMessage("İhale adı 2 karakterden az olamaz.")
+               .MaximumLength(50).WithMessage("İhale adı 50 karakterden fazla olamaz.");
 
             #endregion
 
-            #region Admin and User AddBidStartTime Bid Page
+            //#region Admin and User AddBidStartTime Bid Page
 
             RuleFor(x => x.BidStartTime)
                .Cascade(CascadeMode.StopOnFirstFailure)
-               .NotEmpty().WithMessage("Lütfen İhale Başlangıç Saatini Giriniz.")
-               .MaximumLength(6).WithMessage("6 Karakter Fazla Girdiniz.");
+               .Must(BeValidDate).WithMessage("Geçmişe yönelik ihale oluşturamazsınız.");
 
-            #endregion
+            //#endregion
 
-            #region Admin and User AddFinishStartTime Bid Page
+            //#region Admin and User AddFinishStartTime Bid Page
 
-            RuleFor(x => x.BidFinishTime)
-               .Cascade(CascadeMode.StopOnFirstFailure)
-               .NotEmpty().WithMessage("Lütfen İhale Bitiş Saatini Giriniz.")
-               .MaximumLength(6).WithMessage("6 Karakter Fazla Girdiniz.");
+            //RuleFor(x => x.BidFinishTime)
+            //   .Cascade(CascadeMode.StopOnFirstFailure)
+            //   .NotEmpty().WithMessage("Lütfen İhale Bitiş Saatini Giriniz.")
+            //   .MaximumLength(6).WithMessage("6 Karakter Fazla Girdiniz.");
 
-            #endregion
+            //#endregion
+
+        }
+        protected bool BeValidDate(DateTime date)
+        {
+            int currenctDate = DateTime.Now.Day;
+            int dobDay = date.Day;
+
+            if (dobDay >= currenctDate)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

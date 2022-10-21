@@ -5,7 +5,6 @@
     ViewData["Title"] = "Marka Model";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    AddBrandDTO addBrandDto = new AddBrandDTO();
 
     EditBrandDTO editBrandDTO = new EditBrandDTO();
     editBrandDTO.Name = "Ford";
@@ -16,189 +15,192 @@
     EditModelDTO editModelDTO = new EditModelDTO();
     editModelDTO.Brands = new List<string>() { "Ford", "Mercedes", "BMW", "Audi" };
     editModelDTO.Name = "Test Model";
+
+    var hede = Model.AddBrand;
 }
 
 <div class="container-fuild p-5">
     <h1 class="h3 mb-2 text-gray-800">Marka Model Sayfası</h1>
+    <form class="needs-validation" novalidate asp-controller="Car" asp-action="AddBrand" method="post" enctype="multipart/form-data">
+        <div id="accordion" class="mb-5">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">Marka Listesi</a>
+                        <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addBrand">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </h5>
+                </div>
 
-    <div id="accordion" class="mb-5">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">Marka Listesi</a>
-                    <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addBrand">
-                        <i class="fa fa-plus"></i>
-                    </button>
-                </h5>
-            </div>
-
-            <div id="collapseOne" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Marka:</label>
+                <div id="collapseOne" class="collapse show p-3" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="row mt-3">
+                        <div class="col-md-4">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Marka:</label>
+                                </div>
+                                <input class="form-control" type="text" />
                             </div>
-                            <input class="form-control" type="text" />
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
                         </div>
                     </div>
-                    <div class="col-md-1">
-                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
+                    <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Marka Adı</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Fiat</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
+                                            <i class="far fa-trash-alt"></i>  Sil
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Opel</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
+                                            <i class="far fa-trash-alt"></i>  Sil
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>BMW</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
+                                            <i class="far fa-trash-alt"></i>  Sil
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Renault</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
+                                            <i class="far fa-trash-alt"></i>  Sil
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Marka Adı</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Fiat</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Opel</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>BMW</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Renault</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBrand"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBrand">
-                                        <i class="far fa-trash-alt"></i>  Sil
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id="accordion" class="mt-5 mb-5">
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                    <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">Model Listesi</a>
-                    <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addModel">
-                        <i class="fa fa-plus"></i>
-                    </button>
-                </h5>
-            </div>
+        <div id="accordion" class="mt-5 mb-5">
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <a class="btn btn-light" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" role="button">Model Listesi</a>
+                        <button type="button" class="btn btn-outline-success" id="myInput" data-bs-toggle="modal" data-bs-target="#addModel">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </h5>
+                </div>
 
-            <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="row mt-3">
-                    <div class="col-md-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="inputGroupSelect01">Model:</label>
+                <div id="collapseTwo" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="row mt-3">
+                        <div class="col-md-4">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Model:</label>
+                                </div>
+                                <input class="form-control" type="text" />
                             </div>
-                            <input class="form-control" type="text" />
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
                         </div>
                     </div>
-                    <div class="col-md-1">
-                        <button class="btn btn-warning" type="button"><i class="fa fa-search"></i></button>
+                    <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Model Adı</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Egea</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
+                                            <i class="far fa-trash-alt"></i> Sil
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Linea</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
+                                            <i class="far fa-trash-alt"></i> Sil
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Doblo</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
+                                            <i class="far fa-trash-alt"></i> Sil
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>500</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
+                                            <i class="far fa-trash-alt"></i> Sil
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">Model Adı</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Egea</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
-                                        <i class="far fa-trash-alt"></i> Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Linea</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
-                                        <i class="far fa-trash-alt"></i> Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Doblo</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
-                                        <i class="far fa-trash-alt"></i> Sil
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>500</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editModel"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteModel">
-                                        <i class="far fa-trash-alt"></i> Sil
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Modeli Sil", body="Modeli silmek istediğinize emin misiniz?", id="deleteModel"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Markayı Sil", body="Markayı silmek istediğinize emin misiniz?", id="deleteBrand"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Marka Aktif Et", body="Markayı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Model Aktif Et", body="Model, aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
-@await Component.InvokeAsync("AddModal", new {modalID = "addBrand",modalTitle = "Yeni Marka Ekle", dto= addBrandDto , ActionName="AddBrand",ControllerName = "Car"})
+@await Component.InvokeAsync("AddModal", new {modalID = "addBrand",modalTitle = "Yeni Marka Ekle", dto= hede, ActionName="AddBrand",ControllerName = "Car"})
 @await Component.InvokeAsync("EditModal", new {modalID="editBrand", modalTitle="Marka Güncelle",dto=editBrandDTO, ActionName="EditBrand",ControllerName = "Car"})
 @await Component.InvokeAsync("AddModal", new{modalID = "addModel",modalTitle = "Yeni Model Ekle", dto = addModelDTO, ActionName="AddModel",ControllerName = "Car"})
 @await Component.InvokeAsync("EditModal", new {modalID="editModel", modalTitle="Model Güncelle",dto=editModelDTO, ActionName="EditModel",ControllerName = "Car"})

@@ -5,6 +5,7 @@ using CarTender.FluentValidation.VAL.CombineVAL.Car;
 using CT.AdminUI.Models.ModalDTOs;
 using Entity.DTO.Auth;
 using Entity.DTO.Brand;
+using Entity.DTO.BrandAndModel;
 using Entity.DTO.Car;
 using Entity.DTO.CarBuyerInformation;
 using Entity.DTO.Model;
@@ -179,16 +180,18 @@ namespace CT.AdminUI.Controllers
         [HttpGet]
         public IActionResult BrandModel()
         {
-            
+
             //TokenDTO tokenDTO = new TokenDTO();
             //var result = await _apiService.Get<ListBrandModelDTO>(tokenDTO, _routes["BrandModel"]);
             //todo : sayfaya veriler basılacak
 
-            return View(new AddBrandDTO());
+            return View(new BrandAndModelDTO
+            {
+                AddBrand = new AddBrandDTO()
+            });
         }
 
         [HttpPost]
-
         public IActionResult BrandModel(AddBrandDTO dto)
         {
             BrandVAL validations = new BrandVAL();
@@ -200,14 +203,12 @@ namespace CT.AdminUI.Controllers
             {
                 validationResult.AddToModelState(this.ModelState);
 
-                TempData["BrandName"] = dto.Name;
-
                 return View("BrandModel", dto);
             }
             return View(dto);
         }
         [HttpPost]
-        public async Task<IActionResult> AddBrand(AddBrandDTO dto)
+        public async Task<IActionResult> AddBrand(BrandAndModelDTO dto)
         {
             TokenDTO tokenDTO = new TokenDTO()
             {
@@ -216,6 +217,17 @@ namespace CT.AdminUI.Controllers
             ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
+            BrandVAL validations = new BrandVAL();
+            ValidationResult validationResult = validations.Validate(new CarBrandDTO
+            {
+                VehicleBrand = dto.AddBrand.Name,
+            });
+            if (!validationResult.IsValid)
+            {
+                validationResult.AddToModelState(this.ModelState);
+
+                return View("BrandModel", dto);
+            }
             //var result = await _apiService.Post(tokenDTO, _routes["AddBrand"], dto);
             return RedirectToAction("BrandModel");
         }
@@ -229,6 +241,7 @@ namespace CT.AdminUI.Controllers
             ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
+
             //var result = await _apiService.Post(tokenDTO, _routes["EditBrand"], dto);
             return RedirectToAction("BrandModel");
         }
