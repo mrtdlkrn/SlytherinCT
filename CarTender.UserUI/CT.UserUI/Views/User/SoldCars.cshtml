@@ -1,8 +1,9 @@
-﻿
-@{
-    ViewBag.Title = "Favorilerim";
+﻿@{
+    ViewBag.Title = "Sattığım Araçlar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,28 +34,51 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="p-3 container" style="border:2px solid gray; border-radius: .35rem;">
+                <div class="mt-1 p-1" style="border:2px solid gray;">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">Araç Bilgileri</th>
+                                <th scope="col">Araç Plaka</th>
+                                <th scope="col">Araç Marka</th>
+                                <th scope="col">Araç Model</th>
+                                <th scope="col">Bireysel / Kurumsal</th>
+                                <th scope="col">Satış Tarihi</th>
+                                <th scope="col">Fiyat</th>
                                 <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Hyundai Kona 2020 1.4 TSI AT Siyah</td>
+                                <td scope="row">16 E 987</td>
+                                <td>Toyota</td>
+                                <td>Yaris</td>
+                                <td>Bireysel</td>
+                                <td>05.10.2022</td>
+                                <td>255.000 TL</td>
                                 <td>
-                                    <a class="btn btn-warning col-md-5" data-toggle="modal" data-target="#editUserFavoriteCar" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Araca Git</a>
-                                    <button type="button" class="btn btn-danger col-md-5" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteUserFavoriteCar"><i class="far fa-trash-alt"></i> Favorilerden Çıkar</button>
+                                    <a class="btn btn-warning col-md-12" href="http://localhost:60964/Car/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Opel Corsa 2018 1.2 MT Mavi</td>
+                                <td scope="row">16 E 987</td>
+                                <td>Toyota</td>
+                                <td>Yaris</td>
+                                <td>Bireysel</td>
+                                <td>05.10.2022</td>
+                                <td>255.000 TL</td>
                                 <td>
-                                    <a class="btn btn-warning col-md-5" data-toggle="modal" data-target="#editUserFavoriteCar" href="#"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Araca Git</a>
-                                    <button type="button" class="btn btn-danger col-md-5" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteUserFavoriteCar"><i class="far fa-trash-alt"></i> Favorilerden Çıkar</button>
+                                    <a class="btn btn-warning col-md-12" href="http://localhost:60964/Car/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">16 E 987</td>
+                                <td>Toyota</td>
+                                <td>Yaris</td>
+                                <td>Bireysel</td>
+                                <td>05.10.2022</td>
+                                <td>255.000 TL</td>
+                                <td>
+                                    <a class="btn btn-warning col-md-12" href="http://localhost:60964/Car/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -64,3 +88,5 @@
         </div>
     </div>
 </div>
+
+

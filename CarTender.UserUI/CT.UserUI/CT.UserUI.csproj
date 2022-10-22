@@ -469,6 +469,8 @@
     <Content Include="Template\scss\style.scss" />
     <Content Include="Views\Car\Index.cshtml" />
     <Content Include="Views\User\Messages.cshtml" />
+    <Content Include="Views\User\BoughtCars.cshtml" />
+    <Content Include="Views\User\SoldCars.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

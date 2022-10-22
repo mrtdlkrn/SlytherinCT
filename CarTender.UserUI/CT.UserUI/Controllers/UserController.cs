@@ -124,5 +124,19 @@ namespace CT.UserUI.Controllers
             //var favoriteDTOs = _apiManager.Get<UserFavoriteDTO, UserFavoriteDTO>(new Entity.DTO.Auth.TokenDTO(), _routes["Favorite"], new UserFavoriteDTO() { UserID = new Guid() });
             return View();
         }
+
+        // User View Sold Cars GET
+        public ActionResult SoldCars()
+        {
+            //var favoriteDTOs = _apiManager.Get<UserFavoriteDTO, UserFavoriteDTO>(new Entity.DTO.Auth.TokenDTO(), _routes["Favorite"], new UserFavoriteDTO() { UserID = new Guid() });
+            return View();
+        }
+
+        // User View Bought Cars GET
+        public ActionResult BoughtCars()
+        {
+            //var favoriteDTOs = _apiManager.Get<UserFavoriteDTO, UserFavoriteDTO>(new Entity.DTO.Auth.TokenDTO(), _routes["Favorite"], new UserFavoriteDTO() { UserID = new Guid() });
+            return View();
+        }
     }
 }
