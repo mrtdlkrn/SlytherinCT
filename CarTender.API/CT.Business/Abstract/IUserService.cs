@@ -1,16 +1,12 @@
-﻿using CT.Entities.Entities;
-using System.Collections.Generic;
+﻿using CarTender.Core.Utilities;
+using CT.Business.Abstract.Base;
+using CT.Entities.Entities;
 
 namespace CarTender.Business.Abstract
 {
-    public interface IUserService
+    public interface IUserService : IBaseService<User>
     {
-        bool Add(User user);
-
-        List<User> GetAll();
-
-        User GetByUserName(string userName);
-
-        bool Update(User user);
+        IDataResult<User> GetByUserName(string userName);
+        IResult IsUserExist(string email);
     }
 }

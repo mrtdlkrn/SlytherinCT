@@ -1,4 +1,5 @@
-﻿using CT.Business.Abstract;
+﻿using CarTender.Core.Utilities;
+using CT.Business.Abstract;
 using CT.Common.Service;
 using CT.Entities.Entities;
 using CT.Entities.Mail;
@@ -8,24 +9,19 @@ using System.Collections.Generic;
 
 namespace CT.Business.Concrete
 {
-    public class NotificationService : INotificationService
+    public class NotificationManager : INotificationService
     {
         private readonly IQueueService queueService;
         private readonly IConfiguration configuration;
 
-        public NotificationService(IQueueService queueService, IConfiguration configuration = null)
+        public NotificationManager(IQueueService queueService, IConfiguration configuration = null)
         {
             this.queueService = queueService;
             this.configuration = configuration;
         }
 
-        public bool SendNotification(Message message)
+        public IResult SendNotification(Message message)
         {
-
-
-
-
-
             List<string> eposta = new()
             {
                 message.EMail
@@ -33,7 +29,7 @@ namespace CT.Business.Concrete
 
             string domain = configuration.GetSection("Application:AppDomain").Value;
             string confirmationLink = domain + configuration.GetSection("Application:LoginPath").Value;
-            confirmationLink += configuration.GetSection("Application:EmailConfirmation").Value;
+            confirmationLink += configuration.GetSection("Application:EmailConfirmation").Value; // todo: tanımlanmış ama kullanılmamış.
 
             MailInfo mailInfo = new()
             {
@@ -55,7 +51,7 @@ namespace CT.Business.Concrete
             queueService.CreateBinding(connectionFactory, queue, exchange, routingKey);
             queueService.Publish(connectionFactory, mailInfo, exchange, routingKey);
 
-            return true;
+            return new SuccessResult("Email gönderme başarılı",200);
         }
     }
 }
