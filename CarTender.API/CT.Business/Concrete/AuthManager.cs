@@ -1,11 +1,14 @@
 ﻿using CarTender.Business.Abstract;
 using CarTender.Core.Security.Hashing;
 using CarTender.Core.Security.JWT;
+using CarTender.Core.Utilities;
 using CT.Entities.Entities;
 using System.Collections.Generic;
 
 namespace CarTender.Business.Concrete
 {
+    // todo: hata kodları düzeltilecek
+
     public class AuthManager : IAuthService
     {
         private readonly IUserService userService;
@@ -17,29 +20,38 @@ namespace CarTender.Business.Concrete
             this.tokenHelper = tokenHelper;
         }
 
-        public bool IsUserExist(string username)
+        // todo: dto almali
+        public IDataResult<AccessToken> Login(string email, string password)
         {
-            var user = userService.GetByUserName(username);
+            // geçici olarak yazıldı silinecek
+            string tempEmail = "testuser@hotmail.com";
+            string tempPassword = "1234Abc.";
 
-            if (user == null) return false;
-            return true;
+            if (email != tempEmail || password != tempPassword)
+            {
+                return new ErrorDataResult<AccessToken>("Kullanıcı bilgileri hatalı.",404);
+            }
+
+            return new SuccessDataResult<AccessToken>(CreateToken(new User()), "Token oluşturuldu.", 200);
+
+            // dapper eklenince açılacak.
+
+            //var result = userService.Get(u => u.Email == email);
+
+            //if (!result.Success) return new ErrorDataResult<AccessToken>(result.Message,404);
+
+            //if (!HashingHelper.VerifyPasswordHash(password, result.Data.PasswordHash, result.Data.PasswordSalt)) return new ErrorDataResult<AccessToken>("Kullanıcı adı veya şifre hatalı.",404);
+
+            //return new SuccessDataResult<AccessToken>(CreateToken(result.Data),"Token oluşturuldu.",200);
         }
 
         // todo: dto almali
-        public User Login(string username, string password)
+        public IResult Register(User user, string password)
         {
-            var user = userService.GetByUserName(username);
+            var userCheckResult = userService.IsUserExist(user.Email);
 
-            if (user == null) return null;
+            if (userCheckResult.Success) return new ErrorResult(userCheckResult.Message, userCheckResult.StatusCode);
 
-            if (!HashingHelper.VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt)) return null;
-
-            return user;
-        }
-
-        // todo: dto almali
-        public User Register(User user, string password)
-        {
             byte[] passwordSalt;
             byte[] passwordHash;
             HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
@@ -47,10 +59,11 @@ namespace CarTender.Business.Concrete
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
-            userService.Add(user);
-            return user;
-        }
+            var userAddResult = userService.Add(user);
 
+            if (userAddResult.Success) return new SuccessResult(userAddResult.Message, userAddResult.StatusCode);
+            return new ErrorResult(userAddResult.Message, userAddResult.StatusCode);
+        }
 
         public AccessToken CreateToken(User user)
         {

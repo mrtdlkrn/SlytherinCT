@@ -1,15 +1,13 @@
 ﻿using CarTender.Core.Security.JWT;
+using CarTender.Core.Utilities;
 using CT.Entities.Entities;
 
 namespace CarTender.Business.Abstract
 {
     public interface IAuthService
     {
-        User Register(User user, string password);
-        User Login(string username, string password);
-        bool IsUserExist(string username);
+        IResult Register(User user, string password);
+        IDataResult<AccessToken> Login(string email, string password);
         AccessToken CreateToken(User user);
-
-
     }
 }
