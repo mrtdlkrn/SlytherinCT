@@ -471,6 +471,10 @@
     <Content Include="Views\User\Messages.cshtml" />
     <Content Include="Views\User\BoughtCars.cshtml" />
     <Content Include="Views\User\SoldCars.cshtml" />
+    <Content Include="Views\User\Offers.cshtml" />
+    <Content Include="Views\User\Bids.cshtml" />
+    <Content Include="Views\User\Adverts.cshtml" />
+    <Content Include="Views\Advert\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
