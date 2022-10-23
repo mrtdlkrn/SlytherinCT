@@ -16,72 +16,125 @@
     <script src="~/Scripts/main.js"></script>
 </head>
 </div>
-<div class="card shadow mb-4">
+<div class="container-fluid">
     <h2 class="text-center">@ViewBag.Title</h2>
+    <div class="card shadow">
 
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Arama Kriterleri</h6>
-    </div>
-    <div class="card-body">
-        <form class="row">
-            <div class="col-md-3">
-                <div class="mb-3">
-                    <label for="exampleFormControlSelect1">Marka</label><select class="form-control" id="exampleFormControlSelect1">
-                        <option>Audi</option>
-                        <option>BMW</option>
-                        <option>Volkswagen</option>
-                        <option>Chevrolet</option>
-                        <option>Opel</option>
-                        <option>Peguot</option>
-                        <option>Renault</option>
-                        <option>Toyota</option>
-                    </select>
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Arama Kriterleri</h6>
+        </div>
+        <div class="card-body">
+            <form class="row">
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">Marka</label><select class="form-control" id="exampleFormControlSelect1">
+                            <option>Audi</option>
+                            <option>BMW</option>
+                            <option>Volkswagen</option>
+                            <option>Chevrolet</option>
+                            <option>Opel</option>
+                            <option>Peguot</option>
+                            <option>Renault</option>
+                            <option>Toyota</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="mb-3">
-                    <label for="exampleFormControlSelect1">Model</label><select class="form-control" id="exampleFormControlSelect1">
-                        <option>A7</option>
-                        <option>I5</option>
-                        <option>Clio</option>
-                        <option>Megane</option>
-                        <option>1 Serisi</option>
-                        <option>5 Serisi</option>
-                        <option>Golf</option>
-                        <option>Polo</option>
-                        <option>208</option>
-                        <option>Auris</option>
-                        <option>Corolla</option>
-                        <option>Astra</option>
-                    </select>
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">Model</label><select class="form-control" id="exampleFormControlSelect1">
+                            <option>A7</option>
+                            <option>I5</option>
+                            <option>Clio</option>
+                            <option>Megane</option>
+                            <option>1 Serisi</option>
+                            <option>5 Serisi</option>
+                            <option>Golf</option>
+                            <option>Polo</option>
+                            <option>208</option>
+                            <option>Auris</option>
+                            <option>Corolla</option>
+                            <option>Astra</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="mb-3">
-                    <label for="exampleFormControlSelect1">Bireysel / Kurumsal</label><select class="form-control" id="exampleFormControlSelect1">
-                        <option>Bireysel</option>
-                        <option>Kurumsal</option>
-                    </select>
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">Bireysel / Kurumsal</label><select class="form-control" id="exampleFormControlSelect1">
+                            <option>Bireysel</option>
+                            <option>Kurumsal</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="mb-3">
-                    <label for="exampleFormControlSelect1">Statü</label><select class="form-control" id="exampleFormControlSelect1">
-                        <option>Giriş</option>
-                        <option>Hemen Al Satışta</option>
-                        <option>İhalede</option>
-                        <option>Ekspertiz sonucu bekleniyor</option>
-                        <option>Satıldı</option>
-                        <option>Satış İptal</option>
-                    </select>
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">Statü</label><select class="form-control" id="exampleFormControlSelect1">
+                            <option>Giriş</option>
+                            <option>Hemen Al Satışta</option>
+                            <option>İhalede</option>
+                            <option>Ekspertiz sonucu bekleniyor</option>
+                            <option>Satıldı</option>
+                            <option>Satış İptal</option>
+                        </select>
+                    </div>
                 </div>
+                <div class="col-md-9 col-sm-0"></div>
+                <div class="col-md-3 col-sm-12">
+                    <button class="btn btn-info btn-block mb-2" style="background-color: #2E86C1 ;" type="button"><i class="fa-solid fa-list"></i>Listele</button>
+                </div>
+            </form>
+            <div class="mt-1 p-1" style="border:2px solid gray;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Araç Plaka</th>
+                            <th scope="col">Araç Marka</th>
+                            <th scope="col">Araç Model</th>
+                            <th scope="col">Bireysel / Kurumsal</th>
+                            <th scope="col">Statü</th>
+                            <th scope="col">Fiyat</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">16 E 987</td>
+                            <td>Toyota</td>
+                            <td>Yaris</td>
+                            <td>Bireysel</td>
+                            <td>Satışta</td>
+                            <td>255.000 TL</td>
+                            <td>
+                                <a class="btn btn-warning col-md-12" href="http://localhost:60964/Car/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">16 E 987</td>
+                            <td>Toyota</td>
+                            <td>Yaris</td>
+                            <td>Bireysel</td>
+                            <td>Satışta</td>
+                            <td>255.000 TL</td>
+                            <td>
+                                <a class="btn btn-warning col-md-12" href="http://localhost:60964/Car/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">16 E 987</td>
+                            <td>Toyota</td>
+                            <td>Yaris</td>
+                            <td>Bireysel</td>
+                            <td>Satışta</td>
+                            <td>255.000 TL</td>
+                            <td>
+                                <a class="btn btn-warning col-md-12" href="http://localhost:60964/Car/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="col-md-9 col-sm-0"></div>
-            <div class="col-md-3 col-sm-12">
-                <button class="btn btn-info btn-block" style="background-color: #2E86C1 ;" type="button"><i class="fa-solid fa-list"></i>Listele</button>
-            </div>
-        </form>
-    </div>
 
+        </div>
+
+    </div>
 
 </div>
