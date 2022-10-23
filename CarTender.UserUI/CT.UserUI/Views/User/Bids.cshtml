@@ -36,6 +36,7 @@
                                 <th scope="col">İhale Bitiş</th>
                                 <th scope="col">Statü</th>
                                 <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,15 +49,8 @@
                                 <td>
                                     <a class="btn btn-warning col-md-12" href="http://localhost:60964/Bid/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>23/10/2020 Toyota İhalesi</td>
-                                <td>Bireysel</td>
-                                <td>26/09/2020</td>
-                                <td>27/09/2020</td>
-                                <td>Sonlandı</td>
                                 <td>
-                                    <a class="btn btn-warning col-md-12" href="http://localhost:60964/Bid/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                                    <button class="btn btn-success col-md-12" type="submit" data-toggle="modal" data-target="#getOffers"><i class="fa-solid"></i> Yapılan Teklifler</button>
                                 </td>
                             </tr>
                             <tr>
@@ -68,15 +62,8 @@
                                 <td>
                                     <a class="btn btn-warning col-md-12" href="http://localhost:60964/Bid/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>23/10/2020 Toyota İhalesi</td>
-                                <td>Bireysel</td>
-                                <td>26/09/2020</td>
-                                <td>27/09/2020</td>
-                                <td>Sonlandı</td>
                                 <td>
-                                    <a class="btn btn-warning col-md-12" href="http://localhost:60964/Bid/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                                    <button class="btn btn-success col-md-12" type="submit" data-toggle="modal" data-target="#getOffers"><i class="fa-solid"></i> Yapılan Teklifler</button>
                                 </td>
                             </tr>
                             <tr>
@@ -87,6 +74,35 @@
                                 <td>Sonlandı</td>
                                 <td>
                                     <a class="btn btn-warning col-md-12" href="http://localhost:60964/Bid/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success col-md-12" type="submit" data-toggle="modal" data-target="#getOffers"><i class="fa-solid"></i> Yapılan Teklifler</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23/10/2020 Toyota İhalesi</td>
+                                <td>Bireysel</td>
+                                <td>26/09/2020</td>
+                                <td>27/09/2020</td>
+                                <td>Sonlandı</td>
+                                <td>
+                                    <a class="btn btn-warning col-md-12" href="http://localhost:60964/Bid/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success col-md-12" type="submit" data-toggle="modal" data-target="#getOffers"><i class="fa-solid"></i> Yapılan Teklifler</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>23/10/2020 Toyota İhalesi</td>
+                                <td>Bireysel</td>
+                                <td>26/09/2020</td>
+                                <td>27/09/2020</td>
+                                <td>Sonlandı</td>
+                                <td>
+                                    <a class="btn btn-warning col-md-12" href="http://localhost:60964/Bid/Details/1"><i class="fa-solid" style="color:black;"></i>Görüntüle</a>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success col-md-12" type="submit" data-toggle="modal" data-target="#getOffers"><i class="fa-solid"></i> Yapılan Teklifler</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -140,12 +156,12 @@
     </div>
 </div>
 
-<div class="modal fade" id="getOffers" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" id="getOffers" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Yapılan Teklifler</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close" onclick="$('#getOffers').click();">
                     <i class="fa-solid fa-x"></i>
                 </button>
             </div>
@@ -157,26 +173,35 @@
                                 <thead>
                                     <tr>
                                         <th>Teklif Yapan Kullanıcı</th>
-                                        <th>Teklif</th>
+                                        <th>İhaleye Yapılan Toplam Teklif</th>
                                         <th>Teklif Tarihi</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Hikmet S.</td>
-                                        <td>101.000</td>
+                                        <td>Kazım F.</td>
+                                        <td>550.000</td>
                                         <td>06.10.2022</td>
-
+                                        <td>
+                                            <button class="btn btn-success col-md-12" type="submit" data-toggle="modal" data-target="#getOfferDetails"><i class="fa-solid"></i>Teklif Detayı</button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>Mahmut N</td>
-                                        <td>104.000</td>
+                                        <td>Mehmet C.</td>
+                                        <td>575.000</td>
                                         <td>07.10.2022</td>
+                                        <td>
+                                            <button class="btn btn-success col-md-12" type="submit" data-toggle="modal" data-target="#getOfferDetails"><i class="fa-solid"></i>Teklif Detayı</button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>Özgür T.</td>
-                                        <td>105.000</td>
+                                        <td>Kerem V.</td>
+                                        <td>545.000</td>
                                         <td>07.10.2022</td>
+                                        <td>
+                                            <button class="btn btn-success col-md-12" type="submit" data-toggle="modal" data-target="#getOfferDetails"><i class="fa-solid"></i>Teklif Detayı</button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -187,5 +212,71 @@
         </div>
     </div>
 </div>
+
+
+
+
+<div class="modal" id="getOfferDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Teklif Detayı</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close" onclick="$('#getOfferDetails').click();">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body col-md-12">
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Teklif Yapan Kullanıcı:</label>
+                    </div>
+                    <input disabled type="text" value="Kazım F."/>
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">İhaleye Yapılan Toplam Teklif:</label>
+                    </div>                    
+                    <input disabled type="text" value="575.000" />
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Teklif Tarihi:</label>
+                    </div>
+                    <input disabled type="text" value="06.10.2022" />
+                </div>
+                <div class="input-group mb-3 col-md-12">
+                    <table class="table table-border" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Araç Plaka</th>
+                                <th>Marka</th>
+                                <th>Model</th>
+                                <th>Fiyat</th>
+                                <th>Yapılan Teklif</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>34 AF 123</td>
+                                <td>Fiat</td>
+                                <td>Egea</td>
+                                <td>310.000</td>
+                                <td>325.000</td>
+                            </tr>
+                            <tr>
+                                <td>16 E 987</td>
+                                <td>Toyota</td>
+                                <td>Yaris</td>
+                                <td>255.000</td>
+                                <td>250.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
