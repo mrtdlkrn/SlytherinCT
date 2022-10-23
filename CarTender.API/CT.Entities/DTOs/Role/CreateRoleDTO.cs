@@ -1,4 +1,4 @@
-﻿namespace CT.Entities.DTOs.Authorization
+﻿namespace CT.Entities.DTOs.Role
 {
     public class CreateRoleDTO
     {
