@@ -2,5 +2,6 @@
 {
     public class AdvertStatusHistory
     {
+        public int ID { get; set; }
     }
 }

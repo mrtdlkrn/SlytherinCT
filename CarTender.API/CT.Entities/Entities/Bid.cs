@@ -2,5 +2,6 @@
 {
     public class Bid
     {
+        public int ID { get; set; }
     }
 }
