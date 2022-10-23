@@ -45,20 +45,6 @@ namespace CarTender.API.Controllers
         [HttpPost("Login")]
         public IActionResult Login(LoginDTO dto)
         {
-            //string email = "testuser@hotmail.com";
-            //string password = "1234Abc.";
-
-            //if (dto.Password != password || dto.Email != email)
-            //{
-            //    _logger.Log("hatalı kullanıcı girişi");
-            //    return BadRequest("kullanıcı bilgileri hatalı.");
-            //}
-
-            //_logger.Log(email + " kullanıcı giriş yaptı.");
-            //// if user exists
-            //var token = authService.CreateToken(new User());
-            //return Ok(new SuccessDataResult<AccessToken>(token, "Kullanıcı giriş yaptı", 200));
-
             var loginResult = authService.Login(dto.Email, dto.Password);
 
             if (!loginResult.Success)
