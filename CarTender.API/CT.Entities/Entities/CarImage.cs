@@ -2,5 +2,6 @@
 {
     public class CarImage
     {
+        public int ID { get; set; }
     }
 }

@@ -4,7 +4,7 @@ namespace CT.Entities.Entities
 {
     public class Car
     {
-        public Guid ID { get; set; }
+        public int ID { get; set; }
 
         public int Year { get; set; }
 
