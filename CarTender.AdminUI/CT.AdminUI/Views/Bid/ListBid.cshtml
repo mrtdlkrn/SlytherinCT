@@ -1,60 +1,72 @@
-﻿@{
-    ViewData["Title"] = "ListBid";
+﻿@using Entity.DTO.Bid
+@using Entity.DTO.Pagination
+@using System.Reflection
+@model List<BidListDTO>
+@{
+    ViewData["Title"] = "İhale Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<string> tempList = new List<string>();
-    tempList.Add("hede:");
-    tempList.Add("bidi:");
+
+    List<string> heads = new List<string>();
+    List<object> datas = new List<object>();
+
+    foreach (var item in typeof(BidListDTO).GetProperties())
+    {
+        heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
+    foreach (var item in Model)
+    {
+        datas.Add(item);
+    }
 }
 <div class="container-fluid p-5">
+
+    <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">İhale Tanımlama / Listeleme</h1>
+    <p class="mb-4">
+        Kullanıcıların eklemiş olduğu ihaleleri buradan inceleyebilir ve düzenleyebilirsiniz.
+    </p>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Kriterler</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Arama Kriterleri</h6>
         </div>
         <div class="card-body">
-            <form class="row">
+            <form class="row" asp-controller="Bid" asp-action="ListBid" method="post" enctype="multipart/form-data">
                 <div class="col-md-3">
                     <div class="mb-3">
-                        <div class="row align-items-center">
-                            <label class="col-md-3">İhale Adı: </label>
-                            <input type="text" @*asp-for="Brand"*@ value="" class="form-control col-md-7" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="mb-3 ml-1">
-                        <div class="row align-items-center">
-                            <label class="col-md-6" for="inputGroupSelect01">Bireysel/Kurumsal:</label>
-                            <select class="form-control col-md-4 custom-select" id="inputGroupSelect01">
-                                <option selected disabled>Seçiniz...</option>
-                                <option value="1">Bireysel</option>
-                                <option value="2">Kurumsal</option>
-                            </select>
-                        </div>
+                        <label for="exampleFormControlSelect1">İhale Adı</label>
+                        <input class="form-control" id="exampleFormControlSelect1" type="text" />
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="mb-3">
-                        <div class="row align-items-center">
-                            <label class="col-md-3">Statü: </label>
-                            <select class="form-control col-md-4 custom-select" id="inputGroupSelect01">
-                                <option selected disabled>Seçiniz...</option>
-                                <option value="1">Başlamadı</option>
-                                <option value="2">Başladı</option>
-                                <option value="3">Bitti</option>
-                                <option value="4">İptal</option>
-                            </select>
-                        </div>
+                        <label for="exampleFormControlSelect1">Bireysel / Kurumsal</label><select class="form-control" id="exampleFormControlSelect1">
+                            <option>Bireysel</option>
+                            <option>Kurumsal</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="mb-3">
-                        <div class="row align-items-center">
-                            <button class="btn btn-info btn-block col-md-6" style="background-color: #2E86C1 ;" type="button"><i class="fa-solid fa-list" style="color:white;"></i> Listele</button>
-                        </div>
+                        <label for="exampleFormControlSelect1">Statü</label><select class="form-control" id="exampleFormControlSelect1">
+                            <option>Başlamadı</option>
+                            <option>Başladı</option>
+                            <option>Bitti</option>
+                            <option>İptal</option>
+                        </select>
                     </div>
+                </div>
+                <div class="col-md-9 col-sm-0"></div>
+                <div class="col-md-3 col-sm-12">
+                    <button class="btn btn-info btn-block" style="background-color: #2E86C1 ;" type="submit"><i class="fa-solid fa-list" style="color:white;"></i>  Listele</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <div class="row mb-4 clearfix">
+        <div class="col-md-3 float-right">
+            @await Component.InvokeAsync("AddButton", new{IsHref=true,LinkHref="",ControllerName="Car",ActionName="Add", ButtonName="İhale Oluştur", ModalID=""})
         </div>
     </div>
 
@@ -63,90 +75,21 @@
             <h6 class="m-0 font-weight-bold text-primary">İhale Listesi</h6>
         </div>
         <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th scope="col">İhale Adı</th>
-                            <th scope="col">Bireysel/Kurumsal</th>
-                            <th scope="col">İhale Başlangıç</th>
-                            <th scope="col">İhale Bitiş</th>
-                            <th scope="col">Statü</th>
-                            <th scope="col">Kaydeden Kullanıcı</th>
-                            <th scope="col">Kaydetme Zamanı</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>23/10/2020 Toyota İhalesi</td>
-                            <td>Bireysel</td>
-                            <td>26/09/2020</td>
-                            <td>27/09/2020</td>
-                            <td>Sonlandı</td>
-                            <td>Ahmet K</td>
-                            <td>2020/05/10-11:00</td>
-                            <td><button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBid6"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
-                            <td><button type="button" class="btn btn-danger align-content-center" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBid"><i class="far fa-trash-alt"></i> Sil</button></td>
-                        </tr>
-                        <tr>
-                            <td>23/10/2020 Toyota İhalesi</td>
-                            <td>Bireysel</td>
-                            <td>26/09/2020</td>
-                            <td>27/09/2020</td>
-                            <td>Sonlandı</td>
-                            <td>Ahmet K</td>
-                            <td>2020/05/10-11:00</td>
-                            <td><button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBid6"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
-                            <td><button type="button" class="btn btn-danger align-content-center" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBid"><i class="far fa-trash-alt"></i> Sil</button></td>
-                        </tr>
-                        <tr>
-                            <td>23/10/2020 Toyota İhalesi</td>
-                            <td>Bireysel</td>
-                            <td>26/09/2020</td>
-                            <td>27/09/2020</td>
-                            <td>Sonlandı</td>
-                            <td>Ahmet K</td>
-                            <td>2020/05/10-11:00</td>
-                            <td><button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBid6"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
-                            <td><button type="button" class="btn btn-danger align-content-center" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBid"><i class="far fa-trash-alt"></i> Sil</button></td>
-                        </tr>
-                        <tr>
-                            <td>23/10/2020 Toyota İhalesi</td>
-                            <td>Bireysel</td>
-                            <td>26/09/2020</td>
-                            <td>27/09/2020</td>
-                            <td>Sonlandı</td>
-                            <td>Ahmet K</td>
-                            <td>2020/05/10-11:00</td>
-                            <td>
-                                <button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBid6"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button>
-                            </td>
-                            <td><button type="button" class="btn btn-danger align-content-center" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBid"><i class="far fa-trash-alt"></i> Sil</button></td>
-                        </tr>
-                        <tr>
-                            <td>23/10/2020 Toyota İhalesi</td>
-                            <td>Bireysel</td>
-                            <td>26/09/2020</td>
-                            <td>27/09/2020</td>
-                            <td>Sonlandı</td>
-                            <td>Ahmet K</td>
-                            <td>2020/05/10-11:00</td>
-                            <td><button type="button" class="btn btn-warning" id="myInput" data-bs-toggle="modal" data-bs-target="#editBid6"><i class="fa-solid fa-pen-to-square" style="color:black;"></i> Güncelle</button></td>
-                            <td><button type="button" class="btn btn-danger align-content-center" id="myInput" data-bs-toggle="modal" data-bs-target="#deleteBid"><i class="far fa-trash-alt"></i> Sil</button></td>
-                        </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class=" float-right mt-3">
-                <button class="btn btn-success mt-4" type="submit"><i class="fa-solid fa-plus"></i> Yeni İhale Ekle</button>
-            </div>
+            @await Component.InvokeAsync("BaseTable",
+            new{
+            TableID = "myTable1",
+            EditIsModal = false,
+            EditBtnModalID = "",
+            EditBtnController="Car",
+            EditBtnAction="Edit",
+            DeleteBtnModalID="deleteCar",
+            TableHeads=heads,
+            TableDatas=datas
+            })
         </div>
     </div>
 </div>
 
-@await Component.InvokeAsync("DeleteModal", new{title = "İhaleyi Sil", body="İhaleyi silmek istediğinize emin misiniz?", id="deleteBid"})
-@await Component.InvokeAsync("ActivationModal", new{title = "İhale Aktif Et", body="İhaleyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@*@await Component.InvokeAsync("EditModal", new {modalID="editBid6", modalTitle="İhale Güncelle",labelStrs=tempList})*@
+@await Component.InvokeAsync("DeleteModal", new{title = "İhaleyi Sil", body="İhaleyi silmek istediğinize emin misiniz?", id="deleteCar"})
+
+@await Component.InvokeAsync("ActivationModal", new{title = "İhaleyi Aktif Et", body="İhaleyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})

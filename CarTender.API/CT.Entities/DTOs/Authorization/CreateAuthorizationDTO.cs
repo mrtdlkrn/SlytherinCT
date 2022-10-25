@@ -1,6 +1,6 @@
 ﻿namespace CT.Entities.DTOs.Authorization
 {
-    public class CreateAuthorizationDTO
+    public class CreateAdvertDTO
     {
         public string Name { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using CarTender.Core.Utilities;
 using CT.Entities.DTOs.Advert;
+using CT.Entities.DTOs.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -20,13 +21,36 @@ namespace CT.API.Controllers.AdminControllers
             return Ok(new SuccessDataResult<List<ListAdvertDTO>>(adverts, "İlanlar listelendi", 200));
         }
 
-
         [HttpPost("Create")]
-        public IActionResult Create()
+        public IActionResult Create(CreateAdvertDTO dto)
         {
-            return Ok();
+            return Ok(new SuccessResult("İlan Ekleme Başarılı", 200));
         }
 
+        [HttpPost("Update")]
+        public IActionResult Update(UpdateAdvertDTO dto)
+        {
+            return Ok(new SuccessResult("İlan Güncelleme Başarılı", 200));
+        }
 
+        [HttpPost("Delete")]
+        public IActionResult Delete(object advertID)
+        {
+            return Ok(new SuccessResult("İlan Silme Başarılı", 200));
+        }
+
+        [HttpGet("GetByID")]
+        public IActionResult GetByID(object advertID)
+        {
+            return Ok(new SuccessResult("İlan Detay Getirme Başarılı", 200));
+        }
+
+        // plaka ile de olabilir.
+
+        [HttpGet("GetByCarID")]
+        public IActionResult GetByCarID(object carID)
+        {
+            return Ok(new SuccessResult("Araç ID ile Tarihçe Detay Getirme Başarılı", 200));
+        }
     }
 }
