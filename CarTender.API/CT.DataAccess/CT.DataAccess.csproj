@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CT.Core\CT.Core.csproj" />
     <ProjectReference Include="..\CT.Entities\CT.Entities.csproj" />
   </ItemGroup>
 

@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Common.Abstract;
 using CT.AdminUI.Models;
 using Entity.DTO.Auth;
 using Entity.DTO.Bid;
@@ -17,7 +18,7 @@ namespace CT.AdminUI.Controllers
 {
     public class GenericController : Controller
     {
-        private readonly IApiService _apiService;
+        private readonly IBaseAPIService _apiService;
         private readonly IMappingService _mappingService;
         private readonly IDictionary<string, string> _routes;
         //Todo: token duzenlenecek, giris islemi yapildiktan sonra cookiden alinacak
@@ -29,7 +30,7 @@ namespace CT.AdminUI.Controllers
             ExpireTime = DateTime.Now.AddHours(1)
         };
 
-        public GenericController(IApiService apiService, IMappingService mappingService, IApiRoutes routes)
+        public GenericController(IBaseAPIService apiService, IMappingService mappingService, IApiRoutes routes)
         {
             _apiService = apiService;
             _mappingService = mappingService;

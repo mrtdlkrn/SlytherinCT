@@ -1,4 +1,6 @@
 ﻿using CarTender.Core.Utilities;
+using CT.Business.Abstract;
+using CT.DataAccess.Concrete.Dapper;
 using CT.Entities.Bid;
 using CT.Entities.Car;
 using CT.Entities.DTOs.Car;
@@ -6,6 +8,7 @@ using CT.Entities.DTOs.CarModification;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CT.API.Controllers.AdminControllers
 {
@@ -14,6 +17,13 @@ namespace CT.API.Controllers.AdminControllers
     public class CarController : ControllerBase
     {
         // GET: CarController
+
+        private readonly ICarService _carService;
+
+        public CarController(ICarService carService)
+        {
+            _carService = carService;
+        }
 
         [HttpGet("GetAll")]
         public IActionResult GetAll()
@@ -187,6 +197,15 @@ namespace CT.API.Controllers.AdminControllers
         public IActionResult GetModifications(object carID)
         {
             return Ok(new SuccessResult("Modifiyeleri Listeleme Başarılı", 200));
+        }
+
+        [HttpGet("GetListYear")]
+        public async Task<IActionResult> GetListCarDetail()
+        {
+            var result = await _carService.GetListCarDetail();
+            if (!result.Success) 
+                return BadRequest(result);
+            return Ok(result);
         }
 
         //[HttpPost("AddModificationToCar")]

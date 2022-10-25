@@ -24,8 +24,8 @@ namespace CarTender.Business.Concrete
         public IDataResult<AccessToken> Login(string username, string password)
         {
             // geçici olarak yazıldı silinecek
-            string tempUsername = "testuser";
-            string tempPassword = "1234Abc.";
+            string tempUsername = "slytherin@gmail.com";
+            string tempPassword = "Sly.1234";
 
             if (username != tempUsername || password != tempPassword)
             {

@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using CarTender.FluentValidation.VAL.AdminVAL.Register;
 using CarTender.FluentValidation.DTO.AdminDTO.Register;
 using CarTender.FluentValidation.VAL.AdminVAL.ForgotPassword;
+using Microsoft.AspNetCore.Http;
+using Microsoft.CodeAnalysis.Options;
 
 namespace CT.AdminUI.Controllers
 {
@@ -56,7 +58,10 @@ namespace CT.AdminUI.Controllers
                 var result = await _apiService.Login(dto);
                 if (result!=null)
                 {
-                    //cookieHelper.SetCookie();
+                    HttpContextAccessor httpContextAccessor = new HttpContextAccessor();
+                    CookieOptions cookieOptions = new CookieOptions();
+                    cookieOptions.Expires = result.Data.ExpireTime;
+                    httpContextAccessor.HttpContext.Response.Cookies.Append("token", result.Data.Token, cookieOptions);
                     return RedirectToAction("Index","Admin");
                 }
 
