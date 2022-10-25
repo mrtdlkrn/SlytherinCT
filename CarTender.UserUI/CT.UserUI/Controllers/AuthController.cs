@@ -8,7 +8,9 @@ using FluentValidation.Results;
 using System;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace CT.UserUI.Controllers
 {
@@ -66,7 +68,10 @@ namespace CT.UserUI.Controllers
             httpCookie.Expires = loginResult.Data.ExpireTime;
             httpCookie.Values.Add("token", loginResult.Data.Token);
             HttpContext.Response.Cookies.Add(httpCookie);
-            
+
+            FormsAuthentication.SetAuthCookie(dto.Username,false);
+            Session["User"] = dto;
+
             return RedirectToAction("Index","Home");
         }
 
@@ -75,15 +80,14 @@ namespace CT.UserUI.Controllers
         [HttpGet]
         public ActionResult Logout()
         {
-            // todo: çerezler, session, token temizlenmeli.
-            //httpCookie.Expires = DateTime.Now.AddDays(-1); silmek için bu şekilde kullanırız
-
             if (HttpContext.Request.Cookies["Bid"] != null)
             {
                 HttpCookie myCookie = HttpContext.Request.Cookies["Bid"];
                 myCookie.Expires = DateTime.Now.AddDays(-999);
                 Response.Cookies.Add(myCookie);
             }
+
+            FormsAuthentication.SignOut();
 
             return RedirectToAction("Login");
         }

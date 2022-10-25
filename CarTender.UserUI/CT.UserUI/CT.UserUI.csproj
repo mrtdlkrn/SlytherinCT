@@ -237,6 +237,8 @@
     <Content Include="Content\MyCss\EmailVerification\EmailVerification.css" />
     <Content Include="Content\MyCss\ForgotPassword\ForgotPassword.css" />
     <Content Include="Content\MyCss\Login\Login.css" />
+    <Content Include="Content\MyCss\NotFound\NotFound.css" />
+    <Content Include="Content\MyCss\NotFound\NotFound.js" />
     <Content Include="Content\MyCss\ResetPassword\ResetPassword.css" />
     <Content Include="Content\MyCss\SignUp\CompanySignUp\CompanySignUp.css" />
     <Content Include="Content\MyCss\SignUp\CustomerSignUp\CustomerSignUp.css" />
@@ -475,6 +477,7 @@
     <Content Include="Views\User\Bids.cshtml" />
     <Content Include="Views\User\Adverts.cshtml" />
     <Content Include="Views\Advert\Create.cshtml" />
+    <Content Include="Views\Home\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
