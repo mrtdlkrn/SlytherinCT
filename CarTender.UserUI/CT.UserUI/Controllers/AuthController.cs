@@ -4,11 +4,11 @@ using Common.Concrete;
 using CT.UserUI.Logging.Concrete;
 using Entity.DTO;
 using Entity.DTO.Auth;
-using FluentValidation.Results;
 using System;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace CT.UserUI.Controllers
 {
@@ -62,11 +62,13 @@ namespace CT.UserUI.Controllers
             }
 
             //_logger.Log(username + " kullanıcı giriş yaptı. - USERUI");
-            HttpCookie httpCookie = new HttpCookie("Bid");
-            httpCookie.Expires = loginResult.Data.ExpireTime;
-            httpCookie.Values.Add("token", loginResult.Data.Token);
-            HttpContext.Response.Cookies.Add(httpCookie);
-            
+            HttpCookie httpCookie = new HttpCookie("BidToken",loginResult.Data.Token);
+            httpCookie.Expires = loginResult.Data.ExpireTime.ToUniversalTime().ToLocalTime();
+            Response.Cookies.Add(httpCookie);
+
+            FormsAuthentication.SetAuthCookie(dto.Username,false);
+            Session["User"] = dto;
+
             return RedirectToAction("Index","Home");
         }
 
@@ -75,15 +77,14 @@ namespace CT.UserUI.Controllers
         [HttpGet]
         public ActionResult Logout()
         {
-            // todo: çerezler, session, token temizlenmeli.
-            //httpCookie.Expires = DateTime.Now.AddDays(-1); silmek için bu şekilde kullanırız
-
-            if (HttpContext.Request.Cookies["Bid"] != null)
+            if (HttpContext.Request.Cookies["BidToken"] != null)
             {
-                HttpCookie myCookie = HttpContext.Request.Cookies["Bid"];
+                HttpCookie myCookie = HttpContext.Request.Cookies["BidToken"];
                 myCookie.Expires = DateTime.Now.AddDays(-999);
                 Response.Cookies.Add(myCookie);
             }
+
+            FormsAuthentication.SignOut();
 
             return RedirectToAction("Login");
         }
@@ -207,5 +208,6 @@ namespace CT.UserUI.Controllers
         }
 
         #endregion
+
     }
 }
