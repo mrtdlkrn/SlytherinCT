@@ -1286,3 +1286,79 @@ Error Number:2812,State:62,Class:16
 ClientConnectionId:15456c38-d6d1-4fe2-9f15-679ba43388c9
 Error Number:2812,State:62,Class:16
 2022-10-21 12:11:36.2590 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=E:\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-22 16:06:39.7645 Info Message Template Auto Format enabled
+2022-10-22 16:06:39.8188 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-22 16:06:40.1292 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-22 16:06:40.2095 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=E:\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-22 16:06:41.6350 Error DatabaseTarget(Name=dbhede): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'dbo.NLog_AddEntry_p'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:aba93151-f4a8-4783-b935-7564cc13ac59
+Error Number:2812,State:62,Class:16
+2022-10-22 16:06:42.7509 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=E:\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-25 15:49:33.1322 Info Message Template Auto Format enabled
+2022-10-25 15:49:33.1696 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-25 15:49:33.4983 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-25 15:49:33.5862 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=E:\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-25 15:49:35.2325 Error DatabaseTarget(Name=dbhede): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'dbo.NLog_AddEntry_p'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:55279885-1ea2-4c6b-a7aa-8cf4d7e688d5
+Error Number:2812,State:62,Class:16
+2022-10-25 15:49:36.4254 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=E:\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-25 17:32:00.5395 Info Message Template Auto Format enabled
+2022-10-25 17:32:00.5732 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-25 17:32:00.6892 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-25 17:32:00.7306 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=E:\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-25 17:32:01.5841 Error DatabaseTarget(Name=dbhede): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'dbo.NLog_AddEntry_p'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:6489f933-9b5b-4113-aa8b-791e17c9391d
+Error Number:2812,State:62,Class:16
+2022-10-25 17:32:02.2210 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=E:\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-25 18:09:48.3245 Info Message Template Auto Format enabled
+2022-10-25 18:09:48.3579 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-25 18:09:48.4869 Info Adding target DatabaseTarget(Name=dbhede)
+2022-10-25 18:09:48.5384 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=E:\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+2022-10-25 18:09:49.2568 Error DatabaseTarget(Name=dbhede): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'dbo.NLog_AddEntry_p'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:052bd462-8e57-4e84-ae25-16ab3cca600c
+Error Number:2812,State:62,Class:16
+2022-10-25 18:09:49.7905 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=E:\repos\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config

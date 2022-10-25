@@ -6,18 +6,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 
-    EditBrandDTO editBrandDTO = new EditBrandDTO();
-    editBrandDTO.Name = "Ford";
+    //EditBrandDTO editBrandDTO = new EditBrandDTO();
+    //editBrandDTO.Name = "Ford";
 
-    AddModelDTO addModelDTO = new AddModelDTO();
-    addModelDTO.Brands = new List<string>() { "Ford", "Mercedes", "BMW", "Audi" };
+    //AddModelDTO addModelDTO = new AddModelDTO();
+    //addModelDTO.Brands = new List<string>() { "Ford", "Mercedes", "BMW", "Audi" };
 
-    EditModelDTO editModelDTO = new EditModelDTO();
-    editModelDTO.Brands = new List<string>() { "Ford", "Mercedes", "BMW", "Audi" };
-    editModelDTO.Name = "Test Model";
+    //EditModelDTO editModelDTO = new EditModelDTO();
+    //editModelDTO.Brands = new List<string>() { "Ford", "Mercedes", "BMW", "Audi" };
+    //editModelDTO.Name = "Test Model";
 
-    var hede = Model.AddBrand;
+    //var hede = Model;
 }
+@model AddBrandDTO
+<head>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</head>
 
 <div class="container-fuild p-5">
     <h1 class="h3 mb-2 text-gray-800">Marka Model Sayfası</h1>
@@ -195,13 +201,22 @@
         </div>
     </form>
 </div>
+<script type="text/javascript">
+    function OnBegin() {
+        $("#addBrand").show();
+    }
+
+    function OnFailure(response) {
+        alert("Error occured.");
+    }
+</script>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Modeli Sil", body="Modeli silmek istediğinize emin misiniz?", id="deleteModel"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Markayı Sil", body="Markayı silmek istediğinize emin misiniz?", id="deleteBrand"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Marka Aktif Et", body="Markayı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Model Aktif Et", body="Model, aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
-@await Component.InvokeAsync("AddModal", new {modalID = "addBrand",modalTitle = "Yeni Marka Ekle", dto= hede, ActionName="AddBrand",ControllerName = "Car"})
-@await Component.InvokeAsync("EditModal", new {modalID="editBrand", modalTitle="Marka Güncelle",dto=editBrandDTO, ActionName="EditBrand",ControllerName = "Car"})
-@await Component.InvokeAsync("AddModal", new{modalID = "addModel",modalTitle = "Yeni Model Ekle", dto = addModelDTO, ActionName="AddModel",ControllerName = "Car"})
-@await Component.InvokeAsync("EditModal", new {modalID="editModel", modalTitle="Model Güncelle",dto=editModelDTO, ActionName="EditModel",ControllerName = "Car"})
+@await Component.InvokeAsync("AddModal", new {modalID = "addBrand",modalTitle = "Yeni Marka Ekle", dto= Model, ActionName="AddBrand",ControllerName = "Car"})
+@await Component.InvokeAsync("EditModal", new {modalID="editBrand", modalTitle="Marka Güncelle",dto=Model, ActionName="EditBrand",ControllerName = "Car"})
+@await Component.InvokeAsync("AddModal", new{modalID = "addModel",modalTitle = "Yeni Model Ekle", dto = Model, ActionName="AddModel",ControllerName = "Car"})
+@await Component.InvokeAsync("EditModal", new {modalID="editModel", modalTitle="Model Güncelle",dto=Model, ActionName="EditModel",ControllerName = "Car"})
 

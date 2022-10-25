@@ -12,7 +12,7 @@
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                     <a class="btn btn-light" data-toggle="collapse" data-target="#cbidindex1" aria-expanded="true" aria-controls="cbidindex1" role="button">İhaleler</a>
-                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#">
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addBid">
                         <i class="fa fa-plus"></i>
                     </button>
                 </h5>
@@ -53,40 +53,4 @@
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Teklif Sil", body="Teklif bilgisini silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Teklif Aktif Et", body="Teklifi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
-@*@await Component.InvokeAsync("EditModal", new {modalID="editBid5", modalTitle="Teklif Güncelle",labelStrs=tempList})*@
-@*<div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Teklifi Güncelle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Fiyat</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Aktif/ Pasit:</label>
-                    </div>
-                    <input type="radio" value="Evet" class="form-control col-md-8" />
-                    <input type="radio" value="Hayır" class="form-control col-md-8" />
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Versiyon</label>
-                    </div>
-                    <input type="text" value="" class="form-control col-md-8" />
-                </div>
-            </div>
-            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button><button class="btn btn-danger" type="button">Kaydet</button></div>
-        </div>
-    </div>
-
-</div>*@
+@*@await Component.InvokeAsync("AddModal", new {modalID = "addBid",modalTitle = "Yeni İhale Ekle", dto= Model, ActionName="Index",ControllerName = "Bid"})*@

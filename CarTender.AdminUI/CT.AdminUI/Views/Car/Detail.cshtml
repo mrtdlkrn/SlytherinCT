@@ -272,7 +272,7 @@
 @await Component.InvokeAsync("ActivationModal", new{title = "Detayı Aktif Et", body="Detayı aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Kategoriyi Aktif Et", body="Kategoriyi aktif hale getirmek istediğinize emin misiniz?", id="activation2"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Kategori Değerini Aktif Et", body="Kategori Değerini aktif hale getirmek istediğinize emin misiniz?", id="activation3"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "addCarDetail",modalTitle = "Yeni Kategori Ekle", dto = addCarDetailDTO})
+@await Component.InvokeAsync("AddModal", new {modalID = "addCarDetail",modalTitle = "Yeni Kategori Ekle", dto= addCarDetailDTO, ActionName="Detail",ControllerName = "Car"})
 @await Component.InvokeAsync("AddModal", new{ModalID = "addCarDetailValue",modalTitle = "Yeni Kategori Değeri Ekle", dto = addCarDetailValueDTO})
 @await Component.InvokeAsync("EditModal", new {modalID="editCarDetail", modalTitle="Araç Detayını Güncelle",dto=editCarDetailDTO})
 @await Component.InvokeAsync("EditModal", new {modalID="editCarDetailValue", modalTitle="Araç Detay Değerini Güncelle",dto=editCarDetailValueDTO})
