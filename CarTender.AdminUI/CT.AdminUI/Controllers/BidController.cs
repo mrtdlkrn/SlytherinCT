@@ -87,7 +87,9 @@ namespace CT.AdminUI.Controllers
 
         {
             TokenDTO tokenDTO = new TokenDTO();
-            var result = await _apiService.Post(tokenDTO, _routes["Create"], formCollection);
+
+            var result = await _apiService.Post(tokenDTO, _routes[""], formCollection);
+
             return View();
         }
 

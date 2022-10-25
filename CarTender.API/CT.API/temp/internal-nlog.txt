@@ -105,4 +105,6 @@ Error Number:-2146893019,State:0,Class:20
    at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
 ClientConnectionId:51a72423-8cc0-496f-8b7b-e176c9c2ac45
 Error Number:-2146893019,State:0,Class:20
+
 2022-10-26 01:01:55.2216 Info Validating config: TargetNames=dbhede, ConfigItems=33, FilePath=C:\Users\burka\Documents\GitHub\SlytherinCT\CarTender.API\CT.API\bin\Debug\net5.0\NLog.config
+
