@@ -2,6 +2,7 @@
 using CarTender.FluentValidation.DTO.AdminDTO.Car;
 using CarTender.FluentValidation.DTO.CombineDTO.Car;
 using CarTender.FluentValidation.VAL.CombineVAL.Car;
+using Castle.Core.Resource;
 using CT.AdminUI.Models.ModalDTOs;
 using Entity.DTO.Auth;
 using Entity.DTO.Brand;
@@ -12,6 +13,7 @@ using Entity.DTO.Model;
 using FluentValidation.AspNetCore;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -184,10 +186,7 @@ namespace CT.AdminUI.Controllers
             //var result = await _apiService.Get<ListBrandModelDTO>(tokenDTO, _routes["BrandModel"]);
             //todo : sayfaya veriler basılacak
 
-            return View(new BrandAndModelDTO
-            {
-                AddBrand = new AddBrandDTO()
-            });
+            return View(new AddBrandDTO());
         }
 
         [HttpPost]
@@ -207,7 +206,8 @@ namespace CT.AdminUI.Controllers
             return View(dto);
         }
         [HttpPost]
-        public async Task<IActionResult> AddBrand(BrandAndModelDTO dto)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddBrand(AddBrandDTO dto)
         {
             TokenDTO tokenDTO = new TokenDTO()
             {
@@ -216,16 +216,27 @@ namespace CT.AdminUI.Controllers
             ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
+            if (ModelState.IsValid)
+            {
+                ModelState.Clear();
+                return View("Index");
+            }
+            else
+            {
+                return View("BrandModel",dto);
+            }
+
             BrandVAL validations = new BrandVAL();
             ValidationResult validationResult = validations.Validate(new CarBrandDTO
             {
-                VehicleBrand = dto.AddBrand.Name,
+                VehicleBrand = dto.Name,
             });
             if (!validationResult.IsValid)
             {
                 validationResult.AddToModelState(this.ModelState);
 
-                return View("BrandModel", dto);
+                //return View("BrandModel", dto);
+                return Json(dto);
             }
             //var result = await _apiService.Post(tokenDTO, _routes["AddBrand"], dto);
             return RedirectToAction("BrandModel");
@@ -271,7 +282,17 @@ namespace CT.AdminUI.Controllers
             return RedirectToAction("BrandModel");
         }
 
+        [HttpGet]
         //[HttpGet("Detail/{id}")]
+        public async Task<IActionResult> Detail()
+        {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<ListCarDTO>(tokenDTO, _routes["Detail"]);
+            //todo : sayfaya veriler basılacak
+            return View();
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Detail(Guid id)
         {
             TokenDTO tokenDTO = new TokenDTO();
@@ -291,11 +312,39 @@ namespace CT.AdminUI.Controllers
         }
 
         // Car Modification
-        //[HttpGet("CarModification/{id}")]
+        [HttpGet("CarModification/{id}")]
         public async Task<IActionResult> CarModification(Guid id)
         {
             TokenDTO tokenDTO = new TokenDTO();
             var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarModification"]);
+            //todo : sayfaya veriler basılacak
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CarModification(int id)
+        {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarModification"]);
+            //todo : sayfaya veriler basılacak
+            return View();
+        }
+
+        // Car Commission
+        //[HttpGet("CarCommission/{id}")]
+        public async Task<IActionResult> CarCommission(Guid id)
+        {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarCommission"]);
+            //todo : sayfaya veriler basılacak
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CarCommission(int id)
+        {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Get<CarDetailDTO>(tokenDTO, _routes["CarCommission"]);
             //todo : sayfaya veriler basılacak
             return View();
         }
@@ -310,6 +359,7 @@ namespace CT.AdminUI.Controllers
             //todo : sayfaya veriler basılacak
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> AddCarBuyerInformation(AddCarBuyerInformationDTO dto)
         {

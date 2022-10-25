@@ -82,5 +82,5 @@
 
 @await Component.InvokeAsync("ActivationModal", new{title = "Araç Komisyonu'nu Aktif Et", body="Araç Komisyonu bilgisini aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("DeleteModal", new{title = "Araç Komisyonu'nu Sil", body="Komisyon bilgisini silmek istediğinize emin misiniz?", id="deleteCarCommission"})
-@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Komisyon Bilgisi Ekle", dto = addDto})
+@await Component.InvokeAsync("AddModal", new{ModalID = "add",modalTitle = "Komisyon Bilgisi Ekle", dto = addDto,ActionName="CarCommission",ControllerName = "Car"})
 @await Component.InvokeAsync("EditModal", new {modalID="editCarCommission", modalTitle="Komisyon Bilgisini Güncelle",dto=editDto})

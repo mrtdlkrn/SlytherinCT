@@ -23,6 +23,7 @@ namespace CT.API.Controllers.AdminControllers
             {
                 bidDTOs.Add(new ListBidDTO()
                 {
+                    ID = Guid.NewGuid(),
                     BidName = "Mert LTD",
                     IsActive = true,
                     CreatedDate = DateTime.Now,

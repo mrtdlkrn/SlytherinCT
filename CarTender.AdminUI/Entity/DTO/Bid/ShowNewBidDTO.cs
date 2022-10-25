@@ -6,6 +6,6 @@ namespace Entity.DTO.Bid
     public class ShowNewBidDTO
     {
         public List<ListCarDTO> CarList { get; set; }
-        public List<BidListDTO> Bids { get; set; }
+        public List<ListBidDTO> Bids { get; set; }
     }
 }

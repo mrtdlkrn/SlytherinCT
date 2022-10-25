@@ -1,11 +1,14 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entity.DTO.Car
 {
     public class ListCarDTO
     {
-        //public Guid CarID { get; set; }
+        [Key]
+        public Guid ID { get; set; }
+
         [DisplayName("Plaka")]
         public string Plate { get; set; }
 

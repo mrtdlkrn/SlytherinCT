@@ -172,6 +172,15 @@
         "GetUsersFavoriteCars": "api/User/FavoriteCars",
         "GetUsersCars": "api/User/cars"
       }
+    },
+    {
+      "ControllerName": "FlyPage",
+      "Actions": {
+        "ListCar": "api/Car/GetAll",
+        "ListBid": "api/Bid/GetAll",
+        "GetUsersFavoriteCars": "api/User/FavoriteCars",
+        "GetUsersCars": "api/User/cars"
+      }
     }
   ]
 }

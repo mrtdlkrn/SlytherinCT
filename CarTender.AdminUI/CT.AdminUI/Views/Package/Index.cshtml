@@ -1,4 +1,5 @@
-﻿@using Entity.DTO.Package
+﻿@using Entity.DTO.CorporatePackage
+@using Entity.DTO.Package
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,14 +9,27 @@
     List<string> heads = new List<string>();
     List<object> datas = new List<object>();
 
+    List<string> head = new List<string>();
+    List<object> data = new List<object>();
+
     foreach (var item in typeof(ListPackageDTO).GetProperties())
     {
         heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
     }
 
+    foreach (var item in typeof(ListCorporatePackageDTO).GetProperties())
+    {
+        head.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
+    }
+
     foreach (var item in Model)
     {
         datas.Add(item);
+    }
+
+    foreach (var item in Model)
+    {
+        data.Add(item);
     }
 
     #endregion
@@ -25,6 +39,9 @@
     EditPackageDTO editDto = new EditPackageDTO();
     editDto.Name = "test";
     //editDto.Capacity = 42;
+
+    AddCorporatePackageDTO addCorporatePackage = new AddCorporatePackageDTO();
+    EditCorporatePackageDTO editCorporatePackage = new EditCorporatePackageDTO();
 }
 
 <div class="container-fuild p-5">
@@ -55,9 +72,38 @@
             </div>
         </div>
     </div>
+    <div id="accordion" class="mb-5">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <a class="btn btn-light" data-toggle="collapse" data-target="#cp1" aria-expanded="true" aria-controls="cp1" role="button">Paketler</a>
+                    <button type="button" class="btn btn-outline-success ml-3" id="myInput" data-bs-toggle="modal" data-bs-target="#addCorporatePackage">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </h5>
+            </div>
+            <div id="cp1" class="collapse show p-3" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="p-3" style="border:2px solid gray; border-radius: .35rem;">
+                    @await Component.InvokeAsync("BaseTable",
+                    new{
+                    TableID = "myTable2",
+                    EditIsModal = true,
+                    EditBtnModalID = "editPackage",
+                    EditBtnController="",
+                    EditBtnAction="",
+                    DeleteBtnModalID="delete",
+                    TableHeads=head,
+                    TableDatas=data
+                    })
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @await Component.InvokeAsync("DeleteModal", new{title = "Paket Sil", body="Paketi silmek istediğinize emin misiniz?", id="delete"})
 @await Component.InvokeAsync("ActivationModal", new{title = "Paket Aktif Et", body="Paketi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
 @await Component.InvokeAsync("AddModal",  new {ModalID = "addPackage", modalTitle = "Yeni Paket Ekle", dto = addDto})
 @await Component.InvokeAsync("EditModal", new {modalID = "editPackage", modalTitle = "Paket Güncelle", dto = editDto})
+@await Component.InvokeAsync("AddModal",  new {ModalID = "addCorporatePackage", modalTitle = "Şirket Paketleri", dto = addCorporatePackage})
+@await Component.InvokeAsync("EditModal", new {modalID = "editPackage", modalTitle = "Paket Paketlerini Güncelle", dto = editCorporatePackage})
