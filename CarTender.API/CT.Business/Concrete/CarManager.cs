@@ -72,7 +72,7 @@ namespace CT.Business.Concrete
         {
             var carResult = carDAL.GetAsync(x => x.ID == (int)id);
 
-            if (carResult.Result == null) return new ErrorDataResult<Car("Araba bulunamadı.", 404);
+            if (carResult.Result == null) return new ErrorDataResult<Car>("Araba bulunamadı.", 404);
             return new SuccessDataResult<Car>(carResult.Result, "Araba getirildi.", 200);
         }
 

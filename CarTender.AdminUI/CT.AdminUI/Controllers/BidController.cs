@@ -115,11 +115,11 @@ namespace CT.AdminUI.Controllers
         //GET: List Bid Method
 
         [HttpGet]
-        public async Task<IActionResult> ListBid(List<BidListDTO> listDTO = null)
+        public async Task<IActionResult> ListBid(List<ListBidDTO> listDTO = null)
         {
             if (listDTO.Count <= 0)
             {
-                var result = await _apiService.Get<List<BidListDTO>>(tokenDTO, _routes["ListBid"]);
+                var result = await _apiService.Get<List<ListBidDTO>>(tokenDTO, _routes["ListBid"]);
                 if (result.Success)
                 {
                     listDTO = result.Data;
@@ -139,7 +139,7 @@ namespace CT.AdminUI.Controllers
             //CombineBidListVAL bidVAL = new CombineBidListVAL();
             //ValidationResult validationResult = bidVAL.Validate(_mappingService.GetModel<CombineBidDTO>(filteredBidInfo));
 
-            var result = await _apiService.Get1<List<BidListDTO>, BidFilterDTO>(tokenDTO, _routes["ListBidFilter"], _mappingService.GetModel<BidFilterDTO>(filteredBidInfo));
+            var result = await _apiService.Get1<List<ListBidDTO>, BidFilterDTO>(tokenDTO, _routes["ListBidFilter"], _mappingService.GetModel<BidFilterDTO>(filteredBidInfo));
 
             return View(result.Data);
         }

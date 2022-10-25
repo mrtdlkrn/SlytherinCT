@@ -72,7 +72,7 @@ namespace CT.Business.Concrete
         {
             var authorizationResult = authorizationDAL.GetAsync(x => x.ID == (int)id);
 
-            if (authorizationResult.Result == null) return new ErrorDataResult<Authorization("Yetki bulunamadı.", 404);
+            if (authorizationResult.Result == null) return new ErrorDataResult<Authorization>("Yetki bulunamadı.", 404);
             return new SuccessDataResult<Authorization>(authorizationResult.Result, "Yetki getirildi.", 200);
         }
 
