@@ -61,20 +61,19 @@ namespace CarTender.API.Controllers
         {
             User user = new()
             {
-                Id = 1,
                 Username = dto.Username,
                 Customername = dto.Customername,
                 Phone = dto.Phone,
                 Email = dto.Email
             };
 
-            var registerResult = authService.Register(user, dto.Password);
+            /*var registerResult = authService.Register(user, dto.Password);
 
             if (!registerResult.Success)
             {
                 _logger.Log("mevcut kullanıcı kayıt yapmaya çalıştı");
                 return BadRequest(registerResult.Message);
-            }
+            }*/
             
             var token = authService.CreateToken(user);
             List<string> eposta = new()
@@ -84,7 +83,7 @@ namespace CarTender.API.Controllers
 
             string domain = configuration.GetSection("Application:AppDomain").Value;
             string confirmationLink = domain + configuration.GetSection("Application:LoginPath").Value;
-            confirmationLink += configuration.GetSection("Application:EmailConfirmation").Value;
+            confirmationLink += configuration.GetSection("Application:EmailConfirmation").Value + user.Username + "&token=";
 
             MailInfo mailInfo = new()
             {
