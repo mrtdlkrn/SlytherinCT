@@ -21,13 +21,13 @@ namespace CarTender.Business.Concrete
         }
 
         // todo: dto almali
-        public IDataResult<AccessToken> Login(string email, string password)
+        public IDataResult<AccessToken> Login(string username, string password)
         {
             // geçici olarak yazıldı silinecek
-            string tempEmail = "testuser@hotmail.com";
+            string tempUsername = "testuser";
             string tempPassword = "1234Abc.";
 
-            if (email != tempEmail || password != tempPassword)
+            if (username != tempUsername || password != tempPassword)
             {
                 return new ErrorDataResult<AccessToken>("Kullanıcı bilgileri hatalı.",404);
             }
@@ -48,7 +48,7 @@ namespace CarTender.Business.Concrete
         // todo: dto almali
         public IResult Register(User user, string password)
         {
-            var userCheckResult = userService.IsUserExist(user.Email);
+            var userCheckResult = userService.GetByUserName(user.Username);
 
             if (userCheckResult.Success) return new ErrorResult(userCheckResult.Message, userCheckResult.StatusCode);
 

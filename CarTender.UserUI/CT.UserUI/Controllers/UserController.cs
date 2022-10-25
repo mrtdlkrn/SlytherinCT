@@ -87,27 +87,27 @@ namespace CT.UserUI.Controllers
         }
 
         // User Edit POST
-        [HttpPost]
-        public async Task<ActionResult> Edit(int id, EditUserDTO dto)
-        {
-            var result = await _apiManager.Post(_routes["Update"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                //    ErrorViewModel model = new ErrorViewModel()
-                //    {
-                //        Header = "Bid",
-                //        Message = "İhaleyle ilgili bilgiler bulunamadı",
-                //        StatusCode = 500
-                //    };
-                //    return View("~/Views/Shared/Error.cshtml", model);
-                return View("~/Views/Shared/Error.cshtml");
-            }
-        }
+        //[HttpPost]
+        //public async Task<ActionResult> Edit(int id, EditUserDTO dto)
+        //{
+        //    var result = await _apiManager.Post(_routes["Update"], dto);
+        //    //if (result != null)
+        //    //{
+        //    //    //todo: sayfaya veriler basılacak
+        //    //    return RedirectToAction("Index");
+        //    //}
+        //    //else
+        //    //{
+        //    //    //    ErrorViewModel model = new ErrorViewModel()
+        //    //    //    {
+        //    //    //        Header = "Bid",
+        //    //    //        Message = "İhaleyle ilgili bilgiler bulunamadı",
+        //    //    //        StatusCode = 500
+        //    //    //    };
+        //    //    //    return View("~/Views/Shared/Error.cshtml", model);
+        //    //    return View("~/Views/Shared/Error.cshtml");
+        //    //}
+        //}
 
         // User View Favorites GET
 

@@ -75,7 +75,6 @@ namespace CT.AdminUI.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            _apiService.Test("aaaa");
             return View(new AddCarDTO());
         }
 

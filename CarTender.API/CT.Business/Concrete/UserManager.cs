@@ -19,7 +19,7 @@ namespace CarTender.Business.Concrete
 
         public IResult Add(User entity)
         {
-            var userCheckResult = IsUserExist(entity.Email);
+            var userCheckResult = GetByUserName(entity.Username);
 
             if (userCheckResult.Success) return new ErrorResult(userCheckResult.Message, userCheckResult.StatusCode);
 
@@ -83,14 +83,6 @@ namespace CarTender.Business.Concrete
 
             if (userResult.Result == null) return new ErrorDataResult<User>(userName + " kullanıcısı bulunamadı.", 404);
             return new SuccessDataResult<User>(userResult.Result,userName+ " kullanıcısı getirildi.", 200);
-        }
-
-        public IResult IsUserExist(string email)
-        {
-            var checkResult = userDAL.GetAsync(u => u.Email == email);
-
-            if (checkResult.Result == null) return new ErrorResult(email + " kullanıcısı bulunamadı.", 404);
-            return new SuccessResult(email + " kullanıcısı mevcut.", 200);
         }
 
         public IResult Update(User entity)

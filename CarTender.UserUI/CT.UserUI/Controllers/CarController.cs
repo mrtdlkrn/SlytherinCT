@@ -108,27 +108,27 @@ namespace CT.UserUI.Controllers
         }
 
         // Car Add POST
-        [HttpPost]
-        public async Task<ActionResult> Create(AddCarDTO dto)
-        {
-            var result = await _apiManager.Post(_routes["Create"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                //ErrorViewModel model = new ErrorViewModel()
-                //{
-                //    Header = "Bid",
-                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                //    StatusCode = 500
-                //};
-                //return View("~/Views/Shared/Error.cshtml", model);
-                return View("~/Views/Shared/Error.cshtml");
-            }
-        }
+        //[HttpPost]
+        //public async Task<ActionResult> Create(AddCarDTO dto)
+        //{
+        //    var result = await _apiManager.Post(_routes["Create"], dto);
+        //    if (result != null)
+        //    {
+        //        //todo: sayfaya veriler basılacak
+        //        return RedirectToAction("Index");
+        //    }
+        //    else
+        //    {
+        //        //ErrorViewModel model = new ErrorViewModel()
+        //        //{
+        //        //    Header = "Bid",
+        //        //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+        //        //    StatusCode = 500
+        //        //};
+        //        //return View("~/Views/Shared/Error.cshtml", model);
+        //        return View("~/Views/Shared/Error.cshtml");
+        //    }
+        //}
 
         // Car Edit GET
         [HttpGet]
@@ -165,28 +165,28 @@ namespace CT.UserUI.Controllers
         }
 
         // Car Edit POST
-        [HttpPost]
-        public async Task<ActionResult> Edit(UpdateCarDTO dto)
-        {
-            var result = await _apiManager.Post(_routes["Update"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                //ErrorViewModel model = new ErrorViewModel()
-                //{
-                //    Header = "Bid",
-                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                //    StatusCode = 500
-                //};
-                //return View("~/Views/Shared/Error.cshtml", model);
-                return View("~/Views/Shared/Error.cshtml");
+        //[HttpPost]
+        //public async Task<ActionResult> Edit(UpdateCarDTO dto)
+        //{
+        //    var result = await _apiManager.Post(_routes["Update"], dto);
+        //    if (result != null)
+        //    {
+        //        //todo: sayfaya veriler basılacak
+        //        return RedirectToAction("Index");
+        //    }
+        //    else
+        //    {
+        //        //ErrorViewModel model = new ErrorViewModel()
+        //        //{
+        //        //    Header = "Bid",
+        //        //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+        //        //    StatusCode = 500
+        //        //};
+        //        //return View("~/Views/Shared/Error.cshtml", model);
+        //        return View("~/Views/Shared/Error.cshtml");
 
-            }
-        }
+        //    }
+        //}
 
         // Car Delete GET
         public async Task<ActionResult> Delete()
@@ -219,26 +219,26 @@ namespace CT.UserUI.Controllers
         }
 
         // Car Delete POST
-        [HttpPost]
-        public async Task<ActionResult> Delete(UpdateCarDTO dto)
-        {
-            var result = await _apiManager.Post(_routes["Delete"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                //ErrorViewModel model = new ErrorViewModel()
-                //{
-                //    Header = "Bid",
-                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                //    StatusCode = 500
-                //};
-                //return View("~/Views/Shared/Error.cshtml", model);
-                return View("~/Views/Shared/Error.cshtml");
-            }
-        }
+        //[HttpPost]
+        //public async Task<ActionResult> Delete(UpdateCarDTO dto)
+        //{
+        //    //var result = await _apiManager.Post(_routes["Delete"], dto);
+        //    //if (result != null)
+        //    //{
+        //    //    //todo: sayfaya veriler basılacak
+        //    //    return RedirectToAction("Index");
+        //    //}
+        //    //else
+        //    //{
+        //    //    //ErrorViewModel model = new ErrorViewModel()
+        //    //    //{
+        //    //    //    Header = "Bid",
+        //    //    //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+        //    //    //    StatusCode = 500
+        //    //    //};
+        //    //    //return View("~/Views/Shared/Error.cshtml", model);
+        //    //    return View("~/Views/Shared/Error.cshtml");
+        //    //}
+        //}
     }
 }
