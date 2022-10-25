@@ -1,8 +1,8 @@
 ﻿namespace CT.Entities.DTOs.Town
 {
-    public class ListTownDTO
+    public class ListTownDTO : TownDTO
     {
-        public string Name { get; set; }
+        public string TownName { get; set; }
         public string CityName { get; set; }
     }
 }

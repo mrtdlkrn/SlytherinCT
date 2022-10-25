@@ -73,7 +73,7 @@ namespace CT.Business.Concrete
         {
             var carImageResult = carImageDAL.GetAsync(x => x.ID == (int)id);
 
-            if (carImageResult.Result == null) return new ErrorDataResult<CarImage("Fotoğraf bulunamadı.", 404);
+            if (carImageResult.Result == null) return new ErrorDataResult<CarImage>("Fotoğraf bulunamadı.", 404);
             return new SuccessDataResult<CarImage>(carImageResult.Result, "Fotoğraf getirildi.", 200);
         }
 

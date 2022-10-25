@@ -8,6 +8,7 @@ using CT.Business.Concrete;
 using CT.Common.Service;
 using CT.DataAccess.Abstract;
 using CT.DataAccess.Concrete.Dapper;
+using CT.DataAccess.Context;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CT.Business
@@ -63,7 +64,7 @@ namespace CT.Business
             services.AddScoped<ITramerDAL, TramerDAL>();
             services.AddScoped<IUserDAL, UserDAL>();
 
-
+            services.AddSingleton<CarTenderDbContext>();
             services.AddScoped<ITokenHelper, JwtHelper>();
             services.AddTransient<IQueueService, QueueService>();
         }

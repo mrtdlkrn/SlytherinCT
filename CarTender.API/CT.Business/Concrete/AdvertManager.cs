@@ -73,7 +73,7 @@ namespace CT.Business.Concrete
         {
             var advertResult = advertDAL.GetAsync(x => x.ID == (int)id);
 
-            if (advertResult.Result == null) return new ErrorDataResult<Advert("İlan bulunamadı.", 404);
+            if (advertResult.Result == null) return new ErrorDataResult<Advert>("İlan bulunamadı.", 404);
             return new SuccessDataResult<Advert>(advertResult.Result, "İlan getirildi.", 200);
         }
 
