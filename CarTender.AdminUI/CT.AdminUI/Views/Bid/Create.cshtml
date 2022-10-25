@@ -1,257 +1,136 @@
-﻿@{
-    ViewData["Title"] = "CreateBid";
+﻿@using Entity.DTO.BidCreate
+@using Entity.DTO.Corparate
+@using Entity.DTO.Pagination
+@using System.Reflection
+@using Entity.DTO.Status
+@model CreateBidViewDTO
+@{
+    ViewData["Title"] = "İhale Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
+<div class="container-fluid p-5">
+    <form class="row" asp-controller="Bid" asp-action="Create" method="post" enctype="multipart/form-data">
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">İhale Tanımlama / Listeleme</h1>
+        <p class="mb-4">
+            Kullanıcıların eklemiş olduğu ihaleleri buradan inceleyebilir ve düzenleyebilirsiniz.
+        </p>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Arama Kriterleri</h6>
+            </div>
+            <div class="card-body">
 
-<div class="container-fuild p-5">
-    <label><b>İhale Genel Bilgiler</b></label>
-    <div class="mt-1 p-4" style="border:2px solid gray;">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="">İhale Adı:</span>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">İhale Adı</label>
+                        <input class="form-control" id="exampleFormControlSelect1" name="DTO.BidName" type="text" />
                     </div>
-                    <input type="text" class="form-control col-md-8">
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Bireysel/Kurumsal:</label>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">Şirket Adı</label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="DTO.CompanyName"
+                                @foreach (var item in Model.CorparateList)
+                                {
+                                    <option value="@item.CorparateName">@item.CorparateName</option>
+                            }
+                        </select>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Müşteri Tipi Seçiniz...</option>
-                        <option value="1">Bireysel Müşteri</option>
-                        <option value="2">Kurumsal Müşteri</option>
-                    </select>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Şirket Adı:</label>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">Statu</label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="DTO.Status"
+                                @foreach (var item in Model.StatusList)
+                                {
+                                        <option value="@item.Name">@item.Name</option>
+                            }
+                        </select>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Şirket Adı Seçiniz...</option>
-                        <option value="1">XXX</option>
-                        <option value="2">YYY</option>
-                    </select>
                 </div>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text form-control col-md-12" for="inputGroupSelect01">Statü:</label>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">İhale Başlangıç Tarihi</label>
+                        <input type="date" value="" class="form-control" />
                     </div>
-                    <select class="custom-select form-control col-md-9" id="inputGroupSelect01">
-                        <option selected>Statü Seçiniz...</option>
-                        <option value="1">Başlamadı</option>
-                        <option value="2">Başladı</option>
-                        <option value="3">Bitti</option>
-                        <option value="4">İptal</option>
-                    </select>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="">İhale Başlangıç Tarih:</span>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">İhale Başlangıç Saati</label>
+                        <input type="time" class="form-control">
                     </div>
-                    <input type="date" value="" class="form-control col-md-8" />
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="">İhale Başlangıç Saat:</span>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">İhale Bitis Tarihi</label>
+                        <input type="date" value="" class="form-control" />
                     </div>
-                    <input type="time" class="form-control col-md-8">
                 </div>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="">İhale Bitiş Tarih:</span>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">İhale Bitis Saati</label>
+                        <input type="time" class="form-control">
                     </div>
-                    <input type="date" value="" class="form-control col-md-7" />
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="">İhale Bitiş Saat:</span>
-                    </div>
-                    <input type="time" class="form-control col-md-9">
-                </div>
-            </div>
-        </div>
-    </div>
-    <label class="mt-5"><b>Araç İhale Listesi</b></label>
-    <div class="mt-1 p-1" style="border:2px solid gray;">
-        <div class="mt-1 p-4" style="border:1px solid gray;">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">Araç Plaka</th>
-                        <th scope="col">Araç Marka</th>
-                        <th scope="col">Araç Model</th>
-                        <th scope="col">Bireysel / Kurumsal</th>
-                        <th scope="col">Statü</th>
-                        <th scope="col">Kayıt Eden Kullanıcı</th>
-                        <th scope="col">Kayıt Etme Zamanı</th>
-                        <th scope="col">Fiyat</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td scope="row">16 E 987</td>
-                        <td>Toyota</td>
-                        <td>Yaris</td>
-                        <td>Bireysel</td>
-                        <td>Satışta</td>
-                        <td>Ahmet123</td>
-                        <td>05.10.2022</td>
-                        <td>255.000 TL</td>
-                        <td><button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#removeCar">X</button></td>
-                    </tr>
-                    <tr>
-                        <td scope="row">16 E 987</td>
-                        <td>Toyota</td>
-                        <td>Yaris</td>
-                        <td>Bireysel</td>
-                        <td>Satışta</td>
-                        <td>Ahmet123</td>
-                        <td>05.10.2022</td>
-                        <td>255.000 TL</td>
-                        <td><button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#removeCar">X</button></td>
-                    </tr>
-                    <tr>
-                        <td scope="row">16 E 987</td>
-                        <td>Toyota</td>
-                        <td>Yaris</td>
-                        <td>Bireysel</td>
-                        <td>Satışta</td>
-                        <td>Ahmet123</td>
-                        <td>05.10.2022</td>
-                        <td>255.000 TL</td>
-                        <td><button type="button" class="btn btn-danger" id="myInput" data-bs-toggle="modal" data-bs-target="#removeCar">X</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="row float-right mb-5">
-        <div class="col-md-12 ">
-            <button class="btn btn-success mt-4" type="submit" data-toggle="modal" data-target="#addCarToBid"><i class="fa-solid fa-plus"></i> Araç Ekle</button>
-            <button class="btn btn-primary mt-4" type="submit"><i class="fa-regular fa-floppy-disk"></i> Kaydet</button>
-        </div>
-    </div>
-</div>
-
-@await Component.InvokeAsync("DeleteModal", new{title = "İhaleden Araba Çıkart", body="Arabayı ihaleden çıkartmak istediğinize emin misiniz?", id="removeCar"})
-<div class="modal fade" id="addCarToBid" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Araç Ekle</h5>
-                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <a class="btn btn-dark mt-4 mb-2" href="/Car/Add/">Yeni Araç Ekle</a> @*Geçici*@
-                    <div class="input-group-prepend">
-                        <div class="table-responsive">
-                            <table class="table table-border" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Marka</th>
-                                        <th>Model</th>
-                                        <th>Türü</th>
-                                        <th>Eklenme Tarihi</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Audi</td>
-                                        <td>A3</td>
-                                        <td>Bireysel</td>
-                                        <td>04.10.2022-22:14</td>
-                                        <td>
-                                            <a class="btn btn-warning" href="#">Ekle</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Ford</td>
-                                        <td>Fiesta</td>
-                                        <td>Bireysel</td>
-                                        <td>04.10.2022-22:14</td>
-                                        <td>
-                                            <a class="btn btn-warning" href="#">Ekle</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Opel</td>
-                                        <td>Astra</td>
-                                        <td>Kurumsal</td>
-                                        <td>04.10.2022-22:14</td>
-                                        <td>
-                                            <a class="btn btn-warning" href="#">Ekle</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Volkswagen</td>
-                                        <td>Golf</td>
-                                        <td>Kurumsal</td>
-                                        <td>04.10.2022-22:14</td>
-                                        <td>
-                                            <a class="btn btn-warning" href="#">Ekle</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Volkswagen</td>
-                                        <td>Golf</td>
-                                        <td>Kurumsal</td>
-                                        <td>04.10.2022-22:14</td>
-                                        <td>
-                                            <a class="btn btn-warning" href="#">Ekle</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Volkswagen</td>
-                                        <td>Golf</td>
-                                        <td>Kurumsal</td>
-                                        <td>04.10.2022-22:14</td>
-                                        <td>
-                                            <a class="btn btn-warning" href="#">Ekle</a>
-                                        </td>
-                                    </tr>
-
-
-                                </tbody>
-                            </table>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlSelect1">İhale Bitis Saati</label>
+                        <div class="btn-group btn-group-toggle form-control p-0" data-toggle="buttons">
+                            <label class="btn btn-outline-success active">
+                                <input type="radio" value="true" name="DTO.CustomerType" id="DTO.CustomerType 1"> Bireysel
+                            </label>
+                            <label class="btn btn-outline-danger">
+                                <input type="radio" value="false" name="DTO.CustomerType" id="DTO.CustomerType 2"> Kurumsal
+                            </label>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Kapat</button>
-                <button class="btn btn-danger" type="button">Kaydet</button>
+
+
             </div>
         </div>
-    </div>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">İhale Listesi</h6>
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Plaka</th>
+                                    <th>Marka</th>
+                                    <th>Model</th>
+                                    <th>Fiyat</th>
+                                    <th class="text-center">Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.CarList)
+                                {
+                                    <tr>
+                                        <td>@item.Plate</td>
+                                        <td>@item.CarBrand</td>
+                                        <td>@item.CarModel</td>
+                                        <td>@item.Price</td>
+                                        <td class="text-center">
+                                            @await Component.InvokeAsync("DeleteButton", new{ModalID = item.Plate})
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
+@await Component.InvokeAsync("DeleteModal", new{title = "İhaleyi Sil", body="İhaleyi silmek istediğinize emin misiniz?", id="deleteCar"})
+
+@await Component.InvokeAsync("ActivationModal", new{title = "İhaleyi Aktif Et", body="İhaleyi aktif hale getirmek istediğinize emin misiniz?", id="activation"})
