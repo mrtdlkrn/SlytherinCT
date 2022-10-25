@@ -1,4 +1,5 @@
 ﻿using CarTender.Core.Utilities;
+using CT.Business.Abstract;
 using CT.Entities.DTOs.Advert;
 using CT.Entities.DTOs.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,12 @@ namespace CT.API.Controllers.AdminControllers
     [ApiController]
     public class AdvertController : ControllerBase
     {
+        private readonly IAdvertService _advertService;
+
+        public AdvertController(IAdvertService advertService)
+        {
+            _advertService = advertService;
+        }
 
         [HttpGet("GetAll")]
         public IActionResult GetAll()

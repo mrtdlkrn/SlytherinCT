@@ -14,6 +14,10 @@ using Microsoft.AspNetCore.Http;
 using FluentValidation;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Entity.DTO.BidCreate;
+using Entity.DTO.Corparate;
+using Entity.DTO.Status;
+using Entity.DTO.Car;
 
 namespace CT.AdminUI.Controllers
 {
@@ -31,7 +35,7 @@ namespace CT.AdminUI.Controllers
         };
 
 
-        public BidController(IApiService apiService,IMappingService mappingService, IApiRoutes routes)
+        public BidController(IApiService apiService, IMappingService mappingService, IApiRoutes routes)
         {
             _apiService = apiService;
         }
@@ -46,15 +50,41 @@ namespace CT.AdminUI.Controllers
         //GET: Bid Controller for Create New Bid
         public async Task<IActionResult> Create()
         {
-            TokenDTO tokenDTO = new TokenDTO();
-            var result = await _apiService.Get<CreateNewBidDTO>(tokenDTO, _routes[""]);
-            //todo : sayfaya veriler basılacak
-            return View(new CreateNewBidDTO());
+
+            CreateBidViewDTO dto = new CreateBidViewDTO();
+
+            dto.CorparateList = new List<CorparateList>(){
+        new CorparateList{CorparateName = "Burkay Compy",CorparatePhone="12345"},
+        new CorparateList{CorparateName = "Burkay2 Compy",CorparatePhone="12345"},
+        new CorparateList{CorparateName = "Burkay3 Compy",CorparatePhone="12345"},
+        new CorparateList{CorparateName = "Burkay4 Compy",CorparatePhone="12345"},
+        new CorparateList{CorparateName = "Burkay5 Compy",CorparatePhone="12345"}
+    };
+
+            dto.StatusList = new List<ListStatusDTO>(){
+        new ListStatusDTO{Name = "Basladi"},
+        new ListStatusDTO{Name = "Devam Ediyor"},
+        new ListStatusDTO{Name = "Iptal Edildi"},
+        new ListStatusDTO{Name = "Ihale sonuclandi"}
+    };
+
+            dto.CarList = new List<ListCarDTO>()
+            {
+                new ListCarDTO{CarBrand="BMW",CarModel="I3",Plate="32abc4222",Price=50000},
+                new ListCarDTO{CarBrand="Audi",CarModel="I3",Plate="32abc4222",Price=50000},
+                new ListCarDTO{CarBrand="Mercedes",CarModel="I3",Plate="32abc4222",Price=50000},
+                new ListCarDTO{CarBrand="Toyota",CarModel="I3",Plate="32abc4222",Price=50000},
+            };
+
+            return View(dto);
+
         }
 
         [HttpPost]
         //POST: Bid Controller for Create New Bid
-        public async Task<IActionResult> Create(CreateNewBidDTO dto)
+
+        public IActionResult Create(IFormCollection formCollection)
+
         {
             TokenDTO tokenDTO = new TokenDTO();
             var result = await _apiService.Post(tokenDTO, _routes[""],dto);
@@ -91,7 +121,7 @@ namespace CT.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> ListBid(List<BidListDTO> listDTO = null)
         {
-            if(listDTO.Count <= 0)
+            if (listDTO.Count <= 0)
             {
                 var result = await _apiService.Get<List<BidListDTO>>(tokenDTO, _routes["ListBid"]);
                 if (result.Success)
@@ -100,7 +130,7 @@ namespace CT.AdminUI.Controllers
                 }
 
             }
-            
+
             return View(listDTO);
         }
 
@@ -113,7 +143,7 @@ namespace CT.AdminUI.Controllers
             //CombineBidListVAL bidVAL = new CombineBidListVAL();
             //ValidationResult validationResult = bidVAL.Validate(_mappingService.GetModel<CombineBidDTO>(filteredBidInfo));
 
-            var result = await _apiService.Get1<List<BidListDTO>,BidFilterDTO>(tokenDTO, _routes["ListBidFilter"],_mappingService.GetModel<BidFilterDTO>(filteredBidInfo));
+            var result = await _apiService.Get1<List<BidListDTO>, BidFilterDTO>(tokenDTO, _routes["ListBidFilter"], _mappingService.GetModel<BidFilterDTO>(filteredBidInfo));
 
             return View(result.Data);
         }

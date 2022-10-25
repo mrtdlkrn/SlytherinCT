@@ -1,18 +1,11 @@
 ﻿using CT.DataAccess.Abstract;
-using CT.Entities.Bid;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CT.DataAccess.Concrete.Dapper.Base;
+using CT.DataAccess.Context;
+using CT.Entities.Entities;
 
 namespace CT.DataAccess.Concrete.Dapper
 {
-    public class BidDAL : IBidDAL
+    public class BidDAL : DapperRepository<Bid,CarTenderDbContext>, IBidDAL
     {
-        public List<ListBidDTO> GetListBid()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

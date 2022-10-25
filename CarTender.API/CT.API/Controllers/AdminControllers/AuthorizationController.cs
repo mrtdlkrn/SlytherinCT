@@ -1,6 +1,7 @@
 ﻿using CarTender.Core.Utilities;
 using CT.Entities.Authorization;
 using CT.Entities.DTOs.Authorization;
+using CT.Entities.DTOs.Role;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 

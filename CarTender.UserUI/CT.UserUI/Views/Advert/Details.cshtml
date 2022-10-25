@@ -4,34 +4,188 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 </div>
-<div class="container">
-    <h2 class="text-center">İlan Detay</h2>
-    <div id="collapseOne" class="collapse show p-5" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="input-group mb-4">
-            <span class="input-group-text col-md-3" id="inputGroup-sizing-default">İlan Başlığı:</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <div class="input-group mb-4">
-            <span class="input-group-text col-md-3" id="inputGroup-sizing-default">İlan Açıklama:</span>
-            <textarea class="form-control" id="exampleFormControlTextarea1" style="resize:none;" rows="3"></textarea>
-        </div>
-        <div class="input-group mb-4">
-            <span class="input-group-text col-md-3" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
-            <input type="text" class="form-control" />
-            <div class="input-group-append">
-                <span class="input-group-text">TL</span>
+<div class="container-fluid p-5">
+    <h2 class="text-center">@ViewBag.Title</h2>
+
+    <div class="card shadow mb-4">
+
+        <div id="collapseOne" class="collapse show p-5" aria-labelledby="headingOne" data-parent="#accordion">
+            <button class="btn btn-outline-warning mb-2 float-right" type="submit" data-toggle="modal" data-target="#getStatusHistory"><i class="fa-solid fa-history"></i> Tarihçe Görüntüle</button>
+
+            <div class="input-group mb-4">
+                <span class="input-group-text col-md-3" id="inputGroup-sizing-default">İlan Başlığı:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
-        </div>
-        <div class="input-group mb-4">
-            <span class="input-group-text col-md-3" id="inputGroup-sizing-default">Fiyatı:</span>
-            <input type="text" class="form-control" />
-            <div class="input-group-append">
-                <span class="input-group-text">TL</span>
+            <div class="input-group mb-4">
+                <span class="input-group-text col-md-3" id="inputGroup-sizing-default">İlan Açıklama:</span>
+                <textarea class="form-control" id="exampleFormControlTextarea1" style="resize:none;" rows="3"></textarea>
             </div>
-        </div>
-        <div class="col-md-9 col-sm-0"></div>
-        <div class="col-md-3" style="float:right;">
-            <button class="btn btn-info btn-block" style="background-color: #2E86C1;" type="button"><i class="fa-solid" style="color:white;"></i>  Teklif Yap</button>
+            <div class="input-group mb-4">
+                <span class="input-group-text col-md-3" id="inputGroup-sizing-default">Araç:</span>
+                <input disabled type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="34 AB 555">
+                <button class="btn btn-success col-md-3" type="submit" data-toggle="modal" data-target="#selectCarToAdvert"><i class="fa-solid fa-plus"></i> Araç Seç</button>
+            </div>
+            <div class="input-group mb-4">
+                <span class="input-group-text col-md-3" id="inputGroup-sizing-default">Ön Değerlendirme Fiyatı:</span>
+                <input type="text" class="form-control" />
+                <div class="input-group-append">
+                    <span class="input-group-text">TL</span>
+                </div>
+            </div>
+            <div class="input-group mb-4">
+                <span class="input-group-text col-md-3" id="inputGroup-sizing-default">Fiyatı:</span>
+                <input type="text" class="form-control" />
+                <div class="input-group-append">
+                    <span class="input-group-text">TL</span>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-0"></div>
+            <div class="col-md-3" style="float:right;">
+                <button class="btn btn-info btn-block" style="background-color: #2E86C1;" type="button"><i class="fa-solid" style="color:white;"></i>  Teklif Yap</button>
+            </div>
         </div>
     </div>
 </div>
+
+
+
+<div class="modal fade" id="getStatusHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">İlan Tarihçesi</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close" onclick="$('#getStatusHistory').click();">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="table-responsive">
+                            <table class="table table-border" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Değişme Tarih</th>
+                                        <th>Statü</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>04.10.2022-22:14</td>
+                                        <td>Admin Onayı Bekleniyor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>05.10.2022-12:14</td>
+                                        <td>Giriş</td>
+                                    </tr>
+                                    <tr>
+                                        <td>05.10.2022-12:15</td>
+                                        <td>Hemen Al Satışta</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="selectCarToAdvert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content align-content-center" style="width:40rem">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Araç Seç</h5>
+                <button class="btn btn-dark btn-circle btn-sm" type="button" data-bs-dismiss="modal" aria-label="Close" onclick="$('#selectCarToAdvert').click();">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group mb-3">
+                        <div class="input-group">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Araç Ara" aria-label="Ara">
+                            <button class="btn btn-outline-success " type="submit">Ara</button>
+                        </div>
+                    </div>
+                    <a class="btn btn-dark mt-4 mb-2" href="/Car/Create/">Yeni Araç Ekle</a> @*Geçici*@
+                    <div class="input-group-prepend">
+                        <div class="table-responsive">
+                            <table class="table table-border" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Marka</th>
+                                        <th>Model</th>
+                                        <th>Plakası</th>
+                                        <th>Türü</th>
+                                        <th>Eklenme Tarihi</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Audi</td>
+                                        <td>A3</td>
+                                        <td>34 AB 555</td>
+                                        <td>Bireysel</td>
+                                        <td>04.10.2022-22:14</td>
+                                        <td>
+                                            <a class="btn btn-info" href="#">Seçili</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Ford</td>
+                                        <td>Fiesta</td>
+                                        <td>07 BCA 498</td>
+                                        <td>Bireysel</td>
+                                        <td>04.10.2022-22:14</td>
+                                        <td>
+                                            <a class="btn btn-warning" href="#">Seç</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Opel</td>
+                                        <td>Astra</td>
+                                        <td>34 FF 235</td>
+                                        <td>Kurumsal</td>
+                                        <td>04.10.2022-22:14</td>
+                                        <td>
+                                            <a class="btn btn-warning" href="#">Seç</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Volkswagen</td>
+                                        <td>Golf</td>
+                                        <td>35 AE 879</td>
+                                        <td>Kurumsal</td>
+                                        <td>04.10.2022-22:14</td>
+                                        <td>
+                                            <a class="btn btn-warning" href="#">Seç</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Volkswagen</td>
+                                        <td>Golf</td>
+                                        <td>06 G 450</td>
+                                        <td>Kurumsal</td>
+                                        <td>04.10.2022-22:14</td>
+                                        <td>
+                                            <a class="btn btn-warning" href="#">Seç</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

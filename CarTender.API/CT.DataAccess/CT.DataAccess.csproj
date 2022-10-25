@@ -5,7 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Concrete\EF\" />
+    <Compile Remove="Concrete\EF\**" />
+    <EmbeddedResource Remove="Concrete\EF\**" />
+    <None Remove="Concrete\EF\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>

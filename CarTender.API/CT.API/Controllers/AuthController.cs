@@ -45,36 +45,20 @@ namespace CarTender.API.Controllers
         [HttpPost("Login")]
         public IActionResult Login(LoginDTO dto)
         {
-            string email = "testuser@hotmail.com";
-            string password = "1234Abc.";
+            var loginResult = authService.Login(dto.Email, dto.Password);
 
-
-
-            if (dto.Password != password || dto.Email != email)
+            if (!loginResult.Success)
             {
-                _logger.Log("hatalı kullanıcı girişi");
-                return BadRequest("kullanıcı bilgileri hatalı.");
+                _logger.Log("Hatalı kullanıcı girişi");
+                return BadRequest(loginResult.Message);
             }
-
-            _logger.Log(email + " kullanıcı giriş yaptı.");
-            // if user exists
-            var token = authService.CreateToken(new User());
-            return Ok(new SuccessDataResult<AccessToken>(token,"Kullanıcı giriş yaptı",200));
+            _logger.Log(dto.Email + " giriş yaptı.");
+            return Ok(loginResult);
         }
-
-
 
         [HttpPost("Register")]
         public IActionResult Register(RabbitMQLoginDTO dto)
         {
-            var userExists = authService.IsUserExist(dto.Email);
-
-            if (userExists)
-            {
-                _logger.Log("mevcut kullanıcı kayıt yapmaya çalıştı");
-                return BadRequest("Kullanici mevcut");
-            }
-            _logger.Log(dto.Email + " kayıt oldu");
             User user = new()
             {
                 Id = 1,
@@ -82,10 +66,16 @@ namespace CarTender.API.Controllers
                 Customername = dto.Customername,
                 Phone = dto.Phone,
                 Email = dto.Email
-
             };
 
-            authService.Register(user, dto.Password);
+            var registerResult = authService.Register(user, dto.Password);
+
+            if (!registerResult.Success)
+            {
+                _logger.Log("mevcut kullanıcı kayıt yapmaya çalıştı");
+                return BadRequest(registerResult.Message);
+            }
+            
             var token = authService.CreateToken(user);
             List<string> eposta = new()
             {
@@ -115,19 +105,33 @@ namespace CarTender.API.Controllers
             queueService.CreateExchange(connectionFactory, exchange);
             queueService.CreateBinding(connectionFactory, queue, exchange, routingKey);
             queueService.Publish(connectionFactory, mailInfo, exchange, routingKey);
-
+            _logger.Log(dto.Email + " kayıt oldu");
             return Ok(token);
         }
+
+        // todo: burası tam olarak ne için kullanılacak?
 
         [HttpPost("CustomerRegister")]
         public IActionResult CustomerRegister(RabbitMQLoginDTO dto)
         {
-            var CustomerExists = authService.IsUserExist(dto.Username);
+            User user = new()
+            {
+                Id = 1,
+                Username = dto.Username,
+                Customername = dto.Customername,
+                Phone = dto.Phone,
+                Email = dto.Email
+            };
 
-            if (CustomerExists)
-                return BadRequest("Kullanıcı mevcut");
+            var registerResult = authService.Register(user, dto.Password);
 
-            return Ok();
+            if (!registerResult.Success)
+            {
+                _logger.Log("mevcut kullanıcı kayıt yapmaya çalıştı");
+                return BadRequest(registerResult.Message);
+            }
+
+            return Ok(registerResult.Message);
         }
 
         [HttpPost("Logger")]

@@ -1,16 +1,9 @@
-﻿using CT.Entities.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
+﻿using CT.DataAccess.Abstract.Base;
+using CT.Entities.Entities;
 
 namespace CT.DataAccess.Abstract
 {
-    public interface ICarDAL
+    public interface ICarDAL : IBaseRepository<Car>
     {
-        List<Car> GetAll(Expression<Func<Car, bool>> filter = null);
-        Car Get(Expression<Func<User, bool>> filter);
-        bool Add(Car entity);
-        bool Update(Car entity);
-        bool Delete(Car entity);
     }
 }

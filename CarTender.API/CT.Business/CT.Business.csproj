@@ -16,4 +16,8 @@
     <ProjectReference Include="..\CT.Entities\CT.Entities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Projects\SlytherinCT\CarTender.API\CT.Business\Abstract\.editorconfig" />
+  </ItemGroup>
+
 </Project>

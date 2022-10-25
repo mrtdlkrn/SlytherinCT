@@ -1,6 +1,11 @@
-﻿namespace CT.DataAccess.Concrete.Dapper
+﻿using CT.DataAccess.Abstract;
+using CT.DataAccess.Concrete.Dapper.Base;
+using CT.DataAccess.Context;
+using CT.Entities.Entities;
+
+namespace CT.DataAccess.Concrete.Dapper
 {
-    internal class CarDAL
+    public class CarDAL : DapperRepository<Car, CarTenderDbContext>, ICarDAL
     {
     }
 }

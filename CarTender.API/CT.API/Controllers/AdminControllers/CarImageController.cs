@@ -6,7 +6,7 @@ namespace CT.API.Controllers.AdminControllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ImageController : ControllerBase
+    public class CarImageController : ControllerBase
     {
         [HttpGet("GetAll")]
         public IActionResult GetAll()

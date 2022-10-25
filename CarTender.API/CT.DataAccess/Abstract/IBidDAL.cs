@@ -1,14 +1,9 @@
-﻿using CT.Entities.Bid;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CT.DataAccess.Abstract.Base;
+using CT.Entities.Entities;
 
 namespace CT.DataAccess.Abstract
 {
-    public interface IBidDAL
+    public interface IBidDAL : IBaseRepository<Bid>
     {
-        public List<ListBidDTO> GetListBid();
     }
 }
