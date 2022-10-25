@@ -83,11 +83,11 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         //POST: Bid Controller for Create New Bid
 
-        public IActionResult Create(IFormCollection formCollection)
+        public async Task<IActionResult> Create(IFormCollection formCollection)
 
         {
             TokenDTO tokenDTO = new TokenDTO();
-            var result = await _apiService.Post(tokenDTO, _routes[""],dto);
+            var result = await _apiService.Post(tokenDTO, _routes[""], formCollection);
             return View();
         }
 

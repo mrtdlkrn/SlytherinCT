@@ -1,10 +1,14 @@
 ﻿using CarTender.Core.Utilities;
 using CT.Business.Abstract;
 using CT.DataAccess.Abstract;
+using CT.DataAccess.Concrete.Dapper;
+using CT.Entities.Car;
+using CT.Entities.DTOs.Status;
 using CT.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace CT.Business.Concrete
 {
@@ -74,6 +78,14 @@ namespace CT.Business.Concrete
 
             if (carResult.Result == null) return new ErrorDataResult<Car>("Araba bulunamadı.", 404);
             return new SuccessDataResult<Car>(carResult.Result, "Araba getirildi.", 200);
+        }
+        public async Task<IDataResult<IEnumerable<ListCarDTO>>> GetListCarDetail()
+        {
+
+            var result = await carDAL.GetListCarDetail();
+            if (result == null)
+                return new ErrorDataResult<IEnumerable<ListCarDTO>>("Listelenecek statüler bulunamadı.", 404);
+            return new SuccessDataResult<IEnumerable<ListCarDTO>>(result, "Statüler listelendi.", 200);
         }
 
         public IResult Update(Car entity)
