@@ -24,10 +24,10 @@ namespace Common.Concrete
 
         // todo: her zaman ayni sekilde veri donmez. Bazen list, basen class, bazen string vb. doner. Burası duzeltilecek.
 
-        public async Task<ResponseDTO<T>> GET<T>(TokenDTO tokenDTO, string requestUrl) where T : class
+        public async Task<ResponseDTO<T>> GET<T>(string token, string requestUrl) where T : class
         {
             _httpClient.DefaultRequestHeaders.Clear();
-            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
 
             //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer ", tokenDTO.Token);
 
@@ -41,12 +41,12 @@ namespace Common.Concrete
             return null;
         }
 
-        public async Task<ResponseDTO<T>> GET<T, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto)
+        public async Task<ResponseDTO<T>> GET<T, FilterDTO>(string token, string requestUrl, FilterDTO dto)
             where T : class
             where FilterDTO : class
         {
             _httpClient.DefaultRequestHeaders.Clear();
-            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
 
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
             serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
@@ -66,10 +66,10 @@ namespace Common.Concrete
 
         #region POST
 
-        public async Task<ResponseDTO<T>> POST<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class
+        public async Task<ResponseDTO<T>> POST<T>(string token, string requestUrl, T dto) where T : class
         {
             _httpClient.DefaultRequestHeaders.Clear();
-            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
 
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
             serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
@@ -88,10 +88,10 @@ namespace Common.Concrete
 
         #region PUT
 
-        public async Task<ResponseDTO<T>> PUT<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class
+        public async Task<ResponseDTO<T>> PUT<T>(string token, string requestUrl, T dto) where T : class
         {
             _httpClient.DefaultRequestHeaders.Clear();
-            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
 
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
             serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
@@ -110,10 +110,10 @@ namespace Common.Concrete
 
         #region DELETE
 
-        public async Task<ResponseDTO<T>> DELETE<T>(TokenDTO tokenDTO, string requestUrl) where T : class
+        public async Task<ResponseDTO<T>> DELETE<T>(string token, string requestUrl) where T : class
         {
             _httpClient.DefaultRequestHeaders.Clear();
-            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
 
             string serviceUrl = apiAddress + requestUrl;
             var response = await _httpClient.DeleteAsync(serviceUrl);

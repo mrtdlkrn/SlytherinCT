@@ -17,6 +17,12 @@ namespace Entity.DTO.Advert
         public decimal Price { get; set; }
 
         [DisplayName("Ön Değerlendirme Fiyatı")]
-        public decimal PreliminaryPrice { get; set; }
+        public decimal PrePrice { get; set; }
+
+        [DisplayName("Marka")]
+        public string CarBrand { get; set; }
+
+        [DisplayName("Model")]
+        public string CarModel { get; set; }
     }
 }

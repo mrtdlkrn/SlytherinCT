@@ -17,9 +17,9 @@ namespace Business.Concrete
             _baseAPIService = baseAPIService;
         }
 
-        public Task<ResponseDTO<T>> Delete<T>(TokenDTO tokenDTO, string requestUrl) where T : class
+        public Task<ResponseDTO<T>> Delete<T>(string token, string requestUrl) where T : class
         {
-            return _baseAPIService.DELETE<T>(tokenDTO, requestUrl);
+            return _baseAPIService.DELETE<T>(token, requestUrl);
         }
 
         public Task<ResponseDTO<T>> ForgotPassword<T>(T dto) where T : class
@@ -27,16 +27,16 @@ namespace Business.Concrete
             return _baseAPIService.FORGOTPASSWORD(dto);
         }
 
-        public Task<ResponseDTO<T>> Get<T>(TokenDTO tokenDTO, string requestUrl) where T : class
+        public Task<ResponseDTO<T>> Get<T>(string token, string requestUrl) where T : class
         {
-            return _baseAPIService.GET<T>(tokenDTO, requestUrl);
+            return _baseAPIService.GET<T>(token, requestUrl);
         }
 
-        public Task<ResponseDTO<T>> Get<T, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto)
+        public Task<ResponseDTO<T>> Get<T, FilterDTO>(string token, string requestUrl, FilterDTO dto)
             where T : class
             where FilterDTO : class
         {
-            return _baseAPIService.GET<T, FilterDTO>(tokenDTO, requestUrl, dto);
+            return _baseAPIService.GET<T, FilterDTO>(token, requestUrl, dto);
         }
 
         public async Task<ResponseDTO<TokenDTO>> Login<T>(T dto) where T : class
@@ -52,14 +52,14 @@ namespace Business.Concrete
             }
         }
 
-        public Task<ResponseDTO<T>> Post<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class
+        public Task<ResponseDTO<T>> Post<T>(string token, string requestUrl, T dto) where T : class
         {
-            return _baseAPIService.POST(tokenDTO, requestUrl, dto);
+            return _baseAPIService.POST(token, requestUrl, dto);
         }
 
-        public Task<ResponseDTO<T>> Put<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class
+        public Task<ResponseDTO<T>> Put<T>(string token, string requestUrl, T dto) where T : class
         {
-            return _baseAPIService.PUT(tokenDTO, requestUrl, dto);
+            return _baseAPIService.PUT(token, requestUrl, dto);
         }
 
         public Task<ResponseDTO<T>> Register<T>(T dto) where T : class

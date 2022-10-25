@@ -186,7 +186,7 @@ namespace CT.UserUI.Controllers
                  ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<CreateNewBidDTO>(tokenDTO, _routes["DeleteGet"]);
+            var result = await _apiManager.Get<CreateNewBidDTO>(tokenDTO.Token, _routes["DeleteGet"]);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak

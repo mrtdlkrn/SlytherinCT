@@ -79,7 +79,7 @@ namespace CT.UserUI.Controllers
                 ExpireTime = DateTime.Now.AddHours(1)
             };
 
-            var result = await _apiManager.Get<CarDTO>(tokenDTO, _routes["Details"]);
+            var result = await _apiManager.Get<CarDTO>(tokenDTO.Token, _routes["Details"]);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak
@@ -199,7 +199,7 @@ namespace CT.UserUI.Controllers
                  ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
                 ExpireTime = DateTime.Now.AddHours(1)
             };
-            var result = await _apiManager.Get<UpdateCarDTO>(tokenDTO, _routes["DeleteGet"]);
+            var result = await _apiManager.Get<UpdateCarDTO>(tokenDTO.Token, _routes["DeleteGet"]);
             if (result != null)
             {
                 //todo: sayfaya veriler basılacak

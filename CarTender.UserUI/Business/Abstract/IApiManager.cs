@@ -18,7 +18,7 @@ namespace Business.Abstract
         /// For example: Get(token,"ControllerName/Action")
         /// </param>
         /// <returns>This aciton returns data of the type you specify.</returns>
-        Task<ResponseDTO<T>> Get<T>(TokenDTO tokenDTO, string requestUrl) where T : class;
+        Task<ResponseDTO<T>> Get<T>(string token, string requestUrl) where T : class;
         /// <summary>
         /// This action makes GET request to the given request url. Used to get datas with filters.
         /// </summary>
@@ -33,7 +33,7 @@ namespace Business.Abstract
         /// </param>
         /// <param name="dto">A model to filter datas.</param>
         /// <returns>This aciton returns filtered datas.</returns>
-        Task<ResponseDTO<T>> Get<T, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto) where T : class where FilterDTO : class;
+        Task<ResponseDTO<T>> Get<T, FilterDTO>(string token, string requestUrl, FilterDTO dto) where T : class where FilterDTO : class;
         /// <summary>
         /// This action makes POST request to the given request url. Used to create datas.
         /// </summary>
@@ -49,7 +49,7 @@ namespace Business.Abstract
         ///  A model you want to send.
         /// </param>
         /// <returns>This aciton returns true if operation is success.</returns>
-        Task<ResponseDTO<T>> Post<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class;
+        Task<ResponseDTO<T>> Post<T>(string token, string requestUrl, T dto) where T : class;
         /// <summary>
         /// This action makes POST request to the given request url. Used to get Token from API. 
         /// </summary>
@@ -62,7 +62,7 @@ namespace Business.Abstract
         ///  A model you want to send.
         /// </param>
         /// <returns>This aciton returns JWT token key if operation is success.</returns>
-        Task<ResponseDTO<T>> Put<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class;
+        Task<ResponseDTO<T>> Put<T>(string token, string requestUrl, T dto) where T : class;
         /// <summary>
         /// This action makes PUT request to the given request url. Used to update datas.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Business.Abstract
         /// A model you want to send.        
         /// </param>
         /// <returns>This aciton returns true if operation is success.</returns>
-        Task<ResponseDTO<T>> Delete<T>(TokenDTO tokenDTO, string requestUrl) where T : class;
+        Task<ResponseDTO<T>> Delete<T>(string token, string requestUrl) where T : class;
         /// <summary>
         /// This action makes DELETE request to the given request url. Used to delete datas.
         /// </summary>
