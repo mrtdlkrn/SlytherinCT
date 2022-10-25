@@ -45,14 +45,14 @@ namespace CarTender.API.Controllers
         [HttpPost("Login")]
         public IActionResult Login(LoginDTO dto)
         {
-            var loginResult = authService.Login(dto.Username, dto.Password);
+            var loginResult = authService.Login(dto.Email, dto.Password);
 
             if (!loginResult.Success)
             {
                 _logger.Log("Hatalı kullanıcı girişi");
                 return BadRequest(loginResult);
             }
-            _logger.Log(dto.Username + " giriş yaptı.");
+            _logger.Log(dto.Email + " giriş yaptı.");
             return Ok(loginResult);
         }
 

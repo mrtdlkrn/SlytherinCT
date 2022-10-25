@@ -83,11 +83,13 @@ namespace CT.AdminUI.Controllers
         [HttpPost]
         //POST: Bid Controller for Create New Bid
 
-        public IActionResult Create(IFormCollection formCollection)
+        public async Task<IActionResult> Create(IFormCollection formCollection)
 
         {
             TokenDTO tokenDTO = new TokenDTO();
-            var result = await _apiService.Post(tokenDTO, _routes[""],dto);
+
+            var result = await _apiService.Post(tokenDTO, _routes[""], formCollection);
+
             return View();
         }
 
@@ -143,7 +145,7 @@ namespace CT.AdminUI.Controllers
             //CombineBidListVAL bidVAL = new CombineBidListVAL();
             //ValidationResult validationResult = bidVAL.Validate(_mappingService.GetModel<CombineBidDTO>(filteredBidInfo));
 
-            var result = await _apiService.Get<List<BidListDTO>, BidFilterDTO>(tokenDTO, _routes["ListBidFilter"], _mappingService.GetModel<BidFilterDTO>(filteredBidInfo));
+            var result = await _apiService.Get<List<ListBidDTO>, BidFilterDTO>(tokenDTO, _routes["ListBidFilter"], _mappingService.GetModel<BidFilterDTO>(filteredBidInfo));
 
             return View(result.Data);
         }

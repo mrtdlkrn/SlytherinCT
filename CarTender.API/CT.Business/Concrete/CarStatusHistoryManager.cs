@@ -1,10 +1,13 @@
 ﻿using CarTender.Core.Utilities;
 using CT.Business.Abstract;
 using CT.DataAccess.Abstract;
+using CT.Entities.DTOs.Status;
+using CT.Entities.DTOs.Town;
 using CT.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace CT.Business.Concrete
 {
@@ -36,12 +39,10 @@ namespace CT.Business.Concrete
         {
             throw new NotImplementedException();
         }
-
         public IDataResult<CarStatusHistory> GetById(object id)
         {
             throw new NotImplementedException();
         }
-
         public IResult Update(CarStatusHistory entity)
         {
             throw new NotImplementedException();
