@@ -7,6 +7,5 @@ namespace CarTender.Business.Abstract
     public interface IUserService : IBaseService<User>
     {
         IDataResult<User> GetByUserName(string userName);
-        IResult IsUserExist(string email);
     }
 }

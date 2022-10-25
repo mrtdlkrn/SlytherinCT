@@ -6,7 +6,7 @@ namespace CT.UserUI.Controllers
     {
         public ActionResult Index()
         {
-            string cookie = Request.Cookies.Get("Ihale").Value;
+            //string cookie = Request.Cookies.Get("Ihale").Value;
             //var token = Session["token"].ToString();
             return View();
         }
@@ -30,6 +30,14 @@ namespace CT.UserUI.Controllers
             ViewBag.Message = "Expertise page.";
 
             return View();
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public ActionResult Unauthorized()
+        {
+
+            return RedirectToAction("Login","Auth");
         }
     }
 }

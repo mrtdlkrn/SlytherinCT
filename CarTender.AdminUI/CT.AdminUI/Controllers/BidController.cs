@@ -139,7 +139,7 @@ namespace CT.AdminUI.Controllers
             //CombineBidListVAL bidVAL = new CombineBidListVAL();
             //ValidationResult validationResult = bidVAL.Validate(_mappingService.GetModel<CombineBidDTO>(filteredBidInfo));
 
-            var result = await _apiService.Get1<List<BidListDTO>, BidFilterDTO>(tokenDTO, _routes["ListBidFilter"], _mappingService.GetModel<BidFilterDTO>(filteredBidInfo));
+            var result = await _apiService.Get<List<BidListDTO>, BidFilterDTO>(tokenDTO, _routes["ListBidFilter"], _mappingService.GetModel<BidFilterDTO>(filteredBidInfo));
 
             return View(result.Data);
         }

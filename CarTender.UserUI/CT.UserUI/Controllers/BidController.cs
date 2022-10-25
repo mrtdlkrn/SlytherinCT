@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
-using CarTender.FluentValidation.VAL.CombineVAL.Bid;
 using Common.Concrete;
 using Entity.DTO.Auth;
 using Entity.DTO.Bid;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace CT.UserUI.Controllers
-{
+{    
     public class BidController : Controller
     {
         private readonly IApiManager _apiManager;
@@ -94,31 +93,30 @@ namespace CT.UserUI.Controllers
         }
 
         // Bid Create POST
-        [HttpPost]
-        public async Task<ActionResult> Create(CreateNewBidDTO dto)
-        {
-            CombineBidAddVAL validations = new CombineBidAddVAL();
+        //[HttpPost]
+        //public async Task<ActionResult> Create(CreateNewBidDTO dto)
+        //{
 
-            var result = await _apiManager.Post(_routes["Create"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
+        //    var result = await _apiManager.Post(_routes["Create"], dto);
+        //    if (result != null)
+        //    {
+        //        //todo: sayfaya veriler basılacak
+        //        return RedirectToAction("Index");
+        //    }
 
-            else
-            {
-                //ErrorViewModel model = new ErrorViewModel()
-                //{
-                //    Header = "Bid",
-                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                //    StatusCode = 500
-                //};
-                //return View("~/Views/Shared/Error.cshtml", model);
-                return View("~/Views/Shared/Error.cshtml");
+        //    else
+        //    {
+        //        //ErrorViewModel model = new ErrorViewModel()
+        //        //{
+        //        //    Header = "Bid",
+        //        //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+        //        //    StatusCode = 500
+        //        //};
+        //        //return View("~/Views/Shared/Error.cshtml", model);
+        //        return View("~/Views/Shared/Error.cshtml");
 
-            }
-        }
+        //    }
+        //}
 
         // Bid Edit Page GET
         public async Task<ActionResult> Edit()
@@ -156,24 +154,25 @@ namespace CT.UserUI.Controllers
         [HttpPost]
         public async Task<ActionResult> Edit(int id, CreateNewBidDTO dto)
         {
-            var result = await _apiManager.Post(_routes["Update"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                //ErrorViewModel model = new ErrorViewModel()
-                //{
-                //    Header = "Bid",
-                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                //    StatusCode = 500
-                //};
-                //return View("~/Views/Shared/Error.cshtml", model);
-                return View("~/Views/Shared/Error.cshtml");
+            //var result = await _apiManager.Post(_routes["Update"], dto);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return RedirectToAction("Index");
+            //}
+            //else
+            //{
+            //    //ErrorViewModel model = new ErrorViewModel()
+            //    //{
+            //    //    Header = "Bid",
+            //    //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+            //    //    StatusCode = 500
+            //    //};
+            //    //return View("~/Views/Shared/Error.cshtml", model);
+            //    return View("~/Views/Shared/Error.cshtml");
 
-            }
+            //}
+            return View();
         }
 
         // Bid Delete GET
@@ -207,27 +206,27 @@ namespace CT.UserUI.Controllers
         }
 
         // Bid Delete POST
-        [HttpPost]
-        public async Task<ActionResult> Delete(CreateNewBidDTO dto)
-        {
-            var result = await _apiManager.Post(_routes["Delete"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                //ErrorViewModel model = new ErrorViewModel()
-                //{
-                //    Header = "Bid",
-                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                //    StatusCode = 500
-                //};
-                //return View("~/Views/Shared/Error.cshtml", model);
-                return View("~/Views/Shared/Error.cshtml");
-            }
-        }
+        //[HttpPost]
+        //public async Task<ActionResult> Delete(CreateNewBidDTO dto)
+        //{
+        //    var result = await _apiManager.Post(_routes["Delete"], dto);
+        //    if (result != null)
+        //    {
+        //        //todo: sayfaya veriler basılacak
+        //        return RedirectToAction("Index");
+        //    }
+        //    else
+        //    {
+        //        //ErrorViewModel model = new ErrorViewModel()
+        //        //{
+        //        //    Header = "Bid",
+        //        //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+        //        //    StatusCode = 500
+        //        //};
+        //        //return View("~/Views/Shared/Error.cshtml", model);
+        //        return View("~/Views/Shared/Error.cshtml");
+        //    }
+        //}
 
         // Bid Payment Page GET
         public async Task<ActionResult> Payment()
@@ -265,24 +264,26 @@ namespace CT.UserUI.Controllers
         [HttpPost]
         public async Task<ActionResult> Payment(int id, BidPaymentDTO dto)
         {
-            var result = await _apiManager.Post(_routes["Payment"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                //ErrorViewModel model = new ErrorViewModel()
-                //{
-                //    Header = "Bid",
-                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                //    StatusCode = 500
-                //};
-                //return View("~/Views/Shared/Error.cshtml", model);
-                return View("~/Views/Shared/Error.cshtml");
+            //var result = await _apiManager.Post(_routes["Payment"], dto);
+            //if (result != null)
+            //{
+            //    //todo: sayfaya veriler basılacak
+            //    return RedirectToAction("Index");
+            //}
+            //else
+            //{
+            //    //ErrorViewModel model = new ErrorViewModel()
+            //    //{
+            //    //    Header = "Bid",
+            //    //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+            //    //    StatusCode = 500
+            //    //};
+            //    //return View("~/Views/Shared/Error.cshtml", model);
+            //    return View("~/Views/Shared/Error.cshtml");
 
-            }
+            //}
+            return View();
+
         }
 
         // Bid Offer Page GET
@@ -318,28 +319,28 @@ namespace CT.UserUI.Controllers
         }
 
         // Bid Offer Page POST
-        [HttpPost]
-        public async Task<ActionResult> Offer(int id, BidOfferDTO dto)
-        {
-            var result = await _apiManager.Post(_routes["Offer"], dto);
-            if (result != null)
-            {
-                //todo: sayfaya veriler basılacak
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                //ErrorViewModel model = new ErrorViewModel()
-                //{
-                //    Header = "Bid",
-                //    Message = "İhaleyle ilgili bilgiler bulunamadı",
-                //    StatusCode = 500
-                //};
-                //return View("~/Views/Shared/Error.cshtml", model);
-                return View("~/Views/Shared/Error.cshtml");
+        //[HttpPost]
+        //public async Task<ActionResult> Offer(int id, BidOfferDTO dto)
+        //{
+        //    var result = await _apiManager.Post(_routes["Offer"], dto);
+        //    if (result != null)
+        //    {
+        //        //todo: sayfaya veriler basılacak
+        //        return RedirectToAction("Index");
+        //    }
+        //    else
+        //    {
+        //        //ErrorViewModel model = new ErrorViewModel()
+        //        //{
+        //        //    Header = "Bid",
+        //        //    Message = "İhaleyle ilgili bilgiler bulunamadı",
+        //        //    StatusCode = 500
+        //        //};
+        //        //return View("~/Views/Shared/Error.cshtml", model);
+        //        return View("~/Views/Shared/Error.cshtml");
 
-            }
-        }
+        //    }
+        //}
 
     }
 }

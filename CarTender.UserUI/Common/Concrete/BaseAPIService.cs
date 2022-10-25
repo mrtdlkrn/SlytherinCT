@@ -1,8 +1,10 @@
 ﻿using Common.Abstract;
+using Entity.DTO;
 using Entity.DTO.Auth;
 using Newtonsoft.Json;
 using System.Configuration;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace Common.Concrete
@@ -10,38 +12,52 @@ namespace Common.Concrete
     public class BaseAPIService : IBaseAPIService
     {
         private readonly HttpClient _httpClient;
-        private readonly string connectionString;
+        private readonly string apiAddress;
 
         public BaseAPIService()
         {
             _httpClient = new HttpClient();
-            connectionString = ConfigurationManager.AppSettings["ApiAddress"];
+            apiAddress = ConfigurationManager.AppSettings["ApiAddress"];
         }
 
         #region GET
 
-        public async Task<DTO> GET<DTO>(TokenDTO tokenDTO, string requestUrl) where DTO : class
+        // todo: her zaman ayni sekilde veri donmez. Bazen list, basen class, bazen string vb. doner. Burası duzeltilecek.
+
+        public async Task<ResponseDTO<T>> GET<T>(TokenDTO tokenDTO, string requestUrl) where T : class
         {
+            _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
-            var response = await _httpClient.GetAsync((connectionString + requestUrl));
+
+            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer ", tokenDTO.Token);
+
+            string serviceUrl = apiAddress + requestUrl;
+            var response = await _httpClient.GetAsync(serviceUrl);
+
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<DTO>(await response.Content.ReadAsStringAsync());
+                return JsonConvert.DeserializeObject<ResponseDTO<T>>(await response.Content.ReadAsStringAsync());
             }
             return null;
         }
 
-        public async Task<DTO> GET<DTO, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto)
-            where DTO : class
+        public async Task<ResponseDTO<T>> GET<T, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto)
+            where T : class
             where FilterDTO : class
         {
+            _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
+
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
             serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-            var response = await _httpClient.GetAsync((connectionString + requestUrl));
+
+            // todo: verilen filter dto request'e eklecenek.
+            string serviceUrl = apiAddress + requestUrl;
+            var response = await _httpClient.PostAsync(serviceUrl, serializedDto);
+
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<DTO>(await response.Content.ReadAsStringAsync());
+                return JsonConvert.DeserializeObject<ResponseDTO<T>>(await response.Content.ReadAsStringAsync());
             }
             return null;
         }
@@ -50,28 +66,20 @@ namespace Common.Concrete
 
         #region POST
 
-        public async Task<bool> POST<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class
+        public async Task<ResponseDTO<T>> POST<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class
         {
+            _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
 
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
             serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-            var response = await _httpClient.PostAsync((connectionString + requestUrl), serializedDto);
-            if (response.IsSuccessStatusCode)
-            {
-                return response.Content.ReadAsStringAsync().Result == "success" ? true : false;
-            }
-            return false;
-        }
 
-        public async Task<string> POST<DTO>(string requestUrl, DTO dto) where DTO : class
-        {
-            var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
-            serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-            var response = await _httpClient.PostAsync((connectionString + requestUrl), serializedDto);
+            string serviceUrl = apiAddress + requestUrl;
+            var response = await _httpClient.PostAsync(serviceUrl, serializedDto);
+
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsStringAsync().Result.ToString();
+                return JsonConvert.DeserializeObject<ResponseDTO<T>>(await response.Content.ReadAsStringAsync());
             }
             return null;
         }
@@ -80,37 +88,89 @@ namespace Common.Concrete
 
         #region PUT
 
-        public async Task<bool> PUT<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class
+        public async Task<ResponseDTO<T>> PUT<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class
         {
+            _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
 
             var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
             serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-            var response = await _httpClient.PutAsync((connectionString + requestUrl), serializedDto);
+
+            string serviceUrl = apiAddress + requestUrl;
+            var response = await _httpClient.PutAsync(serviceUrl, serializedDto);
 
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsStringAsync().Result == "success" ? true : false;
+                return JsonConvert.DeserializeObject<ResponseDTO<T>>(await response.Content.ReadAsStringAsync());
             }
-            return false;
+            return null;
         }
 
         #endregion
 
         #region DELETE
 
-        public async Task<bool> DELETE(TokenDTO tokenDTO, string requestUrl)
+        public async Task<ResponseDTO<T>> DELETE<T>(TokenDTO tokenDTO, string requestUrl) where T : class
         {
+            _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {tokenDTO.Token}");
 
-            var response = await _httpClient.DeleteAsync((connectionString + requestUrl));
+            string serviceUrl = apiAddress + requestUrl;
+            var response = await _httpClient.DeleteAsync(serviceUrl);
 
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsStringAsync().Result == "success" ? true : false;
+                return JsonConvert.DeserializeObject<ResponseDTO<T>>(await response.Content.ReadAsStringAsync());
             }
 
-            return false;
+            return null;
+        }
+
+        #endregion
+
+        #region LOGIN
+
+        // todo: burası direkt sabit olarak logindto alsa daha güzel olmaz mı?
+        public async Task<ResponseDTO<TokenDTO>> LOGIN<T>(T dto) where T : class
+        {
+            var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
+            serializedDto.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+
+            string serviceUrl = apiAddress + "api/Auth/Login";
+            var response = await _httpClient.PostAsync(serviceUrl, serializedDto);
+
+            //if (response.IsSuccessStatusCode)
+            //{
+            //}
+            return JsonConvert.DeserializeObject<ResponseDTO<TokenDTO>>(await response.Content.ReadAsStringAsync());
+        }
+
+        public async Task<ResponseDTO<T>> REGISTER<T>(T dto) where T : class
+        {
+            var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
+            serializedDto.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            string serviceUrl = apiAddress + "auth/register";
+            var response = await _httpClient.PostAsync(serviceUrl, serializedDto);
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<ResponseDTO<T>>(await response.Content.ReadAsStringAsync());
+            }
+            return null;
+        }
+
+        public async Task<ResponseDTO<T>> FORGOTPASSWORD<T>(T dto) where T : class
+        {
+            var serializedDto = new StringContent(JsonConvert.SerializeObject(dto));
+            serializedDto.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            //todo resigster yerine api de controller içinde smtp yapılacak.
+            string serviceUrl = apiAddress + "auth/register";
+            var response = await _httpClient.PostAsync(serviceUrl, serializedDto);
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<ResponseDTO<T>>(await response.Content.ReadAsStringAsync());
+            }
+            return null;
         }
 
         #endregion
