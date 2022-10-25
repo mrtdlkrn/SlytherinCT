@@ -1,10 +1,13 @@
 ﻿using CarTender.Core.Utilities;
 using CT.Business.Abstract;
 using CT.DataAccess.Abstract;
+using CT.DataAccess.Concrete.Dapper;
+using CT.Entities.DTOs.Town;
 using CT.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace CT.Business.Concrete
 {
@@ -32,9 +35,12 @@ namespace CT.Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IDataResult<IEnumerable<Town>> GetAll(Expression<Func<Town, bool>> filter = null)
+        public async Task<IDataResult<IEnumerable<ListTownDTO>>> GetAll(Expression<Func<Town, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            var result = await townDAL.GetAllAsync(filter);
+
+            if (result == null) return new ErrorDataResult<IEnumerable<ListTownDTO>>("Listelenecek ilçeler bulunamadı.", 404);
+            return new SuccessDataResult<IEnumerable<ListTownDTO>>(result, "İlçeler listelendi.", 200);
         }
 
         public IDataResult<Town> GetById(object id)

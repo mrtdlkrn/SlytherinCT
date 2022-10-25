@@ -72,7 +72,7 @@ namespace CT.Business.Concrete
         {
             var advertStatusHistoryResult = adverStatusHistoryDAL.GetAsync(x => x.ID == (int)id);
 
-            if (advertStatusHistoryResult.Result == null) return new ErrorDataResult<AdvertStatusHistory("İlan statü geçmişi bulunamadı.", 404);
+            if (advertStatusHistoryResult.Result == null) return new ErrorDataResult<AdvertStatusHistory>("İlan statü geçmişi bulunamadı.", 404);
             return new SuccessDataResult<AdvertStatusHistory>(advertStatusHistoryResult.Result,"İlan statü geçmişi getirildi.", 200);
         }
 
