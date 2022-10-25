@@ -3,11 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entity.DTO.Bid
 {
-    public class BidListDTO
+    public class ListBidDTO
     {
+        [Key]
+        public Guid ID { get; set; }
 
         [DisplayName("İhale Adı")]
         public string BidName { get; set; }

@@ -37,15 +37,24 @@
 
             <li><hr class="sidebar-divider"></li>
 
-            <li class="nav-item active">
-                <a class="nav-link" asp-controller="Generic"
-                   asp-action="ListItems"
-                   asp-route-modelName="DenemeDTO">
-                    <i class="fa-light fa-car"></i>
-                    <span>Arac Listele - Generic</span>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse1"
+                   aria-expanded="true" aria-controls="collapse2">
+                    <i class="fa-solid fa-plane"></i>
+                    <span>Fly Pages</span>
                 </a>
+                <div id="collapse1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">FlyPage Sayfalari:</h6>
+                        <a class="collapse-item" asp-controller="Generic" asp-action="ListItems" asp-route-dtoName="ListCarDTO">Araç Listele</a>
+                        <a class="collapse-item" asp-controller="Generic" asp-action="ListItems" asp-route-dtoName="ListBidDTO">Ihale Listele</a>
+                        <a class="collapse-item" asp-controller="Generic" asp-action="ListItems" asp-route-dtoName="ListStatusDTO">Statuleri Listele</a>
+                        
+                    </div>
+                </div>
             </li>
 
+            <li><hr class="sidebar-divider"></li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse2"

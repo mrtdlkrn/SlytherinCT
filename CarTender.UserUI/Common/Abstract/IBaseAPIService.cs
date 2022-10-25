@@ -1,20 +1,25 @@
-﻿using Entity.DTO.Auth;
+﻿using Entity.DTO;
+using Entity.DTO.Auth;
 using System.Threading.Tasks;
 
 namespace Common.Abstract
 {
     public interface IBaseAPIService
     {
-        Task<DTO> GET<DTO>(TokenDTO tokenDTO, string requestUrl) where DTO : class;
+        Task<ResponseDTO<T>> GET<T>(TokenDTO tokenDTO, string requestUrl) where T : class;
 
-        Task<DTO> GET<DTO, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto) where DTO : class where FilterDTO : class;
+        Task<ResponseDTO<T>> GET<T, FilterDTO>(TokenDTO tokenDTO, string requestUrl, FilterDTO dto) where T : class where FilterDTO : class;
 
-        Task<bool> POST<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class;
+        Task<ResponseDTO<T>> POST<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class;
 
-        Task<string> POST<DTO>(string requestUrl, DTO dto) where DTO : class;
+        Task<ResponseDTO<TokenDTO>> LOGIN<T>(T dto) where T : class;
 
-        Task<bool> PUT<DTO>(TokenDTO tokenDTO, string requestUrl, DTO dto) where DTO : class;
+        Task<ResponseDTO<T>> PUT<T>(TokenDTO tokenDTO, string requestUrl, T dto) where T : class;
 
-        Task<bool> DELETE(TokenDTO tokenDTO, string requestUrl);
+        Task<ResponseDTO<T>> DELETE<T>(TokenDTO tokenDTO, string requestUrl) where T : class;
+
+        Task<ResponseDTO<T>> REGISTER<T>(T dto) where T : class;
+
+        Task<ResponseDTO<T>> FORGOTPASSWORD<T>(T dto) where T : class;
     }
 }

@@ -34,6 +34,7 @@ namespace CT.API.Controllers.AdminControllers
             {
                 carDTOs.Add(new ListCarDTO()
                 {
+                    ID = Guid.NewGuid(),
                     CarBrand = "Toyota",
                     CarModel = "Verso",
                     IsCorporate = false,

@@ -50,7 +50,7 @@ namespace CarTender.API.Controllers
             if (!loginResult.Success)
             {
                 _logger.Log("Hatalı kullanıcı girişi");
-                return BadRequest(loginResult.Message);
+                return BadRequest(loginResult);
             }
             _logger.Log(dto.Email + " giriş yaptı.");
             return Ok(loginResult);

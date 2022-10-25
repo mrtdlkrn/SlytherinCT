@@ -5,7 +5,7 @@ namespace CT.Entities.Car
     public class ListCarDTO
     {
         //todo : Guid id aktife çekilecek. Mert(Yani Ben) şimdilik böyle yaptım. 
-        //public Guid CarID { get; set; }
+        public Guid ID { get; set; }
         public string Plate { get; set; }
         public string CarBrand { get; set; }
         public string CarModel { get; set; }

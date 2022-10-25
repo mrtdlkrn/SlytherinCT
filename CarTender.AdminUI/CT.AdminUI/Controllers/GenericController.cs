@@ -1,50 +1,68 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Common.Abstract;
 using CT.AdminUI.Models;
+using Entity.DTO.Auth;
+using Entity.DTO.Bid;
 using Entity.DTO.FlyPages;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CT.AdminUI.Controllers
 {
     public class GenericController : Controller
     {
+        private readonly IBaseAPIService _apiService;
         private readonly IMappingService _mappingService;
-
-
-        public GenericController(IMappingService mappingService)
+        private readonly IDictionary<string, string> _routes;
+        //Todo: token duzenlenecek, giris islemi yapildiktan sonra cookiden alinacak
+        TokenDTO tokenDTO = new TokenDTO()
         {
+            Token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9" +
+            ".eyJuYmYiOjE2NjU4MzQ2NDAsImV4cCI6MTY3MTAxODY0MCwiaXNzIjoiaHVmZmxlcHVmZkBodWZmbGVwdWZmLmNvbSIsImF1ZCI6Imh1ZmZsZXB1ZmZAaHVmZmxlcHVmZi5jb20ifQ" +
+            ".YqA_0sJDNSXLJzPN8U7bsrzDtfnEEkrwHHT66xx7uix9r270wXo_vZpJsXTZ8WWjdmTmrqhN_4JEdQ41xcisgw",
+            ExpireTime = DateTime.Now.AddHours(1)
+        };
+
+        public GenericController(IBaseAPIService apiService, IMappingService mappingService, IApiRoutes routes)
+        {
+            _apiService = apiService;
             _mappingService = mappingService;
+            _routes = routes.GetApiRoutes("FlyPage");
         }
 
-        #region DenemeDTO Listesi
-        List<DenemeDTO> denemeList = new List<DenemeDTO>()
-        {
-            new DenemeDTO { Age = 25,IsRetired=false,Name="Burkay",Surname="Akgul",Salary=2000},
-            new DenemeDTO { Age = 23,IsRetired=false,Name="asdfdfas",Surname="12sdaf",Salary=3000},
-            new DenemeDTO { Age = 21,IsRetired=false,Name="vxcsdaf",Surname="11123",Salary=4000},
-            new DenemeDTO { Age = 29,IsRetired=false,Name="cvcvxsdf",Surname="bgrwwfgsa",Salary=2000},
-            new DenemeDTO { Age = 24,IsRetired=false,Name="iyusdf",Surname="bndfgfd",Salary=1000},
-            new DenemeDTO { Age = 26,IsRetired=false,Name="qwerqwre",Surname="trrtwe",Salary=5000},
-        };
-        #endregion
 
         [HttpGet]
-        public IActionResult ListItems(string modelName)
+        public async Task<IActionResult> ListItems(string dtoName)
         {
 
-            var list = _mappingService.GetModelListByName(modelName);
-            list = denemeList;
-            GenericViewModel model = new GenericViewModel() { MyModel = list, ModelName = modelName, Title = modelName + " Listeleme Sayfasi" };
+            var list = _mappingService.GetModelListByName(dtoName);
+            Type type = list.GetType();
+            string actionName = dtoName.Remove(dtoName.IndexOf("DTO"), "DTO".Length);
 
+            #region apiservice reflection işlemleri
+            ///<summary>
+            /// Aşağıdaki işlemlerde apiservice classında çağırdığımız GET metodu generic tipte olduğu için, reflection classı ile runtime instance'ımızı referans vererek metodu çağırma işlemi yapılmıştır.
+            /// Ayrıca Get metodu asenkron metod olduğu için awaitable şekilde çağırma işlemeri yapılmıştır.
+            /// 
+            /// </summary>
+            var method = _apiService.GetType().GetMethod("Get");
+            var genericMethod = method.MakeGenericMethod(type);
+            var result = (Task)genericMethod.Invoke(_apiService, new object[] { tokenDTO, _routes[actionName] });
+            await result.ConfigureAwait(false);
+            var returnType = result.GetType().GetProperty("Result").GetValue(result, null);
+            var data = returnType.GetType().GetProperty("Data").GetValue(returnType, null);
+            #endregion
+
+            GenericViewModel model = new GenericViewModel() { MyModel = data, ModelName = dtoName, Title = dtoName + " Listeleme Sayfasi" };
 
             return View("~/Views/FlyPages/ListItems.cshtml", model);
-
-
         }
 
 
@@ -79,9 +97,8 @@ namespace CT.AdminUI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(string id, string modelName)
+        public IActionResult Edit(Guid id, string modelName)
         {
-            id = "0";
             var dto = _mappingService.GetModelByName(modelName);
             var keyInfo = dto.GetType().GetProperties().Where(x => x.CustomAttributes.Any(x => x.AttributeType == typeof(KeyAttribute))).FirstOrDefault();
 
@@ -93,7 +110,7 @@ namespace CT.AdminUI.Controllers
             //var asdf = denemeList.ToList().Where(x => x.GetType().GetProperty(keyInfo.Name).GetValue(x) == myKey).FirstOrDefault();
 
             //.Where(x => x.GetType().GetProperty(keyInfo.Name).GetValue(x) == myKey);
-            dto = denemeList.ToList().First();
+            //dto = denemeList.ToList().First();
             GenericViewModel model = new GenericViewModel() { MyModel = dto, ModelName = modelName, Title = "Burkay123" };
 
 
@@ -126,7 +143,7 @@ namespace CT.AdminUI.Controllers
             Type keyType = myKey.GetType();
             var myList = _mappingService.GetModelListByName(modelName);
             var asdf = myList.GetType().GetProperties()[2].PropertyType;
-            myList = denemeList;
+            //myList = denemeList;
             //var dsaf = denemeList.GetType().GetProperties().Where(x => x.GetType().GetProperty(keyInfo.Name).GetValue(myKey) == myKey).FirstOrDefault();
             //var ewqre = dto.GetType().GetProperty(keyInfo.Name).GetValue(dto) == (Int32)myKey;
             //var asdf = denemeList.ToList().Where(x => x.GetType().GetProperty(keyInfo.Name).GetValue(x) == myKey).FirstOrDefault();

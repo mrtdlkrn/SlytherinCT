@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
-using CarTender.FluentValidation.VAL.UserVAL.Login_Register;
 using Common.Concrete;
 using CT.UserUI.Logging.Concrete;
 using Entity.DTO;
@@ -17,7 +16,7 @@ namespace CT.UserUI.Controllers
     {
         private readonly IApiManager _apiManager;
 
-        private readonly Logger _logger = new Logger(new Creater().FactoryMethod(LoggerTypes.DbLogger));
+        private readonly Logger _logger = new Logger(new Creater().FactoryMethod(LoggerTypes.FileLogger));
 
         public AuthController()
         {
@@ -27,37 +26,20 @@ namespace CT.UserUI.Controllers
         #region Login
 
         // GET: Auth Controller for Login
+
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult Login()
         {
-            //UserLoginDAL validations = new UserLoginDAL();
-            //ValidationResult result = validations.Validate( new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
-            //{
-            //    Username = "yigit",
-            //    Password = "1234"
-            //});
-
-            //if (result.IsValid)
-            //{
-
-            //}
-            if (HttpContext.Request.Cookies["token"] != null)
-            {
-                HttpCookie gelenCookie = HttpContext.Request.Cookies["Ihlae"];
-                string token = gelenCookie.Values["token"];
-            }
-
-            return View();
+            return View(new LoginDTO());
         }
 
         //POST: Auth Controller for Login
+
+        [AllowAnonymous]
         [HttpPost]
-        public ActionResult Login(LoginDTO dto)
+        public async Task<ActionResult> Login(LoginDTO dto)
         {
-            string username = "ahmet";
-            string password = "123";
-
-
             //BaseValidator<UserLoginDTO> validator = new BaseValidator<UserLoginDTO>(dto);
             //UserLoginVAL validations = new UserLoginVAL();
             //ValidationResult result = validations.Validate(new CarTender.FluentValidation.DTO.UserDTO.Login_Register.UserLoginDTO()
@@ -70,18 +52,19 @@ namespace CT.UserUI.Controllers
             //{
 
             //}
-            //if (dto.Password != password || dto.Username != username)
-            //{
-            //    _logger.Log("hatalı kullanıcı girişi - USERUI");
-            //    return RedirectToAction("Login");
-            //}
 
-            _logger.Log(username + " kullanıcı giriş yaptı. - USERUI");
+            var loginResult = await _apiManager.Login(dto);
 
-            HttpCookie httpCookie = new HttpCookie("Ihale");
-            httpCookie.Expires = DateTime.Now.AddDays(1);
-            //httpCookie.Expires = DateTime.Now.AddDays(-1); silmek için bu şekilde kullanırız
-            httpCookie.Values.Add("token", "hede");
+            if (!loginResult.Success)
+            {
+                _logger.Log("hatalı kullanıcı girişi - USERUI");
+                return RedirectToAction("Login");
+            }
+
+            //_logger.Log(username + " kullanıcı giriş yaptı. - USERUI");
+            HttpCookie httpCookie = new HttpCookie("Bid");
+            httpCookie.Expires = loginResult.Data.ExpireTime;
+            httpCookie.Values.Add("token", loginResult.Data.Token);
             HttpContext.Response.Cookies.Add(httpCookie);
             
             return RedirectToAction("Index","Home");
@@ -89,11 +72,26 @@ namespace CT.UserUI.Controllers
 
         #endregion
 
-        // todo: logout yazılacak
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            // todo: çerezler, session, token temizlenmeli.
+            //httpCookie.Expires = DateTime.Now.AddDays(-1); silmek için bu şekilde kullanırız
+
+            if (HttpContext.Request.Cookies["Bid"] != null)
+            {
+                HttpCookie myCookie = HttpContext.Request.Cookies["Bid"];
+                myCookie.Expires = DateTime.Now.AddDays(-999);
+                Response.Cookies.Add(myCookie);
+            }
+
+            return RedirectToAction("Login");
+        }
 
         #region CustomerSignUp
 
         //GET: Auth Controller for CustomerSignUp
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult CustomerSignUp()
         {
@@ -101,17 +99,18 @@ namespace CT.UserUI.Controllers
         }
 
         //POST: Auth Controller for CustomerSignUp
-        [HttpPost]
-        public async Task<ActionResult> CustomerSignUp(RabbitMQLoginDTO dto)
-        {
-            var query = await _apiManager.Post<RabbitMQLoginDTO>("Auth/register", dto);
-            return View(query);
-        }
+        //[HttpPost]
+        //public async Task<ActionResult> CustomerSignUp(RabbitMQLoginDTO dto)
+        //{
+        //    var query = await _apiManager.Post<RabbitMQLoginDTO>("Auth/register", dto);
+        //    return View(query);
+        //}
 
         #endregion
 
         #region CompanySignUp
         //GET: Auth Controller for CompanySignUp
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult CompanySignUp()
         {
@@ -119,6 +118,7 @@ namespace CT.UserUI.Controllers
         }
 
         //POST: Auth Controller for CompanySignUp
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult CompanySignUp(int id)
         {
@@ -130,6 +130,7 @@ namespace CT.UserUI.Controllers
         #region EmailVerification
 
         //GET: Auth Controller for EmailVerification
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult EmailVerification(RabbitMQLoginDTO dto)
         {
@@ -138,6 +139,7 @@ namespace CT.UserUI.Controllers
         }
 
         //POST: Auth Controller for EmailVerification
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult EmailVerification(int id)
         {
@@ -149,6 +151,7 @@ namespace CT.UserUI.Controllers
         #region EmailVerificationIsCorrect
 
         //GET: Auth Controller for EmailVerificationIsCorrect
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult EmailVerificationIsCorrect()
         {
@@ -156,6 +159,7 @@ namespace CT.UserUI.Controllers
         }
 
         //POST: Auth Controller for EmailVerificationIsCorrect
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult EmailVerificationIsCorrect(int id)
         {
@@ -167,6 +171,7 @@ namespace CT.UserUI.Controllers
         #region ForgotPassword
 
         //GET: Auth Controller for ForgotPassword
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult ForgotPassword()
         {
@@ -174,6 +179,7 @@ namespace CT.UserUI.Controllers
         }
 
         //POST: Auth Controller for ForgotPassword
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult ForgotPassword(int id)
         {
@@ -185,6 +191,7 @@ namespace CT.UserUI.Controllers
         #region ResetPassword
 
         //GET: Auth Controller for ResetPassword
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult ResetPassword()
         {
@@ -192,6 +199,7 @@ namespace CT.UserUI.Controllers
         }
 
         //POST: Auth Controller for ResetPassword
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult ResetPassword(int id)
         {

@@ -1,7 +1,7 @@
 ﻿@using Entity.DTO.Bid
 @using Entity.DTO.Pagination
 @using System.Reflection
-@model List<BidListDTO>
+@model List<ListBidDTO>
 @{
     ViewData["Title"] = "İhale Listesi";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,7 +9,7 @@
     List<string> heads = new List<string>();
     List<object> datas = new List<object>();
 
-    foreach (var item in typeof(BidListDTO).GetProperties())
+    foreach (var item in typeof(ListBidDTO).GetProperties())
     {
         heads.Add(item.CustomAttributes.First().ConstructorArguments.First().Value.ToString());
     }

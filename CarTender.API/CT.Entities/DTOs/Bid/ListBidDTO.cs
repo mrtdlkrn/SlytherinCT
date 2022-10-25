@@ -4,6 +4,7 @@ namespace CT.Entities.Bid
 {
     public class ListBidDTO
     {
+        public Guid ID { get; set; }
         public string BidName { get; set; }
         public bool IsCorporate { get; set; }
         public bool IsApproved { get; set; }
