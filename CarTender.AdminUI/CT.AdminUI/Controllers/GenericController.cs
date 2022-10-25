@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace CT.AdminUI.Controllers
 {
@@ -52,7 +54,7 @@ namespace CT.AdminUI.Controllers
             //AddUserDTO dto = new AddUserDTO() { Name = "Burkay", Surname = "Akgul" };
             //AddVehicle dto = new AddVehicle() {BodyType="Sedan",Color="Red",Year="2022",CompanyName="burkaycompanisi",FuelType="Benzin" };
 
-            var dto = _mappingService.GetModelListByName(modelName);
+            var dto = _mappingService.GetModelByName(modelName);
             GenericViewModel model = new GenericViewModel() { MyModel = dto, ModelName = modelName, Title = "Burkay123" };
 
             return View("~/Views/FlyPages/Create.cshtml", model);
@@ -76,6 +78,60 @@ namespace CT.AdminUI.Controllers
             return RedirectToAction("Index", "Admin");
         }
 
+        [HttpGet]
+        public IActionResult Edit(string id, string modelName)
+        {
+            id = "0";
+            var dto = _mappingService.GetModelByName(modelName);
+            var keyInfo = dto.GetType().GetProperties().Where(x => x.CustomAttributes.Any(x => x.AttributeType == typeof(KeyAttribute))).FirstOrDefault();
 
+            var myKey = Convert.ChangeType(id, keyInfo.PropertyType);
+            Type keyType = myKey.GetType();
+
+            //var dsaf = denemeList.GetType().GetProperties().Where(x => x.GetType().GetProperty(keyInfo.Name).GetValue(myKey) == myKey).FirstOrDefault();
+            //var ewqre = dto.GetType().GetProperty(keyInfo.Name).GetValue(dto) == (Int32)myKey;
+            //var asdf = denemeList.ToList().Where(x => x.GetType().GetProperty(keyInfo.Name).GetValue(x) == myKey).FirstOrDefault();
+
+            //.Where(x => x.GetType().GetProperty(keyInfo.Name).GetValue(x) == myKey);
+            dto = denemeList.ToList().First();
+            GenericViewModel model = new GenericViewModel() { MyModel = dto, ModelName = modelName, Title = "Burkay123" };
+
+
+            return View("~/Views/FlyPages/Edit.cshtml", model);
+        }
+
+        [HttpPost]
+        public IActionResult Update(IFormCollection modelFormCollection, string modelName)
+        {
+            #region Generic Model Casting
+            ///<summary>
+            /// Burada formcollection verimizi mappingservice içerisindeki GetModel metodu ile istediğimiz tipe çevirebilmek için öncelikle GetModel metodu bir generic tip metod olduğundan dolayı veri tipimizi sadece variable olarak elde edebildiğimizden burada tekrardan Reflection kütüphanesine başvururuz. Reflection GetMethod ile metodumuzu elde ederiz daha sonra metodumuz generic tipte olduğu için MakeGenericType deyip modelimizden elde ettimiz tip değişkenini içine göndeririz şeklen yorumlamak istersek GetModel<T>(veriler) metodunu GetModel<ModelTipi>(veriler) 'e çevirmiş olduk. Metodumuzun cast edilmiş halini elde ettikten sonra artık Invoke metodu ile verimizi çağırabiliriz Invoke metodunun içerisine alacağı veri tipleri metodumuzun bulunduğu class'ın instance'ı ve object array tipinde modelin içine göndereceğimiz verilerimizdir.
+            /// </summary>
+            var dto = _mappingService.GetModelByName(modelName);
+            Type type = dto.GetType();
+            var method = _mappingService.GetType().GetMethod("GetModel");
+            var genericMethod = method.MakeGenericMethod(type);
+            var result = genericMethod.Invoke(new MappingService(), new object[] { modelFormCollection });
+            #endregion
+
+            return RedirectToAction("Index", "Admin");
+        }
+
+        public IActionResult Delete(string id, string modelName)
+        {
+            var dto = _mappingService.GetModelByName(modelName);
+            var keyInfo = dto.GetType().GetProperties().Where(x => x.CustomAttributes.Any(x => x.AttributeType == typeof(KeyAttribute))).FirstOrDefault();
+
+            var myKey = Convert.ChangeType(id, keyInfo.PropertyType);
+            Type keyType = myKey.GetType();
+            var myList = _mappingService.GetModelListByName(modelName);
+            var asdf = myList.GetType().GetProperties()[2].PropertyType;
+            myList = denemeList;
+            //var dsaf = denemeList.GetType().GetProperties().Where(x => x.GetType().GetProperty(keyInfo.Name).GetValue(myKey) == myKey).FirstOrDefault();
+            //var ewqre = dto.GetType().GetProperty(keyInfo.Name).GetValue(dto) == (Int32)myKey;
+            //var asdf = denemeList.ToList().Where(x => x.GetType().GetProperty(keyInfo.Name).GetValue(x) == myKey).FirstOrDefault();
+
+            return View();
+        }
     }
 }
