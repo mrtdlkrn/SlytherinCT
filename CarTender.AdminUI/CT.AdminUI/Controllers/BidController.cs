@@ -38,8 +38,6 @@ namespace CT.AdminUI.Controllers
         public BidController(IApiService apiService, IMappingService mappingService, IApiRoutes routes)
         {
             _apiService = apiService;
-            _mappingService = mappingService;
-            _routes = routes.GetApiRoutes("Bid");
         }
         public IActionResult Index()
         {
@@ -50,8 +48,9 @@ namespace CT.AdminUI.Controllers
 
         [HttpGet]
         //GET: Bid Controller for Create New Bid
-        public IActionResult Create(CreateNewBidDTO createBidDTO)
+        public async Task<IActionResult> Create()
         {
+
             CreateBidViewDTO dto = new CreateBidViewDTO();
 
             dto.CorparateList = new List<CorparateList>(){
@@ -78,12 +77,17 @@ namespace CT.AdminUI.Controllers
             };
 
             return View(dto);
+
         }
 
         [HttpPost]
         //POST: Bid Controller for Create New Bid
+
         public IActionResult Create(IFormCollection formCollection)
+
         {
+            TokenDTO tokenDTO = new TokenDTO();
+            var result = await _apiService.Post(tokenDTO, _routes[""],dto);
             return View();
         }
 

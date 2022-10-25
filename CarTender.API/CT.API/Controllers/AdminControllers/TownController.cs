@@ -1,7 +1,8 @@
 ﻿using CarTender.Core.Utilities;
+using CT.Business.Abstract;
 using CT.Entities.DTOs.Town;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CT.API.Controllers.AdminControllers
 {
@@ -9,14 +10,24 @@ namespace CT.API.Controllers.AdminControllers
     [ApiController]
     public class TownController : ControllerBase
     {
+        private readonly ITownService townService;
 
-        [HttpGet("GetAll")]
-        public IActionResult GetAll()
+        public TownController(ITownService townService)
         {
-            List<ListTownDTO> towns = new List<ListTownDTO>();
-            towns.Add(new ListTownDTO() { Name = "Karacabey", CityName="Bursa"});
-            towns.Add(new ListTownDTO() { Name = "Mustafa Kemal Paşa", CityName="Bursa"});
-            return Ok(new SuccessDataResult<List<ListTownDTO>>(towns, "İlçeler listelendi", 200));
+            this.townService = townService;
+        }
+        
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> GetAll()
+        {
+            //List<ListTownDTO> towns = new List<ListTownDTO>();
+            //towns.Add(new ListTownDTO() { Name = "Karacabey", CityName="Bursa"});
+            //towns.Add(new ListTownDTO() { Name = "Mustafa Kemal Paşa", CityName="Bursa"});
+            //return Ok(new SuccessDataResult<List<ListTownDTO>>(towns, "İlçeler listelendi", 200));
+        
+            var result = await townService.GetAll();
+            if (!result.Success) return BadRequest(result.Message);
+            return Ok(result);
         }
 
         [HttpPost("Create")]
